@@ -211,8 +211,8 @@ function wp_header(){
 
 
 // add the action to calls to the main wp functions file
-add_action('wp_head','nu_styles');
-add_action('wp_head','nu_scripts');
+// add_action('wp_head','nu_styles');
+// add_action('wp_head','nu_scripts');
 // add_action('wp_head','nu_set_keys');
 add_action('wp_footer','nu_global_footer');
 
