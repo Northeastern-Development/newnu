@@ -1,0 +1,377 @@
+/**
+ * partials/nav
+ * ---
+ * Menus
+ */
+
+
+nav.nu__mainmenu{
+  position: absolute;
+  right: 0;
+  width: auto;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 0 0 0;
+  clear: both;
+  & > ul{
+    float: left;
+    width: auto;
+    height: inherit;
+    margin: 0 0 0 0;
+    list-style: none;
+    list-style-type: none;
+    clear: right;
+    & > li{
+      float: left;
+      &:first-child{
+        display: none;
+      }
+      &.nu__menu-iam{  // this is the dropdown menu for the I AM selection
+        height: inherit;
+        overflow: hidden;
+        &:hover{
+          & > ul{
+            height: 300px;
+            -webkit-transition: height 0.5s;
+            -moz-transition: height 0.5s;
+            -ms-transition: height 0.5s;
+            -o-transition: height 0.5s;
+            transition: height 0.5s;
+          }
+        }
+        & > ul{
+          height: 0;
+          overflow: hidden;
+          position: absolute;
+          z-index: 101;
+          background: rgba(0,0,0,0.9);
+          width: 250px;
+          list-style: none;
+          list-style-type: none;
+          margin: -10px nth($wrapper-margins, 2) 0 (nth($wrapper-margins, 2) * -1);
+          & > li{
+            text-align: right;
+            padding: 0 10px 0 10px;
+            & > a{
+              line-height: 40px;
+              &:hover{
+                color: red;
+              }
+            }
+          }
+        }
+      }
+      &.current-menu-item{
+        & > a{
+          color: rgba(255,255,255, 1.0);
+        }
+      }
+      & > a{
+        display: block;
+        color: rgba(133, 134, 135, 1.0);
+        padding: 0 0 0 ($gutter * 1);
+        height: inherit;
+        line-height: inherit;
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 1.6rem;
+      }
+      &.active,
+      &:hover{
+        & > a{
+          color: rgba(255,255,255, 1.0);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// ****************************************************************************************************
+// the following bunch of styles handles the click event on the checkbox to hide and show the supernav
+// so that we do not need to use JS
+// ****************************************************************************************************
+input.toggle {
+  float: left;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+  &:hover ~ label{
+    color: rgba(255,255,255,1.0);
+  }
+
+}
+
+label{
+  float: left;
+  color: rgba(133, 134, 135, 1.0);
+}
+
+input.toggle:checked ~ div#supernav{
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility 0s, opacity 0.10s linear;
+  -moz-transition: visibility 0s, opacity 0.10s linear;
+  -ms-transition: visibility 0s, opacity 0.10s linear;
+  -o-transition: visibility 0s, opacity 0.10s linear;
+  transition: visibility 0s, opacity 0.10s linear;
+}
+
+input.toggle:checked ~ label{
+  color: rgba(255,255,255,1.0);
+}
+// ****************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+div#supernav{
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 100;
+  background: rgba(0,0,0,0.9);
+  height: 0;
+  left: 0;
+  width: $wrapper-width;
+  margin: $header-height 0 0 0;
+  &.autoshow{
+    opacity: 1;
+    visibility: visible;
+    // display: block;
+    height: 100%;
+    // position: fix;
+    z-index: 0;
+    margin: $header-height + 20 0 0 0;
+  }
+  & > ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    list-style: none;
+    list-style-type: none;
+    width: $content-width;
+    margin: 0 nth($wrapper-margins, 2) $gutter nth($wrapper-margins, 4);
+
+    &:nth-of-type(1){
+      & > li{
+        padding: 10px 0 10px 0;
+        margin: 0 $gutter 0 0;
+        min-height: 250px;
+        height: auto;
+        background: rgba(45, 46, 47, 1.0);
+        flex: 1;
+        text-align: center;
+        &:nth-child(1){
+          order: 0;
+        }
+        &:nth-child(2){
+          order: 1;
+        }
+        &:nth-child(3){
+          order: 2;
+        }
+        &:nth-child(4){
+          order: 3;
+        }
+      }
+    }
+    &:nth-of-type(2){
+      & > li{
+        margin: 0 $gutter 0 0;
+        min-height: 150px;
+        flex: 1;
+
+        &:nth-child(1){
+          order: 0;
+        }
+        &:nth-child(2){
+          order: 1;
+        }
+        &:nth-child(3){
+          order: 2;
+        }
+        &:nth-child(4){
+          order: 3;
+        }
+      }
+    }
+
+    & > li{
+      margin: 0 $gutter 0 0;
+      flex: 1;
+      padding: 0 10px 0 10px;
+      &:last-child{
+        margin: 0 0 0 0;
+      }
+      & > ul{
+        list-style: none;
+        list-style-type: none;
+
+        & > li{
+          & > a{
+            display: block;
+            line-height: 30px;
+            color: rgba(255,255,255,1.0);
+            font-size: 1.2rem;
+            &:hover{
+              color: rgba(224, 39, 47, 1.0);
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @media only screen and (max-width: 1500px){
+//   nav{
+//     & > ul{
+//       // display: flex;
+//       // flex-direction: row;
+//       & > li{
+//         // float: none;
+//         // flex-grow: 1;
+//         & > a{
+//           font-size: 1.25rem;
+//           // padding: 0 $gutter 0 $gutter;
+//         }
+//       }
+//     }
+//   }
+// }
+//
+//
+//
+//
+//
+// @media only screen and (max-width: 1100px){
+//
+//   nav{
+//     overflow: hidden;
+//     & > ul{
+//       width: 84vw;
+//       margin: nth($wrapper-margins, 1) 8vw nth($wrapper-margins, 3) 8vw;
+//       list-style: none;
+//       list-style-type: none;
+//       clear: both;
+//       display: block;
+//       overflow: hidden;
+//       height: 50px;
+//       & > li{
+//         float: none;
+//         flex: none;
+//         border-left: none;
+//         &:first-child{
+//           display: block;
+//           & > a{
+//             font-size: 3rem;
+//             font-weight: 300;
+//             text-align: left;
+//             padding: 0 0 0 0;
+//           }
+//         }
+//         &:last-child{
+//           border-right: none;
+//           float: none;
+//           &::after{
+//             color: rgba(0,0,0,1.0);
+//           }
+//         }
+//         & > a{
+//           display: block;
+//           padding: 0 0 0 0;
+//           height: $navigation-height;
+//           line-height: $navigation-height;
+//           margin: 0 0 0 0;
+//           width: 100%;
+//           font-size: 1.3rem;
+//           text-align: center;
+//         }
+//         &.active,
+//         &:hover{
+//           // background: rgba(0,0,0,1.0);
+//           color: nth($brand_colors,4);
+//         }
+//         &:hover{
+//           cursor: pointer;
+//         }
+//       }
+//     }
+//   }
+//
+// }
+//
+//
+//
+//
+//
+// // @media only screen and (max-width: 760px){
+// //
+// //   nav{
+// //     & > ul{
+// //       width: 90vw;
+// //       margin: 0 5vw 0 5vw;
+// //     }
+// //   }
+// //
+// // }
+// //
+// //
+// //
+// //
+// //
+// // @media only screen and (max-width: 560px){
+// //
+// //   nav{
+// //     & > ul{
+// //       width: 90vw;
+// //       margin: 0 5vw 0 5vw;
+// //       & > li{
+// //         & > a{
+// //           font-size: 0.9rem;
+// //           line-height: 1.25rem;
+// //           padding: ($gutter * 2) 10px $gutter 10px;
+// //         }
+// //       }
+// //     }
+// //   }
+// //
+// // }
