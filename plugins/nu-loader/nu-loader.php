@@ -21,8 +21,6 @@ $baseUrls = array('http://newnu.nudev.net');
 
 
 
-
-
 /* ***********************************************************************
 
 FUNCTION: nu_check_plugin
