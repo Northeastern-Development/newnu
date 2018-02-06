@@ -11,7 +11,7 @@
 
 
 // specify base urls to be used in the code below to speed up making edits
-$baseUrls = array('http://newnu.nudev.net');
+$baseUrls = array('http://newnu.local');
 
 
 
