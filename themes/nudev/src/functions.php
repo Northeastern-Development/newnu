@@ -413,7 +413,7 @@ add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comment
 add_action('wp_head', 'ism_dns_prefetch', 0); // DNS Prefetch Google Fonts
 add_action('wp_enqueue_scripts', 'nudev_conditional_styles'); // Add Theme Stylesheet
 add_action('init', 'register_nudev_menu'); // Add nudev Menu
-add_action('init', 'create_post_type_nudev'); // Add our nudev Custom Post Type
+// add_action('init', 'create_post_type_nudev'); // Add our nudev Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'nudevwp_pagination'); // Add our nudev Pagination
 add_action('init', 'disable_embeds_init', 9999);
