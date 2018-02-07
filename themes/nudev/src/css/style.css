@@ -330,7 +330,7 @@ nav.nu__mainmenu {
       nav.nu__mainmenu > ul > li.active > a, nav.nu__mainmenu > ul > li:hover > a {
         color: white; }
 
-input#nu__mainmenu-toggle {
+input#nu__supernav-toggle {
   float: left;
   height: 50px;
   width: 50px;
@@ -342,14 +342,14 @@ input#nu__mainmenu-toggle {
   cursor: pointer;
   z-index: 100;
   opacity: 0; }
-  input#nu__mainmenu-toggle:hover ~ label {
+  input#nu__supernav-toggle:hover ~ label {
     color: white; }
 
 label {
   float: left;
   color: #858687; }
 
-input#nu__mainmenu-toggle:checked ~ div#supernav {
+input#nu__supernav-toggle:checked ~ div#nu__supernav {
   height: 100%;
   visibility: visible;
   opacity: 1;
@@ -359,10 +359,10 @@ input#nu__mainmenu-toggle:checked ~ div#supernav {
   -o-transition: visibility 0s, opacity 0.10s linear;
   transition: visibility 0s, opacity 0.10s linear; }
 
-input#nu__mainmenu-toggle:checked ~ label {
+input#nu__supernav-toggle:checked ~ label {
   color: white; }
 
-div#supernav {
+div#nu__supernav {
   opacity: 0;
   visibility: hidden;
   position: fixed;
@@ -372,13 +372,13 @@ div#supernav {
   left: 0;
   width: 100vw;
   margin: 70px 0 0 0; }
-  div#supernav.autoshow {
+  div#nu__supernav.autoshow {
     opacity: 1;
     visibility: visible;
     height: 100%;
     z-index: 0;
     margin: 90px 0 0 0; }
-  div#supernav > ul {
+  div#nu__supernav > ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -387,7 +387,7 @@ div#supernav {
     list-style-type: none;
     width: 80vw;
     margin: 0 10vw 1vw 10vw; }
-    div#supernav > ul:nth-of-type(1) > li {
+    div#nu__supernav > ul:nth-of-type(1) > li {
       padding: 10px 0 10px 0;
       margin: 0 1vw 0 0;
       min-height: 250px;
@@ -395,41 +395,41 @@ div#supernav {
       background: #2d2e2f;
       flex: 1;
       text-align: center; }
-      div#supernav > ul:nth-of-type(1) > li:nth-child(1) {
+      div#nu__supernav > ul:nth-of-type(1) > li:nth-child(1) {
         order: 0; }
-      div#supernav > ul:nth-of-type(1) > li:nth-child(2) {
+      div#nu__supernav > ul:nth-of-type(1) > li:nth-child(2) {
         order: 1; }
-      div#supernav > ul:nth-of-type(1) > li:nth-child(3) {
+      div#nu__supernav > ul:nth-of-type(1) > li:nth-child(3) {
         order: 2; }
-      div#supernav > ul:nth-of-type(1) > li:nth-child(4) {
+      div#nu__supernav > ul:nth-of-type(1) > li:nth-child(4) {
         order: 3; }
-    div#supernav > ul:nth-of-type(2) > li {
+    div#nu__supernav > ul:nth-of-type(2) > li {
       margin: 0 1vw 0 0;
       min-height: 150px;
       flex: 1; }
-      div#supernav > ul:nth-of-type(2) > li:nth-child(1) {
+      div#nu__supernav > ul:nth-of-type(2) > li:nth-child(1) {
         order: 0; }
-      div#supernav > ul:nth-of-type(2) > li:nth-child(2) {
+      div#nu__supernav > ul:nth-of-type(2) > li:nth-child(2) {
         order: 1; }
-      div#supernav > ul:nth-of-type(2) > li:nth-child(3) {
+      div#nu__supernav > ul:nth-of-type(2) > li:nth-child(3) {
         order: 2; }
-      div#supernav > ul:nth-of-type(2) > li:nth-child(4) {
+      div#nu__supernav > ul:nth-of-type(2) > li:nth-child(4) {
         order: 3; }
-    div#supernav > ul > li {
+    div#nu__supernav > ul > li {
       margin: 0 1vw 0 0;
       flex: 1;
       padding: 0 10px 0 10px; }
-      div#supernav > ul > li:last-child {
+      div#nu__supernav > ul > li:last-child {
         margin: 0 0 0 0; }
-      div#supernav > ul > li > ul {
+      div#nu__supernav > ul > li > ul {
         list-style: none;
         list-style-type: none; }
-        div#supernav > ul > li > ul > li > a {
+        div#nu__supernav > ul > li > ul > li > a {
           display: block;
           line-height: 30px;
           color: white;
           font-size: 1.2rem; }
-          div#supernav > ul > li > ul > li > a:hover {
+          div#nu__supernav > ul > li > ul > li > a:hover {
             color: #e0272f; }
 
 /**

@@ -95,9 +95,9 @@
 
 					<nav role="navigation" class="nu__mainmenu">
 
-						<input id="nu__mainmenu-toggle" type="checkbox" title="Click to show/hide main menu" /><label for="nu__mainmenu-toggle">Menu</label>
+						<input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" /><label for="nu__supernav-toggle">Menu</label>
 						<?php nudev_nav(); ?>
-						<?php if(get_query_var('pagename') != 'main-menu'){ echo '<div id="supernav">'; get_template_part('loops/loop-supernav'); echo '</div>'; } ?>
+						<?php if(get_query_var('pagename') != 'main-menu'){ echo '<div id="nu__supernav">'; get_template_part('loops/loop-supernav'); echo '</div>'; } ?>
 
 					</nav>
 

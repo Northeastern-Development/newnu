@@ -98,7 +98,7 @@ nav.nu__mainmenu{
 // the following bunch of styles handles the click event on the checkbox to hide and show the supernav
 // so that we do not need to use JS
 // ****************************************************************************************************
-input#nu__mainmenu-toggle {
+input#nu__supernav-toggle {
   float: left;
   height: 50px;
   width: 50px;
@@ -121,7 +121,7 @@ label{
   color: rgba(133, 134, 135, 1.0);
 }
 
-input#nu__mainmenu-toggle:checked ~ div#supernav{
+input#nu__supernav-toggle:checked ~ div#nu__supernav{
   height: 100%;
   visibility: visible;
   opacity: 1;
@@ -132,7 +132,7 @@ input#nu__mainmenu-toggle:checked ~ div#supernav{
   transition: visibility 0s, opacity 0.10s linear;
 }
 
-input#nu__mainmenu-toggle:checked ~ label{
+input#nu__supernav-toggle:checked ~ label{
   color: rgba(255,255,255,1.0);
 }
 // ****************************************************************************************************
@@ -146,7 +146,7 @@ input#nu__mainmenu-toggle:checked ~ label{
 
 
 
-div#supernav{
+div#nu__supernav{
   opacity: 0;
   visibility: hidden;
   position: fixed;
