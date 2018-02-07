@@ -127,29 +127,57 @@
 		function hideShowSuperNav(){
 			// console.log(a);
 			var e = $('#supernav');
-			if(e.css('display') === 'none'){
+			if(e.css('opacity') === '0'){
 				// e.css({"display":"block"});
-				e.fadeIn(200);
-				$("nav.mainmenu ul li.js__mainmenu").addClass("current-menu-item");
-			}else{
+				// e.fadeIn(200);
+				// $("nav.mainmenu ul li.js__mainmenu").addClass("current-menu-item");
+				e.css({'visibility':'visible','height':'100%'});
+				// $('input#nu__mainmenu-toggle').prop('checked',true);
+				e.animate({
+					'opacity': 1
+				},animationSpeeds[0],function(){
+					// need to reset the checkmark here
+					// e.css({'visibility':'hidden','height':'0'});
+					$('input#nu__mainmenu-toggle').prop('checked',true);
+				});
+
+			}else if(e.css('opacity') === '1'){
 				// e.css({"display":"none"});
-				e.fadeOut(200);
-				$("nav.mainmenu ul li.js__mainmenu").removeClass("current-menu-item");
+				// e.fadeOut(200);
+				// $("nav.mainmenu ul li.js__mainmenu").removeClass("current-menu-item");
+				// e.css({'opacity':'0','visibility':'hidden','height':'0'});
+				e.animate({
+					'opacity': 0
+				},animationSpeeds[0],function(){
+					// need to reset the checkmark here
+					e.css({'visibility':'hidden','height':'0'});
+					$('input#nu__mainmenu-toggle').prop('checked',false);
+				});
+
+				// need some fixes in here to address the check mark changes as well as height, etc.
+
 			}
 		}
 
 
 
 		// this will listen for key presses to perform various functions
-		$(document).keyup(function(e) {
+		$(document).keyup(function(e){
 
-			// escape key
-     if(e.keyCode == 27){
-			 if($('#supernav').css('display') === 'block'){
-				 // hideShowSuperNav();
-			 }
-    }
-});
+			// 'm' key to open the super nav
+	    if(e.keyCode == 77){
+				 if($('#supernav').css('opacity') === '0'){
+					 // hideShowSuperNav();
+				 }
+	    }
+
+			// escape key to close the super nav
+	    if(e.keyCode == 27){
+				 if($('#supernav').css('opacity') === '1'){
+					 // hideShowSuperNav();
+				 }
+	    }
+		});
 
 
 

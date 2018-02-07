@@ -95,7 +95,7 @@
 
 					<nav role="navigation" class="nu__mainmenu">
 
-						<input id="supernavtoggle" type="checkbox" class="toggle" title="Click to show/hide main menu" /><label for="supernavtoggle">Menu</label>
+						<input id="nu__mainmenu-toggle" type="checkbox" title="Click to show/hide main menu" /><label for="nu__mainmenu-toggle">Menu</label>
 						<?php nudev_nav(); ?>
 						<?php if(get_query_var('pagename') != 'main-menu'){ echo '<div id="supernav">'; get_template_part('loops/loop-supernav'); echo '</div>'; } ?>
 

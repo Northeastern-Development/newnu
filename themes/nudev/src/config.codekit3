@@ -73,9 +73,9 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/__PRECOMP\/js\/scripts-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oAP": "\/js\/scripts-min.js",
+		"oF": 2,
+		"sC": 0,
 		"tS": 0
 		},
 	"\/__PRECOMP\/sass\/homepage.scss": {
@@ -268,8 +268,8 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/__PRECOMP\/sass\/style.css",
-		"oF": 0,
+		"oAP": "\/css\/style.css",
+		"oF": 2,
 		"oS": 0,
 		"uL": 1
 		},
