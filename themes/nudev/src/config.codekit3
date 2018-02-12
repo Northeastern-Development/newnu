@@ -9,56 +9,49 @@
 	],
 "creatorBuild": "26261",
 "files": {
-	"\/.fonts\/fontawesome-webfont.eot": {
+	"\/.fonts\/MaterialIcons-Regular.eot": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/.fonts\/fontawesome-webfont.eot",
+		"oAP": "\/.fonts\/MaterialIcons-Regular.eot",
 		"oF": 0
 		},
-	"\/.fonts\/fontawesome-webfont.svg": {
+	"\/.fonts\/MaterialIcons-Regular.ijmap": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/.fonts\/MaterialIcons-Regular.ijmap",
+		"oF": 0
+		},
+	"\/.fonts\/MaterialIcons-Regular.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/.fonts\/fontawesome-webfont.svg",
+		"oAP": "\/.fonts\/MaterialIcons-Regular.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/.fonts\/fontawesome-webfont.ttf": {
+	"\/.fonts\/MaterialIcons-Regular.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/.fonts\/fontawesome-webfont.ttf",
+		"oAP": "\/.fonts\/MaterialIcons-Regular.ttf",
 		"oF": 0
 		},
-	"\/.fonts\/fontawesome-webfont.woff": {
+	"\/.fonts\/MaterialIcons-Regular.woff": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/.fonts\/fontawesome-webfont.woff",
+		"oAP": "\/.fonts\/MaterialIcons-Regular.woff",
 		"oF": 0
 		},
-	"\/.fonts\/fontawesome-webfont.woff2": {
+	"\/.fonts\/MaterialIcons-Regular.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/.fonts\/fontawesome-webfont.woff2",
-		"oF": 0
-		},
-	"\/.fonts\/FontAwesome.otf": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/.fonts\/FontAwesome.otf",
-		"oF": 0
-		},
-	"\/.fonts\/readme.txt": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/.fonts\/readme.txt",
+		"oAP": "\/.fonts\/MaterialIcons-Regular.woff2",
 		"oF": 0
 		},
 	"\/404.php": {
@@ -270,7 +263,7 @@
 		"oA": 0,
 		"oAP": "\/css\/style.css",
 		"oF": 2,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/archive.php": {
@@ -331,16 +324,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/font-awesome.min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/font-awesome.min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"\/css\/government.css": {
 		"aP": 1,
 		"bl": 0,
@@ -398,6 +381,26 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/marketing-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/material-icons-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/material-icons-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/material-icons.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/material-icons-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1140,6 +1143,13 @@
 		"oAP": "\/languages\/ro_RO.po",
 		"oF": 0
 		},
+	"\/loops\/loop-administration.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-administration.php",
+		"oF": 0
+		},
 	"\/loops\/loop-alerts.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1334,6 +1344,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/template-mainmenu.php",
+		"oF": 0
+		},
+	"\/templates\/template-redirect.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/template-redirect.php",
 		"oF": 0
 		},
 	"\/templates\/template-search.php": {

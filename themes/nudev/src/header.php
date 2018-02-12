@@ -47,7 +47,7 @@
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
 
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/material-icons.css">
 
 		<?php wp_head(); ?>
 
@@ -95,7 +95,7 @@
 
 					<nav role="navigation" class="nu__mainmenu">
 
-						<input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" /><label for="nu__supernav-toggle">Menu</label>
+						<input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" /><label for="nu__supernav-toggle">&#xE5C3Menu</label>
 						<?php nudev_nav(); ?>
 						<?php if(get_query_var('pagename') != 'main-menu'){ echo '<div id="nu__supernav">'; get_template_part('loops/loop-supernav'); echo '</div>'; } ?>
 

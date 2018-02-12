@@ -17,7 +17,7 @@ get_header(); ?>
 					<div class="panel">
 						<div class="contentarea">
 							<div class="overlap"></div>
-							<h1>Ooops!</h1>
+							<h1>Ooops!!</h1>
 
 							<p>It appears that the page or resource you are looking for cannot be found.</p>
 

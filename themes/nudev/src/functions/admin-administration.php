@@ -44,7 +44,16 @@
   function administration_custom_column ( $column, $post_id ) {
     switch ( $column ) {
       case 'department':
-        echo get_post_meta ( $post_id, 'department', true ).(get_post_meta ( $post_id, 'department_head', true ) === "1"?" (Department Head)":"");
+        $depts = get_post_meta ( $post_id, 'department', true );
+        if(count($depts) > 1){ // they are in more than one dept
+          $v = '';
+          foreach($depts as $d){  // loop through and grab each department that this person is part of
+            $v .= ($v != ''?', '.$d:$d);
+          }
+          echo $v;
+        }else{  // they are only in one dept
+          echo $depts;
+        }
         break;
       case 'type':
         echo get_post_meta ( $post_id, 'type', true );
