@@ -95,14 +95,14 @@
 
 					<nav role="navigation" class="nu__mainmenu">
 
-						<input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" /><label for="nu__supernav-toggle">&#xE5C3Menu</label>
+						<input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" /><label for="nu__supernav-toggle">&#xE5C3;Menu</label>
 						<?php nudev_nav(); ?>
 						<?php if(get_query_var('pagename') != 'main-menu'){ echo '<div id="nu__supernav">'; get_template_part('loops/loop-supernav'); echo '</div>'; } ?>
 
 					</nav>
 
 					<div id="logo">
-						<a href="<?=home_url()?>" title="Northeastern University System">Northeastern University
+						<a href="<?=home_url()?>" title="Northeastern University System">Northeastern Universityy
 							<!-- <svg width="430px" height="57px" viewBox="0 0 430 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 							    <defs>
 							        <polygon id="path-1" points="0.165111111 13.3333333 8.53955556 13.3333333 8.53955556 0.568 0.165111111 0.568"></polygon>

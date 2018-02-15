@@ -7,7 +7,7 @@
 		"uuidString": "6222A5FD-DE82-4642-BE8D-77C1862D8725"
 		}
 	],
-"creatorBuild": "26261",
+"creatorBuild": "26268",
 "files": {
 	"\/.fonts\/MaterialIcons-Regular.eot": {
 		"cB": 0,
@@ -1384,6 +1384,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
