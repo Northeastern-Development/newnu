@@ -60,16 +60,16 @@
 
 
 		<script>
-  (function() {
-    var cx = '003005722642506293004:ijksvxamcbm';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
+			(function() {
+			var cx = '003005722642506293004:ijksvxamcbm';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
 
 
 
@@ -89,20 +89,20 @@
 
 				<div>
 
-					<!-- <div id="searchnav">
-						<gcse:search></gcse:search>
-					</div> -->
-
 					<nav role="navigation" class="nu__mainmenu">
 
 						<input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" /><label for="nu__supernav-toggle">&#xE5C3;Menu</label>
 						<?php nudev_nav(); ?>
 						<?php if(get_query_var('pagename') != 'main-menu'){ echo '<div id="nu__supernav">'; get_template_part('loops/loop-supernav'); echo '</div>'; } ?>
 
+						<div id="nu__searchbar"><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><input type="text" name="query" id="query" placeholder="Enter search query" /><button type="submit">&#xE8B6;</button></form></div>
+
 					</nav>
 
+
+
 					<div id="logo">
-						<a href="<?=home_url()?>" title="Northeastern University System">Northeastern Universityy
+						<a href="<?=home_url()?>" title="Northeastern University System">Northeastern University
 							<!-- <svg width="430px" height="57px" viewBox="0 0 430 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 							    <defs>
 							        <polygon id="path-1" points="0.165111111 13.3333333 8.53955556 13.3333333 8.53955556 0.568 0.165111111 0.568"></polygon>

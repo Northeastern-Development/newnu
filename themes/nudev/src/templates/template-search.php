@@ -8,7 +8,7 @@
 
 	<main id="search" role="main" aria-label="content" class="smooth">
 
-		This is the search page!
+		<gcse:searchresults-only></gcse:searchresults-only>
 
 	</main>
 <?php get_footer(); ?>
