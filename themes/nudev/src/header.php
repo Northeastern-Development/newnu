@@ -91,11 +91,16 @@
 
 					<nav role="navigation" class="nu__mainmenu">
 
-						<input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" /><label for="nu__supernav-toggle">&#xE5C3;Menu</label>
+						<input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" /><label for="nu__supernav-toggle"id="nu__supernav-toggle-label"><!-- &#xE5C3;Menu --></label>
+
+						<input id="nu__search-toggle" type="checkbox" title="Click to search all of Northeastern University" /><label for="nu__search-toggle" id="nu__search-toggle-label"></label>
+
 						<?php nudev_nav(); ?>
+
+
 						<?php if(get_query_var('pagename') != 'main-menu'){ echo '<div id="nu__supernav">'; get_template_part('loops/loop-supernav'); echo '</div>'; } ?>
 
-						<div id="nu__searchbar"><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><input type="text" name="query" id="query" placeholder="Enter search query" /><button type="submit">&#xE8B6;</button></form></div>
+						<div id="nu__searchbar"><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><input type="text" name="query" id="query" placeholder="Enter search query" title="Enter your search query here" /><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button></form></div>
 
 					</nav>
 

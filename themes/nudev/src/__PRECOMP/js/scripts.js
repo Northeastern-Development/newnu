@@ -52,6 +52,26 @@
 
 
 
+		// this will handle some preventitive measures in the main nav regarding overlap of options
+		$('nav').on('click','input#nu__supernav-toggle',function(){
+			$('input#nu__search-toggle').prop('checked',false);
+		});
+
+		$('nav').on('click','input#nu__search-toggle',function(){
+			$('input#nu__supernav-toggle').prop('checked',false);
+		});
+
+		$('nav').on('mouseover','li.nu__menu-iam',function(){
+			$('input#nu__search-toggle').prop('checked',false);
+			$('input#nu__supernav-toggle').prop('checked',false);
+		});
+
+
+
+
+
+
+
 
 		// this will handle the smoothstate page transitions
 

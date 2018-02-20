@@ -13,14 +13,18 @@ nav.nu__mainmenu{
   line-height: 50px;
   margin: 0 0 0 0;
   clear: both;
-  & > ul{
+  div.nu__menu-search{
     float: left;
+  }
+
+  & > ul{
+    float: right;
     width: auto;
     height: inherit;
-    margin: 0 0 0 0;
+    margin: 0 20px 0 0;
     list-style: none;
     list-style-type: none;
-    clear: right;
+    clear: none;
     & > li{
       float: left;
       &:first-child{
@@ -98,27 +102,31 @@ nav.nu__mainmenu{
 // the following bunch of styles handles the click event on the checkbox to hide and show the supernav
 // so that we do not need to use JS
 // ****************************************************************************************************
+
 input#nu__supernav-toggle {
-  float: left;
   height: 50px;
-  width: 50px;
+  width: 80px;
   position: absolute;
   top: 0;
-  left: 0;
-  margin: 0;
+  right: 0;
+  margin: 0 0 0 0;
   padding: 0;
   cursor: pointer;
   z-index: 100;
   opacity: 0;
-  &:hover ~ label{
+  &:hover ~ label#nu__supernav-toggle-label{
     color: rgba(255,255,255,1.0);
+    cursor: pointer;
   }
 
 }
 
-label{
-  float: left;
+label#nu__supernav-toggle-label{
+  float: right;
   color: rgba(133, 134, 135, 1.0);
+  &:before{
+    content: '\E5D2 Menu';
+  }
 }
 
 input#nu__supernav-toggle:checked ~ div#nu__supernav{
@@ -132,13 +140,24 @@ input#nu__supernav-toggle:checked ~ div#nu__supernav{
   transition: visibility 0s, opacity 0.10s linear;
 }
 
-input#nu__supernav-toggle:checked ~ label{
+input#nu__supernav-toggle:checked ~ div#nu__searchbar{
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  // -webkit-transition: visibility 0s, opacity 0.10s linear;
+  // -moz-transition: visibility 0s, opacity 0.10s linear;
+  // -ms-transition: visibility 0s, opacity 0.10s linear;
+  // -o-transition: visibility 0s, opacity 0.10s linear;
+  // transition: visibility 0s, opacity 0.10s linear;
+}
+
+input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   color: rgba(255,255,255,1.0);
+  &:before{
+    content: '\E14C Exit';
+  }
 }
 // ****************************************************************************************************
-
-
-
 
 
 
@@ -159,9 +178,7 @@ input#nu__supernav-toggle:checked ~ label{
   &.autoshow{
     opacity: 1;
     visibility: visible;
-    // display: block;
     height: 100%;
-    // position: fix;
     z-index: 0;
     margin: $header-height + 20 0 0 0;
   }
@@ -252,28 +269,95 @@ input#nu__supernav-toggle:checked ~ label{
 
 
 
+input#nu__search-toggle {
+  height: 50px;
+  width: 80px;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  margin: 0 0 0 0;
+  padding: 0;
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+  &:hover ~ label#nu__search-toggle-label{
+    color: rgba(255,255,255,1.0);
+    cursor: pointer;
+  }
+
+  // &:before{
+  //   content: 'Search';
+  // }
+
+}
+
+label#nu__search-toggle-label{
+  // display: none;
+  float: right;
+  color: rgba(133, 134, 135, 1.0);
+  margin: 0 20px 0 0;
+  &:before{
+    content: 'Search';
+  }
+}
+
+input#nu__search-toggle:checked ~ div#nu__searchbar{
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility 0s, opacity 0.10s linear;
+  -moz-transition: visibility 0s, opacity 0.10s linear;
+  -ms-transition: visibility 0s, opacity 0.10s linear;
+  -o-transition: visibility 0s, opacity 0.10s linear;
+  transition: visibility 0s, opacity 0.10s linear;
+}
+
+input#nu__search-toggle:checked ~ label#nu__search-toggle-label{
+  color: rgba(255,255,255,1.0);
+  // content: 'dfghdfghj';
+  &:before{
+    content: 'Cancel';
+  }
+}
+
+
+
+
+
+
+
+
 #nu__searchbar{
-  background: red;
+  background: rgba(0,0,0,1.0);
   width: 100%;
   float: right;
   height: auto;
   clear: left;
-  margin: 20px 0 0 0;
-
+  margin: 0 0 0 0;
+  height: 0;
+  overflow: hidden;
   & > form{
     & > input{
-      margin: 10px 10px 10px 10px;
-      height: 50px;
-      line-height: 50px;
+      margin: 0 10px 10px 10px;
+      height: 40px;
+      line-height: 40px;
       padding: 0 5px 0 5px;
       width: 80%;
     }
 
     & > button{
-      background: green;
+      background: none;
       border: none;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 2rem;
+      font-family: "Material Icons";
+      color: rgba(255,255,255,1.0);
+      &:hover{
+        cursor: pointer;
+        color: rgba(255,0,0,1.0);
+      }
     }
   }
 }
