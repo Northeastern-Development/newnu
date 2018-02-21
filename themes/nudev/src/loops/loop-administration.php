@@ -27,12 +27,6 @@
 	);
 
 
-	function testFunction(){
-		echo "this is for naught!!!";
-		echo "fgjfghj";
-	}
-
-
 
 
 
