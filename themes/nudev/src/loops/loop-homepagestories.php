@@ -26,6 +26,8 @@
 
 	// endwhile;
 
-	echo $content;
+	// echo $content;
+
+	echo '<section id="nu__stories"><ul><li>Many Experiences. One Northeastern.</li><li>Transformative Research</li><li>Vibrant Campus Life</li><li>A Better, Faster Food</li><li>The Global University System</li><li>Leading Change</li></ul></section>';
 
 ?>

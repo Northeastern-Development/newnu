@@ -196,7 +196,7 @@ header{
       // overflow: hidden;
       // background: green;
       & > a{
-        line-height: 50px;
+        line-height: $header-height;
         font-size: 3rem;
         color: white;
         // & img{

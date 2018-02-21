@@ -4,12 +4,6 @@
 
 		<?php $prefooter = (get_field('use_pre-footer',get_the_ID(),false) == 1?true:false); ?>
 
-		<?php
-
-			// echo 'PAGENAME: '.$_SERVER['REQUEST_URI'];
-
-		?>
-
 		<footer id="nu__global-footer" class="<?=($prefooter?'addprefooter ':'')?><?=(trim($_SERVER['REQUEST_URI']) === '/'?'collapse':'')?>">
 
 			<?php

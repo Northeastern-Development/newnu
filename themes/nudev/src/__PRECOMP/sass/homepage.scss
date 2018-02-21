@@ -15,18 +15,15 @@
 
 $columns: 3;
 
-main#homepage{
+main#nu__homepage{
 
-  // margin: ($header-height + 30) 0 0 0;
   width: $wrapper-width;
   margin: 0 0 0 0;
 
   background: rgba(0,0,0, 1.0);
 
 
-  section#topstories,
-  section#colleges,
-  section#campuses{
+  section#nu__stories{
     width: 100vw;
     clear: both;
     overflow: hidden;
@@ -70,18 +67,16 @@ main#homepage{
   }
 
 
-  section#topstories{
+  section#nu__stories{
 
     $columns: 3;
 
     $content-width: 100vw;
 
     $height: 20vw;
-    // $height: 350px;
 
     background: none;
     & > ul{
-      // padding: ($gutter * 2) 0 ($gutter * 2) 0;
       background: rgba(0,0,0,0.5);
       & > li{
         width: (($content-width) / $columns);
@@ -128,76 +123,6 @@ main#homepage{
         &:nth-child(3),
         &:nth-child(6){
           width: 27vw;
-        }
-
-
-      }
-    }
-  }
-
-  section#colleges{
-
-    $columns: 3;
-
-    $content-width: 100vw;
-
-    background: none;
-    & > ul{
-      padding: ($gutter * 2) 0 ($gutter * 2) 0;
-      background: rgba(0,0,0,0.5);
-      & > li{
-        width: (($content-width - ($gutter * ($columns - 1))) / $columns);
-        margin: 0 $gutter $gutter 0;
-        height: 300px;
-        line-height: 300px;
-        padding: 0 0 0 0;
-        background: green;
-        &:nth-child(3n){
-          margin: 0 0 $gutter 0;
-        }
-      }
-    }
-  }
-
-
-  section#campuses{
-
-    $columns: 5;
-
-    $content-width: 100vw;
-    margin: 0 0 0 0;
-
-    background: none;
-    & > ul{
-      padding: ($gutter * 2) 0 ($gutter * 2) 0;
-      background: rgba(0,0,0,0.5);
-      & > li{
-        width: (($content-width) / $columns);
-        margin: 0 0 $gutter 0;
-        height: 400px;
-        line-height: 400px;
-        padding: 0 0 0 0;
-        background: green;
-
-
-        &:nth-child(1){
-          background: red;
-        }
-
-        &:nth-child(2){
-          background: green;
-        }
-
-        &:nth-child(3){
-          background: blue;
-        }
-
-        &:nth-child(4){
-          background: yellow;
-        }
-
-        &:nth-child(5){
-          background: purple;
         }
 
 
