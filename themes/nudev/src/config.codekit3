@@ -71,6 +71,19 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/__PRECOMP\/sass\/homepage.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/homepage.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/__PRECOMP\/sass\/modules\/fonts.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -106,6 +119,45 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/__PRECOMP\/sass\/modules\/variables.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/partials\/footer.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/__PRECOMP\/sass\/partials\/footer.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/partials\/header.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/__PRECOMP\/sass\/partials\/header.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/partials\/nav.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/__PRECOMP\/sass\/partials\/nav.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -282,6 +334,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/css\/homepage.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/homepage-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/css\/landing.css": {
 		"aP": 1,
 		"bl": 0,
@@ -349,6 +411,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/staff-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/style-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -644,6 +716,20 @@
 		"opt": 0,
 		"oT": 1,
 		"q": 100
+		},
+	"\/footer.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/footer.php",
+		"oF": 0
+		},
+	"\/functions.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/functions.php",
+		"oF": 0
 		},
 	"\/functions\/admin-administration.php": {
 		"cB": 0,
@@ -1071,6 +1157,13 @@
 		"oAP": "\/loops\/loop-alerts.php",
 		"oF": 0
 		},
+	"\/loops\/loop-homepagestories.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-homepagestories.php",
+		"oF": 0
+		},
 	"\/loops\/loop-prefooter.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1230,6 +1323,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/template-content.php",
+		"oF": 0
+		},
+	"\/templates\/template-homepage.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/template-homepage.php",
 		"oF": 0
 		},
 	"\/templates\/template-include.php": {

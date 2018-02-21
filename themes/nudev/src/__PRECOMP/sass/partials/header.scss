@@ -149,7 +149,7 @@ header{
 
 
   & > div{
-    width: $content-width;
+    width: 90vw;
     margin: 0 auto 0 auto;
     height: $header-height;
     position: relative;
@@ -199,10 +199,10 @@ header{
         line-height: $header-height;
         font-size: 3rem;
         color: white;
-        // & img{
-        //   height: 80px;
-        //   margin: 0 0 0 0;
-        // }
+        & > img{
+          height: 50px;
+          margin: 0 0 10px 0;
+        }
         // & svg{
         //   height: 80px;
         //   margin: 0 0 0 0;

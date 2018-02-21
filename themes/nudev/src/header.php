@@ -107,7 +107,7 @@
 
 
 					<div id="logo">
-						<a href="<?=home_url()?>" title="Northeastern University System">Northeastern University
+						<a href="<?=home_url()?>" title="Northeastern University System"><img src="<?=home_url()?>/wp-content/uploads/logo.png" alt="northeastern university logo" />
 							<!-- <svg width="430px" height="57px" viewBox="0 0 430 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 							    <defs>
 							        <polygon id="path-1" points="0.165111111 13.3333333 8.53955556 13.3333333 8.53955556 0.568 0.165111111 0.568"></polygon>

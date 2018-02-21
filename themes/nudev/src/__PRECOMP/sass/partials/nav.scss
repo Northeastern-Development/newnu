@@ -67,12 +67,13 @@ nav.nu__mainmenu{
       }
       &.current-menu-item{
         & > a{
-          color: rgba(255,255,255, 1.0);
+          color: rgba(133, 134, 135, 1.0);
         }
       }
       & > a{
         display: block;
-        color: rgba(133, 134, 135, 1.0);
+
+        color: rgba(255,255,255, 1.0);
         padding: 0 0 0 ($gutter * 1);
         height: inherit;
         line-height: inherit;
@@ -83,7 +84,8 @@ nav.nu__mainmenu{
       &.active,
       &:hover{
         & > a{
-          color: rgba(255,255,255, 1.0);
+          // color: rgba(255,255,255, 1.0);
+          color: rgba(133, 134, 135, 1.0);
         }
       }
     }
@@ -115,7 +117,8 @@ input#nu__supernav-toggle {
   z-index: 100;
   opacity: 0;
   &:hover ~ label#nu__supernav-toggle-label{
-    color: rgba(255,255,255,1.0);
+    // color: rgba(255,255,255,1.0);
+    color: rgba(133, 134, 135, 1.0);
     cursor: pointer;
   }
 
@@ -123,9 +126,10 @@ input#nu__supernav-toggle {
 
 label#nu__supernav-toggle-label{
   float: right;
-  color: rgba(133, 134, 135, 1.0);
+  // color: rgba(133, 134, 135, 1.0);
+  color: rgba(255,255,255,1.0);
   &:before{
-    content: '\E5D2 Menu';
+    content: 'Menu \E5D2';
   }
 }
 
@@ -154,7 +158,7 @@ input#nu__supernav-toggle:checked ~ div#nu__searchbar{
 input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   color: rgba(255,255,255,1.0);
   &:before{
-    content: '\E14C Exit';
+    content: 'Exit \E14C';
   }
 }
 // ****************************************************************************************************
@@ -281,7 +285,8 @@ input#nu__search-toggle {
   z-index: 100;
   opacity: 0;
   &:hover ~ label#nu__search-toggle-label{
-    color: rgba(255,255,255,1.0);
+    // color: rgba(255,255,255,1.0);
+    color: rgba(133, 134, 135, 1.0);
     cursor: pointer;
   }
 
@@ -294,10 +299,11 @@ input#nu__search-toggle {
 label#nu__search-toggle-label{
   // display: none;
   float: right;
-  color: rgba(133, 134, 135, 1.0);
+  // color: rgba(133, 134, 135, 1.0);
+  color: rgba(255,255,255,1.0);
   margin: 0 20px 0 0;
   &:before{
-    content: 'Search';
+    content: 'Search \E8B6';
   }
 }
 
