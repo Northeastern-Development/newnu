@@ -1,0 +1,102 @@
+/*
+ * homepage
+ */
+/**
+ * modules/variables
+ * ---
+ */
+/**
+ * Typography
+ */
+/**
+ * Colors
+ */
+/**
+ * Grid
+ */
+/* These are variables for the header */
+/* These are variables for the main navigation */
+/**
+ * modules/mixins
+ * ---
+ */
+/**
+ * modules/fonts
+ * ---
+ * Declare fonts here
+ */
+/*
+@font-face {
+  font-family: "Font-Name";
+  src: url("fonts/font-name.eot");
+  src: url("fonts/font-name.eot?#iefix") format("embedded-opentype"),
+    url("fonts/font-name.woff") format("woff"),
+    url("fonts/font-name.ttf") format("truetype"),
+    url("fonts/font-name.svg#font-name") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+main#nu__homepage {
+  width: 100vw;
+  margin: 0 0 0 0;
+  background: black; }
+  main#nu__homepage section#nu__stories {
+    width: 100vw;
+    clear: both;
+    overflow: hidden;
+    margin: 0 auto 0 auto;
+    padding: 0 0 0 0;
+    margin-bottom: 4vw; }
+    main#nu__homepage section#nu__stories > div.nu__section-header {
+      width: 80vw;
+      height: 50px;
+      margin: 0 auto 0 auto;
+      display: flex;
+      flex-direction: row; }
+      main#nu__homepage section#nu__stories > div.nu__section-header > div {
+        flex: 1;
+        margin: 25px 0 0 0;
+        height: 1px;
+        background: white; }
+      main#nu__homepage section#nu__stories > div.nu__section-header > h3 {
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0 3vw 0 3vw;
+        line-height: 50px; }
+    main#nu__homepage section#nu__stories > ul {
+      background: black;
+      list-style: none;
+      list-style-type: none;
+      overflow: hidden; }
+      main#nu__homepage section#nu__stories > ul > li {
+        background: black;
+        float: left;
+        text-align: center; }
+  main#nu__homepage section#nu__stories {
+    background: none; }
+    main#nu__homepage section#nu__stories > ul {
+      background: rgba(0, 0, 0, 0.5); }
+      main#nu__homepage section#nu__stories > ul > li {
+        width: 33.3333333333vw;
+        height: 20vw;
+        line-height: 20vw;
+        padding: 0 0 0 0; }
+        main#nu__homepage section#nu__stories > ul > li:nth-child(1) {
+          background: red; }
+        main#nu__homepage section#nu__stories > ul > li:nth-child(2) {
+          background: green; }
+        main#nu__homepage section#nu__stories > ul > li:nth-child(3) {
+          background: blue; }
+        main#nu__homepage section#nu__stories > ul > li:nth-child(4) {
+          background: yellow; }
+        main#nu__homepage section#nu__stories > ul > li:nth-child(5) {
+          background: purple; }
+        main#nu__homepage section#nu__stories > ul > li:nth-child(6) {
+          background: orange; }
+        main#nu__homepage section#nu__stories > ul > li:nth-child(1), main#nu__homepage section#nu__stories > ul > li:nth-child(5) {
+          width: 40vw; }
+        main#nu__homepage section#nu__stories > ul > li:nth-child(2), main#nu__homepage section#nu__stories > ul > li:nth-child(4) {
+          width: 33vw; }
+        main#nu__homepage section#nu__stories > ul > li:nth-child(3), main#nu__homepage section#nu__stories > ul > li:nth-child(6) {
+          width: 27vw; }

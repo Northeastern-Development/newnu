@@ -95,7 +95,6 @@
 
 		// this will handle the accordion functionality for the supernav
 		$('#nu__supernav > section:nth-child(2) > ul').on('click','li',function(e){
-			// console.log(this);
 			$('#nu__supernav > section:nth-child(2) > ul li').removeClass('active');
 			$(this).addClass('active');
 		});
@@ -124,17 +123,29 @@
 
 
 
+		// this will handle bringing up the footer on the homepage
+		$('div.nu__footer').on('click','.js_footer-hideshow',function(e){
+			if($('footer#nu__global-footer').hasClass('collapse')){
+				$('footer#nu__global-footer').removeClass('collapse');
+			}else{
+				$('footer#nu__global-footer').addClass('collapse');
+			}
+		});
+
+
+
+
+
 		// let's listen for the page to scroll and handle some events
 		$(window).on("scroll",function(){
 			// console.log('scrolled!');
 
 			// if we have scrolled more than 300px, we should show the back to top button
-			if($(document).scrollTop() >= 400 && $(".js__backtotop").css("display") != "block"){
-				// console.log('show the back to top');
-				hideShowBackTop();
-			}else if($(document).scrollTop() < 400 && $(".js__backtotop").css("display") == "block"){
-				hideShowBackTop();
-			}
+			// if($(document).scrollTop() >= 400 && $(".js__backtotop").css("display") != "block"){
+			// 	hideShowBackTop();
+			// }else if($(document).scrollTop() < 400 && $(".js__backtotop").css("display") == "block"){
+			// 	hideShowBackTop();
+			// }
 
 		});
 

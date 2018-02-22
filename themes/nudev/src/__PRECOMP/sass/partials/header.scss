@@ -16,7 +16,7 @@ header{
   flex: none;
   z-index: 1000;
 
-  border-bottom: solid rgba(255,255,255,0.75) 1px;
+  border-bottom: solid rgba(255,255,255,1) 1px;
 
   div#nu__alerts{
     display: block;
@@ -151,7 +151,7 @@ header{
 
 
   & > div{
-    width: 90vw;
+    width: $content-width-wide;
     margin: 0 auto 0 auto;
     height: $header-height;
     position: relative;

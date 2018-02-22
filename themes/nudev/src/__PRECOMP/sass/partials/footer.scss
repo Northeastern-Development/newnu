@@ -22,28 +22,57 @@
 
  footer{
    flex: none;
-   background: rgba(45, 46, 47, 1.0);
+   background: rgba(0,0,0,1.0);
+   background-image: url(/wp-content/uploads/footer-watermark.png);
+   background-repeat: no-repeat;
+   background-size: 202px 240px;
+   background-position: right bottom;
+
+   overflow: hidden;
+
    color: rgba(255,255,255,1.0);
    font-size: 1rem;
-   letter-spacing: 0.03em;
+   letter-spacing: 1px;
    width: 100%;
-   height: 200px;
+   height: 240px;
    padding: 0 0 0 0;
    font-family: Arial,Verdana,sans-serif;
    &.addprefooter{
-     height: 500px;
+     height: 540px;
    }
    &.collapse{
      height: 40px;
      overflow: hidden;
+     background: none;
      & > div.nu__footer{
-       display: none;
+       // display: none;
+       padding: 0 0 0 0;
+       height: inherit;
+       & > div.nu__footer-hideshow{
+        display: block;
+
+        &:hover{
+          color: Red;
+        }
+       }
      }
-     & > div.nu__footer-hideshow{
-      display: block;
-      &:hover{
-        color: Red;
-      }
+
+   }
+   &.absolute{
+     position: absolute;
+     bottom: 0;
+     z-index: 100;
+     & > div.nu__footer{
+       // display: none;
+       padding: 0 0 0 0;
+       // height: inherit;
+       & > div.nu__footer-hideshow{
+        display: block;
+
+        &:hover{
+          color: Red;
+        }
+       }
      }
    }
    & > div.nu__prefooter{
@@ -57,78 +86,100 @@
        margin: 0 auto 0 auto;
      }
    }
-   & > div.nu__footer-hideshow{
-     display: none;
-     text-align: center;
-     height: 40px;
-     line-height: 40px;
-     // background: red;
-     font-family: "Material Icons";
-     font-size: 2rem;
-     &:hover{
-       cursor: pointer;
-     }
-   }
+
    & > div.nu__footer{
-     padding: 20px 0 20px 0;
-    width: $content-width;
-    margin: nth($wrapper-margins, 1) nth($wrapper-margins, 2) nth($wrapper-margins, 3) nth($wrapper-margins, 4);
+     border-top: solid rgba(255,255,255,1) 1px;
+    padding: 40px 0 20px 0;
+    width: $wrapper-width;
+    height: inherit;
+    margin: 0 auto 0 auto;
      position: relative;
-     & > a{
-       color: rgba(255,255,255,1.0);
-       float: left;
-       margin-right: 20px;
-       & > img,
-       & > svg{
-        fill: rgba(255,255,255,1.0);
-        height: 1.5vw;
+     & > div.nu__footer-hideshow{
+       display: none;
+       text-align: center;
+       height: 40px;
+       line-height: 40px;
+       font-family: "Material Icons";
+       font-size: 2rem;
+       &:hover{
+         cursor: pointer;
        }
      }
      & > div{
-       float: right;
-       & > ul{
-         display: inline;
-         font-size: 1.2rem;
-         list-style-type: none;
-         list-style: none;
+      width: $content-width-wide;
+      margin: 0 auto 0 auto;
+       & > a{
          color: rgba(255,255,255,1.0);
-         & > li{
-           float: left;
-           margin: 0 0 0 10px;
-           & > a{
-             color: rgba(255,255,255,1.0);
-             text-decoration: none;
-             font-family: Arial,Verdana,sans-serif;
-             &:visited{
-               color: rgba(255,255,255,1.0);
-               text-decoration: none;
-             }
-             &:hover,
-             &:active{
-               color: rgba(255,255,255,1.0) !important;
-               text-decoration: underline !important;
-             }
-           }
+         float: left;
+         margin-right: 20px;
+         & > img,
+         & > svg{
+          fill: rgba(255,255,255,1.0);
+          height: 1.5vw;
          }
        }
+
+          & > div{
+            width: 65%;
+            height: auto;
+            clear: both;
+            margin: 0 0 0 0;
+            overflow: hidden;
+            &:nth-child(1){
+              border-top: solid rgba(255,255,255,1.0) 1px;
+              padding: 10px 0 0 0;
+            }
+            & > p{
+              float: left;
+              font-size: 1.4rem;
+              text-transform: uppercase;
+              width: 200px;
+              margin: 0 0 10px 0;
+            }
+
+            & > ul{
+              list-style: none;
+              list-style-type: none;
+              & > li{
+                float: left;
+                margin: 0 20px 0 0;
+                &:last-child{
+                  margin: 0 0 0 0;
+                }
+                & > a{
+                  color: rgba(255,255,255,1.0);
+                  font-size: 1.2rem;
+                  &:hover{
+                    color: red;
+                  }
+                  & > svg{
+                    height: 30px;
+                  }
+                }
+              }
+            }
+
+         }
+
        & > p{
+         clear: both;
          font-size: 100%;
          height: auto;
          line-height: 1.4rem;
-         margin: 0;
+         margin: 20px 0 0 0;;
          padding: 0;
          color: #ccc;
-         text-align: right;
-           & > a{
-             color: #ccc;
-             &:hover{
-               color: #ccc !important;
-               text-decoration: underline !important;
-             }
+         & > a{
+           color: #ccc;
+           &:hover{
+             color: #ccc !important;
+             text-decoration: underline !important;
            }
+         }
        }
-     }
+    }
    }
+
  }
 
 

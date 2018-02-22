@@ -160,7 +160,7 @@ input#nu__supernav-toggle:checked ~ div#nu__searchbar{
 input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   color: rgba(255,255,255,1.0);
   &:before{
-    content: 'Exit \E14C';
+    content: 'Close \E14C';
   }
 }
 // ****************************************************************************************************
