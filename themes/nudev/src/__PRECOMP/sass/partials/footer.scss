@@ -45,7 +45,6 @@
      overflow: hidden;
      background: none;
      & > div.nu__footer{
-       // display: none;
        padding: 0 0 0 0;
        height: inherit;
        & > div.nu__footer-hideshow{
@@ -63,9 +62,7 @@
      bottom: 0;
      z-index: 100;
      & > div.nu__footer{
-       // display: none;
        padding: 0 0 0 0;
-       // height: inherit;
        & > div.nu__footer-hideshow{
         display: block;
 
