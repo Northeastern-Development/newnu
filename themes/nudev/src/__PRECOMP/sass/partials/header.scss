@@ -16,6 +16,8 @@ header{
   flex: none;
   z-index: 1000;
 
+  border-bottom: solid rgba(255,255,255,0.75) 1px;
+
   div#nu__alerts{
     display: block;
     width: $wrapper-width;

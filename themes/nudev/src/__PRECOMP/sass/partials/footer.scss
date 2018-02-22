@@ -41,6 +41,9 @@
      }
      & > div.nu__footer-hideshow{
       display: block;
+      &:hover{
+        color: Red;
+      }
      }
    }
    & > div.nu__prefooter{

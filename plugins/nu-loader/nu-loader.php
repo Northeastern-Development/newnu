@@ -214,7 +214,7 @@ function wp_header(){
 // add_action('wp_head','nu_styles');
 // add_action('wp_head','nu_scripts');
 // add_action('wp_head','nu_set_keys');
-add_action('wp_footer','nu_global_footer');
+// add_action('wp_footer','nu_global_footer');
 
 
 

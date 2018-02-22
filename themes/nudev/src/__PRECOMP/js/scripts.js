@@ -93,6 +93,17 @@
 
 
 
+		// this will handle the accordion functionality for the supernav
+		$('#nu__supernav > section:nth-child(2) > ul').on('click','li',function(e){
+			// console.log(this);
+			$('#nu__supernav > section:nth-child(2) > ul li').removeClass('active');
+			$(this).addClass('active');
+		});
+
+
+
+
+
 
 
 
@@ -114,7 +125,7 @@
 
 
 		// let's listen for the page to scroll and handle some events
-		$(window).on("scroll resize",function(){
+		$(window).on("scroll",function(){
 			// console.log('scrolled!');
 
 			// if we have scrolled more than 300px, we should show the back to top button
@@ -124,6 +135,15 @@
 			}else if($(document).scrollTop() < 400 && $(".js__backtotop").css("display") == "block"){
 				hideShowBackTop();
 			}
+
+		});
+
+
+
+
+
+		// let's listen for the page to resize and handle some events
+		$(window).on("resize",function(){
 
 			getWindowSize();
 
