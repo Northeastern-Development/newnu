@@ -27,11 +27,34 @@
 
 
 
+
+
+
+
+
 		// set up some common animation speeds
 		var animationSpeeds = Array(
 			 200
 			,1000
 		);
+		var windowSize = Array(0,0);
+
+
+
+
+
+
+		// we need to pass the browser window size to PHP so that we can better tailor responsive imagery all around
+
+		function getWindowSize(){
+			windowSize[0] = $(window).height();
+			windowSize[1] = $(window).width();
+			$.post("/wp-content/themes/nudev/src/windowsize.php",{"height":windowSize[0],"width":windowSize[1]},function(data){
+					console.log(data);
+    	});
+		}
+
+		getWindowSize();
 
 
 
@@ -101,6 +124,8 @@
 			}else if($(document).scrollTop() < 400 && $(".js__backtotop").css("display") == "block"){
 				hideShowBackTop();
 			}
+
+			getWindowSize();
 
 		});
 
@@ -395,7 +420,9 @@
 
 
 
-
+		// $(window).on("resize",function(){
+		//
+		// });
 
 
 

@@ -1366,6 +1366,13 @@
 		"oA": 0,
 		"oAP": "\/templates\/template-static.php",
 		"oF": 0
+		},
+	"\/windowsize.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/windowsize.php",
+		"oF": 0
 		}
 	},
 "hooks": [
