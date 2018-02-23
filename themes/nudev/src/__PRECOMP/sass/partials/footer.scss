@@ -37,6 +37,15 @@
    height: 240px;
    padding: 0 0 0 0;
    font-family: Arial,Verdana,sans-serif;
+
+
+   -webkit-transition: height 0.20s linear;
+   -moz-transition: height 0.20s linear;
+   -ms-transition: height 0.20s linear;
+   -o-transition: height 0.20s linear;
+   transition: height 0.20s linear;
+
+
    &.addprefooter{
      height: 540px;
    }

@@ -143,6 +143,18 @@
 			}else{
 				$('footer#nu__global-footer').addClass('collapse');
 			}
+
+
+
+
+			// $('html, body').animate({ scrollTop: 0 },animationSpeeds[1], function () {
+      //   // alert("reached top");
+			// 	$(".js__backtotop").fadeOut(animationSpeeds[0]);
+    	// });
+
+
+
+
 		});
 
 
@@ -251,22 +263,22 @@
 
 
 		// this will listen for key presses to perform various functions
-		$(document).keyup(function(e){
-
-			// 'm' key to open the super nav
-	    if(e.keyCode == 77){
-				 if($('#supernav').css('opacity') === '0'){
-					 // hideShowSuperNav();
-				 }
-	    }
-
-			// escape key to close the super nav
-	    if(e.keyCode == 27){
-				 if($('#supernav').css('opacity') === '1'){
-					 // hideShowSuperNav();
-				 }
-	    }
-		});
+		// $(document).keyup(function(e){
+		//
+		// 	// 'm' key to open the super nav
+	  //   if(e.keyCode == 77){
+		// 		 if($('#supernav').css('opacity') === '0'){
+		// 			 // hideShowSuperNav();
+		// 		 }
+	  //   }
+		//
+		// 	// escape key to close the super nav
+	  //   if(e.keyCode == 27){
+		// 		 if($('#supernav').css('opacity') === '1'){
+		// 			 // hideShowSuperNav();
+		// 		 }
+	  //   }
+		// });
 
 
 
