@@ -62,89 +62,24 @@ header{
   height: 30px;
   // overflow: hidden;
   overflow: visible;
-  width: $wrapper-width;
-  margin: 0 0 0 0;
-  //   z-index: 1000;
-  //   height: auto;
-  //   width: auto;
-  //   right: 0;
-  //   margin: 20px 15vw 20px 0;
-  //   & > div{
-  //     float: right;
-  //     display: block;
-  //     & > a{
-  //       padding: 0 15px 0 15px;
-  //       font-size: 1.2rem;
-  //       color: rgba(189, 189, 189, 1.0);
-  //       letter-spacing: 0.43px;
-  //       &:hover{
-  //         text-decoration: underline;
-  //         color: rgba(217, 183, 77, 1.0);
-  //       }
-  //       &:last-child{
-  //         padding: 0 0 0 0;
-  //         font-size: 2.5rem;
-  //         &:hover{
-  //           text-decoration: none;
-  //         }
-  //       }
-  //     }
-  //   }
-    & > ul{
-      width: $content-width;
-      // float: right;
-      list-style: none;
-      list-style-type: none;
-      height: 30px;
-      overflow: hidden;
-      // background: red;
-      margin: 0 auto 0 auto;
-      line-height: 30px;
-      &.open{
-        height: auto;
-        background: rgba(99, 99, 99, 1.0);
-        & li{
-          & a{
-            color: rgba(255,255,255,1.0);
-          }
-        }
-      }
-      & > li{
-        float: right;
-        display: inline-block;
-        text-align: right;
-        padding: 0 10px 0 10px;
-        text-transform: uppercase;
-        line-height: 1.0rem;
-        &:last-child{
-          padding: 0 0 0 10px;
-        }
-        &.nu__alert{
-          & > a{
-            color: rgba(247, 204, 72, 1.0);
-          }
-          & > a:hover{
-            color: rgba(247, 204, 72, 1.0);
-          }
-        }
-        &.current-menu-item{
-          & > a{
-            text-decoration: underline;
-            color: rgba(255,255,255, 1.0);
-          }
-        }
-        & > a{
-          line-height: 30px;
-          font-size: 1.1rem;
-          color: rgba(189, 189, 189, 1.0);
-          letter-spacing: 0.43px;
-          &:hover{
-            text-decoration: underline;
-            color: rgba(255,255,255, 1.0);
-          }
-        }
+  width: $content-width-wide;
+  margin: 0 auto 0 auto;
+
+
+    & > a{
+      display: block;
+      float: left;
+      height: inherit;
+      & > img{
+        height: inherit;
       }
     }
+
+    & > div{
+      height: inherit;
+      overflow: hidden;
+    }
+
   }
 
 

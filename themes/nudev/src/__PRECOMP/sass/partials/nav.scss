@@ -107,7 +107,7 @@ nav.nu__mainmenu{
 div#nu__mainmenu-supernav{
   float: right;
   height: inherit;
-  width: 70px;
+  width: 77px;
   top: 0;
   right: 0;
   margin: 0 0 0 0;
@@ -181,12 +181,15 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   left: 0;
   width: $wrapper-width;
   margin: $header-height 0 0 0;
+  &.utilitystyle{
+    margin: 40px 0 0 0;
+    line-height: 70px;
+  }
   &.autoshow{
     opacity: 1;
     visibility: visible;
     height: 100%;
-    z-index: 0;
-    margin: $header-height + 20 0 0 0;
+    line-height: 70px;
   }
 
   & > section{
@@ -312,7 +315,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   div#nu__mainmenu-iamnav{
     float: right;
     height: inherit;
-    width: 70px;
+    width: 75px;
     top: 0;
     right: 0;
     margin: 0 0 0 0;
@@ -390,8 +393,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
       opacity: 1;
       visibility: visible;
       height: 100%;
-      z-index: 0;
-      margin: $header-height + 20 0 0 0;
+      line-height: 70px;
     }
 
     & > section{
@@ -565,7 +567,7 @@ input#nu__search-toggle:checked ~ div#nu__searchbar{
 input#nu__search-toggle:checked ~ label#nu__search-toggle-label{
   color: rgba(255,255,255,1.0);
   &:before{
-    content: 'Cancel \E8B6';
+    content: 'Close \E14C';
   }
 }
 

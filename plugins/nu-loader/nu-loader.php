@@ -191,6 +191,43 @@ function nu_global_footer(){
 }
 /* END FUNCTION ******************************************************** */
 
+
+
+
+
+/* ***********************************************************************
+
+FUNCTION: nu_supernav
+
+Description
+This function will make a call to the resource center on edu and echo the
+returned supernav into a utility area at the top of the page
+
+Inputs:
+NA
+
+Outputs:
+HTML content
+
+*********************************************************************** */
+function nu_supernav(){
+
+  global $baseUrls;
+
+  // this is an example of the global style utility supernav that can be pulled into any requesting site
+  $url = 'http://newnu.local/resources/components/?return=main-menu';
+  $curl = curl_init($url);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+  echo curl_exec($curl);
+  curl_close($curl);
+
+}
+/* END FUNCTION ******************************************************** */
+
+
+
+
+
 // this will add a monitor tag to the header for tracking purposes
 function nu_set_keys(){
   // echo '<!-- NU Global Footer, v1.0.0 [key:'.md5(get_home_url().'-footer-'.date("Ymd")).'] -->';
@@ -215,6 +252,9 @@ function wp_header(){
 // add_action('wp_head','nu_scripts');
 // add_action('wp_head','nu_set_keys');
 // add_action('wp_footer','nu_global_footer');
+
+
+// add_action('wp_header','nu_supernav');
 
 
 

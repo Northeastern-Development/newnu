@@ -8,6 +8,7 @@
     add_feed('corporation', 'corporationRSSFunc');
     add_feed('administration', 'administrationRSSFunc');
     add_feed('alerts', 'alertsRSSFunc');
+    add_feed('supernav', 'supernavRSSFunc');
 
   }
 
@@ -41,6 +42,12 @@
   function alertsRSSFunc(){
     header( 'Content-Type: application/rss+xml; charset=' . get_option( 'blog_charset' ), true );
     require_once( get_template_directory() . '/templates/rss/rss-alerts.php' );
+  }
+
+  // university main menu
+  function supernavRSSFunc(){
+    header( 'Content-Type: application/rss+xml; charset=' . get_option( 'blog_charset' ), true );
+    require_once( get_template_directory() . '/templates/rss/rss-supernav.php' );
   }
 
 ?>

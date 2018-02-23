@@ -87,6 +87,17 @@
 
 			<header role="banner"><?php if(function_exists("wp_header")){wp_header();} ?>
 
+				<?php
+
+					// // this is an example of the global style utility nav that can be pulled from the main edu site
+					// $url = 'http://newnu.local/resources/components/?return=main-menu';
+					// $curl = curl_init($url);
+					// curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+					// // echo curl_exec($curl);
+					// curl_close($curl);
+
+				?>
+
 				<div>
 
 					<nav role="navigation" class="nu__mainmenu">

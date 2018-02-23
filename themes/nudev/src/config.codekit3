@@ -1315,6 +1315,13 @@
 		"oAP": "\/templates\/rss\/rss-corporation.php",
 		"oF": 0
 		},
+	"\/templates\/rss\/rss-supernav.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/rss\/rss-supernav.php",
+		"oF": 0
+		},
 	"\/templates\/template-administration.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1329,6 +1336,13 @@
 		"oAP": "\/templates\/template-audience.php",
 		"oF": 0
 		},
+	"\/templates\/template-component.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/template-component.php",
+		"oF": 0
+		},
 	"\/templates\/template-content.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1341,6 +1355,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/template-homepage.php",
+		"oF": 0
+		},
+	"\/templates\/template-iammenu.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/template-iammenu.php",
 		"oF": 0
 		},
 	"\/templates\/template-include.php": {
