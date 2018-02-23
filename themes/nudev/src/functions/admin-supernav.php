@@ -5,7 +5,7 @@
   register_post_type('supernav', // Register Custom Post Type
     array(
     'labels' => array(
-      'name' => __('Main Nav', 'nudev'), // Rename these to suit
+      'name' => __('Super Nav', 'nudev'), // Rename these to suit
       'singular_name' => __('Main Nav', 'nudev'),
       'add_new' => __('Add New', 'nudev'),
       'add_new_item' => __('Add New', 'nudev'),
@@ -71,6 +71,7 @@
          'About' => 'About'
         ,'Academics' => 'Academics'
         ,'Admissions' => 'Admissions'
+        ,'Audience' => 'Audience'
         ,'Campus Activity' => 'Campus Activity'
         ,'Experiential Learning' => 'Experiential Learning'
         ,'Global' => 'Global'

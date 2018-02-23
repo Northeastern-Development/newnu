@@ -81,19 +81,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/__PRECOMP\/sass\/homepage.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/__PRECOMP\/sass\/homepage.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/__PRECOMP\/sass\/modules\/fonts.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1179,6 +1166,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/loops\/loop-homepagestories.php",
+		"oF": 0
+		},
+	"\/loops\/loop-iamnav.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-iamnav.php",
 		"oF": 0
 		},
 	"\/loops\/loop-prefooter.php": {

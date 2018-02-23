@@ -103,9 +103,13 @@
 							<div id="nu__searchbar"><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><input type="text" name="query" id="query" placeholder="Enter search query" title="Enter your search query here" /><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><br />We can add in some more information here if we want to.</form></div>
 						</div>
 
-						<?php nudev_nav(); ?>
+						<div id="nu__mainmenu-iamnav">
+							<input id="nu__iamnav-toggle" type="checkbox" title="Click to show/hide audience selection menu" />
+							<label for="nu__iamnav-toggle"id="nu__iamnav-toggle-label"></label>
+							<?php if(get_query_var('pagename') != 'iam-menu'){ echo '<div id="nu__iamnav">'; get_template_part('loops/loop-iamnav'); echo '</div>'; } ?>
+						</div>
 
-						<!-- <div id="nu__searchbar"><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><input type="text" name="query" id="query" placeholder="Enter search query" title="Enter your search query here" /><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button></form></div> -->
+						<?php // nudev_nav(); ?>
 
 					</nav>
 

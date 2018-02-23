@@ -78,16 +78,23 @@
 		// this will handle some preventitive measures in the main nav regarding overlap of options
 		$('nav').on('click','input#nu__supernav-toggle',function(){
 			$('input#nu__search-toggle').prop('checked',false);
+			$('input#nu__iamnav-toggle').prop('checked',false);
+		});
+
+		$('nav').on('click','input#nu__iamnav-toggle',function(){
+			$('input#nu__search-toggle').prop('checked',false);
+			$('input#nu__supernav-toggle').prop('checked',false);
 		});
 
 		$('nav').on('click','input#nu__search-toggle',function(){
 			$('input#nu__supernav-toggle').prop('checked',false);
+			$('input#nu__iamnav-toggle').prop('checked',false);
 		});
 
-		$('nav').on('mouseover','li.nu__menu-iam',function(){
-			$('input#nu__search-toggle').prop('checked',false);
-			$('input#nu__supernav-toggle').prop('checked',false);
-		});
+		// $('nav').on('mouseover','li.nu__menu-iam',function(){
+		// 	$('input#nu__search-toggle').prop('checked',false);
+		// 	$('input#nu__supernav-toggle').prop('checked',false);
+		// });
 
 
 
@@ -96,6 +103,12 @@
 		// this will handle the accordion functionality for the supernav
 		$('#nu__supernav > section:nth-child(2) > ul').on('click','li',function(e){
 			$('#nu__supernav > section:nth-child(2) > ul li').removeClass('active');
+			$(this).addClass('active');
+		});
+
+		// this will handle the accordion functionality for the iamnav
+		$('#nu__iamnav > section:nth-child(2) > ul').on('click','li',function(e){
+			$('#nu__iamnav > section:nth-child(2) > ul li').removeClass('active');
 			$(this).addClass('active');
 		});
 

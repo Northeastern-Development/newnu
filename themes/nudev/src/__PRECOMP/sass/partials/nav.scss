@@ -166,11 +166,6 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
 // ****************************************************************************************************
 
 
-
-
-
-
-
 #nu__supernav{
   opacity: 0;
   // opacity: 1.0;
@@ -308,6 +303,211 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
 
 
 
+
+
+  // ****************************************************************************************************
+  // the following bunch of styles handles the click event on the checkbox to hide and show the iamnav
+  // so that we do not need to use JS
+  // ****************************************************************************************************
+  div#nu__mainmenu-iamnav{
+    float: right;
+    height: inherit;
+    width: 70px;
+    top: 0;
+    right: 0;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    position: relative;
+    text-align: right;
+  }
+
+  input#nu__iamnav-toggle {
+    height: inherit;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    &:hover ~ label#nu__iamnav-toggle-label{
+      color: rgba(133, 134, 135, 1.0);
+      cursor: pointer;
+    }
+
+  }
+
+  label#nu__iamnav-toggle-label{
+    float: right;
+    color: rgba(255,255,255,1.0);
+    &:before{
+      content: 'I am a \E313';
+    }
+  }
+
+  input#nu__iamnav-toggle:checked ~ div#nu__iamnav{
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: visibility 0s, opacity 0.10s linear;
+    -moz-transition: visibility 0s, opacity 0.10s linear;
+    -ms-transition: visibility 0s, opacity 0.10s linear;
+    -o-transition: visibility 0s, opacity 0.10s linear;
+    transition: visibility 0s, opacity 0.10s linear;
+  }
+
+  input#nu__iamnav-toggle:checked ~ div#nu__searchbar{
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  input#nu__iamnav-toggle:checked ~ label#nu__iamnav-toggle-label{
+    color: rgba(255,255,255,1.0);
+    &:before{
+      content: 'Close \E14C';
+    }
+  }
+  // ****************************************************************************************************
+
+
+  #nu__iamnav{
+    opacity: 0;
+    // opacity: 1.0;
+    visibility: hidden;
+    // visibility: visible;
+    position: fixed;
+    z-index: 100;
+    background: rgba(0,0,0,0.9);
+    height: 0;
+    // height: 100%;
+    overflow-y: auto;
+    top: 1px;
+    left: 0;
+    width: $wrapper-width;
+    margin: $header-height 0 0 0;
+    &.autoshow{
+      opacity: 1;
+      visibility: visible;
+      height: 100%;
+      z-index: 0;
+      margin: $header-height + 20 0 0 0;
+    }
+
+    & > section{
+      float: right;
+      min-height: 100%;
+      &:nth-child(1){
+        width: 25%;
+      }
+      &:nth-child(2){
+        width: 50%;
+      }
+    }
+
+    & > section:nth-child(1){
+      padding: 0 0 0 50px;
+      text-align: left;
+      & > form{
+        width: 80%;
+        & > input{
+          margin: 0 0 10px 0;
+          height: 40px;
+          line-height: 40px;
+          padding: 0 5px 0 5px;
+          width: 80%;
+        }
+
+        & > button{
+          background: none;
+          border: none;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          font-size: 2rem;
+          font-family: "Material Icons";
+          color: rgba(255,255,255,1.0);
+          &:hover{
+            cursor: pointer;
+            color: rgba(255,0,0,1.0);
+          }
+        }
+      }
+      & > a{
+        color: rgba(255,255,255,1.0);
+        &:hover{
+          color: red;
+        }
+      }
+    }
+
+    & > section:nth-child(2){
+        position: relative;
+        & > ul{
+          float: left;
+          width: 45%;
+          list-style: none;
+          list-style-type: none;
+          & > li{
+            width: 100%;
+            line-height: 50px;
+            text-align: left;
+            padding: 0 0 0 20px;
+            text-transform: uppercase;
+            border-bottom: solid rgba(255,255,255,1.0) 1px;
+
+
+
+            &.active,
+            &:hover{
+              background: rgba(235, 231, 214, 1.0);
+              color: rgba(0,0,0,1.0);
+              cursor: pointer;
+            }
+            &.active{
+              & > ul{
+                display: block;
+              }
+            }
+            & > ul{
+              display: none;
+              position: absolute;
+              width: 55%;
+              height: 100%;
+              right: 0;
+              top: 0;
+              list-style: none;
+              list-style-type: none;
+              background: rgba(255,255,255,1.0);
+              & > li{
+                margin: 0 20px 20px 20px;
+                &:first-child{
+                  margin: 0 0 0 20px;
+                  font-size: 2.5rem;
+                  color: rgba(0,0,0,1.0);
+                }
+                & > a{
+                  color: rgba(0,0,0,1.0);
+                  height: auto;
+                  text-transform: capitalize;
+                  font-size: 1.4rem;
+                  & > img{
+                    margin: 0 10px 0 0;
+                  }
+                  &:hover{
+                    color: red;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+
 // }
 
 
@@ -322,12 +522,6 @@ div#nu__mainmenu-search{
   padding: 0 0 0 0;
   position: relative;
   text-align: right;
-
-
-
-
-
-
 }
 
 input#nu__search-toggle {

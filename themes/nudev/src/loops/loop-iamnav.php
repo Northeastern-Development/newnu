@@ -5,14 +5,12 @@
 		,'meta_query' => array(
 			 'relation' => 'AND'
 			,array("key"=>"status","value"=>"1","compare"=>"=")
-			,array("key"=>"category","value"=>'Main Category',"compare"=>"=")
+			,array("key"=>"category","value"=>'Audience',"compare"=>"=")
+			,array("key"=>"sub-type","value"=>'',"compare"=>"=")
 		)
 	);
 
 	$res = query_posts($args);
-
-	// print_r($res);
-	// die();
 
 	$navConfig = array();
 	foreach($res as $r){
@@ -37,7 +35,8 @@
 				,'meta_query' => array(
 					 'relation' => 'AND'
 					,array("key"=>"status","value"=>"1","compare"=>"=")
-					,array("key"=>"category","value"=>trim($o),"compare"=>"=")
+					,array("key"=>"category","value"=>'Audience',"compare"=>"=")
+					,array("key"=>"sub-type","value"=>trim($o),"compare"=>"=")
 				)
 			);
 
@@ -73,14 +72,14 @@
 ?>
 
 <section>
-	<form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get">
+	<!-- <form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get">
 		<input type="text" name="query" id="query" placeholder="Enter search query" title="Enter your search query here" />
 		<button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button>
 	</form>
 	<a href="//northeastern.edu/president" title="President Aoun [will open in new window]" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="president icon" /> President Aoun</a><br />
 	<a href="//my.northeastern.edu" title="MyNortheastern [will open in new window]" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="mynortheastern icon" /> MyNortheastern</a><br />
 	<a href="//northeastern.edu/findfacultystaff" title="Find faculty and staff" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="find faculty and staff icon" /> Find Faculty and Staff</a><br />
-	<a href="//giving.northeastern.edu" title="Make a gift" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="make a gift icon" /> Make a Gift</a><br />
+	<a href="//giving.northeastern.edu" title="Make a gift" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="make a gift icon" /> Make a Gift</a><br /> -->
 </section>
 
 <section><ul><?=$return?></ul></section>
