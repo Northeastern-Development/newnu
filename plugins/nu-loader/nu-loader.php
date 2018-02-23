@@ -149,7 +149,8 @@ function nu_header_block(){
     $alerts .= '</ul></div>';
   }
 
-  echo $utility.'<div id="nu__alerts">'.$alerts.'</div>';
+  // echo $utility.'<div id="nu__alerts">'.$alerts.'</div>';
+  echo '<div id="nu__alerts">'.$alerts.'</div>';
 
   wp_reset_postdata();
 	wp_reset_query();
@@ -248,6 +249,10 @@ function wp_header(){
 
 
 // add the action to calls to the main wp functions file
+
+
+// the scripts and css that we will pull in should only be a subset of what is absolutely required????????????????????????????????
+
 // add_action('wp_head','nu_styles');
 // add_action('wp_head','nu_scripts');
 // add_action('wp_head','nu_set_keys');
