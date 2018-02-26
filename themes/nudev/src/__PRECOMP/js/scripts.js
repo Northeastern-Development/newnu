@@ -70,7 +70,7 @@
 		    $("body").mousewheel(function(event, delta){
 
 		      if (!inMotion){
-		        //console.log(delta);
+		        console.log(delta);
 		        if (delta < 0){
 		          event.preventDefault();
 		          slidePanels('Left');
@@ -92,7 +92,7 @@
 
 					var e = '#nu__stories';
 
-		      $('main').css({'pointer-events':'none'});//disables hover of tiles until animation to the next screen stops
+		      $(e).css({'pointer-events':'none'});//disables hover of tiles until animation to the next screen stops
 		      if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
 		        offset += windowWidth;
 		        currentPanel++;
@@ -104,7 +104,7 @@
 		        }
 		        $(e).animate({"margin-left":  offset }, aspeeds, function() {
 		          inMotion = false;
-		          $('main').css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
+		          $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
 		        });
 		      }else if (a === 'Right' && currentPanel > 0){//this moves the panels to the left
 		        //console.log('bck');
@@ -120,7 +120,7 @@
 		        }
 		        $(e).animate({"margin-left":  offset }, aspeeds, function() {
 		          inMotion = false;
-		          $('main').css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
+		          $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
 		        });
 		      }
 		    }
