@@ -13,83 +13,83 @@ nav.nu__mainmenu{
   line-height: $header-height;
   margin: 0 0 0 0;
   clear: both;
-  div.nu__menu-search{
-    float: left;
-  }
+  // div.nu__menu-search{
+  //   float: left;
+  // }
 
-  & > ul{
-    float: right;
-    width: auto;
-    height: inherit;
-    margin: 0 0 0 0;
-    list-style: none;
-    list-style-type: none;
-    clear: none;
-    & > li{
-      float: left;
-      &:first-child{
-        display: none;
-      }
-      &.nu__menu-iam{  // this is the dropdown menu for the I AM selection
-        height: inherit;
-        overflow: hidden;
-        &:hover{
-          & > ul{
-            height: 300px;
-            -webkit-transition: height 0.5s;
-            -moz-transition: height 0.5s;
-            -ms-transition: height 0.5s;
-            -o-transition: height 0.5s;
-            transition: height 0.5s;
-          }
-        }
-        & > ul{
-          height: 0;
-          overflow: hidden;
-          position: absolute;
-          z-index: 101;
-          background: rgba(0,0,0,0.9);
-          width: 250px;
-          list-style: none;
-          list-style-type: none;
-          margin: -10px nth($wrapper-margins, 2) 0 (nth($wrapper-margins, 2) * -1);
-          & > li{
-            text-align: right;
-            padding: 0 10px 0 10px;
-            line-height: 40px;
-            & > a{
-              line-height: inherit;
-              &:hover{
-                color: red;
-              }
-            }
-          }
-        }
-      }
-      &.current-menu-item{
-        & > a{
-          color: rgba(133, 134, 135, 1.0);
-        }
-      }
-      & > a{
-        display: block;
-
-        color: rgba(255,255,255, 1.0);
-        padding: 0 0 0 ($gutter * 1);
-        height: inherit;
-        line-height: inherit;
-        text-align: center;
-        letter-spacing: 1px;
-        font-size: 1.6rem;
-      }
-      &.active,
-      &:hover{
-        & > a{
-          color: rgba(133, 134, 135, 1.0);
-        }
-      }
-    }
-  }
+  // & > ul{
+  //   float: right;
+  //   width: auto;
+  //   height: inherit;
+  //   margin: 0 0 0 0;
+  //   list-style: none;
+  //   list-style-type: none;
+  //   clear: none;
+  //   & > li{
+  //     float: left;
+  //     &:first-child{
+  //       display: none;
+  //     }
+  //     &.nu__menu-iam{  // this is the dropdown menu for the I AM selection
+  //       height: inherit;
+  //       overflow: hidden;
+  //       &:hover{
+  //         & > ul{
+  //           height: 300px;
+  //           -webkit-transition: height 0.5s;
+  //           -moz-transition: height 0.5s;
+  //           -ms-transition: height 0.5s;
+  //           -o-transition: height 0.5s;
+  //           transition: height 0.5s;
+  //         }
+  //       }
+  //       & > ul{
+  //         height: 0;
+  //         overflow: hidden;
+  //         position: absolute;
+  //         z-index: 101;
+  //         background: rgba(0,0,0,0.9);
+  //         width: 250px;
+  //         list-style: none;
+  //         list-style-type: none;
+  //         margin: -10px nth($wrapper-margins, 2) 0 (nth($wrapper-margins, 2) * -1);
+  //         & > li{
+  //           text-align: right;
+  //           padding: 0 10px 0 10px;
+  //           line-height: 40px;
+  //           & > a{
+  //             line-height: inherit;
+  //             &:hover{
+  //               color: red;
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //     &.current-menu-item{
+  //       & > a{
+  //         color: rgba(133, 134, 135, 1.0);
+  //       }
+  //     }
+  //     & > a{
+  //       display: block;
+  //
+  //       color: rgba(255,255,255, 1.0);
+  //       padding: 0 0 0 ($gutter * 1);
+  //       height: inherit;
+  //       line-height: inherit;
+  //       text-align: center;
+  //       letter-spacing: 1px;
+  //       font-size: 1.6rem;
+  //     }
+  //     &.active,
+  //     &:hover{
+  //       & > a{
+  //         color: rgba(133, 134, 135, 1.0);
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 
@@ -144,6 +144,7 @@ input#nu__supernav-toggle:checked ~ div#nu__supernav{
   height: 100%;
   visibility: visible;
   opacity: 1;
+
   -webkit-transition: visibility 0s, opacity 0.10s linear;
   -moz-transition: visibility 0s, opacity 0.10s linear;
   -ms-transition: visibility 0s, opacity 0.10s linear;
@@ -176,7 +177,9 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   background: rgba(0,0,0,0.9);
   height: 0;
   // height: 100%;
-  overflow-y: auto;
+  min-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
   top: 1px;
   left: 0;
   width: $wrapper-width;
@@ -241,19 +244,27 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
 
   & > section:nth-child(2){
       position: relative;
+      height: 100%;
+      min-height: 100%;
+      // clear: both;
       & > ul{
         float: left;
         width: 45%;
         list-style: none;
         list-style-type: none;
+        // background: red;
+        height: auto;
+        min-height: 100%;
+        // clear: both;
         & > li{
+          // background :Red;
           width: 100%;
           line-height: 50px;
           text-align: left;
           padding: 0 0 0 20px;
           text-transform: uppercase;
           border-bottom: solid rgba(255,255,255,1.0) 1px;
-
+          // overflow: hidden;
 
 
           &.active,
@@ -263,6 +274,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
             cursor: pointer;
           }
           &.active{
+            // min-height: 100%;
             & > ul{
               display: block;
             }
@@ -271,11 +283,13 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
             display: none;
             position: absolute;
             width: 55%;
-            height: 100%;
+            height: auto;
+            min-height: 100%;
             right: 0;
             top: 0;
             list-style: none;
             list-style-type: none;
+            padding: 0 0 50px 0;
             background: rgba(255,255,255,1.0);
             & > li{
               margin: 0 20px 20px 20px;

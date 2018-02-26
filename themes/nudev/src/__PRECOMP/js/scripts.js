@@ -33,24 +33,27 @@
 		var windowSize = Array(0,0);
 
 
+		// if this file has loaded, we want to append an option to let the page know JS is working
+		$('body').addClass('nu-js');
 
 
 		// the following vars are for the homepage panel slider
-		var inMotion = false;
-    var windowWidth = $(window).width() * -1;
-    var offset = 0;
-    var currentPanel = 0;
-    var panelCount = 3;
-    var aspeeds = 1500;
-    var wi = $(window).width();
-    var myPanels = document.getElementById('nu__stories');
-		var mc = new Hammer(myPanels);
+		if($('body').hasClass('home')){
+			var inMotion = false;
+	    var windowWidth = $(window).width() * -1;
+	    var offset = 0;
+	    var currentPanel = 0;
+	    var panelCount = 3;
+	    var aspeeds = 1500;
+	    var wi = $(window).width();
+	    var myPanels = document.getElementById('nu__stories');
+			var mc = new Hammer(myPanels);
 
 
 
 
-		// if this file has loaded, we want to append an option to let the page know JS is working
-		$('body').addClass('nu-js');
+
+
 
 
 
@@ -69,7 +72,7 @@
 
 		    $("body").mousewheel(function(event, delta){
 
-		      if (!inMotion){
+		      if (!inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
 		        // console.log(delta);
 		        if (delta < 0){
 		          event.preventDefault();
@@ -89,6 +92,11 @@
 		  function slidePanels(a){
 		    if (wi >= 900){
 		      mc.stop();
+
+					// check to see if we need to collapse the footer
+					if(!$('footer#nu__global-footer').hasClass('collapse')){
+						$('footer#nu__global-footer').addClass('collapse');
+					}
 
 					var e = '#nu__stories';
 
@@ -170,7 +178,7 @@
 		  });
 
 
-
+		}
 
 
 

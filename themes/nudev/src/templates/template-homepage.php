@@ -43,7 +43,7 @@
 	      </article>
 
 	      <article style="background-image: url('/wp-content/uploads/homepagetest/leadership.jpg');">
-	        <a href="/northeastern-experience" title="Click here now to learn more">
+	        <a href="/university-administration" title="Click here now to learn more">
 	          <p>this will be the caption for Leadership -></p>
 	        </a>
 	        <h2>Leadership</h2>
