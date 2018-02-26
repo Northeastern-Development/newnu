@@ -20,6 +20,7 @@
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="msapplication-tap-highlight" content="no" />
 		<meta http-equiv="pragma" content="no-cache" />
 		<meta http-equiv="revisit" content="15 days" />
 		<meta http-equiv="robots" content="all" />
@@ -51,8 +52,9 @@
 
 		<?php wp_head(); ?>
 
-		<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/smoothstate.js'></script>
-		<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/velocity.js'></script>
+		<!-- <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/smoothstate.js'></script>
+		<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/velocity.js'></script> -->
+
 		<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/scripts-min.js'></script>
 
 

@@ -20,108 +20,426 @@ main#nu__homepage{
   width: $wrapper-width;
   margin: 0 0 0 0;
 
-  section#nu__stories{
-    width: 100vw;
-    clear: both;
-    overflow: hidden;
-    margin: 0 auto 0 auto;
-    padding: 0 0 0 0;
-    margin-bottom: ($gutter * 4);
-    & > div.nu__section-header{
+  min-height: calc(100% - #{$header-height} - #{$footer-height-collapsed});
+  height: calc(100% - #{$header-height} - #{$footer-height-collapsed});
 
-      $hValue: 50px;
+  div#nu__stories{
+    height: 100%;
+  	width: 300%;
+    overflow-x: scroll;
+  	border-top:1px solid rgba(114, 112, 113, 1.0);
+  	border-bottom:1px solid rgba(114, 112, 113, 1.0);
+  	overflow:auto;
 
-      width: $content-width;
-      height: $hValue;
-      margin: 0 auto 0 auto;
-      display: flex;
-      flex-direction: row;
-      & > div{
-        flex: 1;
-        margin: ($hValue / 2) 0 0 0;
-        height: 1px;
-        background: rgba(255,255,255,1.0);
-      }
-      & > h3{
-        text-align: center;
-        text-transform: uppercase;
-        padding: 0 ($gutter * 3) 0 ($gutter * 3);
-        line-height: $hValue;
-      }
+    // these are the slide next and previous arrows
+    & > #prev,
+    & > #next {
+    		position: absolute;
+    		top: 50%;
+    		width: 3%;
+    		padding-bottom: 3%;
+    		border-radius: 50%;
+    		background:rgba(255, 255, 255, .6);
+    		transform: translateY(-50%);
+    		z-index:100;
+    		& > svg {
+    			position: absolute;
+    			left: 20%;
+    			top: 20%;
+    			width: 60%;
+    			height: 60%;
+    			& > .arrow {
+    				fill: rgba(255, 255, 255, 1.0);
+    			}
+    		}
+    		&:hover {
+    			background:black;
+          cursor:pointer;
+    			& > svg {
+    				& > .arrow {
+    					fill: white;
+    				}
+    			}
+    		}
     }
 
-    & > ul{
-      background: rgba(0,0,0,1.0);
-      list-style: none;
-      list-style-type: none;
-      overflow: hidden;
-      & > li{
-        background: rgba(0,0,0,1.0);
-        float: left;
-        text-align: center;
-      }
+    & > #prev {
+        left: 20px;
+        display:none;
+        // display: block;
     }
-  }
+
+    & > #next {
+        right: 20px;
+    		display:none;
+        // display: block;
+    }
 
 
-  section#nu__stories{
-    $columns: 3;
-    $content-width: 100vw;
-    $height: 20vw;
-    background: none;
-    & > ul{
-      background: rgba(0,0,0,0.5);
-      & > li{
-        width: (($content-width) / $columns);
-        height: $height;
-        line-height: $height;
-        padding: 0 0 0 0;
+    & > section {
+  		height:100%;
+  		float: left;
+      display: block;
+  		width:33.33%;
+  		//display: flex;
+  		//flex-wrap: wrap;
+  		& > article {
+  			position:relative;
+  			min-height: 200px;
+  			background-position: center center !important;
+  			background-repeat: no-repeat !important;
+  			background-size: cover !important;
+  			//-webkit-user-drag: none;
+        &:hover {
+          cursor: pointer;
+          & > a{
+            background: rgba(0,0,0,0.7);
+            opacity:1;
+
+          }
+        }
+  			&.nu__block-rotator{
+  				& > a {
+  					opacity:1;
+  					background-position: center center !important;
+  					background-repeat: no-repeat !important;
+  					background-size: cover !important;
+  					&:hover {
+  						background:transparent ;
+  					}
+  					& > h2 {
+  						text-shadow:2px 2px 6px rgba(0, 0, 0, 0.7);
+  						max-width:90%;
+  						padding-bottom: .25em;
+  						position: absolute;
+              font-size: 1.8rem;
+  						bottom: 20px;
+  						left: 6%;
+  						z-index:100;
+  						transform: translateX(-6%) translateY(-20px);
+  					}
+  				}
+  				& > .slider_next,
+          & > .slider_prev {
+  					position: absolute;
+  				  bottom: 40px;
+  				  width: 4%;
+  				  padding-bottom: 4%;
+  				  border-radius: 50%;
+  				  background: white;
+  				  transform: translateY(-40px);
+  					z-index:100;
+  					cursor:pointer;
+  					display:none;
+  					& > svg {
+  						position: absolute;
+    					left: 20%;
+    					top: 20%;
+    					width: 60%;
+    					height: 60%;
+  						& > .arrow {
+  							fill: #333;
+  						}
+  					}
+  					&:hover {
+  						background:black;
+  						& > svg {
+  							& > .arrow {
+  								fill: white;
+  							}
+  						}
+  					}
+  				}
+  				& > .slider_next {
+  					left:11%;
+  				}
+  				& > .slider_prev {
+  					left:5%;
+  				}
+  				& > .nu__rotator-logo{
+  					width:50px;
+  					height:50px;
+  					background:yellow;
+  					position:absolute;
+  					top:20px;
+  					right:20px;
+  					// z-index:1000;
+  				}
+  			}
+  			& > a {
+  				background: rgba(0,0,0,0);
+  				width: 100%;
+  				height: 100%;
+  				position: absolute;
+  				// z-index: 1;
+  				top: 0;
+  				left: 0;
+  				opacity: 0;
+  				color:#fff;
+  				text-decoration:none;
+  				// &:hover {
+  				// 	background: rgba(0,0,0,0.7);
+  				// 	opacity:1;
+          //   cursor: pointer;
+  				// }
+  				& p {
+  					text-shadow:2px 2px 6px rgba(0, 0, 0, 0.7);
+  	        text-align:center;
+  					font-size:1.2vw;
+  					max-width:90%;
+  					width:100%;
+  					position: absolute;
+  			  	bottom: 10vh;
+  			    left: 50%;
+  			    transform: translateX(-50%) translateY(0);
+  				}
+
+  	    }
+  			& > h2 {
+  				text-shadow:2px 2px 6px rgba(0, 0, 0, 0.7);
+  				max-width:90%;
+  				position:relative;
+  				padding-bottom: .25em;
+  				position: absolute;
+          font-size: 1.8rem;
+  				bottom: 20px;
+  				left: 50%;
+  				z-index:100;
+  				transform: translateX(-50%) translateY(-20px);
+  				white-space: nowrap;
+  				&:after {
+  					position: absolute;
+  			    display:inline-block;
+  			    border-bottom:2px solid rgba(166, 34, 22, 1.0);
+  			    bottom: -1px;
+  			    content: "";
+  			    left: 0;
+  			    width: 100%;
+  				}
+  			}
+  		}
+
+
+
+  	}
+
+
+    & > section.panel-1{
+      & > article {
+        display: block;
 
         &:nth-child(1){
-          background: red;
+          //background: orange;
+          float:left;
+          width:70%;
+          height:65%;
+          order:1;
         }
-
         &:nth-child(2){
           background: green;
+          float:right;
+          width:30%;
+          height:35%;
+          order:2;
         }
-
         &:nth-child(3){
           background: blue;
+          float:right;
+          width:30%;
+          height:65%;
+          order:3;
         }
-
         &:nth-child(4){
-          background: yellow;
+          background: rgba(0, 0, 0, 1.0);
+          float:left;
+          width:45%;
+          height:35%;
+          order:4;
+          overflow:hidden;
         }
-
         &:nth-child(5){
           background: purple;
+          float:right;
+          width:25%;
+          height:35%;
+          order:5;
+
         }
-
-        &:nth-child(6){
-          background: orange;
-        }
-
-
-        &:nth-child(1),
-        &:nth-child(5){
-          width: 40vw;
-        }
-
-        &:nth-child(2),
-        &:nth-child(4){
-          width: 33vw;
-        }
-
-        &:nth-child(3),
-        &:nth-child(6){
-          width: 27vw;
-        }
-
       }
     }
+    & > section.panel-2{
+      & > article {
+        display: block;
+
+        &:nth-child(1){
+          background: orange;
+          float:left;
+          width:30%;
+          height:100%;
+          order:1;
+        }
+        &:nth-child(2){
+          background: green;
+          float:right;
+          width:70%;
+          height:65%;
+          order:2;
+        }
+        &:nth-child(3){
+          background: blue;
+          float:left;
+          width:25%;
+          height:35%;
+          order:3;
+        }
+        &:nth-child(4){
+          background: rgba(0,0,0,1);
+          float:right;
+          width:45%;
+          height:35%;
+          order:4;
+        }
+      }
+    }
+
+    & > section.panel-3{
+      & > article {
+        display: block;
+        height:50%;
+
+        &:nth-child(1){
+          background: orange;
+          float:left;
+          width:70%;
+          height:65%;
+          order:1;
+        }
+        &:nth-child(2){
+          background: green;
+          float:right;
+          width:30%;
+          height:100%;
+          order:2;
+        }
+        &:nth-child(3){
+          background: blue;
+          float:left;
+          width:45%;
+          height:35%;
+          order:3;
+        }
+        &:nth-child(4){
+          background: red;
+          float:left;
+          width:25%;
+          height:35%;
+          order:4;
+        }
+      }
+    }
+
+
   }
 
+  // section#nu__stories{
+  //   width: 100vw;
+  //   clear: both;
+  //   overflow: hidden;
+  //   margin: 0 auto 0 auto;
+  //   padding: 0 0 0 0;
+  //   margin-bottom: ($gutter * 4);
+  //   & > div.nu__section-header{
+  //
+  //     $hValue: 50px;
+  //
+  //     width: $content-width;
+  //     height: $hValue;
+  //     margin: 0 auto 0 auto;
+  //     display: flex;
+  //     flex-direction: row;
+  //     & > div{
+  //       flex: 1;
+  //       margin: ($hValue / 2) 0 0 0;
+  //       height: 1px;
+  //       background: rgba(255,255,255,1.0);
+  //     }
+  //     & > h3{
+  //       text-align: center;
+  //       text-transform: uppercase;
+  //       padding: 0 ($gutter * 3) 0 ($gutter * 3);
+  //       line-height: $hValue;
+  //     }
+  //   }
+  //
+  //   & > ul{
+  //     background: rgba(0,0,0,1.0);
+  //     list-style: none;
+  //     list-style-type: none;
+  //     overflow: hidden;
+  //     & > li{
+  //       background: rgba(0,0,0,1.0);
+  //       float: left;
+  //       text-align: center;
+  //     }
+  //   }
+  // }
 
 
+  // section#nu__stories{
+  //   $columns: 3;
+  //   $content-width: 100vw;
+  //   $height: 20vw;
+  //   background: none;
+  //   & > ul{
+  //     background: rgba(0,0,0,0.5);
+  //     & > li{
+  //       width: (($content-width) / $columns);
+  //       height: $height;
+  //       line-height: $height;
+  //       padding: 0 0 0 0;
+  //
+  //       &:nth-child(1){
+  //         background: red;
+  //       }
+  //
+  //       &:nth-child(2){
+  //         background: green;
+  //       }
+  //
+  //       &:nth-child(3){
+  //         background: blue;
+  //       }
+  //
+  //       &:nth-child(4){
+  //         background: yellow;
+  //       }
+  //
+  //       &:nth-child(5){
+  //         background: purple;
+  //       }
+  //
+  //       &:nth-child(6){
+  //         background: orange;
+  //       }
+  //
+  //
+  //       &:nth-child(1),
+  //       &:nth-child(5){
+  //         width: 40vw;
+  //       }
+  //
+  //       &:nth-child(2),
+  //       &:nth-child(4){
+  //         width: 33vw;
+  //       }
+  //
+  //       &:nth-child(3),
+  //       &:nth-child(6){
+  //         width: 27vw;
+  //       }
+  //
+  //     }
+  //   }
+  // }
 
 }

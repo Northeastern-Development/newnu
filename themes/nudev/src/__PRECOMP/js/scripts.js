@@ -25,19 +25,160 @@
 
 
 
-
-
-
-
-
-
-
 		// set up some common animation speeds
 		var animationSpeeds = Array(
 			 200
 			,1000
 		);
 		var windowSize = Array(0,0);
+
+
+
+
+		// the following vars are for the homepage panel slider
+		var inMotion = false;
+    var windowWidth = $(window).width() * -1;
+    var offset = 0;
+    var currentPanel = 0;
+    var panelCount = 3;
+    var aspeeds = 1250;
+    var wi = $(window).width();
+    var myPanels = document.getElementById('nu__stories');
+		// var mc = new Hammer(myPanels);
+
+
+
+
+		// if this file has loaded, we want to append an option to let the page know JS is working
+		$('body').addClass('nu-js');
+
+
+
+
+
+		if (wi >= 900){
+		  $('#next').fadeIn(200);//fades in the next panel button if js is enabled
+		}else {
+		  $('#next').fadeOut(200);//fades in the next panel button if js is enabled
+		}
+		//-----------------------------------------------------
+		  // Sliding Panel scroll, swipe, keydown, and click.
+		//-----------------------------------------------------
+
+
+
+		    $("body").mousewheel(function(event, delta){
+
+		      if (!inMotion){
+		        //console.log(delta);
+		        if (delta < 0){
+		          event.preventDefault();
+		          slidePanels('Left');
+		          inMotion = true;
+		        }else if (delta > 0){
+		          event.preventDefault();
+		          slidePanels('Right');
+		          inMotion = true;
+		        }
+		      }
+
+		   });
+
+
+		  // this is the brain for all that is happening
+		  function slidePanels(a){
+		    if (wi >= 900){
+		      // mc.stop();
+
+					var e = '#nu__stories';
+
+		      $('main').css({'pointer-events':'none'});//disables hover of tiles until animation to the next screen stops
+		      if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
+		        offset += windowWidth;
+		        currentPanel++;
+		        if(currentPanel == panelCount -1){
+		          $("#next").css({'display':'none'});
+		        }else {
+		          $("#next").css({'display':'block'});
+		          $("#prev").css({'display':'block'});
+		        }
+		        $(e).animate({"margin-left":  offset }, aspeeds, function() {
+		          inMotion = false;
+		          $('main').css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
+		        });
+		      }else if (a === 'Right' && currentPanel > 0){//this moves the panels to the left
+		        //console.log('bck');
+		        offset -= windowWidth
+		        currentPanel--;
+		        if(currentPanel == panelCount -1){
+		          $("#next").css({'display':'block'});
+		        }else if(currentPanel == 0) {
+		          $("#prev").css({'display':'none'});
+		          $("#next").css({'display':'block'});
+		        }else {
+		          $("#next").css({'display':'block'});
+		        }
+		        $(e).animate({"margin-left":  offset }, aspeeds, function() {
+		          inMotion = false;
+		          $('main').css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
+		        });
+		      }
+		    }
+		  }
+
+
+		  // Next / Prev arrow click functions
+		  $('body').on("click","#next", function (e) {
+		    inMotion = true;
+		    slidePanels('Left');
+		    //console.log('dasf');
+		  });
+
+		  $('body').on("click","#prev", function (e) {
+		    inMotion = true;
+		    slidePanels('Right');
+		  });
+
+		  // arrow keys
+		  $(document).keydown(function(e){
+		      switch (e.which){
+		      case 37:    //left arrow key
+		        slidePanels('Right');
+		          break;
+		      case 38:    //up arrow key
+		          slidePanels('Right');
+		          break;
+		      case 39:    //right arrow key
+		          slidePanels('Left');
+		          break;
+		      case 40:    //bottom arrow key
+		          slidePanels('Left');
+		          break;
+		      }
+		  });
+
+
+		  // hammer js swipe left and right.
+		  // mc.on("panleft", function(ev) {
+		  //   //inMotion = true;
+		  //   slidePanels('Left');
+			//
+		  // });
+		  // mc.on("panright", function(ev) {
+		  //   //inMotion = true;
+		  //   slidePanels('Right');
+		  // });
+
+
+
+
+
+
+
+
+
+
+
 
 
 

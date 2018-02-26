@@ -52,7 +52,7 @@
    &.collapse{
      height: 40px;
      overflow: hidden;
-     background: none;
+     // background: none;
      & > div.nu__footer{
        padding: 0 0 0 0;
        height: inherit;
@@ -103,10 +103,13 @@
      & > div.nu__footer-hideshow{
        display: none;
        text-align: center;
-       height: 40px;
-       line-height: 40px;
+       height: $footer-height-collapsed;
+       line-height: $footer-height-collapsed;
        font-family: "Material Icons";
        font-size: 2rem;
+       // background: rgba(0,0,0,1.0);
+       margin: 0 0 0 0;
+       width: 100vw;
        &:hover{
          cursor: pointer;
        }
