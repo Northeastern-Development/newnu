@@ -1,0 +1,32 @@
+// this is the SASS file for the remotely called utility navigation
+
+// Modules
+@import "modules/variables";
+@import "modules/mixins";
+@import "modules/fonts";
+
+
+
+
+
+div#nu__utility-nav{
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,1.0);
+  height: 30px;
+  overflow: visible;
+  width: $content-width-wide;
+  margin: 0 auto 0 auto;
+  & > a{
+    display: block;
+    float: left;
+    height: inherit;
+    & > img{
+      height: inherit;
+    }
+  }
+  & > div{
+    height: inherit;
+    overflow: hidden;
+  }
+}
