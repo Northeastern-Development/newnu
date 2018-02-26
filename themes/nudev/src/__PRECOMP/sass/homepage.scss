@@ -18,6 +18,7 @@ $columns: 3;
 main#nu__homepage{
 
   width: $wrapper-width;
+  // width: 100%
   margin: 0 0 0 0;
 
   min-height: calc(100% - #{$header-height} - #{$footer-height-collapsed});

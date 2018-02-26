@@ -41,10 +41,10 @@
     var offset = 0;
     var currentPanel = 0;
     var panelCount = 3;
-    var aspeeds = 1250;
+    var aspeeds = 1500;
     var wi = $(window).width();
     var myPanels = document.getElementById('nu__stories');
-		// var mc = new Hammer(myPanels);
+		var mc = new Hammer(myPanels);
 
 
 
@@ -88,7 +88,7 @@
 		  // this is the brain for all that is happening
 		  function slidePanels(a){
 		    if (wi >= 900){
-		      // mc.stop();
+		      mc.stop();
 
 					var e = '#nu__stories';
 
@@ -159,15 +159,15 @@
 
 
 		  // hammer js swipe left and right.
-		  // mc.on("panleft", function(ev) {
-		  //   //inMotion = true;
-		  //   slidePanels('Left');
-			//
-		  // });
-		  // mc.on("panright", function(ev) {
-		  //   //inMotion = true;
-		  //   slidePanels('Right');
-		  // });
+		  mc.on("panleft", function(ev) {
+		    inMotion = true;
+		    slidePanels('Left');
+
+		  });
+		  mc.on("panright", function(ev) {
+		    inMotion = true;
+		    slidePanels('Right');
+		  });
 
 
 
