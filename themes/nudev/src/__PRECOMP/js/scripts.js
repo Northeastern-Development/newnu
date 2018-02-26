@@ -70,12 +70,12 @@
 		    $("body").mousewheel(function(event, delta){
 
 		      if (!inMotion){
-		        console.log(delta);
+		        // console.log(delta);
 		        if (delta < 0){
 		          event.preventDefault();
 		          slidePanels('Left');
 		          inMotion = true;
-		        }else if (delta > 0){
+		        }else if (delta > 0 && currentPanel != 0){
 		          event.preventDefault();
 		          slidePanels('Right');
 		          inMotion = true;

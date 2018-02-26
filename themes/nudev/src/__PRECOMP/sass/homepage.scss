@@ -15,14 +15,33 @@
 
 $columns: 3;
 
+body.home{
+  height: 100%;
+}
+
 main#nu__homepage{
 
   width: $wrapper-width;
   // width: 100%
   margin: 0 0 0 0;
 
-  min-height: calc(100% - #{$header-height} - #{$footer-height-collapsed});
-  height: calc(100% - #{$header-height} - #{$footer-height-collapsed});
+  background: green;
+
+  $h: 100%;
+
+  min-height: calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+  height: calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+  min-height: -moz-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+  height: -moz-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+  min-height: -webkit-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+  height: -webkit-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+
+
+  // height: 600px;
+
+  // min-height: 100%;
+  // height: 100%;
+
 
   div#nu__stories{
     height: 100%;
