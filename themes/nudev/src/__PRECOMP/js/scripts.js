@@ -44,7 +44,7 @@
 	    var offset = 0;
 	    var currentPanel = 0;
 	    var panelCount = 3;
-	    var aspeeds = 1500;
+	    var aspeeds = 1000;
 	    var wi = $(window).width();
 	    var myPanels = document.getElementById('nu__stories');
 			var mc = new Hammer(myPanels);
