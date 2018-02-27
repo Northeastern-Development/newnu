@@ -59,14 +59,14 @@
 
 
 
-		if (wi >= 900){
-		  $('#next').fadeIn(200);//fades in the next panel button if js is enabled
-		}else {
-		  $('#next').fadeOut(200);//fades in the next panel button if js is enabled
-		}
-		//-----------------------------------------------------
-		  // Sliding Panel scroll, swipe, keydown, and click.
-		//-----------------------------------------------------
+			if (wi >= 900){
+			  $('#next').fadeIn(200);//fades in the next panel button if js is enabled
+			}else {
+			  $('#next').fadeOut(200);//fades in the next panel button if js is enabled
+			}
+			//-----------------------------------------------------
+			  // Sliding Panel scroll, swipe, keydown, and click.
+			//-----------------------------------------------------
 
 
 
@@ -92,6 +92,8 @@
 		  function slidePanels(a){
 		    if (wi >= 900){
 		      mc.stop();
+
+					// windowWidth = $(window).width() * -1;
 
 					// check to see if we need to collapse the footer
 					if(!$('footer#nu__global-footer').hasClass('collapse')){
@@ -136,34 +138,38 @@
 
 
 		  // Next / Prev arrow click functions
-		  $('body').on("click","#next", function (e) {
-		    inMotion = true;
-		    slidePanels('Left');
-		    //console.log('dasf');
-		  });
+			// if($('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+			  $('body').on("click","#next", function (e) {
+			    inMotion = true;
+			    slidePanels('Left');
+			    //console.log('dasf');
+			  });
 
-		  $('body').on("click","#prev", function (e) {
-		    inMotion = true;
-		    slidePanels('Right');
-		  });
+			  $('body').on("click","#prev", function (e) {
+			    inMotion = true;
+			    slidePanels('Right');
+			  });
 
-		  // arrow keys
-		  $(document).keydown(function(e){
-		      switch (e.which){
-		      case 37:    //left arrow key
-		        slidePanels('Right');
-		          break;
-		      case 38:    //up arrow key
-		          slidePanels('Right');
-		          break;
-		      case 39:    //right arrow key
-		          slidePanels('Left');
-		          break;
-		      case 40:    //bottom arrow key
-		          slidePanels('Left');
-		          break;
-		      }
-		  });
+			  // arrow keys
+			  $(document).keydown(function(e){
+					if($('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+			      switch (e.which){
+			      case 37:    //left arrow key
+			        slidePanels('Right');
+			          break;
+			      case 38:    //up arrow key
+			          slidePanels('Right');
+			          break;
+			      case 39:    //right arrow key
+			          slidePanels('Left');
+			          break;
+			      case 40:    //bottom arrow key
+			          slidePanels('Left');
+			          break;
+			      }
+					}
+			  });
+			// }
 
 
 		  // hammer js swipe left and right.
@@ -199,7 +205,7 @@
 			windowSize[0] = $(window).height();
 			windowSize[1] = $(window).width();
 			$.post("/wp-content/themes/nudev/src/windowsize.php",{"height":windowSize[0],"width":windowSize[1]},function(data){
-					console.log(data);
+					//console.log(data);
     	});
 		}
 
@@ -331,6 +337,34 @@
 		$(window).on("resize",function(){
 
 			getWindowSize();
+
+
+
+
+			if($('body').hasClass('home')){	// we need to make sure that we are resizing and keeping only 1 panel on the screen during resize
+
+				// console.log('resizing the homepage');
+
+				var newWidth = $(window).width() * -1;
+
+				var wDiff = (windowWidth - newWidth);
+
+				if(currentPanel > 0){
+
+					var newOffset = (offset - (wDiff * currentPanel));
+
+					$('#nu__stories').css({"margin-left":newOffset});
+					offset = newOffset;
+				}
+
+				windowWidth = newWidth;
+
+
+
+			}
+
+
+
 
 		});
 

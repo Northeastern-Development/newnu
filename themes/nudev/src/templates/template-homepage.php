@@ -80,19 +80,19 @@
 	        <a href="/northeastern-experience" title="Click here now to learn more">
 	          <p>Caption -></p>
 	        </a>
-	        <h2>1</h2>
+	        <h2>2-1</h2>
 	      </article>
 	      <article>
 	        <a href="/northeastern-experience" title="Click here now to learn more">
 	          <p>Caption -></p>
 	        </a>
-	        <h2>2</h2>
+	        <h2>2-2</h2>
 	      </article>
 	      <article>
 	        <a href="/northeastern-experience" title="Click here now to learn more">
 	          <p>Caption -></p>
 	        </a>
-	        <h2>3</h2>
+	        <h2>2-3</h2>
 	      </article>
 	      <article class="nu__block-rotator">
 	        <a href="javascript:void(0)" style="background-image: url('/wp-content/uploads/homepagetest/image-1.jpg');">
@@ -110,13 +110,13 @@
 	        <a href="/northeastern-experience" title="Click here now to learn more">
 	          <p>Caption -></p>
 	        </a>
-	        <h2>1</h2>
+	        <h2>3-1</h2>
 	      </article>
 	      <article>
 	        <a href="/northeastern-experience" title="Click here now to learn more">
 	          <p>Caption -></p>
 	        </a>
-	        <h2>2</h2>
+	        <h2>3-2</h2>
 	      </article>
 	      <article class="nu__block-rotator">
 	        <a href="javascript:void(0)">
@@ -130,7 +130,7 @@
 	        <a href="/northeastern-experience" title="Click here now to learn more">
 	          <p>Caption -></p>
 	        </a>
-	        <h2>4</h2>
+	        <h2>3-4</h2>
 	      </article>
 	    </section>
 
