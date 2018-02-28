@@ -67,7 +67,12 @@
 		$i++;
 	}
 
-	$supernav = '<section><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><input type="text" name="query" id="query" placeholder="Enter search query" title="Enter your search query here" /><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button></form><a href="//northeastern.edu/president" title="President Aoun [will open in new window]" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="president icon" /> President Aoun</a><br /><a href="//my.northeastern.edu" title="MyNortheastern [will open in new window]" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="mynortheastern icon" /> MyNortheastern</a><br /><a href="//northeastern.edu/findfacultystaff" title="Find faculty and staff" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="find faculty and staff icon" /> Find Faculty and Staff</a><br /><a href="//giving.northeastern.edu" title="Make a gift" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="make a gift icon" /> Make a Gift</a><br /></section><section><ul>'.$return.'</ul></section>';
+	$return .= '<li class="featured first"><a href="//northeastern.edu/president" title="President Aoun [will open in new window]" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="president icon" /> President Aoun</a></li>';
+	$return .= '<li class="featured"><a href="//my.northeastern.edu" title="MyNortheastern [will open in new window]" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="mynortheastern icon" /> MyNortheastern</a></li>';
+	$return .= '<li class="featured"><a href="//northeastern.edu/findfacultystaff" title="Find faculty and staff" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="find faculty and staff icon" /> Find Faculty and Staff</a></li>';
+	$return .= '<li class="featured"><a href="//giving.northeastern.edu" title="Make a gift" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="make a gift icon" /> Make a Gift</a></li>';
+
+	$supernav = '<section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul>'.$return.'</ul></div></section>';
 
 	if(isset($returnType) && $returnType === 'return'){	// this will return the results for remote calls
 		return $supernav;

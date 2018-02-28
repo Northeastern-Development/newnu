@@ -45,7 +45,9 @@
 	    var currentPanel = 0;
 	    var panelCount = 3;
 	    var aspeeds = 1000;
-	    var wi = $(window).width();
+			var sizeBreak = 900;
+	    // var wi = $(window).width();
+			var ww = $(window).width();
 	    var myPanels = document.getElementById('nu__stories');
 			var mc = new Hammer(myPanels);
 
@@ -59,7 +61,7 @@
 
 
 
-			if (wi >= 900){
+			if (ww >= 900){
 			  $('#next').fadeIn(200);//fades in the next panel button if js is enabled
 			}else {
 			  $('#next').fadeOut(200);//fades in the next panel button if js is enabled
@@ -72,9 +74,9 @@
 
 		    $("body").mousewheel(function(event, delta){
 
-		      if (!inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
-		        // console.log(delta);
-		        if (delta < 0){
+		      if (ww >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+		        
+		        if (delta < 0 && currentPanel < 2){
 		          event.preventDefault();
 		          slidePanels('Left');
 		          inMotion = true;
@@ -90,7 +92,7 @@
 
 		  // this is the brain for all that is happening
 		  function slidePanels(a){
-		    if (wi >= 900){
+		    if (ww >= 900){
 		      mc.stop();
 
 					// windowWidth = $(window).width() * -1;
@@ -140,19 +142,23 @@
 		  // Next / Prev arrow click functions
 			// if($('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
 			  $('body').on("click","#next", function (e) {
-			    inMotion = true;
-			    slidePanels('Left');
-			    //console.log('dasf');
+					if(ww >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+				    inMotion = true;
+				    slidePanels('Left');
+				    //console.log('dasf');
+					}
 			  });
 
 			  $('body').on("click","#prev", function (e) {
-			    inMotion = true;
-			    slidePanels('Right');
+					if(ww >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+				    inMotion = true;
+				    slidePanels('Right');
+					}
 			  });
 
 			  // arrow keys
 			  $(document).keydown(function(e){
-					if($('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+					if(ww >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
 			      switch (e.which){
 			      case 37:    //left arrow key
 			        slidePanels('Right');
@@ -234,36 +240,35 @@
 		$('nav').on('click','input#nu__supernav-toggle',function(){
 			$('input#nu__search-toggle').prop('checked',false);
 			$('input#nu__iamnav-toggle').prop('checked',false);
+			// need to reset the first item in the iamnav menu to be active
+			$('#nu__supernav > section > div > ul > li').removeClass('active');
+			$('#nu__supernav > section > div > ul > li:first-child').addClass('active');
 		});
 
 		$('nav').on('click','input#nu__iamnav-toggle',function(){
 			$('input#nu__search-toggle').prop('checked',false);
 			$('input#nu__supernav-toggle').prop('checked',false);
+			// need to reset the first item in the supernav menu to be active
+			$('#nu__iamnav > section > div > ul > li').removeClass('active');
+			$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
 		});
 
 		$('nav').on('click','input#nu__search-toggle',function(){
 			$('input#nu__supernav-toggle').prop('checked',false);
 			$('input#nu__iamnav-toggle').prop('checked',false);
+			$('#nu__iamnav > section > div > ul > li').removeClass('active');
+			$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
+			$('#nu__supernav > section > div > ul > li').removeClass('active');
+			$('#nu__supernav > section > div > ul > li:first-child').addClass('active');
 		});
 
-		// $('nav').on('mouseover','li.nu__menu-iam',function(){
-		// 	$('input#nu__search-toggle').prop('checked',false);
-		// 	$('input#nu__supernav-toggle').prop('checked',false);
-		// });
 
 
 
 
-
-		// this will handle the accordion functionality for the supernav
-		$('#nu__supernav > section:nth-child(2) > ul').on('click','li',function(e){
-			$('#nu__supernav > section:nth-child(2) > ul li').removeClass('active');
-			$(this).addClass('active');
-		});
-
-		// this will handle the accordion functionality for the iamnav
-		$('#nu__iamnav > section:nth-child(2) > ul').on('click','li',function(e){
-			$('#nu__iamnav > section:nth-child(2) > ul li').removeClass('active');
+		// this will handle the accordion functionality for the main navigational elements
+		$('div.navigational > section > div > ul').on('click','li:not(.featured)',function(e){
+			$('div.navigational > section > div > ul li').removeClass('active');
 			$(this).addClass('active');
 		});
 
@@ -344,6 +349,41 @@
 			if($('body').hasClass('home')){	// we need to make sure that we are resizing and keeping only 1 panel on the screen during resize
 
 				// console.log('resizing the homepage');
+
+
+				ww = $(window).width();
+
+
+				// if (ww >= sizeBreak){
+	      //   //inMotion = false;
+	      //   // offset = 0;
+	      //   //currentPanel = 0;
+	      //   //panelCount = 3;
+	      //   //aspeeds = 1500;
+	      //   // windowWidth = $(window).width() * -1;
+	      //   $('#next').fadeIn(200);//fades in the next panel button if js is enabled
+	      // }else {
+	      //   inMotion = true;
+	      //   $('.nu__panel-nav').css({'display':'none'});
+	      //   $('#nu__panels').css({'margin-left':'0'});
+	      // }
+
+
+
+				if(ww < 900){
+					$('#nu__stories').css({'margin-left':'0'});
+					currentPanel = 0;
+					offset = 0;
+
+
+					// need to reset the next and previous arrows in here as well to be ready again before we hide them
+
+
+				}
+
+
+
+
 
 				var newWidth = $(window).width() * -1;
 

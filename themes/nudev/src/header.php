@@ -96,7 +96,7 @@
 						<div id="nu__mainmenu-supernav">
 							<input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" />
 							<label for="nu__supernav-toggle"id="nu__supernav-toggle-label"></label>
-							<?php if(get_query_var('pagename') != 'main-menu'){ echo '<div id="nu__supernav">'; get_template_part('loops/loop-supernav'); echo '</div>'; } ?>
+							<?php if(get_query_var('pagename') != 'main-menu'){ echo '<div id="nu__supernav" class="navigational">'; get_template_part('loops/loop-supernav'); echo '</div>'; } ?>
 						</div>
 
 						<div id="nu__mainmenu-search">
@@ -108,7 +108,7 @@
 						<div id="nu__mainmenu-iamnav">
 							<input id="nu__iamnav-toggle" type="checkbox" title="Click to show/hide audience selection menu" />
 							<label for="nu__iamnav-toggle"id="nu__iamnav-toggle-label"></label>
-							<?php if(get_query_var('pagename') != 'iam-menu'){ echo '<div id="nu__iamnav">'; get_template_part('loops/loop-iamnav'); echo '</div>'; } ?>
+							<?php if(get_query_var('pagename') != 'iam-menu'){ echo '<div id="nu__iamnav" class="navigational">'; get_template_part('loops/loop-iamnav'); echo '</div>'; } ?>
 						</div>
 
 						<?php // nudev_nav(); ?>
