@@ -1,3 +1,7 @@
+
+
+
+
 (function( root, $, undefined ) {
 	"use strict";
 
@@ -31,6 +35,9 @@
 			,1000
 		);
 		var windowSize = Array(0,0);
+
+		var rotators = null;
+
 
 
 		// if this file has loaded, we want to append an option to let the page know JS is working
@@ -75,7 +82,7 @@
 		    $("body").mousewheel(function(event, delta){
 
 		      if (ww >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
-		        
+
 		        if (delta < 0 && currentPanel < 2){
 		          event.preventDefault();
 		          slidePanels('Left');
@@ -195,6 +202,45 @@
 
 
 
+
+		// this will handle clicking on the next and previous arrows for rotator type articles, but only if we are on the homepage
+		if($('body').hasClass('home')){
+
+			// gather up the rotator panels data and store the object to be used below
+			$.post("/wp-content/themes/nudev/src/hprotatordata.php",function(data){
+					rotators = JSON.parse(data);
+					console.log(rotators);
+    	});
+
+			// since we made it this far, turn on the rotator arrows
+			$('article.nu__block-rotator .rotate').css({'display':'block'});
+
+			// the following handles clicking next and previous arrows within a rotator
+			$('article.nu__block-rotator').on("click",".rotate",function(e){
+				var elem = $(this).parent();
+				var id = $(this).parent().attr('data-rotatorid');
+				var sCount = parseInt($(this).parent().attr('data-slidemax'));
+				var cSlide = parseInt($(this).parent().attr('data-cslide'));
+				if($(this).hasClass('slider_prev')){
+					contentSwap(parseInt(cSlide - 1) < 1 ?sCount:parseInt(cSlide - 1));
+				}else{
+					contentSwap(parseInt(cSlide + 1) > sCount?1:parseInt(cSlide + 1));
+				}
+
+				// this will actually perform the content swapping
+				function contentSwap(a){
+					elem.find('a').fadeOut(150,function(){	// fade out the rotator content
+						elem.attr('data-cslide',a);	// set the new value of the current slide
+						elem.find('a').prop('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
+						elem.find('a').attr('href',rotators[id][a][1]);	// change the link
+						elem.find('a').attr('target',rotators[id][a][3]);	// change the link target style (local or external)
+						elem.find('a > h2').html(rotators[id][a][2]);	// change the title of the slide
+						elem.find('a').fadeIn(150);	// fade it all back in
+					});
+				}
+
+			});
+		}
 
 
 

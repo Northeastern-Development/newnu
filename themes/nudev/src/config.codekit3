@@ -887,6 +887,13 @@
 		"oAP": "\/header.php",
 		"oF": 0
 		},
+	"\/hprotatordata.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/hprotatordata.php",
+		"oF": 0
+		},
 	"\/img\/logo.svg": {
 		"ft": 2097152,
 		"miP": 0,

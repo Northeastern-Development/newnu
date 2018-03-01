@@ -52,14 +52,7 @@
 
 		<?php wp_head(); ?>
 
-		<!-- <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/smoothstate.js'></script>
-		<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/velocity.js'></script> -->
-
 		<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/scripts-min.js'></script>
-
-
-
-
 
 		<script>
 			(function() {
@@ -72,13 +65,6 @@
 			s.parentNode.insertBefore(gcse, s);
 			})();
 		</script>
-
-
-
-
-
-
-
 
 	</head>
 	<body <?php body_class(); ?>>
@@ -114,8 +100,6 @@
 						<?php // nudev_nav(); ?>
 
 					</nav>
-
-
 
 					<div id="nu__logo">
 						<a href="<?=home_url()?>" title="Northeastern University System"><img src="<?=home_url()?>/wp-content/uploads/logo.png" alt="northeastern university logo" />
