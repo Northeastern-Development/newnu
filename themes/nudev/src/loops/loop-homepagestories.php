@@ -33,8 +33,8 @@
 				$guideSingle
 				,$i
 				,$s['block_slide'][0]['block_slide_image']['url']
-				,($s['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
 				,$s['block_slide'][0]['block_slide_link']
+				,($s['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
 				,($s['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
 				,$s['block_slide'][0]['block_slide_description']
 				,$s['block_slide'][0]['block_slide_title']
