@@ -1,5 +1,22 @@
 <?php
 
+	// grab the menu styles from the CMS
+	$args = array(
+		 "post_type" => "menustyles"
+		,'meta_query' => array(
+			 'relation' => 'AND'
+			,array("key"=>"menu","value"=>"IAm Menu","compare"=>"=")
+		)
+	);
+	$res = query_posts($args);
+	$styles = get_fields($res[0]->ID);
+
+	if($styles['background_image'] != ''){	// this will set a background image
+		$style = 'background-color: none; background: url('.$styles['background_image']['url'].'); background-repeat: no-repeat; background-position: center; background-size: cover;';
+	}else{	// this will set a background color with opacity
+		$style = 'background: rgba('.hex2rgb($styles['background_color']).','.($styles['opacity'] != ''?$styles['opacity']:'0.8').')';
+	}
+
 	$args = array(
 		 "post_type" => "supernav"
 		,'meta_query' => array(
@@ -49,7 +66,7 @@
 
 					$fields = get_fields($r->ID);
 
-					$guide = '<li><a href="%s" title="%s%s"%s>%s%s</a></li>';
+					$guide = '<li><a href="%s" title="%s%s"%s><div>%s</div><div>%s</div></a></li>';
 
 					$return .= sprintf(
 						$guide
@@ -71,4 +88,4 @@
 
 ?>
 
-<section><div class="fixedbg"><div></div><div></div></div><div class="items"><ul><?=$return?></ul></div></section>
+<div id="nu__iamnav" class="navigational" style="<?=$style?>"><section><div class="fixedbg"><div></div><div></div></div><div class="items"><ul><?=$return?></ul></div></section></div>

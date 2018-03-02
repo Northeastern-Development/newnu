@@ -803,6 +803,13 @@
 		"oAP": "\/functions\/admin-includes.php",
 		"oF": 0
 		},
+	"\/functions\/admin-menustyles.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/functions\/admin-menustyles.php",
+		"oF": 0
+		},
 	"\/functions\/admin-prefooter.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1233,6 +1240,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/loops\/loop-prefooter.php",
+		"oF": 0
+		},
+	"\/loops\/loop-searchnav.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-searchnav.php",
 		"oF": 0
 		},
 	"\/loops\/loop-supernav.php": {

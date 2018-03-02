@@ -169,7 +169,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
     // visibility: visible;
     position: fixed;
     z-index: 100;
-    background: rgba(0,0,0,0.8);
+    // background: rgba(0,0,0,0.8);
     height: 0;
     // height: 100%;
     min-height: 100%;
@@ -254,9 +254,33 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
           & > li{
             width: 100%;
             text-align: left;
-            padding: 0 20px 0 20px;
+            padding: 0 $gutter 0 $gutter;
             border-bottom: solid rgba(255,255,255,1.0) 1px;
             line-height: 50px;
+            &.featured{
+              border: none;
+              margin: 0 0 10px 0;
+              a {
+                color: rgba(255,255,255,1.0);
+              }
+              &.first{
+                margin: $gutter 0 10px 0;
+              }
+              &:hover{
+                background: none;
+                a{
+                  color: rgba(255,0,0,1.0);
+                }
+              }
+              img{
+                margin: 0 10px 0 0;
+                -webkit-filter: grayscale(1);
+                -moz-filter: grayscale(1);
+                filter: grayscale(1);
+                height: 50px;
+                width: 50px;
+              }
+            }
             &.active,
             &:hover{
               background: rgba(235, 231, 214, 1.0);
@@ -268,19 +292,45 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
               position: absolute;
               right: 0;
               top: 0;
-              width: 53%;
+              width: 51%;
               list-style: none;
               list-style-type: none;
               padding: 0 0 100px 0;
+              margin: 0 0 0 $gutter;
               & > li{
-                margin: 0 0 20px 0;
+                margin: 0 $gutter $gutter 0;
                 &:first-child{
                   font-size: 2.2rem;
+                  margin: 0 0 0 0;
                 }
                 & > a{
                   color: rgba(0,0,0,1.0);
-                  & > img{
-                    margin: 0 10px 0 0;
+                  display: block;
+                  clear: both;
+                  // background: green;
+                  overflow: hidden;
+                  &:hover{
+                    color: rgba(255,0,0,1.0);
+                    cursor: pointer;
+                  }
+                  & > div{
+                    min-height: 50px;
+                    // background: red;
+                    float: left;
+                    word-wrap: normal;
+                    width: 80%;
+                    font-size: 1.4rem;
+                    &:nth-child(1){
+                      width: 50px;
+                      margin: 0 10px 0 0;
+                      & > img{
+                        // margin: 0 10px 0 0;
+                        -webkit-filter: grayscale(1);
+                        -moz-filter: grayscale(1);
+                        filter: grayscale(1);
+                      }
+                    }
+
                   }
                 }
               }
@@ -379,7 +429,7 @@ input#nu__search-toggle:checked ~ label#nu__search-toggle-label{
   visibility: hidden;
   position: fixed;
   z-index: 100;
-  background: rgba(0,0,0,0.8);
+  // background: rgba(0,0,0,0.8);
   height: 0;
   overflow-y: auto;
   top: 1px;
