@@ -88,7 +88,6 @@
 						<div id="nu__mainmenu-search">
 							<input id="nu__search-toggle" type="checkbox" title="Click to search all of Northeastern University" />
 							<label for="nu__search-toggle" id="nu__search-toggle-label"></label>
-							<!-- <div id="nu__searchbar"><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><input type="text" name="query" id="query" placeholder="Enter search query" title="Enter your search query here" /><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><br />We can add in some more information here if we want to.</form></div> -->
 							<?php get_template_part('loops/loop-searchnav'); ?>
 						</div>
 
