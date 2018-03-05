@@ -17,6 +17,12 @@
 		$style = 'background: rgba('.hex2rgb($styles['background_color']).','.($styles['opacity'] != ''?$styles['opacity']:'0.8').')';
 	}
 
+	// get the list of popular search terms
+	$popular = '';
+	foreach($styles['popular_searches'] as $pS){
+		$popular .= '<li><a href="/search/?query='.strtolower(str_replace(' ','+',trim($pS['term']))).'" title="Click here to run this search">'.$pS['term'].'</a></li>';
+	}
+
 ?>
 
-<div id="nu__searchbar" style="<?=$style?>"><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><input type="text" name="query" id="query" placeholder="Enter search query" title="Enter your search query here" /><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><br />We can add in some more information here if we want to.</form></div>
+<div id="nu__searchbar" style="<?=$style?>"><section><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><input type="text" name="query" id="query" placeholder="| Search" title="Enter your search query here" /><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button>People like you searched these items<ul><?=$popular?></ul></form></section></div>

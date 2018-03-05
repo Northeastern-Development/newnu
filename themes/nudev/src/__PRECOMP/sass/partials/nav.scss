@@ -162,7 +162,8 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
 
 // this handles the layout of the main and iam menus
   #nu__supernav,
-  #nu__iamnav{
+  #nu__iamnav,
+  #nu__searchbar{
     opacity: 0;
     // opacity: 1.0;
     visibility: hidden;
@@ -341,15 +342,64 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
     }
   }
 
-  // small tweak only to add a background image to the iam menu
-  #nu__iamnav{
-    // background-color: none;
-    //   background: url('/wp-content/uploads/iamnavbackground.jpg');
-    //   background-repeat: no-repeat;
-    //   background-position: center;
-    //   background-size: cover;
-  }
+  // small tweaks to make search different from the other navigational panels
+  #nu__searchbar{
+    & > section{
+      border-left: solid rgba(255,255,255,1.0) 3px;
+      & > form{
+        width: auto;
+        // background: green;
+        margin: 0 $gutter $gutter $gutter;
+        text-align: left;
+        & > input{
+          margin: 0 0 0 0;
+          height: 50px;
+          line-height: 50px;
+          padding: 0 5px 0 5px;
+          width: 100%;
+          width: calc(100% - 40px);
+          border: none;
+          font-size: 2rem;
+          border-bottom: solid rgba(255,255,255,1.0) 1px;
+          background: rgba(0,0,0,1.0);
+          color: rgba(255,255,255,1.0);
+        }
 
+        & > button{
+          background: none;
+          border: none;
+          width: 40px;
+          height: 54px;
+          line-height: 50px;
+          font-size: 2rem;
+          font-family: "Material Icons";
+          color: rgba(255,255,255,1.0);
+          border-bottom: solid rgba(255,255,255,1.0) 1px;
+          margin: 0 0 0 0;
+          &:hover{
+            cursor: pointer;
+            color: rgba(255,0,0,1.0);
+          }
+        }
+        & > ul{
+          list-style: none;
+          list-style-type: none;
+          & > li{
+            height: auto;
+            line-height: 40px;
+            & > a{
+              font-size: 2rem;
+              color: rgba(255,255,255,1.0);
+              &:hover{
+                cursor: pointer;
+                color: rgba(255,0,0,1.0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
 
 
@@ -421,44 +471,44 @@ input#nu__search-toggle:checked ~ label#nu__search-toggle-label{
 
 
 
-#nu__searchbar{
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  z-index: 100;
-  height: 0;
-  overflow-y: auto;
-  top: 1px;
-  left: 0;
-  width: $wrapper-width;
-  margin: $header-height 0 0 0;
-  & > form{
-    width: 40%;
-    margin: 10vh auto 0 auto;
-    & > input{
-      margin: 0 10px 10px 10px;
-      height: 40px;
-      line-height: 40px;
-      padding: 0 5px 0 5px;
-      width: 80%;
-    }
-
-    & > button{
-      background: none;
-      border: none;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      font-size: 2rem;
-      font-family: "Material Icons";
-      color: rgba(255,255,255,1.0);
-      &:hover{
-        cursor: pointer;
-        color: rgba(255,0,0,1.0);
-      }
-    }
-  }
-}
+// #nu__searchbar{
+//   opacity: 0;
+//   visibility: hidden;
+//   position: fixed;
+//   z-index: 100;
+//   height: 0;
+//   overflow-y: auto;
+//   top: 1px;
+//   left: 0;
+//   width: $wrapper-width;
+//   margin: $header-height 0 0 0;
+//   & > form{
+//     width: 40%;
+//     margin: 10vh auto 0 auto;
+//     & > input{
+//       margin: 0 10px 10px 10px;
+//       height: 40px;
+//       line-height: 40px;
+//       padding: 0 5px 0 5px;
+//       width: 80%;
+//     }
+//
+//     & > button{
+//       background: none;
+//       border: none;
+//       width: 40px;
+//       height: 40px;
+//       line-height: 40px;
+//       font-size: 2rem;
+//       font-family: "Material Icons";
+//       color: rgba(255,255,255,1.0);
+//       &:hover{
+//         cursor: pointer;
+//         color: rgba(255,0,0,1.0);
+//       }
+//     }
+//   }
+// }
 
 
 

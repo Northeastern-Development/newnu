@@ -209,7 +209,7 @@
 			// gather up the rotator panels data and store the object to be used below
 			$.post("/wp-content/themes/nudev/src/hprotatordata.php",function(data){
 					rotators = JSON.parse(data);
-					console.log(rotators);
+					// console.log(rotators);
     	});
 
 			// since we made it this far, turn on the rotator arrows

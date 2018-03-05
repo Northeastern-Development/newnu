@@ -22,7 +22,7 @@
 
  footer{
    flex: none;
-   background: rgba(0,0,0,1.0);
+   background-color: rgba(0,0,0,1.0);
    background-image: url(/wp-content/uploads/footer-watermark.png);
    background-repeat: no-repeat;
    background-size: 202px 240px;
@@ -53,6 +53,7 @@
      height: 40px;
      overflow: hidden;
      // background: none;
+     background-size: 0px 0px;
      & > div.nu__footer{
        padding: 0 0 0 0;
        height: inherit;
@@ -94,7 +95,7 @@
    }
 
    & > div.nu__footer{
-     border-top: solid rgba(255,255,255,1) 1px;
+    border-top: solid rgba(255,255,255,1) 1px;
     padding: 40px 0 20px 0;
     width: $wrapper-width;
     height: inherit;
