@@ -37,7 +37,7 @@
   font-style: normal;
 }
 */
-footer {
+body.search > footer {
   display: none; }
 
 main#nu__search {
