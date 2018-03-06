@@ -1,0 +1,179 @@
+// this is the SASS file for the remotely called footer
+
+// Modules
+@import "modules/variables";
+@import "modules/mixins";
+@import "modules/fonts";
+
+
+footer{
+  flex: none;
+  background-color: rgba(0,0,0,1.0);
+  background-image: url(/wp-content/uploads/footer-watermark.png);
+  background-repeat: no-repeat;
+  background-size: 202px 240px;
+  background-position: right bottom;
+
+  overflow: hidden;
+
+  color: rgba(255,255,255,1.0);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  width: 100%;
+  height: 240px;
+  padding: 0 0 0 0;
+  font-family: Arial,Verdana,sans-serif;
+
+
+  -webkit-transition: height 0.20s linear;
+  -moz-transition: height 0.20s linear;
+  -ms-transition: height 0.20s linear;
+  -o-transition: height 0.20s linear;
+  transition: height 0.20s linear;
+
+
+  &.addprefooter{
+    height: 540px;
+  }
+  &.collapse{
+    height: 40px;
+    overflow: hidden;
+    // background: none;
+    background-size: 0px 0px;
+    & > div.nu__footer{
+      padding: 0 0 0 0;
+      height: inherit;
+      & > div.nu__footer-hideshow{
+       display: block;
+
+       &:hover{
+         color: Red;
+       }
+      }
+    }
+
+  }
+  &.absolute{
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    & > div.nu__footer{
+      padding: 0 0 0 0;
+      & > div.nu__footer-hideshow{
+       display: block;
+
+       &:hover{
+         color: Red;
+       }
+      }
+    }
+  }
+  & > div.nu__prefooter{
+    height: 300px;
+    background: rgba(0,0,0,1.0);
+    width: $wrapper-width;
+    & > div{
+      width: $content-width;
+      height: inherit;
+      background: red;
+      margin: 0 auto 0 auto;
+    }
+  }
+
+  & > div.nu__footer{
+   border-top: solid rgba(255,255,255,1) 1px;
+   padding: 40px 0 20px 0;
+   width: $wrapper-width;
+   height: inherit;
+   margin: 0 auto 0 auto;
+    position: relative;
+    & > div.nu__footer-hideshow{
+      display: none;
+      text-align: center;
+      height: $footer-height-collapsed;
+      line-height: $footer-height-collapsed;
+      font-family: "Material Icons";
+      font-size: 2rem;
+      // background: rgba(0,0,0,1.0);
+      margin: 0 0 0 0;
+      width: 100vw;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    & > div{
+     width: $content-width-wide;
+     margin: 0 auto 0 auto;
+      & > a{
+        color: rgba(255,255,255,1.0);
+        float: left;
+        margin-right: 20px;
+        & > img,
+        & > svg{
+         fill: rgba(255,255,255,1.0);
+         height: 1.5vw;
+        }
+      }
+
+         & > div{
+           width: 65%;
+           height: auto;
+           clear: both;
+           margin: 0 0 0 0;
+           overflow: hidden;
+           &:nth-child(1){
+             border-top: solid rgba(255,255,255,1.0) 1px;
+             padding: 10px 0 0 0;
+           }
+           & > p{
+             float: left;
+             font-size: 1.4rem;
+             text-transform: uppercase;
+             width: 200px;
+             margin: 0 0 10px 0;
+           }
+
+           & > ul{
+             list-style: none;
+             list-style-type: none;
+             & > li{
+               float: left;
+               margin: 0 20px 0 0;
+               &:last-child{
+                 margin: 0 0 0 0;
+               }
+               & > a{
+                 color: rgba(255,255,255,1.0);
+                 font-size: 1.2rem;
+                 &:hover{
+                   color: red;
+                 }
+                 & > svg{
+                   height: 30px;
+                 }
+               }
+             }
+           }
+
+        }
+
+      & > p{
+        clear: both;
+        font-size: 100%;
+        height: auto;
+        line-height: 1.4rem;
+        margin: 20px 0 0 0;;
+        padding: 0;
+        color: #ccc;
+        & > a{
+          color: #ccc;
+          &:hover{
+            color: #ccc !important;
+            text-decoration: underline !important;
+          }
+        }
+      }
+   }
+  }
+
+}

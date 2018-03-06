@@ -36,8 +36,8 @@ h1{
 }
 
 h2{
-  font-size: 5rem;
-  line-height: 8rem;
+  font-size: 1.8rem;
+  line-height: 4rem;
   text-transform: uppercase;
   text-align: center;
   font-weight: 200;
@@ -56,7 +56,7 @@ h4{
 }
 
 a{
-  color: yellow;
+  color: red;
 }
 
 h5{
@@ -71,56 +71,8 @@ h6{
   letter-spacing: 1px;
 }
 
-
-a.button{
-  font-size: 1.6rem;
-  letter-spacing: 1px;
-  padding: 5px 10px 5px 10px;
-  border: solid rgba(81, 152, 166, 1.0) 1px;
-  text-align: center;
-  color: rgba(255,255,255,1.0);
-  margin: 0 auto 0 auto;
-  text-transform: uppercase;
-  display: block;
-  width: 50%;
-  &:hover{
-    background: rgba(81, 152, 166, 1.0);
-    color: rgba(255,255,255,1.0);
-  }
-  &.light{
-    color: rgba(0,0,0,1.0);
-    &:hover{
-      background: rgba(81, 152, 166, 1.0);
-      color: rgba(255,255,255,1.0);
-    }
-  }
-}
-
 p{
   margin: 0 0 $gutter 0;
-
-}
-
-
-div#wpfront-scroll-top-container{
-  background: rgba(204, 0, 0, 1.0);
-  border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
-  line-height: 3.75rem;
-  & td.button-holder{
-    background: none;
-    background-color: none;
-    font-size: 3rem;
-    width: 4rem;
-    height: 4rem;
-    line-height: 3.75rem;
-    font-weight: 400;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    text-align: center;
-  }
 }
 
 
@@ -143,41 +95,3 @@ main{
     overflow: hidden;
   }
 }
-
-
-
-
-
-
-
-
-
-
-// @media only screen and (max-width: 500px){
-//
-//   a.button{
-//     font-size: 1.25rem;
-//     line-height: 2.5rem;
-//     // letter-spacing: 1px;
-//     // padding: 5px 20px 5px 20px;
-//     // border: solid rgba(81, 152, 166, 1.0) 1px;
-//     // text-align: center;
-//     // color: rgba(255,255,255,1.0);
-//     // margin: 0 auto 0 auto;
-//     // text-transform: uppercase;
-//     // display: block;
-//     width: 90%;
-//     // &:hover{
-//     //   background: rgba(81, 152, 166, 1.0);
-//     //   color: rgba(255,255,255,1.0);
-//     // }
-//     // &.light{
-//     //   color: rgba(0,0,0,1.0);
-//     //   &:hover{
-//     //     background: rgba(81, 152, 166, 1.0);
-//     //     color: rgba(255,255,255,1.0);
-//     //   }
-//     // }
-//   }
-//
-// }

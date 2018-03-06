@@ -257,7 +257,7 @@
 			windowSize[0] = $(window).height();
 			windowSize[1] = $(window).width();
 			$.post("/wp-content/themes/nudev/src/windowsize.php",{"height":windowSize[0],"width":windowSize[1]},function(data){
-					//console.log(data);
+					console.log(data);
     	});
 		}
 

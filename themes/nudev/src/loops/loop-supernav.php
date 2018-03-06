@@ -108,10 +108,39 @@
 		$i++;
 	}
 
-	$return .= '<li class="featured first"><a href="//northeastern.edu/president" title="President Aoun [will open in new window]" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="president icon" /> President Aoun</a></li>';
-	$return .= '<li class="featured"><a href="//my.northeastern.edu" title="MyNortheastern [will open in new window]" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="mynortheastern icon" /> MyNortheastern</a></li>';
-	$return .= '<li class="featured"><a href="//northeastern.edu/findfacultystaff" title="Find faculty and staff" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="find faculty and staff icon" /> Find Faculty and Staff</a></li>';
-	$return .= '<li class="featured"><a href="//giving.northeastern.edu" title="Make a gift" target="_blank"><img src="http://fpoimagery.com/?t=px&w=30&h=30&bg=0ff&fg=000000" alt="make a gift icon" /> Make a Gift</a></li>';
+	// grab the featured items from the menu CMS and show them below
+	$args = array(
+		 "post_type" => "supernav"
+		,'meta_query' => array(
+			 'relation' => 'AND'
+			,array("key"=>"status","value"=>"1","compare"=>"=")
+			,array("key"=>"category","value"=>'Featured',"compare"=>"=")
+		)
+	);
+
+	$res = query_posts($args);
+
+	$guide = '<li class="featured%s"><a href="%s" title="%s%s"%s><img src="%s" alt="%s icon" />%s</a></li>';
+
+	$iii = 0;
+	foreach($res as $r){
+
+		$fields = get_fields($r->ID);
+
+		$return .= sprintf(
+			$guide
+			,($iii === 0?' first':'')
+			,$fields['link_target_url']
+			,$r->post_title
+			,(isset($fields['open_in_new']) && $fields['open_in_new'] == "1"?' [will open in new window]':'')
+			,(isset($fields['open_in_new']) && $fields['open_in_new'] == "1"?' target="_blank"':'')
+			,$fields['thumbnail']['url']
+			,$r->post_title
+			,$r->post_title
+		);
+
+		$iii++;
+	}
 
 	$supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul>'.$return.'</ul></div></section></div>';
 

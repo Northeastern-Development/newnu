@@ -1,5 +1,9 @@
 <?php
 
+	session_start();
+
+	// echo 'WINDOW WIDTH: '.$_SESSION['windowsize']['width'];
+
 // require_once "modules/is-debug.php";
 
 /* **********************************************************************
@@ -16,7 +20,7 @@ Load External Files
 
 
 
-
+// $windowSize = $_SESSION['windowsize'];
 
 
 
@@ -42,6 +46,44 @@ function ar_responsive_image($image_id,$image_size,$max_width){
 		// generate the markup for the responsive image
 		return 'src="'.$image_src.'" srcset="'.$image_srcset.'" sizes="(max-width: '.$max_width.') 100vw, '.$max_width.'"';
 
+	}
+}
+
+
+// this will handle selecting the best possible image size for background css images
+// a = the image array to choose from
+// function responsive_background_images(){
+//
+// 	// $windowSize = $_SESSION['windowsize'];
+//
+// 	switch (true) {
+// 		case ($_SESSION['windowsize']['width'] > 1000):
+// 				return array('url');
+// 				break;
+// 		case ($_SESSION['windowsize']['width'] > 780):
+// 				//return $a['block_slide_image']['sizes']['large'];
+// 				return array('sizes','large');
+// 				break;
+// 		case ($_SESSION['windowsize']['width'] > 200):
+// 				// return $a['block_slide_image']['sizes']['medium'];
+// 				return array('sizes','medium');
+// 				break;
+// 		}
+//
+// }
+
+
+
+function responsive_background_images(){
+	$windowSize = $_SESSION['windowsize'];
+	if($windowSize['width'] > 1000){
+		return array('block_slide_image','url');
+	}else if($windowSize['width'] > 780 && $windowSize['width'] < 1000){
+		return array('block_slide_image','sizes','large');
+	}else if($windowSize['width'] > 250 && $windowSize['width'] < 780){
+		return array('block_slide_image','sizes','medium');
+	}else if($windowSize['width'] < 250){
+		return array('block_slide_image','sizes','small');
 	}
 }
 

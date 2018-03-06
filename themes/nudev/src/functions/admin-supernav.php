@@ -74,6 +74,7 @@
         ,'Audience' => 'Audience'
         ,'Campus Activity' => 'Campus Activity'
         ,'Experiential Learning' => 'Experiential Learning'
+        ,'Featured' => 'Featured'
         ,'Global' => 'Global'
         ,'Lifelong Learning' => 'Lifelong Learning'
         ,'Research' => 'Research'
