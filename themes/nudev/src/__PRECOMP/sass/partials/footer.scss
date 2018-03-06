@@ -3,22 +3,6 @@
  * ---
  */
 
- .nu__backtotop{
-   display: none;
-   position: fixed;
-   bottom: 30px;
-   right: 30px;
-   width: 50px;
-   height: 50px;
-   text-align: center;
-   line-height: 55px;
-   background: rgba(45, 46, 47, 1.0);
-   border: solid rgba(0,0,0,1.0) 1px;
-   &:hover{
-     cursor: pointer;
-   }
- }
-
 
  footer{
    flex: none;
@@ -52,7 +36,6 @@
    &.collapse{
      height: 40px;
      overflow: hidden;
-     // background: none;
      background-size: 0px 0px;
      & > div.nu__footer{
        padding: 0 0 0 0;
@@ -108,7 +91,6 @@
        line-height: $footer-height-collapsed;
        font-family: "Material Icons";
        font-size: 2rem;
-       // background: rgba(0,0,0,1.0);
        margin: 0 0 0 0;
        width: 100vw;
        &:hover{

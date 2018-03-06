@@ -267,5 +267,5 @@ function wp_header(){
 
 // let's check the plugin to make sure that we have everything we need
 if(!is_admin()){
-  add_action('wp_footer','nu_check_plugin');
+  // add_action('wp_footer','nu_check_plugin');
 }

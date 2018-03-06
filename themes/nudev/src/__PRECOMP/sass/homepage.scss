@@ -18,15 +18,12 @@ $columns: 3;
 body.home{
   height: 100%;
   min-height: 100%;
-  // overflow-y: scroll;
 }
 
 main#nu__homepage{
 
   width: $wrapper-width;
-  // width: 100%
   margin: 0 0 0 0;
-
   background: rgba(0,0,0,1.0);
 
   $h: 100%;
@@ -79,16 +76,17 @@ main#nu__homepage{
     		}
     }
 
+    & > #prev,
+    & > #next{
+      display:none;
+    }
+
     & > #prev {
         left: 20px;
-        display:none;
-        // display: block;
     }
 
     & > #next {
         right: 20px;
-    		display:none;
-        // display: block;
     }
 
 
@@ -97,24 +95,19 @@ main#nu__homepage{
   		float: left;
       display: block;
   		width:33.33%;
-  		//display: flex;
-  		//flex-wrap: wrap;
   		& > article {
   			position:relative;
   			min-height: 200px;
   			background-position: center center !important;
   			background-repeat: no-repeat !important;
   			background-size: cover !important;
-  			//-webkit-user-drag: none;
 
         .nu__overlay-logo{
           width:50px;
           height:50px;
-          // background:yellow;
           position:absolute;
           top:20px;
           right:20px;
-          // z-index:1000;
         }
 
         &:hover {
@@ -136,12 +129,6 @@ main#nu__homepage{
   						background:transparent ;
   					}
   					& > h2 {
-  						// text-shadow:2px 2px 6px rgba(0, 0, 0, 0.7);
-  						// max-width:90%;
-  						// padding-bottom: .25em;
-  						// position: absolute;
-              // font-size: 1.8rem;
-  						// bottom: 20px;
   						left: 20px;
   						z-index:100;
   						transform: translateX(0) translateY(0);
@@ -192,17 +179,11 @@ main#nu__homepage{
   				width: 100%;
   				height: 100%;
   				position: absolute;
-  				// z-index: 1;
   				top: 0;
   				left: 0;
   				opacity: 0;
   				color:#fff;
   				text-decoration:none;
-  				// &:hover {
-  				// 	background: rgba(0,0,0,0.7);
-  				// 	opacity:1;
-          //   cursor: pointer;
-  				// }
   				& p {
   					text-shadow:2px 2px 6px rgba(0, 0, 0, 0.7);
   	        text-align:center;
@@ -251,28 +232,24 @@ main#nu__homepage{
         display: block;
         background: rgba(0,0,0,1.0);
         &:nth-child(1){
-          //background: orange;
           float:left;
           width:70%;
           height:65%;
           order:1;
         }
         &:nth-child(2){
-          // background: green;
           float:right;
           width:30%;
           height:35%;
           order:2;
         }
         &:nth-child(3){
-          // background: blue;
           float:right;
           width:30%;
           height:65%;
           order:3;
         }
         &:nth-child(4){
-          // background: rgba(0, 0, 0, 1.0);
           float:left;
           width:45%;
           height:35%;
@@ -280,7 +257,6 @@ main#nu__homepage{
           overflow:hidden;
         }
         &:nth-child(5){
-          // background: purple;
           float:right;
           width:25%;
           height:35%;
@@ -294,28 +270,24 @@ main#nu__homepage{
         display: block;
         background: rgba(0,0,0,1.0);
         &:nth-child(1){
-          // background: orange;
           float:left;
           width:30%;
           height:100%;
           order:1;
         }
         &:nth-child(2){
-          // background: green;
           float:right;
           width:70%;
           height:65%;
           order:2;
         }
         &:nth-child(3){
-          // background: blue;
           float:left;
           width:25%;
           height:35%;
           order:3;
         }
         &:nth-child(4){
-          // background: rgba(0,0,0,1);
           float:right;
           width:45%;
           height:35%;
@@ -330,28 +302,24 @@ main#nu__homepage{
         height:50%;
         background: rgba(0,0,0,1.0);
         &:nth-child(1){
-          // background: orange;
           float:left;
           width:70%;
           height:65%;
           order:1;
         }
         &:nth-child(2){
-          // background: green;
           float:right;
           width:30%;
           height:100%;
           order:2;
         }
         &:nth-child(3){
-          // background: blue;
           float:left;
           width:45%;
           height:35%;
           order:3;
         }
         &:nth-child(4){
-          // background: red;
           float:left;
           width:25%;
           height:35%;
@@ -362,106 +330,5 @@ main#nu__homepage{
 
 
   }
-
-  // section#nu__stories{
-  //   width: 100vw;
-  //   clear: both;
-  //   overflow: hidden;
-  //   margin: 0 auto 0 auto;
-  //   padding: 0 0 0 0;
-  //   margin-bottom: ($gutter * 4);
-  //   & > div.nu__section-header{
-  //
-  //     $hValue: 50px;
-  //
-  //     width: $content-width;
-  //     height: $hValue;
-  //     margin: 0 auto 0 auto;
-  //     display: flex;
-  //     flex-direction: row;
-  //     & > div{
-  //       flex: 1;
-  //       margin: ($hValue / 2) 0 0 0;
-  //       height: 1px;
-  //       background: rgba(255,255,255,1.0);
-  //     }
-  //     & > h3{
-  //       text-align: center;
-  //       text-transform: uppercase;
-  //       padding: 0 ($gutter * 3) 0 ($gutter * 3);
-  //       line-height: $hValue;
-  //     }
-  //   }
-  //
-  //   & > ul{
-  //     background: rgba(0,0,0,1.0);
-  //     list-style: none;
-  //     list-style-type: none;
-  //     overflow: hidden;
-  //     & > li{
-  //       background: rgba(0,0,0,1.0);
-  //       float: left;
-  //       text-align: center;
-  //     }
-  //   }
-  // }
-
-
-  // section#nu__stories{
-  //   $columns: 3;
-  //   $content-width: 100vw;
-  //   $height: 20vw;
-  //   background: none;
-  //   & > ul{
-  //     background: rgba(0,0,0,0.5);
-  //     & > li{
-  //       width: (($content-width) / $columns);
-  //       height: $height;
-  //       line-height: $height;
-  //       padding: 0 0 0 0;
-  //
-  //       &:nth-child(1){
-  //         background: red;
-  //       }
-  //
-  //       &:nth-child(2){
-  //         background: green;
-  //       }
-  //
-  //       &:nth-child(3){
-  //         background: blue;
-  //       }
-  //
-  //       &:nth-child(4){
-  //         background: yellow;
-  //       }
-  //
-  //       &:nth-child(5){
-  //         background: purple;
-  //       }
-  //
-  //       &:nth-child(6){
-  //         background: orange;
-  //       }
-  //
-  //
-  //       &:nth-child(1),
-  //       &:nth-child(5){
-  //         width: 40vw;
-  //       }
-  //
-  //       &:nth-child(2),
-  //       &:nth-child(4){
-  //         width: 33vw;
-  //       }
-  //
-  //       &:nth-child(3),
-  //       &:nth-child(6){
-  //         width: 27vw;
-  //       }
-  //
-  //     }
-  //   }
-  // }
 
 }

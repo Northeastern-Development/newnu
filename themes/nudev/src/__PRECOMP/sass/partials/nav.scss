@@ -21,16 +21,14 @@ nav.nu__mainmenu{
 
 
 
-
-
 // ****************************************************************************************************
-// the following bunch of styles handles the click event on the checkbox to hide and show the supernav
-// so that we do not need to use JS
+// these are the common styles for the main menu items
 // ****************************************************************************************************
+div#nu__mainmenu-iamnav,
+div#nu__mainmenu-search,
 div#nu__mainmenu-supernav{
   float: right;
   height: inherit;
-  width: 77px;
   top: 0;
   right: 0;
   margin: 0 0 0 0;
@@ -39,40 +37,64 @@ div#nu__mainmenu-supernav{
   text-align: right;
 }
 
-input#nu__supernav-toggle {
-  height: inherit;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-  z-index: 100;
-  opacity: 0;
-  &:hover ~ label#nu__supernav-toggle-label{
-    color: rgba(133, 134, 135, 1.0);
-    cursor: pointer;
-  }
 
+nav.nu__mainmenu{
+  & > div > input{
+    height: inherit;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    &:hover ~ label{
+      color: rgba(133, 134, 135, 1.0);
+      cursor: pointer;
+    }
+    &:checked ~ label{
+      color: rgba(255,0,0,1.0);
+    }
+    &:checked ~ div#nu__supernav,
+    &:checked ~ div#nu__iamnav,
+    &:checked ~ div#nu__searchbar{
+      height: 100%;
+      visibility: visible;
+      opacity: 1;
+
+      -webkit-transition: visibility 0s, opacity 0.10s linear;
+      -moz-transition: visibility 0s, opacity 0.10s linear;
+      -ms-transition: visibility 0s, opacity 0.10s linear;
+      -o-transition: visibility 0s, opacity 0.10s linear;
+      transition: visibility 0s, opacity 0.10s linear;
+    }
+  }
+}
+
+label{
+  float: right;
+  color: rgba(255,255,255,1.0);
+}
+
+// *************************************************************************************************
+
+
+
+
+
+
+// ****************************************************************************************************
+// the following bunch of styles handles the click event on the checkbox to hide and show the supernav
+// so that we do not need to use JS
+// ****************************************************************************************************
+div#nu__mainmenu-supernav{
+  width: 77px;
 }
 
 label#nu__supernav-toggle-label{
-  float: right;
-  color: rgba(255,255,255,1.0);
   &:before{
     content: 'Menu \E5D2';
   }
-}
-
-input#nu__supernav-toggle:checked ~ div#nu__supernav{
-  height: 100%;
-  visibility: visible;
-  opacity: 1;
-
-  -webkit-transition: visibility 0s, opacity 0.10s linear;
-  -moz-transition: visibility 0s, opacity 0.10s linear;
-  -ms-transition: visibility 0s, opacity 0.10s linear;
-  -o-transition: visibility 0s, opacity 0.10s linear;
-  transition: visibility 0s, opacity 0.10s linear;
 }
 
 input#nu__supernav-toggle:checked ~ div#nu__searchbar{
@@ -82,7 +104,6 @@ input#nu__supernav-toggle:checked ~ div#nu__searchbar{
 }
 
 input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
-  color: rgba(255,255,255,1.0);
   &:before{
     content: 'Close \E14C';
   }
@@ -97,50 +118,13 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   // so that we do not need to use JS
   // ****************************************************************************************************
   div#nu__mainmenu-iamnav{
-    float: right;
-    height: inherit;
     width: 75px;
-    top: 0;
-    right: 0;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    position: relative;
-    text-align: right;
-  }
-
-  input#nu__iamnav-toggle {
-    height: inherit;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    z-index: 100;
-    opacity: 0;
-    &:hover ~ label#nu__iamnav-toggle-label{
-      color: rgba(133, 134, 135, 1.0);
-      cursor: pointer;
-    }
-
   }
 
   label#nu__iamnav-toggle-label{
-    float: right;
-    color: rgba(255,255,255,1.0);
     &:before{
       content: 'I am a \E313';
     }
-  }
-
-  input#nu__iamnav-toggle:checked ~ div#nu__iamnav{
-    height: 100%;
-    visibility: visible;
-    opacity: 1;
-    -webkit-transition: visibility 0s, opacity 0.10s linear;
-    -moz-transition: visibility 0s, opacity 0.10s linear;
-    -ms-transition: visibility 0s, opacity 0.10s linear;
-    -o-transition: visibility 0s, opacity 0.10s linear;
-    transition: visibility 0s, opacity 0.10s linear;
   }
 
   input#nu__iamnav-toggle:checked ~ div#nu__searchbar{
@@ -150,7 +134,6 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   }
 
   input#nu__iamnav-toggle:checked ~ label#nu__iamnav-toggle-label{
-    color: rgba(255,255,255,1.0);
     &:before{
       content: 'Close \E14C';
     }
@@ -160,19 +143,44 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
 
 
 
-// this handles the layout of the main and iam menus
+
+  // ****************************************************************************************************
+  // the following bunch of styles handles the click event on the checkbox to hide and show the search
+  // so that we do not need to use JS
+  // ****************************************************************************************************
+  div#nu__mainmenu-search{
+    width: 120px;
+  }
+
+  label#nu__search-toggle-label{
+    margin: 0 20px 0 0;
+    &:before{
+      content: 'Search \E8B6';
+    }
+  }
+
+  input#nu__search-toggle:checked ~ label#nu__search-toggle-label{
+    &:before{
+      content: 'Close \E14C';
+    }
+  }
+
+  // ****************************************************************************************************
+
+
+
+
+  // ****************************************************************************************************
+  // the following bunch of styles handles the actual nav overlays for main menu, search, and iam
+  // ****************************************************************************************************
   #nu__supernav,
   #nu__iamnav,
   #nu__searchbar{
     opacity: 0;
-    // opacity: 1.0;
     visibility: hidden;
-    // visibility: visible;
     position: fixed;
     z-index: 100;
-    // background: rgba(0,0,0,0.8);
     height: 0;
-    // height: 100%;
     min-height: 100%;
     overflow-x: hidden;
     top: 1px;
@@ -189,12 +197,9 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
       height: 100%;
       line-height: 70px;
     }
-
     & > section{
-
       $s: 60px;
       $hh: 100%;
-
       float: right;
       background: rgba(0,0,0,1.0);
       width: 50%;
@@ -212,8 +217,6 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
         padding: 0 20px 0 20px;
         background: rgba(0,0,0,1.0);
       }
-
-
       & > div.fixedbg{
         position: absolute;
         display: table;
@@ -235,8 +238,6 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
           }
         }
       }
-
-
       & > div.items{
         position: absolute;
         min-height: calc(#{$hh} - #{$s});
@@ -348,7 +349,6 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
       border-left: solid rgba(255,255,255,1.0) 3px;
       & > form{
         width: auto;
-        // background: green;
         margin: 0 $gutter $gutter $gutter;
         text-align: left;
         & > input{
@@ -400,240 +400,3 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
       }
     }
   }
-
-
-
-
-// ****************************************************************************************************
-// the following bunch of styles handles the search menu item and overlay
-// ****************************************************************************************************
-div#nu__mainmenu-search{
-  float: right;
-  height: inherit;
-  width: 120px;
-  top: 0;
-  right: 0;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  position: relative;
-  text-align: right;
-}
-
-input#nu__search-toggle {
-  height: inherit;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  cursor: pointer;
-  z-index: 100;
-  opacity: 0;
-  &:hover ~ label#nu__search-toggle-label{
-    color: rgba(133, 134, 135, 1.0);
-    cursor: pointer;
-  }
-
-}
-
-label#nu__search-toggle-label{
-  float: right;
-  color: rgba(255,255,255,1.0);
-  margin: 0 20px 0 0;
-  &:before{
-    content: 'Search \E8B6';
-  }
-}
-
-input#nu__search-toggle:checked ~ div#nu__searchbar{
-  height: 100%;
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: visibility 0s, opacity 0.10s linear;
-  -moz-transition: visibility 0s, opacity 0.10s linear;
-  -ms-transition: visibility 0s, opacity 0.10s linear;
-  -o-transition: visibility 0s, opacity 0.10s linear;
-  transition: visibility 0s, opacity 0.10s linear;
-}
-
-input#nu__search-toggle:checked ~ label#nu__search-toggle-label{
-  color: rgba(255,255,255,1.0);
-  &:before{
-    content: 'Close \E14C';
-  }
-}
-
-
-
-
-
-
-
-
-// #nu__searchbar{
-//   opacity: 0;
-//   visibility: hidden;
-//   position: fixed;
-//   z-index: 100;
-//   height: 0;
-//   overflow-y: auto;
-//   top: 1px;
-//   left: 0;
-//   width: $wrapper-width;
-//   margin: $header-height 0 0 0;
-//   & > form{
-//     width: 40%;
-//     margin: 10vh auto 0 auto;
-//     & > input{
-//       margin: 0 10px 10px 10px;
-//       height: 40px;
-//       line-height: 40px;
-//       padding: 0 5px 0 5px;
-//       width: 80%;
-//     }
-//
-//     & > button{
-//       background: none;
-//       border: none;
-//       width: 40px;
-//       height: 40px;
-//       line-height: 40px;
-//       font-size: 2rem;
-//       font-family: "Material Icons";
-//       color: rgba(255,255,255,1.0);
-//       &:hover{
-//         cursor: pointer;
-//         color: rgba(255,0,0,1.0);
-//       }
-//     }
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @media only screen and (max-width: 1500px){
-//   nav{
-//     & > ul{
-//       // display: flex;
-//       // flex-direction: row;
-//       & > li{
-//         // float: none;
-//         // flex-grow: 1;
-//         & > a{
-//           font-size: 1.25rem;
-//           // padding: 0 $gutter 0 $gutter;
-//         }
-//       }
-//     }
-//   }
-// }
-//
-//
-//
-//
-//
-// @media only screen and (max-width: 1100px){
-//
-//   nav{
-//     overflow: hidden;
-//     & > ul{
-//       width: 84vw;
-//       margin: nth($wrapper-margins, 1) 8vw nth($wrapper-margins, 3) 8vw;
-//       list-style: none;
-//       list-style-type: none;
-//       clear: both;
-//       display: block;
-//       overflow: hidden;
-//       height: 50px;
-//       & > li{
-//         float: none;
-//         flex: none;
-//         border-left: none;
-//         &:first-child{
-//           display: block;
-//           & > a{
-//             font-size: 3rem;
-//             font-weight: 300;
-//             text-align: left;
-//             padding: 0 0 0 0;
-//           }
-//         }
-//         &:last-child{
-//           border-right: none;
-//           float: none;
-//           &::after{
-//             color: rgba(0,0,0,1.0);
-//           }
-//         }
-//         & > a{
-//           display: block;
-//           padding: 0 0 0 0;
-//           height: $navigation-height;
-//           line-height: $navigation-height;
-//           margin: 0 0 0 0;
-//           width: 100%;
-//           font-size: 1.3rem;
-//           text-align: center;
-//         }
-//         &.active,
-//         &:hover{
-//           // background: rgba(0,0,0,1.0);
-//           color: nth($brand_colors,4);
-//         }
-//         &:hover{
-//           cursor: pointer;
-//         }
-//       }
-//     }
-//   }
-//
-// }
-//
-//
-//
-//
-//
-// // @media only screen and (max-width: 760px){
-// //
-// //   nav{
-// //     & > ul{
-// //       width: 90vw;
-// //       margin: 0 5vw 0 5vw;
-// //     }
-// //   }
-// //
-// // }
-// //
-// //
-// //
-// //
-// //
-// // @media only screen and (max-width: 560px){
-// //
-// //   nav{
-// //     & > ul{
-// //       width: 90vw;
-// //       margin: 0 5vw 0 5vw;
-// //       & > li{
-// //         & > a{
-// //           font-size: 0.9rem;
-// //           line-height: 1.25rem;
-// //           padding: ($gutter * 2) 10px $gutter 10px;
-// //         }
-// //       }
-// //     }
-// //   }
-// //
-// // }
