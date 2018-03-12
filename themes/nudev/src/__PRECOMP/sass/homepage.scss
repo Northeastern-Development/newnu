@@ -36,6 +36,12 @@ main#nu__homepage{
   height: -webkit-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
 
 
+  div#nu__seo-content{
+    position: absolute;
+    z-index: -1000;
+  }
+
+
   div#nu__stories{
     height: 100%;
   	width: 300%;

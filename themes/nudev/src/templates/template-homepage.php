@@ -8,6 +8,8 @@
 
 	<main id="nu__homepage" role="main" aria-label="content" class="smooth">
 
+		<div id="nu__seo-content"><h1><?=get_the_content()?></h1><p>this is the university about content</p></div>
+
 		<div id="nu__stories">
 
 			<div id="prev" title="Click here to go to the previous slide">&#xE5C4;</div>
