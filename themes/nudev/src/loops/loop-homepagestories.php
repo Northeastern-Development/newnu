@@ -25,9 +25,9 @@
 
 	$return = '<section class="panel-'.$jj.'">';
 
-	$guideSingle = '<article id="article-%s" style="%s %s" ><a href="%s" title="Click here now to learn more %s" %s><p>%s -></p></a><h2>%s</h2>%s</article>';
+	$guideSingle = '<article id="article-%s" style="%s %s" ><a href="%s" title="Click here now to learn more %s" %s><p>%s&nbsp;</p></a><h2>%s</h2>%s</article>';
 
-	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator"><a href="%s" style="background-image: url(%s);" target="%s" title="Click here now to learn more %s"><h2>%s</h2></a><div class="slider_prev rotate" title="Click here to view the previous slide"><svg viewbox="0 0 100 100"><path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" transform=" translate(15,0)" /></svg></div><div class="slider_next rotate" title="Click here to view the next slide"><svg viewbox="0 0 100 100"><path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" transform="translate(85,100) rotate(180) " /></svg></div>%s</article>';
+	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator"><a href="%s" style="background-image: url(%s);" target="%s" title="Click here now to learn more %s"><h2>%s&nbsp;</h2></a><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div>%s</article>';
 
 
 	$iPath = responsive_background_images();	// call the function to figure out the best iamge size to use
