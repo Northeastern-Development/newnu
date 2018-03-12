@@ -2,13 +2,16 @@
 
 	/* Template Name: Homepage */
 
+
+
+
 	get_header();
 
 ?>
 
 	<main id="nu__homepage" role="main" aria-label="content" class="smooth">
 
-		<div id="nu__seo-content"><h1><?=get_the_content()?></h1><p>this is the university about content</p></div>
+		<div id="nu__seo-content"><h1><?=get_the_content()?></h1></div>
 
 		<div id="nu__stories">
 
