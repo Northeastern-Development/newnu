@@ -4,6 +4,10 @@
  * Menus
  */
 
+ // @import "../modules/variables";
+ // @import "../modules/mixins";
+ // @import "../modules/fonts";
+
 
 nav.nu__mainmenu{
   position: absolute;
@@ -49,11 +53,11 @@ nav.nu__mainmenu{
     z-index: 100;
     opacity: 0;
     &:hover ~ label{
-      color: rgba(133, 134, 135, 1.0);
+      color: rgba($brand_colors-white, 1.0);
       cursor: pointer;
     }
     &:checked ~ label{
-      color: rgba(255,0,0,1.0);
+      color: rgba($brand_colors-white, 1.0);
     }
     &:checked ~ div#nu__supernav,
     &:checked ~ div#nu__iamnav,
@@ -72,8 +76,24 @@ nav.nu__mainmenu{
 }
 
 label{
+  text-transform: uppercase;
   float: right;
-  color: rgba(255,255,255,1.0);
+  @include font-2l-l;
+  color: rgba($brand_colors-white, 0.8);
+  line-height: $header-height;
+  height: $header-height;
+  overflow: hidden;
+  &:before{
+
+  }
+  &:after{
+    float: right;
+    @include font-7-c;
+    // content: '\E313';
+    line-height: ($header-height + 5);
+    height: $header-height;
+    margin: 0 0 0 5px;
+  }
 }
 // *************************************************************************************************
 
@@ -87,12 +107,15 @@ label{
 // so that we do not need to use JS
 // ****************************************************************************************************
 div#nu__mainmenu-supernav{
-  width: 77px;
+  width: 100px;
 }
 
 label#nu__supernav-toggle-label{
   &:before{
-    content: 'Menu \E5D2';
+    content: 'Menu';
+  }
+  &:after{
+    content: '\E5D2';
   }
 }
 
@@ -104,7 +127,10 @@ input#nu__supernav-toggle:checked ~ div#nu__searchbar{
 
 input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   &:before{
-    content: 'Close \E14C';
+    content: 'Close';
+  }
+  &:after{
+    content: '\E14C';
   }
 }
 // ****************************************************************************************************
@@ -117,12 +143,15 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   // so that we do not need to use JS
   // ****************************************************************************************************
   div#nu__mainmenu-iamnav{
-    width: 75px;
+    width: 100px;
   }
 
   label#nu__iamnav-toggle-label{
     &:before{
-      content: 'I am a \E313';
+      content: 'I am a';
+    }
+    &:after{
+      content: '\E313';
     }
   }
 
@@ -134,7 +163,10 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
 
   input#nu__iamnav-toggle:checked ~ label#nu__iamnav-toggle-label{
     &:before{
-      content: 'Close \E14C';
+      content: 'Close';
+    }
+    &:after{
+      content: '\E14C';
     }
   }
   // ****************************************************************************************************
@@ -148,19 +180,26 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   // so that we do not need to use JS
   // ****************************************************************************************************
   div#nu__mainmenu-search{
-    width: 120px;
+    width: 130px;
+    margin: 0 0 0 $gutter;
   }
 
   label#nu__search-toggle-label{
     margin: 0 20px 0 0;
     &:before{
-      content: 'Search \E8B6';
+      content: 'Search';
+    }
+    &:after{
+      content: '\E8B6';
     }
   }
 
   input#nu__search-toggle:checked ~ label#nu__search-toggle-label{
     &:before{
-      content: 'Close \E14C';
+      content: 'Close';
+    }
+    &:after{
+      content: '\E14C';
     }
   }
 

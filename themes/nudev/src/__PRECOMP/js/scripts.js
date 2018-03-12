@@ -209,7 +209,6 @@
 			// gather up the rotator panels data and store the object to be used below
 			$.post("/wp-content/themes/nudev/src/hprotatordata.php",function(data){
 					rotators = JSON.parse(data);
-					// console.log(rotators);
     	});
 
 			// since we made it this far, turn on the rotator arrows
@@ -217,10 +216,10 @@
 
 			// the following handles clicking next and previous arrows within a rotator
 			$('article.nu__block-rotator').on("click",".rotate",function(e){
-				var elem = $(this).parent();
-				var id = $(this).parent().attr('data-rotatorid');
-				var sCount = parseInt($(this).parent().attr('data-slidemax'));
-				var cSlide = parseInt($(this).parent().attr('data-cslide'));
+				var elem = $(this).parent().parent().parent();
+				var id = elem.attr('data-rotatorid');
+				var sCount = parseInt(elem.attr('data-slidemax'));
+				var cSlide = parseInt(elem.attr('data-cslide'));
 				if($(this).hasClass('slider_prev')){
 					contentSwap(parseInt(cSlide - 1) < 1 ?sCount:parseInt(cSlide - 1));
 				}else{
@@ -234,7 +233,7 @@
 						elem.find('a').prop('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
 						elem.find('a').attr('href',rotators[id][a][1]);	// change the link
 						elem.find('a').attr('target',rotators[id][a][3]);	// change the link target style (local or external)
-						elem.find('a > h2').html(rotators[id][a][2]);	// change the title of the slide
+						elem.find('div > h2').html(rotators[id][a][2]);	// change the title of the slide
 						elem.find('a').fadeIn(150);	// fade it all back in
 					});
 				}

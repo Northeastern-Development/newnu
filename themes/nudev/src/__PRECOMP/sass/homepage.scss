@@ -91,7 +91,7 @@ main#nu__homepage{
   			background-repeat: no-repeat !important;
   			background-size: cover !important;
 
-        .nu__overlay-logo{
+        div.nu__overlay-logo{
           width:50px;
           height:50px;
           position:absolute;
@@ -140,16 +140,15 @@ main#nu__homepage{
           color: rgba($brand_colors-white,1.0);
   				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   				max-width:90%;
-  				position:relative;
-  				padding-bottom: 0;
-  				position: absolute;
-  				bottom: $gutter;
-  				z-index:100;
   			}
 
         &:not(.nu__block-rotator){
           & h2 {
             @include font-5r-c;
+            padding-bottom: 0;
+    				position: absolute;
+    				bottom: $gutter;
+    				z-index:100;
     				left: 50%;
     				transform: translateX(-50%) translateY(0);
     				&:after {
@@ -167,6 +166,7 @@ main#nu__homepage{
 
   			&.nu__block-rotator{
           background: rgba($brand_colors-black,1.0);
+
   				& > a {
   					opacity:1;
   					background-position: center center !important;
@@ -175,11 +175,47 @@ main#nu__homepage{
   					&:hover {
   						background:transparent ;
   					}
-  					& > h2 {
+  				}
+          & > div.nu__slide-controls{
+            position: absolute;
+            left: $gutter;
+            bottom: ($gutter / 2);
+            width: 90%;
+            overflow: visible;
+            & > div{
+              clear: both;
+              width: 80px;
+              overflow: hidden;
+              margin: 0 0 10px 0;
+              & > .slider_next,
+              & > .slider_prev {
+                display: none;
+                float: left;
+                margin: 0 10px 0 0;
+                @include font-5r-l;
+                line-height: 34px;
+      				  width: 28px;
+                height: 28px;
+                text-align: center;
+      				  border-radius: 50%;
+      				  background: rgba($brand_colors-white,1.0);
+                color: rgba($brand_colors-black,1.0);
+      					z-index:100;
+      					&:hover {
+      						background: rgba($brand_colors-black,1.0);
+                  color: rgba($brand_colors-white,1.0);
+                  cursor: pointer;
+      					}
+      				}
+      				& > .slider_next {
+      					left: ($gutter * 2) + 5px;
+      				}
+      				& > .slider_prev {
+      					left:$gutter;
+      				}
+            }
+            & > h2 {
               @include font-5r-l;
-  						left: $gutter;
-              bottom: ($gutter / 2);
-  						transform: translateX(0) translateY(0);
               &:after{
                 @include font-7-c;
                 color: rgba($brand_colors-red,1.0);
@@ -187,36 +223,7 @@ main#nu__homepage{
                 vertical-align: -20%;
               }
   					}
-  				}
-  				& > .slider_next,
-          & > .slider_prev {
-            display: none;
-  					position: absolute;
-            @include font-5r-l;
-            line-height: 34px;
-  				  bottom: $gutter;
-  				  width: 28px;
-            height: 28px;
-            text-align: center;
-  				  padding-bottom: 15px;
-  				  border-radius: 50%;
-  				  background: rgba($brand_colors-white,1.0);
-            color: rgba($brand_colors-black,1.0);
-  				  transform: translateY(-40px);
-  					z-index:100;
-  					// cursor:pointer;
-  					&:hover {
-  						background: rgba($brand_colors-black,1.0);
-              color: rgba($brand_colors-white,1.0);
-              cursor: pointer;
-  					}
-  				}
-  				& > .slider_next {
-  					left: ($gutter * 2) + 5px;
-  				}
-  				& > .slider_prev {
-  					left:$gutter;
-  				}
+          }
   			}
 
   		}

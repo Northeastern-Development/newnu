@@ -27,7 +27,7 @@
 
 	$guideSingle = '<article id="article-%s" style="%s %s" ><a href="%s" title="Click here now to learn more %s" %s><p>%s&nbsp;</p></a><h2>%s</h2>%s</article>';
 
-	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator"><a href="%s" style="background-image: url(%s);" target="%s" title="Click here now to learn more %s"><h2>%s&nbsp;</h2></a><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div>%s</article>';
+	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator"><a href="%s" style="background-image: url(%s);" target="%s" title="Click here now to learn more %s"></a><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div></div><h2>%s&nbsp;</h2></div>%s</article>';
 
 
 	$iPath = responsive_background_images();	// call the function to figure out the best iamge size to use
