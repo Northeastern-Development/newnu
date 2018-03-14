@@ -49,8 +49,8 @@
 
 
 		// need to account for the alerts being open and shift the main menu overlays down to match!!
-		if(parseInt($('#nu__alerts').height()) > 0){
-			$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('#nu__alerts').height())});
+		if(parseInt($('#nu__alerts').outerHeight()) > 0){
+			$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('#nu__alerts').outerHeight())});
 		}
 
 
@@ -223,7 +223,7 @@
 
 
 			// need to figure out if we need to remove extra height from the content if alerts are visible
-			if(parseInt($('#nu__alerts').height()) > 0){
+			if(parseInt($('#nu__alerts').outerHeight()) > 0){
 				var hpHeight = parseInt($(window).height()) - parseInt($('header').height()) - parseInt($('footer').height());
 				$('main#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
 			}
@@ -415,6 +415,10 @@
 			getWindowSize();
 
 
+			// need to account for the alerts being open and shift the main menu overlays down to match!!
+			if(parseInt($('#nu__alerts').outerHeight()) > 0){
+				$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('#nu__alerts').outerHeight())});
+			}
 
 
 			if($('body').hasClass('home')){	// we need to make sure that we are resizing and keeping only 1 panel on the screen during resize
@@ -440,8 +444,12 @@
 	      // }
 
 				if(parseInt($('#nu__alerts').height()) > 0){
+					// var hpHeight = parseInt($(window).height()) - parseInt($('header').height()) - parseInt($('footer').height());
+					// $('main#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
+
 					var hpHeight = parseInt($(window).height()) - parseInt($('header').height()) - parseInt($('footer').height());
 					$('main#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
+
 				}
 
 

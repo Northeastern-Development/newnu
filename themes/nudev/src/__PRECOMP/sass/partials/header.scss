@@ -29,31 +29,59 @@ div#nu__alerts{
   display: block;
   width: $wrapper-width;
   margin: 0 0 0 0;
-  background: rgba(243, 177, 62, 1.0);
+  padding: 0 0 15px 0;
+  background: rgba($brand_colors-black, 1.0);
   min-height: 0;
   height: auto;
-  color: rgba(0,0,0,1.0);
+  color: rgba($brand_colors-black,1.0);
+  @include font-2l-l;
   & > div{
-    width: $content-width;
+    width: $content-width-wide;
     margin: 0 auto 0 auto;
-    padding: $gutter 0 ($gutter * 2) 0;
-    & > h2{
-      font-size: 1.6rem;
-      line-height: 2rem;
-      font-weight: 700;
-      text-align: left;
-      margin: 0 0 0 0;
+    padding: 20px $gutter 0 100px;
+    background: rgba($brand_colors-white, 1.0);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    &:before{
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: rgba($brand_colors-red,1.0);
+      height: 100%;
+      width: ($gutter * 2);
+      content: '';
     }
-    & > p{
-      font-size: 1.6rem;
-      line-height: 2.2rem;
+    &:after{
+      position: absolute;
+      left: 0;
+      top: 41%;
+      width: ($gutter * 2);
+      @include font-4-c;
+      color: rgba($brand_colors-white,1.0);
+      content: '\E001';
+    }
+    & > h2{
+      @include font-3b-l;
+      color: rgba($brand_colors-red,1.0);
+      text-transform: uppercase;
     }
     & > ul{
-      margin: 0 0 0 ($gutter);
+      margin: 0 0 10px 15px;
       & > li{
         font-size: 1.4rem;
         line-height: 2rem;
         font-weight: 700;
+        & > a{
+          border-bottom: none;
+          @include font-2b-l;
+        }
+        &:after{
+          @include font-7-c;
+          color: rgba($brand_colors-red,1.0);
+          content: '\E8E4';
+          vertical-align: -20%;
+        }
       }
     }
   }

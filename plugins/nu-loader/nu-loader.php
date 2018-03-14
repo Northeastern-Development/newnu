@@ -126,10 +126,10 @@ function nu_header_block(){
 
 // if we have alerts, build out the alerts panel
   if(!isset($res[0])){
-    $alerts .= '<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).  Please be sure to read any associated information and contact your campus emergency services with any questions.</p><ul>';
+    $alerts .= '<br /><div><h2>University Alert!</h2><p>Northeastern University has issued the following alert(s). Please be sure to read any associated information and contact your campus emergency services with questions.</p><ul>';
 
     foreach($res as $r){
-      $guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s - Read More</a></li>';
+      $guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s&nbsp;</a></li>';
 
 			$campus = "";
       $campuses = explode(", ",$r['campuses']);
