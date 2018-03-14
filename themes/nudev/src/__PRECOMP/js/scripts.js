@@ -44,6 +44,19 @@
 		$('body').addClass('nu-js');
 
 
+
+
+
+
+		// need to account for the alerts being open and shift the main menu overlays down to match!!
+		if(parseInt($('#nu__alerts').height()) > 0){
+			$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('#nu__alerts').height())});
+		}
+
+
+
+
+
 		// the following vars are for the homepage panel slider
 		if($('body').hasClass('home')){
 			var inMotion = false;
@@ -206,6 +219,18 @@
 		// this will handle clicking on the next and previous arrows for rotator type articles, but only if we are on the homepage
 		if($('body').hasClass('home')){
 
+
+
+
+			// need to figure out if we need to remove extra height from the content if alerts are visible
+			if(parseInt($('#nu__alerts').height()) > 0){
+				var hpHeight = parseInt($(window).height()) - parseInt($('header').height()) - parseInt($('footer').height());
+				$('main#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
+			}
+
+
+
+
 			// gather up the rotator panels data and store the object to be used below
 			$.post("/wp-content/themes/nudev/src/hprotatordata.php",function(data){
 					rotators = JSON.parse(data);
@@ -256,15 +281,11 @@
 			windowSize[0] = $(window).height();
 			windowSize[1] = $(window).width();
 			$.post("/wp-content/themes/nudev/src/windowsize.php",{"height":windowSize[0],"width":windowSize[1]},function(data){
-					console.log(data);
+					// console.log(data);
     	});
 		}
 
 		getWindowSize();
-
-
-
-		// console.log("fghjfghjfgj");
 
 
 
@@ -283,6 +304,11 @@
 
 		// this will handle some preventitive measures in the main nav regarding overlap of options
 		$('nav').on('click','input#nu__supernav-toggle',function(){
+
+			// // need to account for the alerts being open!!
+			// if(){
+			// 	$('').css({});
+
 			$('input#nu__search-toggle').prop('checked',false);
 			$('input#nu__iamnav-toggle').prop('checked',false);
 			// need to reset the first item in the iamnav menu to be active
@@ -412,6 +438,11 @@
 	      //   $('.nu__panel-nav').css({'display':'none'});
 	      //   $('#nu__panels').css({'margin-left':'0'});
 	      // }
+
+				if(parseInt($('#nu__alerts').height()) > 0){
+					var hpHeight = parseInt($(window).height()) - parseInt($('header').height()) - parseInt($('footer').height());
+					$('main#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
+				}
 
 
 

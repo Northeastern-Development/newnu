@@ -72,6 +72,9 @@ function nualerts_custom_column ( $column, $post_id ) {
 // this is a function to gather up the alerts and display them
 function getAlerts(){
 
+  wp_reset_postdata();
+	wp_reset_query();
+
   $args = array(
 		 "post_type" => "nualerts"
 		,'meta_query' => array(
@@ -80,17 +83,20 @@ function getAlerts(){
 		)
 	);
 
-	$res = query_posts($args);
+	$alerts = query_posts($args);
+
+  //print_r($res);
+  //die();
 
 	$response = "";	// an empty return will collapse the alert area to nothing
 
-	if(count($res) > 0){	// we found a result, let's build out the list
+	if(count($alerts) > 0){	// we found a result, let's build out the list
 		$response .= "<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).  Please be sure to read any associated information and contact your campus emergency services with any questions.</p><ul>";
 
+    foreach($alerts as $a){
+		//while (have_posts()) : the_post();
 
-		while (have_posts()) : the_post();
-
-			$fields = get_fields(get_the_ID());
+			$fields = get_fields($a->ID);
 			$guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s - Read More</a></li>';
 
 			$campus = "";
@@ -107,7 +113,8 @@ function getAlerts(){
 				,get_the_excerpt()
 			);
 
-		endwhile;
+		// endwhile;
+  }
 
 		$response .= "</ul></div>";
 	}
@@ -116,6 +123,8 @@ function getAlerts(){
 	wp_reset_query();
 
   return $response;
+
+  // return $alerts;
 
 }
 

@@ -1,0 +1,96 @@
+/*
+ * static
+ */
+
+
+ // Modules
+ @import "modules/variables";
+ @import "modules/mixins";
+ @import "modules/fonts";
+
+
+
+ main#nu__static{
+
+  width: $wrapper-width;
+  margin: 0 0 0 0;
+  background: rgba($brand_colors-white,1.0);
+
+  color: rgba($brand_colors-black,1.0);
+
+
+
+
+
+
+  section.hero{
+    background: rgba($brand_colors-black,1.0);
+    width: $wrapper-width;
+    margin: 0 0 ($gutter * 2.5) 0;
+
+    & > div{
+      width: $content-width-narrow;
+      margin: ($gutter * 2.5) auto ($gutter * 2.5) auto;
+      // text-align: center;
+      color: rgba($brand_colors-white,1.0);
+      // & > h2{
+      //   // @include font-8l-c;
+      //   // margin: 0 0 $gutter 0;
+      // }
+      // & > h3{
+      //   // @include font-3l-c;
+      // }
+    }
+  }
+
+
+  section.intro{
+    width: 60vw;
+    margin: 0 auto 0 auto;
+    border-bottom: solid rgba($brand_colors-black,1.0) 1px;
+    & > h1{
+      // @include font-6l-l;
+      margin: 0 0 $gutter 0;
+    }
+  }
+
+
+  section.fullwidth{
+    width: $wrapper-width;
+    margin: 0 auto 0 auto 0;
+    padding: $gutter 0 $gutter 0;
+    background: rgba($brand_colors-beige,1.0);
+    text-align: center;
+    & > h4{
+      text-align: center;
+    }
+  }
+
+
+  section.last{
+    margin: $gutter auto $gutter auto;
+  }
+
+
+  section{
+    width: $content-width-narrow;
+    margin: ($gutter * 2) auto 0 auto;
+    & > ul{
+      display: flex;
+      flex-direction: row;
+      margin: $gutter 10vw 0 10vw;
+      list-style: none;
+      list-style-type: none;
+      & > li{
+        flex: 1;
+        margin: 0 $gutter 0 0;
+        text-align: left;
+         & a{
+           border-bottom: none;
+         }
+      }
+    }
+
+  }
+
+}

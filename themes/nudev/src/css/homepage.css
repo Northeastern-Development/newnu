@@ -132,7 +132,7 @@ body.home {
 main#nu__homepage {
   width: 100vw;
   margin: 0 0 0 0;
-  background: black;
+  background: #cc0000;
   min-height: calc(100% - 70px - 40px);
   height: calc(100% - 70px - 40px);
   min-height: -moz-calc(100% - 70px - 40px);
@@ -197,7 +197,8 @@ main#nu__homepage {
           cursor: pointer; }
           main#nu__homepage div#nu__stories > section > article:hover > a {
             background: rgba(0, 0, 0, 0.6);
-            opacity: 1.0; }
+            opacity: 1.0;
+            border-bottom: none; }
         main#nu__homepage div#nu__stories > section > article > a {
           background: transparent;
           width: 100%;
@@ -254,7 +255,8 @@ main#nu__homepage {
             opacity: 1;
             background-position: center center !important;
             background-repeat: no-repeat !important;
-            background-size: cover !important; }
+            background-size: cover !important;
+            border-bottom: none; }
             main#nu__homepage div#nu__stories > section > article.nu__block-rotator > a:hover {
               background: transparent; }
           main#nu__homepage div#nu__stories > section > article.nu__block-rotator > div.nu__slide-controls {

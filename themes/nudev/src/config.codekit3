@@ -7,7 +7,7 @@
 		"uuidString": "6222A5FD-DE82-4642-BE8D-77C1862D8725"
 		}
 	],
-"creatorBuild": "26268",
+"creatorBuild": "26330",
 "files": {
 	"\/.fonts\/lato-v14-latin-100.eot": {
 		"cB": 0,
@@ -446,10 +446,33 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/__PRECOMP\/js\/scripts-min.js",
-		"oF": 0,
+		"oAP": "\/js\/scripts-min.js",
+		"oF": 2,
 		"sC": 3,
 		"tS": 0
+		},
+	"\/__PRECOMP\/sass\/emergency.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/emergency-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/__PRECOMP\/sass\/emergency.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/emergency.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/__PRECOMP\/sass\/footer.scss": {
 		"aP": 0,
@@ -604,19 +627,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/__PRECOMP\/sass\/partials\/static.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/__PRECOMP\/sass\/partials\/static.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/__PRECOMP\/sass\/partials\/utils.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -665,6 +675,29 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/search.css",
+		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/static.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/static-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/__PRECOMP\/sass\/static.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/static.css",
 		"oF": 2,
 		"oS": 0,
 		"uL": 1
@@ -753,6 +786,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/css\/emergency.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/emergency-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/css\/footer.css": {
 		"aP": 1,
 		"bl": 0,
@@ -770,6 +813,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/government-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/homepage.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/homepage-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -850,6 +903,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/staff-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/static.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/static-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1813,6 +1876,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/rss\/rss-supernav.php",
+		"oF": 0
+		},
+	"\/templates\/tag.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/tag.php",
 		"oF": 0
 		},
 	"\/templates\/template-administration.php": {

@@ -24,7 +24,7 @@ main#nu__homepage{
 
   width: $wrapper-width;
   margin: 0 0 0 0;
-  background: rgba($brand_colors-black,1.0);
+  background: rgba($brand_colors-red,1.0);
 
   $h: 100%;
 
@@ -110,7 +110,7 @@ main#nu__homepage{
           & > a{
             background: rgba($brand_colors-black,0.6);
             opacity:1.0;
-
+            border-bottom: none;
           }
         }
 
@@ -178,6 +178,7 @@ main#nu__homepage{
   					background-position: center center !important;
   					background-repeat: no-repeat !important;
   					background-size: cover !important;
+            border-bottom: none;
   					&:hover {
   						background:transparent ;
   					}

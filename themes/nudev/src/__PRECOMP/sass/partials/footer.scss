@@ -29,6 +29,10 @@
    -o-transition: height 0.20s linear;
    transition: height 0.20s linear;
 
+   & a{
+     border-bottom: none;
+   }
+
 
    &.addprefooter{
      height: 540px;

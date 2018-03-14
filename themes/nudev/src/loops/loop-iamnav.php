@@ -11,6 +11,8 @@
 	$res = query_posts($args);
 	$styles = get_fields($res[0]->ID);
 
+
+
 	if($styles['background_image'] != ''){	// this will set a background image
 		$style = 'background-color: none; background: url('.$styles['background_image']['url'].'); background-repeat: no-repeat; background-position: center; background-size: cover;';
 	}else{	// this will set a background color with opacity
@@ -29,15 +31,24 @@
 
 	$res = query_posts($args);
 
+	// need to build the array of background images for each main category (if they exist, if not use the one from the styles)
+	// $bgImages = array();
+
 	$navConfig = array();
 	foreach($res as $r){
 		$fields = get_fields($r->ID);
+		//print_r($fields);
+		// $bgImages[strtolower($r->post_title)] = (isset($fields['background_image']) && $fields['background_image'] != ''?$fields['background_image']['url']:'');
 		if($fields['sub-type'] == 'Primary'){
 			$navConfig[0][] = $r->post_title;
 		}else{
 			$navConfig[1][] = $r->post_title;
 		}
 	}
+
+	// print_r($bgImages);
+	// echo $bgImages['current students'];
+	// die();
 
 	$return = '';
 	$i = 0;

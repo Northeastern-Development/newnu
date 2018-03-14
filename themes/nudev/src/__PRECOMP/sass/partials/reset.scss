@@ -39,6 +39,7 @@ body {
   flex-direction: column;
   background: $brand_colors-black;
   color: $brand_colors-white;
+  @include font-2l-l;
 }
 
 img {
