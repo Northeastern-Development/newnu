@@ -88,6 +88,11 @@
          & a{
            border-bottom: none;
          }
+         & h6{
+           & > a{
+             border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+           }
+         }
       }
     }
 

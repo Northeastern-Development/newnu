@@ -169,3 +169,5 @@ main#nu__static {
         text-align: left; }
         main#nu__static section > ul > li a {
           border-bottom: none; }
+        main#nu__static section > ul > li h6 > a {
+          border-bottom: solid #cc0000 1px; }

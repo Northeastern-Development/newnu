@@ -294,7 +294,6 @@
 
 
 		// we need to set the main content offset based on: utility nav height, alerts height, and main header height
-		// console.log($("header").height());
 		$("main").css({
 			"margin-top":$("header").height()
 		});
@@ -305,15 +304,14 @@
 		// this will handle some preventitive measures in the main nav regarding overlap of options
 		$('nav').on('click','input#nu__supernav-toggle',function(){
 
-			// // need to account for the alerts being open!!
-			// if(){
-			// 	$('').css({});
-
 			$('input#nu__search-toggle').prop('checked',false);
 			$('input#nu__iamnav-toggle').prop('checked',false);
 			// need to reset the first item in the iamnav menu to be active
 			$('#nu__supernav > section > div > ul > li').removeClass('active');
 			$('#nu__supernav > section > div > ul > li:first-child').addClass('active');
+
+			allowScrollOrNot();
+
 		});
 
 		$('nav').on('click','input#nu__iamnav-toggle',function(){
@@ -322,6 +320,9 @@
 			// need to reset the first item in the supernav menu to be active
 			$('#nu__iamnav > section > div > ul > li').removeClass('active');
 			$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
+
+			allowScrollOrNot();
+
 		});
 
 		$('nav').on('click','input#nu__search-toggle',function(){
@@ -331,7 +332,23 @@
 			$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
 			$('#nu__supernav > section > div > ul > li').removeClass('active');
 			$('#nu__supernav > section > div > ul > li:first-child').addClass('active');
+
+			allowScrollOrNot();
+
 		});
+
+
+
+		function allowScrollOrNot(){
+
+			// prevent the main page from scrolling when the nav is open or allow it if we close the navs
+			if($('input#nu__search-toggle').prop('checked') || $('input#nu__iamnav-toggle').prop('checked') || $('input#nu__supernav-toggle').prop('checked')){
+				$('html').css({'overflow-y':'hidden'});
+			}else{
+				$('html').css({'overflow-y':'scroll'});
+			}
+
+		}
 
 
 

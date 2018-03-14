@@ -89,7 +89,6 @@ label{
   &:after{
     float: right;
     @include font-7-c;
-    // content: '\E313';
     line-height: ($header-height + 5);
     height: $header-height;
     margin: 0 0 0 5px;
@@ -243,11 +242,18 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
       line-height: 70px;
     }
     & > section{
+
+      $widthL: 294px;
+      $widthR: 442px;
+      $widthT: 736px;
+
+      $lineH: 65px;
+
       $s: 60px;
       $hh: 100%;
       float: right;
       background: rgba(0,0,0,1.0);
-      width: 50%;
+      width: $widthT;
       height: auto;
       position: relative;
       min-height: calc(#{$hh} - #{$s});
@@ -274,12 +280,12 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
         & > div{
           display: table-cell;
           &:nth-child(1){
-            background: rgba(0,0,0,1.0);
-            width: 45%;
+            background: rgba($brand_colors-black,1.0);
+            width: $widthL;
           }
           &:nth-child(2){
-            background: rgba(255,255,255,1.0);
-            width: 55%;
+            background: rgba($brand_colors-white,1.0);
+            width: $widthR;
           }
         }
       }
@@ -293,30 +299,44 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
         height: -webkit-calc(#{$hh} - #{$s});
         width: 100%;
         & > ul{
-          width: 45%;
+          width: $widthL;
           height: auto;
           list-style: none;
           list-style-type: none;
           padding: 0 0 100px 0;
+          background: none;
           & > li{
             width: 100%;
             text-align: left;
             padding: 0 $gutter 0 $gutter;
-            border-bottom: solid rgba(255,255,255,1.0) 1px;
-            line-height: 50px;
+            @include font-2l-l;
+            text-transform: uppercase;
+            line-height: $lineH;
+            border-bottom: solid rgba($brand_colors-beige,1.0) 1px;
             &.featured{
+              line-height: 0;
               border: none;
-              margin: 0 0 10px 0;
+              margin: 20px 0 0 0;
+              clear: both;
               a {
-                color: rgba(255,255,255,1.0);
-              }
-              &.first{
-                margin: $gutter 0 10px 0;
+                color: rgba($brand_colors-white,1.0);
+                border-bottom: none;
+                @include font-2l-l;
+                text-transform: none;
+                display: block;
+                overflow: hidden;
+                & > div{
+                  float: left;
+                }
               }
               &:hover{
                 background: none;
                 a{
-                  color: rgba(255,0,0,1.0);
+                  & > div{
+                    &:nth-child(2){
+                      border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+                    }
+                  }
                 }
               }
               img{
@@ -324,57 +344,68 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                 -webkit-filter: grayscale(1);
                 -moz-filter: grayscale(1);
                 filter: grayscale(1);
-                height: 50px;
-                width: 50px;
+                height: 34px;
+                width: 34px;
               }
             }
             &.active,
             &:hover{
-              background: rgba(235, 231, 214, 1.0);
+              background: rgba($brand_colors-beige, 1.0);
               cursor: pointer;
-              color: rgba(0,0,0,1.0);
+              color: rgba($brand_colors-black,1.0);
             }
             & > ul{
               display: none;
               position: absolute;
               right: 0;
               top: 0;
-              width: 51%;
+              width: $widthR;
               list-style: none;
               list-style-type: none;
               padding: 0 0 100px 0;
               margin: 0 0 0 $gutter;
               & > li{
-                margin: 0 $gutter $gutter 0;
+                margin: 0 $gutter $gutter $gutter;
+                text-transform: none;
+                height: $lineH;
                 &:first-child{
-                  font-size: 2.2rem;
-                  margin: 0 0 0 0;
+                  @include font-6l-l;
+                  line-height: $lineH;
+                  margin: 0 0 0 $gutter;
                 }
                 & > a{
-                  color: rgba(0,0,0,1.0);
+                  @include font-2l-l;
+                  border-bottom: none;
+                  color: rgba($brand_colors-black,1.0);
                   display: block;
                   clear: both;
                   overflow: hidden;
                   &:hover{
-                    color: rgba(255,0,0,1.0);
                     cursor: pointer;
+                    & > div{
+                      &:nth-child(2){
+                        border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+                      }
+                    }
                   }
                   & > div{
-                    min-height: 50px;
                     float: left;
-                    word-wrap: normal;
-                    width: 80%;
-                    font-size: 1.4rem;
                     &:nth-child(1){
-                      width: 50px;
+                      width: $lineH;
+                      height: $lineH;
                       margin: 0 10px 0 0;
                       & > img{
+                        width: 100%;
                         -webkit-filter: grayscale(1);
                         -moz-filter: grayscale(1);
                         filter: grayscale(1);
                       }
                     }
-
+                    &:nth-child(2){
+                      max-width: 300px;
+                      padding: 15px 0 0 0;
+                      border-bottom: solid rgba($brand_colors-red,0.0) 2px;
+                    }
                   }
                 }
               }

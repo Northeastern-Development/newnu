@@ -120,7 +120,7 @@
 
 	$res = query_posts($args);
 
-	$guide = '<li class="featured%s"><a href="%s" title="%s%s"%s><img src="%s" alt="%s icon" />%s</a></li>';
+	$guide = '<li class="featured%s"><a href="%s" title="%s%s"%s><div><img src="%s" alt="%s icon" /></div><div>%s</div></a></li>';
 
 	$iii = 0;
 	foreach($res as $r){
