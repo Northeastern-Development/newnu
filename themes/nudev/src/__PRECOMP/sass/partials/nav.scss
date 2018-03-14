@@ -254,7 +254,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
       float: right;
       background: rgba(0,0,0,1.0);
       width: $widthT;
-      height: auto;
+      height: calc(#{$hh} - #{$s});;
       position: relative;
       min-height: calc(#{$hh} - #{$s});
       min-height: -moz-calc(#{$hh} - #{$s});
@@ -273,12 +273,14 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
         display: table;
         z-index: 0;
         background: rgba(0,0,0,1.0);
-        width: 100%;
+        width: $widthT;
         height: 100%;
         min-height: 100%;
         clear: both;
         & > div{
           display: table-cell;
+          height: 100%;
+          min-height: 100%;
           &:nth-child(1){
             background: rgba($brand_colors-black,1.0);
             width: $widthL;
