@@ -133,12 +133,12 @@ main#nu__homepage {
   width: 100vw;
   margin: 0 0 0 0;
   background: black;
-  min-height: calc(100% - 70px - 40px);
-  height: calc(100% - 70px - 40px);
-  min-height: -moz-calc(100% - 70px - 40px);
-  height: -moz-calc(100% - 70px - 40px);
-  min-height: -webkit-calc(100% - 70px - 40px);
-  height: -webkit-calc(100% - 70px - 40px); }
+  min-height: calc(100% - 70px - 44px);
+  height: calc(100% - 70px - 44px);
+  min-height: -moz-calc(100% - 70px - 44px);
+  height: -moz-calc(100% - 70px - 44px);
+  min-height: -webkit-calc(100% - 70px - 44px);
+  height: -webkit-calc(100% - 70px - 44px); }
   main#nu__homepage div#nu__seo-content {
     position: absolute;
     z-index: -1000; }

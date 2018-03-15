@@ -8,6 +8,8 @@
  // @import "../modules/mixins";
  // @import "../modules/fonts";
 
+ // @import "partials/animations";
+
 
 nav.nu__mainmenu{
   position: absolute;
@@ -361,9 +363,11 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
             }
             &.active,
             &:hover{
-              background: rgba($brand_colors-beige, 1.0);
+              @include shutter-out-horizontal;
+              // background: rgba($brand_colors-beige, 1.0);
+              // cursor: pointer;
+              // color: rgba($brand_colors-black,1.0);
               cursor: pointer;
-              color: rgba($brand_colors-black,1.0);
             }
             & > ul{
               display: none;

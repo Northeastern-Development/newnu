@@ -15,7 +15,7 @@
 
 			<div class="nu__footer">
 
-				<div class="nu__footer-hideshow js_footer-hideshow" title="Click to show/hide the footer">&#xE316;</div>
+				<div class="nu__footer-hideshow js_footer-hideshow" title="Click to show/hide the footer"><!-- &#xE316; --></div>
 
 				<div>
 

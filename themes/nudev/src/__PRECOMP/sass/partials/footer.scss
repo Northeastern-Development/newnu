@@ -3,133 +3,144 @@
  * ---
  */
 
-
- footer{
-   flex: none;
-   background-color: rgba(0,0,0,1.0);
-   background-image: url(/wp-content/uploads/footer-watermark.png);
-   background-repeat: no-repeat;
-   background-size: 202px 240px;
-   background-position: right bottom;
-
-   overflow: hidden;
-
-   color: rgba(255,255,255,1.0);
-   font-size: 1rem;
-   letter-spacing: 1px;
-   width: 100%;
-   height: 240px;
-   padding: 0 0 0 0;
-   font-family: Arial,Verdana,sans-serif;
-
-
-   -webkit-transition: height 0.20s linear;
-   -moz-transition: height 0.20s linear;
-   -ms-transition: height 0.20s linear;
-   -o-transition: height 0.20s linear;
-   transition: height 0.20s linear;
-
-   & a{
-     border-bottom: none;
-   }
+// the main footer element on every page
+// flows after content on all pages other than the homepage
+footer{
+  flex: none;
+  background-color: rgba($brand_colors-black,1.0);
+  background-image: url(/wp-content/uploads/footer-watermark.png);
+  background-repeat: no-repeat;
+  background-size: 170px;
+  background-position: right bottom;
+  overflow: hidden;
+  width: 100%;
+  height: 210px;
+  padding: 0 0 0 0;
+  -webkit-transition: height 0.20s linear;
+  -moz-transition: height 0.20s linear;
+  -ms-transition: height 0.20s linear;
+  -o-transition: height 0.20s linear;
+  transition: height 0.20s linear;
+  & a{
+    border-bottom: none;
+  }
 
 
-   &.addprefooter{
-     height: 540px;
-   }
-   &.collapse{
-     height: 40px;
+  // this is for pages that will include the pre-footer area
+  &.addprefooter{
+    height: 540px;
+  }
+
+
+
+  &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    height: 250px;
+    background-size: 200px;
+    & > div.nu__footer{
+      & > div.nu__footer-hideshow{
+        border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
+        display: block;
+        &:before{
+          content: '\E313';
+        }
+        &:hover{
+          cursor: pointer;
+          color: rgba($brand_colors-white,1.0);
+        }
+      }
+    }
+  }
+
+
+   &.collapse{  // this is the closed state of the footer on the homepage only!
+     height: $footer-height-collapsed;
      overflow: hidden;
-     background-size: 0px 0px;
+     background-size: 0px;
      & > div.nu__footer{
        padding: 0 0 0 0;
        height: inherit;
        & > div.nu__footer-hideshow{
+         border: none;
         display: block;
-
-        &:hover{
-          color: Red;
+        &:before{
+          content: '\E316';
         }
-       }
-     }
-
-   }
-   &.absolute{
-     position: absolute;
-     bottom: 0;
-     z-index: 100;
-     & > div.nu__footer{
-       padding: 0 0 0 0;
-       & > div.nu__footer-hideshow{
-        display: block;
-
         &:hover{
-          color: Red;
+          cursor: pointer;
+          color: rgba($brand_colors-white,1.0);
         }
        }
      }
    }
-   & > div.nu__prefooter{
-     height: 300px;
-     background: rgba(0,0,0,1.0);
-     width: $wrapper-width;
-     & > div{
-       width: $content-width;
-       height: inherit;
-       background: red;
-       margin: 0 auto 0 auto;
-     }
-   }
+
+
+  // this defines the space for the pre-footer on pages that include it
+  & > div.nu__prefooter{
+    height: 300px;
+    background: rgba($brand_colors-red,1.0);
+    width: $wrapper-width;
+    & > div{
+      width: $content-width;
+      height: inherit;
+      margin: 0 auto 0 auto;
+    }
+  }
 
    & > div.nu__footer{
-    border-top: solid rgba(255,255,255,1) 1px;
-    padding: 40px 0 20px 0;
+    padding: 0 0 $gutter 0;
     width: $wrapper-width;
     height: inherit;
     margin: 0 auto 0 auto;
      position: relative;
      & > div.nu__footer-hideshow{
+       width: $content-width-wide;
        display: none;
        text-align: center;
        height: $footer-height-collapsed;
        line-height: $footer-height-collapsed;
-       font-family: "Material Icons";
-       font-size: 2rem;
-       margin: 0 0 0 0;
-       width: 100vw;
+       @include font-7-c;
+       color: rgba($brand_colors-white,0.8);
+       margin: 0 auto 0 auto;
+       // &:before{
+       //   content: '\E316';
+       // }
        &:hover{
          cursor: pointer;
+         color: rgba($brand_colors-white,1.0);
        }
      }
      & > div{
       width: $content-width-wide;
-      margin: 0 auto 0 auto;
+      margin: $gutter auto 0 auto;
        & > a{
-         color: rgba(255,255,255,1.0);
+         color: rgba($brand_colors-white,1.0);
          float: left;
          margin-right: 20px;
          & > img,
          & > svg{
-          fill: rgba(255,255,255,1.0);
+          fill: rgba($brand_colors-white,1.0);
           height: 1.5vw;
          }
        }
 
           & > div{
-            width: 65%;
+            width: 100%;
             height: auto;
             clear: both;
             margin: 0 0 0 0;
             overflow: hidden;
             &:nth-child(1){
-              border-top: solid rgba(255,255,255,1.0) 1px;
-              padding: 10px 0 0 0;
+              padding: 0 0 0 0;
             }
             & > p{
               float: left;
-              font-size: 1.4rem;
+              @include font-2b-l;
+              color: rgba($brand_colors-white,0.8);
               text-transform: uppercase;
-              width: 200px;
+              width: 250px;
               margin: 0 0 10px 0;
             }
 
@@ -143,10 +154,10 @@
                   margin: 0 0 0 0;
                 }
                 & > a{
-                  color: rgba(255,255,255,1.0);
-                  font-size: 1.2rem;
+                  @include font-2l-l;
+                  color: rgba($brand_colors-white,0.8);
                   &:hover{
-                    color: red;
+                    color: rgba($brand_colors-white,1.0);
                   }
                   & > svg{
                     height: 30px;
@@ -159,84 +170,19 @@
 
        & > p{
          clear: both;
-         font-size: 100%;
          height: auto;
-         line-height: 1.4rem;
-         margin: 20px 0 0 0;;
+         margin: ($gutter / 2) 0 0 0;
          padding: 0;
-         color: #ccc;
+         @include font-1r-l;
+         color: rgba($brand_colors-grayW,0.8);
          & > a{
-           color: #ccc;
+           color: rgba($brand_colors-grayW,0.8);
            &:hover{
-             color: #ccc !important;
-             text-decoration: underline !important;
+             color: rgba($brand_colors-grayW,1.0);
            }
          }
        }
     }
    }
 
- }
-
-
-
-
-
- // @media only screen and (max-width: 1300px){
- //   footer{
- //     height: 150px;
- //     & > div{
- //       & > div{
- //         float: right;
- //         width: 50%;
- //       }
- //     }
- //   }
- // }
- //
- //
- //
- //
- //
- // @media only screen and (max-width: 1080px){
- //   footer{
- //     height: auto;
- //     & > div{
- //       & > div{
- //         float: none;
- //         width: 100%;
- //       }
- //     }
- //   }
- // }
- //
- //
- //
- //
- //
- // @media only screen and (max-width: 760px){
- //   footer{
- //     height: auto;
- //     & > div{
- //       & > a{
- //         & > img,
- //         & > svg{
- //          height: 20px;
- //         }
- //       }
- //     }
- //   }
- // }
- //
- //
- //
- //
- //
- // @media only screen and (max-width: 700px){
- //   footer{
- //     & > div{
- //      width: 90vw;
- //      margin: 0 5vw 0 5vw;
- //     }
- //   }
- // }
+}
