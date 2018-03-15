@@ -29,15 +29,16 @@ div#nu__alerts{
   display: block;
   width: $wrapper-width;
   margin: 0 0 0 0;
-  padding: 0 0 15px 0;
+  padding: 0 0 0 0;
   background: rgba($brand_colors-black, 1.0);
   min-height: 0;
   height: auto;
   color: rgba($brand_colors-black,1.0);
   @include font-2l-l;
+  line-height: 0;
   & > div{
     width: $content-width-wide;
-    margin: 0 auto 0 auto;
+    margin: 15px auto 0 auto;
     padding: 20px $gutter 0 100px;
     background: rgba($brand_colors-white, 1.0);
     border-radius: 6px;

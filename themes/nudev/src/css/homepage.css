@@ -132,7 +132,7 @@ body.home {
 main#nu__homepage {
   width: 100vw;
   margin: 0 0 0 0;
-  background: #cc0000;
+  background: black;
   min-height: calc(100% - 70px - 40px);
   height: calc(100% - 70px - 40px);
   min-height: -moz-calc(100% - 70px - 40px);

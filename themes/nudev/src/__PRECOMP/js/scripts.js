@@ -38,6 +38,10 @@
 
 		var rotators = null;
 
+		// var menuH = 0;
+
+		var contentAreaHeight = 0;
+
 
 
 		// if this file has loaded, we want to append an option to let the page know JS is working
@@ -49,9 +53,40 @@
 
 
 		// need to account for the alerts being open and shift the main menu overlays down to match!!
-		if(parseInt($('#nu__alerts').outerHeight()) > 0){
+		if(parseInt($('#nu__alerts').height()) > 0){
 			$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('#nu__alerts').outerHeight())});
 		}
+
+
+
+		function getContentAreaHeight(){
+			// contentAreaHeight = parseInt($(window).height()) - parseInt($('header').height());
+			contentAreaHeight = parseInt($(window).height()) - parseInt($('header').outerHeight());
+		}
+
+
+
+		function setMenuPanels(){
+
+			getContentAreaHeight();
+
+			// menuH = parseInt($('#nu__supernav > section > div.items > ul > li.active > ul').height());
+
+			// $('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'height':contentAreaHeight,'min-height':contentAreaHeight});
+			//
+			// $('div.navigational > section').css({'height':menuH});
+			//
+			// $('div.navigational > section > div.fixedbg').css({'height':menuH});
+			//
+			// $('div.navigational > section > div.fixedbg > div').css({'height':menuH});
+
+			$('div.navigational > section > div.items').css({'height':contentAreaHeight,'min-height':contentAreaHeight});
+
+		}
+
+
+		setMenuPanels();
+
 
 
 
@@ -216,14 +251,14 @@
 
 
 
-		// this will handle clicking on the next and previous arrows for rotator type articles, but only if we are on the homepage
+		// this will handle getting some items sorted for the homepage only
 		if($('body').hasClass('home')){
 
 
 
 
 			// need to figure out if we need to remove extra height from the content if alerts are visible
-			if(parseInt($('#nu__alerts').outerHeight()) > 0){
+			if(parseInt($('#nu__alerts').height()) > 0){
 				var hpHeight = parseInt($(window).height()) - parseInt($('header').height()) - parseInt($('footer').height());
 				$('main#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
 			}
@@ -295,7 +330,7 @@
 
 		// we need to set the main content offset based on: utility nav height, alerts height, and main header height
 		$("main").css({
-			"margin-top":$("header").height()
+			"margin-top":$("header").outerHeight()
 		});
 
 
@@ -410,17 +445,17 @@
 
 
 		// let's listen for the page to scroll and handle some events
-		$(window).on("scroll",function(){
-			// console.log('scrolled!');
-
-			// if we have scrolled more than 300px, we should show the back to top button
-			// if($(document).scrollTop() >= 400 && $(".js__backtotop").css("display") != "block"){
-			// 	hideShowBackTop();
-			// }else if($(document).scrollTop() < 400 && $(".js__backtotop").css("display") == "block"){
-			// 	hideShowBackTop();
-			// }
-
-		});
+		// $(window).on("scroll",function(){
+		// 	// console.log('scrolled!');
+		//
+		// 	// if we have scrolled more than 300px, we should show the back to top button
+		// 	// if($(document).scrollTop() >= 400 && $(".js__backtotop").css("display") != "block"){
+		// 	// 	hideShowBackTop();
+		// 	// }else if($(document).scrollTop() < 400 && $(".js__backtotop").css("display") == "block"){
+		// 	// 	hideShowBackTop();
+		// 	// }
+		//
+		// });
 
 
 
@@ -431,10 +466,20 @@
 
 			getWindowSize();
 
+			setMenuPanels();
+
+			$("main").css({
+				"margin-top":$("header").outerHeight()
+			});
+
+			// need to set the height of the main menu panels
+			menuH = parseInt($(window).height()) - parseInt($('header').height());
+			$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'height':menuH});
+
 
 			// need to account for the alerts being open and shift the main menu overlays down to match!!
-			if(parseInt($('#nu__alerts').outerHeight()) > 0){
-				$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('#nu__alerts').outerHeight())});
+			if(parseInt($('#nu__alerts').height()) > 0){
+				$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('header').outerHeight())});
 			}
 
 
@@ -463,9 +508,11 @@
 				if(parseInt($('#nu__alerts').height()) > 0){
 					// var hpHeight = parseInt($(window).height()) - parseInt($('header').height()) - parseInt($('footer').height());
 					// $('main#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
+					console.log($('header').height());
 
-					var hpHeight = parseInt($(window).height()) - parseInt($('header').height()) - parseInt($('footer').height());
+					var hpHeight = parseInt($(window).height()) - parseInt($('header').outerHeight()) - parseInt($('footer').height());
 					$('main#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
+					// console.log('adjust for alerts being open');
 
 				}
 
