@@ -473,8 +473,8 @@
 			});
 
 			// need to set the height of the main menu panels
-			menuH = parseInt($(window).height()) - parseInt($('header').height());
-			$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'height':menuH});
+			// menuH = parseInt($(window).height()) - parseInt($('header').height());
+			// $('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'height':menuH});
 
 
 			// need to account for the alerts being open and shift the main menu overlays down to match!!
