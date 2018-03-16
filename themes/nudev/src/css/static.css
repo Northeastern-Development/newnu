@@ -138,8 +138,6 @@ main#nu__static {
       width: 50vw;
       margin: 75px auto 75px auto;
       color: #fffffe; }
-  main#nu__static section:last-child {
-    margin: 30px auto 30px auto; }
   main#nu__static section.intro {
     width: 60vw;
     margin: 0 auto 0 auto;
@@ -171,3 +169,6 @@ main#nu__static {
           border-bottom: none; }
         main#nu__static section > ul > li h6 > a {
           border-bottom: solid #cc0000 1px; }
+  main#nu__static section:last-child {
+    margin: 30px auto 0 auto;
+    padding-bottom: 30px; }

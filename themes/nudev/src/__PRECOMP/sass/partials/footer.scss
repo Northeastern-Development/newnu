@@ -104,9 +104,6 @@ footer{
        @include font-7-c;
        color: rgba($brand_colors-white,0.8);
        margin: 0 auto 0 auto;
-       // &:before{
-       //   content: '\E316';
-       // }
        &:hover{
          cursor: pointer;
          color: rgba($brand_colors-white,1.0);
@@ -165,7 +162,6 @@ footer{
                 }
               }
             }
-
          }
 
        & > p{

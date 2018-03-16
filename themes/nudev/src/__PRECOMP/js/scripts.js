@@ -375,7 +375,7 @@
 			allowScrollOrNot();
 
 			// check to see if we need to collapse the footer
-			if(!$('footer#nu__global-footer').hasClass('collapse')){
+			if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
 				$('footer#nu__global-footer').addClass('collapse');
 			}
 
@@ -391,7 +391,7 @@
 			allowScrollOrNot();
 
 			// check to see if we need to collapse the footer
-			if(!$('footer#nu__global-footer').hasClass('collapse')){
+			if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
 				$('footer#nu__global-footer').addClass('collapse');
 			}
 
@@ -408,7 +408,7 @@
 			allowScrollOrNot();
 
 			// check to see if we need to collapse the footer
-			if(!$('footer#nu__global-footer').hasClass('collapse')){
+			if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
 				$('footer#nu__global-footer').addClass('collapse');
 			}
 

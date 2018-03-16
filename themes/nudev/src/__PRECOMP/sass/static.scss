@@ -17,35 +17,17 @@
   background: rgba($brand_colors-white,1.0);
 
   color: rgba($brand_colors-black,1.0);
-
-
-
-
-
+  
 
   section.hero{
     background: rgba($brand_colors-black,1.0);
     width: $wrapper-width;
     margin: 0 0 ($gutter * 2.5) 0;
-
     & > div{
       width: $content-width-narrow;
       margin: ($gutter * 2.5) auto ($gutter * 2.5) auto;
-      // text-align: center;
       color: rgba($brand_colors-white,1.0);
-      // & > h2{
-      //   // @include font-8l-c;
-      //   // margin: 0 0 $gutter 0;
-      // }
-      // & > h3{
-      //   // @include font-3l-c;
-      // }
     }
-  }
-
-
-  section:last-child{
-    margin: $gutter auto $gutter auto;
   }
 
 
@@ -54,7 +36,6 @@
     margin: 0 auto 0 auto;
     border-bottom: solid rgba($brand_colors-black,1.0) 1px;
     & > h1{
-      // @include font-6l-l;
       margin: 0 0 $gutter 0;
     }
   }
@@ -70,9 +51,6 @@
       text-align: center;
     }
   }
-
-
-
 
 
   section{
@@ -98,7 +76,12 @@
          }
       }
     }
+  }
 
+
+  section:last-child{
+    margin: $gutter auto 0 auto;
+    padding-bottom: $gutter;
   }
 
 }

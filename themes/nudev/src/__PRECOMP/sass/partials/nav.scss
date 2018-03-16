@@ -8,8 +8,6 @@
  // @import "../modules/mixins";
  // @import "../modules/fonts";
 
- // @import "partials/animations";
-
 
 nav.nu__mainmenu{
   position: absolute;
@@ -20,11 +18,6 @@ nav.nu__mainmenu{
   margin: 0 0 0 0;
   clear: both;
 }
-
-
-
-
-
 
 
 // ****************************************************************************************************
@@ -363,9 +356,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
             }
             &.active,
             &:hover{
-              // @include shutter-out-horizontal;
               background: rgba($brand_colors-beige, 1.0);
-              // cursor: pointer;
               color: rgba($brand_colors-black,1.0);
               cursor: pointer;
             }
@@ -459,13 +450,6 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
               @include font-6l-l;
               color: rgba($brand_colors-white,1.0);
               text-transform: none;
-              // &:focus{
-              //   top: 5px;
-              //   left: 0;
-              //   height: 20px;
-              //   @include font-1r-l;
-              //   color: rgba($brand_colors-grayW,1.0);
-              // }
             }
             &.focus{
               top: 5px;

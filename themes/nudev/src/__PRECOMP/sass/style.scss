@@ -11,7 +11,6 @@
 
 
 // Partials
-// @import "partials/animations";
 @import "partials/reset";
 @import "partials/wordpress";
 @import "partials/utils";
@@ -23,43 +22,19 @@
 @import "partials/print";
 
 
-
-
-
-
-
-
 h1{
-  // font-size: 3rem;
-  // line-height: 4rem;
-  // width: 90%;
-  // margin: 0 5% 0 5%;
-  // font-weight: 200;
   @include font-6l-l;
 }
-//
+
+
 h2{
-  // font-size: 1.8rem;
-  // line-height: 4rem;
-  // text-transform: uppercase;
-  // text-align: center;
-  // font-weight: 200;
   @include font-8l-c;
 }
 
 h3{
-  // font-size: 2.5rem;
-  // line-height: 2.5rem;
-  // font-weight: 200;
-  // margin: 0 0 $gutter 0;
   @include font-3l-c;
 }
-//
-h4{
-  // font-size: 1.75rem;
-  // text-transform: uppercase;
-}
-//
+
 a{
   border-bottom: solid rgba($brand_colors-red,1.0) 1px;
   &:hover{
@@ -68,24 +43,15 @@ a{
 }
 
 h4{
-  // font-size: 1.75rem;
-  // font-weight: 900;
   @include font-5b-l;
   margin: 0 0 $gutter 0;
 }
 
 h5{
-  // font-size: 1.75rem;
-  // line-height: 2.5rem;
-  // font-weight: 900;
   @include font-2b-l;
 }
 
 h6{
-  // font-size: 1.5rem;
-  // line-height: 2rem;
-  // font-weight: 900;
-  // letter-spacing: 1px;
   @include font-2b-l;
 }
 
@@ -98,9 +64,6 @@ p{
 }
 
 
-
-
-
 /* Styles for the main content */
 main{
   margin: 0 auto 0 auto;
@@ -110,7 +73,6 @@ main{
   min-height: -webkit-calc(#{$h} - #{$header-height});
   width: $content-width;
   & > section{
-    // @include font-2l-l;
     position: relative;
     margin: 0 0 0 0;
     width: inherit;
