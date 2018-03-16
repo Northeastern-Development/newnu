@@ -398,12 +398,32 @@
 		});
 
 		$('nav').on('click','input#nu__search-toggle',function(){
-			$('input#nu__supernav-toggle').prop('checked',false);
-			$('input#nu__iamnav-toggle').prop('checked',false);
-			$('#nu__iamnav > section > div > ul > li').removeClass('active');
-			$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
-			$('#nu__supernav > section > div > ul > li').removeClass('active');
-			$('#nu__supernav > section > div > ul > li:first-child').addClass('active');
+
+
+
+			if($('body').hasClass('search')){
+				console.log('clicked search while on the search results page, which should not be allowed!!!');
+
+				// need to figure out how to prevent the duplicate action
+				// height: 100%;
+	      // visibility: visible;
+	      // opacity: 1;
+				// $('').css({'':'','':'','':''});
+				$('input#nu__search-toggle').prop('checked',false);
+
+			}
+			//else{
+
+
+
+				$('input#nu__supernav-toggle').prop('checked',false);
+				$('input#nu__iamnav-toggle').prop('checked',false);
+				$('#nu__iamnav > section > div > ul > li').removeClass('active');
+				$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
+				$('#nu__supernav > section > div > ul > li').removeClass('active');
+				$('#nu__supernav > section > div > ul > li:first-child').addClass('active');
+
+			//}
 
 			allowScrollOrNot();
 

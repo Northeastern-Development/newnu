@@ -167,6 +167,22 @@ main#nu__search {
         text-align: left;
         color: #fffffe;
         margin: 0 0 10px 0; }
+      main#nu__search > section > form > ul {
+        list-style: none;
+        list-style-type: none; }
+        main#nu__search > section > form > ul > li {
+          height: auto;
+          line-height: 40px; }
+          main#nu__search > section > form > ul > li > a {
+            font-size: 3.2rem;
+            font-weight: 300;
+            line-height: 4.8rem;
+            text-align: left;
+            color: #fffffe;
+            border-bottom: none; }
+            main#nu__search > section > form > ul > li > a:hover {
+              cursor: pointer;
+              border-bottom: solid #cc0000 2px; }
       main#nu__search > section > form > div {
         position: relative; }
         main#nu__search > section > form > div > label.label {

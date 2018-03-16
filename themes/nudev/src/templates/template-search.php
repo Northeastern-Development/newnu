@@ -21,6 +21,17 @@
 		$style = 'background: rgba('.hex2rgb($styles['background_color']).','.($styles['opacity'] != ''?$styles['opacity']:'0.8').')';
 	}
 
+
+	// get the list of popular search terms
+	$popular = '';
+	if(!isset($_GET['query']) || $_GET['query'] == ''){
+		$popular = '<p>People like you searched these items</p><ul>';
+		foreach($styles['popular_searches'] as $pS){
+			$popular .= '<li><a href="/search/?query='.strtolower(str_replace(' ','+',trim($pS['term']))).'" title="Click here to run this search">'.$pS['term'].'</a></li>';
+		}
+		$popular .= '</ul>';
+	}
+
 ?>
 
 	<main id="nu__search" role="main" aria-label="content" class="smooth">
@@ -28,14 +39,10 @@
 		<div style="<?=$style?>"></div>
 
 		<section>
-			<form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><div><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><input type="text" name="query" id="query" value="<?=$_GET['query']?>" title="Enter your search query here" /><label for="query" class="label focus">Search</label><button class="reset" type="reset" title="Click here to clear current search">&#xE5C9;</button></div></form>
-			<?php
-				if(!isset($_GET['query']) || $_GET['query'] == ''){
-					echo '<p>Your search returned no results, please try again.</p>';
-				}else{
-					echo '<gcse:searchresults-only></gcse:searchresults-only>';
-				}
-			?>
+			<form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><div><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><input type="text" name="query" id="query" value="<?=$_GET['query']?>" title="Enter your search query here" /><label for="query" class="label focus">Search</label><button class="reset" type="reset" title="Click here to clear current search">&#xE5C9;</button></div><?=$popular?></form>
+
+			<gcse:searchresults-only></gcse:searchresults-only>
+			
 		</section>
 
 	</main>
