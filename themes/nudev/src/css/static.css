@@ -138,6 +138,8 @@ main#nu__static {
       width: 50vw;
       margin: 75px auto 75px auto;
       color: #fffffe; }
+  main#nu__static section:last-child {
+    margin: 30px auto 30px auto; }
   main#nu__static section.intro {
     width: 60vw;
     margin: 0 auto 0 auto;
@@ -146,14 +148,12 @@ main#nu__static {
       margin: 0 0 30px 0; }
   main#nu__static section.fullwidth {
     width: 100vw;
-    margin: 0 auto 0 auto 0;
+    margin: 60px auto 0 auto;
     padding: 30px 0 30px 0;
     background: #ece6d5;
     text-align: center; }
     main#nu__static section.fullwidth > h4 {
       text-align: center; }
-  main#nu__static section.last {
-    margin: 30px auto 30px auto; }
   main#nu__static section {
     width: 50vw;
     margin: 60px auto 0 auto; }

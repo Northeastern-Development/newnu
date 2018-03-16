@@ -7,11 +7,10 @@
 header{
   width: $wrapper-width;
   position: fixed;
-  background: rgba(0,0,0,0.9);
+  background: rgba($brand_colors-black,0.9);
   flex: none;
   z-index: 1000;
-  border-bottom: solid rgba(255,255,255,1) 1px;
-
+  border-bottom: solid rgba($brand_colors-beige,1) 1px;
 
   & > div{
     width: $content-width-wide;

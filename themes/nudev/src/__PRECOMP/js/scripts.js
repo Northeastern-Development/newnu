@@ -59,8 +59,39 @@
 
 
 
+
+		// listen for the user to focus on the search bar so that we can make some small design tweaks if JS is available
+		if(parseInt($('form#nu__searchbar-form > div > label').css('left')) > 0){	// not already small
+			$('#nu__searchbar').on('focus','form#nu__searchbar-form > div > input',function(e){	// focus
+				// this is where we will handle the logic to move the label
+				//console.log('focus');
+				$('form#nu__searchbar-form > div > label').addClass('focus');
+				$('form#nu__searchbar-form > div > button.reset').css({'color':'rgba(255,255,255,1.0)','pointer-events':'auto'});
+			});
+		//}else{
+			$('#nu__searchbar').on('blur','form#nu__searchbar-form > div > input',function(e){	// blur
+				// this is where we will handle the logic to move the label
+				//console.log('blur');
+				if($(this).val() == ''){
+					$('form#nu__searchbar-form > div > label').removeClass('focus');
+					$('form#nu__searchbar-form > div > button.reset').css({'color':'rgba(255,255,255,0.0)','pointer-events':'none'});
+				}
+			});
+		}
+
+		// need a listener on the search reset button to cover some other misc. functionality
+		$('#nu__searchbar').on('click','form#nu__searchbar-form > div > button[type=reset]',function(e){
+			$('form#nu__searchbar-form > div > input').val('');
+			$('form#nu__searchbar-form > div > label').removeClass('focus');
+			$('form#nu__searchbar-form > div > button.reset').css({'color':'rgba(255,255,255,0.0)','pointer-events':'none'});
+		});
+
+
+
+
+
+
 		function getContentAreaHeight(){
-			// contentAreaHeight = parseInt($(window).height()) - parseInt($('header').height());
 			contentAreaHeight = parseInt($(window).height()) - parseInt($('header').outerHeight());
 		}
 
@@ -347,6 +378,11 @@
 
 			allowScrollOrNot();
 
+			// check to see if we need to collapse the footer
+			if(!$('footer#nu__global-footer').hasClass('collapse')){
+				$('footer#nu__global-footer').addClass('collapse');
+			}
+
 		});
 
 		$('nav').on('click','input#nu__iamnav-toggle',function(){
@@ -357,6 +393,11 @@
 			$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
 
 			allowScrollOrNot();
+
+			// check to see if we need to collapse the footer
+			if(!$('footer#nu__global-footer').hasClass('collapse')){
+				$('footer#nu__global-footer').addClass('collapse');
+			}
 
 		});
 
@@ -369,6 +410,11 @@
 			$('#nu__supernav > section > div > ul > li:first-child').addClass('active');
 
 			allowScrollOrNot();
+
+			// check to see if we need to collapse the footer
+			if(!$('footer#nu__global-footer').hasClass('collapse')){
+				$('footer#nu__global-footer').addClass('collapse');
+			}
 
 		});
 

@@ -29,7 +29,13 @@
 
 		<section>
 			<form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><input type="text" name="query" id="query" placeholder="| Search" title="Enter your search query here" value="<?=$_GET['query']?>" /><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button></form>
-			<gcse:searchresults-only></gcse:searchresults-only>
+			<?php
+				if(!isset($_GET['query']) || $_GET['query'] == ''){
+					echo 'Opps, it doesn\'t looks like you searched for anything. show the same featured search items here.';
+				}else{
+					echo '<gcse:searchresults-only></gcse:searchresults-only>';
+				}
+			?>
 		</section>
 
 	</main>
