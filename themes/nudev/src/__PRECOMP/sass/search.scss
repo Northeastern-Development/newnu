@@ -21,7 +21,7 @@ main#nu__search{
 
   width: $wrapper-width;
 
-  $s: $header-height;
+  $s: ($header-height + 1);
   $hh: 100%;
   height: calc(#{$hh} - #{$s});
   height: -miz-calc(#{$hh} - #{$s});

@@ -130,12 +130,12 @@ body.search > footer {
 
 main#nu__search {
   width: 100vw;
-  height: calc(100% - 70px);
-  height: -miz-calc(100% - 70px);
-  height: -webkit-calc(100% - 70px);
-  min-height: calc(100% - 70px);
-  min-height: -moz-calc(100% - 70px);
-  min-height: -webkit-calc(100% - 70px); }
+  height: calc(100% - 71px);
+  height: -miz-calc(100% - 71px);
+  height: -webkit-calc(100% - 71px);
+  min-height: calc(100% - 71px);
+  min-height: -moz-calc(100% - 71px);
+  min-height: -webkit-calc(100% - 71px); }
   main#nu__search > div {
     position: fixed;
     z-index: -1;
