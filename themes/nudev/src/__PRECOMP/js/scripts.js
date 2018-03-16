@@ -32,7 +32,7 @@
 		// set up some common animation speeds
 		var animationSpeeds = Array(
 			 200
-			,1000
+			,1200
 		);
 		var windowSize = Array(0,0);
 
@@ -63,15 +63,11 @@
 		// listen for the user to focus on the search bar so that we can make some small design tweaks if JS is available
 		if(parseInt($('form#nu__searchbar-form > div > label').css('left')) > 0){	// not already small
 			$('#nu__searchbar').on('focus','form#nu__searchbar-form > div > input',function(e){	// focus
-				// this is where we will handle the logic to move the label
-				//console.log('focus');
 				$('form#nu__searchbar-form > div > label').addClass('focus');
 				$('form#nu__searchbar-form > div > button.reset').css({'color':'rgba(255,255,255,1.0)','pointer-events':'auto'});
 			});
 		//}else{
 			$('#nu__searchbar').on('blur','form#nu__searchbar-form > div > input',function(e){	// blur
-				// this is where we will handle the logic to move the label
-				//console.log('blur');
 				if($(this).val() == ''){
 					$('form#nu__searchbar-form > div > label').removeClass('focus');
 					$('form#nu__searchbar-form > div > button.reset').css({'color':'rgba(255,255,255,0.0)','pointer-events':'none'});

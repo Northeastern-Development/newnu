@@ -28,7 +28,7 @@
 		<div style="<?=$style?>"></div>
 
 		<section>
-			<form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><input type="text" name="query" id="query" placeholder="| Search" title="Enter your search query here" value="<?=$_GET['query']?>" /><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button></form>
+			<form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><div><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><input type="text" name="query" id="query" value="<?=$_GET['query']?>" title="Enter your search query here" /><label for="query" class="label focus">Search</label><button class="reset" type="reset" title="Click here to clear current search">&#xE5C9;</button></div></form>
 			<?php
 				if(!isset($_GET['query']) || $_GET['query'] == ''){
 					echo 'Opps, it doesn\'t looks like you searched for anything. show the same featured search items here.';

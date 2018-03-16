@@ -137,36 +137,240 @@ main#nu__search {
     height: 100%; }
   main#nu__search > section {
     float: right;
-    width: 50%;
-    border-left: solid white 3px;
+    width: 736px;
+    border-left: solid #ece6d5 4px;
     background: black; }
     main#nu__search > section > form {
+      position: relative;
       width: auto;
-      margin: 0 30px 30px 30px;
+      margin: 0 30px 0 30px;
       text-align: left; }
-      main#nu__search > section > form > input {
-        margin: 0 0 0 0;
-        height: 50px;
-        line-height: 50px;
-        padding: 0 5px 0 5px;
-        width: 100%;
-        width: calc(100% - 40px);
+      main#nu__search > section > form > p {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2.8rem;
+        text-align: left;
+        color: #fffffe;
+        margin: 0 0 10px 0; }
+      main#nu__search > section > form > div {
+        position: relative; }
+        main#nu__search > section > form > div > label.label {
+          position: absolute;
+          left: 40px;
+          top: 20px;
+          z-index: 0;
+          font-size: 3.2rem;
+          font-weight: 300;
+          line-height: 4.8rem;
+          text-align: left;
+          color: #fffffe;
+          text-transform: none; }
+        main#nu__search > section > form > div > label.focus {
+          top: 5px;
+          left: 0;
+          font-size: 1.4rem;
+          color: #979797;
+          line-height: 2.8rem;
+          text-align: left;
+          color: #979797;
+          height: 20px; }
+        main#nu__search > section > form > div > input {
+          font-size: 3.2rem;
+          font-weight: 300;
+          line-height: 4.8rem;
+          text-align: left;
+          margin: 20px 0 30px 0;
+          height: 50px;
+          padding: 0 5px 0 5px;
+          width: calc(100% - 90px);
+          border: none;
+          border-bottom: solid #fffffe 1px;
+          background: transparent;
+          color: #fffffe; }
+          main#nu__search > section > form > div > input:focus ~ .label {
+            top: 5px;
+            left: 0;
+            font-size: 1.4rem;
+            color: #979797;
+            line-height: 2.8rem;
+            text-align: left;
+            color: #979797;
+            height: 20px; }
+          main#nu__search > section > form > div > input:focus ~ .reset {
+            color: #fffffe;
+            pointer-events: auto; }
+        main#nu__search > section > form > div > button {
+          background: none;
+          border: none;
+          width: 40px;
+          height: 46px;
+          font-size: 2.0rem;
+          line-height: 3.2rem;
+          text-align: center;
+          font-family: "Material Icons";
+          color: #fffffe;
+          border-bottom: solid #fffffe 1px;
+          margin: 0 0 0 0; }
+          main#nu__search > section > form > div > button.reset {
+            font-size: 2.0rem;
+            line-height: 3.2rem;
+            text-align: center; }
+          main#nu__search > section > form > div > button.hidden {
+            color: rgba(255, 255, 254, 0);
+            pointer-events: none; }
+          main#nu__search > section > form > div > button:hover {
+            cursor: pointer;
+            color: rgba(255, 255, 254, 0.6); }
+    main#nu__search > section > div#___gcse_0 > div.gsc-control-cse {
+      padding: 0 0 0 0;
+      margin: 0 0 0 0;
+      background: #fffffe;
+      border: none; }
+    main#nu__search > section > div#___gcse_0 div.gsc-above-wrapper-area {
+      background: #fffffe;
+      padding: 0 40px 0 30px;
+      border: none; }
+    main#nu__search > section > div#___gcse_0 div.gsc-result-info {
+      font-size: 1.4rem;
+      color: #979797;
+      line-height: 2.8rem;
+      text-align: left;
+      color: #979797;
+      margin: 0 0 30px 0; }
+    main#nu__search > section > div#___gcse_0 div.gsc-orderby {
+      font-size: 1.4rem;
+      color: #979797;
+      line-height: 2.8rem;
+      text-align: right;
+      color: #979797;
+      margin: 0 5px 30px 0; }
+      main#nu__search > section > div#___gcse_0 div.gsc-orderby div.gsc-orderby-label {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2.8rem;
+        text-align: right;
+        color: #979797; }
+      main#nu__search > section > div#___gcse_0 div.gsc-orderby div.gsc-option-menu-container {
         border: none;
-        font-size: 2rem;
-        border-bottom: solid white 1px;
-        background: black;
-        color: white; }
-      main#nu__search > section > form > button {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2.8rem;
+        text-align: left;
+        color: #979797; }
+        main#nu__search > section > div#___gcse_0 div.gsc-orderby div.gsc-option-menu-container div.gsc-selected-option-container {
+          padding: 0 15px 0 0;
+          border: none;
+          box-shadow: none;
+          font-size: 1.6rem;
+          font-weight: 300;
+          line-height: 2.8rem;
+          text-align: left;
+          font-weight: 400;
+          color: #979797; }
+          main#nu__search > section > div#___gcse_0 div.gsc-orderby div.gsc-option-menu-container div.gsc-selected-option-container div.gsc-option-selector {
+            background: none;
+            top: 4px;
+            color: #979797; }
+            main#nu__search > section > div#___gcse_0 div.gsc-orderby div.gsc-option-menu-container div.gsc-selected-option-container div.gsc-option-selector:before {
+              color: black;
+              font-family: "Material Icons";
+              font-size: 2.0rem;
+              line-height: 3.2rem;
+              text-align: center;
+              content: '\E313'; }
+    main#nu__search > section > div#___gcse_0 div.gsc-adBlock {
+      display: none; }
+    main#nu__search > section > div#___gcse_0 div.gsc-webResult {
+      margin: 0 60px 30px 18px;
+      border: none;
+      padding: 0 0 0 0; }
+      main#nu__search > section > div#___gcse_0 div.gsc-webResult td.gsc-thumbnail {
+        min-width: 68px;
+        display: block !important;
+        margin: 0 10px 0 0; }
+      main#nu__search > section > div#___gcse_0 div.gsc-webResult div.gs-title {
+        height: auto;
+        border: none;
+        color: black;
+        text-decoration: none; }
+        main#nu__search > section > div#___gcse_0 div.gsc-webResult div.gs-title a {
+          font-size: 2.0rem;
+          font-weight: 300;
+          line-height: 3.2rem;
+          text-align: left;
+          text-decoration: none;
+          color: black;
+          border: none; }
+          main#nu__search > section > div#___gcse_0 div.gsc-webResult div.gs-title a b {
+            font-size: 2.0rem;
+            font-weight: 900;
+            line-height: 3.2rem;
+            text-align: left; }
+          main#nu__search > section > div#___gcse_0 div.gsc-webResult div.gs-title a:hover {
+            border-bottom: solid #cc0000 2px; }
+      main#nu__search > section > div#___gcse_0 div.gsc-webResult div.gs-snippet {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2.8rem;
+        text-align: left;
+        color: black; }
+      main#nu__search > section > div#___gcse_0 div.gsc-webResult div.gsc-url-bottom > .gs-visibleUrl {
+        font-size: 1.4rem;
+        color: #979797;
+        line-height: 2.8rem;
+        text-align: left;
+        color: #979797;
+        font-weight: 400; }
+        main#nu__search > section > div#___gcse_0 div.gsc-webResult div.gsc-url-bottom > .gs-visibleUrl b {
+          font-size: 1.4rem;
+          color: #979797;
+          line-height: 2.8rem;
+          text-align: left;
+          color: #979797;
+          border: none;
+          text-decoration: none;
+          font-weight: 400; }
+      main#nu__search > section > div#___gcse_0 div.gsc-webResult b {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+        text-align: left;
+        color: black;
+        border: none;
+        text-decoration: none; }
+    main#nu__search > section > div#___gcse_0 div.gsc-cursor-box {
+      padding: 0 0 0 0;
+      margin: 0 0 0 0;
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 2.8rem;
+      text-align: center;
+      color: black; }
+      main#nu__search > section > div#___gcse_0 div.gsc-cursor-box div.gsc-cursor div.gsc-cursor-page {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0 2px 20px 2px;
+        width: 25px; }
+        main#nu__search > section > div#___gcse_0 div.gsc-cursor-box div.gsc-cursor div.gsc-cursor-page:hover {
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 2.8rem;
+          text-align: center;
+          border-bottom: solid #cc0000 4px; }
+      main#nu__search > section > div#___gcse_0 div.gsc-cursor-box div.gsc-cursor div.gsc-cursor-current-page {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+        text-align: center;
         background: none;
+        padding: 0 2px 20px 2px;
+        border-bottom: solid #cc0000 4px; }
+    main#nu__search > section > div#___gcse_0 div.gcsc-branding {
+      width: 215px;
+      margin: 30px auto 0 auto;
+      text-align: left; }
+      main#nu__search > section > div#___gcse_0 div.gcsc-branding a {
         border: none;
-        width: 40px;
-        height: 55px;
-        line-height: 50px;
-        font-size: 2rem;
-        font-family: "Material Icons";
-        color: white;
-        border-bottom: solid white 1px;
-        margin: 0 0 0 0; }
-        main#nu__search > section > form > button:hover {
-          cursor: pointer;
-          color: red; }
+        text-decoration: none; }
+        main#nu__search > section > div#___gcse_0 div.gcsc-branding a img {
+          top: -5px; }

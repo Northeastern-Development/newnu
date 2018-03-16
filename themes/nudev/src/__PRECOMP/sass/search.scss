@@ -30,44 +30,255 @@ main#nu__search{
 
   & > section{
     float: right;
-    width: 50%;
-    border-left: solid rgba(255,255,255,1.0) 3px;
-  background: rgba(0,0,0,1.0);
+    width: 736px;
+    border-left: solid rgba($brand_colors-beige,1.0) 4px;
+    background: rgba($brand_colors-black,1.0);
     & > form{
+      position: relative;
       width: auto;
-      margin: 0 $gutter $gutter $gutter;
+      margin: 0 $gutter 0 $gutter;
       text-align: left;
-      & > input{
-        margin: 0 0 0 0;
-        height: 50px;
-        line-height: 50px;
-        padding: 0 5px 0 5px;
-        width: 100%;
-        width: calc(100% - 40px);
-        border: none;
-        font-size: 2rem;
-        border-bottom: solid rgba(255,255,255,1.0) 1px;
-        background: rgba(0,0,0,1.0);
-        color: rgba(255,255,255,1.0);
+      & > p{
+        @include font-2l-l;
+        color: rgba($brand_colors-white,1.0);
+        margin: 0 0 10px 0;
       }
+      & > div{
+        position: relative;
+        & > label{
+          &.label{
+            position: absolute;
+            left: 40px;
+            top: 20px;
+            z-index: 0;
+            @include font-6l-l;
+            color: rgba($brand_colors-white,1.0);
+            text-transform: none;
+          }
+          &.focus{
+            top: 5px;
+            left: 0;
+            @include font-1r-l;
+            color: rgba($brand_colors-grayW,1.0);
+            height: 20px;
+          }
+        }
+        & > input{
+          @include font-6l-l;
+          margin: 20px 0 $gutter 0;
+          height: 50px;
+          padding: 0 5px 0 5px;
+          width: calc(100% - 90px);
+          border: none;
+          border-bottom: solid rgba($brand_colors-white,1.0) 1px;
+          background: transparent;
+          color: rgba($brand_colors-white,1.0);
+          &:focus ~ .label{
+            top: 5px;
+            left: 0;
+            @include font-1r-l;
+            color: rgba($brand_colors-grayW,1.0);
+            height: 20px;
+          }
+          &:focus ~ .reset{
+            color: rgba($brand_colors-white,1.0);
+            pointer-events: auto;
+          }
+        }
 
-      & > button{
-        background: none;
-        border: none;
-        width: 40px;
-        height: 55px;
-        line-height: 50px;
-        font-size: 2rem;
-        font-family: "Material Icons";
-        color: rgba(255,255,255,1.0);
-        border-bottom: solid rgba(255,255,255,1.0) 1px;
-        margin: 0 0 0 0;
-        &:hover{
-          cursor: pointer;
-          color: rgba(255,0,0,1.0);
+        & > button{
+          background: none;
+          border: none;
+          width: 40px;
+          height: 46px;
+          @include font-4-c;
+          font-family: "Material Icons";
+          color: rgba($brand_colors-white,1.0);
+          border-bottom: solid rgba($brand_colors-white,1.0) 1px;
+          margin: 0 0 0 0;
+          &.reset{
+            @include font-4-c;
+          }
+          &.hidden{
+            color: rgba($brand_colors-white,0.0);
+            pointer-events: none;
+          }
+          &:hover{
+            cursor: pointer;
+            color: rgba($brand_colors-white,0.6);
+          }
         }
       }
     }
+
+
+
+
+    & > div#___gcse_0{
+      & > div.gsc-control-cse{
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+        background: rgba($brand_colors-white,1.0);
+        border: none;
+      }
+
+      & div.gsc-above-wrapper-area{
+        background: rgba($brand_colors-white,1.0);
+        padding: 0 40px 0 $gutter;
+        border: none;
+      }
+
+      div.gsc-result-info{
+        @include font-1r-l;
+        color: rgba($brand_colors-grayW,1.0);
+        margin: 0 0 $gutter 0;
+      }
+
+      div.gsc-orderby{
+        @include font-1r-r;
+        color: rgba($brand_colors-grayW,1.0);
+        margin: 0 5px $gutter 0;
+        div.gsc-orderby-label{
+          @include font-2r-r;
+          color: rgba($brand_colors-grayW,1.0);
+        }
+
+        & div.gsc-option-menu-container{
+          border: none;
+          @include font-2l-l;
+          color: rgba($brand_colors-grayW,1.0);
+          & div.gsc-selected-option-container{
+            padding: 0 15px 0 0;
+            border: none;
+            box-shadow: none;
+            @include font-2l-l;
+            font-weight: 400;
+            color: rgba($brand_colors-grayW,1.0);
+            & div.gsc-option-selector{
+              background: none;
+              top: 4px;
+              color: rgba($brand_colors-grayW,1.0);
+              &:before{
+                color: rgba($brand_colors-black,1.0);
+                font-family: "Material Icons";
+                @include font-4-c;
+                content: '\E313';
+              }
+            }
+          }
+        }
+      }
+
+      & div.gsc-adBlock{
+        display: none;
+      }
+
+      & div.gsc-webResult{
+        margin: 0 60px $gutter 18px;
+        border: none;
+        padding: 0 0 0 0;
+        & td.gsc-thumbnail{
+          min-width: 68px;
+          display: block !important;
+          margin: 0 10px 0 0;
+        }
+
+        div.gs-title{
+          height: auto;
+          border: none;
+          color: rgba($brand_colors-black,1.0);
+          text-decoration: none;
+          & a{
+            @include font-3l-l;
+            text-decoration: none;
+            color: rgba($brand_colors-black,1.0);
+            border: none;
+            & b{
+              @include font-3b-l;
+            }
+            &:hover{
+              border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+            }
+          }
+        }
+
+        div.gs-snippet{
+          @include font-2l-l;
+          color: rgba($brand_colors-black,1.0);
+        }
+
+        div.gsc-url-bottom > .gs-visibleUrl{
+          @include font-1r-l;
+          color: rgba($brand_colors-grayW,1.0);
+          font-weight: 400;
+          & b{
+            @include font-1r-l;
+            color: rgba($brand_colors-grayW,1.0);
+            border: none;
+            text-decoration: none;
+            font-weight: 400;
+          }
+        }
+
+        & b{
+          @include font-2b-l;
+          color: rgba($brand_colors-black,1.0);
+          border: none;
+          text-decoration: none;
+        }
+      }
+
+      div.gsc-cursor-box{
+        // background :Red;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+        // text-align: center;
+        @include font-2l-c;
+        color: rgba($brand_colors-black,1.0);
+        & div.gsc-cursor{
+          & div.gsc-cursor-page{
+            display: inline-block;
+            text-decoration: none;
+            // background: blue;
+            padding: 0 2px 20px 2px;
+            width: 25px;
+            &:hover{
+              @include font-2b-c;
+              border-bottom: solid rgba($brand_colors-red,1.0) 4px;
+            }
+          }
+          & div.gsc-cursor-current-page{
+            @include font-2b-c;
+            // background: red;
+            background: none;
+            padding: 0 2px 20px 2px;
+            border-bottom: solid rgba($brand_colors-red,1.0) 4px;
+          }
+        }
+      }
+
+      div.gcsc-branding{
+        // width: 100vw;
+        // width: 400px;
+        width: 215px;
+        margin: $gutter auto 0 auto;
+        text-align: left;
+        // background :blue;
+        & a{
+          border: none;
+          text-decoration: none;
+          & img{
+            top: -5px;
+          }
+        }
+      }
+
+
+    }
+
+
+
+
 
   }
 

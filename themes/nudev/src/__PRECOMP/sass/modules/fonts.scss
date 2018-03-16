@@ -156,11 +156,32 @@
    text-align: left;
  }
 
+ @mixin font-1r-r{
+   font-size: 1.4rem;
+   color: $brand_colors-grayW;
+   line-height: 2.8rem;
+   text-align: right;
+ }
+
  @mixin font-2l-l{
    font-size: 1.6rem;
    font-weight: 300;
    line-height: 2.8rem;
    text-align: left;
+ }
+
+ @mixin font-2l-r{
+   font-size: 1.6rem;
+   font-weight: 300;
+   line-height: 2.8rem;
+   text-align: right;
+ }
+
+ @mixin font-2r-r{
+   font-size: 1.6rem;
+   font-weight: 300;
+   line-height: 2.8rem;
+   text-align: right;
  }
 
  @mixin font-2l-c{
@@ -175,6 +196,13 @@
    font-weight: 700;
    line-height: 2.8rem;
    text-align: left;
+ }
+
+ @mixin font-2b-c{
+   font-size: 1.6rem;
+   font-weight: 700;
+   line-height: 2.8rem;
+   text-align: center;
  }
 
  @mixin font-3r-l{
