@@ -3,6 +3,6 @@
 	// header('location:'.site_url());
 	// exit();
 	// wp_redirect(site_url());
-	wp_redirect('//newnu.nudev.net');
+	wp_redirect('/');
 	exit;
 ?>
