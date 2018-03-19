@@ -1,4 +1,4 @@
-<?
+<?php
 	// this is a redirect to the homepage to prevent users from reaching null pages
 	// header('location:'.site_url());
 	// exit();
