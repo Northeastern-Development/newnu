@@ -441,16 +441,6 @@
 		"oAP": "\/404.php",
 		"oF": 0
 		},
-	"\/__PRECOMP\/js\/scripts-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/__PRECOMP\/js\/scripts-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"\/__PRECOMP\/js\/scripts.js": {
 		"ft": 64,
 		"ma": 0,

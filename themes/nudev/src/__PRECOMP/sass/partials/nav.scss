@@ -138,7 +138,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   // ****************************************************************************************************
   div#nu__mainmenu-iamnav{
     width: 106px;
-    
+
   }
 
   label#nu__iamnav-toggle-label{
@@ -361,7 +361,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
               color: rgba($brand_colors-black,1.0);
               cursor: pointer;
             }
-            & > ul{
+            & > ul{  // this is the list of items shown on the right in the white space
               display: none;
               position: absolute;
               right: 0;
@@ -391,7 +391,9 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                     cursor: pointer;
                     & > div{
                       &:nth-child(2){
-                        border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+                        & > span{
+                          border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+                        }
                       }
                     }
                   }
