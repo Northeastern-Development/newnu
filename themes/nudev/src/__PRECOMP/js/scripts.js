@@ -76,8 +76,10 @@
 		}
 
 		// need a listener on the search reset button to cover some other misc. functionality
-		$('#nu__searchbar').on('click','form#nu__searchbar-form > div > button[type=reset]',function(e){
+		$('form#nu__searchbar-form').on('click','div > button[type=reset]',function(e){
+			console.log('reset');
 			$('form#nu__searchbar-form > div > input').val('');
+			$('form#nu__searchbar-form > div > input').attr('value','');
 			$('form#nu__searchbar-form > div > label').removeClass('focus');
 			$('form#nu__searchbar-form > div > button.reset').css({'color':'rgba(255,255,255,0.0)','pointer-events':'none'});
 		});

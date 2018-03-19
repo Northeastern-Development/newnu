@@ -34,15 +34,16 @@
 
 ?>
 
-	<main id="nu__search" role="main" aria-label="content" class="smooth">
+	<main id="nu__search" role="main" aria-label="content" class="smooth<?=($popular!=''?' noresults':'')?>">
 
 		<div style="<?=$style?>"></div>
 
 		<section>
-			<form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><div><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><input type="text" name="query" id="query" value="<?=$_GET['query']?>" title="Enter your search query here" /><label for="query" class="label focus">Search</label><button class="reset" type="reset" title="Click here to clear current search">&#xE5C9;</button></div><?=$popular?></form>
+			<div class="nu__searchbar-container"><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><div><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><input type="text" name="query" id="query" value="<?=$_GET['query']?>" title="Enter your search query here" /><label for="query" class="label focus">Search</label><button class="reset" type="reset" title="Click here to clear current search">&#xE5C9;</button></div><?=$popular?></form></div>
+			<!-- <div class="seantest"><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"></form></div> -->
 
 			<gcse:searchresults-only></gcse:searchresults-only>
-			
+
 		</section>
 
 	</main>

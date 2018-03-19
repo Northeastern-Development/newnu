@@ -19,16 +19,28 @@ body.search{  // we want to hide the footer on the search results page
 
 main#nu__search{
 
-  width: $wrapper-width;
+  width: 100%;
 
-  $s: ($header-height + 1);
-  $hh: 100%;
-  height: calc(#{$hh} - #{$s});
-  height: -miz-calc(#{$hh} - #{$s});
-  height: -webkit-calc(#{$hh} - #{$s});
-  min-height: calc(#{$hh} - #{$s});
-  min-height: -moz-calc(#{$hh} - #{$s});
-  min-height: -webkit-calc(#{$hh} - #{$s});
+  height: 100%;
+  min-height: 100%;
+
+  &.noresults{
+    $s: ($header-height + 1);
+    $hh: 100%;
+    height: calc(#{$hh} - #{$s});
+    height: -miz-calc(#{$hh} - #{$s});
+    height: -webkit-calc(#{$hh} - #{$s});
+    min-height: calc(#{$hh} - #{$s});
+    min-height: -moz-calc(#{$hh} - #{$s});
+    min-height: -webkit-calc(#{$hh} - #{$s});
+    & > section{
+      background: rgba($brand_colors-black,1.0);
+    }
+  }
+
+
+
+  overflow: visible;
 
   & > div{
     position: fixed;
@@ -41,107 +53,146 @@ main#nu__search{
   & > section{
     float: right;
     width: 736px;
+    // overflow-x: hidden;
+    // max-width: 736px;
     height: 100%;
     min-height: 100%;
+    // overflow: visible;
 
     border-left: solid rgba($brand_colors-beige,1.0) 4px;
-    background: rgba($brand_colors-black,1.0);
+    // background: rgba($brand_colors-black,1.0);
+
+    background: rgba($brand_colors-white,1.0);
 
     & > p{
       @include font-2l-l;
       margin: 0 $gutter 0 $gutter;
     }
 
-    & > form{
-      position: relative;
-      width: auto;
-      margin: 0 $gutter 0 $gutter;
-      text-align: left;
-      & > p{
-        @include font-2l-l;
-        color: rgba($brand_colors-white,1.0);
-        margin: 0 0 10px 0;
-      }
-      & > ul{
-        list-style: none;
-        list-style-type: none;
-        & > li{
-          height: auto;
-          line-height: 40px;
-          & > a{
-            @include font-6l-l;
-            color: rgba($brand_colors-white,1.0);
-            border-bottom: none;
-            &:hover{
-              cursor: pointer;
-              border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+    & > div.nu__searchbar-container{
+      background: rgba($brand_colors-black,1.0);
+      position: static;
+      height: 100px;
+      width: 100%;
+      display: block;
+      // background: green;
+      & > form#nu__searchbar-form{
+        // position: relative;
+        // width: auto;
+        // min-height: 100px;
+        // margin: 30px $gutter 0 $gutter;
+        margin: 0 0 0 0;
+        // padding: 20px 0 $gutter 0;
+        // width: 596px;
+        width: 670px;
+        // background: green;
+        // height:
+        text-align: left;
+        & > p{
+          @include font-2l-l;
+          color: rgba($brand_colors-white,1.0);
+          margin: 0 0 10px $gutter;
+        }
+        & > ul{
+          list-style: none;
+          list-style-type: none;
+          margin: 0 0 0 $gutter;
+          & > li{
+            height: auto;
+            line-height: 40px;
+            & > a{
+              @include font-6l-l;
+              color: rgba($brand_colors-white,1.0);
+              border-bottom: none;
+              &:hover{
+                cursor: pointer;
+                border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+              }
             }
           }
         }
-      }
-      & > div{
-        position: relative;
-        & > label{
-          &.label{
-            position: absolute;
-            left: 40px;
-            top: 20px;
-            z-index: 0;
+        & > div{
+          position: relative;
+          // clear: both;
+          // overflow: hidden;
+          width: 100%;
+          // height: 100px;
+          // height: auto;
+          height: 70px;
+          margin: 0 0 $gutter $gutter;
+          // background: green;
+          // display: table;
+          display: flex;
+          flex-direction: row;
+          & > label{
+            &.label{
+              position: absolute;
+              left: 40px;
+              top: 20px;
+              z-index: 0;
+              @include font-6l-l;
+              color: rgba($brand_colors-white,1.0);
+              text-transform: none;
+            }
+            &.focus{
+              top: 5px;
+              left: 0;
+              @include font-1r-l;
+              color: rgba($brand_colors-grayW,1.0);
+              height: 20px;
+            }
+          }
+          & > input{
+            flex: 1;
             @include font-6l-l;
+            // margin: 0 0 $gutter 0;
+            // margin: 0 0 0 0;
+            margin: 20px 0 0 0;
+            height: 50px;
+            // padding: 0 5px 0 5px;
+            // width: calc(100% - 80px);
+            // width: 596px;
+            // width: auto;
+            border: none;
+            border-bottom: solid rgba($brand_colors-white,1.0) 1px;
+            background: transparent;
             color: rgba($brand_colors-white,1.0);
-            text-transform: none;
+            // float: left;
+            // display: table-cell;
+            &:focus ~ .label{
+              top: 5px;
+              left: 0;
+              @include font-1r-l;
+              color: rgba($brand_colors-grayW,1.0);
+              height: 20px;
+            }
+            &:focus ~ .reset{
+              color: rgba($brand_colors-white,1.0);
+              pointer-events: auto;
+            }
           }
-          &.focus{
-            top: 5px;
-            left: 0;
-            @include font-1r-l;
-            color: rgba($brand_colors-grayW,1.0);
-            height: 20px;
-          }
-        }
-        & > input{
-          @include font-6l-l;
-          margin: 20px 0 $gutter 0;
-          height: 50px;
-          padding: 0 5px 0 5px;
-          width: calc(100% - 90px);
-          border: none;
-          border-bottom: solid rgba($brand_colors-white,1.0) 1px;
-          background: transparent;
-          color: rgba($brand_colors-white,1.0);
-          &:focus ~ .label{
-            top: 5px;
-            left: 0;
-            @include font-1r-l;
-            color: rgba($brand_colors-grayW,1.0);
-            height: 20px;
-          }
-          &:focus ~ .reset{
-            color: rgba($brand_colors-white,1.0);
-            pointer-events: auto;
-          }
-        }
 
-        & > button{
-          background: none;
-          border: none;
-          width: 40px;
-          height: 46px;
-          @include font-4-c;
-          font-family: "Material Icons";
-          color: rgba($brand_colors-white,1.0);
-          border-bottom: solid rgba($brand_colors-white,1.0) 1px;
-          margin: 0 0 0 0;
-          &.reset{
+          & > button{
+            background: none;
+            border: none;
+            width: 40px;
+            height: 50px;
             @include font-4-c;
-          }
-          &.hidden{
-            color: rgba($brand_colors-white,0.0);
-            pointer-events: none;
-          }
-          &:hover{
-            cursor: pointer;
-            color: rgba($brand_colors-white,0.6);
+            font-family: "Material Icons";
+            color: rgba($brand_colors-white,1.0);
+            border-bottom: solid rgba($brand_colors-white,1.0) 1px;
+            margin: 20px 0 0 0;
+            &.reset{
+              @include font-4-c;
+            }
+            &.hidden{
+              color: rgba($brand_colors-white,0.0);
+              pointer-events: none;
+            }
+            &:hover{
+              cursor: pointer;
+              color: rgba($brand_colors-white,0.6);
+            }
           }
         }
       }
@@ -151,16 +202,20 @@ main#nu__search{
 
 
     & > div#___gcse_0{
+      // height: 100% !important;
+      // height: 100%;
+
       & > div.gsc-control-cse{
         padding: 0 0 0 0;
         margin: 0 0 0 0;
         background: rgba($brand_colors-white,1.0);
         border: none;
+        // height: 100%;
       }
 
       & div.gsc-above-wrapper-area{
         background: rgba($brand_colors-white,1.0);
-        padding: 0 40px 0 $gutter;
+        padding: 0 $gutter 0 $gutter;
         border: none;
       }
 
