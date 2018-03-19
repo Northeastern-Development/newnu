@@ -27,7 +27,7 @@
 					</div>
 
 					<p>
-						<a href="//www.google.com/maps/place/360+Huntington+Ave,+Boston,+MA+02115/@42.339348,-71.0903674,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a185b1286ff:0x2c025c6d4b00cba2!8m2!3d42.339348!4d-71.0881734" title="360 Huntington Ave., Boston, Massachusetts 02115" target="_blank">360 Huntington Ave., Boston, Massachusetts 02115</a> | <a href="tel:6173732000" title="Give us a call">617.373.2000<a/> | <a href="tel:6173733768" title="TTY">TTY 617.373.3768</a> | <a href="/emergency-information" title="Emergency information">Emergency Information</a><br>&copy; 2018 &nbsp;Northeastern University System | <a href="/privacy-information" title="Privacy information">Privacy</a>
+						<a href="//www.google.com/maps/place/360+Huntington+Ave,+Boston,+MA+02115/@42.339348,-71.0903674,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a185b1286ff:0x2c025c6d4b00cba2!8m2!3d42.339348!4d-71.0881734" title="360 Huntington Ave., Boston, Massachusetts 02115" target="_blank">360 Huntington Ave., Boston, Massachusetts 02115</a> | <a href="tel:6173732000" title="Give us a call">617.373.2000<a/> | <a href="tel:6173733768" title="TTY">TTY 617.373.3768</a> | <a href="/emergency-information" title="Emergency information">Emergency Information</a><br>&copy; 2018 &nbsp;Northeastern University | <a href="/privacy-information" title="Privacy information">Privacy</a>
 					</p>
 
 				</div>

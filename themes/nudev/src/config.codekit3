@@ -559,6 +559,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/__PRECOMP\/sass\/partials\/animations.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/partials\/animations.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/__PRECOMP\/sass\/partials\/footer.scss": {
 		"aP": 0,
 		"bl": 0,
