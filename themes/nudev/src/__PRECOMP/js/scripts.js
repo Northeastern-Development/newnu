@@ -157,26 +157,31 @@
 
 
 
-		    $("body").mousewheel(function(event, delta){
+		    // $("body").mousewheel(function(event, delta){
+				$("body").on('mousewheel', { mousewheel: { behavior: 'debounce', delay: 100 } }, function(event,delta) {
 
 					console.log('X: '+event.deltaX+' - Y:'+event.deltaY);
 
 
 
 					// limit the deltaY value so that we only start moving AFTER a certain distance moved
+					var isSafari = /safari/i.test(navigator.userAgent);
 
+					// console.log(isSafari);
 
 
 		      if (ww >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false && event.deltaX == 0){
 
-		        if (event.deltaY < -15 && currentPanel < 2){
+		        if (event.deltaY <= (isSafari?-1:-15) && currentPanel < 2){
 		          event.preventDefault();
 		          slidePanels('Left');
 		          inMotion = true;
-		        }else if (event.deltaY > 15 && currentPanel != 0){
+							//event.preventDefault();
+		        }else if (event.deltaY >= (isSafari?1:15) && currentPanel != 0){
 		          event.preventDefault();
 		          slidePanels('Right');
 		          inMotion = true;
+							//event.preventDefault();
 		        }
 		      }else{
 						event.preventDefault();
