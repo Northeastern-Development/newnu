@@ -114,42 +114,57 @@ function nu_header_block(){
   curl_close($curl);
 
   // let's grab the alerts (if any) from home base
+
+
+  // need a check in here if the curl request errors
+
+  $alerts = '';
+
   $url = $baseUrls[0]."/feed/alerts";
   $curl = curl_init($url);
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
   $xml = curl_exec($curl);
-  curl_close($curl);
-  $xml = simplexml_load_string($xml, "SimpleXMLElement", LIBXML_NOCDATA);
-  $json = json_encode($xml);
-  $res = json_decode($json,TRUE)['channel']['items'];
-  $alerts = '';
+  if(curl_errno($curl)){
+    echo 'CURL Request Error: '.curl_error($curl);
+    curl_close($curl);
+  }else{
+    curl_close($curl);
+    // echo 'XML: '.$xml;
+    $xml = simplexml_load_string($xml, "SimpleXMLElement", LIBXML_NOCDATA);
+    
+    $json = json_encode($xml);
+    $res = json_decode($json,TRUE)['channel']['items'];
 
-// if we have alerts, build out the alerts panel
-  if(!isset($res[0])){
-    $alerts .= '<br /><div><h2>University Alert!</h2><p>Northeastern University has issued the following alert(s). Please be sure to read any associated information and contact your campus emergency services with questions.</p><ul>';
+    // print_r($res);
 
-    foreach($res as $r){
-      $guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s&nbsp;</a></li>';
+    // $alerts = '';
 
-			$campus = "";
-      $campuses = explode(", ",$r['campuses']);
-			foreach($campuses as $c){
-				$campus .= ($campus != ""?", ":"").$c;
-			}
+    // if we have alerts, build out the alerts panel
+    if(!isset($res[0])){
+      $alerts .= '<br /><div><h2>University Alert!</h2><p>Northeastern University has issued the following alert(s). Please be sure to read any associated information and contact your campus emergency services with questions.</p><ul>';
 
-			$alerts .= sprintf(
-				 $guide
-				,$r['link']
-				,$r['title']
-				,$r['title']
-				,$campus
-				,$r['description']
-			);
+      foreach($res as $r){
+        $guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s&nbsp;</a></li>';
+
+  			$campus = "";
+        $campuses = explode(", ",$r['campuses']);
+  			foreach($campuses as $c){
+  				$campus .= ($campus != ""?", ":"").$c;
+  			}
+
+  			$alerts .= sprintf(
+  				 $guide
+  				,$r['link']
+  				,$r['title']
+  				,$r['title']
+  				,$campus
+  				,$r['description']
+  			);
+      }
+      $alerts .= '</ul></div>';
     }
-    $alerts .= '</ul></div>';
   }
 
-  // echo $utility.'<div id="nu__alerts">'.$alerts.'</div>';
   echo '<div id="nu__alerts">'.$alerts.'</div>';
 
   wp_reset_postdata();
