@@ -147,11 +147,11 @@
 
 
 
-			if (ww >= 900){
-			  $('#next').fadeIn(200);//fades in the next panel button if js is enabled
-			}else {
-			  $('#next').fadeOut(200);//fades in the next panel button if js is enabled
-			}
+			// if (ww >= 900){
+			//   $('#next').fadeIn(200);//fades in the next panel button if js is enabled
+			// }else {
+			//   $('#next').fadeOut(200);//fades in the next panel button if js is enabled
+			// }
 			//-----------------------------------------------------
 			  // Sliding Panel scroll, swipe, keydown, and click.
 			//-----------------------------------------------------
@@ -209,12 +209,12 @@
 		      if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
 		        offset += windowWidth;
 		        currentPanel++;
-		        if(currentPanel == panelCount -1){
-		          $("#next").css({'display':'none'});
-		        }else {
-		          $("#next").css({'display':'block'});
-		          $("#prev").css({'display':'block'});
-		        }
+		        // if(currentPanel == panelCount -1){
+		        //   $("#next").css({'display':'none'});
+		        // }else {
+		        //   $("#next").css({'display':'block'});
+		        //   $("#prev").css({'display':'block'});
+		        // }
 		        $(e).animate({"margin-left":  offset }, aspeeds, function() {
 		          inMotion = false;
 		          $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
@@ -223,14 +223,14 @@
 		        //console.log('bck');
 		        offset -= windowWidth
 		        currentPanel--;
-		        if(currentPanel == panelCount -1){
-		          $("#next").css({'display':'block'});
-		        }else if(currentPanel == 0) {
-		          $("#prev").css({'display':'none'});
-		          $("#next").css({'display':'block'});
-		        }else {
-		          $("#next").css({'display':'block'});
-		        }
+		        // if(currentPanel == panelCount -1){
+		        //   $("#next").css({'display':'block'});
+		        // }else if(currentPanel == 0) {
+		        //   $("#prev").css({'display':'none'});
+		        //   $("#next").css({'display':'block'});
+		        // }else {
+		        //   $("#next").css({'display':'block'});
+		        // }
 		        $(e).animate({"margin-left":  offset }, aspeeds, function() {
 		          inMotion = false;
 		          $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
