@@ -128,7 +128,7 @@
 	    var offset = 0;
 	    var currentPanel = 0;
 	    var panelCount = 3;
-	    var aspeeds = 1000;
+	    var aspeeds = 800;
 			var sizeBreak = 900;
 	    // var wi = $(window).width();
 			var ww = $(window).width();
@@ -159,15 +159,21 @@
 
 		    $("body").mousewheel(function(event, delta){
 
-					//console.log('X: '+event.deltaX+' - Y:'+event.deltaY);
+					console.log('X: '+event.deltaX+' - Y:'+event.deltaY);
+
+
+
+					// limit the deltaY value so that we only start moving AFTER a certain distance moved
+
+
 
 		      if (ww >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false && event.deltaX == 0){
 
-		        if (delta < 0 && currentPanel < 2){
+		        if (event.deltaY < -15 && currentPanel < 2){
 		          event.preventDefault();
 		          slidePanels('Left');
 		          inMotion = true;
-		        }else if (delta > 0 && currentPanel != 0){
+		        }else if (event.deltaY > 15 && currentPanel != 0){
 		          event.preventDefault();
 		          slidePanels('Right');
 		          inMotion = true;
