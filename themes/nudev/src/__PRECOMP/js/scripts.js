@@ -185,7 +185,7 @@
 							//event.preventDefault();
 		        }
 		      }else{
-						event.preventDefault();
+						// event.preventDefault();
 					}
 
 		   });

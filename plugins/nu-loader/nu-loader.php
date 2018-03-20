@@ -107,11 +107,11 @@ function nu_header_block(){
   global $baseUrls;
 
   // let's grab the utility nav from home base
-  $url = $baseUrls[0]."/resources/includes/?r=utility-nav";
-  $curl = curl_init($url);
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-  $utility = curl_exec($curl);
-  curl_close($curl);
+  // $url = $baseUrls[0]."/resources/includes/?r=utility-nav";
+  // $curl = curl_init($url);
+  // curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+  // $utility = curl_exec($curl);
+  // curl_close($curl);
 
   // let's grab the alerts (if any) from home base
 
@@ -124,14 +124,15 @@ function nu_header_block(){
   $curl = curl_init($url);
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
   $xml = curl_exec($curl);
+  // echo 'XML: '.$xml;
   if(curl_errno($curl)){
     echo 'CURL Request Error: '.curl_error($curl);
     curl_close($curl);
-  }else{
+  }else if($xml != ''){
     curl_close($curl);
     // echo 'XML: '.$xml;
     $xml = simplexml_load_string($xml, "SimpleXMLElement", LIBXML_NOCDATA);
-    
+
     $json = json_encode($xml);
     $res = json_decode($json,TRUE)['channel']['items'];
 

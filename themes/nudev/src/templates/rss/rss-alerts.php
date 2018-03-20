@@ -14,6 +14,8 @@
 
  	$posts = query_posts($args);
 
+  if(count($posts) > 0){
+
   echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 
 ?>
@@ -48,3 +50,4 @@
   </items>
 </channel>
 </rss>
+<?php } ?>
