@@ -56,10 +56,8 @@ main#nu__homepage{
     		top: 50%;
     		width: 50px;
         height: 50px;
-    		padding-bottom: 3%;
     		border-radius: 50%;
     		background: rgba($brand_colors-white,0.6);
-    		transform: translateY(-50%);
     		z-index:100;
         color: rgba($brand_colors-black,1.0);
         font-size: 4rem;
@@ -73,11 +71,11 @@ main#nu__homepage{
     }
 
     & > #prev {
-        left: 20px;
+        left: $gutter;
     }
 
     & > #next {
-        right: 20px;
+        right: $gutter;
     }
 
 

@@ -32,7 +32,7 @@
 		// set up some common animation speeds
 		var animationSpeeds = Array(
 			 200
-			,1200
+			,1500
 		);
 		var windowSize = Array(0,0);
 
@@ -128,12 +128,13 @@
 	    var offset = 0;
 	    var currentPanel = 0;
 	    var panelCount = 3;
-	    var aspeeds = 1000;
+	    var aspeeds = 1200;
 			var sizeBreak = 900;
 	    // var wi = $(window).width();
 			var ww = $(window).width();
 	    var myPanels = document.getElementById('nu__stories');
 			var mc = new Hammer(myPanels);
+			// $("#nu__stories").hammer({threshold: 10, velocity:0.3}).bind("swipe", function(ev) {});
 
 
 
@@ -158,7 +159,9 @@
 
 		    $("body").mousewheel(function(event, delta){
 
-		      if (ww >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+					//console.log('X: '+event.deltaX+' - Y:'+event.deltaY);
+
+		      if (ww >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false && event.deltaX == 0){
 
 		        if (delta < 0 && currentPanel < 2){
 		          event.preventDefault();
@@ -169,7 +172,9 @@
 		          slidePanels('Right');
 		          inMotion = true;
 		        }
-		      }
+		      }else{
+						event.preventDefault();
+					}
 
 		   });
 
@@ -177,7 +182,7 @@
 		  // this is the brain for all that is happening
 		  function slidePanels(a){
 		    if (ww >= 900){
-		      mc.stop();
+		      // mc.stop();
 
 					// windowWidth = $(window).width() * -1;
 
@@ -263,13 +268,21 @@
 
 
 		  // hammer js swipe left and right.
-		  mc.on("panleft", function(ev) {
+		  //mc.on("panleft", function(ev) {
+			//mc.on("swipeleft",1,100,'DIRECTION_ALL',0.3, function(ev) {
+			//$("#nu__stories").hammer({threshold: 10, velocity:0.3}).bind("swipeleft", function(ev){
+			mc.on("swipeleft", function(ev) {
 		    inMotion = true;
+				// mc.stop();
 		    slidePanels('Left');
 
 		  });
-		  mc.on("panright", function(ev) {
+		  //mc.on("panright", function(ev) {
+			//mc.on("swiperight",1,100,'DIRECTION_ALL',0.3, function(ev) {
+			//$("#nu__stories").hammer({threshold: 10, velocity:0.3}).bind("swiperight", function(ev){
+			mc.on("swiperight", function(ev) {
 		    inMotion = true;
+				// mc.stop();
 		    slidePanels('Right');
 		  });
 
