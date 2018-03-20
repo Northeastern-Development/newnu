@@ -68,15 +68,18 @@
 
       // hardcoded values for now, there is an issue retrieving them again after the first filter
       $values = array(
-         'About' => 'About'
+        'Main Category' => 'Main Category'
+        ,'About' => 'About'
         ,'Academics' => 'Academics'
         ,'Admissions' => 'Admissions'
+        ,'Athletics' => 'Athletics'
         ,'Audience' => 'Audience'
         ,'Campus Activity' => 'Campus Activity'
         ,'Experiential Learning' => 'Experiential Learning'
         ,'Featured' => 'Featured'
         ,'Global' => 'Global'
         ,'Lifelong Learning' => 'Lifelong Learning'
+        ,'Regional Campuses' => 'Regional Campuses'
         ,'Research' => 'Research'
       );
   ?>

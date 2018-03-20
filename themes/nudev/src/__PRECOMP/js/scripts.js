@@ -12,7 +12,7 @@
 		var rotators = null;
 		var contentAreaHeight = 0;
 		var cNav = null;
-		var debug = true;
+		var debug = false;
 		var showSize = false;
 
 
