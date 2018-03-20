@@ -128,7 +128,7 @@
 	    var offset = 0;
 	    var currentPanel = 0;
 	    var panelCount = 3;
-	    var aspeeds = 1200;
+	    var aspeeds = 1000;
 			var sizeBreak = 900;
 	    // var wi = $(window).width();
 			var ww = $(window).width();
