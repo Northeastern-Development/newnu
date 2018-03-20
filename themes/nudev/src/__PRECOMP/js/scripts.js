@@ -128,7 +128,8 @@
 	    var offset = 0;
 	    var currentPanel = 0;
 	    var panelCount = 3;
-	    var aspeeds = 800;
+			var isSafari = /safari/i.test(navigator.userAgent);
+	    var aspeeds = (isSafari?1500:800);
 			var sizeBreak = 900;
 	    // var wi = $(window).width();
 			var ww = $(window).width();
@@ -160,12 +161,12 @@
 		    // $("body").mousewheel(function(event, delta){
 				$("body").on('mousewheel', { mousewheel: { behavior: 'debounce', delay: 100 } }, function(event,delta) {
 
-					console.log('X: '+event.deltaX+' - Y:'+event.deltaY);
+					// console.log('X: '+event.deltaX+' - Y:'+event.deltaY);
 
 
 
 					// limit the deltaY value so that we only start moving AFTER a certain distance moved
-					var isSafari = /safari/i.test(navigator.userAgent);
+					// var isSafari = /safari/i.test(navigator.userAgent);
 
 					// console.log(isSafari);
 
