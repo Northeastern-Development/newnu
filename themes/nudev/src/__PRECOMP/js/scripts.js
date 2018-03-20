@@ -376,12 +376,15 @@
 		// this will handle some preventitive measures in the main nav regarding overlap of options
 		$('nav').on('click','input#nu__supernav-toggle,input#nu__iamnav-toggle,input#nu__search-toggle',function(){
 
+			console.log($(this));
+
 			// determine which nav we are looking at and whether it is the currently active one, in which case close it
 			if(cNav == null){
 				$(this).prop('checked',true);
 				cNav = $(this).attr('id');
 			}else if($(this).attr('id') == cNav){
 				$(this).prop('checked',false);
+				cNav = null;
 			}else{
 				$('nav input').prop('checked',false);
 				$(this).prop('checked',true);
