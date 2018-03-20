@@ -487,7 +487,7 @@
 		"oA": 0,
 		"oAP": "\/css\/homepage.css",
 		"oF": 2,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/__PRECOMP\/sass\/modules\/fonts.scss": {
@@ -849,24 +849,14 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/material-icons-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/material-icons-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"\/css\/material-icons.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/material-icons-min.css",
-		"oF": 0,
+		"oAP": "\/css\/material-icons.css",
+		"oF": 2,
 		"oS": 3
 		},
 	"\/css\/search.css": {

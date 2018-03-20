@@ -47,7 +47,6 @@
 
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
 
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/material-icons.css">
 
 		<?php wp_head(); ?>
