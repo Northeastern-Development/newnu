@@ -86,7 +86,7 @@ label{
     @include font-7-c;
     line-height: ($header-height + 5);
     height: $header-height;
-    margin: 0 0 0 5px;
+    margin: 0 0 0 3px;
   }
 }
 // *************************************************************************************************
@@ -175,7 +175,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   // so that we do not need to use JS
   // ****************************************************************************************************
   div#nu__mainmenu-search{
-    width: 130px;
+    width: 140px;
     margin: 0 0 0 $gutter;
   }
 

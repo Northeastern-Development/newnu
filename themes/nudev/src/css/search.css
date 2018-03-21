@@ -134,12 +134,12 @@ main#nu__search {
   min-height: 100%;
   overflow: visible; }
   main#nu__search.noresults {
-    height: calc(100% - 71px);
-    height: -miz-calc(100% - 71px);
-    height: -webkit-calc(100% - 71px);
-    min-height: calc(100% - 71px);
-    min-height: -moz-calc(100% - 71px);
-    min-height: -webkit-calc(100% - 71px); }
+    height: calc(100% - 101px);
+    height: -miz-calc(100% - 101px);
+    height: -webkit-calc(100% - 101px);
+    min-height: calc(100% - 101px);
+    min-height: -moz-calc(100% - 101px);
+    min-height: -webkit-calc(100% - 101px); }
     main#nu__search.noresults > section {
       background: black; }
   main#nu__search > div {
