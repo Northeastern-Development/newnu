@@ -441,6 +441,16 @@
 		"oAP": "\/404.php",
 		"oF": 0
 		},
+	"\/__PRECOMP\/js\/scripts.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/js\/scripts-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/__PRECOMP\/sass\/emergency.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -1269,6 +1279,13 @@
 		"oAP": "\/functions\/admin-prefooter.php",
 		"oF": 0
 		},
+	"\/functions\/admin-supernav.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/functions\/admin-supernav.php",
+		"oF": 0
+		},
 	"\/functions\/comments.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1419,6 +1436,16 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/magnific-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/scripts-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/scripts-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1824,13 +1851,6 @@
 		"oAP": "\/templates\/rss\/rss-supernav.php",
 		"oF": 0
 		},
-	"\/templates\/tag.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/templates\/tag.php",
-		"oF": 0
-		},
 	"\/templates\/template-administration.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1922,8 +1942,8 @@
 	},
 "projectAttributes": {
 	"creationDate": 534960692,
-	"displayValue": "src",
-	"displayValueWasSetByUser": 0,
+	"displayValue": "Newnu",
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_purple"
 	},
 "projectSettings": {
