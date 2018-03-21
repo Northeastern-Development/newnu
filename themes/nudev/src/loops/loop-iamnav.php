@@ -60,6 +60,7 @@
 
 			$args = array(
 				 "post_type" => "supernav"
+				,"posts_per_page" => -1
 				,'meta_query' => array(
 					 'relation' => 'AND'
 					,array("key"=>"status","value"=>"1","compare"=>"=")
@@ -77,7 +78,7 @@
 
 					$fields = get_fields($r->ID);
 
-					$guide = '<li><a href="%s" title="%s%s"%s><div>%s</div><div>%s</div></a></li>';
+					$guide = '<li><a href="%s" title="%s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
 
 					$return .= sprintf(
 						$guide

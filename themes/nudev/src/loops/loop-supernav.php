@@ -72,6 +72,7 @@
 
 			$args = array(
 				 "post_type" => "supernav"
+				,"posts_per_page" => -1
 				,'meta_query' => array(
 					 'relation' => 'AND'
 					,array("key"=>"status","value"=>"1","compare"=>"=")
