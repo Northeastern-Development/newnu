@@ -13,7 +13,7 @@
 		var contentAreaHeight = 0;
 		var cNav = null;
 		var debug = false;
-		var showSize = true;
+		var showSize = false;
 
 
 
@@ -23,7 +23,7 @@
 		if(showSize){
 	    var wi = $(window).width();
 	    $("p.testp").text('Screen width is currently: ' + wi + 'px.');
-		
+
 	    $(window).resize(function(){
 	      var wi = $(window).width();
 	      if (wi <= 576){
