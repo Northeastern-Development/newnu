@@ -149,6 +149,28 @@
 
  // these are the font styling mixins to make use easier and consistent (naming based on style guide)
 
+ @mixin font-0r-l{
+   font-size: 1.2rem;
+   color: $brand_colors-grayW;
+   line-height: 2.6rem;
+   text-align: left;
+ }
+
+ @mixin font-1b-l{
+   font-size: 1.2rem;
+   font-weight: 700;
+   line-height: 2.6rem;
+   text-align: left;
+ }
+
+ @mixin font-1l-l{
+   font-size: 1.2rem;
+   font-weight: 300;
+   line-height: 2.4rem;
+   text-align: left;
+ }
+
+
  @mixin font-1r-l{
    font-size: 1.4rem;
    color: $brand_colors-grayW;

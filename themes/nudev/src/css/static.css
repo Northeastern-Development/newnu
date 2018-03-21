@@ -147,7 +147,7 @@ main#nu__static {
   main#nu__static section.fullwidth {
     width: 100vw;
     margin: 51px auto 0 auto;
-    padding: 30px 0 30px 0;
+    padding: 30px 0 0 0;
     background: #ece6d5;
     text-align: center; }
     main#nu__static section.fullwidth > h4 {
@@ -163,7 +163,7 @@ main#nu__static {
       list-style-type: none; }
       main#nu__static section > ul > li {
         flex: 1;
-        margin: 0 30px 0 0;
+        margin: 0 30px 30px 0;
         text-align: left; }
         main#nu__static section > ul > li a {
           border-bottom: none; }
@@ -172,3 +172,30 @@ main#nu__static {
   main#nu__static section:last-child {
     margin: 51px auto 0 auto;
     padding-bottom: 45px; }
+
+@media only screen and (max-width: 1200px) {
+  main#nu__static section > ul {
+    width: 97vw;
+    margin: 0 auto; } }
+
+@media only screen and (max-width: 959px) {
+  main#nu__static section.hero > div {
+    width: 97vw; }
+  main#nu__static section.intro {
+    width: 97vw; }
+  main#nu__static section {
+    width: 80vw; }
+    main#nu__static section > ul {
+      flex-wrap: wrap; }
+      main#nu__static section > ul > li {
+        flex: 0 0 45%; } }
+
+@media only screen and (max-width: 620px) {
+  main#nu__static section.hero > div {
+    width: 88vw; }
+  main#nu__static section.intro {
+    width: 88vw; }
+  main#nu__static section > ul {
+    width: 88vw;
+    margin: 0 auto;
+    flex-direction: column; } }

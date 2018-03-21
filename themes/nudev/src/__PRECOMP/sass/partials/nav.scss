@@ -83,7 +83,7 @@ label{
   }
   &:after{
     float: right;
-    @include font-7-c;
+    @include font-4-c;
     line-height: ($header-height + 5);
     height: $header-height;
     margin: 0 0 0 3px;

@@ -80,3 +80,49 @@ main{
     overflow: hidden;
   }
 }
+
+@media only screen and (max-width: 600px) {
+
+  h1{
+    //@include font-6l-l;
+    @include font-3l-c;
+  }
+
+
+  h2{
+    //@include font-8l-c;
+    @include font-6l-c;
+  }
+
+  h3{
+    @include font-3l-c;
+  }
+
+  a{
+    //border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+    &:hover{
+      //color: $brand_colors-red;
+    }
+  }
+
+  h4{
+    @include font-5b-l;
+    margin: 0 0 ($gutter / 1.7) 0;
+  }
+
+  h5{
+    @include font-2b-l;
+  }
+
+  h6{
+    @include font-2b-l;
+  }
+
+  p{
+    @include font-2l-l;
+    margin: 0 0 $gutter 0;
+    &:last-of-type{
+      margin: 0 0 0 0;
+    }
+  }
+}
