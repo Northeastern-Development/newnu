@@ -245,7 +245,6 @@
 			// this is the event listener for mousewheel only on the homepage for the slider
 			$("body").on('mousewheel', { mousewheel: { behavior: 'debounce', delay: 5 } }, function(event,delta){
 	      if (ww >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false && event.deltaX == 0){
-
 	        if (event.deltaY <= (isSafari?-1:-15) && currentPanel < 2){
 	          event.preventDefault();
 	          slidePanels('Left');
@@ -255,7 +254,6 @@
 	          slidePanels('Right');
 	          inMotion = true;
 	        }
-
 	      }
 	   	});
 
