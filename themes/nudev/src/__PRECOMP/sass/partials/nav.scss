@@ -395,7 +395,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                     & > div{
                       &:nth-child(2){
                         & > span{
-                          border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+                          border-bottom: solid rgba($brand_colors-red,1.0) 1px;
                         }
                       }
                     }
