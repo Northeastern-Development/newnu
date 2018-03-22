@@ -110,7 +110,15 @@
 		function setMenuPanels(){
 			getContentAreaHeight();
 			$('div.navigational > section > div.items').css({'height':contentAreaHeight,'min-height':contentAreaHeight});
+			if($('body').hasClass('search')){
+				$('#nu__search section').css({'min-height':contentAreaHeight});
+			}
 		}
+
+
+
+
+		// $('body.search main section').css({'height':contentAreaHeight,'min-height':contentAreaHeight});
 
 
 
