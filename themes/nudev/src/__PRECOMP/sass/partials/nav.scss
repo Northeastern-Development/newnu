@@ -376,10 +376,12 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                 margin: 0 $gutter 10px $gutter;
                 text-transform: none;
                 height: $lineH;
+                display: table;
                 &:first-child{
                   @include font-6l-l;
                   line-height: $lineH;
                   margin: 0 0 0 $gutter;
+
                 }
                 & > a{
                   @include font-2l-l;
@@ -399,11 +401,13 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                     }
                   }
                   & > div{
-                    float: left;
+                    //float: left;
                     &:nth-child(1){
                       width: $lineH;
                       height: $lineH;
                       margin: 0 10px 0 0;
+                      display: table-cell;
+                      vertical-align: middle;
                       & > img{
                         width: 100%;
                         -webkit-filter: grayscale(1);
@@ -413,8 +417,13 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                     }
                     &:nth-child(2){
                       max-width: 280px;
-                      padding: 15px 0 0 0;
+                      //padding: 15px 0 0 0;
                       border-bottom: solid rgba($brand_colors-red,0.0) 2px;
+                      display: table-cell;
+                      vertical-align: middle;
+                      background-clip: padding-box;
+                      background-color: transparent;
+                      border-left: 10px solid transparent;
                     }
                   }
                 }

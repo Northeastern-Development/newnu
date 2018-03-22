@@ -54,6 +54,12 @@
     & > ul {
       //width
     }
+    & a {
+      &:hover {
+        border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+        color: inherit;
+      }
+    }
   }
 
 
