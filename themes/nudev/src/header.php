@@ -68,7 +68,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-		<p class="testp" style="position:fixed;background:rgba(0,0,0,0.7);color:#fff;top:200px;left:0;font-weight:bold;font-size:20px;z-index:99999999;"></p>
+		<p class="testp" style="position:fixed;background:rgba(0,0,0,0.7);color:#fff;top:800px;left:0;font-weight:bold;font-size:20px;z-index:99999999;"></p>
 
 		<div class="wrapper">
 
