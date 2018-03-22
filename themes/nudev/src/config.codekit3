@@ -441,16 +441,6 @@
 		"oAP": "\/404.php",
 		"oF": 0
 		},
-	"\/__PRECOMP\/js\/scripts-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/__PRECOMP\/js\/scripts-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"\/__PRECOMP\/js\/scripts.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1400,6 +1390,26 @@
 		"oAP": "\/index.php",
 		"oF": 0
 		},
+	"\/js\/CSSPlugin.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/CSSPlugin.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/EasePack.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/EasePack.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/js\/hammer-min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1476,6 +1486,16 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/smoothstate-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/TweenLite.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/TweenLite.min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1859,6 +1879,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/rss\/rss-supernav.php",
+		"oF": 0
+		},
+	"\/templates\/tag.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/tag.php",
 		"oF": 0
 		},
 	"\/templates\/template-administration.php": {

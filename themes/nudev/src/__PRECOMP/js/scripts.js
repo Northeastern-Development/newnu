@@ -150,7 +150,7 @@
 	    var currentPanel = 0;
 	    var panelCount = 3;
 			var isSafari = /safari/i.test(navigator.userAgent);
-	    var aspeeds = (isSafari?1500:800);
+	    var aspeeds = (isSafari?1500:1500);
 			var sizeBreak = 900;
 			var ww = $(window).width();
 	    var myPanels = document.getElementById('nu__stories');
@@ -243,7 +243,7 @@
 
 
 			// this is the event listener for mousewheel only on the homepage for the slider
-			$("body").on('mousewheel', { mousewheel: { behavior: 'debounce', delay: 100 } }, function(event,delta){
+			$("body").on('mousewheel', { mousewheel: { behavior: 'throttle', delay: 20 } }, function(event,delta){
 	      if (ww >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false && event.deltaX == 0){
 
 	        if (event.deltaY <= (isSafari?-1:-15) && currentPanel < 2){
@@ -337,10 +337,19 @@
 			          $("#prev").css({'display':'block'});
 			        }
 						}
-		        $(e).animate({"margin-left":  offset }, aspeeds, function() {
-		          inMotion = false;
-		          $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
-		        });
+
+						// console.log('left');
+
+						// $(e).animate({"margin-left":  offset }, aspeeds, 'easeInOutQuart', function() {
+						// TweenLite.to(e,1.5,{ease:Power3.easeOut,marginLeft:offset,onComplete:slideDone});
+						runTween(offset);
+
+
+						//$(e).show("slide", { direction: "right" }, offset);
+		        // $(e).animate({"margin-left":  offset }, aspeeds, 'easeInOutQuart', function() {
+		        //   inMotion = false;
+		        //   $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
+		        // });
 		      }else if (a === 'Right' && currentPanel > 0){//this moves the panels to the left
 		        offset -= windowWidth
 		        currentPanel--;
@@ -354,11 +363,34 @@
 			          $("#next").css({'display':'block'});
 			        }
 						}
-		        $(e).animate({"margin-left":  offset }, aspeeds, function() {
-		          inMotion = false;
-		          $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
-		        });
+
+						//console.log('right');
+
+						// TweenLite.to(e,1.5,{ease:Power3.easeOut,marginLeft:offset,onComplete:slideDone});
+						runTween(offset);
+
+						//$(e).show("slide", { direction: "left" }, offset);
+		        // $(e).animate({"margin-left":  offset }, aspeeds, 'easeInOutQuart', function() {
+		        //   inMotion = false;
+		        //   $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
+		        // });
 		      }
+
+					function runTween(a){
+						TweenLite.to(e,1.5,{ease:Power3.easeOut,marginLeft:a,onComplete:slideDone});
+						function slideDone(){
+								console.log("slide finished");
+								inMotion = false;
+				        $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
+						}
+					}
+
+					// function slideDone(){
+					// 		console.log("slide finished");
+					// 		inMotion = false;
+			    //     $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
+					// }
+
 		    }
 		  }
 

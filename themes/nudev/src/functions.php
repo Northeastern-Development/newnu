@@ -270,7 +270,13 @@ function nudev_include_custom_jquery(){
 	wp_deregister_script('jquery');
 	// wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', array(), false, '2.2.0', true);
   // wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), false, '2.2.0', true);
+	// wp_enqueue_script('jqueryui', get_template_directory_uri() . '/js/jquery-ui.js', array(),'1.12.1');
   wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', array(),'2.2.0');
+	// wp_enqueue_script('jqueryui', get_template_directory_uri() . '/js/jquery-ui.js', array(),'1.12.1');
+	// wp_enqueue_script('jqueryui', get_template_directory_uri() . '/js/jquery.gsap.min.js', array(),'1.12.1');
+	// wp_enqueue_script('tweenlitecss', get_template_directory_uri() . '/js/CSSPlugin.min.js', array(),'1.20.4');
+	// wp_enqueue_script('tweenliteease', get_template_directory_uri() . '/js/EasePack.min.js', array(),'1.20.4');
+	// wp_enqueue_script('tweenlite', get_template_directory_uri() . '/js/TweenLite.min.js', array(),'1.20.4');
   // echo "loaded";
 }
 
