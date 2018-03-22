@@ -376,7 +376,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                 margin: 0 $gutter 10px $gutter;
                 text-transform: none;
                 height: $lineH;
-                display: table;
+
                 &:first-child{
                   @include font-6l-l;
                   line-height: $lineH;
@@ -390,6 +390,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                   display: block;
                   clear: both;
                   overflow: hidden;
+                  display: table;
                   &:hover{
                     cursor: pointer;
                     & > div{
