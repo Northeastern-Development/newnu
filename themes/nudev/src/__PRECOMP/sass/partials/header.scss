@@ -130,3 +130,90 @@ div#nu__logo{
     }
   }
 }
+
+
+@media only screen and (max-width: 1064px) {
+  div#nu__alerts{
+
+
+
+    & > div{
+
+      &:before{
+
+      }
+      &:after{
+
+
+
+      }
+      & > h2{
+        @include font-9b-l;
+
+      }
+      & > p {
+        @include font-9l-l;
+      }
+      & > ul{
+
+        & > li{
+
+          & > a{
+
+            @include font-10b-l;
+          }
+          &:after{
+            font-size:1.8rem;
+            line-height: 2.8rem;
+            vertical-align: -13%;
+
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+
+@media only screen and (max-width: 500px) {
+  div#nu__alerts{
+
+
+
+    & > div{
+
+      &:before{
+
+      }
+      &:after{
+
+
+
+      }
+      & > h2{
+        @include font-9b-l;
+
+      }
+      & > p {
+        @include font-9l-l;
+      }
+      & > ul{
+
+        & > li{
+
+          & > a{
+
+            @include font-10b-l;
+          }
+          &:after{
+
+
+          }
+        }
+      }
+    }
+  }
+
+}
