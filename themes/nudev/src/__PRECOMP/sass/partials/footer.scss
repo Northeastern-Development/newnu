@@ -101,7 +101,9 @@ footer{
        text-align: center;
        height: $footer-height-collapsed;
        line-height: $footer-height-collapsed;
-       @include font-7-c;
+       //@include font-7-c;
+       @include font-3l-c;
+       line-height:4.4rem;
        color: rgba($brand_colors-white,0.8);
        margin: 0 auto 0 auto;
        &:hover{
@@ -158,6 +160,35 @@ footer{
                   }
                   & > svg{
                     height: 30px;
+
+                    &  .cls-1 {
+                      fill: rgba($brand_colors-white,.6);
+
+                    }
+                    &  .cls-2 {
+                      fill: rgba($brand_colors-white,.6);
+
+                    }
+                    &  .cls-3 {
+                      fill: rgba($brand_colors-white,.6);
+
+                    }
+                    &:hover {
+                      &  .cls-1 {
+                        fill: rgba($brand_colors-white,1.0);
+
+                      }
+                      &  .cls-2 {
+                        fill: rgba($brand_colors-white,1.0);
+
+                      }
+                      &  .cls-3 {
+                        fill: rgba($brand_colors-white,1.0);
+
+                      }
+                    }
+
+
                   }
                 }
               }
@@ -174,7 +205,7 @@ footer{
          & > a{
            color: rgba($brand_colors-grayW,0.8);
            &:hover{
-             color: rgba($brand_colors-grayW,1.0);
+             color: rgba($brand_colors-white,1.0);
            }
          }
        }

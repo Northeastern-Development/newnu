@@ -92,7 +92,16 @@ main#nu__homepage{
   			background-position: center center !important;
   			background-repeat: no-repeat !important;
   			background-size: cover !important;
-
+        & div.gradient {
+          height:50%;
+          width: 100%;
+          position:absolute;
+          bottom:0;
+          background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          z-index: 0;
+        }
         div.nu__overlay-logo{
           width:50px;
           height:50px;
@@ -121,7 +130,7 @@ main#nu__homepage{
   				opacity: 0.0;
   				text-decoration:none;
   				& p {
-            @include font-6l-c;
+            @include font-5l-c;
             color: rgba($brand_colors-white,1.0);
   					max-width:90%;
   					width:100%;
@@ -146,7 +155,7 @@ main#nu__homepage{
 
         &:not(.nu__block-rotator){
           & h2 {
-            @include font-5r-c;
+            @include font-3l-c;
             padding-bottom: 0;
     				position: absolute;
     				bottom: $gutter;
@@ -157,7 +166,7 @@ main#nu__homepage{
     					position: absolute;
     			    display: inline-block;
     			    border-bottom: 2px solid rgba($brand_colors-red,1.0);
-    			    bottom: -8px;
+    			    bottom: -3px;
     			    content: "";
     			    left: 0;
     			    width: 100%;
@@ -185,6 +194,7 @@ main#nu__homepage{
             bottom: ($gutter / 2);
             width: 90%;
             overflow: visible;
+            z-index:100;
             & > div{
               clear: both;
               width: 80px;
@@ -201,12 +211,13 @@ main#nu__homepage{
                 height: 28px;
                 text-align: center;
       				  border-radius: 50%;
-      				  background: rgba($brand_colors-white,1.0);
+      				  background: rgba($brand_colors-white,0.6);
                 color: rgba($brand_colors-black,1.0);
+                box-shadow: 0 2px 4px rgba($brand_colors-black,.5);
       					z-index:100;
       					&:hover {
-      						background: rgba($brand_colors-black,1.0);
-                  color: rgba($brand_colors-white,1.0);
+      						background: rgba($brand_colors-white,1.0);
+                  color: rgba($brand_colors-black,1.0);
                   cursor: pointer;
       					}
       				}
@@ -218,7 +229,8 @@ main#nu__homepage{
       				}
             }
             & > h2 {
-              @include font-5r-l;
+              @include font-3l-l;
+              //@include font-5r-l;
               &:after{
                 @include font-7-c;
                 color: rgba($brand_colors-red,1.0);
@@ -272,7 +284,7 @@ main#nu__homepage{
         }
       }
     }
-    & > section.panel-2{
+    & > section.panel-3{
       & > article {
         &:nth-child(1){
           float:left;
@@ -301,7 +313,7 @@ main#nu__homepage{
       }
     }
 
-    & > section.panel-3{
+    & > section.panel-2{
       & > article {
         &:nth-child(1){
           float:left;
@@ -332,5 +344,446 @@ main#nu__homepage{
 
 
   }
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 899px) {
+
+  body {
+    overflow-x:hidden;
+    //overflow-y:auto;
+  }
+
+  main#nu__homepage{
+
+    //width: $wrapper-width;
+    width:100%;
+    margin: 0 0 0 0;
+    background: rgba($brand_colors-black,1.0);
+
+    $h: 100%;
+
+    min-height: calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+    height: calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+    min-height: -moz-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+    height: -moz-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+    min-height: -webkit-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+    height: -webkit-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+
+
+    div#nu__seo-content{
+      position: absolute;
+      z-index: -1000;
+    }
+
+
+    div#nu__stories{
+      height: 100%;
+    	width: 100%;
+      overflow-x: scroll;
+    	overflow:auto;
+
+      // these are the slide next and previous arrows
+      & > #prev,
+      & > #next {
+
+      		&:hover {
+
+      		}
+      }
+
+      & > #prev {
+
+      }
+
+      & > #next {
+
+      }
+
+
+      & > section {
+    		height:auto;
+    		float: none;
+        display: block;
+    		width:100%;
+
+
+  			display: flex;
+  			flex-wrap: wrap;
+    		& > article {
+
+
+          div.nu__overlay-logo{
+
+          }
+
+          &:hover {
+
+            & > a{
+
+            }
+          }
+
+
+          & > a {
+
+    				& p {
+
+              &:after{
+
+              }
+    				}
+
+    	    }
+    			& h2 {
+
+    			}
+
+          &:not(.nu__block-rotator){
+            & h2 {
+
+      				&:after {
+
+      				}
+      			}
+          }
+
+
+    			&.nu__block-rotator{
+
+
+    				& > a {
+
+    					&:hover {
+
+    					}
+    				}
+            & > div.nu__slide-controls{
+
+              & > div{
+
+
+                & > .slider_next,
+                & > .slider_prev {
+
+        					&:hover {
+
+        					}
+        				}
+        				& > .slider_next {
+
+        				}
+        				& > .slider_prev {
+
+        				}
+              }
+              & > h2 {
+
+                &:after{
+
+                }
+    					}
+            }
+    			}
+
+    		}
+
+
+
+    	}
+
+
+      & > section.panel-1{
+        & > article {
+          display: block;
+          &:nth-child(1){
+            float:none;
+            width:100%;
+  					height:50vw;
+            order:1;
+          }
+          &:nth-child(2){
+            float:none;
+            width:100%;
+           height:50vw;
+            order:2;
+          }
+          &:nth-child(3){
+            float:none;
+            width:100%;
+  					height:50vw;
+            order:3;
+          }
+          &:nth-child(4){
+            float:none;
+            width:100%;
+  					height:50vw;
+            order:4;
+            overflow:hidden;
+          }
+          &:nth-child(5){
+            float:none;
+            width:100%;
+           height:50vw;
+            order:5;
+
+          }
+        }
+      }
+      & > section.panel-2{
+        & > article {
+          display: block;
+          &:nth-child(1){
+            float:none;
+            width:100%;
+  					height:50vw;
+            order:1;
+          }
+          &:nth-child(2){
+            float:none;
+            width:100%;
+           height:50vw;
+            order:2;
+          }
+          &:nth-child(3){
+            float:none;
+            width:100%;
+  					height:50vw;
+            order:3;
+          }
+          &:nth-child(4){
+            float:none;
+            width:100%;
+           height:50vw;
+            order:4;
+          }
+        }
+      }
+
+      & > section.panel-3{
+        & > article {
+          display: block;
+          &:nth-child(1){
+            float:none;
+            width:100%;
+           height:50vw;
+            order:1;
+          }
+          &:nth-child(2){
+            float:none;
+            width:100%;
+           height:50vw;
+            order:2;
+          }
+          &:nth-child(3){
+            float:none;
+            width:100%;
+           height:50vw;
+            order:3;
+          }
+          &:nth-child(4){
+            float:none;
+            width:100%;
+           height:50vw;
+            order:4;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 800px) {
+
+  body {
+
+  }
+
+  main#nu__homepage{
+
+
+
+
+    div#nu__seo-content{
+
+    }
+
+
+    div#nu__stories{
+
+
+      // these are the slide next and previous arrows
+      & > #prev,
+      & > #next {
+
+          &:hover {
+
+          }
+      }
+
+      & > #prev {
+
+      }
+
+      & > #next {
+
+      }
+
+
+      & > section {
+
+        & > article {
+
+
+          div.nu__overlay-logo{
+
+          }
+
+          &:hover {
+
+            & > a{
+
+            }
+          }
+
+
+          & > a {
+            background: rgba($brand_colors-black,0.6);
+            opacity:1.0;
+            border-bottom: none;
+            & p {
+
+              &:after{
+
+              }
+            }
+
+          }
+          & h2 {
+
+          }
+
+          &:not(.nu__block-rotator){
+            & h2 {
+
+              &:after {
+
+              }
+            }
+          }
+
+
+          &.nu__block-rotator{
+
+
+            & > a {
+
+              &:hover {
+
+              }
+            }
+            & > div.nu__slide-controls{
+
+              & > div{
+
+
+                & > .slider_next,
+                & > .slider_prev {
+
+                  &:hover {
+
+                  }
+                }
+                & > .slider_next {
+
+                }
+                & > .slider_prev {
+
+                }
+              }
+              & > h2 {
+
+                &:after{
+
+                }
+              }
+            }
+          }
+
+        }
+
+
+
+      }
+
+
+      & > section.panel-1{
+        & > article {
+
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+          &:nth-child(5){
+
+
+          }
+        }
+      }
+      & > section.panel-2{
+        & > article {
+
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+
+      & > section.panel-3{
+        & > article {
+
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+    }
+  }
+
+
 
 }
