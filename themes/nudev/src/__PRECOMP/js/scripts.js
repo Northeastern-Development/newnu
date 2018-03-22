@@ -13,7 +13,7 @@
 		var contentAreaHeight = 0;
 		var cNav = null;
 		var debug = false;
-		var showSize = true;
+		var showSize = false;
 
 
 
