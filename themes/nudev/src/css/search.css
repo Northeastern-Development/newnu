@@ -220,8 +220,7 @@ main#nu__search {
             color: #979797;
             line-height: 2.8rem;
             text-align: left;
-            color: #979797;
-            height: 20px; }
+            color: #979797; }
           main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div > input {
             flex: 1;
             font-size: 3.2rem;
@@ -233,7 +232,8 @@ main#nu__search {
             border: none;
             border-bottom: solid #fffffe 1px;
             background: transparent;
-            color: #fffffe; }
+            color: #fffffe;
+            outline: 0; }
             main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div > input:focus ~ .label {
               top: 5px;
               left: 0;
@@ -411,7 +411,8 @@ main#nu__search {
         text-align: center;
         background: none;
         padding: 0 2px 20px 2px;
-        border-bottom: solid #cc0000 4px; }
+        border-bottom: solid #cc0000 4px;
+        text-shadow: none; }
     main#nu__search > section > div#___gcse_0 div.gcsc-branding {
       width: 215px;
       margin: 30px auto 0 auto;

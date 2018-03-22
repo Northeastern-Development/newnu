@@ -143,6 +143,7 @@ main#nu__homepage{
   			  	bottom: ($gutter * 3);
   			    left: 50%;
   			    transform: translateX(-50%) translateY(0);
+            z-index: 100;
             &:after{
               @include font-7-c;
               color: rgba($brand_colors-red,1.0);
@@ -196,6 +197,7 @@ main#nu__homepage{
             border-bottom: none;
   					&:hover {
   						background:transparent ;
+
   					}
   				}
           & > div.nu__slide-controls{
@@ -243,11 +245,19 @@ main#nu__homepage{
               //@include font-5r-l;
               &:after{
                 @include font-7-c;
-                color: rgba($brand_colors-red,1.0);
+                color: rgba($brand_colors-red,0.0);
                 content: '\E8E4';
                 vertical-align: -20%;
+                text-shadow:none;
               }
+
   					}
+          }
+          &:hover {
+            div.nu__slide-controls > h2::after {
+              color: rgba($brand_colors-red,1.0);
+              text-shadow:inherit;
+            }
           }
   			}
 
@@ -361,6 +371,562 @@ main#nu__homepage{
 
 
 
+
+
+@media screen and (max-width: 1500px) {
+
+  body {
+    overflow-x:hidden;
+    //overflow-y:auto;
+  }
+
+  main#nu__homepage{
+
+
+
+
+    div#nu__seo-content{
+
+    }
+
+
+    div#nu__stories{
+
+
+      // these are the slide next and previous arrows
+      & > #prev,
+      & > #next {
+
+      		&:hover {
+
+      		}
+      }
+
+      & > #prev {
+
+      }
+
+      & > #next {
+
+      }
+
+
+      & > section {
+
+    		& > article {
+
+
+          div.nu__overlay-logo{
+
+          }
+
+          &:hover {
+
+            & > a{
+
+            }
+          }
+
+
+          & > a {
+            //opacity: 1;
+    				& p {
+              @include font-4-c;
+              &:after{
+                @include font-4-c;
+                vertical-align: -18%;
+              }
+    				}
+
+    	    }
+    			& h2 {
+
+    			}
+
+          &:not(.nu__block-rotator){
+            & h2 {
+
+      				&:after {
+
+      				}
+      			}
+          }
+
+
+    			&.nu__block-rotator{
+
+
+    				& > a {
+
+    					&:hover {
+
+    					}
+    				}
+            & > div.nu__slide-controls{
+
+              & > div{
+
+
+                & > .slider_next,
+                & > .slider_prev {
+
+        					&:hover {
+
+        					}
+        				}
+        				& > .slider_next {
+
+        				}
+        				& > .slider_prev {
+
+        				}
+              }
+              & > h2 {
+                //@include font-3r-l;
+                &:after{
+                  //@include font-3r-l;
+                  //vertical-align: -18%;
+                }
+    					}
+            }
+    			}
+
+    		}
+
+
+
+    	}
+
+
+      & > section.panel-1{
+        & > article {
+
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+          &:nth-child(5){
+
+
+          }
+        }
+      }
+      & > section.panel-2{
+        & > article {
+          display: block;
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+
+      & > section.panel-3{
+        & > article {
+          display: block;
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1120px) {
+
+  body {
+
+  }
+
+  main#nu__homepage{
+
+
+
+
+    div#nu__seo-content{
+
+    }
+
+
+    div#nu__stories{
+
+
+      // these are the slide next and previous arrows
+      & > #prev,
+      & > #next {
+
+      		&:hover {
+
+      		}
+      }
+
+      & > #prev {
+
+      }
+
+      & > #next {
+
+      }
+
+
+      & > section {
+
+    		& > article {
+
+
+          div.nu__overlay-logo{
+
+          }
+
+          &:hover {
+
+            & > a{
+
+            }
+          }
+
+
+          & > a {
+
+    				& p {
+              @include font-1r-c;
+              &:after{
+                @include font-4-c;
+                vertical-align: -19%;
+              }
+    				}
+
+    	    }
+    			& h2 {
+
+    			}
+
+          &:not(.nu__block-rotator){
+            & h2 {
+
+      				&:after {
+
+      				}
+      			}
+          }
+
+
+    			&.nu__block-rotator{
+
+
+    				& > a {
+
+    					&:hover {
+
+    					}
+    				}
+            & > div.nu__slide-controls{
+
+              & > div{
+
+
+                & > .slider_next,
+                & > .slider_prev {
+
+        					&:hover {
+
+        					}
+        				}
+        				& > .slider_next {
+
+        				}
+        				& > .slider_prev {
+
+        				}
+              }
+              & > h2 {
+              //  @include font-0-l;
+                &:after{
+                //  @include font-4-c;
+                //  vertical-align: -19%;
+                }
+    					}
+            }
+    			}
+
+    		}
+
+
+
+    	}
+
+
+      & > section.panel-1{
+        & > article {
+
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+          &:nth-child(5){
+
+
+          }
+        }
+      }
+      & > section.panel-2{
+        & > article {
+          display: block;
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+
+      & > section.panel-3{
+        & > article {
+          display: block;
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+  body {
+
+  }
+
+  main#nu__homepage{
+
+
+
+
+    div#nu__seo-content{
+
+    }
+
+
+    div#nu__stories{
+
+
+      // these are the slide next and previous arrows
+      & > #prev,
+      & > #next {
+
+      		&:hover {
+
+      		}
+      }
+
+      & > #prev {
+
+      }
+
+      & > #next {
+
+      }
+
+
+      & > section {
+
+    		& > article {
+
+
+          div.nu__overlay-logo{
+
+          }
+
+          &:hover {
+
+            & > a{
+
+            }
+          }
+
+
+          & > a {
+
+    				& p {
+              @include font-0r-c;
+              &:after{
+                @include font-4-c;
+                vertical-align: -19%;
+              }
+    				}
+
+    	    }
+    			& h2 {
+
+    			}
+
+          &:not(.nu__block-rotator){
+            & h2 {
+
+      				&:after {
+
+      				}
+      			}
+          }
+
+
+    			&.nu__block-rotator{
+
+
+    				& > a {
+
+    					&:hover {
+
+    					}
+    				}
+            & > div.nu__slide-controls{
+
+              & > div{
+
+
+                & > .slider_next,
+                & > .slider_prev {
+
+        					&:hover {
+
+        					}
+        				}
+        				& > .slider_next {
+
+        				}
+        				& > .slider_prev {
+
+        				}
+              }
+              & > h2 {
+                //@include font-10r-l;
+                &:after{
+                  //@include font-4-c;
+                  //vertical-align: -19%;
+                }
+    					}
+            }
+    			}
+
+    		}
+
+
+
+    	}
+
+
+      & > section.panel-1{
+        & > article {
+
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+          &:nth-child(5){
+
+
+          }
+        }
+      }
+      & > section.panel-2{
+        & > article {
+          display: block;
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+
+      & > section.panel-3{
+        & > article {
+          display: block;
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+    }
+  }
+}
 
 
 @media screen and (max-width: 899px) {
@@ -546,13 +1112,15 @@ main#nu__homepage{
           }
         }
       }
+
+
       & > section.panel-2{
         & > article {
           display: block;
           &:nth-child(1){
             float:none;
             width:100%;
-  					height:50vw;
+           height:50vw;
             order:1;
           }
           &:nth-child(2){
@@ -564,7 +1132,7 @@ main#nu__homepage{
           &:nth-child(3){
             float:none;
             width:100%;
-  					height:50vw;
+           height:50vw;
             order:3;
           }
           &:nth-child(4){
@@ -582,7 +1150,7 @@ main#nu__homepage{
           &:nth-child(1){
             float:none;
             width:100%;
-           height:50vw;
+            height:50vw;
             order:1;
           }
           &:nth-child(2){
@@ -594,7 +1162,7 @@ main#nu__homepage{
           &:nth-child(3){
             float:none;
             width:100%;
-           height:50vw;
+            height:50vw;
             order:3;
           }
           &:nth-child(4){

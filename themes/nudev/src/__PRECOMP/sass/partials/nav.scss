@@ -396,7 +396,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                     & > div{
                       &:nth-child(2){
                         & > span{
-                          border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+                          border-bottom: solid rgba($brand_colors-red,1.0) 2px;
                         }
                       }
                     }
@@ -470,7 +470,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
               left: 0;
               @include font-1r-l;
               color: rgba($brand_colors-grayW,1.0);
-              height: 20px;
+              //height: 20px;
             }
           }
           & > input{
@@ -483,6 +483,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
             border-bottom: solid rgba($brand_colors-white,1.0) 1px;
             background: transparent;
             color: rgba($brand_colors-white,1.0);
+            outline: 0;
             &:focus ~ .label{
               top: 5px;
               left: 0;
