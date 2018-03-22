@@ -446,6 +446,18 @@
 
 
 
+		// if the user clicks ooutside the menu items and on the empty portion of the fullscreen sneezeguard, close the nav panels
+		$('nav.nu__mainmenu').on('click','div#nu__supernav,div#nu__searchbar,div#nu__iamnav',function(e){
+			if(['nu__supernav','nu__searchbar','nu__iamnav'].indexOf(e.target.id) >= 0){
+				$('nav input').prop('checked',false);
+				cNav = null;
+			}
+		});
+
+
+
+
+
 		// this function will determine whether or not to allow the page to scroll, if the menu is open or not
 		function allowScrollOrNot(){
 

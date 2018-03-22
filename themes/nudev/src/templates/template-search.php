@@ -25,7 +25,7 @@
 	// get the list of popular search terms
 	$popular = '';
 	if(!isset($_GET['query']) || $_GET['query'] == ''){
-		$popular = '<p>People like you searched these items</p><ul>';
+		$popular = '<p>No items found. People like you searched these items</p><ul>';
 		foreach($styles['popular_searches'] as $pS){
 			$popular .= '<li><a href="/search/?query='.strtolower(str_replace(' ','+',trim($pS['term']))).'" title="Click here to run this search">'.$pS['term'].'</a></li>';
 		}
