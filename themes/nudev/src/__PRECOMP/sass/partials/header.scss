@@ -36,11 +36,11 @@ div#nu__alerts{
   @include font-2l-l;
   line-height: 0;
   & > div{
-    width: $content-width-wide;
-    margin: $gutter auto 0 auto;
-    padding: 20px $gutter 0 90px;
+    width: $wrapper-width;
+    margin: 0 auto 0 auto;
+    padding: 10px $gutter 0 90px;
     background: rgba($brand_colors-white, 1.0);
-    border-radius: 6px;
+    //border-radius: 6px;
     position: relative;
     overflow: hidden;
     &:before{
@@ -67,7 +67,7 @@ div#nu__alerts{
       text-transform: uppercase;
     }
     & > ul{
-      margin: 0 0 10px 15px;
+      margin: 0 0 0 15px;
       & > li{
         font-size: 1.4rem;
         line-height: 2rem;
@@ -119,13 +119,13 @@ div#nu__utility-nav{
 
 div#nu__logo{
   width: 50%;
-  height: 50px;
+  //height: 80px;
   & > a{
     line-height: $header-height;
     font-size: 3rem;
     color: white;
     & > img{
-      height: 50px;
+      height: 80px;
       margin: 0 0 10px 0;
     }
   }

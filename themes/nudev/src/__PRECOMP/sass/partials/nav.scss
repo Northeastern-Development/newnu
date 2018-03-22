@@ -34,6 +34,7 @@ div#nu__mainmenu-supernav{
   padding: 0 0 0 0;
   position: relative;
   text-align: right;
+
 }
 
 
@@ -101,7 +102,7 @@ label{
 // so that we do not need to use JS
 // ****************************************************************************************************
 div#nu__mainmenu-supernav{
-  width: 106px;
+  width: 88px;
 }
 
 label#nu__supernav-toggle-label{
@@ -176,7 +177,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   // ****************************************************************************************************
   div#nu__mainmenu-search{
     width: 140px;
-    margin: 0 0 0 $gutter;
+    margin: 0 0 0 0;
   }
 
   label#nu__search-toggle-label{
@@ -372,7 +373,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
               padding: 0 0 0 0;
               margin: 0 0 0 0;
               & > li{
-                margin: 0 $gutter $gutter $gutter;
+                margin: 0 $gutter 10px $gutter;
                 text-transform: none;
                 height: $lineH;
                 &:first-child{
