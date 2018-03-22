@@ -152,6 +152,9 @@ main#nu__static {
     text-align: center; }
     main#nu__static section.fullwidth > h4 {
       text-align: center; }
+    main#nu__static section.fullwidth a:hover {
+      border-bottom: solid #cc0000 1px;
+      color: inherit; }
   main#nu__static section {
     width: 40vw;
     margin: 51px auto 0 auto; }

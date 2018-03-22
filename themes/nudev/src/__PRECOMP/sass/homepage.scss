@@ -129,6 +129,11 @@ main#nu__homepage{
   				left: 0;
   				opacity: 0.0;
   				text-decoration:none;
+
+          -webkit-transition: background-color 0.20s ease-out;
+         -moz-transition: background-color 0.20s ease-out;
+         -o-transition: background-color 0.20s ease-out;
+         transition: background-color 0.20s ease-out;
   				& p {
             @include font-5l-c;
             color: rgba($brand_colors-white,1.0);
@@ -162,15 +167,20 @@ main#nu__homepage{
     				z-index:100;
     				left: 50%;
     				transform: translateX(-50%) translateY(0);
-    				&:after {
-    					position: absolute;
-    			    display: inline-block;
-    			    border-bottom: 2px solid rgba($brand_colors-red,1.0);
-    			    bottom: -3px;
-    			    content: "";
-    			    left: 0;
-    			    width: 100%;
-    				}
+
+            width:100%;
+            & > span {
+              border-bottom: 2px solid rgba($brand_colors-red,1);
+            }
+    				// &:after {
+    				// 	position: absolute;
+    			  //   display: inline-block;
+    			  //   border-bottom: 2px solid rgba($brand_colors-red,1.0);
+    			  //   bottom: -3px;
+    			  //   content: "";
+    			  //   left: 0;
+    			  //   width: 100%;
+    				// }
     			}
         }
 
