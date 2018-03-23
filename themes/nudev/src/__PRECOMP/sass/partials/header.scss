@@ -124,6 +124,7 @@ div#nu__logo{
     line-height: $header-height;
     font-size: 3rem;
     color: white;
+    border:none;
     & > img{
       height: 80px;
       margin: 0 0 10px 0;
@@ -175,6 +176,44 @@ div#nu__logo{
   }
 
 }
+
+
+
+@media screen and (max-width: 899px) {
+  div#nu__logo{
+    & > a{
+      & > img{
+        height: 50px;
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 680px) {
+  div#nu__logo{
+    & > a{
+      line-height: 69px;
+      & > img{
+        height: 30px;
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: 600px) {
+//   div#nu__logo{
+//     text-align:center;
+//     width: auto;
+//     & > a{
+//
+//       & > img{
+//
+//       }
+//     }
+//   }
+// }
 
 // sean tierney
 ///tttt

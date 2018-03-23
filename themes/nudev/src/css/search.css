@@ -428,3 +428,8 @@ main#nu__search {
         text-decoration: none; }
         main#nu__search > section > div#___gcse_0 div.gcsc-branding a img {
           top: -5px; }
+
+@media screen and (max-width: 740px) {
+  main#nu__search > section {
+    border-left: none;
+    width: 100%; } }

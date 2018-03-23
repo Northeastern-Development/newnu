@@ -352,10 +352,51 @@ main#nu__search{
 
     }
 
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media screen and (max-width: 740px) {
+    main#nu__search {
+      & > section {
+        border-left:none;
+        width:100%;
+        & > div.nu__searchbar-container {
+          & > form#nu__searchbar-form {
+            //width: 91%;
+          }
+        }
+      }
+    }
+
+
+
+
+
+
+
+
 
 
 
 
   }
-
-}
