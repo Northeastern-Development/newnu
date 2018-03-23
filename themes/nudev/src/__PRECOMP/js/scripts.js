@@ -99,7 +99,7 @@
 
 		// get the height of the content area on the page
 		function getContentAreaHeight(){
-			contentAreaHeight = parseInt($(window).height()) - parseInt($('header').outerHeight());
+			contentAreaHeight = (parseInt($(window).height()) - parseInt($('header').outerHeight()) - parseInt($('footer').outerHeight()));
 		}
 
 

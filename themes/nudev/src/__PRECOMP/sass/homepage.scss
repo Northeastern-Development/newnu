@@ -165,11 +165,15 @@ main#nu__homepage{
             padding-bottom: 0;
     				position: absolute;
     				bottom: $gutter;
-    				z-index:100;
+    				// z-index:100;
+            z-index: 201;
     				left: 50%;
     				transform: translateX(-50%) translateY(0);
 
-            width:100%;
+            // width:100%;
+            // width: auto;
+            display: inline-block;
+            // background: red;
 
             & > span {
               border-bottom: 2px solid rgba($brand_colors-red,1);
