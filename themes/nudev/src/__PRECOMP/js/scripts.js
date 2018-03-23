@@ -208,13 +208,13 @@
 
 				// this will actually perform the content swapping
 				function contentSwap(a){
-					elem.find('a').fadeOut(150,function(){	// fade out the rotator content
+					elem.find('div.bgimage,h2').fadeOut(150,function(){	// fade out the rotator content
 						elem.attr('data-cslide',a);	// set the new value of the current slide
-						elem.find('a').prop('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
+						elem.find('div.bgimage').prop('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
 						elem.find('a').attr('href',rotators[id][a][1]);	// change the link
 						elem.find('a').attr('target',rotators[id][a][3]);	// change the link target style (local or external)
-						elem.find('div > h2').html(rotators[id][a][2]);	// change the title of the slide
-						elem.find('a').fadeIn(150);	// fade it all back in
+						elem.find('h2').html(rotators[id][a][2]);	// change the title of the slide
+						elem.find('div.bgimage,h2').fadeIn(150);	// fade it all back in
 					});
 				}
 			});

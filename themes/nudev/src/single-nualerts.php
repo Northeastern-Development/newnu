@@ -14,6 +14,7 @@
 		<section class="hero">
 			<div>
 				<h2>University Updates</h2>
+		
 			</div>
 		</section>
 
