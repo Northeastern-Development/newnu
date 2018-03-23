@@ -129,7 +129,7 @@ main#nu__homepage{
   				left: 0;
   				opacity: 0.0;
   				text-decoration:none;
-
+          z-index: 200;
           -webkit-transition: background-color 0.20s ease-out;
          -moz-transition: background-color 0.20s ease-out;
          -o-transition: background-color 0.20s ease-out;
@@ -143,7 +143,7 @@ main#nu__homepage{
   			  	bottom: ($gutter * 3);
   			    left: 50%;
   			    transform: translateX(-50%) translateY(0);
-            z-index: 100;
+            //z-index: 100;
             &:after{
               @include font-7-c;
               color: rgba($brand_colors-red,1.0);
@@ -197,6 +197,7 @@ main#nu__homepage{
             border-bottom: none;
   					&:hover {
   						background:transparent ;
+
 
   					}
   				}
@@ -941,6 +942,15 @@ main#nu__homepage{
 
 @media screen and (max-width: 899px) {
 
+  body.home{
+    height: 100%;
+    min-height: 100%;
+    & > .wrapper {
+      min-height:auto;
+      height: auto;
+    }
+  }
+
   body {
     overflow-x:hidden;
     //overflow-y:auto;
@@ -955,12 +965,12 @@ main#nu__homepage{
 
     $h: 100%;
 
-    min-height: calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
-    height: calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
-    min-height: -moz-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
-    height: -moz-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
-    min-height: -webkit-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
-    height: -webkit-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
+    min-height: calc(#{$h} - #{$header-height});
+    height: calc(#{$h} - #{$header-height});
+    min-height: -moz-calc(#{$h} - #{$header-height});
+    height: -moz-calc(#{$h} - #{$header-height});
+    min-height: -webkit-calc(#{$h} - #{$header-height});
+    height: -webkit-calc(#{$h} - #{$header-height});
 
 
     div#nu__seo-content{
@@ -1003,7 +1013,7 @@ main#nu__homepage{
   			display: flex;
   			flex-wrap: wrap;
     		& > article {
-
+          min-height: 350px;
 
           div.nu__overlay-logo{
 
@@ -1019,10 +1029,11 @@ main#nu__homepage{
 
           & > a {
 
-    				& p {
-
+            & p {
+              @include font-4-c;
               &:after{
-
+                @include font-4-c;
+                vertical-align: -18%;
               }
     				}
 
@@ -1372,6 +1383,188 @@ main#nu__homepage{
     }
   }
 
+}
 
+@media screen and (max-width: 600px) {
+
+  body {
+
+  }
+
+  main#nu__homepage{
+
+
+
+
+    div#nu__seo-content{
+
+    }
+
+
+    div#nu__stories{
+
+
+      // these are the slide next and previous arrows
+      & > #prev,
+      & > #next {
+
+          &:hover {
+
+          }
+      }
+
+      & > #prev {
+
+      }
+
+      & > #next {
+
+      }
+
+
+      & > section {
+
+        & > article {
+
+
+          div.nu__overlay-logo{
+
+          }
+
+          &:hover {
+
+            & > a{
+
+            }
+          }
+
+
+          & > a {
+
+            & p {
+              @include font-1r-c;
+              &:after{
+                @include font-4-c;
+                vertical-align: -19%;
+              }
+            }
+
+          }
+          & h2 {
+
+          }
+
+          &:not(.nu__block-rotator){
+            & h2 {
+
+              &:after {
+
+              }
+            }
+          }
+
+
+          &.nu__block-rotator{
+
+
+            & > a {
+
+              &:hover {
+
+              }
+            }
+            & > div.nu__slide-controls{
+
+              & > div{
+
+
+                & > .slider_next,
+                & > .slider_prev {
+
+                  &:hover {
+
+                  }
+                }
+                & > .slider_next {
+
+                }
+                & > .slider_prev {
+
+                }
+              }
+              & > h2 {
+
+                &:after{
+
+                }
+              }
+            }
+          }
+
+        }
+
+
+
+      }
+
+
+      & > section.panel-1{
+        & > article {
+
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+          &:nth-child(5){
+
+
+          }
+        }
+      }
+      & > section.panel-2{
+        & > article {
+
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+
+      & > section.panel-3{
+        & > article {
+
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+    }
+  }
 
 }

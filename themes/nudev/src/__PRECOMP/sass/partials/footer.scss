@@ -343,6 +343,123 @@ footer{
 }
 
 
+@media only screen and (max-width: 899px) {
+  footer{
+
+    & a{
+
+    }
+
+
+    // this is for pages that will include the pre-footer area
+    &.addprefooter{
+
+    }
+
+
+
+    &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
+      position:relative;
+      bottom: inherit;
+      & > div.nu__footer{
+        & > div.nu__footer-hideshow{
+          display:none;
+          &:before{
+
+          }
+          &:hover{
+
+          }
+        }
+      }
+    }
+
+
+     &.collapse{  // this is the closed state of the footer on the homepage only!
+       height:inherit;
+       height:auto;
+       & > div.nu__footer{
+
+         & > div.nu__footer-hideshow{
+
+          &:before{
+
+          }
+          &:hover{
+
+          }
+         }
+       }
+     }
+
+    // this defines the space for the pre-footer on pages that include it
+    & > div.nu__prefooter{
+
+      & > div{
+
+      }
+    }
+     & > div.nu__footer{
+
+       & > div.nu__footer-hideshow{
+
+         &:hover{
+
+         }
+       }
+       & > div{
+         margin: 18.75px auto;
+         & > a{
+
+           & > img,
+           & > svg{
+
+           }
+         }
+            & > div{
+
+              &:nth-child(1){
+
+              }
+              & > p{
+
+              }
+
+              & > ul{
+
+                & > li{
+
+                  &:last-child{
+
+                  }
+                  & > a{
+
+
+                    &:hover{
+
+                    }
+                    & > svg{
+
+                    }
+                  }
+                }
+              }
+           }
+         & > p{
+
+           & > a{
+
+             &:hover{
+
+             }
+           }
+         }
+      }
+     }
+  }
+}
+
+
 @media only screen and (max-width: 780px) {
   footer{
     height: auto;
