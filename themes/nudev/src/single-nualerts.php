@@ -14,7 +14,6 @@
 		<section class="hero">
 			<div>
 				<h2>University Updates</h2>
-				<h3>Check out this page for the latest info on stuff that you should know about relating to your special time at this Northeastern University experience.</h3>
 			</div>
 		</section>
 
