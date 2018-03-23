@@ -97,9 +97,9 @@ main#nu__homepage{
           width: 100%;
           position:absolute;
           bottom:0;
-          background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6-15 */
-          background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
-          background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
           z-index: 0;
         }
         div.nu__overlay-logo{
@@ -170,6 +170,7 @@ main#nu__homepage{
     				transform: translateX(-50%) translateY(0);
 
             width:100%;
+
             & > span {
               border-bottom: 2px solid rgba($brand_colors-red,1);
             }
@@ -265,9 +266,9 @@ main#nu__homepage{
             width: 100%;
             position:absolute;
             bottom:0;
-            background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,.7) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             z-index: 0;
           }
   			}
@@ -1241,25 +1242,30 @@ main#nu__homepage{
 
         & > article {
 
-
+          & div.gradient {
+            height:50%;
+            z-index: 50;
+          }
           div.nu__overlay-logo{
 
           }
 
           &:hover {
-
+            cursor: pointer;
             & > a{
-
+              background: none;
+              opacity:0;
+              border-bottom: none;
             }
           }
 
 
           & > a {
-            background: rgba($brand_colors-black,0.6);
-            opacity:1.0;
+            //background: none;
+            opacity:0;
             border-bottom: none;
             & p {
-
+              display: none;
               &:after{
 
               }
@@ -1272,7 +1278,7 @@ main#nu__homepage{
 
           &:not(.nu__block-rotator){
             & h2 {
-
+              z-index:100;
               &:after {
 
               }
