@@ -35,6 +35,12 @@ main#nu__search{
     min-height: -webkit-calc(#{$hh} - #{$s});
     & > section{
       background: rgba($brand_colors-black,1.0);
+      height: calc(#{$hh} - #{$s});
+      height: -miz-calc(#{$hh} - #{$s});
+      height: -webkit-calc(#{$hh} - #{$s});
+      min-height: calc(#{$hh} - #{$s});
+      min-height: -moz-calc(#{$hh} - #{$s});
+      min-height: -webkit-calc(#{$hh} - #{$s});
     }
   }
 
