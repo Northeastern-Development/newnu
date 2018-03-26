@@ -101,7 +101,7 @@
 					</nav>
 
 					<div id="nu__logo">
-						<a href="<?=home_url()?>" title="Northeastern University System"><img src="<?=home_url()?>/wp-content/uploads/logo.png" alt="northeastern university logo" />
+						<a href="<?=home_url()?>" title="Northeastern University - A University Like No Other"><img src="<?=home_url()?>/wp-content/uploads/logo.png" alt="northeastern university logo" />
 						</a>
 					</div>
 

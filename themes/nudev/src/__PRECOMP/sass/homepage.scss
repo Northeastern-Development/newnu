@@ -151,6 +151,22 @@ main#nu__homepage{
   			}
 
         &:not(.nu__block-rotator){
+<<<<<<< HEAD
+          & h2 {
+            @include font-3l-c;
+            padding-bottom: 0;
+    				position: absolute;
+    				bottom: $gutter;
+    				// z-index:100;
+            z-index: 201;
+    				left: 50%;
+    				transform: translateX(-50%) translateY(0);
+
+            // width:100%;
+            // width: auto;
+            display: inline-block;
+            // background: red;
+=======
           & > div.nu__panel-content {
             width:100%;
             height:100%;
@@ -194,6 +210,7 @@ main#nu__homepage{
               & > span {
                 border-bottom: 2px solid rgba($brand_colors-red,1);
               }
+>>>>>>> dev/t.gaffney
 
       			}
 
