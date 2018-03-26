@@ -74,6 +74,8 @@
 
 			<header role="banner"><?php if(function_exists("wp_header")){wp_header();} ?>
 
+				<?=getAlerts()?>
+
 				<div>
 
 					<nav role="navigation" class="nu__mainmenu">

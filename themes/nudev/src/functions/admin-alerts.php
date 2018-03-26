@@ -85,18 +85,15 @@ function getAlerts(){
 
 	$alerts = query_posts($args);
 
-  //print_r($res);
-  //die();
-
 	$response = "";	// an empty return will collapse the alert area to nothing
 
 	if(count($alerts) > 0){	// we found a result, let's build out the list
 		$response .= "<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).  Please be sure to read any associated information and contact your campus emergency services with any questions.</p><ul>";
 
     foreach($alerts as $a){
-		//while (have_posts()) : the_post();
 
 			$fields = get_fields($a->ID);
+
 			$guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s - Read More</a></li>';
 
 			$campus = "";
@@ -104,16 +101,14 @@ function getAlerts(){
 				$campus .= ($campus != ""?", ":"").$c->post_title;
 			}
 
-			$response .= sprintf(
+      $response .= sprintf(
 				 $guide
-				 ,get_permalink()
-				,get_the_title()
-				,get_the_title()
+				 ,$a->guid
+				,$a->post_title
+				,$a->post_title
 				,$campus
-				,get_the_excerpt()
+				,$a->post_excerpt
 			);
-
-		// endwhile;
   }
 
 		$response .= "</ul></div>";
@@ -122,9 +117,7 @@ function getAlerts(){
 	wp_reset_postdata();
 	wp_reset_query();
 
-  return $response;
-
-  // return $alerts;
+  return '<div id="nu__alerts">'.$response.'</div>';
 
 }
 
