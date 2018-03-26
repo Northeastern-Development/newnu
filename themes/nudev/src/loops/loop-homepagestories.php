@@ -59,7 +59,6 @@
 				,count($s['block_slide'])
 				,$thisImage
 				,$s['block_slide'][0]['block_slide_link']
-
 				,($s['block_slide'][0]['external_link'] == '1'?'_blank':'')
 				,($s['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
 				,$s['block_slide'][0]['block_slide_title']
