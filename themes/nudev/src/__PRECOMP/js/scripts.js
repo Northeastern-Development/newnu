@@ -474,7 +474,8 @@
 			if($('input#nu__search-toggle').prop('checked') || $('input#nu__iamnav-toggle').prop('checked') || $('input#nu__supernav-toggle').prop('checked')){
 				$('html').css({'overflow-y':'hidden'});
 			}else{
-				$('html').css({'overflow-y':'scroll'});
+				//$('html').css({'overflow-y':'scroll'});
+				$('html').css({'overflow':'hidden'});
 			}
 
 		}

@@ -10,6 +10,7 @@
 @import "modules/fonts";
 
 
+
 // Partials
 @import "partials/reset";
 @import "partials/wordpress";
@@ -20,6 +21,7 @@
 @import "partials/sidebar";
 @import "partials/footer";
 @import "partials/print";
+
 
 
 h1{
@@ -39,7 +41,7 @@ a{
   border-bottom: solid rgba($brand_colors-red,1.0) 1px;
   &:hover{
     color: $brand_colors-red;
-    
+
   }
 }
 
