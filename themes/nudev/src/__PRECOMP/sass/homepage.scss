@@ -58,7 +58,7 @@ main#nu__homepage{
         height: 50px;
     		border-radius: 50%;
     		background: rgba($brand_colors-white,0.6);
-    		z-index:100;
+    		z-index:500;
         color: rgba($brand_colors-black,1.0);
         font-size: 4rem;
         text-align: center;
@@ -113,44 +113,35 @@ main#nu__homepage{
         &:hover {
           cursor: pointer;
           & > a{
-            background: rgba($brand_colors-black,0.6);
-            opacity:1.0;
+            //background: rgba($brand_colors-black,0.6);
+            //opacity:1.0;
             border-bottom: none;
           }
         }
 
 
         & > a {
-  				background: rgba($brand_colors-black,0.0);
+  				//background: rgba($brand_colors-black,0.0);
   				width: 100%;
   				height: 100%;
   				position: absolute;
   				top: 0;
   				left: 0;
-  				opacity: 0.0;
+  				//opacity: 0.0;
   				text-decoration:none;
           z-index: 200;
-          -webkit-transition: background-color 0.20s ease-out;
-         -moz-transition: background-color 0.20s ease-out;
-         -o-transition: background-color 0.20s ease-out;
-         transition: background-color 0.20s ease-out;
-  				& p {
-            @include font-5l-c;
-            color: rgba($brand_colors-white,1.0);
-  					max-width:90%;
-  					width:100%;
-  					position: absolute;
-  			  	bottom: ($gutter * 3);
-  			    left: 50%;
-  			    transform: translateX(-50%) translateY(0);
-            //z-index: 100;
-            &:after{
-              @include font-7-c;
-              color: rgba($brand_colors-red,1.0);
-              content: '\E8E4';
-              vertical-align: -20%;
-            }
-  				}
+         //  -webkit-transition: background-color 0.20s ease-out;
+         // -moz-transition: background-color 0.20s ease-out;
+         // -o-transition: background-color 0.20s ease-out;
+         // transition: background-color 0.20s ease-out;
+         border-bottom: none;
+         &:hover ~ div.nu__panel-content  {
+           background:rgba($brand_colors-black,0.6);
+           & p {
+             opacity:1;
+           }
+            //opacity:1;
+         }
 
   	    }
   			& h2 {
@@ -160,6 +151,7 @@ main#nu__homepage{
   			}
 
         &:not(.nu__block-rotator){
+<<<<<<< HEAD
           & h2 {
             @include font-3l-c;
             padding-bottom: 0;
@@ -174,20 +166,55 @@ main#nu__homepage{
             // width: auto;
             display: inline-block;
             // background: red;
+=======
+          & > div.nu__panel-content {
+            width:100%;
+            height:100%;
+            background: rgba($brand_colors-black,0.0);
+             -webkit-transition: background-color 0.20s ease-out;
+            -moz-transition: background-color 0.20s ease-out;
+            -o-transition: background-color 0.20s ease-out;
+            transition: background-color 0.20s ease-out;
+            & p {
+              @include font-5l-c;
+              color: rgba($brand_colors-white,1.0);
+    					max-width:90%;
+    					width:100%;
+    					position: absolute;
+    			  	//bottom: ($gutter * 3);
+              bottom:80px;
+    			    left: 50%;
+    			    transform: translateX(-50%) translateY(0);
+              //z-index: 100;
+              z-index:1;
+              opacity:0;
+              &:after{
+                @include font-7-c;
+                color: rgba($brand_colors-red,1.0);
+                content: '\E8E4';
+                vertical-align: -20%;
+              }
+    				}
+            & h2 {
+              @include font-3l-c;
+              padding-bottom: 0;
+      				position: absolute;
+      				//bottom: $gutter;
+              bottom:25px;
+      				z-index:100;
+      				left: 50%;
+      				transform: translateX(-50%) translateY(0);
 
-            & > span {
-              border-bottom: 2px solid rgba($brand_colors-red,1);
-            }
-    				// &:after {
-    				// 	position: absolute;
-    			  //   display: inline-block;
-    			  //   border-bottom: 2px solid rgba($brand_colors-red,1.0);
-    			  //   bottom: -3px;
-    			  //   content: "";
-    			  //   left: 0;
-    			  //   width: 100%;
-    				// }
-    			}
+              width:100%;
+
+              & > span {
+                border-bottom: 2px solid rgba($brand_colors-red,1);
+              }
+>>>>>>> dev/t.gaffney
+
+      			}
+
+          }
         }
 
 
@@ -211,33 +238,15 @@ main#nu__homepage{
 
   				& > a {
   					opacity:1;
-  					// background-position: center center !important;
-  					// background-repeat: no-repeat !important;
-  					// background-size: cover !important;
             border-bottom: none;
             background: none;
-  					// &:hover {
-  					// 	// background:transparent ;
-            //
-            //   background: none;
-            //
-  					// }
-            // &:hover {
-            //   & h2::after {
-            //     color: rgba($brand_colors-red,1.0);
-            //     text-shadow:inherit;
-            //   }
-            // }
   				}
           & > h2 {
             position: absolute;
             z-index: 1;
             bottom: ($gutter * 2);
             left: $gutter;
-            // background: green;
             @include font-3l-l;
-            //@include font-5r-l;
-
             width: 90%;
             &:after{
               @include font-7-c;
@@ -250,7 +259,6 @@ main#nu__homepage{
           }
           & > div.nu__slide-controls{
             position: absolute;
-            // background: red;
             left: $gutter;
             bottom: ($gutter / 2);
             width: auto;
@@ -289,25 +297,9 @@ main#nu__homepage{
       					left:$gutter;
       				}
             }
-            // & > h2 {
-            //   @include font-3l-l;
-            //   //@include font-5r-l;
-            //   &:after{
-            //     @include font-7-c;
-            //     color: rgba($brand_colors-red,0.0);
-            //     content: '\E8E4';
-            //     vertical-align: -20%;
-            //     text-shadow:none;
-            //   }
-            //
-  					// }
+
           }
-          // &:hover {
-          //   div.nu__slide-controls > h2::after {
-          //     color: rgba($brand_colors-red,1.0);
-          //     text-shadow:inherit;
-          //   }
-          // }
+
           & div.gradient {
             height:100%;
             width: 100%;
