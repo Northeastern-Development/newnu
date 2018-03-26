@@ -213,7 +213,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
     opacity: 0;
     visibility: hidden;
     position: fixed;
-    z-index: 100;
+    z-index: 1001;
     height: 0;
     min-height: 100%;
     overflow: hidden;
@@ -555,7 +555,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
       opacity: 0;
       visibility: hidden;
       position: fixed;
-      z-index: 100;
+      z-index: 1001;
       height: 0;
       min-height: 100%;
       overflow: hidden;
