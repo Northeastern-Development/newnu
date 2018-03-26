@@ -377,20 +377,99 @@ main#nu__search{
 
   @media screen and (max-width: 740px) {
     main#nu__search {
+      width:auto;
       & > section {
         border-left:none;
         width:100%;
         & > div.nu__searchbar-container {
           & > form#nu__searchbar-form {
-            //width: 91%;
+            width: auto;
+              & > div {
+                margin-right:30px;
+                width:inherit;
+              }
+            }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    main#nu__search {
+
+      & > section {
+
+        & > div.nu__searchbar-container {
+          & > form#nu__searchbar-form {
+
+              & > div {
+                display: block;
+                margin-right:0;
+                & button {
+                  width:10vw;
+                  height:45px;
+                }
+                & input {
+                  width:62vw;
+                }
+              }
+            }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    main#nu__search {
+
+      & > section {
+
+        & > div.nu__searchbar-container {
+          & > form#nu__searchbar-form {
+
+              & > div {
+
+                & button {
+
+                }
+                & input {
+
+                }
+              }
+            }
+        }
+
+        & > div#___gcse_0 {
+          & div.gsc-webResult {
+            & div.gs-snippet, td.gsc-thumbnail {
+              display: none !important;
+            }
+            & div.gs-title  {
+              & a {
+                font-size:1.6rem;
+                line-height:2.8rem;
+                & b {
+                  font-size:1.6rem;
+                }
+              }
+            }
+          }
+          & div.gsc-cursor-box {
+            text-align:left;
+            margin-left:15px;
+            & div.gsc-cursor {
+                & div.gsc-cursor-page {
+                  width:15px;
+                }
+            }
+          }
+          & div.gcsc-branding {
+            float:left;
+            margin-left:15px;
           }
         }
       }
     }
-
-
-
-
 
 
 

@@ -21,6 +21,7 @@ footer{
   -ms-transition: height 0.20s linear;
   -o-transition: height 0.20s linear;
   transition: height 0.20s linear;
+
   & a{
     border-bottom: none;
   }
@@ -362,6 +363,7 @@ footer{
     &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
       position:relative;
       bottom: inherit;
+      z-index:0;
       & > div.nu__footer{
         & > div.nu__footer-hideshow{
           display:none;
