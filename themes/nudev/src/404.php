@@ -8,26 +8,18 @@
 
 get_header(); ?>
 
-	<main class="staticpage" role="main" aria-label="Content">
+		<main id="nu__static" role="main" aria-label="content">
 		<!-- section -->
+		<section class="hero">
+			<div>
+				<h2>404 - Page cannot be found</h2>
+			</div>
+		</section>
 		<section>
+			<p>It appears that the page or resource you are looking for cannot be found.</p>
+			<p>Please use the main navigation to jump to a specific section fo the site or the search form.</p>
+		</section>
 
-			<article>
-				<div id="contentarea" class="staticcontent">
-					<div class="panel">
-						<div class="contentarea">
-							<div class="overlap"></div>
-							<h1>Ooops!!</h1>
-
-							<p>It appears that the page or resource you are looking for cannot be found.</p>
-
-							<p>Please use the main navigation to jump to a specific section fo the site or the search form.</p>
-
-							<p>If you are still encountering an issue, please <a href="<?=home_url()?>/contact" title="Contact us">contact us here</a>.</p>
-						</div>
-					</div>
-				</div>
-			</article>
 
 		</section>
 		<!-- /section -->

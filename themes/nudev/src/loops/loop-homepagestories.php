@@ -91,7 +91,7 @@
 
 	// let's determine if we have a take over block active
 
-	$guideTakeover = '<div class="takeover" style="background-image: url(%s);"><a href="%s" title="%s%s" target="%s"><h2>%s</h2><p>%s</p></a></div>';
+	$guideTakeover = '<div class="takeover" style="background-image: url(%s);"><div class="nu__close-takeover"></div><a href="%s" title="%s%s" target="%s"><h2><span>%s</span></h2><p>%s</p></a><div class="gradient"></div></div>';
 
 	if(isset($fields['takeover']) && $fields['takeover'][0]['status'] == 1){
 		$return .= sprintf(
