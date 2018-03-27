@@ -134,20 +134,20 @@ main#nu__search {
   min-height: 100%;
   overflow: visible; }
   main#nu__search.noresults {
-    height: calc(100% - 101px);
-    height: -miz-calc(100% - 101px);
-    height: -webkit-calc(100% - 101px);
-    min-height: calc(100% - 101px);
-    min-height: -moz-calc(100% - 101px);
-    min-height: -webkit-calc(100% - 101px); }
+    height: calc(100% - 81px);
+    height: -miz-calc(100% - 81px);
+    height: -webkit-calc(100% - 81px);
+    min-height: calc(100% - 81px);
+    min-height: -moz-calc(100% - 81px);
+    min-height: -webkit-calc(100% - 81px); }
     main#nu__search.noresults > section {
       background: black;
-      height: calc(100% - 101px);
-      height: -miz-calc(100% - 101px);
-      height: -webkit-calc(100% - 101px);
-      min-height: calc(100% - 101px);
-      min-height: -moz-calc(100% - 101px);
-      min-height: -webkit-calc(100% - 101px); }
+      height: calc(100% - 81px);
+      height: -miz-calc(100% - 81px);
+      height: -webkit-calc(100% - 81px);
+      min-height: calc(100% - 81px);
+      min-height: -moz-calc(100% - 81px);
+      min-height: -webkit-calc(100% - 81px); }
   main#nu__search > div {
     position: fixed;
     z-index: -1;

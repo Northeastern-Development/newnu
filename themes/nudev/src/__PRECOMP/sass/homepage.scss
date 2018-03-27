@@ -251,31 +251,46 @@ main#nu__homepage{
             -o-transition: background-color 0.20s ease-out;
             transition: background-color 0.20s ease-out;
             & p {
-              @include font-5l-c;
+            //  @include font-5l-c;
+
               color: rgba($brand_colors-white,1.0);
     					max-width:90%;
     					width:100%;
     					position: absolute;
     			  	//bottom: ($gutter * 3);
-              bottom:75px;
+              //bottom:75px;
+              font-size:1.2vw;
+              bottom: 4.4vw;
+              line-height: 1.8vw;
+
     			    left: 50%;
+              text-align:center;
     			    transform: translateX(-50%) translateY(0);
               //z-index: 100;
               z-index:1;
-              opacity:0;
+              opacity:1;
               &:after{
-                @include font-7-c;
+                //@include font-7-c;
                 color: rgba($brand_colors-red,1.0);
                 content: '\E8E4';
                 vertical-align: -20%;
               }
     				}
             & h2 {
-              @include font-3l-c;
+            //  @include font-3l-c;
+
               padding-bottom: 0;
       				position: absolute;
       				//bottom: $gutter;
-              bottom:25px;
+              //bottom:25px;
+              //font-size: calc(1.25rem + ((1vw - 9px) * 1.5686)); //20 - 36 screen size 900 to 1920
+              //bottom: calc(1.5625rem + ((1vw - 9px) * 0)); //25 - 25 screen size 900 to 1920
+              font-size:1vw;
+              line-height: 2.2vw;
+              //bottom: calc(8.4375rem + ((1vw - 9px) * 0)); //135 - 135 screen size 900 to 1920
+              bottom: 1.2vw;
+              //line-height: calc(3.4375rem + ((1vw - 9px) * 0)); //55 - 55 screen size 900 to 1920
+
       				z-index:100;
       				left: 50%;
       				transform: translateX(-50%) translateY(0);
@@ -322,10 +337,14 @@ main#nu__homepage{
             z-index: 1;
             bottom: ($gutter * 2);
             left: $gutter;
-            @include font-3l-l;
+            //@include font-3l-l;
             width: 90%;
+            font-size:1vw;
+            line-height: 2.2vw;
+            //bottom: calc(8.4375rem + ((1vw - 9px) * 0)); //135 - 135 screen size 900 to 1920
+            //bottom: 1.2vw;
             &:after{
-              @include font-7-c;
+            //  @include font-7-c;
               color: rgba($brand_colors-red,0.0);
               content: '\E8E4';
               vertical-align: -20%;
