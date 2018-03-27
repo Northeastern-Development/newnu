@@ -76,15 +76,19 @@ function ar_responsive_image($image_id,$image_size,$max_width){
 
 function responsive_background_images(){
 	$windowSize = $_SESSION['windowsize'];
-	if($windowSize['width'] > 1000){
-		return array('block_slide_image','url');
-	}else if($windowSize['width'] > 780 && $windowSize['width'] < 1000){
-		return array('block_slide_image','sizes','large');
-	}else if($windowSize['width'] > 250 && $windowSize['width'] < 780){
-		return array('block_slide_image','sizes','medium');
-	}else if($windowSize['width'] < 250){
-		return array('block_slide_image','sizes','small');
-	}
+
+	// we will need to revisit this and improve the responsive facet to add in more size options, etc.
+
+	// if($windowSize['width'] > 1000){
+	// 	return array('block_slide_image','url');
+	// }else if($windowSize['width'] > 780 && $windowSize['width'] < 1000){
+	// 	return array('block_slide_image','sizes','large');
+	// }else if($windowSize['width'] > 250 && $windowSize['width'] < 780){
+	// 	return array('block_slide_image','sizes','medium');
+	// }else if($windowSize['width'] < 250){
+	// 	return array('block_slide_image','sizes','small');
+	// }
+	return array('block_slide_image','url');
 }
 
 

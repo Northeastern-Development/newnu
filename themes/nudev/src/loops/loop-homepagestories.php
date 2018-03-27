@@ -8,7 +8,12 @@
 
 	$res = query_posts($args);
 
+
+
 	$fields = get_fields($res[0]->ID);
+
+	// print_r($fields);
+	// die();
 
 	$stories = $fields['top_story_blocks'];
 
@@ -79,7 +84,31 @@
 
 	}
 
+
+
 	$return .= '</section>';
+
+
+	// let's determine if we have a take over block active
+
+	$guideTakeover = '<div class="takeover" style="background-image: url(%s);"><a href="%s" title="%s%s" target="%s"><h2>%s</h2><p>%s</p></a></div>';
+
+	if(isset($fields['takeover']) && $fields['takeover'][0]['status'] == 1){
+		$return .= sprintf(
+			$guideTakeover
+			,$fields['takeover'][0]['image']['url']
+			,$fields['takeover'][0]['link']
+			,$fields['takeover'][0]['title']
+			,($fields['takeover'][0]['external'] == '1'?' [will open in new window]':'')
+			,($fields['takeover'][0]['external'] == '1'?'_blank':'')
+			,$fields['takeover'][0]['title']
+			,$fields['takeover'][0]['description']
+		);
+	}
+
+
+
+
 	echo $return;
 
 ?>
