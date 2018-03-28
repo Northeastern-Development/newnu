@@ -74,7 +74,8 @@ nav.nu__mainmenu{
 label{
   text-transform: uppercase;
   float: right;
-  @include font-2l-l;
+  //@include font-2l-l;
+  @include font-10l-l;
   color: rgba($brand_colors-white, 0.8);
   line-height: $header-height;
   height: $header-height;
@@ -246,7 +247,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
       $widthR: 442px;
       $widthT: 736px;
 
-      $lineH: 65px;
+      $lineH: 44px;
 
       $s: 60px;
       $hh: 100%;
@@ -314,10 +315,11 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
             width: 100%;
             text-align: left;
             padding: 0 $gutter 0 $gutter;
-            @include font-2l-l;
+            //@include font-2l-l;
+            @include font-10l-l;
             text-transform: uppercase;
             line-height: $lineH;
-            border-bottom: solid rgba($brand_colors-beige,1.0) 1px;
+            border-bottom: solid rgba($brand_colors-beige,0.2) 1px;
             &.featured{
               line-height: 0;
               border: none;
@@ -329,7 +331,8 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
               a {
                 color: rgba($brand_colors-white,1.0);
                 border-bottom: none;
-                @include font-2l-l;
+                //@include font-2l-l;
+                @include font-10l-l;
                 text-transform: none;
                 display: block;
                 overflow: hidden;
@@ -367,7 +370,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
               position: absolute;
               right: 0;
               top: 0;
-              width: ($widthR - 15);
+              width: ($widthR - 0);
               list-style: none;
               list-style-type: none;
               padding: 0 0 0 0;
@@ -380,11 +383,12 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                 &:first-child{
                   @include font-6l-l;
                   line-height: $lineH;
-                  margin: 0 0 0 $gutter;
+                  margin: 12px 0 12px $gutter;
 
                 }
                 & > a{
-                  @include font-2l-l;
+                  //@include font-2l-l;
+                  @include font-10l-l;
                   border-bottom: none;
                   color: rgba($brand_colors-black,1.0);
                   display: block;
@@ -406,6 +410,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                     &:nth-child(1){
                       width: $lineH;
                       height: $lineH;
+
                       margin: 0 10px 0 0;
                       display: table-cell;
                       vertical-align: middle;
@@ -745,18 +750,48 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
 
 
   @media screen and (max-width: 680px) {
+
+    $s: 100px;
+    $hh: 100%;
+    $header-height: 100px;
+    #nu__supernav,
+    #nu__iamnav,
+    #nu__searchbar{
+
+      margin: $header-height 0 0 0;
+
+    }
+
     nav.nu__mainmenu{
       left: 0;
       right: inherit;
       height: 40px;
       line-height: 40px;
       margin: 55px 0 0 0;
-      //background:red;
+
     }
 
     // div#nu__mainmenu-iamnav, div#nu__mainmenu-search, div#nu__mainmenu-supernav {
     //   height:40px;
     // }
+
+    #nu__supernav > section, #nu__iamnav > section, #nu__searchbar > section {
+      height: calc(#{$hh} - #{$s});
+      height: -miz-calc(#{$hh} - #{$s});
+      height: -webkit-calc(#{$hh} - #{$s});
+      min-height: calc(#{$hh} - #{$s});
+      min-height: -moz-calc(#{$hh} - #{$s});
+      min-height: -webkit-calc(#{$hh} - #{$s});
+    }
+
+    #nu__supernav > section > div.items, #nu__iamnav > section > div.items, #nu__searchbar > section > div.items {
+      min-height: calc(#{$hh} - #{$s});
+      height: calc(#{$hh} - #{$s});
+      min-height: -moz-calc(#{$hh} - #{$s});
+      height: -moz-calc(#{$hh} - #{$s});
+      min-height: -webkit-calc(#{$hh} - #{$s});
+      height: -webkit-calc(#{$hh} - #{$s});
+    }
 
     div#nu__mainmenu-iamnav{
       width: 74px;

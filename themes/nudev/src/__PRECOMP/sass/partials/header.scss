@@ -7,7 +7,7 @@
 header{
   width: $wrapper-width;
   position: fixed;
-  background: rgba($brand_colors-black,0.9);
+  background: rgba($brand_colors-black,1.0);
   flex: none;
   z-index: 1000;
   border-bottom: solid rgba($brand_colors-grayW,1) 1px;
@@ -126,7 +126,7 @@ div#nu__logo{
     color: white;
     border:none;
     & > img{
-      height: 80px;
+      height: 60px;
       margin: 0 0 10px 0;
     }
   }
@@ -192,6 +192,14 @@ div#nu__logo{
 
 
 @media screen and (max-width: 680px) {
+
+  $header-height: 100px;
+
+  header {
+    & > div {
+      height: $header-height;
+    }
+  }
   div#nu__logo{
     & > a{
       line-height: 69px;
@@ -219,7 +227,7 @@ div#nu__logo{
 ///tttt
 @media only screen and (max-width: 500px) {
   div#nu__alerts{
-// background:red;
+//
     & > div{
 
       &:before{

@@ -203,34 +203,26 @@ main#nu__homepage{
         &:hover {
           cursor: pointer;
           & > a{
-            //background: rgba($brand_colors-black,0.6);
-            //opacity:1.0;
             border-bottom: none;
           }
         }
 
 
         & > a {
-  				//background: rgba($brand_colors-black,0.0);
   				width: 100%;
   				height: 100%;
   				position: absolute;
   				top: 0;
   				left: 0;
-  				//opacity: 0.0;
   				text-decoration:none;
           z-index: 200;
-         //  -webkit-transition: background-color 0.20s ease-out;
-         // -moz-transition: background-color 0.20s ease-out;
-         // -o-transition: background-color 0.20s ease-out;
-         // transition: background-color 0.20s ease-out;
-         border-bottom: none;
+          border-bottom: none;
          &:hover ~ div.nu__panel-content  {
            background:rgba($brand_colors-black,0.6);
            & p {
              opacity:1;
            }
-            //opacity:1;
+
          }
 
   	    }
@@ -251,37 +243,40 @@ main#nu__homepage{
             -o-transition: background-color 0.20s ease-out;
             transition: background-color 0.20s ease-out;
             & p {
-              @include font-5l-c;
+              //@include font-5l-c;
               color: rgba($brand_colors-white,1.0);
     					max-width:90%;
     					width:100%;
     					position: absolute;
-    			  	//bottom: ($gutter * 3);
-              bottom:75px;
+              //bottom:75px;
+              font-size:1.2vw;
+              bottom: 4.4vw;
+              line-height: 1.8vw;
     			    left: 50%;
+              text-align:center;
     			    transform: translateX(-50%) translateY(0);
-              //z-index: 100;
               z-index:1;
               opacity:0;
               &:after{
-                @include font-7-c;
+                //@include font-7-c;
                 color: rgba($brand_colors-red,1.0);
                 content: '\E8E4';
                 vertical-align: -20%;
               }
     				}
             & h2 {
-              @include font-3l-c;
+              //@include font-3l-c;
               padding-bottom: 0;
       				position: absolute;
       				//bottom: $gutter;
-              bottom:25px;
+              //bottom:25px;
+              font-size:1vw;
+              line-height: 2.2vw;
+              bottom: 1.2vw;
       				z-index:100;
       				left: 50%;
       				transform: translateX(-50%) translateY(0);
-
               width:100%;
-
               & > span {
                 border-bottom: 2px solid rgba($brand_colors-red,1);
                 padding-bottom:5px;
@@ -322,10 +317,13 @@ main#nu__homepage{
             z-index: 1;
             bottom: ($gutter * 2);
             left: $gutter;
-            @include font-3l-l;
+            text-align: left;
+            //@include font-3l-l;
             width: 90%;
+            font-size:1vw;
+            line-height: 2.2vw;
             &:after{
-              @include font-7-c;
+              //@include font-7-c;
               color: rgba($brand_colors-red,0.0);
               content: '\E8E4';
               vertical-align: -20%;
@@ -500,14 +498,27 @@ main#nu__homepage{
 
 
 
-@media screen and (max-width: 1500px) {
 
-  body {
-    overflow-x:hidden;
-    //overflow-y:auto;
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1800px) {
 
   main#nu__homepage{
+
+
 
 
 
@@ -519,6 +530,37 @@ main#nu__homepage{
 
     div#nu__stories{
 
+
+      div.takeover{
+
+        & > div.nu__close-takeover {
+
+          &:after {
+
+          }
+          &:hover {
+
+          }
+        }
+        & > a {
+
+        }
+        &  p {
+
+          &:after{
+
+          }
+        }
+        &  h2 {
+
+          & > span {
+
+          }
+        }
+        & div.gradient {
+
+        }
+      }
 
       // these are the slide next and previous arrows
       & > #prev,
@@ -542,7 +584,9 @@ main#nu__homepage{
 
     		& > article {
 
+          & div.gradient {
 
+          }
           div.nu__overlay-logo{
 
           }
@@ -556,14 +600,14 @@ main#nu__homepage{
 
 
           & > a {
-            //opacity: 1;
-    				& p {
-              @include font-4-c;
-              &:after{
-                @include font-4-c;
-                vertical-align: -18%;
-              }
-    				}
+
+           &:hover ~ div.nu__panel-content  {
+
+             & p {
+
+             }
+
+           }
 
     	    }
     			& h2 {
@@ -571,28 +615,62 @@ main#nu__homepage{
     			}
 
           &:not(.nu__block-rotator){
-            & h2 {
 
-      				&:after {
+            & > div.nu__panel-content {
 
+              & p {
+                @include font-5l-c;
+                bottom:75px;
+
+                &:after{
+                  @include font-7-c;
+
+                }
       				}
-      			}
+              & h2 {
+                @include font-3l-c;
+                bottom:25px;
+
+                & > span {
+
+                }
+
+
+        			}
+
+            }
           }
 
 
     			&.nu__block-rotator{
 
 
+            &:hover {
+              & h2::after {
+
+              }
+            }
+
+            & > div.bgimage{
+
+            }
+
     				& > a {
 
-    					&:hover {
-
-    					}
     				}
+            & > h2 {
+
+              @include font-3l-l;
+
+              &:after{
+                @include font-7-c;
+
+              }
+
+            }
             & > div.nu__slide-controls{
 
               & > div{
-
 
                 & > .slider_next,
                 & > .slider_prev {
@@ -608,13 +686,11 @@ main#nu__homepage{
 
         				}
               }
-              & > h2 {
-                //@include font-3r-l;
-                &:after{
-                  //@include font-3r-l;
-                  //vertical-align: -18%;
-                }
-    					}
+
+            }
+
+            & div.gradient {
+
             }
     			}
 
@@ -627,7 +703,6 @@ main#nu__homepage{
 
       & > section.panel-1{
         & > article {
-
           &:nth-child(1){
 
           }
@@ -646,27 +721,8 @@ main#nu__homepage{
           }
         }
       }
-      & > section.panel-2{
-        & > article {
-          display: block;
-          &:nth-child(1){
-
-          }
-          &:nth-child(2){
-
-          }
-          &:nth-child(3){
-
-          }
-          &:nth-child(4){
-
-          }
-        }
-      }
-
       & > section.panel-3{
         & > article {
-          display: block;
           &:nth-child(1){
 
           }
@@ -681,18 +737,43 @@ main#nu__homepage{
           }
         }
       }
+
+      & > section.panel-2{
+        & > article {
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+
+
     }
+
   }
 }
 
 
-@media screen and (max-width: 1120px) {
 
-  body {
 
-  }
+
+
+
+
+
+@media screen and (max-width: 1300px) {
 
   main#nu__homepage{
+
+
 
 
 
@@ -704,6 +785,37 @@ main#nu__homepage{
 
     div#nu__stories{
 
+
+      div.takeover{
+
+        & > div.nu__close-takeover {
+
+          &:after {
+
+          }
+          &:hover {
+
+          }
+        }
+        & > a {
+
+        }
+        &  p {
+
+          &:after{
+
+          }
+        }
+        &  h2 {
+
+          & > span {
+
+          }
+        }
+        & div.gradient {
+
+        }
+      }
 
       // these are the slide next and previous arrows
       & > #prev,
@@ -727,7 +839,9 @@ main#nu__homepage{
 
     		& > article {
 
+          & div.gradient {
 
+          }
           div.nu__overlay-logo{
 
           }
@@ -742,13 +856,13 @@ main#nu__homepage{
 
           & > a {
 
-    				& p {
-              @include font-1r-c;
-              &:after{
-                @include font-4-c;
-                vertical-align: -19%;
-              }
-    				}
+           &:hover ~ div.nu__panel-content  {
+
+             & p {
+
+             }
+
+           }
 
     	    }
     			& h2 {
@@ -756,28 +870,62 @@ main#nu__homepage{
     			}
 
           &:not(.nu__block-rotator){
-            & h2 {
 
-      				&:after {
+            & > div.nu__panel-content {
 
+              & p {
+                @include font-2l-c;
+                bottom:75px;
+
+                &:after{
+                  @include font-3l-c;
+
+                }
       				}
-      			}
+              & h2 {
+                @include font-10l-c;
+                bottom:25px;
+
+                & > span {
+
+                }
+
+
+        			}
+
+            }
           }
 
 
     			&.nu__block-rotator{
 
 
+            &:hover {
+              & h2::after {
+
+              }
+            }
+
+            & > div.bgimage{
+
+            }
+
     				& > a {
 
-    					&:hover {
-
-    					}
     				}
+            & > h2 {
+
+              @include font-10l-l;
+
+              &:after{
+                @include font-3l-c;
+
+              }
+
+            }
             & > div.nu__slide-controls{
 
               & > div{
-
 
                 & > .slider_next,
                 & > .slider_prev {
@@ -793,13 +941,11 @@ main#nu__homepage{
 
         				}
               }
-              & > h2 {
-              //  @include font-0-l;
-                &:after{
-                //  @include font-4-c;
-                //  vertical-align: -19%;
-                }
-    					}
+
+            }
+
+            & div.gradient {
+
             }
     			}
 
@@ -812,7 +958,6 @@ main#nu__homepage{
 
       & > section.panel-1{
         & > article {
-
           &:nth-child(1){
 
           }
@@ -831,27 +976,8 @@ main#nu__homepage{
           }
         }
       }
-      & > section.panel-2{
-        & > article {
-          display: block;
-          &:nth-child(1){
-
-          }
-          &:nth-child(2){
-
-          }
-          &:nth-child(3){
-
-          }
-          &:nth-child(4){
-
-          }
-        }
-      }
-
       & > section.panel-3{
         & > article {
-          display: block;
           &:nth-child(1){
 
           }
@@ -866,16 +992,300 @@ main#nu__homepage{
           }
         }
       }
+
+      & > section.panel-2{
+        & > article {
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+
+
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1120px) {
+
+
+  main#nu__homepage{
+
+
+
+
+    div#nu__seo-content{
+
+    }
+
+
+    div#nu__stories{
+
+
+      div.takeover{
+
+        & > div.nu__close-takeover {
+
+          &:after {
+
+          }
+          &:hover {
+
+          }
+        }
+        & > a {
+
+        }
+        &  p {
+          @include font-1r-c;
+          &:after{
+            @include font-4-c;
+            vertical-align: -19%;
+          }
+        }
+
+        &  h2 {
+
+          & > span {
+
+          }
+        }
+        & div.gradient {
+
+        }
+      }
+
+
+      & > #prev,
+      & > #next {
+
+      		&:hover {
+
+      		}
+      }
+
+      & > #prev {
+
+      }
+
+      & > #next {
+
+      }
+
+
+      & > section {
+
+    		& > article {
+
+          & div.gradient {
+
+          }
+          div.nu__overlay-logo{
+
+          }
+
+          &:hover {
+
+            & > a{
+
+            }
+          }
+
+
+          & > a {
+
+           &:hover ~ div.nu__panel-content  {
+
+             & p {
+
+             }
+
+           }
+
+    	    }
+    			& h2 {
+
+    			}
+
+          &:not(.nu__block-rotator){
+
+            & > div.nu__panel-content {
+
+              &  p {
+                @include font-1r-c;
+                &:after{
+                  @include font-4-c;
+                  vertical-align: -19%;
+                }
+              }
+              & h2 {
+                @include font-1r-c;
+                &:after{
+                 @include font-4-c;
+                 vertical-align: -19%;
+                }
+                & > span {
+
+                }
+
+
+        			}
+
+            }
+          }
+
+
+    			&.nu__block-rotator{
+
+
+            &:hover {
+              & h2::after {
+
+              }
+            }
+
+            & > div.bgimage{
+
+            }
+
+    				& > a {
+
+    				}
+            & > h2 {
+              @include font-1r-l
+              color: $brand_colors-white;
+              &:after{
+               @include font-4-c;
+               vertical-align: -19%;
+              }
+
+            }
+            & > div.nu__slide-controls{
+
+              & > div{
+
+                & > .slider_next,
+                & > .slider_prev {
+
+        					&:hover {
+
+        					}
+        				}
+        				& > .slider_next {
+
+        				}
+        				& > .slider_prev {
+
+        				}
+              }
+
+            }
+
+            & div.gradient {
+
+            }
+    			}
+
+    		}
+
+
+
+    	}
+
+
+      & > section.panel-1{
+        & > article {
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+          &:nth-child(5){
+
+
+          }
+        }
+      }
+      & > section.panel-3{
+        & > article {
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+
+      & > section.panel-2{
+        & > article {
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+
+
     }
   }
+
 }
 
 
 @media screen and (max-width: 1000px) {
 
-  body {
-
-  }
 
   main#nu__homepage{
 
@@ -890,7 +1300,40 @@ main#nu__homepage{
     div#nu__stories{
 
 
-      // these are the slide next and previous arrows
+      div.takeover{
+
+        & > div.nu__close-takeover {
+
+          &:after {
+
+          }
+          &:hover {
+
+          }
+        }
+        & > a {
+
+        }
+        &  p {
+          @include font-0r-c;
+          &:after{
+            @include font-4-c;
+            vertical-align: -19%;
+          }
+        }
+
+        &  h2 {
+
+          & > span {
+
+          }
+        }
+        & div.gradient {
+
+        }
+      }
+
+
       & > #prev,
       & > #next {
 
@@ -912,7 +1355,9 @@ main#nu__homepage{
 
     		& > article {
 
+          & div.gradient {
 
+          }
           div.nu__overlay-logo{
 
           }
@@ -927,13 +1372,13 @@ main#nu__homepage{
 
           & > a {
 
-    				& p {
-              @include font-0r-c;
-              &:after{
-                @include font-4-c;
-                vertical-align: -19%;
-              }
-    				}
+           &:hover ~ div.nu__panel-content  {
+
+             & p {
+
+             }
+
+           }
 
     	    }
     			& h2 {
@@ -941,28 +1386,60 @@ main#nu__homepage{
     			}
 
           &:not(.nu__block-rotator){
-            & h2 {
 
-      				&:after {
+            & > div.nu__panel-content {
 
-      				}
-      			}
+              &  p {
+                @include font-0r-c;
+                &:after{
+                  @include font-4-c;
+                  vertical-align: -19%;
+                }
+              }
+              & h2 {
+                @include font-1r-c;
+                &:after{
+                 @include font-4-c;
+                 vertical-align: -19%;
+                }
+                & > span {
+
+                }
+
+
+        			}
+
+            }
           }
 
 
     			&.nu__block-rotator{
 
 
+            &:hover {
+              & h2::after {
+
+              }
+            }
+
+            & > div.bgimage{
+
+            }
+
     				& > a {
 
-    					&:hover {
-
-    					}
     				}
+            & > h2 {
+              //@include font-1r-l;
+              &:after{
+               @include font-4-c;
+               vertical-align: -19%;
+              }
+
+            }
             & > div.nu__slide-controls{
 
               & > div{
-
 
                 & > .slider_next,
                 & > .slider_prev {
@@ -978,13 +1455,11 @@ main#nu__homepage{
 
         				}
               }
-              & > h2 {
-                //@include font-10r-l;
-                &:after{
-                  //@include font-4-c;
-                  //vertical-align: -19%;
-                }
-    					}
+
+            }
+
+            & div.gradient {
+
             }
     			}
 
@@ -997,7 +1472,6 @@ main#nu__homepage{
 
       & > section.panel-1{
         & > article {
-
           &:nth-child(1){
 
           }
@@ -1016,27 +1490,8 @@ main#nu__homepage{
           }
         }
       }
-      & > section.panel-2{
-        & > article {
-          display: block;
-          &:nth-child(1){
-
-          }
-          &:nth-child(2){
-
-          }
-          &:nth-child(3){
-
-          }
-          &:nth-child(4){
-
-          }
-        }
-      }
-
       & > section.panel-3{
         & > article {
-          display: block;
           &:nth-child(1){
 
           }
@@ -1051,8 +1506,28 @@ main#nu__homepage{
           }
         }
       }
+
+      & > section.panel-2{
+        & > article {
+          &:nth-child(1){
+
+          }
+          &:nth-child(2){
+
+          }
+          &:nth-child(3){
+
+          }
+          &:nth-child(4){
+
+          }
+        }
+      }
+
+
     }
   }
+
 }
 
 
@@ -1072,13 +1547,11 @@ main#nu__homepage{
     //overflow-y:auto;
   }
 
-  main#nu__homepage{
 
-    //width: $wrapper-width;
+  main#nu__homepage{
     width:100%;
     margin: 0 0 0 0;
     background: rgba($brand_colors-black,1.0);
-
     $h: 100%;
 
     min-height: calc(#{$h} - #{$header-height});
@@ -1089,22 +1562,55 @@ main#nu__homepage{
     height: -webkit-calc(#{$h} - #{$header-height});
 
 
+
     div#nu__seo-content{
-      position: absolute;
-      z-index: -1000;
+
     }
 
 
     div#nu__stories{
       height: 100%;
-    	width: 100%;
+     	width: 100%;
       overflow-x: scroll;
-    	overflow:auto;
+     	overflow:auto;
 
-      // these are the slide next and previous arrows
+      div.takeover{
+
+        & > div.nu__close-takeover {
+
+          &:after {
+
+          }
+          &:hover {
+
+          }
+        }
+        & > a {
+
+        }
+        &  p {
+          @include font-0r-c;
+          &:after{
+            @include font-4-c;
+            vertical-align: -19%;
+          }
+        }
+
+        &  h2 {
+
+          & > span {
+
+          }
+        }
+        & div.gradient {
+
+        }
+      }
+
+
       & > #prev,
       & > #next {
-
+        display:none;
       		&:hover {
 
       		}
@@ -1120,17 +1626,17 @@ main#nu__homepage{
 
 
       & > section {
-    		height:auto;
+        height:auto;
     		float: none;
         display: block;
     		width:100%;
-
-
   			display: flex;
   			flex-wrap: wrap;
     		& > article {
-          min-height: 350px;
+           min-height: 350px;
+          & div.gradient {
 
+          }
           div.nu__overlay-logo{
 
           }
@@ -1145,13 +1651,13 @@ main#nu__homepage{
 
           & > a {
 
-            & p {
-              @include font-4-c;
-              &:after{
-                @include font-4-c;
-                vertical-align: -18%;
-              }
-    				}
+           &:hover ~ div.nu__panel-content  {
+
+             & p {
+
+             }
+
+           }
 
     	    }
     			& h2 {
@@ -1159,28 +1665,62 @@ main#nu__homepage{
     			}
 
           &:not(.nu__block-rotator){
-            & h2 {
 
-      				&:after {
+            & > div.nu__panel-content {
 
-      				}
-      			}
+              &  p {
+                @include font-4-c;
+                bottom:75px;
+                &:after{
+                  @include font-4-c;
+                  vertical-align: -19%;
+                }
+              }
+              & h2 {
+                //@include font-1r-c;
+                bottom:25px;
+                &:after{
+                 //@include font-4-c;
+                 //vertical-align: -19%;
+                }
+                & > span {
+
+                }
+
+
+        			}
+
+            }
           }
 
 
     			&.nu__block-rotator{
 
 
+            &:hover {
+              & h2::after {
+
+              }
+            }
+
+            & > div.bgimage{
+
+            }
+
     				& > a {
 
-    					&:hover {
-
-    					}
     				}
+            & > h2 {
+              //@include font-1r-c;
+              &:after{
+               //@include font-4-c;
+               //vertical-align: -19%;
+              }
+
+            }
             & > div.nu__slide-controls{
 
               & > div{
-
 
                 & > .slider_next,
                 & > .slider_prev {
@@ -1196,12 +1736,11 @@ main#nu__homepage{
 
         				}
               }
-              & > h2 {
 
-                &:after{
+            }
 
-                }
-    					}
+            & div.gradient {
+
             }
     			}
 
@@ -1249,8 +1788,6 @@ main#nu__homepage{
           }
         }
       }
-
-
       & > section.panel-2{
         & > article {
           display: block;
@@ -1283,47 +1820,58 @@ main#nu__homepage{
 
       & > section.panel-3{
         & > article {
-          display: block;
-          &:nth-child(1){
-            float:none;
-            width:100%;
-            height:50vw;
-            order:1;
-          }
-          &:nth-child(2){
-            float:none;
-            width:100%;
+         display: block;
+         &:nth-child(1){
+           float:none;
+           width:100%;
            height:50vw;
-            order:2;
-          }
-          &:nth-child(3){
-            float:none;
-            width:100%;
-            height:50vw;
-            order:3;
-          }
-          &:nth-child(4){
-            float:none;
-            width:100%;
+           order:1;
+         }
+         &:nth-child(2){
+           float:none;
+           width:100%;
+          height:50vw;
+           order:2;
+         }
+         &:nth-child(3){
+           float:none;
+           width:100%;
            height:50vw;
-            order:4;
-          }
-        }
+           order:3;
+         }
+         &:nth-child(4){
+           float:none;
+           width:100%;
+          height:50vw;
+           order:4;
+         }
+       }
       }
+
+
     }
   }
+
+
 }
 
 
 
 @media screen and (max-width: 800px) {
 
-  body {
-
-  }
 
   main#nu__homepage{
+    width:100%;
+    margin: 0 0 0 0;
+    background: rgba($brand_colors-black,1.0);
+    $h: 100%;
 
+    min-height: calc(#{$h} - #{$header-height});
+    height: calc(#{$h} - #{$header-height});
+    min-height: -moz-calc(#{$h} - #{$header-height});
+    height: -moz-calc(#{$h} - #{$header-height});
+    min-height: -webkit-calc(#{$h} - #{$header-height});
+    height: -webkit-calc(#{$h} - #{$header-height});
 
 
 
@@ -1335,13 +1883,47 @@ main#nu__homepage{
     div#nu__stories{
 
 
-      // these are the slide next and previous arrows
-      & > #prev,
-      & > #next {
+      div.takeover{
 
+        & > div.nu__close-takeover {
+
+          &:after {
+
+          }
           &:hover {
 
           }
+        }
+        & > a {
+
+        }
+        &  p {
+          @include font-0r-c;
+          &:after{
+            @include font-4-c;
+            vertical-align: -19%;
+          }
+        }
+
+        &  h2 {
+
+          & > span {
+
+          }
+        }
+        & div.gradient {
+          height:50%;
+
+        }
+      }
+
+
+      & > #prev,
+      & > #next {
+
+      		&:hover {
+
+      		}
       }
 
       & > #prev {
@@ -1355,94 +1937,131 @@ main#nu__homepage{
 
       & > section {
 
-        & > article {
+    		& > article {
 
           & div.gradient {
-            height:50%;
-            z-index: 50;
+
           }
           div.nu__overlay-logo{
 
           }
 
           &:hover {
-            cursor: pointer;
+
             & > a{
-              background: none;
-              opacity:0;
-              border-bottom: none;
+
             }
           }
 
 
           & > a {
-            //background: none;
-            opacity:0;
-            border-bottom: none;
-            & p {
-              display: none;
-              &:after{
 
-              }
-            }
+           &:hover ~ div.nu__panel-content  {
 
-          }
-          & h2 {
+             & p {
 
-          }
+             }
+             //opacity:0;
+             background: none;
+
+           }
+
+    	    }
+    			& h2 {
+
+    			}
 
           &:not(.nu__block-rotator){
-            & h2 {
-              z-index:100;
-              &:after {
 
+            & > div.nu__panel-content {
+
+              &  p {
+                display: none;
+                // @include font-4-c;
+                // bottom:75px;
+                &:after{
+                  @include font-4-c;
+                  vertical-align: -19%;
+                }
               }
+              & h2 {
+                @include font-3l-c;
+                bottom:25px;
+                &:after{
+                }
+                & > span {
+
+                }
+
+
+        			}
+
             }
           }
 
 
-          &.nu__block-rotator{
+    			&.nu__block-rotator{
 
 
-            & > a {
-
-              &:hover {
+            &:hover {
+              & h2::after {
 
               }
+            }
+
+            & > div.bgimage{
+
+            }
+
+    				& > a {
+
+    				}
+            & > h2 {
+              @include font-3l-l;
+              color: $brand_colors-white;
+
+              &:after{
+
+                //@include font-7-c;
+                color: rgba($brand_colors-red,1.0);
+                //content: '\E8E4';
+                //vertical-align: -20%;
+                text-shadow:inherit;
+              }
+
             }
             & > div.nu__slide-controls{
 
               & > div{
 
-
                 & > .slider_next,
                 & > .slider_prev {
 
-                  &:hover {
+        					&:hover {
 
-                  }
-                }
-                & > .slider_next {
+        					}
+        				}
+        				& > .slider_next {
 
-                }
-                & > .slider_prev {
+        				}
+        				& > .slider_prev {
 
-                }
+        				}
               }
-              & > h2 {
 
-                &:after{
-
-                }
-              }
             }
-          }
 
-        }
+            & div.gradient {
+              height:50%;
+
+            }
+    			}
+
+    		}
 
 
 
-      }
+    	}
 
 
       & > section.panel-1{
@@ -1486,31 +2105,66 @@ main#nu__homepage{
 
       & > section.panel-3{
         & > article {
+         display: block;
+         &:nth-child(1){
 
-          &:nth-child(1){
+         }
+         &:nth-child(2){
 
-          }
-          &:nth-child(2){
+         }
+         &:nth-child(3){
 
-          }
-          &:nth-child(3){
+         }
+         &:nth-child(4){
 
-          }
-          &:nth-child(4){
-
-          }
-        }
+         }
+       }
       }
+
+
     }
   }
 
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+@media screen and (max-width: 680px) {
+
+  $h: 100%;
+  $header-height: 100px;
+
+  main#nu__homepage {
+    min-height: calc(#{$h} - #{$header-height} );
+    height: calc(#{$h} - #{$header-height} );
+    min-height: -moz-calc(#{$h} - #{$header-height} );
+    height: -moz-calc(#{$h} - #{$header-height} );
+    min-height: -webkit-calc(#{$h} - #{$header-height} );
+    height: -webkit-calc(#{$h} - #{$header-height} );
+  }
+
+}
+
+
+
+
+
+
+
 
 @media screen and (max-width: 600px) {
 
-  body {
-
-  }
 
   main#nu__homepage{
 
@@ -1525,13 +2179,46 @@ main#nu__homepage{
     div#nu__stories{
 
 
-      // these are the slide next and previous arrows
-      & > #prev,
-      & > #next {
+      div.takeover{
 
+        & > div.nu__close-takeover {
+
+          &:after {
+
+          }
           &:hover {
 
           }
+        }
+        & > a {
+
+        }
+        &  p {
+
+          &:after{
+
+          }
+        }
+
+        &  h2 {
+
+          & > span {
+
+          }
+        }
+        & div.gradient {
+
+
+        }
+      }
+
+
+      & > #prev,
+      & > #next {
+
+      		&:hover {
+
+      		}
       }
 
       & > #prev {
@@ -1545,9 +2232,11 @@ main#nu__homepage{
 
       & > section {
 
-        & > article {
+    		& > article {
 
+          & div.gradient {
 
+          }
           div.nu__overlay-logo{
 
           }
@@ -1562,71 +2251,103 @@ main#nu__homepage{
 
           & > a {
 
-            & p {
-              @include font-1r-c;
-              &:after{
-                @include font-4-c;
-                vertical-align: -19%;
-              }
-            }
+           &:hover ~ div.nu__panel-content  {
 
-          }
-          & h2 {
+             & p {
 
-          }
+             }
+
+
+           }
+
+    	    }
+    			& h2 {
+
+    			}
 
           &:not(.nu__block-rotator){
-            & h2 {
 
-              &:after {
+            & > div.nu__panel-content {
 
-              }
-            }
-          }
-
-
-          &.nu__block-rotator{
-
-
-            & > a {
-
-              &:hover {
-
-              }
-            }
-            & > div.nu__slide-controls{
-
-              & > div{
-
-
-                & > .slider_next,
-                & > .slider_prev {
-
-                  &:hover {
-
-                  }
-                }
-                & > .slider_next {
-
-                }
-                & > .slider_prev {
-
-                }
-              }
-              & > h2 {
+              &  p {
 
                 &:after{
 
                 }
               }
+              & h2 {
+
+                &:after{
+                }
+                & > span {
+
+                }
+
+
+        			}
+
             }
           }
 
-        }
+
+    			&.nu__block-rotator{
+
+
+            &:hover {
+              & h2::after {
+
+              }
+            }
+
+            & > div.bgimage{
+
+            }
+
+    				& > a {
+
+    				}
+            & > h2 {
+              width:85%;
+              &:after{
+                vertical-align: -15%;
+              }
+
+            }
+            & > div.nu__slide-controls{
+              left:50%;
+              right:0;
+              transform: translateX(-50%);
+              -webkit-transform: translateX(-50%);
+              & > div{
+                margin: 0 auto;
+                & > .slider_next,
+                & > .slider_prev {
+
+        					&:hover {
+
+        					}
+        				}
+        				& > .slider_next {
+
+        				}
+        				& > .slider_prev {
+
+        				}
+              }
+
+            }
+
+            & div.gradient {
+
+
+            }
+    			}
+
+    		}
 
 
 
-      }
+    	}
 
 
       & > section.panel-1{
@@ -1670,22 +2391,495 @@ main#nu__homepage{
 
       & > section.panel-3{
         & > article {
+         display: block;
+         &:nth-child(1){
 
-          &:nth-child(1){
+         }
+         &:nth-child(2){
 
-          }
-          &:nth-child(2){
+         }
+         &:nth-child(3){
 
-          }
-          &:nth-child(3){
+         }
+         &:nth-child(4){
 
-          }
-          &:nth-child(4){
-
-          }
-        }
+         }
+       }
       }
+
+
     }
   }
 
+
+
+
+
+
+
 }
+
+//
+// @media screen and (max-width: 600px) {
+//
+//   body {
+//
+//   }
+//
+//   main#nu__homepage{
+//
+//
+//
+//
+//     div#nu__seo-content{
+//
+//     }
+//
+//
+//     div#nu__stories{
+//
+//
+//       // these are the slide next and previous arrows
+//       & > #prev,
+//       & > #next {
+//
+//           &:hover {
+//
+//           }
+//       }
+//
+//       & > #prev {
+//
+//       }
+//
+//       & > #next {
+//
+//       }
+//
+//
+//       & > section {
+//
+//         & > article {
+//
+//
+//           div.nu__overlay-logo{
+//
+//           }
+//
+//           &:hover {
+//
+//             & > a{
+//
+//             }
+//           }
+//
+//
+//           & > a {
+//
+//             & p {
+//               @include font-1r-c;
+//               &:after{
+//                 @include font-4-c;
+//                 vertical-align: -19%;
+//               }
+//             }
+//
+//           }
+//           & h2 {
+//
+//           }
+//
+//           &:not(.nu__block-rotator){
+//             & h2 {
+//
+//               &:after {
+//
+//               }
+//             }
+//           }
+//
+//
+//           &.nu__block-rotator{
+//
+//
+//             & > a {
+//
+//               &:hover {
+//
+//               }
+//             }
+//             & > div.nu__slide-controls{
+//
+//               & > div{
+//
+//
+//                 & > .slider_next,
+//                 & > .slider_prev {
+//
+//                   &:hover {
+//
+//                   }
+//                 }
+//                 & > .slider_next {
+//
+//                 }
+//                 & > .slider_prev {
+//
+//                 }
+//               }
+//               & > h2 {
+//
+//                 &:after{
+//
+//                 }
+//               }
+//             }
+//           }
+//
+//         }
+//
+//
+//
+//       }
+//
+//
+//       & > section.panel-1{
+//         & > article {
+//
+//           &:nth-child(1){
+//
+//           }
+//           &:nth-child(2){
+//
+//           }
+//           &:nth-child(3){
+//
+//           }
+//           &:nth-child(4){
+//
+//           }
+//           &:nth-child(5){
+//
+//
+//           }
+//         }
+//       }
+//       & > section.panel-2{
+//         & > article {
+//
+//           &:nth-child(1){
+//
+//           }
+//           &:nth-child(2){
+//
+//           }
+//           &:nth-child(3){
+//
+//           }
+//           &:nth-child(4){
+//
+//           }
+//         }
+//       }
+//
+//       & > section.panel-3{
+//         & > article {
+//
+//           &:nth-child(1){
+//
+//           }
+//           &:nth-child(2){
+//
+//           }
+//           &:nth-child(3){
+//
+//           }
+//           &:nth-child(4){
+//
+//           }
+//         }
+//       }
+//     }
+//   }
+//
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// main#nu__homepage{
+//
+//
+//
+//
+//   div#nu__seo-content{
+//
+//   }
+//
+//
+//   div#nu__stories{
+//
+//
+//     div.takeover{
+//
+//       & > div.nu__close-takeover {
+//
+//         &:after {
+//
+//         }
+//         &:hover {
+//
+//         }
+//       }
+//       & > a {
+//
+//       }
+//       &  p {
+//
+//         &:after{
+//
+//         }
+//       }
+//       &  h2 {
+//
+//         & > span {
+//
+//         }
+//       }
+//       & div.gradient {
+//
+//       }
+//     }
+//
+//
+//     & > #prev,
+//     & > #next {
+//
+//     		&:hover {
+//
+//     		}
+//     }
+//
+//     & > #prev {
+//
+//     }
+//
+//     & > #next {
+//
+//     }
+//
+//
+//     & > section {
+//
+//   		& > article {
+//
+//         & div.gradient {
+//
+//         }
+//         div.nu__overlay-logo{
+//
+//         }
+//
+//         &:hover {
+//
+//           & > a{
+//
+//           }
+//         }
+//
+//
+//         & > a {
+//
+//          &:hover ~ div.nu__panel-content  {
+//
+//            & p {
+//
+//            }
+//
+//          }
+//
+//   	    }
+//   			& h2 {
+//
+//   			}
+//
+//         &:not(.nu__block-rotator){
+//
+//           & > div.nu__panel-content {
+//
+//             & p {
+//
+//               &:after{
+//
+//               }
+//     				}
+//             & h2 {
+//
+//               & > span {
+//
+//               }
+//
+//
+//       			}
+//
+//           }
+//         }
+//
+//
+//   			&.nu__block-rotator{
+//
+//
+//           &:hover {
+//             & h2::after {
+//
+//             }
+//           }
+//
+//           & > div.bgimage{
+//
+//           }
+//
+//   				& > a {
+//
+//   				}
+//           & > h2 {
+//
+//             &:after{
+//
+//             }
+//
+//           }
+//           & > div.nu__slide-controls{
+//
+//             & > div{
+//
+//               & > .slider_next,
+//               & > .slider_prev {
+//
+//       					&:hover {
+//
+//       					}
+//       				}
+//       				& > .slider_next {
+//
+//       				}
+//       				& > .slider_prev {
+//
+//       				}
+//             }
+//
+//           }
+//
+//           & div.gradient {
+//
+//           }
+//   			}
+//
+//   		}
+//
+//
+//
+//   	}
+//
+//
+//     & > section.panel-1{
+//       & > article {
+//         &:nth-child(1){
+//
+//         }
+//         &:nth-child(2){
+//
+//         }
+//         &:nth-child(3){
+//
+//         }
+//         &:nth-child(4){
+//
+//         }
+//         &:nth-child(5){
+//
+//
+//         }
+//       }
+//     }
+//     & > section.panel-3{
+//       & > article {
+//         &:nth-child(1){
+//
+//         }
+//         &:nth-child(2){
+//
+//         }
+//         &:nth-child(3){
+//
+//         }
+//         &:nth-child(4){
+//
+//         }
+//       }
+//     }
+//
+//     & > section.panel-2{
+//       & > article {
+//         &:nth-child(1){
+//
+//         }
+//         &:nth-child(2){
+//
+//         }
+//         &:nth-child(3){
+//
+//         }
+//         &:nth-child(4){
+//
+//         }
+//       }
+//     }
+//
+//
+//   }
+// }
