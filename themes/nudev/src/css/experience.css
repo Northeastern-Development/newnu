@@ -138,7 +138,7 @@ main#nu__static section.leftright {
       main#nu__static section.leftright a:hover div.content > div > h3:after {
         visibility: visible; }
       main#nu__static section.leftright a:hover div.image > div {
-        transform: scale(1.2);
+        transform: scale(1.1);
         transition: all .5s; }
   main#nu__static section.leftright > a > div {
     min-height: 400px; }

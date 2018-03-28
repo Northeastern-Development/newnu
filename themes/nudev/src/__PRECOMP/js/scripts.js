@@ -179,6 +179,18 @@
 
 
 
+			// this will listen for a user to close the hp takeover
+			$('div.takeover').on("click",".nu__close-takeover",function(e){
+
+				// we may want to set a cookie or something to remember the choice, TBD
+
+				$('div.takeover').fadeOut(250);
+			});
+
+
+
+
+
 			// gather up the rotator panels data and store the object to be used below
 			$.post("/wp-content/themes/nudev/src/hprotatordata.php",function(data){
 					rotators = JSON.parse(data);
