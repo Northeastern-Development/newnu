@@ -181,11 +181,15 @@
 
 			// this will listen for a user to close the hp takeover
 			$('div.takeover').on("click",".nu__close-takeover",function(e){
-
-				// we may want to set a cookie or something to remember the choice, TBD
-
-				$('div.takeover').fadeOut(250);
+				closeTakeover()
 			});
+
+			// this will auto-close the takeover after 7 seconds
+			setTimeout(function(){ closeTakeover(); }, 7000);
+
+			function closeTakeover(){
+				$('div.takeover').fadeOut(250);
+			}
 
 
 
