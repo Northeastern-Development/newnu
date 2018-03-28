@@ -86,7 +86,7 @@
 
 		// need a listener on the search reset button to cover some other misc. functionality
 		$('form#nu__searchbar-form').on('click','div > button[type=reset]',function(e){
-			console.log('reset');
+			// console.log('reset');
 			$('form#nu__searchbar-form > div > input').val('');
 			$('form#nu__searchbar-form > div > input').attr('value','');
 			$('form#nu__searchbar-form > div > label').removeClass('focus');
@@ -321,7 +321,7 @@
 
 
 
-		  // this is the brain for all that is happening
+		  // this will handle the actual slide event for the panels on the homepage
 		  function slidePanels(a){
 		    if (ww >= 900){
 
@@ -344,19 +344,7 @@
 			          $("#prev").css({'display':'block'});
 			        }
 						}
-
-						// console.log('left');
-
-						// $(e).animate({"margin-left":  offset }, aspeeds, 'easeInOutQuart', function() {
-						// TweenLite.to(e,1.5,{ease:Power3.easeOut,marginLeft:offset,onComplete:slideDone});
 						runTween(offset);
-
-
-						//$(e).show("slide", { direction: "right" }, offset);
-		        // $(e).animate({"margin-left":  offset }, aspeeds, 'easeInOutQuart', function() {
-		        //   inMotion = false;
-		        //   $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
-		        // });
 		      }else if (a === 'Right' && currentPanel > 0){//this moves the panels to the left
 		        offset -= windowWidth
 		        currentPanel--;
@@ -370,17 +358,7 @@
 			          $("#next").css({'display':'block'});
 			        }
 						}
-
-						//console.log('right');
-
-						// TweenLite.to(e,1.5,{ease:Power3.easeOut,marginLeft:offset,onComplete:slideDone});
 						runTween(offset);
-
-						//$(e).show("slide", { direction: "left" }, offset);
-		        // $(e).animate({"margin-left":  offset }, aspeeds, 'easeInOutQuart', function() {
-		        //   inMotion = false;
-		        //   $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
-		        // });
 		      }
 
 					function runTween(a){
@@ -391,12 +369,6 @@
 				        $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
 						}
 					}
-
-					// function slideDone(){
-					// 		console.log("slide finished");
-					// 		inMotion = false;
-			    //     $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
-					// }
 
 		    }
 		  }
@@ -436,18 +408,20 @@
 			$('#nu__iamnav > section > div > ul > li.active').removeClass('active');
 			$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
 
-			allowScrollOrNot();
+			// allowScrollOrNot();
 
 			// if we are on the search page, we need to restrict opening the search again on top of itself
 			if($('body').hasClass('search')){
 				$('input#nu__search-toggle').prop('checked',false);
-				allowScrollOrNot();
+				// allowScrollOrNot();
 			}
 
-			// check to see if we need to collapse the footer if it is already open
+			// check to see if we need to collapse the footer if it is already open (homepage only)
 			if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
 				$('footer#nu__global-footer').addClass('collapse');
 			}
+
+			allowScrollOrNot();
 
 		});
 
@@ -474,8 +448,8 @@
 			if($('input#nu__search-toggle').prop('checked') || $('input#nu__iamnav-toggle').prop('checked') || $('input#nu__supernav-toggle').prop('checked')){
 				$('html').css({'overflow-y':'hidden'});
 			}else{
-				//$('html').css({'overflow-y':'scroll'});
-				$('html').css({'overflow':'hidden'});
+				$('html').css({'overflow-y':'scroll'});
+				// $('html').css({'overflow':'hidden'});
 			}
 
 		}
