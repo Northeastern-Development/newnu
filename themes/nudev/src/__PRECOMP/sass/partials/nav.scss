@@ -750,18 +750,48 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
 
 
   @media screen and (max-width: 680px) {
+
+    $s: 100px;
+    $hh: 100%;
+    $header-height: 100px;
+    #nu__supernav,
+    #nu__iamnav,
+    #nu__searchbar{
+
+      margin: $header-height 0 0 0;
+
+    }
+
     nav.nu__mainmenu{
       left: 0;
       right: inherit;
       height: 40px;
       line-height: 40px;
       margin: 55px 0 0 0;
-      //background:red;
+
     }
 
     // div#nu__mainmenu-iamnav, div#nu__mainmenu-search, div#nu__mainmenu-supernav {
     //   height:40px;
     // }
+
+    #nu__supernav > section, #nu__iamnav > section, #nu__searchbar > section {
+      height: calc(#{$hh} - #{$s});
+      height: -miz-calc(#{$hh} - #{$s});
+      height: -webkit-calc(#{$hh} - #{$s});
+      min-height: calc(#{$hh} - #{$s});
+      min-height: -moz-calc(#{$hh} - #{$s});
+      min-height: -webkit-calc(#{$hh} - #{$s});
+    }
+
+    #nu__supernav > section > div.items, #nu__iamnav > section > div.items, #nu__searchbar > section > div.items {
+      min-height: calc(#{$hh} - #{$s});
+      height: calc(#{$hh} - #{$s});
+      min-height: -moz-calc(#{$hh} - #{$s});
+      height: -moz-calc(#{$hh} - #{$s});
+      min-height: -webkit-calc(#{$hh} - #{$s});
+      height: -webkit-calc(#{$hh} - #{$s});
+    }
 
     div#nu__mainmenu-iamnav{
       width: 74px;

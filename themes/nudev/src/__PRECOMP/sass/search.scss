@@ -159,7 +159,7 @@ main#nu__search{
               left: 0;
               @include font-1r-l;
               color: rgba($brand_colors-grayW,1.0);
-              height: 20px;
+              //height: 20px;
             }
             &:focus ~ .reset{
               color: rgba($brand_colors-white,1.0);

@@ -247,8 +247,7 @@ main#nu__search {
               color: #979797;
               line-height: 2.8rem;
               text-align: left;
-              color: #979797;
-              height: 20px; }
+              color: #979797; }
             main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div > input:focus ~ .reset {
               color: #fffffe;
               pointer-events: auto; }
