@@ -41,7 +41,7 @@ function nudev_conditional_styles(){
 
 
   // load static page styles
-  if(is_page_template('templates/template-static.php')){
+  if(is_page_template('templates/template-static.php') || is_page_template('templates/template-experience.php')){
   // if(is_page('emergency-information')){
     wp_register_style('staticcss', get_template_directory_uri() . '/css/static.css', array(), '1.0');
     wp_enqueue_style('staticcss');
@@ -54,6 +54,13 @@ function nudev_conditional_styles(){
   if(get_post_type() == 'nualerts'){
     wp_register_style('staticcss', get_template_directory_uri() . '/css/static.css', array(), '1.0');
     wp_enqueue_style('staticcss');
+  }
+
+
+  // load experience page styles
+  if(is_page_template('templates/template-experience.php')){
+    wp_register_style('experiencecss', get_template_directory_uri() . '/css/experience.css', array(), '1.0');
+    wp_enqueue_style('experiencecss');
   }
 
 }
