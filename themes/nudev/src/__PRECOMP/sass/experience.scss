@@ -154,8 +154,10 @@
      & > a > div{
 
        &.content{
-
+         align-items: flex-start;
+         min-height: auto;
          width:100%;
+
 
          & h3{
            width:100%;
@@ -180,7 +182,7 @@
      &:nth-child(even){
        & > a > div{
          &:nth-child(1){
-           margin:0;
+           margin:($gutter / 2) 0 0 0;
            order: 2;
 
          }
@@ -196,7 +198,7 @@
          }
          &:nth-child(2){
            order: 2;
-           margin:0;
+           margin:($gutter / 2) 0 0 0;
          }
        }
      }
@@ -208,8 +210,7 @@
 
 }
 
-
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 600px) {
   main#nu__static{
 
    section.leftright{
@@ -219,7 +220,9 @@
        &:hover{
 
          & div.content > div{
+
            & > h3{
+
              &:after{
 
              }
@@ -237,7 +240,7 @@
 
 
          & h3{
-
+           @include font-3l-l;
            &:after{
 
            }
@@ -272,7 +275,7 @@
 
          }
          &:nth-child(2){
-           
+
          }
        }
      }
@@ -282,3 +285,78 @@
  }
 
 }
+
+
+// @media only screen and (max-width: 620px) {
+//   main#nu__static{
+//
+//    section.leftright{
+//
+//      & a{
+//
+//        &:hover{
+//
+//          & div.content > div{
+//            & > h3{
+//              &:after{
+//
+//              }
+//            }
+//          }
+//          & div.image > div{
+//
+//          }
+//        }
+//      }
+//      & > a > div{
+//
+//        &.content{
+//
+//
+//
+//          & h3{
+//
+//            &:after{
+//
+//            }
+//          }
+//          & p{
+//
+//          }
+//        }
+//        &.image{
+//
+//
+//
+//          & > div{
+//
+//          }
+//        }
+//      }
+//      &:nth-child(even){
+//        & > a > div{
+//          &:nth-child(1){
+//
+//
+//          }
+//          &:nth-child(2){
+//
+//          }
+//        }
+//      }
+//      &:nth-child(odd){
+//        & > a > div{
+//          &:nth-child(1){
+//
+//          }
+//          &:nth-child(2){
+//
+//          }
+//        }
+//      }
+//
+//    }
+//
+//  }
+//
+// }
