@@ -527,9 +527,13 @@
 					offset = 0;
 
 
-					// need to reset the next and previous arrows in here as well to be ready again before we hide them
+					// hide the next and previous arrows for the slider on the homepage as the content has stacked
+					$('#next,#prev').fadeOut(200);
 
-
+				}else{	// we have gone above 900, reset the next and previous arrows if not already visible
+					if($('#next').css('display') == 'none'){
+						$('#next').fadeIn(200);
+					}
 				}
 
 
