@@ -115,7 +115,85 @@
 
 
 
+@media only screen and (max-width: 1280px) {
+  $gutter: 15px;
 
+  main#nu__static{
+
+   section.leftright{
+     margin: ($gutter * 1.7) auto 0 auto;
+     & a{
+
+       &:hover{
+
+         & div.content > div{
+           & > h3{
+
+             &:after{
+
+             }
+           }
+         }
+         & div.image > div{
+
+         }
+       }
+     }
+     & > a > div{
+
+       &.content{
+
+
+
+         & h3{
+
+            @include font-5r-l;
+           &:after{
+
+           }
+         }
+         & p{
+           padding: ($gutter / 2) ($gutter * 2) 0 0;
+           margin: ($gutter / 2) 0 0 0;
+         }
+       }
+       &.image{
+
+
+
+         & > div{
+
+         }
+       }
+     }
+     &:nth-child(even){
+       & > a > div{
+         &:nth-child(1){
+
+
+         }
+         &:nth-child(2){
+
+         }
+       }
+     }
+     &:nth-child(odd){
+       & > a > div{
+         &:nth-child(1){
+
+         }
+         &:nth-child(2){
+
+         }
+       }
+     }
+
+   }
+
+  }
+
+
+}
 
 
 
@@ -141,6 +219,7 @@
 
          & div.content > div{
            & > h3{
+
              &:after{
 
              }
@@ -161,6 +240,7 @@
 
          & h3{
            width:100%;
+            @include font-3l-l;
            &:after{
 
            }

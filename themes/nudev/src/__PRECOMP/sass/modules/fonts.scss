@@ -282,6 +282,13 @@
    text-align: center;
  }
 
+ @mixin font-3b-c{
+   font-size: 2.0rem;
+   font-weight: 700;
+   line-height: 3.2rem;
+   text-align: center;
+ }
+
  @mixin font-4-c{
    font-size: 2.0rem;
    line-height: 3.2rem;

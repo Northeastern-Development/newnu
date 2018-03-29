@@ -54,6 +54,7 @@ nav.nu__mainmenu{
     }
     &:checked ~ label{
       color: rgba($brand_colors-white, 1.0);
+      font-weight:700;
     }
     &:checked ~ div#nu__supernav,
     &:checked ~ div#nu__iamnav,
@@ -320,6 +321,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
             text-transform: uppercase;
             line-height: $lineH;
             border-bottom: solid rgba($brand_colors-beige,0.2) 1px;
+            color:  rgba($brand_colors-beige, 1.0);
             &.featured{
               line-height: 0;
               border: none;
@@ -330,6 +332,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
               }
               a {
                 color: rgba($brand_colors-white,1.0);
+
                 border-bottom: none;
                 //@include font-2l-l;
                 @include font-10l-l;
@@ -364,6 +367,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
               background: rgba($brand_colors-beige, 1.0);
               color: rgba($brand_colors-black,1.0);
               cursor: pointer;
+              font-weight: 700;
             }
             & > ul{  // this is the list of items shown on the right in the white space
               display: none;
@@ -548,6 +552,192 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
 
 
 
+  @media only screen and (max-width: 1280px) {
+
+    $gutter: 15px;
+
+    #nu__supernav,
+    #nu__iamnav,
+    #nu__searchbar{
+
+
+
+      &.utilitystyle{
+
+      }
+      &.autoshow{
+
+      }
+      & > section{
+
+        // background: blue;
+
+
+        & > div.search{
+
+        }
+        & > div.fixedbg{
+
+          & > div{
+
+            &:nth-child(1){
+
+            }
+            &:nth-child(2){
+
+            }
+          }
+        }
+        & > div.items{
+
+          & > ul{
+
+            & > li{
+
+              padding: 0 $gutter 0 $gutter;
+
+              &.featured{
+
+                &:last-child{
+
+                }
+                a {
+
+                  & > div{
+
+                  }
+                }
+                &:hover{
+
+                  a{
+                    & > div{
+                      &:nth-child(2){
+
+                      }
+                    }
+                  }
+                }
+                img{
+
+                }
+              }
+              &.active,
+              &:hover{
+
+              }
+              & > ul{  // this is the list of items shown on the right in the white space
+
+                & > li{
+                  margin: 0 $gutter 10px $gutter;
+
+
+                  &:first-child{
+
+                    margin: 12px 0 12px $gutter;
+
+                  }
+                  & > a{
+
+                    &:hover{
+
+                      & > div{
+                        &:nth-child(2){
+                          & > span{
+
+                          }
+                        }
+                      }
+                    }
+                    & > div{
+                      //float: left;
+                      &:nth-child(1){
+
+                        & > img{
+
+                        }
+                      }
+                      &:nth-child(2){
+
+                      }
+                    }
+                  }
+                }
+              }
+              &.active > ul{
+
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // small tweaks to make search different from the other navigational panels
+    #nu__searchbar{
+      & > section{
+      
+        & > form{
+
+          margin: 0 $gutter $gutter $gutter;
+
+          & > p{
+
+          }
+          & > div{
+
+            & > label{
+              &.label{
+
+              }
+              &.focus{
+
+              }
+            }
+            & > input{
+
+              margin: 20px 0 $gutter 0;
+
+              &:focus ~ .label{
+
+              }
+              &:focus ~ .reset{
+
+              }
+            }
+
+            & > button{
+
+              &.reset{
+
+              }
+              &.hidden{
+
+              }
+              &:hover{
+
+              }
+            }
+          }
+          & > ul{
+
+            & > li{
+
+              & > a{
+
+                &:hover{
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+
+  }
+
 
   @media screen and (max-width: 740px) {
     #nu__searchbar{
@@ -598,7 +788,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
         $widthR: 100%;
         $widthT: 100%;
 
-        $lineH: 65px;
+        $lineH: 44px;
 
         $s: 60px;
         $hh: 100%;
@@ -658,7 +848,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
             background: none;
             & > li{
 
-              line-height:40px;
+              line-height:$lineH;
               &.featured{
 
                 &:last-child{

@@ -367,7 +367,26 @@ main#nu__search{
 
 
 
-
+  // @media screen and (max-width: 1280px) {
+  //   $gutter: 15px;
+  //
+  //   main#nu__search {
+  //
+  //     & > section {
+  //
+  //       & > div.nu__searchbar-container {
+  //         & > form#nu__searchbar-form {
+  //
+  //             & > div {
+  //               margin-right:$gutter;
+  //
+  //             }
+  //           }
+  //       }
+  //     }
+  //   }
+  //
+  // }
 
 
 

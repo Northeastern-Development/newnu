@@ -84,6 +84,54 @@ main{
   }
 }
 
+
+
+@media only screen and (max-width: 1280px) {
+
+  h1{
+
+  }
+
+
+  h2{
+
+  }
+
+  h3{
+
+  }
+
+  a{
+    //border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+    &:hover{
+      //color: $brand_colors-red;
+    }
+  }
+
+  h4{
+    @include font-3b-l;
+  }
+
+  h5{
+
+  }
+
+  h6{
+
+  }
+
+  p{
+
+    &:last-of-type{
+
+    }
+  }
+}
+
+
+
+
+
 @media only screen and (max-width: 600px) {
 
   h1{

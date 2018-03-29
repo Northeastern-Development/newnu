@@ -114,14 +114,22 @@
 
 
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1280px) {
+
+  $gutter: 15px;
 
   main#nu__static{
 
    section.hero{
-
+     margin: 0 0 ($gutter * 2) 0;
      & > div{
-
+       margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
+       & > h2 {
+         @include font-6l-c;
+       }
+       & > h3 {
+         @include font-2l-c;
+       }
      }
    }
 
@@ -129,28 +137,30 @@
    section.intro{
 
      & > h1{
-
+       margin: 0 0 ($gutter / 2) 0;
+       @include font-5r-l;
      }
    }
 
 
    section.fullwidth{
-
+     margin: ($gutter * 1.7) auto 0 auto;
+     padding: $gutter 0 0 0;
      & > h4{
-
+       @include font-3b-c;
      }
 
    }
 
 
    section{
-
+     margin: ($gutter * 1.7) auto 0 auto;
      & > ul{
        width: $content-width-wide;
-       margin: 0 auto;
-
+       //margin: 0 auto;
+       margin: $gutter auto 0 auto;
        & > li{
-
+         margin: 0 $gutter $gutter 0;
           & a{
 
           }
@@ -165,25 +175,31 @@
 
 
    section:last-child{
-
+     margin: ($gutter * 1.7) auto 0 auto;
+     padding-bottom: ($gutter * 1.5);
    }
 
  }
 
-
-
 }
 
 
-@media only screen and (max-width: 959px) {
 
+
+@media only screen and (max-width: 959px) {
+  //$gutter: 15px;
   main#nu__static{
 
    section.hero{
 
      & > div{
        width: $content-width;
-
+       & > h2 {
+         @include font-3l-c;
+       }
+       & > h3 {
+         @include font-2l-c;
+       }
      }
    }
 
@@ -191,7 +207,7 @@
    section.intro{
      width: $content-width;
      & > h1{
-
+       @include font-3l-l;
      }
    }
 
@@ -285,7 +301,7 @@
        & > li{
          //flex: 0 0 45%;
          margin-right:0;
-         
+
           & a{
 
           }
@@ -314,7 +330,65 @@
 
 
 
+@media only screen and (max-width: 440px) {
 
+  main#nu__static{
+
+   section.hero{
+
+     & > div{
+
+     }
+   }
+
+
+   section.intro{
+
+     & > h1{
+
+     }
+   }
+
+
+   section.fullwidth{
+
+     & > h4{
+       margin:0 10vw;
+     }
+
+   }
+
+
+   section{
+
+     & > ul{
+
+
+       & > li{
+
+
+          & a{
+
+          }
+          & h6{
+            & > a{
+
+            }
+          }
+       }
+     }
+   }
+
+
+   section:last-child{
+
+   }
+
+ }
+
+
+
+}
 
 
 
