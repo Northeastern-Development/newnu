@@ -183,22 +183,25 @@ main#nu__static {
 
 @media only screen and (max-width: 959px) {
   main#nu__static section.hero > div {
-    width: 97vw; }
+    width: 80vw; }
   main#nu__static section.intro {
-    width: 97vw; }
+    width: 80vw; }
+  main#nu__static section.fullwidth > ul {
+    width: 80vw; }
   main#nu__static section {
     width: 80vw; }
     main#nu__static section > ul {
       flex-wrap: wrap; }
       main#nu__static section > ul > li {
-        flex: 0 0 45%; } }
+        flex: 0 0 45%;
+        margin-right: 10%; }
+        main#nu__static section > ul > li:nth-child(even) {
+          margin-right: 0; } }
 
 @media only screen and (max-width: 620px) {
-  main#nu__static section.hero > div {
-    width: 88vw; }
-  main#nu__static section.intro {
-    width: 88vw; }
   main#nu__static section > ul {
-    width: 88vw;
+    width: 80vw;
     margin: 0 auto;
-    flex-direction: column; } }
+    flex-direction: column; }
+    main#nu__static section > ul > li {
+      margin-right: 0; } }
