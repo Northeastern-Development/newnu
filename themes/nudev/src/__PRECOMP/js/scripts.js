@@ -1,19 +1,26 @@
+var windowSize = Array(0,0);
+var rotators = null;
+var contentAreaHeight = 0;
+var cNav = null;
+var debug = true;
+var showSize = false;
+var sizeBreak = 900;
+var isSafari = /safari/i.test(navigator.userAgent);
+
 (function(root,$,undefined){
 	"use strict";
 
 	$(function(){
 
 		// set up some common animation speeds
-		var animationSpeeds = Array(
-			 200
-			,1500
-		);
-		var windowSize = Array(0,0);
-		var rotators = null;
-		var contentAreaHeight = 0;
-		var cNav = null;
-		var debug = true;
-		var showSize = false;
+		// var windowSize = Array(0,0);
+		// var rotators = null;
+		// var contentAreaHeight = 0;
+		// var cNav = null;
+		// var debug = true;
+		// var showSize = false;
+		// var sizeBreak = 900;
+		// var isSafari = /safari/i.test(navigator.userAgent);
 
 
 
@@ -44,6 +51,10 @@
 
 
 
+		/* ***************************************************************************
+		The following is a set of tools and features for all pages as soon as they
+		are loaded
+		*************************************************************************** */
 
 		// we need to set the main content offset based on: utility nav height, alerts height, and main header height
 		$("main").css({
@@ -56,7 +67,6 @@
 
 		// if this file has loaded, we want to append an option to let the page know JS is working
 		$('body').addClass('nu-js');
-
 
 
 
@@ -86,7 +96,6 @@
 
 		// need a listener on the search reset button to cover some other misc. functionality
 		$('form#nu__searchbar-form').on('click','div > button[type=reset]',function(e){
-			// console.log('reset');
 			$('form#nu__searchbar-form > div > input').val('');
 			$('form#nu__searchbar-form > div > input').attr('value','');
 			$('form#nu__searchbar-form > div > label').removeClass('focus');
@@ -119,11 +128,6 @@
 
 
 
-		// $('body.search main section').css({'height':contentAreaHeight,'min-height':contentAreaHeight});
-
-
-
-
 
 		// we need to pass the browser window size to PHP so that we can better tailor responsive imagery all around
 		function getWindowSize(){
@@ -146,6 +150,17 @@
 
 
 
+		// we need to perform some tweaks to the site if we are below the break size on load
+		if(windowSize[1] < sizeBreak){
+			navReset();
+		}
+
+		/* ************************************************************************ */
+
+
+
+
+
 
 		/* ***************************************************************************
 		The following is a set of tools and features for the homepage
@@ -154,16 +169,14 @@
 
 			// local vars within the home section
 			var inMotion = false;
-	    var windowWidth = $(window).width() * -1;
+	    var windowWidth = windowSize[1] * -1;
 	    var offset = 0;
 	    var currentPanel = 0;
 	    var panelCount = 3;
-			var isSafari = /safari/i.test(navigator.userAgent);
-	    var aspeeds = (isSafari?1500:1500);
-			var sizeBreak = 900;
-			var ww = $(window).width();
 	    var myPanels = document.getElementById('nu__stories');
 			var mc = new Hammer(myPanels);
+			var aspeeds = (isSafari?1500:1500);
+			var takeOverTimeout = 7000;	// 0 = no auto close, otherwise in mls
 
 
 
@@ -171,7 +184,7 @@
 
 			// need to figure out if we need to remove extra height from the content if alerts are visible
 			if(parseInt($('#nu__alerts').height()) > 0){
-				var hpHeight = parseInt($(window).height()) - parseInt($('header').height()) - parseInt($('footer').height());
+				var hpHeight = parseInt(windowSize[0]) - parseInt($('header').height()) - parseInt($('footer').height());
 				$('main#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
 			}
 
@@ -184,9 +197,12 @@
 				closeTakeover()
 			});
 
-			// this will auto-close the takeover after 7 seconds
-			setTimeout(function(){ closeTakeover(); }, 7000);
+			// this will auto-close the takeover after specific time period, if value = 0 then it will not autoclose
+			if(takeOverTimeout > 0 && $('div.takeover').css('display') == 'block'){
+				setTimeout(function(){ closeTakeover(); },takeOverTimeout);
+			}
 
+			// close the actual takeover panel
 			function closeTakeover(){
 				$('div.takeover').fadeOut(250);
 			}
@@ -224,6 +240,14 @@
 				}
 
 				// this will actually perform the content swapping
+
+
+
+				// we will be adding new functionality in here to make the inner rotators look like and contain the
+				// same kind of data as the regular blocks
+
+
+
 				function contentSwap(a){
 					elem.find('div.bgimage,h2').fadeOut(150,function(){	// fade out the rotator content
 						elem.attr('data-cslide',a);	// set the new value of the current slide
@@ -243,7 +267,7 @@
 			// this will activate the left and right arrows to control the slider on the homepage if in debug mode
 			// hidden by default, only appears if JS enabled
 			if(debug){
-				if (ww >= 900){
+				if (windowSize[1] >= sizeBreak){
 				  $('#next').fadeIn(200);
 				}else {
 				  $('#next').fadeOut(200);
@@ -269,7 +293,7 @@
 
 			// this is the event listener for mousewheel only on the homepage for the slider
 			$("body").on('mousewheel', { mousewheel: { behavior: 'debounce', delay: 5 } }, function(event,delta){
-	      if (ww >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false && event.deltaX == 0){
+	      if (windowSize[1] >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false && event.deltaX == 0){
 	        if (event.deltaY <= (isSafari?-1:-15) && currentPanel < 2){
 	          event.preventDefault();
 	          slidePanels('Left');
@@ -288,7 +312,7 @@
 
 			// this is the event listener for the next and previous arrows for the slider
 			$('body').on("click","#prev,#next",function(e){
-				if(ww >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+				if(windowSize[1] >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
 					inMotion = true;
 					if($(this).attr('id') == 'next'){
 						slidePanels('Left');
@@ -304,7 +328,7 @@
 
 			// this is the event listener for the arrow keys for the slider
 			$(document).keydown(function(e){
-					if(ww >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+					if(windowSize[1] >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
 					switch (e.which){
 						case 37:		// left arrow key
 						case 38:    //up arrow key
@@ -339,7 +363,7 @@
 
 		  // this will handle the actual slide event for the panels on the homepage
 		  function slidePanels(a){
-		    if (ww >= 900){
+		    if (windowSize[1] >= sizeBreak){
 
 					// check to see if we need to collapse the footer
 					if(!$('footer#nu__global-footer').hasClass('collapse')){
@@ -380,7 +404,6 @@
 					function runTween(a){
 						TweenLite.to(e,1.5,{ease:Power3.easeOut,marginLeft:a,onComplete:slideDone});
 						function slideDone(){
-								console.log("slide finished");
 								inMotion = false;
 				        $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
 						}
@@ -403,8 +426,6 @@
 		// this will handle some preventitive measures in the main nav regarding overlap of options
 		$('nav').on('click','input#nu__supernav-toggle,input#nu__iamnav-toggle,input#nu__search-toggle',function(){
 
-			console.log($(this));
-
 			// determine which nav we are looking at and whether it is the currently active one, in which case close it
 			if(cNav == null){
 				$(this).prop('checked',true);
@@ -419,17 +440,11 @@
 			}
 
 			// need to reset the first item in the supernav and iamnav menu to be active
-			$('#nu__supernav > section > div > ul > li.active').removeClass('active');
-			$('#nu__supernav > section > div > ul > li:first-child').addClass('active');
-			$('#nu__iamnav > section > div > ul > li.active').removeClass('active');
-			$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
-
-			// allowScrollOrNot();
+			navReset();
 
 			// if we are on the search page, we need to restrict opening the search again on top of itself
 			if($('body').hasClass('search')){
 				$('input#nu__search-toggle').prop('checked',false);
-				// allowScrollOrNot();
 			}
 
 			// check to see if we need to collapse the footer if it is already open (homepage only)
@@ -437,9 +452,28 @@
 				$('footer#nu__global-footer').addClass('collapse');
 			}
 
-			allowScrollOrNot();
+			if(!$('body').hasClass('home')){
+				allowScrollOrNot();
+			}
 
 		});
+
+
+
+
+
+		// this will handle resetting the nav panels
+		function navReset(){
+
+			// every state has to reset the first items from being active
+			$('#nu__supernav > section > div > ul > li.active').removeClass('active');
+			$('#nu__iamnav > section > div > ul > li.active').removeClass('active');
+
+			if(windowSize[1] > sizeBreak){	// above break size, show first cat automagically
+				$('#nu__supernav > section > div > ul > li:first-child').addClass('active');
+				$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
+			}
+		}
 
 
 
@@ -465,7 +499,6 @@
 				$('html').css({'overflow-y':'hidden'});
 			}else{
 				$('html').css({'overflow-y':'scroll'});
-				// $('html').css({'overflow':'hidden'});
 			}
 
 		}
@@ -495,6 +528,8 @@
 
 			setMenuPanels();
 
+			navReset();
+
 			// reset the offset to position content just below the header
 			$("main").css({
 				"margin-top":$("header").outerHeight()
@@ -509,9 +544,7 @@
 
 			if($('body').hasClass('home')){	// we need to make sure that we are resizing and keeping only 1 panel on the screen during resize
 
-				ww = $(window).width();
-
-				// if alerts are showing we need to accoutn for that in the content area of the homepage
+				// if alerts are showing we need to account for that in the content area of the homepage
 				if(parseInt($('#nu__alerts').height()) > 0){
 
 					var hpHeight = parseInt($(window).height()) - parseInt($('header').outerHeight()) - parseInt($('footer').height());
@@ -520,24 +553,24 @@
 				}
 
 
-				// if we are below 900px wide, we will just stack
-				if(ww < 900){
+				// if we are below the size break, we will just stack
+				if(windowSize[1] < sizeBreak){
 					$('#nu__stories').css({'margin-left':'0'});
 					currentPanel = 0;
 					offset = 0;
 
-
 					// hide the next and previous arrows for the slider on the homepage as the content has stacked
 					$('#next,#prev').fadeOut(200);
 
-				}else{	// we have gone above 900, reset the next and previous arrows if not already visible
+				}else{	// we have gone above the break size, reset the next and previous arrows if not already visible
 					if($('#next').css('display') == 'none'){
 						$('#next').fadeIn(200);
 					}
 				}
 
 
-				var newWidth = $(window).width() * -1;
+				// we need to reset the panel sizes on resize to ensure that things slide back and forth correctly
+				var newWidth = windowSize[1] * -1;
 
 				var wDiff = (windowWidth - newWidth);
 
@@ -552,6 +585,7 @@
 				windowWidth = newWidth;
 
 			}
+
 		});
 
 	});

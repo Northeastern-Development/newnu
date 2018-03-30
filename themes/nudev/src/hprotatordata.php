@@ -24,10 +24,15 @@
       $slides[$i][] = count($s['block_slide']);
 
       foreach($s['block_slide'] as $b){
+
+        // print_r($b);
+
         $slides[$i][] = array(
                           $b['block_slide_image']['url']
                           ,$b['block_slide_link']
                           ,$b['block_slide_title']
+                          ,$b['block_slide_description']
+                          ,$b['slide_overlay_logo']['url']
                           ,(isset($b['external_link']) && $b['external_link'] == 1?'_blank':'')
                         );
       }

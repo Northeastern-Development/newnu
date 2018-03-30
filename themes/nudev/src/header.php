@@ -51,9 +51,8 @@
 
 		<?php wp_head(); ?>
 
-		<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/scripts-min.js'></script>
-
 		<script>
+			// this is for the google custom search engine
 			(function() {
 			var cx = '003005722642506293004:ijksvxamcbm';
 			var gcse = document.createElement('script');

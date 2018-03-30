@@ -5,6 +5,10 @@ Page Conditional Scripts
 ********************************************************************** */
 function nudev_conditional_scripts(){
 
+  // we need to load the main js on all pages of the site
+  wp_register_script('mainjs', get_template_directory_uri() . '/js/scripts-min.js', array(), '1.0.0');
+  wp_enqueue_script('mainjs');
+
 
   // if(is_page('')){
   if(is_page_template('templates/template-homepage.php')){
