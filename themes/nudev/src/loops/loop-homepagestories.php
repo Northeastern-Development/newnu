@@ -29,9 +29,9 @@
 
 	//$guideSingle = '<article id="article-%s" style="%s %s" ><a href="%s" title="Click here now to learn more %s" %s><p>%s&nbsp;</p></a><h2><span>%s</span></h2>%s<div class="gradient"></div></article>';
 
-	$guideSingle = '<article id="article-%s" style="%s %s" ><a href="%s" title="Click here now to learn more %s" %s></a><div class="nu__panel-content"><p>%s&nbsp;</p><h2><span>%s</span></h2></div>%s<div class="gradient"></div></article>';
+	$guideSingle = '<article id="article-%s" style="%s %s" ><a href="%s" title="Click here now to learn more %s" %s>%s</a><div class="nu__panel-content"><p>%s&nbsp;</p><h2><span>%s</span></h2></div>%s<div class="gradient"></div></article>';
 
-	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator"><div style="background-image: url(%s);" class="bgimage"></div><a href="%s" target="%s" title="Click here now to learn more %s"></a><h2>%s&nbsp;</h2><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div></div></div>%s<div class="gradient"></div></article>';
+	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator"><div style="background-image: url(%s);" class="bgimage"></div><a href="%s" target="%s" title="Click here now to learn more %s">%s</a><h2>%s&nbsp;</h2><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div></div></div>%s<div class="gradient"></div></article>';
 
 	$iPath = responsive_background_images();	// call the function to figure out the best iamge size to use
 
@@ -52,6 +52,7 @@
 				,$s['block_slide'][0]['block_slide_link']
 				,($s['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
 				,($s['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
+				,$s['block_slide'][0]['block_slide_title']
 				,$s['block_slide'][0]['block_slide_description']
 				,$s['block_slide'][0]['block_slide_title']
 				,(isset($s['block_overlay_logo']) && $s['block_overlay_logo'] != ''?'<div class="nu__overlay-logo"><img src="'.$s['block_overlay_logo']['url'].'" alt="overlay logo" /></div>':'')
@@ -68,6 +69,7 @@
 				,$s['block_slide'][0]['block_slide_link']
 				,($s['block_slide'][0]['external_link'] == '1'?'_blank':'')
 				,($s['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
+				,$s['block_slide'][0]['block_slide_title']
 				,$s['block_slide'][0]['block_slide_title']
 				,(isset($s['block_overlay_logo']) && $s['block_overlay_logo'] != ''?'<div class="nu__overlay-logo"><img src="'.$s['block_overlay_logo']['url'].'" alt="overlay logo" /></div>':'')
 			);

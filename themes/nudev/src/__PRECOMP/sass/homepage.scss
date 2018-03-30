@@ -217,6 +217,7 @@ main#nu__homepage{
   				text-decoration:none;
           z-index: 200;
           border-bottom: none;
+          color: rgba($brand_colors-black,0.0);
          &:hover ~ div.nu__panel-content  {
            background:rgba($brand_colors-black,0.6);
            & p {
