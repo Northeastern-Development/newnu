@@ -233,79 +233,79 @@ footer{
 @media only screen and (max-width: 1064px) {
   footer{
     background-image: none;
-    & a{
-
-    }
+    // & a{
+    //
+    // }
 
 
     // this is for pages that will include the pre-footer area
-    &.addprefooter{
-
-    }
-
-
-
-    &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
-
-      & > div.nu__footer{
-        & > div.nu__footer-hideshow{
-
-          &:before{
-
-          }
-          &:hover{
-
-          }
-        }
-      }
-    }
+    // &.addprefooter{
+    //
+    // }
 
 
-     &.collapse{  // this is the closed state of the footer on the homepage only!
 
-       & > div.nu__footer{
+    // &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
+    //
+    //   & > div.nu__footer{
+    //     & > div.nu__footer-hideshow{
+    //
+    //       &:before{
+    //
+    //       }
+    //       &:hover{
+    //
+    //       }
+    //     }
+    //   }
+    // }
 
-         & > div.nu__footer-hideshow{
 
-          &:before{
-
-          }
-          &:hover{
-
-          }
-         }
-       }
-     }
+     // &.collapse{  // this is the closed state of the footer on the homepage only!
+     //
+     //   & > div.nu__footer{
+     //
+     //     & > div.nu__footer-hideshow{
+     //
+     //      &:before{
+     //
+     //      }
+     //      &:hover{
+     //
+     //      }
+     //     }
+     //   }
+     // }
 
     // this defines the space for the pre-footer on pages that include it
-    & > div.nu__prefooter{
-
-      & > div{
-
-      }
-    }
+    // & > div.nu__prefooter{
+    //
+    //   & > div{
+    //
+    //   }
+    // }
      & > div.nu__footer{
 
-       & > div.nu__footer-hideshow{
-
-         &:hover{
-
-         }
-       }
+       // & > div.nu__footer-hideshow{
+       //
+       //   &:hover{
+       //
+       //   }
+       // }
        & > div{
 
-         & > a{
-
-           & > img,
-           & > svg{
-
-           }
-         }
+         // & > a{
+         //
+         //   & > img,
+         //   & > svg{
+         //
+         //   }
+         // }
             & > div{
 
-              &:nth-child(1){
-
-              }
+              // &:nth-child(1){
+              //
+              // }
               & > p{
                 @include font-1b-l;
               }
@@ -314,30 +314,30 @@ footer{
 
                 & > li{
 
-                  &:last-child{
-
-                  }
+                  // &:last-child{
+                  //
+                  // }
                   & > a{
                     @include font-1l-l;
 
-                    &:hover{
-
-                    }
-                    & > svg{
-
-                    }
+                    // &:hover{
+                    //
+                    // }
+                    // & > svg{
+                    //
+                    // }
                   }
                 }
               }
            }
          & > p{
            @include font-0r-l;
-           & > a{
-
-             &:hover{
-
-             }
-           }
+           // & > a{
+           //
+           //   &:hover{
+           //
+           //   }
+           // }
          }
       }
      }
@@ -348,15 +348,15 @@ footer{
 @media only screen and (max-width: 899px) {
   footer{
 
-    & a{
-
-    }
+    // & a{
+    //
+    // }
 
 
     // this is for pages that will include the pre-footer area
-    &.addprefooter{
-
-    }
+    // &.addprefooter{
+    //
+    // }
 
 
 
@@ -367,12 +367,12 @@ footer{
       & > div.nu__footer{
         & > div.nu__footer-hideshow{
           display:none;
-          &:before{
-
-          }
-          &:hover{
-
-          }
+          // &:before{
+          //
+          // }
+          // &:hover{
+          //
+          // }
         }
       }
     }
@@ -381,82 +381,82 @@ footer{
      &.collapse{  // this is the closed state of the footer on the homepage only!
        height:inherit;
        height:auto;
-       & > div.nu__footer{
-
-         & > div.nu__footer-hideshow{
-
-          &:before{
-
-          }
-          &:hover{
-
-          }
-         }
-       }
+       // & > div.nu__footer{
+       //
+       //   & > div.nu__footer-hideshow{
+       //
+       //    &:before{
+       //
+       //    }
+       //    &:hover{
+       //
+       //    }
+       //   }
+       // }
      }
 
     // this defines the space for the pre-footer on pages that include it
-    & > div.nu__prefooter{
-
-      & > div{
-
-      }
-    }
+    // & > div.nu__prefooter{
+    //
+    //   & > div{
+    //
+    //   }
+    // }
      & > div.nu__footer{
 
-       & > div.nu__footer-hideshow{
-
-         &:hover{
-
-         }
-       }
+       // & > div.nu__footer-hideshow{
+       //
+       //   &:hover{
+       //
+       //   }
+       // }
        & > div{
          margin: 18.75px auto;
-         & > a{
-
-           & > img,
-           & > svg{
-
-           }
-         }
-            & > div{
-
-              &:nth-child(1){
-
-              }
-              & > p{
-
-              }
-
-              & > ul{
-
-                & > li{
-
-                  &:last-child{
-
-                  }
-                  & > a{
-
-
-                    &:hover{
-
-                    }
-                    & > svg{
-
-                    }
-                  }
-                }
-              }
-           }
-         & > p{
-
-           & > a{
-
-             &:hover{
-
-             }
-           }
-         }
+         // & > a{
+         //
+         //   & > img,
+         //   & > svg{
+         //
+         //   }
+         // }
+           //  & > div{
+           //
+           //    &:nth-child(1){
+           //
+           //    }
+           //    & > p{
+           //
+           //    }
+           //
+           //    & > ul{
+           //
+           //      & > li{
+           //
+           //        &:last-child{
+           //
+           //        }
+           //        & > a{
+           //
+           //
+           //          &:hover{
+           //
+           //          }
+           //          & > svg{
+           //
+           //          }
+           //        }
+           //      }
+           //    }
+           // }
+         // & > p{
+         //
+         //   & > a{
+         //
+         //     &:hover{
+         //
+         //     }
+         //   }
+         // }
       }
      }
   }
@@ -466,118 +466,118 @@ footer{
 @media only screen and (max-width: 780px) {
   footer{
     height: auto;
-    & a{
-
-    }
+    // & a{
+    //
+    // }
 
 
     // this is for pages that will include the pre-footer area
-    &.addprefooter{
-
-    }
-
-
-
-    &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
-
-      & > div.nu__footer{
-        & > div.nu__footer-hideshow{
-
-          &:before{
-
-          }
-          &:hover{
-
-          }
-        }
-      }
-    }
+    // &.addprefooter{
+    //
+    // }
 
 
-     &.collapse{  // this is the closed state of the footer on the homepage only!
 
-       & > div.nu__footer{
+    // &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
+    //
+    //   & > div.nu__footer{
+    //     & > div.nu__footer-hideshow{
+    //
+    //       &:before{
+    //
+    //       }
+    //       &:hover{
+    //
+    //       }
+    //     }
+    //   }
+    // }
 
-         & > div.nu__footer-hideshow{
 
-          &:before{
-
-          }
-          &:hover{
-
-          }
-         }
-       }
-     }
+     // &.collapse{  // this is the closed state of the footer on the homepage only!
+     //
+     //   & > div.nu__footer{
+     //
+     //     & > div.nu__footer-hideshow{
+     //
+     //      &:before{
+     //
+     //      }
+     //      &:hover{
+     //
+     //      }
+     //     }
+     //   }
+     // }
 
 
     // this defines the space for the pre-footer on pages that include it
-    & > div.nu__prefooter{
+    // & > div.nu__prefooter{
+    //
+    //   & > div{
+    //
+    //   }
+    // }
 
-      & > div{
-
-      }
-    }
-
-     & > div.nu__footer{
-
-       & > div.nu__footer-hideshow{
-
-         &:hover{
-
-         }
-       }
-       & > div{
-
-         & > a{
-
-           & > img,
-           & > svg{
-
-           }
-         }
-
-            & > div{
-
-              &:nth-child(1){
-
-              }
-              & > p{
-
-              }
-
-              & > ul{
-
-                & > li{
-
-                  &:last-child{
-
-                  }
-                  & > a{
-
-
-                    &:hover{
-
-                    }
-                    & > svg{
-
-                    }
-                  }
-                }
-              }
-           }
-
-         & > p{
-
-           & > a{
-
-             &:hover{
-
-             }
-           }
-         }
-      }
-     }
+     // & > div.nu__footer{
+     //
+     //   & > div.nu__footer-hideshow{
+     //
+     //     &:hover{
+     //
+     //     }
+     //   }
+     //   & > div{
+     //
+     //     & > a{
+     //
+     //       & > img,
+     //       & > svg{
+     //
+     //       }
+     //     }
+     //
+     //        & > div{
+     //
+     //          &:nth-child(1){
+     //
+     //          }
+     //          & > p{
+     //
+     //          }
+     //
+     //          & > ul{
+     //
+     //            & > li{
+     //
+     //              &:last-child{
+     //
+     //              }
+     //              & > a{
+     //
+     //
+     //                &:hover{
+     //
+     //                }
+     //                & > svg{
+     //
+     //                }
+     //              }
+     //            }
+     //          }
+     //       }
+     //
+     //     & > p{
+     //
+     //       & > a{
+     //
+     //         &:hover{
+     //
+     //         }
+     //       }
+     //     }
+     //  }
+     // }
 
   }
 
@@ -589,82 +589,82 @@ footer{
 @media only screen and (max-width: 700px) {
   footer{
 
-    & a{
-
-    }
+    // & a{
+    //
+    // }
 
 
     // this is for pages that will include the pre-footer area
-    &.addprefooter{
-
-    }
-
-
-
-    &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
-
-      & > div.nu__footer{
-        & > div.nu__footer-hideshow{
-
-          &:before{
-
-          }
-          &:hover{
-
-          }
-        }
-      }
-    }
+    // &.addprefooter{
+    //
+    // }
 
 
-     &.collapse{  // this is the closed state of the footer on the homepage only!
 
-       & > div.nu__footer{
+    // &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
+    //
+    //   & > div.nu__footer{
+    //     & > div.nu__footer-hideshow{
+    //
+    //       &:before{
+    //
+    //       }
+    //       &:hover{
+    //
+    //       }
+    //     }
+    //   }
+    // }
 
-         & > div.nu__footer-hideshow{
 
-          &:before{
-
-          }
-          &:hover{
-
-          }
-         }
-       }
-     }
+     // &.collapse{  // this is the closed state of the footer on the homepage only!
+     //
+     //   & > div.nu__footer{
+     //
+     //     & > div.nu__footer-hideshow{
+     //
+     //      &:before{
+     //
+     //      }
+     //      &:hover{
+     //
+     //      }
+     //     }
+     //   }
+     // }
 
 
     // this defines the space for the pre-footer on pages that include it
-    & > div.nu__prefooter{
-
-      & > div{
-
-      }
-    }
+    // & > div.nu__prefooter{
+    //
+    //   & > div{
+    //
+    //   }
+    // }
 
      & > div.nu__footer{
 
-       & > div.nu__footer-hideshow{
-
-         &:hover{
-
-         }
-       }
+       // & > div.nu__footer-hideshow{
+       //
+       //   &:hover{
+       //
+       //   }
+       // }
        & > div{
 
-         & > a{
-
-           & > img,
-           & > svg{
-
-           }
-         }
+         // & > a{
+         //
+         //   & > img,
+         //   & > svg{
+         //
+         //   }
+         // }
 
             & > div{
 
-              &:nth-child(1){
-
-              }
+              // &:nth-child(1){
+              //
+              // }
               & > p{
                 //float:none;
                 width: auto;
@@ -675,15 +675,15 @@ footer{
 
                 & > li{
 
-                  &:last-child{
-
-                  }
+                  // &:last-child{
+                  //
+                  // }
                   & > a{
 
 
-                    &:hover{
-
-                    }
+                    // &:hover{
+                    //
+                    // }
                     & > svg{
                       height:25px;
                     }
@@ -692,15 +692,15 @@ footer{
               }
            }
 
-         & > p{
-
-           & > a{
-
-             &:hover{
-
-             }
-           }
-         }
+         // & > p{
+         //
+         //   & > a{
+         //
+         //     &:hover{
+         //
+         //     }
+         //   }
+         // }
       }
      }
 
@@ -715,76 +715,76 @@ footer{
 @media only screen and (max-width: 575px) {
   footer{
     height: auto;
-    & a{
-
-    }
+    // & a{
+    //
+    // }
 
 
     // this is for pages that will include the pre-footer area
-    &.addprefooter{
-
-    }
-
-
-
-    &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
-
-      & > div.nu__footer{
-        & > div.nu__footer-hideshow{
-
-          &:before{
-
-          }
-          &:hover{
-
-          }
-        }
-      }
-    }
+    // &.addprefooter{
+    //
+    // }
 
 
-     &.collapse{  // this is the closed state of the footer on the homepage only!
 
-       & > div.nu__footer{
+    // &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
+    //
+    //   & > div.nu__footer{
+    //     & > div.nu__footer-hideshow{
+    //
+    //       &:before{
+    //
+    //       }
+    //       &:hover{
+    //
+    //       }
+    //     }
+    //   }
+    // }
 
-         & > div.nu__footer-hideshow{
 
-          &:before{
-
-          }
-          &:hover{
-
-          }
-         }
-       }
-     }
+     // &.collapse{  // this is the closed state of the footer on the homepage only!
+     //
+     //   & > div.nu__footer{
+     //
+     //     & > div.nu__footer-hideshow{
+     //
+     //      &:before{
+     //
+     //      }
+     //      &:hover{
+     //
+     //      }
+     //     }
+     //   }
+     // }
 
 
     // this defines the space for the pre-footer on pages that include it
-    & > div.nu__prefooter{
-
-      & > div{
-
-      }
-    }
+    // & > div.nu__prefooter{
+    //
+    //   & > div{
+    //
+    //   }
+    // }
 
      & > div.nu__footer{
 
-       & > div.nu__footer-hideshow{
-
-         &:hover{
-
-         }
-       }
+       // & > div.nu__footer-hideshow{
+       //
+       //   &:hover{
+       //
+       //   }
+       // }
        & > div{
 
-         & > a{
-
-           & > img,
-           & > svg{
-
-           }
-         }
+         // & > a{
+         //
+         //   & > img,
+         //   & > svg{
+         //
+         //   }
+         // }
 
             & > div{
               margin-bottom: 10px;
@@ -794,6 +794,7 @@ footer{
               & > p{
                 float:none;
                 text-align:center;
+                margin-right: 0;
               }
 
               & > ul{
@@ -813,38 +814,38 @@ footer{
                   &:last-child{
 
                   }
-                  & > a{
-                    //text-align: center;
-
-                    &:hover{
-
-                    }
-                    & > svg{
-
-                    }
-                  }
+                  // & > a{
+                  //   //text-align: center;
+                  //
+                  //   &:hover{
+                  //
+                  //   }
+                  //   & > svg{
+                  //
+                  //   }
+                  // }
                 }
 
               }
               &:nth-of-type(2){
                 & > ul {
                   max-width:60%;
-                  & > li {
-
-                  }
+                  // & > li {
+                  //
+                  // }
                 }
               }
            }
 
-         & > p{
-           text-align: center;
-           & > a{
-
-             &:hover{
-
-             }
-           }
-         }
+         // & > p{
+         //   text-align: center;
+         //   & > a{
+         //
+         //     &:hover{
+         //
+         //     }
+         //   }
+         // }
       }
      }
 
