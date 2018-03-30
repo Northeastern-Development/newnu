@@ -224,6 +224,10 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
     width: $wrapper-width;
     margin: $header-height 0 0 0;
 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
     -webkit-transition: visibility 0s, opacity 0.10s linear;
     -moz-transition: visibility 0s, opacity 0.10s linear;
     -ms-transition: visibility 0s, opacity 0.10s linear;
@@ -675,7 +679,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
     // small tweaks to make search different from the other navigational panels
     #nu__searchbar{
       & > section{
-      
+
         & > form{
 
           margin: 0 $gutter $gutter $gutter;

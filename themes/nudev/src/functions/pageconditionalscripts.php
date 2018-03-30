@@ -19,6 +19,8 @@ function nudev_conditional_scripts(){
     wp_enqueue_script('tweenlitecss', get_template_directory_uri() . '/js/CSSPlugin.min.js', array(),'1.20.4');
   	wp_enqueue_script('tweenliteease', get_template_directory_uri() . '/js/EasePack.min.js', array(),'1.20.4');
   	wp_enqueue_script('tweenlite', get_template_directory_uri() . '/js/TweenLite.min.js', array(),'1.20.4');
+    wp_register_script('homepagejs', get_template_directory_uri() . '/js/homepage-min.js', array(), '1.0.0');
+    wp_enqueue_script('homepagejs');
   }
 
 
