@@ -81,19 +81,19 @@
 
 						<div id="nu__mainmenu-supernav">
 							<input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" />
-							<label for="nu__supernav-toggle"id="nu__supernav-toggle-label"></label>
+							<label for="nu__supernav-toggle"id="nu__supernav-toggle-label">Menu</label>
 							<?php if(get_query_var('pagename') != 'main-menu'){ get_template_part('loops/loop-supernav'); } ?>
 						</div>
 
 						<div id="nu__mainmenu-search">
 							<input id="nu__search-toggle" type="checkbox" title="Click to search all of Northeastern University" />
-							<label for="nu__search-toggle" id="nu__search-toggle-label"></label>
+							<label for="nu__search-toggle" id="nu__search-toggle-label">Search</label>
 							<?php get_template_part('loops/loop-searchnav'); ?>
 						</div>
 
 						<div id="nu__mainmenu-iamnav">
 							<input id="nu__iamnav-toggle" type="checkbox" title="Click to show/hide audience selection menu" />
-							<label for="nu__iamnav-toggle"id="nu__iamnav-toggle-label"></label>
+							<label for="nu__iamnav-toggle"id="nu__iamnav-toggle-label">I Am A</label>
 							<?php if(get_query_var('pagename') != 'iam-menu'){ get_template_part('loops/loop-iamnav'); } ?>
 						</div>
 

@@ -53,8 +53,10 @@ nav.nu__mainmenu{
       cursor: pointer;
     }
     &:checked ~ label{
-      color: rgba($brand_colors-white, 1.0);
-      font-weight:700;
+      &:before{
+        color: rgba($brand_colors-white, 1.0);
+        font-weight:700;
+      }
     }
     &:checked ~ div#nu__supernav,
     &:checked ~ div#nu__iamnav,
@@ -76,13 +78,17 @@ label{
   text-transform: uppercase;
   float: right;
   //@include font-2l-l;
-  @include font-10l-l;
-  color: rgba($brand_colors-white, 0.8);
-  line-height: $header-height;
+  // @include font-10l-l;
+  // color: rgba($brand_colors-white, 0.8);
+  font-size: 0;
+  line-height: 90px;
   height: $header-height;
   overflow: hidden;
   &:before{
-
+    line-height: $header-height;
+    height: $header-height;
+    @include font-10l-l;
+    color: rgba($brand_colors-white, 0.8);
   }
   &:after{
     float: right;
@@ -110,9 +116,11 @@ div#nu__mainmenu-supernav{
 label#nu__supernav-toggle-label{
   &:before{
     content: 'Menu';
+    // color: rgba($brand_colors-white, 0.8);
   }
   &:after{
     content: '\E5D2';
+    // color: rgba($brand_colors-white, 0.8);
   }
 }
 
