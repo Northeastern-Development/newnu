@@ -12,7 +12,7 @@
 
 		$return .= '<div><p>Main Campuses</p><ul>';
 
-		$guide = '<li><a href="%s" title="%s" target="_blank">%s</a></li>';
+		$guide = '<li><a href="%s" title="Learn more about our %s campus" target="_blank">%s</a></li>';
 
 		foreach($res as $r){
 
