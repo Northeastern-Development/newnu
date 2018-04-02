@@ -89,7 +89,7 @@
 
 					$fields = get_fields($r->ID);
 
-					$guide = '<li><a href="%s" title="%s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
+					$guide = '<li><a href="%s" title="Learn more %s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
 
 					$return .= sprintf(
 						$guide
@@ -121,7 +121,7 @@
 
 	$res = query_posts($args);
 
-	$guide = '<li class="featured%s"><a href="%s" title="%s%s"%s><div><img src="%s" alt="%s icon" /></div><div>%s</div></a></li>';
+	$guide = '<li class="featured%s"><a href="%s" title="learn more about %s%s"%s><div><img src="%s" alt="%s icon" /></div><div>%s</div></a></li>';
 
 	$iii = 0;
 	foreach($res as $r){
