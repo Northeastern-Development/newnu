@@ -89,7 +89,7 @@
 
 					$fields = get_fields($r->ID);
 
-					$guide = '<li><a href="%s" title="Learn more %s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
+					$guide = '<li><a href="%s" title="Learn more about %s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
 
 					$return .= sprintf(
 						$guide
