@@ -89,13 +89,16 @@
 
 
         function contentSwap(a){
-          elem.find('div.bgimage,h2').fadeOut(150,function(){	// fade out the rotator content
+					console.log(rotators);
+          elem.find('div.bgimage,h2,div.nu__overlay-logo').fadeOut(150,function(){	// fade out the rotator content
             elem.attr('data-cslide',a);	// set the new value of the current slide
             elem.find('div.bgimage').attr('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
             elem.find('a').attr('href',rotators[id][a][1]);	// change the link
-            elem.find('a').attr('target',rotators[id][a][3]);	// change the link target style (local or external)
-            elem.find('h2').html(rotators[id][a][2]);	// change the title of the slide
-            elem.find('div.bgimage,h2').fadeIn(150);	// fade it all back in
+            elem.find('a').attr('target',rotators[id][a][5]);	// change the link target style (local or external)
+						elem.find('p').html(rotators[id][a][3]);	// change the link target style (local or external)
+            elem.find('h2').html('<span>'+rotators[id][a][2]+'</span>');	// change the title of the slide
+						elem.find('div.nu__overlay-logo > img').prop('src',rotators[id][a][4])// swap the overlay logo
+            elem.find('div.bgimage,h2,div.nu__overlay-logo').fadeIn(150);	// fade it all back in
           });
         }
       });
