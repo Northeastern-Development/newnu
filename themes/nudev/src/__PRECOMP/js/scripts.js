@@ -148,7 +148,7 @@ var offset = 0;
 
 
 		// we need to perform some tweaks to the site if we are below the break size on load
-		if(windowSize[1] < sizeBreak){
+		if(windowSize[1] < 740){
 			navReset();
 		}
 
@@ -238,7 +238,7 @@ var offset = 0;
 			$('#nu__supernav > section > div > ul > li.active').removeClass('active');
 			$('#nu__iamnav > section > div > ul > li.active').removeClass('active');
 
-			if(windowSize[1] > sizeBreak){	// above break size, show first cat automagically
+			if(windowSize[1] > 740){	// above break size, show first cat automagically
 				$('#nu__supernav > section > div > ul > li:first-child').addClass('active');
 				$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
 			}
