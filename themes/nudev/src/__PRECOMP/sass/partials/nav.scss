@@ -51,6 +51,9 @@ nav.nu__mainmenu{
     &:hover ~ label{
       color: rgba($brand_colors-white, 1.0);
       cursor: pointer;
+      &:before{
+        color: rgba($brand_colors-white, 1.0);
+      }
     }
     &:checked ~ label{
       &:before{
@@ -77,9 +80,7 @@ nav.nu__mainmenu{
 label{
   text-transform: uppercase;
   float: right;
-  //@include font-2l-l;
-  // @include font-10l-l;
-  // color: rgba($brand_colors-white, 0.8);
+  color: rgba($brand_colors-white, 0.8);
   font-size: 0;
   line-height: 90px;
   height: $header-height;
