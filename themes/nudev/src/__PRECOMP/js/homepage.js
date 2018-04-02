@@ -92,7 +92,8 @@
 					console.log(rotators);
           elem.find('div.bgimage,h2,div.nu__overlay-logo').fadeOut(150,function(){	// fade out the rotator content
             elem.attr('data-cslide',a);	// set the new value of the current slide
-            elem.find('div.bgimage').attr('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
+            // elem.find('div.bgimage').attr('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
+						elem.attr('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
             elem.find('a').attr('href',rotators[id][a][1]);	// change the link
             elem.find('a').attr('target',rotators[id][a][5]);	// change the link target style (local or external)
 						elem.find('p').html(rotators[id][a][3]);	// change the link target style (local or external)
