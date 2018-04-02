@@ -89,47 +89,48 @@ main{
 @media only screen and (max-width: 1280px) {
 
   h1{
-
+    @include font-5r-l;
   }
 
 
   h2{
-
+    @include font-6l-c;
   }
 
   h3{
-
+    @include font-2l-c;
   }
 
-  a{
-    //border-bottom: solid rgba($brand_colors-red,1.0) 1px;
-    &:hover{
-      //color: $brand_colors-red;
-    }
-  }
+
 
   h4{
-    @include font-3b-l;
+    //@include font-3b-l;
+    @include font-3b-c;
   }
 
-  h5{
 
-  }
 
-  h6{
 
-  }
-
-  p{
-
-    &:last-of-type{
-
-    }
-  }
 }
 
 
+@media only screen and (max-width: 959px) {
 
+  h1{
+    @include font-3l-l;
+  }
+
+
+  h2{
+    @include font-3l-c;
+  }
+
+  h3{
+    @include font-2l-c;
+  }
+
+
+}
 
 
 @media only screen and (max-width: 600px) {
@@ -142,22 +143,22 @@ main{
 
   h2{
     //@include font-8l-c;
-    @include font-6l-c;
+    //@include font-3l-c;
   }
 
   h3{
-    @include font-3l-c;
+    //@include font-3l-c;
   }
 
   a{
-    //border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+
     &:hover{
-      //color: $brand_colors-red;
+
     }
   }
 
   h4{
-    @include font-5b-l;
+    //@include font-5b-l;
     margin: 0 0 ($gutter / 1.7) 0;
   }
 

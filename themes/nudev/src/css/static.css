@@ -181,28 +181,12 @@ main#nu__static {
     margin: 0 0 30px 0; }
     main#nu__static section.hero > div {
       margin: 26.25px auto 31.5px auto; }
-      main#nu__static section.hero > div > h2 {
-        font-size: 3.2rem;
-        font-weight: 300;
-        line-height: 4.8rem;
-        text-align: center; }
-      main#nu__static section.hero > div > h3 {
-        font-size: 1.6rem;
-        font-weight: 300;
-        line-height: 2.8rem;
-        text-align: center; }
   main#nu__static section.intro > h1 {
-    margin: 0 0 7.5px 0;
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    text-align: left; }
+    margin: 0 0 7.5px 0; }
   main#nu__static section.fullwidth {
     margin: 25.5px auto 0 auto;
     padding: 15px 0 0 0; }
     main#nu__static section.fullwidth > h4 {
-      font-size: 2.0rem;
-      font-weight: 700;
-      line-height: 3.2rem;
       text-align: center; }
   main#nu__static section {
     margin: 25.5px auto 0 auto; }
@@ -211,6 +195,8 @@ main#nu__static {
       margin: 15px auto 0 auto; }
       main#nu__static section > ul > li {
         margin: 0 15px 15px 0; }
+    main#nu__static section > h4 {
+      text-align: left; }
   main#nu__static section:last-child {
     margin: 25.5px auto 0 auto;
     padding-bottom: 22.5px; } }
@@ -218,23 +204,8 @@ main#nu__static {
 @media only screen and (max-width: 959px) {
   main#nu__static section.hero > div {
     width: 80vw; }
-    main#nu__static section.hero > div > h2 {
-      font-size: 2.0rem;
-      font-weight: 300;
-      line-height: 3.2rem;
-      text-align: center; }
-    main#nu__static section.hero > div > h3 {
-      font-size: 1.6rem;
-      font-weight: 300;
-      line-height: 2.8rem;
-      text-align: center; }
   main#nu__static section.intro {
     width: 80vw; }
-    main#nu__static section.intro > h1 {
-      font-size: 2.0rem;
-      font-weight: 300;
-      line-height: 3.2rem;
-      text-align: left; }
   main#nu__static section.fullwidth > ul {
     width: 80vw; }
   main#nu__static section {
@@ -248,6 +219,8 @@ main#nu__static {
           margin-right: 0; } }
 
 @media only screen and (max-width: 620px) {
+  main#nu__static section.intro > h1 {
+    text-align: left; }
   main#nu__static section > ul {
     width: 80vw;
     margin: 0 auto;

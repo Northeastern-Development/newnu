@@ -506,6 +506,8 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
             background: transparent;
             color: rgba($brand_colors-white,1.0);
             outline: 0;
+            -webkit-appearance: none;
+    border-radius: 0;
             &:focus ~ .label{
               top: 5px;
               left: 0;
@@ -752,6 +754,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   }
 
 
+
   @media screen and (max-width: 740px) {
     #nu__searchbar{
       background:none !important;
@@ -947,6 +950,9 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
       }
     }
 
+    #nu__searchbar>section>form>div>button {
+      height: 47px;
+    }
 
 
   }
@@ -1004,7 +1010,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
       font-size:1.2rem;
       height:40px;
       line-height:40px;
-    
+
       &:after {
         height:40px;
         line-height:50px;
