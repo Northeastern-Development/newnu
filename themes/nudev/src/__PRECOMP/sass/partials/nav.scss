@@ -1003,12 +1003,17 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
     label {
       font-size:1.2rem;
       height:40px;
-          line-height:40px;
-          &:after {
-            height:40px;
-            line-height:50px;
-          }
+      line-height:40px;
+    
+      &:after {
+        height:40px;
+        line-height:50px;
+      }
 
+    }
+
+    label#nu__supernav-toggle-label::before, label#nu__search-toggle-label::before, label#nu__iamnav-toggle-label::before, input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label::before, input#nu__search-toggle:checked ~ label#nu__search-toggle-label::before, input#nu__iamnav-toggle:checked ~ label#nu__iamnav-toggle-label::before  {
+      content:'';
     }
 
   }
