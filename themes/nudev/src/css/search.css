@@ -239,7 +239,9 @@ main#nu__search {
             border-bottom: solid #fffffe 1px;
             background: transparent;
             color: #fffffe;
-            outline: 0; }
+            outline: 0;
+            -webkit-appearance: none;
+            border-radius: 0; }
             main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div > input:focus ~ .label {
               top: 5px;
               left: 0;
@@ -438,7 +440,9 @@ main#nu__search {
         width: auto; }
         main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div {
           margin-right: 30px;
-          width: inherit; } }
+          width: inherit; }
+  main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div button {
+    height: 50px; } }
 
 @media screen and (max-width: 500px) {
   main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div {
@@ -446,7 +450,7 @@ main#nu__search {
     margin-right: 0; }
     main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div button {
       width: 10vw;
-      height: 45px; }
+      height: 47px; }
     main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div input {
       width: 62vw; } }
 

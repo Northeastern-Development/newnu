@@ -125,10 +125,10 @@
      & > div{
        margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
        & > h2 {
-         @include font-6l-c;
+         //@include font-6l-c;
        }
        & > h3 {
-         @include font-2l-c;
+         //@include font-2l-c;
        }
      }
    }
@@ -138,7 +138,7 @@
 
      & > h1{
        margin: 0 0 ($gutter / 2) 0;
-       @include font-5r-l;
+       //@include font-5r-l;
      }
    }
 
@@ -147,7 +147,8 @@
      margin: ($gutter * 1.7) auto 0 auto;
      padding: $gutter 0 0 0;
      & > h4{
-       @include font-3b-c;
+       //@include font-3b-c;
+       text-align:center;
      }
 
    }
@@ -170,6 +171,9 @@
             }
           }
        }
+     }
+     & > h4 {
+       text-align:left;
      }
    }
 
@@ -195,10 +199,10 @@
      & > div{
        width: $content-width;
        & > h2 {
-         @include font-3l-c;
+         //@include font-3l-c;
        }
        & > h3 {
-         @include font-2l-c;
+         //@include font-2l-c;
        }
      }
    }
@@ -207,16 +211,16 @@
    section.intro{
      width: $content-width;
      & > h1{
-       @include font-3l-l;
+       //@include font-3l-l;
      }
    }
 
 
    section.fullwidth{
 
-     & > h4{
-
-     }
+     // & > h4{
+     //
+     // }
      & > ul {
        width: $content-width;
 
@@ -236,22 +240,22 @@
            margin-right:0;
          }
 
-          & a{
-
-          }
-          & h6{
-            & > a{
-
-            }
-          }
+          // & a{
+          //
+          // }
+          // & h6{
+          //   & > a{
+          //
+          //   }
+          // }
        }
      }
    }
 
 
-   section:last-child{
-
-   }
+   // section:last-child{
+   //
+   // }
 
  }
 
@@ -266,29 +270,29 @@
 
   main#nu__static{
 
-   section.hero{
-
-     & > div{
-
-     }
-   }
+   // section.hero{
+   //
+   //   & > div{
+   //
+   //   }
+   // }
 
 
    section.intro{
 
      & > h1{
-
+       text-align:left;
      }
    }
 
 
-   section.fullwidth{
-
-     & > h4{
-
-     }
-
-   }
+   // section.fullwidth{
+   //
+   //   & > h4{
+   //
+   //   }
+   //
+   // }
 
 
    section{
@@ -302,22 +306,22 @@
          //flex: 0 0 45%;
          margin-right:0;
 
-          & a{
-
-          }
-          & h6{
-            & > a{
-
-            }
-          }
+          // & a{
+          //
+          // }
+          // & h6{
+          //   & > a{
+          //
+          //   }
+          // }
        }
      }
    }
 
 
-   section:last-child{
-
-   }
+   // section:last-child{
+   //
+   // }
 
  }
 
@@ -334,20 +338,20 @@
 
   main#nu__static{
 
-   section.hero{
+   // section.hero{
+   //
+   //   & > div{
+   //
+   //   }
+   // }
 
-     & > div{
 
-     }
-   }
-
-
-   section.intro{
-
-     & > h1{
-
-     }
-   }
+   // section.intro{
+   //
+   //   & > h1{
+   //
+   //   }
+   // }
 
 
    section.fullwidth{
@@ -359,30 +363,30 @@
    }
 
 
-   section{
+   // section{
+   //
+   //   & > ul{
+   //
+   //
+   //     & > li{
+   //
+   //
+   //        & a{
+   //
+   //        }
+   //        & h6{
+   //          & > a{
+   //
+   //          }
+   //        }
+   //     }
+   //   }
+   // }
 
-     & > ul{
 
-
-       & > li{
-
-
-          & a{
-
-          }
-          & h6{
-            & > a{
-
-            }
-          }
-       }
-     }
-   }
-
-
-   section:last-child{
-
-   }
+   // section:last-child{
+   //
+   // }
 
  }
 

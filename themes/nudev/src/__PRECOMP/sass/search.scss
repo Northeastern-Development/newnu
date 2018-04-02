@@ -154,6 +154,8 @@ main#nu__search{
             background: transparent;
             color: rgba($brand_colors-white,1.0);
             outline: 0;
+            -webkit-appearance: none;
+            border-radius: 0;
             &:focus ~ .label{
               top: 5px;
               left: 0;
@@ -411,7 +413,14 @@ main#nu__search{
         }
       }
     }
+    main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div button {
+      height:50px;
+    }
   }
+
+
+
+
 
   @media screen and (max-width: 500px) {
     main#nu__search {
@@ -426,7 +435,7 @@ main#nu__search{
                 margin-right:0;
                 & button {
                   width:10vw;
-                  height:45px;
+                  height:47px;
                 }
                 & input {
                   width:62vw;
