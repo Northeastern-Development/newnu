@@ -925,7 +925,7 @@ main#nu__homepage{
 
     			}
 
-          &:not(.nu__block-rotator){
+          //&:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
 
@@ -950,7 +950,7 @@ main#nu__homepage{
         			}
 
             }
-          }
+          //}
 
 
     			&.nu__block-rotator{
@@ -1193,7 +1193,7 @@ main#nu__homepage{
 
     			}
 
-          &:not(.nu__block-rotator){
+          //&:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
 
@@ -1218,7 +1218,7 @@ main#nu__homepage{
         			}
 
             }
-          }
+          //}
 
 
     			&.nu__block-rotator{
@@ -1441,7 +1441,7 @@ main#nu__homepage{
 
     			}
 
-          &:not(.nu__block-rotator){
+          //&:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
 
@@ -1466,7 +1466,7 @@ main#nu__homepage{
         			}
 
             }
-          }
+          //}
 
 
     			&.nu__block-rotator{
@@ -1720,7 +1720,7 @@ main#nu__homepage{
 
     			}
 
-          &:not(.nu__block-rotator){
+          //&:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
 
@@ -1747,7 +1747,7 @@ main#nu__homepage{
         			}
 
             }
-          }
+          //}
 
 
     			&.nu__block-rotator{
@@ -2027,7 +2027,7 @@ main#nu__homepage{
 
     			}
 
-          &:not(.nu__block-rotator){
+          //&:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
 
@@ -2053,7 +2053,7 @@ main#nu__homepage{
         			}
 
             }
-          }
+          //}
 
 
     			&.nu__block-rotator{
@@ -2321,7 +2321,7 @@ main#nu__homepage{
 
     			}
 
-          &:not(.nu__block-rotator){
+          //&:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
 
@@ -2343,7 +2343,7 @@ main#nu__homepage{
         			}
 
             }
-          }
+          //}
 
 
     			&.nu__block-rotator{
@@ -2374,11 +2374,15 @@ main#nu__homepage{
               right:0;
               transform: translateX(-50%);
               -webkit-transform: translateX(-50%);
+
               & > div{
+                width:104px;
                 margin: 0 auto;
                 & > .slider_next,
                 & > .slider_prev {
-
+                  width:42px;
+                  height:42px;
+                  line-height:48px;
         					&:hover {
 
         					}
