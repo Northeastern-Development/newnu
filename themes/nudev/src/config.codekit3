@@ -1312,6 +1312,13 @@
 		"oAP": "\/functions\/admin-prefooter.php",
 		"oF": 0
 		},
+	"\/functions\/admin-programs.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/functions\/admin-programs.php",
+		"oF": 0
+		},
 	"\/functions\/admin-supernav.php": {
 		"cB": 0,
 		"ft": 8192,

@@ -151,6 +151,9 @@ require_once(get_template_directory() . "/functions/admin-supernav.php");
 // set up specific admin tools for menu styles
 require_once(get_template_directory() . "/functions/admin-menustyles.php");
 
+// set up specific admin tools for departments and programs content
+require_once(get_template_directory() . "/functions/admin-programs.php");
+
 // set up specific admin tools for page prefooter content
 require_once(get_template_directory() . "/functions/admin-prefooter.php");
 
