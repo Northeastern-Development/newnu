@@ -31,7 +31,7 @@
 
 	$guideSingle = '<article id="article-%s" style="%s %s"><a href="%s" title="Click here now to learn more %s" %s>%s</a><div class="nu__panel-content"><p>%s&nbsp;</p><h2><span>%s</span></h2></div>%s<div class="gradient"></div></article>';
 
-	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator" style="%s %s"><a href="%s" target="%s" title="Click here now to learn more %s">%s</a><div class="nu__panel-content"><p>%s&nbsp;</p><h2><span>%s</span></h2></div><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div></div></div>%s<div class="gradient"></div></article>';
+	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator" style="%s %s"><a href="%s" target="%s" title="Click here now to learn more %s">%s</a><div class="nu__panel-content"><p>%s&nbsp;</p><h2><span>%s</span></h2></div><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div></div></div><div class="nu__overlay-logo">%s</div><div class="gradient"></div></article>';
 
 	$iPath = responsive_background_images();	// call the function to figure out the best image size to use
 
@@ -57,7 +57,7 @@
 				,$s['block_slide'][0]['block_slide_title']
 				,$s['block_slide'][0]['block_slide_description']
 				,$s['block_slide'][0]['block_slide_title']
-				,(isset($s['block_overlay_logo']) && $s['block_overlay_logo'] != ''?'<div class="nu__overlay-logo"><img src="'.$s['block_overlay_logo']['url'].'" alt="overlay logo" /></div>':'')
+				,(isset($s['block_overlay_logo']) && $s['block_overlay_logo'] != ''?'<div class="nu__overlay-logo"><img src="'.$s['block_overlay_logo']['url'].'" alt="overlay logo for '.$s['block_slide'][0]['block_slide_title'].'" /></div>':'')
 			);
 
 		}else{	// this will handle rotator type articles
@@ -76,7 +76,7 @@
 				,$s['block_slide'][0]['block_slide_description']
 				,$s['block_slide'][0]['block_slide_title']
 				// ,(isset($s['block_overlay_logo']) && $s['block_overlay_logo'] != ''?'<div class="nu__overlay-logo"><img src="'.$s['block_overlay_logo']['url'].'" alt="overlay logo" /></div>':'')
-				,(isset($s['block_slide'][0]['slide_overlay_logo']) && $s['block_slide'][0]['slide_overlay_logo'] != ''?'<div class="nu__overlay-logo"><img src="'.$s['block_slide'][0]['slide_overlay_logo']['url'].'" alt="overlay logo" /></div>':'')
+				,(isset($s['block_slide'][0]['slide_overlay_logo']) && $s['block_slide'][0]['slide_overlay_logo'] != ''?'<img src="'.$s['block_slide'][0]['slide_overlay_logo']['url'].'" alt="overlay logo for '.$s['block_slide'][0]['block_slide_title'].'" />':'')
 			);
 			$r++;
 

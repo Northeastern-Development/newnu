@@ -98,7 +98,12 @@
             elem.find('a').attr('target',rotators[id][a][5]);	// change the link target style (local or external)
 						elem.find('p').html(rotators[id][a][3]);	// change the link target style (local or external)
             elem.find('h2').html('<span>'+rotators[id][a][2]+'</span>');	// change the title of the slide
-						elem.find('div.nu__overlay-logo > img').prop('src',rotators[id][a][4])// swap the overlay logo
+						// elem.find('div.nu__overlay-logo > img').prop('src',rotators[id][a][4])// swap the overlay logo
+						elem.find('div.nu__overlay-logo').html('');
+						if(rotators[id][a][4] && rotators[id][a][4] != ''){
+							elem.find('div.nu__overlay-logo').html('<img src="'+rotators[id][a][4]+'" alt="overlay logo for '+rotators[id][a][2]+'" />')// swap the overlay logo
+						}
+
             elem.find('div.bgimage,h2,div.nu__overlay-logo').fadeIn(150);	// fade it all back in
           });
         }
