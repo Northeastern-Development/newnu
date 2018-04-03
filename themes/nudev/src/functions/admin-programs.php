@@ -33,7 +33,7 @@
     'can_export' => false, // Allows export in Tools > Export
   ));
 
-  // Add columns to administration post listing
+  // Add columns to programs post listing
   function add_programs_acf_columns ( $columns ) {
     $slice1 = array_slice($columns, 0, 2, true);
     $slice2 = array_slice($columns, 2, count($columns), true);
@@ -45,6 +45,7 @@
     switch ( $column ) {
       case 'program_level':
         $depts = get_post_meta ( $post_id, 'program_level', true );
+        // print_r($depts);
         if(count($depts) > 1){ // they are in more than one dept
           $v = '';
           foreach($depts as $d){  // loop through and grab each department that this person is part of
@@ -52,22 +53,22 @@
           }
           echo $v;
         }else{  // they are only in one dept
-          echo $depts;
+          echo $depts[0];
         }
         break;
-      case 'type':
-        echo get_post_meta ( $post_id, 'type', true );
-        break;
-      case 'sub-type':
-        echo get_post_meta ( $post_id, 'sub_type', true );
-        break;
+      // case 'type':
+      //   echo get_post_meta ( $post_id, 'type', true );
+      //   break;
+      // case 'sub-type':
+      //   echo get_post_meta ( $post_id, 'sub_type', true );
+      //   break;
     }
   }
 
   // add filter options
   function programs_admin_posts_filter_restrict_manage_posts(){
     global $typenow;
-    $type = 'program';
+    $type = 'programs';
 
     if ($typenow == $type){
 
