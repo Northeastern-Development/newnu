@@ -45,7 +45,7 @@ main#nu__homepage{
 
 
   div#nu__stories{
-    height: 100%;
+    height: 99.9%;  // this is a fix for the bottom borders on the lowest row of articles to appear
   	width: 300%;
     overflow-x: scroll;
   	overflow:auto;
@@ -144,28 +144,32 @@ main#nu__homepage{
     		position: absolute;
         display:none;
     		top: 50%;
+        margin-top: -50px;
     		width: 50px;
-        height: 50px;
-    		border-radius: 50%;
-    		background: rgba($brand_colors-white,0.6);
+        height: 100px;
+    		background: rgba($brand_colors-red,0.4);
     		z-index:500;
         color: rgba($brand_colors-black,1.0);
         font-size: 4rem;
-        text-align: center;
-        line-height: 58px;
+        line-height: 110px;
     		&:hover {
-    			background: rgba($brand_colors-black,1.0);
-          color: rgba($brand_colors-white,0.6);
+          background: rgba($brand_colors-red,0.8);
           cursor:pointer;
     		}
     }
 
     & > #prev {
-        left: $gutter;
+        left: 0;
+        text-align: left;
+        border-bottom-right-radius: 100px;
+        border-top-right-radius: 100px;
     }
 
     & > #next {
-        right: $gutter;
+      right: 0;
+      text-align: right;
+      border-bottom-left-radius: 100px;
+      border-top-left-radius: 100px;
     }
 
 
@@ -182,6 +186,20 @@ main#nu__homepage{
   			background-position: center center !important;
   			background-repeat: no-repeat !important;
   			background-size: cover !important;
+        & div.nu__article-alphatile{
+          // display: none;
+          width: auto;
+          height: 100%;
+          position: absolute;
+          z-index: 0;
+          left: 0;
+          top: 0;
+          & > svg{
+            height: 100%;
+            width: auto;
+            fill: rgba($brand_colors-white,0.6);
+          }
+        }
         & div.gradient {
           height:50%;
           width: 100%;
@@ -190,7 +208,7 @@ main#nu__homepage{
           background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%); /* FF3.6-15 */
           background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
           background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-          z-index: 0;
+          z-index: 1;
         }
         div.nu__overlay-logo{
           width:50px;
@@ -199,13 +217,6 @@ main#nu__homepage{
           top:$gutter;
           right:$gutter;
         }
-
-        // &:hover {
-        //   cursor: pointer;
-        //   & > a{
-        //     border-bottom: none;
-        //   }
-        // }
 
 
         & > a {
@@ -218,12 +229,17 @@ main#nu__homepage{
           z-index: 200;
           border-bottom: none;
           color: rgba($brand_colors-black,0.0);
+          background:rgba($brand_colors-black,0.0);
          &:hover ~ div.nu__panel-content  {
-           background:rgba($brand_colors-black,0.6);
-           & p {
-             opacity:1;
+            background:rgba($brand_colors-black,0.6);
+            & p {
+              opacity:1;
+            }
+         }
+         &:hover ~ div.nu__article-alphatile{
+           & > svg{
+             fill: rgba($brand_colors-white,0.1);
            }
-
          }
 
   	    }
@@ -233,75 +249,53 @@ main#nu__homepage{
   				max-width:91%;
   			}
 
-        // &:not(.nu__block-rotator){
-
-          & div.nu__panel-content {
-            // overflow: hidden;
-            // position: absolute;
+        & div.nu__panel-content {
+          width:100%;
+          height:100%;
+          background: rgba($brand_colors-black,0.0);
+           -webkit-transition: background-color 0.20s ease-out;
+          -moz-transition: background-color 0.20s ease-out;
+          -o-transition: background-color 0.20s ease-out;
+          transition: background-color 0.20s ease-out;
+          & p {
+            color: rgba($brand_colors-white,1.0);
+  					max-width:90%;
+  					width:100%;
+  					position: absolute;
+            font-size:1.2vw;
+            bottom: 4.4vw;
+            line-height: 1.8vw;
+  			    left: 50%;
+            text-align:center;
+  			    transform: translateX(-50%) translateY(0);
+            z-index:1;
+            opacity:0;
+            &:after{
+              color: rgba($brand_colors-red,1.0);
+              content: '\E8E4';
+              vertical-align: -20%;
+            }
+  				}
+          & h2 {
+            padding-bottom: 0;
+    				position: absolute;
+            font-size:1vw;
+            line-height: 2.2vw;
+            bottom: 1.2vw;
+    				z-index:100;
+    				left: 50%;
+    				transform: translateX(-50%) translateY(0);
             width:100%;
-            height:100%;
-
-            background: rgba($brand_colors-black,0.0);
-             -webkit-transition: background-color 0.20s ease-out;
-            -moz-transition: background-color 0.20s ease-out;
-            -o-transition: background-color 0.20s ease-out;
-            transition: background-color 0.20s ease-out;
-            & p {
-              //@include font-5l-c;
-              color: rgba($brand_colors-white,1.0);
-    					max-width:90%;
-    					width:100%;
-    					position: absolute;
-              //bottom:75px;
-              font-size:1.2vw;
-              bottom: 4.4vw;
-              line-height: 1.8vw;
-    			    left: 50%;
-              text-align:center;
-    			    transform: translateX(-50%) translateY(0);
-              z-index:1;
-              opacity:0;
-              &:after{
-                //@include font-7-c;
-                color: rgba($brand_colors-red,1.0);
-                content: '\E8E4';
-                vertical-align: -20%;
-              }
-    				}
-            & h2 {
-              //@include font-3l-c;
-              padding-bottom: 0;
-      				position: absolute;
-      				//bottom: $gutter;
-              //bottom:25px;
-              font-size:1vw;
-              line-height: 2.2vw;
-              bottom: 1.2vw;
-      				z-index:100;
-      				left: 50%;
-      				transform: translateX(-50%) translateY(0);
-              width:100%;
-              & > span {
-                border-bottom: 2px solid rgba($brand_colors-red,1);
-                padding-bottom:5px;
-              }
-
-
-      			}
-
-          }
-        // }
+            & > span {
+              border-bottom: 2px solid rgba($brand_colors-red,1);
+              padding-bottom:5px;
+            }
+    			}
+        }
 
 
   			&.nu__block-rotator{
           background: rgba($brand_colors-black,1.0);
-          // position: relative;
-          // &:hover {
-          //   & h2::after {
-          //     color: rgba($brand_colors-red,1.0);
-          //     text-shadow:inherit;
-          //   }
-          // }
 
           & > div.bgimage{
             width: 100%;
@@ -310,85 +304,8 @@ main#nu__homepage{
   					background-repeat: no-repeat !important;
   					background-size: cover !important;
           }
-
-  				// & > a {
-  				// 	opacity:1;
-          //   border-bottom: none;
-          //   background: none;
-  				// }
-          // & > h2 {
-          //   position: absolute;
-          //   z-index: 1;
-          //   bottom: ($gutter * 2);
-          //   left: $gutter;
-          //   text-align: left;
-          //   //@include font-3l-l;
-          //   width: 90%;
-          //   font-size:1vw;
-          //   line-height: 2.2vw;
-          //   &:after{
-          //     //@include font-7-c;
-          //     color: rgba($brand_colors-red,0.0);
-          //     content: '\E8E4';
-          //     vertical-align: -20%;
-          //     text-shadow:none;
-          //   }
-          //
-          // }
-          //@include font-3l-c;
-          // & > div.content{
-            // padding-bottom: 0;
-            // position: absolute;
-            // // bottom: 1.2vw;
-            // bottom: 0;
-            // z-index:100;
-            // width: 100%;
-            // & > h2{
-            //   // background: red;
-            //   background: green;
-            //   padding-bottom: 0;
-            //   position: absolute;
-            //   // bottom: $gutter;
-            //   // bottom:25px;
-            //   font-size:1vw;
-            //   line-height: 2.2vw;
-            //   bottom: 1.2vw;
-            //   z-index:100;
-            //   left: 50%;
-            //   transform: translateX(-50%) translateY(0);
-            //   text-align: center;
-            //   width:100%;
-            //   & > span {
-            //     border-bottom: 2px solid rgba($brand_colors-red,1);
-            //     padding-bottom:5px;
-            //   }
-            // }
-            // & > p {
-            //   //@include font-5l-c;
-            //   color: rgba($brand_colors-white,1.0);
-    				// 	max-width:90%;
-    				// 	width:100%;
-    				// 	position: absolute;
-            //   //bottom:75px;
-            //   font-size:1.2vw;
-            //   bottom: 4.4vw;
-            //   line-height: 1.8vw;
-    			  //   left: 50%;
-            //   text-align:center;
-    			  //   transform: translateX(-50%) translateY(0);
-            //   z-index:1;
-            //   // opacity:0;
-            //   &:after{
-            //     //@include font-7-c;
-            //     color: rgba($brand_colors-red,1.0);
-            //     content: '\E8E4';
-            //     vertical-align: -20%;
-            //   }
-    				// }
-          // }
           & > div.nu__slide-controls{
             position: absolute;
-            // background: red;
             left: $gutter;
             top: $gutter;
             width: auto;
@@ -456,18 +373,28 @@ main#nu__homepage{
           width:70%;
           height:65%;
           order:1;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
+          // & div.nu__article-alphatile{
+          //   display: block;
+          // }
         }
         &:nth-child(2){
           float:right;
           width:30%;
           height:35%;
           order:2;
+          border-right: solid rgba($brand_colors-grayW,1) 1px;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
+          border-left: solid rgba($brand_colors-grayW,1) 1px;
         }
         &:nth-child(3){
           float:right;
           width:30%;
           height:65%;
           order:3;
+          border-right: solid rgba($brand_colors-grayW,1) 1px;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
+          border-left: solid rgba($brand_colors-grayW,1) 1px;
         }
         &:nth-child(4){
           float:left;
@@ -475,13 +402,53 @@ main#nu__homepage{
           height:35%;
           order:4;
           overflow:hidden;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
         }
         &:nth-child(5){
           float:right;
           width:25%;
           height:35%;
           order:5;
-
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
+          border-left: solid rgba($brand_colors-grayW,1) 1px;
+        }
+      }
+    }
+    & > section.panel-2{
+      & > article {
+        &:nth-child(1){
+          float:left;
+          width:70%;
+          height:65%;
+          order:1;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
+          // & div.nu__article-alphatile{
+          //   display: block;
+          // }
+        }
+        &:nth-child(2){
+          float:right;
+          width:30%;
+          height:100%;
+          order:2;
+          border-right: solid rgba($brand_colors-grayW,1) 1px;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
+          border-left: solid rgba($brand_colors-grayW,1) 1px;
+        }
+        &:nth-child(3){
+          float:left;
+          width:45%;
+          height:35%;
+          order:3;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
+        }
+        &:nth-child(4){
+          float:left;
+          width:25%;
+          height:35%;
+          order:4;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
+          border-left: solid rgba($brand_colors-grayW,1) 1px;
         }
       }
     }
@@ -492,56 +459,39 @@ main#nu__homepage{
           width:30%;
           height:100%;
           order:1;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
         }
         &:nth-child(2){
           float:right;
           width:70%;
           height:65%;
           order:2;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
+          border-left: solid rgba($brand_colors-grayW,1) 1px;
+          // & div.nu__article-alphatile{
+          //   display: block;
+          // }
         }
         &:nth-child(3){
           float:left;
           width:25%;
           height:35%;
           order:3;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
+          border-left: solid rgba($brand_colors-grayW,1) 1px;
         }
         &:nth-child(4){
           float:right;
           width:45%;
           height:35%;
           order:4;
+          border-bottom: solid rgba($brand_colors-grayW,1) 1px;
+          border-left: solid rgba($brand_colors-grayW,1) 1px;
         }
       }
     }
 
-    & > section.panel-2{
-      & > article {
-        &:nth-child(1){
-          float:left;
-          width:70%;
-          height:65%;
-          order:1;
-        }
-        &:nth-child(2){
-          float:right;
-          width:30%;
-          height:100%;
-          order:2;
-        }
-        &:nth-child(3){
-          float:left;
-          width:45%;
-          height:35%;
-          order:3;
-        }
-        &:nth-child(4){
-          float:left;
-          width:25%;
-          height:35%;
-          order:4;
-        }
-      }
-    }
+
 
 
   }
@@ -1690,6 +1640,7 @@ main#nu__homepage{
   			flex-wrap: wrap;
     		& > article {
            min-height: 350px;
+
           & div.gradient {
 
           }
@@ -1821,12 +1772,14 @@ main#nu__homepage{
             width:100%;
            height:50vw;
             order:2;
+            border-left: none;
           }
           &:nth-child(3){
             float:none;
             width:100%;
   					height:50vw;
             order:3;
+            border-left: none;
           }
           &:nth-child(4){
             float:none;
@@ -1840,7 +1793,7 @@ main#nu__homepage{
             width:100%;
            height:50vw;
             order:5;
-
+            border-left: none;
           }
         }
       }
@@ -1858,6 +1811,7 @@ main#nu__homepage{
             width:100%;
            height:50vw;
             order:2;
+            border-left: none;
           }
           &:nth-child(3){
             float:none;
@@ -1870,6 +1824,7 @@ main#nu__homepage{
             width:100%;
            height:50vw;
             order:4;
+            border-left: none;
           }
         }
       }
@@ -1888,18 +1843,21 @@ main#nu__homepage{
            width:100%;
           height:50vw;
            order:2;
+           border-left: none;
          }
          &:nth-child(3){
            float:none;
            width:100%;
            height:50vw;
            order:3;
+           border-left: none;
          }
          &:nth-child(4){
            float:none;
            width:100%;
           height:50vw;
            order:4;
+           border-left: none;
          }
        }
       }

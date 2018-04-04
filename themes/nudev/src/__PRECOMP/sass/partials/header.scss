@@ -40,7 +40,6 @@ div#nu__alerts{
     margin: 0 auto 0 auto;
     padding: 10px $gutter 0 90px;
     background: rgba($brand_colors-white, 1.0);
-    //border-radius: 6px;
     position: relative;
     overflow: hidden;
     &:before{
@@ -119,7 +118,6 @@ div#nu__utility-nav{
 
 div#nu__logo{
   width: 50%;
-  //height: 80px;
   & > a{
     line-height: $header-height;
     font-size: 3rem;

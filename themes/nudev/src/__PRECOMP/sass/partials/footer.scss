@@ -100,11 +100,9 @@ footer{
      & > div.nu__footer-hideshow{
        width: $content-width-wide;
        display: none;
-       text-align: center;
        height: $footer-height-collapsed;
        line-height: $footer-height-collapsed;
-       //@include font-7-c;
-       @include font-3l-c;
+       @include font-3l-l;
        line-height:4.4rem;
        color: rgba($brand_colors-white,0.8);
        margin: 0 auto 0 auto;
