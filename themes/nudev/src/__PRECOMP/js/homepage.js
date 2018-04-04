@@ -215,10 +215,10 @@
           currentPanel++;
           if(debug){
             if(currentPanel == panelCount -1){
-              $("#next").css({'display':'none'});
-            }else {
-              $("#next").css({'display':'block'});
-              $("#prev").css({'display':'block'});
+							$("#next").fadeOut(250);
+            }else{
+							$("#next").fadeIn(250);
+              $("#prev").fadeIn(250);
             }
           }
           runTween(offset);
@@ -227,12 +227,12 @@
           currentPanel--;
           if(debug){
             if(currentPanel == panelCount -1){
-              $("#next").css({'display':'block'});
-            }else if(currentPanel == 0) {
-              $("#prev").css({'display':'none'});
-              $("#next").css({'display':'block'});
+							$("#next").fadeIn(250);
+            }else if(currentPanel == 0){
+							$("#prev").fadeOut(250);
+              $("#next").fadeIn(250);
             }else {
-              $("#next").css({'display':'block'});
+							$("#next").fadeIn(250);
             }
           }
           runTween(offset);
