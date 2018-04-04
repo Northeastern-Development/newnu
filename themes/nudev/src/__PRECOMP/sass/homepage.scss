@@ -1665,6 +1665,7 @@ main#nu__homepage{
 
            }
 
+
     	    }
     			& h2 {
 
@@ -1977,6 +1978,11 @@ main#nu__homepage{
              //opacity:0;
              background: none;
 
+           }
+           &:hover ~ div.nu__article-alphatile{
+             & > svg{
+               fill: rgba($brand_colors-white,0.6);
+             }
            }
 
     	    }
