@@ -12,7 +12,9 @@
 
 html{
   overflow:hidden;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+
 
 $columns: 3;
 
