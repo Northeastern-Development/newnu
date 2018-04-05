@@ -185,6 +185,7 @@ main#nu__homepage{
   			background-position: center center !important;
   			background-repeat: no-repeat !important;
   			background-size: cover !important;
+        overflow: hidden;
         & div.nu__article-alphatile{
           // display: none;
           width: auto;
@@ -193,6 +194,7 @@ main#nu__homepage{
           z-index: 0;
           left: 0;
           top: 0;
+          // overflow: hidden;
           & > svg{
             height: 100%;
             width: auto;
@@ -234,6 +236,9 @@ main#nu__homepage{
             & p {
               opacity:1;
             }
+            & h2{
+              opacity: 0.4;
+            }
          }
          &:hover ~ div.nu__article-alphatile{
            & > svg{
@@ -242,11 +247,11 @@ main#nu__homepage{
          }
 
   	    }
-  			& h2 {
-          color: rgba($brand_colors-white,1.0);
-  				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  				max-width:91%;
-  			}
+  			// & h2 {
+        //   color: rgba($brand_colors-white,1.0);
+  			// 	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  			// 	max-width:91%;
+  			// }
 
         & div.nu__panel-content {
           width:100%;
@@ -256,40 +261,57 @@ main#nu__homepage{
           -moz-transition: background-color 0.20s ease-out;
           -o-transition: background-color 0.20s ease-out;
           transition: background-color 0.20s ease-out;
-          & p {
-            color: rgba($brand_colors-white,1.0);
-  					max-width:90%;
-  					width:100%;
-  					position: absolute;
-            font-size:1.2vw;
-            bottom: 4.4vw;
-            line-height: 1.8vw;
-  			    left: 50%;
-            text-align:center;
-  			    transform: translateX(-50%) translateY(0);
-            z-index:2;
-            opacity:0;
-            &:after{
-              color: rgba($brand_colors-red,1.0);
-              content: '\E8E4';
-              vertical-align: -20%;
-            }
-  				}
-          & h2 {
-            padding-bottom: 0;
-    				position: absolute;
-            font-size:1vw;
-            line-height: 2.2vw;
+          & > div{
+            width: 100%;
+            position: absolute;
+            margin: 0 auto 0 auto;
             bottom: 1.2vw;
-    				z-index:100;
-    				left: 50%;
-    				transform: translateX(-50%) translateY(0);
-            width:100%;
-            & > span {
-              border-bottom: 2px solid rgba($brand_colors-red,1);
-              padding-bottom:5px;
-            }
-    			}
+            z-index: 100;
+            & p {
+              color: rgba($brand_colors-white,1.0);
+    					max-width:90%;
+    					width:100%;
+    					// position: absolute;
+              font-size:1.2vw;
+              // bottom: 4.4vw;
+              line-height: 1.8vw;
+              text-align:center;
+              display: block;
+              // background: red;
+              margin: 0 auto $gutter auto;
+              padding: 0 0 0 0;
+              // left: 50%;
+    			    // transform: translateX(-50%) translateY(0);
+              z-index:2;
+              opacity:0;
+              &:after{
+                color: rgba($brand_colors-red,1.0);
+                content: '\E8E4';
+                vertical-align: -20%;
+              }
+    				}
+            & h2 {
+              padding-bottom: 0;
+              // background: red;
+      				// position: absolute;
+              font-size:1vw;
+              line-height: 2.2vw;
+              bottom: 1.2vw;
+      				z-index:100;
+      				// left: 50%;
+      				// transform: translateX(-50%) translateY(0);
+              text-align:center;
+              width:100%;
+              max-width: 90%;
+              margin: 0 auto 0 auto;
+              padding: 0 0 0 0;
+              text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+              & > span {
+                border-bottom: 2px solid rgba($brand_colors-red,1);
+                padding-bottom:5px;
+              }
+      			}
+          }
         }
 
 
@@ -622,26 +644,27 @@ main#nu__homepage{
           // &:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
+              & > div{
+                & p {
+                  @include font-5l-c;
+                  // bottom:75px;
 
-              & p {
-                @include font-5l-c;
-                bottom:75px;
+                  &:after{
+                    @include font-7-c;
 
-                &:after{
-                  @include font-7-c;
+                  }
+        				}
+                & h2 {
+                  @include font-3l-c;
+                  // bottom:25px;
 
-                }
-      				}
-              & h2 {
-                @include font-3l-c;
-                bottom:25px;
+                  & > span {
 
-                & > span {
-
-                }
+                  }
 
 
-        			}
+          			}
+              }
 
             }
           // }
@@ -877,26 +900,28 @@ main#nu__homepage{
           //&:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
-
-              & p {
-                @include font-2l-c;
-                bottom:75px;
-
-                &:after{
-                  @include font-3l-c;
-
-                }
-      				}
-              & h2 {
-                @include font-10l-c;
+              & > div{
                 bottom:25px;
+                & p {
+                  @include font-2l-c;
+                  // bottom:75px;
 
-                & > span {
+                  &:after{
+                    @include font-3l-c;
 
-                }
+                  }
+        				}
+                & h2 {
+                  @include font-10l-c;
+                  // bottom:25px;
+
+                  & > span {
+
+                  }
 
 
-        			}
+          			}
+              }
 
             }
           //}
@@ -1145,26 +1170,27 @@ main#nu__homepage{
           //&:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
-
-              &  p {
-                @include font-1r-c;
-                &:after{
-                  @include font-4-c;
-                  vertical-align: -19%;
+              & > div{
+                &  p {
+                  @include font-1r-c;
+                  &:after{
+                    @include font-4-c;
+                    vertical-align: -19%;
+                  }
                 }
+                & h2 {
+                  @include font-1r-c;
+                  &:after{
+                   @include font-4-c;
+                   vertical-align: -19%;
+                  }
+                  & > span {
+
+                  }
+
+
+          			}
               }
-              & h2 {
-                @include font-1r-c;
-                &:after{
-                 @include font-4-c;
-                 vertical-align: -19%;
-                }
-                & > span {
-
-                }
-
-
-        			}
 
             }
           //}
@@ -1393,26 +1419,27 @@ main#nu__homepage{
           //&:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
-
-              &  p {
-                @include font-0r-c;
-                &:after{
-                  @include font-4-c;
-                  vertical-align: -19%;
+              & > div{
+                &  p {
+                  @include font-0r-c;
+                  &:after{
+                    @include font-4-c;
+                    vertical-align: -19%;
+                  }
                 }
+                & h2 {
+                  @include font-1r-c;
+                  &:after{
+                   @include font-4-c;
+                   vertical-align: -19%;
+                  }
+                  & > span {
+
+                  }
+
+
+          			}
               }
-              & h2 {
-                @include font-1r-c;
-                &:after{
-                 @include font-4-c;
-                 vertical-align: -19%;
-                }
-                & > span {
-
-                }
-
-
-        			}
 
             }
           //}
@@ -1674,28 +1701,29 @@ main#nu__homepage{
           //&:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
-
-              &  p {
-                @include font-4-c;
-                bottom:75px;
-                &:after{
+              & > div{
+                &  p {
                   @include font-4-c;
-                  vertical-align: -19%;
+                  // bottom:75px;
+                  &:after{
+                    @include font-4-c;
+                    vertical-align: -19%;
+                  }
                 }
+                & h2 {
+                  //@include font-1r-c;
+                  // bottom:25px;
+                  &:after{
+                   //@include font-4-c;
+                   //vertical-align: -19%;
+                  }
+                  & > span {
+
+                  }
+
+
+          			}
               }
-              & h2 {
-                //@include font-1r-c;
-                bottom:25px;
-                &:after{
-                 //@include font-4-c;
-                 //vertical-align: -19%;
-                }
-                & > span {
-
-                }
-
-
-        			}
 
             }
           //}
@@ -1993,27 +2021,28 @@ main#nu__homepage{
           //&:not(.nu__block-rotator){
 
             & > div.nu__panel-content {
-
-              &  p {
-                display: none;
-                // @include font-4-c;
-                // bottom:75px;
-                &:after{
-                  @include font-4-c;
-                  vertical-align: -19%;
+              & > div{
+                &  p {
+                  display: none;
+                  // @include font-4-c;
+                  // bottom:75px;
+                  &:after{
+                    @include font-4-c;
+                    vertical-align: -19%;
+                  }
                 }
+                & h2 {
+                  @include font-3l-c;
+                  // bottom:25px;
+                  &:after{
+                  }
+                  & > span {
+
+                  }
+
+
+          			}
               }
-              & h2 {
-                @include font-3l-c;
-                bottom:25px;
-                &:after{
-                }
-                & > span {
-
-                }
-
-
-        			}
 
             }
           //}

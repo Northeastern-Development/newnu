@@ -487,18 +487,15 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/__PRECOMP\/sass\/footer.scss": {
-		"aP": 0,
+	"\/__PRECOMP\/sass\/footer.css": {
+		"aP": 1,
 		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
+		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/footer.css",
-		"oF": 2,
-		"oS": 3,
-		"uL": 1
+		"oAP": "\/__PRECOMP\/sass\/footer-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"\/__PRECOMP\/sass\/homepage.scss": {
 		"aP": 0,
