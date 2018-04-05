@@ -221,9 +221,9 @@ var offset = 0;
 				$('footer#nu__global-footer').addClass('collapse');
 			}
 
-			if(!$('body').hasClass('home')){
-				allowScrollOrNot();
-			}
+			// if(!$('body').hasClass('home')){
+			// 	allowScrollOrNot();
+			// }
 
 		});
 
@@ -242,6 +242,10 @@ var offset = 0;
 				$('#nu__supernav > section > div > ul > li:first-child').addClass('active');
 				$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
 			}
+
+			if(!$('body').hasClass('home')){
+				allowScrollOrNot();
+			}
 		}
 
 
@@ -253,6 +257,7 @@ var offset = 0;
 			if(['nu__supernav','nu__searchbar','nu__iamnav'].indexOf(e.target.id) >= 0){
 				$('nav input').prop('checked',false);
 				cNav = null;
+				allowScrollOrNot();
 			}
 		});
 
