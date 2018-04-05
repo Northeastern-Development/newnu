@@ -179,7 +179,7 @@ var offset = 0;
 		$.post("/wp-content/themes/nudev/src/iamnavbgs.php",function(data){
 			// console.log(data);
 			iamnavbgs = JSON.parse(data);
-			console.log(iamnavbgs);
+			// console.log(iamnavbgs);
 		});
 
 		// this will handle some preventitive measures in the main nav regarding overlap of options
