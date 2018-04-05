@@ -1999,9 +1999,13 @@ main#nu__homepage{
           & > a {
 
            &:hover ~ div.nu__panel-content  {
-
-             & p {
-
+            & > div{
+               & p {
+                // opacity: 1;
+               }
+               & h2{
+                 opacity: 1;
+               }
              }
              //opacity:0;
              background: none;

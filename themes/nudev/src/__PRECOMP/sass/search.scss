@@ -126,6 +126,7 @@ main#nu__search{
           margin: 0 0 $gutter $gutter;
           display: flex;
           flex-direction: row;
+          border-bottom: solid red 1px;
           & > label{
             &.label{
               position: absolute;
@@ -150,7 +151,7 @@ main#nu__search{
             margin: 20px 0 0 0;
             height: 50px;
             border: none;
-            border-bottom: solid rgba($brand_colors-white,1.0) 1px;
+            // border-bottom: solid rgba($brand_colors-white,1.0) 1px;
             background: transparent;
             color: rgba($brand_colors-white,1.0);
             outline: 0;
@@ -177,7 +178,7 @@ main#nu__search{
             @include font-4-c;
             font-family: "Material Icons";
             color: rgba($brand_colors-white,1.0);
-            border-bottom: solid rgba($brand_colors-white,1.0) 1px;
+            // border-bottom: solid rgba($brand_colors-white,1.0) 1px;
             margin: 20px 0 0 0;
             &.reset{
               @include font-4-c;
