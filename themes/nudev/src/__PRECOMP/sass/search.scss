@@ -122,11 +122,13 @@ main#nu__search{
           // clear: both;
           // overflow: hidden;
           width: 100%;
-          height: 70px;
+          // height: 70px;
           margin: 0 0 $gutter $gutter;
           display: flex;
           flex-direction: row;
-          border-bottom: solid red 1px;
+          line-height: 0;
+          border-bottom: solid rgba($brand_colors-white,1.0) 1px;
+          // margin: 0 0 $gutter 0;
           & > label{
             &.label{
               position: absolute;
