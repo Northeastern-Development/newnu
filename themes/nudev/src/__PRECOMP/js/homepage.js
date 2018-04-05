@@ -79,7 +79,7 @@
 
       // this will actually perform the content swapping for the inner rotators
       function contentSwap(a){
-				console.log(rotators);
+				// console.log(rotators);
         elem.find('div.bgimage,h2,div.nu__overlay-logo').fadeOut(150,function(){	// fade out the rotator content
           elem.attr('data-cslide',a);	// set the new value of the current slide
 					elem.attr('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
