@@ -446,8 +446,8 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/homepage-min.js",
-		"oF": 2,
+		"oAP": "\/__PRECOMP\/js\/homepage-min.js",
+		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
@@ -456,9 +456,9 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/scripts-min.js",
-		"oF": 2,
-		"sC": 0,
+		"oAP": "\/__PRECOMP\/js\/scripts-min.js",
+		"oF": 0,
+		"sC": 3,
 		"tS": 0
 		},
 	"\/__PRECOMP\/sass\/emergency.scss": {
@@ -486,6 +486,16 @@
 		"oF": 2,
 		"oS": 0,
 		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/footer.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/footer-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"\/__PRECOMP\/sass\/homepage.scss": {
 		"aP": 0,
@@ -1440,6 +1450,16 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/EasePack.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/hammer-min-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/hammer-min-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0

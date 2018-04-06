@@ -128,7 +128,8 @@
 div#nu__static {
   width: 100vw;
   background: #fffffe;
-  color: black; }
+  color: black;
+  height: auto; }
   div#nu__static section.hero {
     background: black;
     width: 100vw;
