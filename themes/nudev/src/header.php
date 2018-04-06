@@ -5,11 +5,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
-		<meta charset="<?php bloginfo('charset'); ?>">
-		<title><?php wp_title(''); ?></title>
-		<meta name="title" content="<?php wp_title(''); ?>" />
 
+		<title><?php wp_title(''); ?></title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="title" content="<?php wp_title(''); ?>" />
+		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 		<meta name="author" content="Northeastern University, http://www.northeastern.edu" />
@@ -18,7 +18,6 @@
 		<meta name="zipcode" content="02115" />
 		<meta name="city" content="Boston" />
 		<meta name="state" content="MA" />
-
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-touch-fullscreen" content="yes">
 		<meta name="msapplication-tap-highlight" content="no" />
