@@ -22,6 +22,8 @@
 
   color: rgba($brand_colors-black,1.0);
 
+  height: auto;
+
 
   section.hero{
     background: rgba($brand_colors-black,1.0);
@@ -123,7 +125,7 @@
 
   $gutter: 15px;
 
-  main#nu__static{
+  div.main{
 
    section.hero{
      margin: 0 0 ($gutter * 2) 0;
@@ -197,7 +199,7 @@
 
 @media only screen and (max-width: 959px) {
   //$gutter: 15px;
-  main#nu__static{
+  div.main{
 
    section.hero{
 
@@ -273,7 +275,7 @@
 
 @media only screen and (max-width: 620px) {
 
-  main#nu__static{
+  div.main{
 
    // section.hero{
    //
@@ -341,7 +343,7 @@
 
 @media only screen and (max-width: 440px) {
 
-  main#nu__static{
+  div.main{
 
    // section.hero{
    //

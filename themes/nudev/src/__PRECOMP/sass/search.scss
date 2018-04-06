@@ -12,12 +12,12 @@
 
 
 body.search{  // we want to hide the footer on the search results page
-  & > footer{
+  & footer{
     display: none;
   }
 }
 
-main#nu__search{
+div.main{
 
   width: 100%;
 

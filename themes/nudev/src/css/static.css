@@ -129,7 +129,8 @@ div.main {
   width: 100vw;
   margin-top: 80px;
   background: #fffffe;
-  color: black; }
+  color: black;
+  height: auto; }
   div.main section.hero {
     background: black;
     width: 100vw;
@@ -178,57 +179,57 @@ div.main {
     padding-bottom: 45px; }
 
 @media only screen and (max-width: 1280px) {
-  main#nu__static section.hero {
+  div.main section.hero {
     margin: 0 0 30px 0; }
-    main#nu__static section.hero > div {
+    div.main section.hero > div {
       margin: 26.25px auto 31.5px auto; }
-  main#nu__static section.intro > h1 {
+  div.main section.intro > h1 {
     margin: 0 0 7.5px 0; }
-  main#nu__static section.fullwidth {
+  div.main section.fullwidth {
     margin: 25.5px auto 0 auto;
     padding: 15px 0 0 0; }
-    main#nu__static section.fullwidth > h4 {
+    div.main section.fullwidth > h4 {
       text-align: center; }
-  main#nu__static section {
+  div.main section {
     margin: 25.5px auto 0 auto; }
-    main#nu__static section > ul {
+    div.main section > ul {
       width: 97vw;
       margin: 15px auto 0 auto; }
-      main#nu__static section > ul > li {
+      div.main section > ul > li {
         margin: 0 15px 15px 0; }
-    main#nu__static section > h4 {
+    div.main section > h4 {
       text-align: left; }
-  main#nu__static section:last-child {
+  div.main section:last-child {
     margin: 25.5px auto 0 auto;
     padding-bottom: 22.5px; } }
 
 @media only screen and (max-width: 959px) {
-  main#nu__static section.hero > div {
+  div.main section.hero > div {
     width: 80vw; }
-  main#nu__static section.intro {
+  div.main section.intro {
     width: 80vw; }
-  main#nu__static section.fullwidth > ul {
+  div.main section.fullwidth > ul {
     width: 80vw; }
-  main#nu__static section {
+  div.main section {
     width: 80vw; }
-    main#nu__static section > ul {
+    div.main section > ul {
       flex-wrap: wrap; }
-      main#nu__static section > ul > li {
+      div.main section > ul > li {
         flex: 0 0 45%;
         margin-right: 10%; }
-        main#nu__static section > ul > li:nth-child(even) {
+        div.main section > ul > li:nth-child(even) {
           margin-right: 0; } }
 
 @media only screen and (max-width: 620px) {
-  main#nu__static section.intro > h1 {
+  div.main section.intro > h1 {
     text-align: left; }
-  main#nu__static section > ul {
+  div.main section > ul {
     width: 80vw;
     margin: 0 auto;
     flex-direction: column; }
-    main#nu__static section > ul > li {
+    div.main section > ul > li {
       margin-right: 0; } }
 
 @media only screen and (max-width: 440px) {
-  main#nu__static section.fullwidth > h4 {
+  div.main section.fullwidth > h4 {
     margin: 0 10vw; } }

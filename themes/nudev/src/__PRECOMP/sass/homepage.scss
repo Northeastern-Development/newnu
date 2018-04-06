@@ -21,7 +21,7 @@ body.home{
   min-height: 100%;
 }
 
-main#nu__homepage{
+div.main{
 
   width: $wrapper-width;
   margin: 0 0 0 0;
@@ -543,7 +543,7 @@ main#nu__homepage{
 
 @media screen and (min-width: 1800px) {
 
-  main#nu__homepage{
+  div.main{
 
 
 
@@ -799,7 +799,7 @@ main#nu__homepage{
 
 @media screen and (max-width: 1300px) {
 
-  main#nu__homepage{
+  div.main{
 
 
 
@@ -1069,7 +1069,7 @@ main#nu__homepage{
 @media screen and (max-width: 1120px) {
 
 
-  main#nu__homepage{
+  div.main{
 
 
 
@@ -1318,7 +1318,7 @@ main#nu__homepage{
 @media screen and (max-width: 1000px) {
 
 
-  main#nu__homepage{
+  div.main{
 
 
 
@@ -1580,7 +1580,7 @@ main#nu__homepage{
   }
 
 
-  main#nu__homepage{
+  div.main{
     width:100%;
     margin: 0 0 0 0;
     background: rgba($brand_colors-black,1.0);
@@ -1902,7 +1902,7 @@ main#nu__homepage{
 @media screen and (max-width: 800px) {
 
 
-  main#nu__homepage{
+  div.main{
     width:100%;
     margin: 0 0 0 0;
     background: rgba($brand_colors-black,1.0);
@@ -2197,7 +2197,7 @@ main#nu__homepage{
   $h: 100%;
   $header-height: 100px;
 
-  main#nu__homepage {
+  div.main{
     min-height: calc(#{$h} - #{$header-height} );
     height: calc(#{$h} - #{$header-height} );
     min-height: -moz-calc(#{$h} - #{$header-height} );
@@ -2218,7 +2218,7 @@ main#nu__homepage{
 @media screen and (max-width: 600px) {
 
 
-  main#nu__homepage{
+  div.main{
 
 
 

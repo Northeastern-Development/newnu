@@ -195,50 +195,50 @@ div.main section.leftright {
     margin: 0 0 0 3%; }
 
 @media only screen and (max-width: 1280px) {
-  main#nu__static section.leftright {
+  div.main section.leftright {
     margin: 25.5px auto 0 auto; }
-    main#nu__static section.leftright > a > div.content h3 {
+    div.main section.leftright > a > div.content h3 {
       font-size: 2.4rem;
       line-height: 3.2rem;
       text-align: left; }
-    main#nu__static section.leftright > a > div.content p {
+    div.main section.leftright > a > div.content p {
       padding: 7.5px 30px 0 0;
       margin: 7.5px 0 0 0; } }
 
 @media only screen and (max-width: 959px) {
-  main#nu__static section.leftright > a > div.content {
+  div.main section.leftright > a > div.content {
     align-items: flex-start;
     min-height: auto;
     width: 100%; }
-    main#nu__static section.leftright > a > div.content h3 {
+    div.main section.leftright > a > div.content h3 {
       width: 100%;
       font-size: 2.0rem;
       font-weight: 300;
       line-height: 3.2rem;
       text-align: left; }
-    main#nu__static section.leftright > a > div.content p {
+    div.main section.leftright > a > div.content p {
       padding-right: 0; }
-  main#nu__static section.leftright > a > div.image {
+  div.main section.leftright > a > div.image {
     width: 100%;
     max-width: 100%; }
-  main#nu__static section.leftright:nth-child(even) > a > div:nth-child(1) {
+  div.main section.leftright:nth-child(even) > a > div:nth-child(1) {
     margin: 15px 0 0 0;
     order: 2; }
-  main#nu__static section.leftright:nth-child(even) > a > div:nth-child(2) {
+  div.main section.leftright:nth-child(even) > a > div:nth-child(2) {
     order: 1; }
-  main#nu__static section.leftright:nth-child(odd) > a > div:nth-child(1) {
+  div.main section.leftright:nth-child(odd) > a > div:nth-child(1) {
     order: 1; }
-  main#nu__static section.leftright:nth-child(odd) > a > div:nth-child(2) {
+  div.main section.leftright:nth-child(odd) > a > div:nth-child(2) {
     order: 2;
     margin: 15px 0 0 0; } }
 
 @media only screen and (max-width: 600px) {
-  main#nu__static section.leftright > a > div.content h3 {
+  div.main section.leftright > a > div.content h3 {
     font-size: 2.0rem;
     font-weight: 300;
     line-height: 3.2rem;
     text-align: left; } }
 
 @media only screen and (max-width: 620px) {
-  main#nu__static section.leftright > a > div.image {
+  div.main section.leftright > a > div.image {
     min-height: 200px; } }
