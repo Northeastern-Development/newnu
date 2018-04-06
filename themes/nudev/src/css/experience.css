@@ -125,36 +125,36 @@
   src: local("Lato Black Italic"), local("Lato-BlackItalic"), url("../.fonts/lato-v14-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900italic.woff") format("woff"), url("../.fonts/lato-v14-latin-900italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900italic.svg#Lato") format("svg");
   /* Legacy iOS */ }
 
-main#nu__static section.leftright {
+div.main section.leftright {
   width: 80vw;
   margin: 51px auto 0 auto; }
-  main#nu__static section.leftright a {
+  div.main section.leftright a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     border-bottom: none; }
-    main#nu__static section.leftright a:hover {
+    div.main section.leftright a:hover {
       color: black; }
-      main#nu__static section.leftright a:hover div.content > div > h3:after {
+      div.main section.leftright a:hover div.content > div > h3:after {
         visibility: visible; }
-      main#nu__static section.leftright a:hover div.image > div {
+      div.main section.leftright a:hover div.image > div {
         transform: scale(1.1);
         transition: all .5s; }
-  main#nu__static section.leftright > a > div {
+  div.main section.leftright > a > div {
     min-height: 400px; }
-    main#nu__static section.leftright > a > div.content {
+    div.main section.leftright > a > div.content {
       width: 40%;
       text-align: left;
       display: flex;
       align-items: center;
       vertical-align: middle; }
-      main#nu__static section.leftright > a > div.content h3 {
+      div.main section.leftright > a > div.content h3 {
         font-size: 3.2rem;
         font-weight: 300;
         line-height: 4.8rem;
         text-align: left;
         width: 92%; }
-        main#nu__static section.leftright > a > div.content h3:after {
+        div.main section.leftright > a > div.content h3:after {
           font-size: 3.4rem;
           line-height: 4.8rem;
           text-align: center;
@@ -162,16 +162,16 @@ main#nu__static section.leftright {
           content: '\E8E4';
           vertical-align: -20%;
           visibility: hidden; }
-      main#nu__static section.leftright > a > div.content p {
+      div.main section.leftright > a > div.content p {
         border-top: solid #979797 1px;
         padding: 15px 60px 0 0;
         margin: 15px 0 0 0; }
-    main#nu__static section.leftright > a > div.image {
+    div.main section.leftright > a > div.image {
       width: 57%;
       max-width: 57%;
       overflow: hidden;
       position: relative; }
-      main#nu__static section.leftright > a > div.image > div {
+      div.main section.leftright > a > div.image > div {
         position: absolute;
         top: 0;
         left: 0;
@@ -183,62 +183,62 @@ main#nu__static section.leftright {
         background-repeat: no-repeat !important;
         background-size: cover !important;
         background-color: black; }
-  main#nu__static section.leftright:nth-child(even) > a > div:nth-child(1) {
+  div.main section.leftright:nth-child(even) > a > div:nth-child(1) {
     order: 1;
     margin: 0 3% 0 0; }
-  main#nu__static section.leftright:nth-child(even) > a > div:nth-child(2) {
+  div.main section.leftright:nth-child(even) > a > div:nth-child(2) {
     order: 2; }
-  main#nu__static section.leftright:nth-child(odd) > a > div:nth-child(1) {
+  div.main section.leftright:nth-child(odd) > a > div:nth-child(1) {
     order: 1; }
-  main#nu__static section.leftright:nth-child(odd) > a > div:nth-child(2) {
+  div.main section.leftright:nth-child(odd) > a > div:nth-child(2) {
     order: 2;
     margin: 0 0 0 3%; }
 
 @media only screen and (max-width: 1280px) {
-  main#nu__static section.leftright {
+  div.main section.leftright {
     margin: 25.5px auto 0 auto; }
-    main#nu__static section.leftright > a > div.content h3 {
+    div.main section.leftright > a > div.content h3 {
       font-size: 2.4rem;
       line-height: 3.2rem;
       text-align: left; }
-    main#nu__static section.leftright > a > div.content p {
+    div.main section.leftright > a > div.content p {
       padding: 7.5px 30px 0 0;
       margin: 7.5px 0 0 0; } }
 
 @media only screen and (max-width: 959px) {
-  main#nu__static section.leftright > a > div.content {
+  div.main section.leftright > a > div.content {
     align-items: flex-start;
     min-height: auto;
     width: 100%; }
-    main#nu__static section.leftright > a > div.content h3 {
+    div.main section.leftright > a > div.content h3 {
       width: 100%;
       font-size: 2.0rem;
       font-weight: 300;
       line-height: 3.2rem;
       text-align: left; }
-    main#nu__static section.leftright > a > div.content p {
+    div.main section.leftright > a > div.content p {
       padding-right: 0; }
-  main#nu__static section.leftright > a > div.image {
+  div.main section.leftright > a > div.image {
     width: 100%;
     max-width: 100%; }
-  main#nu__static section.leftright:nth-child(even) > a > div:nth-child(1) {
+  div.main section.leftright:nth-child(even) > a > div:nth-child(1) {
     margin: 15px 0 0 0;
     order: 2; }
-  main#nu__static section.leftright:nth-child(even) > a > div:nth-child(2) {
+  div.main section.leftright:nth-child(even) > a > div:nth-child(2) {
     order: 1; }
-  main#nu__static section.leftright:nth-child(odd) > a > div:nth-child(1) {
+  div.main section.leftright:nth-child(odd) > a > div:nth-child(1) {
     order: 1; }
-  main#nu__static section.leftright:nth-child(odd) > a > div:nth-child(2) {
+  div.main section.leftright:nth-child(odd) > a > div:nth-child(2) {
     order: 2;
     margin: 15px 0 0 0; } }
 
 @media only screen and (max-width: 600px) {
-  main#nu__static section.leftright > a > div.content h3 {
+  div.main section.leftright > a > div.content h3 {
     font-size: 2.0rem;
     font-weight: 300;
     line-height: 3.2rem;
     text-align: left; } }
 
 @media only screen and (max-width: 620px) {
-  main#nu__static section.leftright > a > div.image {
+  div.main section.leftright > a > div.image {
     min-height: 200px; } }

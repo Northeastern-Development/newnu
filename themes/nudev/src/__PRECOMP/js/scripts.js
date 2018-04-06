@@ -54,8 +54,10 @@ var offset = 0;
 		*************************************************************************** */
 
 		// we need to set the main content offset based on: utility nav height, alerts height, and main header height
-		$("main").css({
+		// console.log($('div.main'));
+		$(".main").css({
 			"margin-top":$("header").outerHeight()
+			// "background":"red"
 		});
 
 
@@ -325,7 +327,7 @@ var offset = 0;
 			navReset();
 
 			// reset the offset to position content just below the header
-			$("main").css({
+			$(".main").css({
 				"margin-top":$("header").outerHeight()
 			});
 
@@ -342,7 +344,7 @@ var offset = 0;
 				if(parseInt($('#nu__alerts').height()) > 0){
 
 					var hpHeight = parseInt($(window).height()) - parseInt($('header').outerHeight()) - parseInt($('footer').height());
-					$('main#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
+					$('#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
 
 				}
 

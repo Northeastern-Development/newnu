@@ -68,7 +68,7 @@ p{
 
 
 /* Styles for the main content */
-main{
+div.main{
   margin: 0 auto 0 auto;
   $h: 100%;
   min-height: calc(#{$h} - #{$header-height});

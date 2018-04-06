@@ -441,26 +441,6 @@
 		"oAP": "\/404.php",
 		"oF": 0
 		},
-	"\/__PRECOMP\/js\/homepage.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/__PRECOMP\/js\/homepage-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"\/__PRECOMP\/js\/scripts.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/__PRECOMP\/js\/scripts-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"\/__PRECOMP\/sass\/emergency.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -474,19 +454,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/__PRECOMP\/sass\/experience.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/experience.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/__PRECOMP\/sass\/footer.css": {
 		"aP": 1,
 		"bl": 0,
@@ -496,19 +463,6 @@
 		"oAP": "\/__PRECOMP\/sass\/footer-min.css",
 		"oF": 0,
 		"oS": 3
-		},
-	"\/__PRECOMP\/sass\/homepage.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/homepage.css",
-		"oF": 2,
-		"oS": 3,
-		"uL": 1
 		},
 	"\/__PRECOMP\/sass\/modules\/fonts.scss": {
 		"aP": 0,
@@ -679,45 +633,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/__PRECOMP\/sass\/search.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/search.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/__PRECOMP\/sass\/static.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/static.css",
-		"oF": 2,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/__PRECOMP\/sass\/style.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/style.css",
-		"oF": 2,
-		"oS": 3,
-		"uL": 1
-		},
 	"\/__PRECOMP\/sass\/utilitynav.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -799,16 +714,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/experience.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/experience-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"\/css\/footer.css": {
 		"aP": 1,
 		"bl": 0,
@@ -826,16 +731,6 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/government-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/css\/homepage.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/homepage-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -889,16 +784,6 @@
 		"oF": 2,
 		"oS": 3
 		},
-	"\/css\/search.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/search-min.css",
-		"oF": 0,
-		"oS": 3
-		},
 	"\/css\/staff.css": {
 		"aP": 1,
 		"bl": 0,
@@ -906,26 +791,6 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/staff-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/css\/static.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/static-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/css\/style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/css\/style-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1474,16 +1339,6 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/homepage-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/js\/homepage-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"\/js\/jquery.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1520,16 +1375,6 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/magnific-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"\/js\/scripts-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/js\/scripts-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1973,20 +1818,6 @@
 		"oAP": "\/templates\/template-content.php",
 		"oF": 0
 		},
-	"\/templates\/template-experience.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/templates\/template-experience.php",
-		"oF": 0
-		},
-	"\/templates\/template-homepage.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/templates\/template-homepage.php",
-		"oF": 0
-		},
 	"\/templates\/template-iammenu.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2013,20 +1844,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/template-redirect.php",
-		"oF": 0
-		},
-	"\/templates\/template-search.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/templates\/template-search.php",
-		"oF": 0
-		},
-	"\/templates\/template-static.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/templates\/template-static.php",
 		"oF": 0
 		},
 	"\/windowsize.php": {

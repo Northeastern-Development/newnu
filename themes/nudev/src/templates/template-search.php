@@ -34,7 +34,7 @@
 
 ?>
 
-	<main id="nu__search" role="main" aria-label="content" class="smooth<?=($popular!=''?' noresults':'')?>">
+	<div id="nu__search" role="main" aria-label="content" class="main smooth<?=($popular!=''?' noresults':'')?>">
 
 		<div style="<?=$style?>"></div>
 
