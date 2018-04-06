@@ -11,16 +11,16 @@
 		<section class="hero">
 			<div>
 				<h2>Experience: The push that drives us</h2>
-				<h3>Northeastern University is powered by a simple truth: Experience deepens learning and discovery like nothing else can.</h3>
+				<h3>For more than 100 years, Northeastern has been driven by a simple truth: Experience deepens learning like nothing else can. Today, that truth has never been more relevant.</h3>
 			</div>
 		</section>
 
 		<section class="leftright">
-			<a href="http://cnn.com" title="Experience amplifies undergraduate learning" target="_blank">
+			<a href="http://www.northeastern.edu/experiential-learning/" title="Experience turns undergraduates into leaders" target="_blank">
 				<div class="content">
 					<div>
-						<h3>Experience amplifies undergraduate learning.</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<h3>Experience turns undergraduates into leaders.</h3>
+						<p>Through co-op--our pioneering, renowned experiential program--our students put ideas into action in professional positions worldwide. They build knowledge through research, find purpose through service, and become high-impact, global citizens, the agents of change.</p>
 					</div>
 				</div>
 				<div class="image">
@@ -30,25 +30,25 @@
 		</section>
 
 		<section class="leftright">
-			<a href="http://cnn.com" title="Experience ignites discovery" target="_blank">
+			<a href="http://northeastern.edu/research/" title="Experience ignites discovery" target="_blank">
 				<div class="image">
 					<div style="background:url(http://fpoimagery.com/?t=px&w=650&h=300);"></div>
 				</div>
 				<div class="content">
 					<div>
 						<h3>Experience ignites discovery.</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<p>Experience drives our solutions-focused research enterprise. It fuels our many partnerships with industry, government, and academia, bringing great minds together to solve pressing global challenges.</p>
 					</div>
 				</div>
 			</a>
 		</section>
 
 		<section class="leftright">
-			<a href="http://cnn.com" title="Experience makes learning lifelong" target="_blank">
+			<a href="https://www.northeastern.edu/graduate/" title="Experience makes learning lifelong" target="_blank">
 				<div class="content">
 					<div>
 						<h3>Experience makes learning lifelong.</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p>Experience built into our graduate and professional-degree programs lends perspective, and direction. It turns our community—and widening network of campuses—into your far-reaching web of support. And it keeps you flexible, adaptable, and in step with the world, at every stage of your life and career.</p>
 					</div>
 				</div>
 				<div class="image">

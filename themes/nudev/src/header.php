@@ -1,8 +1,7 @@
 <?php
 	// error_reporting(E_ALL);
 ?>
-<!-- <!doctype html> -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
 
