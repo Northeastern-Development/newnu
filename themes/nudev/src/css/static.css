@@ -125,54 +125,54 @@
   src: local("Lato Black Italic"), local("Lato-BlackItalic"), url("../.fonts/lato-v14-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900italic.woff") format("woff"), url("../.fonts/lato-v14-latin-900italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900italic.svg#Lato") format("svg");
   /* Legacy iOS */ }
 
-div#nu__static {
+main#nu__static {
   width: 100vw;
+  margin: 0 0 0 0;
   background: #fffffe;
-  color: black;
-  height: auto; }
-  div#nu__static section.hero {
+  color: black; }
+  main#nu__static section.hero {
     background: black;
     width: 100vw;
     margin: 0 0 60px 0; }
-    div#nu__static section.hero > div {
+    main#nu__static section.hero > div {
       width: 50vw;
       margin: 52.5px auto 63px auto;
       color: #fffffe; }
-  div#nu__static section.intro {
+  main#nu__static section.intro {
     width: 50vw;
     margin: 0 auto 0 auto;
     border-bottom: solid black 1px; }
-    div#nu__static section.intro > h1 {
+    main#nu__static section.intro > h1 {
       margin: 0 0 15px 0; }
-  div#nu__static section.fullwidth {
+  main#nu__static section.fullwidth {
     width: 100vw;
     margin: 51px auto 0 auto;
     padding: 30px 0 0 0;
     background: #ece6d5;
     text-align: center; }
-    div#nu__static section.fullwidth > h4 {
+    main#nu__static section.fullwidth > h4 {
       text-align: center; }
-    div#nu__static section.fullwidth a:hover {
+    main#nu__static section.fullwidth a:hover {
       border-bottom: solid #cc0000 1px;
       color: inherit; }
-  div#nu__static section {
+  main#nu__static section {
     width: 50vw;
     margin: 51px auto 0 auto; }
-    div#nu__static section > ul {
+    main#nu__static section > ul {
       display: flex;
       flex-direction: row;
       margin: 30px 10vw 0 10vw;
       list-style: none;
       list-style-type: none; }
-      div#nu__static section > ul > li {
+      main#nu__static section > ul > li {
         flex: 1;
         margin: 0 30px 30px 0;
         text-align: left; }
-        div#nu__static section > ul > li a {
+        main#nu__static section > ul > li a {
           border-bottom: none; }
-        div#nu__static section > ul > li h6 > a {
+        main#nu__static section > ul > li h6 > a {
           border-bottom: solid #cc0000 1px; }
-  div#nu__static section:last-child {
+  main#nu__static section:last-child {
     margin: 51px auto 0 auto;
     padding-bottom: 45px; }
 
