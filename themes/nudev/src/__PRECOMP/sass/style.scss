@@ -74,6 +74,7 @@ main{
   min-height: calc(#{$h} - #{$header-height});
   min-height: -moz-calc(#{$h} - #{$header-height});
   min-height: -webkit-calc(#{$h} - #{$header-height});
+  height: 100%;
   width: $content-width;
   & > section{
     position: relative;
