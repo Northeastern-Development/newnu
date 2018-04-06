@@ -6,7 +6,7 @@
 
 ?>
 
-	<div class="main" id="nu__static" role="main" aria-label="content">
+	<main id="nu__static" role="main" aria-label="content">
 
 		<section class="hero">
 			<div>
@@ -57,6 +57,6 @@
 			</a>
 		</section>
 
-	</div>
+	</main>
 
 <?php get_footer(); ?>

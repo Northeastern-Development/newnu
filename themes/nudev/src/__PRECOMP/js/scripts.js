@@ -54,7 +54,7 @@ var offset = 0;
 		*************************************************************************** */
 
 		// we need to set the main content offset based on: utility nav height, alerts height, and main header height
-		$("div.main").css({
+		$("main").css({
 			"margin-top":$("header").outerHeight()
 		});
 
