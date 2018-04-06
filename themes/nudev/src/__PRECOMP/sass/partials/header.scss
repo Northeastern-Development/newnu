@@ -123,10 +123,10 @@ div#nu__logo{
     font-size: 3rem;
     color: white;
     border:none;
-    & > img{
-      height: 60px;
-      margin: 0 0 10px 0;
-    }
+    // & > img{
+    //   height: 60px;
+    //   margin: 0 0 10px 0;
+    // }
     & > svg{
       height: 80px;
     }
@@ -243,9 +243,14 @@ div#nu__alerts{
   }
   div#nu__logo{
     & > a{
-      line-height: 69px;
-      & > img{
-        height: 30px;
+      line-height: 50px;
+      // line-height: 69px;
+      // & > img{
+      //   height: 30px;
+      // }
+      height: 50px;
+      & > svg{
+        height: 50px;
       }
     }
   }
