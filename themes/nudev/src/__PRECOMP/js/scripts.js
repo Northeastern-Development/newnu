@@ -298,7 +298,8 @@ var offset = 0;
 
 
 			// if we are clicking on cats in the iamnav, we may need to swap the background image
-			if($(this).parent().parent().parent().parent().attr('id') == 'nu__iamnav' && iamnavbgs.length > 0){
+			// console.log(iamnavbgs);
+			if($(this).parent().parent().parent().parent().attr('id') == 'nu__iamnav' && iamnavbgs.length > 0 && iamnavbgs[0] != ''){
 				$('div#nu__iamnav').attr('style','background-image: url('+iamnavbgs[$(this).index()]+');');
 			}
 
