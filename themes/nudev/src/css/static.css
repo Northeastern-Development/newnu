@@ -125,54 +125,55 @@
   src: local("Lato Black Italic"), local("Lato-BlackItalic"), url("../.fonts/lato-v14-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900italic.woff") format("woff"), url("../.fonts/lato-v14-latin-900italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900italic.svg#Lato") format("svg");
   /* Legacy iOS */ }
 
-main#nu__static {
+div.main {
   width: 100vw;
-  margin: 0 0 0 0;
+  margin-top: 80px;
   background: #fffffe;
   color: black; }
-  main#nu__static section.hero {
+  div.main section.hero {
     background: black;
     width: 100vw;
-    margin: 0 0 60px 0; }
-    main#nu__static section.hero > div {
+    margin: 0 0 60px 0;
+    overflow: hidden; }
+    div.main section.hero > div {
       width: 50vw;
       margin: 52.5px auto 63px auto;
       color: #fffffe; }
-  main#nu__static section.intro {
+  div.main section.intro {
     width: 50vw;
     margin: 0 auto 0 auto;
     border-bottom: solid black 1px; }
-    main#nu__static section.intro > h1 {
+    div.main section.intro > h1 {
       margin: 0 0 15px 0; }
-  main#nu__static section.fullwidth {
+  div.main section.fullwidth {
     width: 100vw;
     margin: 51px auto 0 auto;
     padding: 30px 0 0 0;
     background: #ece6d5;
     text-align: center; }
-    main#nu__static section.fullwidth > h4 {
+    div.main section.fullwidth > h4 {
       text-align: center; }
-    main#nu__static section.fullwidth a:hover {
+    div.main section.fullwidth a:hover {
       border-bottom: solid #cc0000 1px;
       color: inherit; }
-  main#nu__static section {
+  div.main section {
     width: 50vw;
     margin: 51px auto 0 auto; }
-    main#nu__static section > ul {
+    div.main section > ul {
       display: flex;
       flex-direction: row;
       margin: 30px 10vw 0 10vw;
       list-style: none;
       list-style-type: none; }
-      main#nu__static section > ul > li {
+      div.main section > ul > li {
         flex: 1;
         margin: 0 30px 30px 0;
         text-align: left; }
-        main#nu__static section > ul > li a {
+        div.main section > ul > li a {
           border-bottom: none; }
-        main#nu__static section > ul > li h6 > a {
+        div.main section > ul > li h6 > a {
           border-bottom: solid #cc0000 1px; }
-  main#nu__static section:last-child {
+  div.main section:last-child {
     margin: 51px auto 0 auto;
     padding-bottom: 45px; }
 
