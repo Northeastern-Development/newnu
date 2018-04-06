@@ -21,14 +21,14 @@ body.home{
   min-height: 100%;
 }
 
-div.main{
 
+
+
+div.main{
   width: $wrapper-width;
   margin: 0 0 0 0;
   background: rgba($brand_colors-black,1.0);
-
   $h: 100%;
-
   min-height: calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
   height: calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
   min-height: -moz-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
@@ -36,12 +36,10 @@ div.main{
   min-height: -webkit-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
   height: -webkit-calc(#{$h} - #{$header-height} - #{$footer-height-collapsed});
 
-
   div#nu__seo-content{
     position: absolute;
     z-index: -1000;
   }
-
 
   div#nu__stories{
     height: 99.9%;  // this is a fix for the bottom borders on the lowest row of articles to appear
