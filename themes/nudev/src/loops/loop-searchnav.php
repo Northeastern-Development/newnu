@@ -25,4 +25,4 @@
 
 ?>
 
-<div id="nu__searchbar" style="<?=$style?>"><section><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><div><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><input type="text" name="query" id="query" title="Enter your search query here" /><label for="query" class="label">Search</label><button class="reset hidden" type="reset" title="Click here to clear current search">&#xE5C9;</button></div><p>People like you searched these items...</p><ul><?=$popular?></ul></form></section></div>
+<div id="nu__searchbar" style="<?=$style?>"><section><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><div><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><input type="text" name="query" id="query" title="Enter your search query here" /><label for="query" class="label">Search</label><button class="reset hidden" type="reset" title="Click here to clear current search">&#xE5C9;</button></div><p>Commonly searched items</p><ul><?=$popular?></ul></form></section></div>
