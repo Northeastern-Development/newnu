@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-		<main id="nu__static" role="main" aria-label="content">
+		<div class="main" role="main" aria-label="content">
 		<!-- section -->
 		<section class="hero">
 			<div>
@@ -23,7 +23,7 @@ get_header(); ?>
 
 		</section>
 		<!-- /section -->
-	</main>
+	</div>
 
 <?php // get_sidebar(); ?>
 
