@@ -556,7 +556,8 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
             height: auto;
             line-height: 40px;
             & > a{
-              @include font-6l-l;
+              //@include font-6l-l;
+              @include font-10l-l;
               color: rgba($brand_colors-white,1.0);
               border-bottom: none;
               &:hover{
