@@ -17,7 +17,7 @@ get_header(); ?>
 		</section>
 		<section>
 			<p>It appears that the page or resource you are looking for cannot be found.</p>
-			<p>Please use the main navigation to jump to a specific section fo the site or the search form.</p>
+			<p>Please use the main navigation to jump to a specific section of the site or the search form.</p>
 		</section>
 
 
