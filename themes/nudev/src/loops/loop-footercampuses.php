@@ -10,7 +10,7 @@
 
 	if(count($res) > 0){
 
-		$return .= '<div><p>Main Campuses</p><ul>';
+		$return .= '<div><p>Campuses</p><ul>';
 
 		$guide = '<li><a href="%s" title="Learn more about our %s campus" target="_blank">%s</a></li>';
 
