@@ -11,7 +11,8 @@
 		<section class="hero">
 			<div>
 				<h2>Experience: The push that drives us</h2>
-				<h3>For more than 100 years, Northeastern has been driven by a simple truth: Experience deepens learning like nothing else can. Today, that truth has never been more relevant.</h3>
+				<h3>For more than 100 years, Northeastern has been driven by a simple truth:
+Experience deepens learning like nothing else can. Today, that truth has never been more relevant. Experience propels you beyond the confines of one discipline, campus, or degree to a lifetime of growth, learning, and knowledge creation, anytime, anywhere.</h3>
 			</div>
 		</section>
 
