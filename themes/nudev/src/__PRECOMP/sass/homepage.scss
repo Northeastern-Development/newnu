@@ -362,7 +362,14 @@ div.main{
                   color: rgba($brand_colors-black,1.0);
                   cursor: pointer;
       					}
+
       				}
+              @media screen and (-webkit-min-device-pixel-ratio:0)
+                and (min-resolution:.001dpcm) {
+                  & > .slider_next,
+                  & > .slider_prev {padding-top:3px;}
+              }
+
       				& > .slider_next {
       					left: ($gutter * 2) + 5px;
       				}
