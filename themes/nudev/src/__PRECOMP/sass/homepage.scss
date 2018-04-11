@@ -369,6 +369,12 @@ div.main{
                   & > .slider_next,
                   & > .slider_prev {padding-top:3px;}
               }
+              @media not all and (min-resolution:.001dpcm)
+                { @supports (-webkit-appearance:none) {
+
+                  & > .slider_next,
+                  & > .slider_prev {padding-top:3px;}
+                }}
 
       				& > .slider_next {
       					left: ($gutter * 2) + 5px;
