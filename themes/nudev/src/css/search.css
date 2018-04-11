@@ -430,42 +430,35 @@ div.main {
           top: -5px; }
 
 @media screen and (max-width: 740px) {
-  main#nu__search {
+  div.main {
     width: auto; }
-    main#nu__search > section {
+    div.main > section {
       border-left: none;
       width: 100%; }
-      main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form {
+      div.main > section > div.nu__searchbar-container > form#nu__searchbar-form {
         width: auto; }
-        main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div {
+        div.main > section > div.nu__searchbar-container > form#nu__searchbar-form > div {
           margin-right: 30px;
-          width: inherit; }
-  main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div button {
-    height: 50px; } }
+          width: inherit; } }
 
 @media screen and (max-width: 500px) {
-  main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div {
-    display: block;
-    margin-right: 0; }
-    main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div button {
-      width: 10vw;
-      height: 45px; }
-    main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div input {
-      width: 62vw; } }
+  div.main > section > div.nu__searchbar-container > form#nu__searchbar-form > div > input {
+    width: 80%;
+    flex: none; } }
 
 @media screen and (max-width: 400px) {
-  main#nu__search > section > div#___gcse_0 div.gsc-webResult div.gs-snippet, main#nu__search > section > div#___gcse_0 div.gsc-webResult td.gsc-thumbnail {
+  div.main > section > div#___gcse_0 div.gsc-webResult div.gs-snippet, div.main > section > div#___gcse_0 div.gsc-webResult td.gsc-thumbnail {
     display: none !important; }
-  main#nu__search > section > div#___gcse_0 div.gsc-webResult div.gs-title a {
+  div.main > section > div#___gcse_0 div.gsc-webResult div.gs-title a {
     font-size: 1.6rem;
     line-height: 2.8rem; }
-    main#nu__search > section > div#___gcse_0 div.gsc-webResult div.gs-title a b {
+    div.main > section > div#___gcse_0 div.gsc-webResult div.gs-title a b {
       font-size: 1.6rem; }
-  main#nu__search > section > div#___gcse_0 div.gsc-cursor-box {
+  div.main > section > div#___gcse_0 div.gsc-cursor-box {
     text-align: left;
     margin-left: 15px; }
-    main#nu__search > section > div#___gcse_0 div.gsc-cursor-box div.gsc-cursor div.gsc-cursor-page {
+    div.main > section > div#___gcse_0 div.gsc-cursor-box div.gsc-cursor div.gsc-cursor-page {
       width: 15px; }
-  main#nu__search > section > div#___gcse_0 div.gcsc-branding {
+  div.main > section > div#___gcse_0 div.gcsc-branding {
     float: left;
     margin-left: 15px; } }

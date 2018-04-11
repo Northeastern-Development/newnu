@@ -400,7 +400,7 @@ div.main{
 
 
   @media screen and (max-width: 740px) {
-    main#nu__search {
+    div.main {
       width:auto;
       & > section {
         border-left:none;
@@ -416,17 +416,14 @@ div.main{
         }
       }
     }
-    main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div button {
-      height:50px;
-    }
+    // main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div button {
+    //   height:50px;
+    // }
   }
 
 
-
-
-
   @media screen and (max-width: 500px) {
-    main#nu__search {
+    div.main {
 
       & > section {
 
@@ -434,24 +431,48 @@ div.main{
           & > form#nu__searchbar-form {
 
               & > div {
-                display: block;
-                margin-right:0;
-                & button {
-                  width:10vw;
-                  height:45px;
-                }
-                & input {
-                  width:62vw;
+                & > input {
+                  width:80%;
+                  flex:none;
                 }
               }
             }
         }
       }
     }
+    // main#nu__search > section > div.nu__searchbar-container > form#nu__searchbar-form > div button {
+    //   height:50px;
+    // }
   }
 
+
+  // @media screen and (max-width: 500px) {
+  //   div.main {
+  //
+  //     & > section {
+  //
+  //       & > div.nu__searchbar-container {
+  //         & > form#nu__searchbar-form {
+  //
+  //             & > div {
+  //               display: block;
+  //               margin-right:0;
+  //               & button {
+  //                 //width:10vw;
+  //                 //height:45px;
+  //               }
+  //               & input {
+  //                 //width:62vw;
+  //               }
+  //             }
+  //           }
+  //       }
+  //     }
+  //   }
+  // }
+
   @media screen and (max-width: 400px) {
-    main#nu__search {
+    div.main {
 
       & > section {
 
