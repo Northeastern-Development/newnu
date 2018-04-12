@@ -25,7 +25,7 @@ Experience deepens learning like nothing else can. Today, that truth has never b
 					</div>
 				</div>
 				<div class="image">
-					<div style="background:url(http://newnu.nudev.net/wp-content/uploads/whynu1_1400.jpg);"></div>
+					<div style="background:url(<?=home_url()?>/wp-content/uploads/whynu1_1400.jpg);"></div>
 				</div>
 			</a>
 		</section>
@@ -33,7 +33,7 @@ Experience deepens learning like nothing else can. Today, that truth has never b
 		<section class="leftright">
 			<a href="http://northeastern.edu/research/" title="Experience ignites discovery" target="_blank">
 				<div class="image">
-					<div style="background:url(http://newnu.nudev.net/wp-content/uploads/whynu2.jpg);"></div>
+					<div style="background:url(<?=home_url()?>/wp-content/uploads/whynu2.jpg);"></div>
 				</div>
 				<div class="content">
 					<div>
@@ -53,7 +53,7 @@ Experience deepens learning like nothing else can. Today, that truth has never b
 					</div>
 				</div>
 				<div class="image">
-					<div style="background:url(http://newnu.nudev.net/wp-content/uploads/whynu3.jpg);"></div>
+					<div style="background:url(<?=home_url()?>/wp-content/uploads/whynu3.jpg);"></div>
 				</div>
 			</a>
 		</section>
