@@ -70,9 +70,9 @@ var offset = 0;
 		// if this file has loaded, we want to append an option to let the page know JS is working
 		$('body').addClass('nu-js');
 
-		//needed a way to go back a page if someone clicked the search button from the results page. 
+		//needed a way to go back a page if someone clicked the search button from the results page.
 		$('input:checkbox').prop('checked', false);
-		$('body.search .js-search-close').on('click', function(){
+		$('body.search .js-search-close').on('click touchend', function(){
 			goBack();
 		});
 
