@@ -421,6 +421,12 @@ div.main{
     // }
   }
 
+  @media screen and (max-width: 720px) {
+    div.main > section > div.nu__searchbar-container > form#nu__searchbar-form > div > input {
+      @include font-2l-l;
+    }
+  }
+
 
   @media screen and (max-width: 500px) {
     div.main {

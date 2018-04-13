@@ -210,6 +210,20 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
     }
   }
 
+  // body.search {
+  //   label#nu__search-toggle-label{
+  //     margin: 0 20px 0 0;
+  //     &:before{
+  //       content: 'Close';
+  //       font-weight:700;
+  //       color: $brand_colors-white;
+  //     }
+  //     &:after{
+  //       content: '\E14C';
+  //     }
+  //   }
+  // }
+
   // ****************************************************************************************************
 
 
@@ -964,7 +978,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   }
 
 
-  @media screen and (max-width: 680px) {
+  @media screen and (max-width: 720px) {
 
     $s: 100px;
     $hh: 100%;
@@ -1027,6 +1041,12 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
     label#nu__supernav-toggle-label::before, label#nu__search-toggle-label::before, label#nu__iamnav-toggle-label::before, input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label::before, input#nu__search-toggle:checked ~ label#nu__search-toggle-label::before, input#nu__iamnav-toggle:checked ~ label#nu__iamnav-toggle-label::before  {
       content:'';
     }
+
+    #nu__searchbar > section > form > div > input {
+      @include font-2l-l;
+    }
+
+
 
   }
 

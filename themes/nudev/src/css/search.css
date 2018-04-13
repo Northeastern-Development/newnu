@@ -441,6 +441,13 @@ div.main {
           margin-right: 30px;
           width: inherit; } }
 
+@media screen and (max-width: 720px) {
+  div.main > section > div.nu__searchbar-container > form#nu__searchbar-form > div > input {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+    text-align: left; } }
+
 @media screen and (max-width: 500px) {
   div.main > section > div.nu__searchbar-container > form#nu__searchbar-form > div > input {
     width: 80%;
