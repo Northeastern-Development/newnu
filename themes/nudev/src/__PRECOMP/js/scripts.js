@@ -61,14 +61,20 @@ var offset = 0;
 		});
 
 
+		function goBack() {
+		    window.history.back();
 
+		}
 
 
 		// if this file has loaded, we want to append an option to let the page know JS is working
 		$('body').addClass('nu-js');
 
-
-
+		//needed a way to go back a page if someone clicked the search button from the results page. 
+		$('input:checkbox').prop('checked', false);
+		$('body.search .js-search-close').on('click', function(){
+			goBack();
+		});
 
 
 		// need to account for the alerts being open and shift the main menu overlays down to match!!
