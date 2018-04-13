@@ -77,6 +77,7 @@ var offset = 0;
 		});
 
 
+
 		// need to account for the alerts being open and shift the main menu overlays down to match!!
 		if(parseInt($('#nu__alerts').height()) > 0){
 			$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('#nu__alerts').outerHeight())});
