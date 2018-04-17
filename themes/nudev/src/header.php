@@ -59,10 +59,19 @@
 			s.parentNode.insertBefore(gcse, s);
 			})();
 		</script>
-
+		<!-- Google Tag Manager -->
+		<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-WGQLLJ');</script> -->
+		<!-- End Google Tag Manager -->
 	</head>
 	<body <?php body_class(); ?>>
-
+		<!-- Google Tag Manager (noscript) -->
+	<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGQLLJ"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+	<!-- End Google Tag Manager (noscript) -->
 		<p class="testp" style="position:fixed;background:rgba(0,0,0,0.7);color:#fff;top:200px;left:0;font-weight:bold;font-size:20px;z-index:99999999;"></p>
 
 		<div class="wrapper">
