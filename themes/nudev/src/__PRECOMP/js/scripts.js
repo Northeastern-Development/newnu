@@ -71,7 +71,8 @@ var offset = 0;
 		$('body').addClass('nu-js');
 
 		//needed a way to go back a page if someone clicked the search button from the results page.
-		$('input:checkbox').prop('checked', false);
+		//$('input:checkbox').prop('checked', false);
+		$('nav input').prop('checked',false);
 		$('body.search .js-search-close').on('click touchend', function(){
 			goBack();
 		});
