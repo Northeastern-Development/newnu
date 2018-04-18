@@ -39,7 +39,7 @@
   function add_supernav_acf_columns ( $columns ) {
     $slice1 = array_slice($columns, 0, 2, true);
     $slice2 = array_slice($columns, 2, count($columns), true);
-    return array_merge($slice1,array('category' => __ ( 'Type' )),array('status' => __ ( 'Status' )),$slice2);
+    return array_merge($slice1,array('category' => __ ( 'Type' )),array('sub-type' => __ ( 'Sub-Type' )),array('status' => __ ( 'Status' )),$slice2);
   }
 
 
@@ -47,6 +47,9 @@
     switch ( $column ) {
       case 'category':
         echo get_post_meta ( $post_id, 'category', true );
+        break;
+      case 'sub-type':
+        echo get_post_meta ( $post_id, 'sub-type', true );
         break;
       case 'status':
         echo (get_post_meta ( $post_id, 'status', true ) === "1"?"Active":"");
@@ -67,7 +70,7 @@
       $guide = '<option value="%s"%s>%s</option>';
 
       // hardcoded values for now, there is an issue retrieving them again after the first filter
-      $values = array(
+      $typeValues = array(
         'Main Category' => 'Main Category'
         ,'About' => 'About'
         ,'Academics' => 'Academics'
@@ -82,12 +85,24 @@
         ,'Regional Campuses' => 'Regional Campuses'
         ,'Research' => 'Research'
       );
+
+      $subtypeValues = array(
+        'Alumni' => 'Alumni'
+        ,'Current Student' => 'Current Student'
+        ,'Employer Partner' => 'Employer Partner'
+        ,'Faculty/Staff' => 'Faculty/Staff'
+        ,'Future Student' => 'Future Student'
+        ,'Journalist' => 'Journalist'
+        ,'Parent' => 'Parent'
+        ,'Prospective Faculty' => 'Prospective Faculty'
+      );
   ?>
-      <select name="ADMIN_FILTER_FIELD_VALUE"><option value=""><?php _e('Filter By Type', 'category'); ?></option>
+      <select name="ADMIN_FILTER_FIELD_VALUE-1"><option value=""><?php _e('Type', 'category'); ?></option>
 
   <?php
 
-      foreach ($values as $label => $value){
+    // this will build the list of category options
+      foreach ($typeValues as $label => $value){
         printf(
            $guide
           ,$value
@@ -97,6 +112,23 @@
       }
   ?>
       </select>
+
+      <select name="ADMIN_FILTER_FIELD_VALUE-2"><option value=""><?php _e('Sub Type', 'sub-type'); ?></option>
+
+      <?php
+
+      // this will build the list of category options
+      foreach ($subtypeValues as $label => $value){
+        printf(
+           $guide
+          ,$value
+          ,$value == $current_v? ' selected="selected"':''
+          ,$label
+        );
+      }
+      ?>
+      </select>
+
   <?php
     }
   }
@@ -106,8 +138,12 @@
     global $pagenow;
     global $typenow;
     $type = 'supernav';
-    if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_FIELD_VALUE']) && $_GET['ADMIN_FILTER_FIELD_VALUE'] != ''){
-        $query->query_vars['meta_value'] = $_GET['ADMIN_FILTER_FIELD_VALUE'];
+    if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && (isset($_GET['ADMIN_FILTER_FIELD_VALUE-1']) && $_GET['ADMIN_FILTER_FIELD_VALUE-1'] != '' || isset($_GET['ADMIN_FILTER_FIELD_VALUE-2']) && $_GET['ADMIN_FILTER_FIELD_VALUE-2'] != '')){
+      if(isset($_GET['ADMIN_FILTER_FIELD_VALUE-1']) && $_GET['ADMIN_FILTER_FIELD_VALUE-1'] != ''){
+        $query->query_vars['meta_value'] = $_GET['ADMIN_FILTER_FIELD_VALUE-1'];
+      }else if(isset($_GET['ADMIN_FILTER_FIELD_VALUE-2']) && $_GET['ADMIN_FILTER_FIELD_VALUE-2'] != ''){
+        $query->query_vars['meta_value'] = $_GET['ADMIN_FILTER_FIELD_VALUE-2'];
+      }
     }
   }
 
