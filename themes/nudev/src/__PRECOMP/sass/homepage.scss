@@ -332,12 +332,14 @@ div.main{
             top: $gutter;
             width: auto;
             overflow: visible;
+            // background: green;
             z-index:201;
             & > div{
               clear: both;
               width: 80px;
-              overflow: hidden;
+              overflow: visible;
               margin: 0 0 10px 0;
+              padding: 0 0 0 0;
               display: table;
               & > .slider_next,
               & > .slider_prev {
@@ -345,7 +347,10 @@ div.main{
                 float: left;
                 margin: 0 10px 0 0;
                 @include font-5r-l;
-                line-height: inherit;
+                // line-height: 70%;
+                // line-height: 2.8rem;
+                line-height: 1.4;
+                // line-height: 1px;
       				  width: 28px;
                 height: 28px;
                 text-align: center;
@@ -354,9 +359,12 @@ div.main{
                 color: rgba($brand_colors-black,1.0);
                 box-shadow: 0 2px 4px rgba($brand_colors-black,.5);
       					z-index:100;
-                display:table-cell ;
-                vertical-align:middle;
-                padding-top:1px;
+                display:table-cell;
+                // padding: 20px;
+                vertical-align: middle;
+                // vertical-align: top;
+                // padding-top:1px;
+                // background: red;
       					&:hover {
       						background: rgba($brand_colors-white,1.0);
                   color: rgba($brand_colors-black,1.0);
@@ -364,17 +372,17 @@ div.main{
       					}
 
       				}
-              @media screen and (-webkit-min-device-pixel-ratio:0)
-                and (min-resolution:.001dpcm) {
-                  & > .slider_next,
-                  & > .slider_prev {padding-top:3px;}
-              }
-              @media not all and (min-resolution:.001dpcm)
-                { @supports (-webkit-appearance:none) {
-
-                  & > .slider_next,
-                  & > .slider_prev {padding-top:3px;}
-                }}
+              // @media screen and (-webkit-min-device-pixel-ratio:0)
+              //   and (min-resolution:.001dpcm) {
+              //     & > .slider_next,
+              //     & > .slider_prev {padding-top:3px;}
+              // }
+              // @media not all and (min-resolution:.001dpcm)
+              //   { @supports (-webkit-appearance:none) {
+              //
+              //     & > .slider_next,
+              //     & > .slider_prev {padding-top:3px;}
+              //   }}
 
       				& > .slider_next {
       					left: ($gutter * 2) + 5px;

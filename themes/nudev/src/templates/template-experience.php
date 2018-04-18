@@ -21,7 +21,7 @@ Experience deepens learning like nothing else can. Today, that truth has never b
 				<div class="content">
 					<div>
 						<h3>Experience turns undergraduates into leaders.</h3>
-						<p>Through co-op--our pioneering, renowned experiential program--our students put ideas into action in professional positions worldwide. They build knowledge through research, find purpose through service, and become high-impact, global citizens, the agents of change.</p>
+						<p>Through co-op&mdash;our pioneering, renowned experiential program&mdash;our students put ideas into action in professional positions worldwide. They build knowledge through research, find purpose through service, and become high-impact, global citizens, the agents of change.</p>
 					</div>
 				</div>
 				<div class="image">
@@ -49,7 +49,7 @@ Experience deepens learning like nothing else can. Today, that truth has never b
 				<div class="content">
 					<div>
 						<h3>Experience makes learning lifelong.</h3>
-						<p>Experience built into our graduate and professional-degree programs lends perspective, and direction. It turns our community—and widening network of campuses—into your far-reaching web of support. And it keeps you flexible, adaptable, and in step with the world, at every stage of your life and career.</p>
+						<p>Experience built into our graduate and professional-degree programs lends perspective, and direction. It turns our community&mdash;and widening network of campuses&mdash;into your far-reaching web of support. And it keeps you flexible, adaptable, and in step with the world, at every stage of your life and career.</p>
 					</div>
 				</div>
 				<div class="image">
