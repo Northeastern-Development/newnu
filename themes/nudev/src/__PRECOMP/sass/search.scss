@@ -261,7 +261,7 @@ div.main{
       }
 
       & div.gsc-webResult{
-        margin: 0 60px $gutter 18px;
+        margin: 0 60px $gutter 10px;
         border: none;
         padding: 0 0 0 0;
         & td.gsc-thumbnail{
@@ -275,6 +275,7 @@ div.main{
           border: none;
           color: rgba($brand_colors-black,1.0);
           text-decoration: none;
+          margin: 0 0 0 76px;
           & a{
             @include font-3l-l;
             text-decoration: none;
@@ -286,6 +287,14 @@ div.main{
             &:hover{
               border-bottom: solid rgba($brand_colors-red,1.0) 2px;
             }
+          }
+        }
+
+        div.gsc-url-top{
+          margin: 0 0 10px 76px;
+          line-height: 1.5rem;
+          & b{
+            font-size: 13px;
           }
         }
 

@@ -334,7 +334,7 @@ div.main {
     div.main > section > div#___gcse_0 div.gsc-adBlock {
       display: none; }
     div.main > section > div#___gcse_0 div.gsc-webResult {
-      margin: 0 60px 30px 18px;
+      margin: 0 60px 30px 10px;
       border: none;
       padding: 0 0 0 0; }
       div.main > section > div#___gcse_0 div.gsc-webResult td.gsc-thumbnail {
@@ -345,7 +345,8 @@ div.main {
         height: auto;
         border: none;
         color: black;
-        text-decoration: none; }
+        text-decoration: none;
+        margin: 0 0 0 76px; }
         div.main > section > div#___gcse_0 div.gsc-webResult div.gs-title a {
           font-size: 2.0rem;
           font-weight: 300;
@@ -361,6 +362,11 @@ div.main {
             text-align: left; }
           div.main > section > div#___gcse_0 div.gsc-webResult div.gs-title a:hover {
             border-bottom: solid #cc0000 2px; }
+      div.main > section > div#___gcse_0 div.gsc-webResult div.gsc-url-top {
+        margin: 0 0 10px 76px;
+        line-height: 1.5rem; }
+        div.main > section > div#___gcse_0 div.gsc-webResult div.gsc-url-top b {
+          font-size: 13px; }
       div.main > section > div#___gcse_0 div.gsc-webResult div.gs-snippet {
         font-size: 1.6rem;
         font-weight: 300;
