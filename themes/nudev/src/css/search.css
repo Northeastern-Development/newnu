@@ -460,13 +460,19 @@ div.main {
     flex: none; } }
 
 @media screen and (max-width: 400px) {
-  div.main > section > div#___gcse_0 div.gsc-webResult div.gs-snippet, div.main > section > div#___gcse_0 div.gsc-webResult td.gsc-thumbnail {
-    display: none !important; }
-  div.main > section > div#___gcse_0 div.gsc-webResult div.gs-title a {
-    font-size: 1.6rem;
-    line-height: 2.8rem; }
-    div.main > section > div#___gcse_0 div.gsc-webResult div.gs-title a b {
-      font-size: 1.6rem; }
+  div.main > section > div#___gcse_0 div.gsc-webResult {
+    margin: 0 10px 30px 10px; }
+    div.main > section > div#___gcse_0 div.gsc-webResult div.gs-snippet, div.main > section > div#___gcse_0 div.gsc-webResult td.gsc-thumbnail {
+      display: none !important; }
+    div.main > section > div#___gcse_0 div.gsc-webResult div.gs-title {
+      margin: 0 0 0 0; }
+      div.main > section > div#___gcse_0 div.gsc-webResult div.gs-title a {
+        font-size: 1.6rem;
+        line-height: 2.8rem; }
+        div.main > section > div#___gcse_0 div.gsc-webResult div.gs-title a b {
+          font-size: 1.6rem; }
+    div.main > section > div#___gcse_0 div.gsc-webResult div.gsc-url-top {
+      margin: 0 0 10px 0; }
   div.main > section > div#___gcse_0 div.gsc-cursor-box {
     text-align: left;
     margin-left: 15px; }

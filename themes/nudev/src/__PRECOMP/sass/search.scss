@@ -508,10 +508,12 @@ div.main{
 
         & > div#___gcse_0 {
           & div.gsc-webResult {
+            margin: 0 10px 30px 10px;
             & div.gs-snippet, td.gsc-thumbnail {
               display: none !important;
             }
             & div.gs-title  {
+              margin: 0 0 0 0;
               & a {
                 font-size:1.6rem;
                 line-height:2.8rem;
@@ -519,6 +521,13 @@ div.main{
                   font-size:1.6rem;
                 }
               }
+            }
+            div.gsc-url-top{
+              margin: 0 0 10px 0;
+              // line-height: 1.5rem;
+              // & b{
+              //   font-size: 13px;
+              // }
             }
           }
           & div.gsc-cursor-box {
