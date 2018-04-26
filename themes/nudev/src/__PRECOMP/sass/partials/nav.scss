@@ -420,6 +420,7 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
                 & > a{
                   //@include font-2l-l;
                   @include font-10l-l;
+                  letter-spacing: 0;
                   border-bottom: none;
                   color: rgba($brand_colors-black,1.0);
                   display: block;

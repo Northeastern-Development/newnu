@@ -61,6 +61,7 @@ h6{
 p{
   @include font-2l-l;
   margin: 0 0 $gutter 0;
+  letter-spacing: 0;
   &:last-of-type{
     margin: 0 0 0 0;
   }
