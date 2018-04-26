@@ -130,10 +130,15 @@ footer{
             width: 100%;
             height: auto;
             clear: both;
-            margin: 0 0 0 0;
+            margin: 0 0 20px 0;
             overflow: hidden;
             &:nth-child(1){
               padding: 0 0 0 0;
+            }
+            &:nth-child(2){
+              & > ul{
+                margin: 5px auto 0 auto;
+              }
             }
             & > p{
               float: left;
@@ -141,7 +146,8 @@ footer{
               color: rgba($brand_colors-white,0.8);
               text-transform: uppercase;
               width: 250px;
-              margin: 0 0 10px 0;
+              // margin: 0 0 10px 0;
+              margin: 0 0 0 0;
             }
 
             & > ul{
@@ -418,14 +424,17 @@ footer{
          //
          //   }
          // }
-           //  & > div{
+           & > div{
            //
            //    &:nth-child(1){
            //
            //    }
-           //    & > p{
+           & > p{
            //
-           //    }
+           // background: red;
+           width: auto;
+           margin-right: 20px;
+           }
            //
            //    & > ul{
            //
@@ -446,7 +455,7 @@ footer{
            //        }
            //      }
            //    }
-           // }
+           }
          // & > p{
          //
          //   & > a{
@@ -724,10 +733,11 @@ footer{
     //
     // }
 
+    // background: red;
 
-
-    // &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
+    &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
     //
+      height: auto;
     //   & > div.nu__footer{
     //     & > div.nu__footer-hideshow{
     //
@@ -739,7 +749,7 @@ footer{
     //       }
     //     }
     //   }
-    // }
+    }
 
 
      // &.collapse{  // this is the closed state of the footer on the homepage only!
@@ -768,6 +778,8 @@ footer{
     // }
 
      & > div.nu__footer{
+
+
 
        // & > div.nu__footer-hideshow{
        //
