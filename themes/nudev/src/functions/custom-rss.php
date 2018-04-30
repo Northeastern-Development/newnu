@@ -9,6 +9,7 @@
     add_feed('administration', 'administrationRSSFunc');
     add_feed('alerts', 'alertsRSSFunc');
     add_feed('supernav', 'supernavRSSFunc');
+    add_feed('departmentsandprograms', 'departmentsandprogramsRSSFunc');
 
   }
 
@@ -48,6 +49,12 @@
   function supernavRSSFunc(){
     header( 'Content-Type: application/rss+xml; charset=' . get_option( 'blog_charset' ), true );
     require_once( get_template_directory() . '/templates/rss/rss-supernav.php' );
+  }
+
+  // university departments and programs
+  function departmentsandprogramsRSSFunc(){
+    header( 'Content-Type: application/rss+xml; charset=' . get_option( 'blog_charset' ), true );
+    require_once( get_template_directory() . '/templates/rss/rss-departmentsandprograms.php' );
   }
 
 ?>

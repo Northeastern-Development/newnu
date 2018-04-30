@@ -315,6 +315,13 @@
    font-weight:300;
  }
 
+ @mixin font-5l-l{
+   font-size: 2.4rem;
+   line-height: 3.2rem;
+   text-align: left;
+   font-weight:300;
+ }
+
  @mixin font-5b-l{
    font-size: 2.4rem;
    font-weight: 700;

@@ -30,7 +30,8 @@ footer{
 
   // this is for pages that will include the pre-footer area
   &.addprefooter{
-    height: 540px;
+    // height: 540px;
+    height: auto;
   }
 
 
@@ -82,13 +83,58 @@ footer{
 
   // this defines the space for the pre-footer on pages that include it
   & > div.nu__prefooter{
-    height: 300px;
-    background: rgba($brand_colors-red,1.0);
+    height: auto;
+    background: rgba($brand_colors-white,1.0);
     width: $wrapper-width;
+    margin: 0 0 0 0;
+    & > h3{
+      color: rgba($brand_colors-black,1.0);
+    }
     & > div{
-      width: $content-width;
+      width: $content-width-wide;
       height: inherit;
       margin: 0 auto 0 auto;
+      & > ul{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        list-style: none;
+        list-style-type: none;
+        & > li{
+          flex-grow: 1;
+          min-height: 250px;
+          margin: 0 $gutter ($gutter * 2) 0;
+          &:last-child{
+            margin: 0 0 ($gutter * 2) 0;
+          }
+          & > a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            &:hover{
+              color: rgba($brand_colors-black,1.0);
+              & > div.image > div{
+                @include block-item-hover;
+
+              }
+              & > h4{
+                @include action-arrow-shown;
+              }
+            }
+            & > div.image{
+              height: 200px;
+              @include block-group;
+              & > div{
+                @include block-item-default;
+              }
+            }
+            & > h4{
+              @include action-arrow;
+              @include action-arrow-hidden;
+            }
+          }
+        }
+      }
     }
   }
 

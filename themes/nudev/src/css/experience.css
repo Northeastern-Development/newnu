@@ -136,7 +136,7 @@ div.main section.leftright {
     div.main section.leftright a:hover {
       color: black; }
       div.main section.leftright a:hover div.content > div > h3:after {
-        visibility: visible; }
+        opacity: 1.0; }
       div.main section.leftright a:hover div.image > div {
         transform: scale(1.1);
         transition: all .5s; }
@@ -158,10 +158,11 @@ div.main section.leftright {
           font-size: 3.4rem;
           line-height: 4.8rem;
           text-align: center;
-          color: #c00;
+          color: #cc0000;
           content: '\E8E4';
-          vertical-align: -20%;
-          visibility: hidden; }
+          vertical-align: -20%; }
+        div.main section.leftright > a > div.content h3:after {
+          opacity: 0.0; }
       div.main section.leftright > a > div.content p {
         border-top: solid #979797 1px;
         padding: 15px 60px 0 0;
@@ -170,19 +171,18 @@ div.main section.leftright {
       width: 57%;
       max-width: 57%;
       overflow: hidden;
-      position: relative; }
+      position: relative;
+      width: 100%; }
       div.main section.leftright > a > div.image > div {
         position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
         transform: scale(1);
         transition: all .5s;
+        background: black;
         background-position: center center !important;
         background-repeat: no-repeat !important;
-        background-size: cover !important;
-        background-color: black; }
+        background-size: cover !important; }
   div.main section.leftright:nth-child(even) > a > div:nth-child(1) {
     order: 1;
     margin: 0 3% 0 0; }
