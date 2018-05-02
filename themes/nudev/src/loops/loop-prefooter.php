@@ -14,9 +14,9 @@
 
 	if($res['use_pre-footer'] == "1" && isset($res['pre-footer_image_block']) && $res['pre-footer_image_block'] != ''){
 
-		$related .= '<div class="nu__prefooter"><h3>Related Resources</h3><div><ul>';
+		$related .= '<div class="nu__prefooter"><p>Related Resources</p><div><ul>';
 
-		$guide = '<li><a href="%s" title="%s"%s><div class="image"><div style="background-image: url(%s);"></div></div><h4>%s</h4><p>%s</p></a></li>';
+		$guide = '<li><a href="%s" title="%s"%s><div class="image"><div style="background-image: url(%s);"></div></div><p>%s</p><p>%s</p></a></li>';
 
 		foreach($res['pre-footer_image_block'] as $r){
 

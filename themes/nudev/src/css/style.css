@@ -1219,8 +1219,13 @@ footer {
     background: #fffffe;
     width: 100vw;
     margin: 0 0 0 0; }
-    footer > div.nu__prefooter > h3 {
-      color: black; }
+    footer > div.nu__prefooter > p {
+      font-size: 3.2rem;
+      font-weight: 300;
+      line-height: 4.8rem;
+      text-align: center;
+      color: black;
+      margin: 0 0 20px 0; }
     footer > div.nu__prefooter > div {
       width: 97vw;
       height: inherit;
@@ -1246,10 +1251,11 @@ footer {
               footer > div.nu__prefooter > div > ul > li > a:hover > div.image > div {
                 transform: scale(1.1);
                 transition: all .5s; }
-              footer > div.nu__prefooter > div > ul > li > a:hover > h4:after {
+              footer > div.nu__prefooter > div > ul > li > a:hover > p:nth-of-type(1):after {
                 opacity: 1.0; }
             footer > div.nu__prefooter > div > ul > li > a > div.image {
               height: 200px;
+              margin: 0 0 10px 0;
               overflow: hidden;
               position: relative;
               width: 100%; }
@@ -1263,15 +1269,31 @@ footer {
                 background-position: center center !important;
                 background-repeat: no-repeat !important;
                 background-size: cover !important; }
-            footer > div.nu__prefooter > div > ul > li > a > h4:after {
-              font-size: 3.4rem;
-              line-height: 4.8rem;
-              text-align: center;
-              color: #cc0000;
-              content: '\E8E4';
-              vertical-align: -20%; }
-            footer > div.nu__prefooter > div > ul > li > a > h4:after {
-              opacity: 0.0; }
+            footer > div.nu__prefooter > div > ul > li > a > p:nth-of-type(1) {
+              font-size: 2.0rem;
+              font-weight: 900;
+              line-height: 3.2rem;
+              text-align: left;
+              margin: 0 0 0 0; }
+              footer > div.nu__prefooter > div > ul > li > a > p:nth-of-type(1):after {
+                font-size: 3.4rem;
+                line-height: 4.8rem;
+                text-align: center;
+                color: #cc0000;
+                content: '\E8E4';
+                vertical-align: -20%; }
+              footer > div.nu__prefooter > div > ul > li > a > p:nth-of-type(1):after {
+                opacity: 0.0; }
+              footer > div.nu__prefooter > div > ul > li > a > p:nth-of-type(1):after {
+                font-size: 2.0rem;
+                line-height: 3.2rem;
+                text-align: center;
+                line-height: 20px; }
+            footer > div.nu__prefooter > div > ul > li > a > p:nth-of-type(2) {
+              font-size: 1.6rem;
+              font-weight: 300;
+              line-height: 2.8rem;
+              text-align: left; }
   footer > div.nu__footer {
     padding: 0 0 20px 0;
     width: 100vw;

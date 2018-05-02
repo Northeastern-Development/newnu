@@ -128,7 +128,7 @@
 div.main section.nu__departmentlist > div > div {
   display: table;
   width: 100%;
-  border-bottom: solid #979797 1px;
+  border-bottom: solid rgba(151, 151, 151, 0.3) 1px;
   padding: 10px 0 10px 0; }
   div.main section.nu__departmentlist > div > div:last-child {
     border-bottom: 0; }
@@ -158,9 +158,13 @@ div.main section.nu__departmentlist > div > div {
       div.main section.nu__departmentlist > div > div > div:first-child > a {
         display: block;
         width: 100%;
-        border: 0; }
+        border: 0;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+        text-align: left; }
         div.main section.nu__departmentlist > div > div > div:first-child > a:hover > span {
-          border-bottom: solid #cc0000 1px;
+          border-bottom: solid #cc0000 2px;
           color: black; }
     div.main section.nu__departmentlist > div > div > div.spacer {
       width: 12px;

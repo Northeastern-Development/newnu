@@ -87,8 +87,10 @@ footer{
     background: rgba($brand_colors-white,1.0);
     width: $wrapper-width;
     margin: 0 0 0 0;
-    & > h3{
+    & > p{
+      @include font-6l-c;
       color: rgba($brand_colors-black,1.0);
+      margin: 0 0 20px 0;
     }
     & > div{
       width: $content-width-wide;
@@ -117,20 +119,30 @@ footer{
                 @include block-item-hover;
 
               }
-              & > h4{
+              & > p:nth-of-type(1){
                 @include action-arrow-shown;
               }
             }
             & > div.image{
               height: 200px;
+              margin: 0 0 10px 0;
               @include block-group;
               & > div{
                 @include block-item-default;
               }
             }
-            & > h4{
+            & > p:nth-of-type(1){
+              @include font-3b-l;
+              margin: 0 0 0 0;
               @include action-arrow;
               @include action-arrow-hidden;
+              &:after{
+                @include font-4-c;
+                line-height: 20px;
+              }
+            }
+            & > p:nth-of-type(2){
+              @include font-2r-l;
             }
           }
         }

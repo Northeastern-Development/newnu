@@ -229,6 +229,13 @@
    text-align: right;
  }
 
+ @mixin font-2r-l{
+   font-size: 1.6rem;
+   font-weight: 300;
+   line-height: 2.8rem;
+   text-align: left;
+ }
+
  @mixin font-2l-c{
    font-size: 1.6rem;
    font-weight: 300;
