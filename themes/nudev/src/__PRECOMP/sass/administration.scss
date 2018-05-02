@@ -1,0 +1,107 @@
+/*
+ * departments
+ */
+
+
+ // Modules
+ @import "modules/variables";
+ @import "modules/mixins";
+ @import "modules/fonts";
+
+
+
+ div.main{
+
+   section.hero{
+     margin: 0 0 0 0;
+   }
+
+   section.nu__president{
+     width: 65vw;
+     margin: 0 auto 0 auto;
+     clear: both;
+     & > div{
+       float: left;
+       width: 50%;
+       min-height: 400px;
+       position: relative;
+       &:nth-child(1){
+         // & > h3{
+         //   margin: $gutter $gutter 0 0;
+         //    text-align: left;
+         //    border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
+         // }
+         & > p{
+           text-align: left;
+           margin-right: $gutter;
+         }
+         & > a{
+
+         }
+       }
+       &:nth-child(2){
+         background: rgba($brand_colors-black,1.0);
+         background-position: center center !important;
+         background-repeat: no-repeat !important;
+         background-size: cover !important;
+         & > p{
+           position: absolute;
+           left: $gutter;
+           bottom: $gutter;
+           color: rgba($brand_colors-white,1.0);
+         }
+       }
+     }
+   }
+
+
+   section.nu__filters{
+
+     width: $content-width-wide;
+     & > ul{
+      border-bottom: solid rgba($brand_colors-grayW,1.0) 2px;
+       & > li{
+         flex-basis: auto;
+         text-align: center;
+         & > a{
+           &.active{
+             color: rgba($brand_colors-red,1.0);
+           }
+         }
+       }
+     }
+   }
+
+
+   section.nu__team{
+     & > article{
+       clear: both;
+       margin: 0 auto $gutter auto;
+       overflow: hidden;
+       & p{
+         margin-right: $gutter;
+       }
+       & > div{
+         float: left;
+         min-height: 250px;
+         position: relative;
+         &:nth-child(1){
+           width: 70%;
+         }
+         &:nth-child(2){
+           width: 30%;
+           & > div{
+             min-height: 250px;
+             background: rgba($brand_colors-black,1.0);
+             background-position: center center !important;
+             background-repeat: no-repeat !important;
+             background-size: cover !important;
+           }
+         }
+       }
+     }
+   }
+
+
+
+}

@@ -41,7 +41,7 @@ function nudev_conditional_styles(){
 
 
   // load static page styles
-  if(is_page_template('templates/template-static.php') || is_page_template('templates/template-experience.php') || is_page_template('templates/template-colleges.php') || is_page_template('templates/template-departments.php')){
+  if(is_page_template('templates/template-static.php') || is_page_template('templates/template-experience.php') || is_page_template('templates/template-colleges.php') || is_page_template('templates/template-departments.php') || is_page_template('templates/template-administration.php')){
   // if(is_page('emergency-information')){
     wp_register_style('staticcss', get_template_directory_uri() . '/css/static.css', array(), '1.0');
     wp_enqueue_style('staticcss');
@@ -74,6 +74,13 @@ function nudev_conditional_styles(){
   if(is_page_template('templates/template-departments.php')){
     wp_register_style('departmentscss', get_template_directory_uri() . '/css/departments.css', array(), '1.0');
     wp_enqueue_style('departmentscss');
+  }
+
+
+  // load administration page styles
+  if(is_page_template('templates/template-administration.php')){
+    wp_register_style('administrationcss', get_template_directory_uri() . '/css/administration.css', array(), '1.0');
+    wp_enqueue_style('administrationcss');
   }
 
 }

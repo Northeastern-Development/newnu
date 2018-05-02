@@ -1,0 +1,140 @@
+/*
+ * colleges
+ */
+
+
+ // Modules
+ @import "modules/variables";
+ @import "modules/mixins";
+ @import "modules/fonts";
+ @import "partials/animations";
+
+
+
+ div.main{
+
+   section{
+     width: 96vw;
+   }
+
+   section.nu__collegegrid{
+     & > ul{
+       height: auto;
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       margin: 0 0 0 0;
+       & > li{
+         flex-grow: 1;
+         flex-basis: 30%;
+         height: 310px;
+         margin: 0 $gutter 0 0;
+
+         &:nth-child(-n+6) {
+           margin: 0 $gutter $gutter 0;
+         }
+         &:nth-child(3n+3){
+           margin: 0 0 $gutter 0;
+         }
+         &:nth-child(9){
+           margin: 0 0 0 0;
+         }
+
+          & > a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            & > div.image{
+              height: 270px;
+              @include block-group;
+              & > div{
+                @include block-item-default;
+              }
+            }
+            & > h4{
+              @include font-5l-l;
+              @include action-arrow;
+              @include action-arrow-hidden;
+            }
+            &:hover{
+              & > h4{
+                @include action-arrow-shown;
+              }
+              & > div.image > div{
+                @include block-item-hover;
+              }
+            }
+          }
+
+       }
+     }
+   }
+
+   // section.nu__explore{
+   //   background: rgba($brand_colors-black,1.0);
+   //   background-position: center center !important;
+   //   background-repeat: no-repeat !important;
+   //   background-size: cover !important;
+   //   height: auto;
+   //   & > div{
+   //     background: rgba($brand_colors-black,0.8);
+   //     width: 600px;
+   //     height: auto;
+   //     padding: $gutter $gutter $gutter $gutter;
+   //     margin: ($gutter * 2) auto ($gutter * 2) auto;
+   //     & > h3{
+   //       color: rgba($brand_colors-white,1.0);
+   //     }
+   //     & > p{
+   //       color: rgba($brand_colors-white,1.0);
+   //       text-align: center;
+   //     }
+   //     & > a{
+   //       color: rgba($brand_colors-white,1.0);
+   //       border: 0;
+   //       display: block;
+   //       text-align: center;
+   //       margin: 0 auto 0 auto;
+   //       &:after{
+   //         @include font-7-c;
+   //         color: rgba($brand_colors-red,1.0);
+   //         content: '\E8E4';
+   //         vertical-align: -20%;
+   //       }
+   //     }
+   //   }
+   // }
+
+
+   section.nu__bythenumbers{
+    & > h2{
+      border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
+    }
+     & > ul{
+       height: auto;
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       margin: $gutter 0 0 0;
+       & > li{
+         flex-grow: 1;
+         flex-basis: 30%;
+         min-height: 150px;
+         text-align: center;
+         margin: 0 $gutter 0 0;
+         padding: 0 $gutter 0 $gutter;
+         &:nth-child(3n+3){
+           margin: 0 0 0 0;
+         }
+         & > span{
+           @include font-8l-c;
+           color: rgba($brand_colors-red,1.0);
+         }
+         & > p{
+           text-align: center;
+         }
+       }
+     }
+   }
+
+}

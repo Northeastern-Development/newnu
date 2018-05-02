@@ -1,0 +1,77 @@
+/*
+ * departments
+ */
+
+
+ // Modules
+ @import "modules/variables";
+ @import "modules/mixins";
+ @import "modules/fonts";
+
+
+
+ div.main{
+
+   section.nu__departmentlist{
+     // margin-bottom: ($gutter * 2);
+     & > div{
+       & > div{
+         display: table;
+         width: 100%;
+         border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
+         padding: 10px 0 10px 0;
+         &:last-child{
+           border-bottom: 0;
+         }
+         & > div{
+           display: table-cell;
+           width: 150px;
+           text-align: center;
+           border: solid rgba($brand_colors-grayW,1.0) 1px;
+           &.inactive{
+             opacity: 0;
+             & > a{
+               display: none;
+             }
+           }
+           &.active{
+             opacity: 1;
+             & > a{
+               border: 0;
+               display: block;
+               width: 100%;
+               height: 100%;
+               &:hover{
+                 background: rgba($brand_colors-grayW,1.0);
+                 color: rgba($brand_colors-black,1.0);
+               }
+             }
+           }
+           &:first-child{
+             width: auto;
+             text-align: left;
+             border: 0;
+             & > a{
+               display: block;
+               width: 100%;
+               border: 0;
+               &:hover{
+                 & > span{
+                   border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+                   color: rgba($brand_colors-black,1.0);
+                 }
+               }
+             }
+           }
+           &.spacer{
+             width: 12px;
+             border: 0;
+           }
+         }
+       }
+     }
+   }
+
+
+
+}

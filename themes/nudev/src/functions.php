@@ -101,7 +101,12 @@ function responsive_background_images(){
 
 
 
+
+
 // Load any external files you have here
+
+// set up custom query params and rewrites
+require_once(get_template_directory() . "/functions/rewrites.php");
 
 // set up specific theme support if required
 require_once(get_template_directory() . "/functions/themesupport.php");

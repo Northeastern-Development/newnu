@@ -1,62 +1,81 @@
 <?php
 
-	// grab the details for the president
-	$args = array(
-		 "post_type" => "administration"
-		,"posts_per_page" => 1
-		,'meta_query' => array(
-			 'relation' => 'AND'
-			,array("key"=>"department","value"=>"President","compare"=>"LIKE")
-		)
-	);
-	$res = query_posts($args);
-	$fields = get_fields($res[0]->ID);
-
-
-
-	$srcSet = ar_responsive_image(get_field('headshot',$res[0]->ID)['id'],'medium','640px');
-
-	$guide = '<section><h3>Office of the president</h3><a href="%s" title="President [will open in new window]" target="_blank"><img %s alt="%s" style="width: 300px;"/></a><br />%s</section>';
-	$president = sprintf(
-		$guide
-		,$fields['url']
-		// ,$fields['headshot']['sizes']['medium']
-		,$srcSet
-		,$res[0]->post_title
-		,$res[0]->post_title
-	);
-
-
-
-
-
-	// build out an array of the departments to be shown
-	$args = array(
-		 "post_type" => "administration"
-		,'meta_query' => array(
-			 'relation' => 'AND'
-			,array("key"=>"type","value"=>"Department","compare"=>"=")
-		)
-	);
-
-	$res = query_posts($args);
-	$depts = array();
-
-	foreach($res as $r){
-		$fields = get_fields($r->ID);
-		$depts[] = array(
-			 "name" => trim($r->post_title)
-			,"department" => $fields['department']
-			,"description" => $fields['description']
-			,"link" => $fields['url']
-			,"email" => $fields['email']
-			,"phone" => $fields['phone']
-		);
-	}
+	wp_reset_query();
 
 	$departments = '';
 
-	foreach($depts as $d){
+	if($filter == ''){	// this is for the SLT
+
+		// build out an array of the departments to be shown
+		$args = array(
+			 "post_type" => "administration"
+			,'meta_query' => array(
+				 'relation' => 'AND'
+				,array("key"=>"type","value"=>"Department","compare"=>"=")
+			)
+		);
+
+		$res = query_posts($args);
+		$depts = array();
+
+		foreach($res as $r){
+			$fields = get_fields($r->ID);
+			$depts[] = array(
+				 "name" => $r->post_title
+				,"department" => $fields['department'][0]
+				,"link" => $fields['url']
+				,"email" => $fields['email']
+				,"phone" => $fields['phone']
+			);
+		}
+
+		foreach($depts as $d){
+
+			// get the manager of this department
+			$args = array(
+				 "post_type" => "administration"
+				,"posts_per_page" => -1
+				,'meta_query' => array(
+					 'relation' => 'AND'
+					,array("key"=>"type","value"=>"individual","compare"=>"=")
+					,array("key"=>"department","value"=>$d['department'],"compare"=>"LIKE")
+					,array("key"=>"department_head","value"=>"1","compare"=>"=")
+				)
+			);
+			$manager = query_posts($args);
+			$managerFields = get_fields($manager[0]->ID);
+
+			$guide = '<article><div><p><span>%s</span><br />%s</p><p>%s</p><p><a href="tel:%s" title="">%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank">Visit %s Site</a><br /><a href="'.home_url().'/about/university-administration/%s" title="View %s leadership">View %s Leadership</a></p></div><div><div style="background-image: url(%s);"></div></div></article>';
+
+			$department = sprintf(
+				$guide
+				,$manager[0]->post_title
+				,$managerFields['title']
+				,$managerFields['description']
+				,$d['phone']
+				,$d['phone']
+				,$d['link']
+				,strtolower($d['department'])
+				,$d['department']
+				,str_replace(" ","-",strtolower($d['department']))
+				,strtolower($d['department'])
+				,$d['department']
+				,$managerFields['headshot']['url']
+			);
+
+			$departments .= $department;
+
+		}
+
+	}else{	// this is for a specific department
+
+		$args = array(
+			 "post_type" => "administration"
+			 , "s" => str_replace("-"," ",$filter)
+		);
+
+		$dept = query_posts($args);
+		$deptFields = get_fields($dept[0]->ID);
 
 		// get the manager of this department
 		$args = array(
@@ -65,63 +84,77 @@
 			,'meta_query' => array(
 				 'relation' => 'AND'
 				,array("key"=>"type","value"=>"individual","compare"=>"=")
-				,array("key"=>"department","value"=>$d['department'],"compare"=>"=")
+				,array("key"=>"department","value"=>str_replace("-"," ",$filter),"compare"=>"LIKE")
 				,array("key"=>"department_head","value"=>"1","compare"=>"=")
 			)
 		);
 		$manager = query_posts($args);
 		$managerFields = get_fields($manager[0]->ID);
 
+		// print_r($dept);
+		// print_r($deptFields);
+		// print_r($manager);
+		// print_r($managerFields);
 
-		// gather up the members of this department
-		$args = array(
-			 "post_type" => "administration"
-			,"posts_per_page" => -1
-			,'meta_query' => array(
-				 'relation' => 'AND'
-				,array("key"=>"type","value"=>"individual","compare"=>"=")
-				,array("key"=>"department","value"=>$d['department'],"compare"=>"LIKE")	// this allows memebrs to be in more than 1 dept at a time
-				,array("key"=>"department_head","value"=>"0","compare"=>"=")
-			)
-		);
-		$res = query_posts($args);
-
-		$members = '<ul style="clear: both; list-style-type: none; list-style: none;">';
-
-		$guide = '<li style="background: #333; margin: 10px; float: left; width: 200px; height: 300px;"><img src="%s" alt="%s" /><br />%s<br />%s</li>';
-
-		foreach($res as $r){
-			$fields = get_fields($r->ID);
-			$members .= sprintf(
-				$guide
-				,$fields['headshot']['sizes']['small']
-				,$r->post_title
-				,$r->post_title
-				,$fields['title']
-			);
-		}
-		$members .= '</ul>';
-
-		$guide = '<br /><br /><section><div style="margin: 0 0 0 0; overflow: hidden;"><div style="float: right;"><img src="%s" alt="%s" />%s<br />%s</div></div><h3>%s</h3>%s%s%s%s<div style="background:#333;">Team Members%s</div></section><br />';
+		$guide = '<article><div><p>%s</p><p><a href="tel:%s" title="">%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank">Visit %s Site</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article>';
 
 		$department = sprintf(
 			$guide
-			,$managerFields['headshot']['sizes']['small']
-			,$manager->post_title
+			,$deptFields['description']
+			,$deptFields['phone']
+			,$deptFields['phone']
+			,$deptFields['url']
+			,strtolower($dept[0]->post_title)
+			,$dept[0]->post_title
+			,$managerFields['headshot']['url']
 			,$manager[0]->post_title
 			,$managerFields['title']
-			,$d['name']
-			,(isset($d['description']) && $d['description'] != ""?'<p>'.$d['description'].'</p>':'')
-			,(isset($d['link']) && $d['link'] != ""?'<p><a href="'.$d['link'].'" title="'.$d['name'].'" target="_blank">LINK</a></p>':'')
-			,(isset($d['email']) && $d['email'] != ""?'<p><a href="mailto:'.$d['email'].'" title="Send us an email">'.$d['email'].'</a></p>':'')
-			,(isset($d['phone']) && $d['phone'] != ""?'<p><a href="tel:'.$d['phone'].'" title="Give us a call">'.$d['phone'].'</a></p>':'')
-			,$members
 		);
 
 		$departments .= $department;
 
+
+		// now we can gather up the members of the department ordered by sub-type
+		$args = array(
+			 "post_type" => "administration"
+			,"posts_per_page" => -1
+			// ,'orderby'=> 'title'
+			// ,'order' => 'ASC'
+			,'meta_query' => array(
+				 'relation' => 'AND'
+				,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
+				,'sub-type_clause' => array("key"=>"sub_type","compare"=>"EXISTS")
+				,'dept_clause' => array("key"=>"department","value"=>str_replace("-"," ",$filter),"compare"=>"LIKE")
+			),
+			'orderby' => array(
+        'sub-type_clause' => 'ASC',
+    	)
+		);
+
+		$res = query_posts($args);
+
+		// print_r($res);
+
+		$subType = get_fields($res[0]->ID)['sub_type'];
+
+		$departments .= '<div><h3>'.$subType.'</h3><ul>';
+
+		$guide = '';
+
+		foreach($res as $r){
+			// print_r($r);
+			$fields = get_fields($r->ID);
+			// print_r($fields);
+
+
+
+		}
+
+		$departments .= "</ul></div>";
+
+
 	}
 
-	echo $president.$departments;	// done this way to allow us to more easily move pieces around should we need to in the future
+	echo $departments;
 
 ?>
