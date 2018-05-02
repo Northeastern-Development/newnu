@@ -56,7 +56,6 @@
 
 
    section.nu__filters{
-
      width: $content-width-wide;
      & > ul{
       border-bottom: solid rgba($brand_colors-grayW,1.0) 2px;
@@ -97,6 +96,27 @@
              background-repeat: no-repeat !important;
              background-size: cover !important;
            }
+         }
+       }
+     }
+   }
+
+   section.nu__team-list{
+     width: $content-width-wide;
+     & > ul{
+       width: $content-width-wide;
+       margin: 0 auto 0 auto;
+       & > li{
+         min-height: 250px;
+         flex-basis: 16.7%;
+         flex-grow: 0;
+         & > div{
+           // min-height: 250px;
+           height: 16.7vw;
+           background: rgba($brand_colors-black,1.0);
+           background-position: center center !important;
+           background-repeat: no-repeat !important;
+           background-size: cover !important;
          }
        }
      }

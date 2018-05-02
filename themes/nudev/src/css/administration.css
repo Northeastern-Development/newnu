@@ -181,3 +181,19 @@ div.main section.nu__team > article {
         background-position: center center !important;
         background-repeat: no-repeat !important;
         background-size: cover !important; }
+
+div.main section.nu__team-list {
+  width: 97vw; }
+  div.main section.nu__team-list > ul {
+    width: 97vw;
+    margin: 0 auto 0 auto; }
+    div.main section.nu__team-list > ul > li {
+      min-height: 250px;
+      flex-basis: 16.7%;
+      flex-grow: 0; }
+      div.main section.nu__team-list > ul > li > div {
+        height: 16.7vw;
+        background: black;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important; }

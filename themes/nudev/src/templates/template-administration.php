@@ -31,9 +31,9 @@
 			</ul>
 		</section>
 
-		<section class="nu__team">
-			<?php  include(locate_template('loops/loop-administration.php')); ?>
-		</section>
+
+		<?php  include(locate_template('loops/loop-administration.php')); ?>
+
 
 	</div>
 

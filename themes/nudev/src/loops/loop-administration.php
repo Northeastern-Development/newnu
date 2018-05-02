@@ -6,7 +6,6 @@
 
 	if($filter == ''){	// this is for the SLT
 
-		// build out an array of the departments to be shown
 		$args = array(
 			 "post_type" => "administration"
 			,'meta_query' => array(
@@ -63,7 +62,7 @@
 				,$managerFields['headshot']['url']
 			);
 
-			$departments .= $department;
+			$departments .= '<section class="nu__team">'.$department.'</section>';
 
 		}
 
@@ -91,12 +90,7 @@
 		$manager = query_posts($args);
 		$managerFields = get_fields($manager[0]->ID);
 
-		// print_r($dept);
-		// print_r($deptFields);
-		// print_r($manager);
-		// print_r($managerFields);
-
-		$guide = '<article><div><p>%s</p><p><a href="tel:%s" title="">%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank">Visit %s Site</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article>';
+		$guide = '<section class="nu__team"><article><div><p>%s</p><p><a href="tel:%s" title="">%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank">Visit %s Site</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
 
 		$department = sprintf(
 			$guide
@@ -133,25 +127,30 @@
 
 		$res = query_posts($args);
 
-		// print_r($res);
-
 		$subType = get_fields($res[0]->ID)['sub_type'];
 
-		$departments .= '<div><h3>'.$subType.'</h3><ul>';
+		$departments .= '<section class="nu__team-list"><h3>'.$subType.'</h3><ul>';
 
-		$guide = '';
+		$guide = '<li><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></li>';
 
 		foreach($res as $r){
-			// print_r($r);
 			$fields = get_fields($r->ID);
-			// print_r($fields);
 
+			if($fields['sub_type'] != $subType){
+				$subType = $fields['sub_type'];
+				$departments .= '</ul><h3>'.$subType.'</h3><ul>';
+			}
 
+			$departments .= sprintf(
+				$guide
+				,$fields['headshot']['url']
+				,trim($r->post_title)
+				,trim($fields['title'])
+			);
 
 		}
 
-		$departments .= "</ul></div>";
-
+		$departments .= "</ul></section>";
 
 	}
 
