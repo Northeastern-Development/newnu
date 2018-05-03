@@ -31,10 +31,15 @@
 			</ul>
 		</section>
 
-
 		<?php  include(locate_template('loops/loop-administration.php')); ?>
-
-
+		
 	</div>
 
-<?php get_footer(); ?>
+<?php
+
+	if($filter != ''){
+		echo '<script> $(document).ready(function(){ $("html, body").animate({scrollTop: $("section.nu__filters").offset().top},0); });</script>';
+	}
+
+	get_footer();
+?>

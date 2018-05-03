@@ -135,6 +135,9 @@ div.main section.nu__departmentlist > div > div {
   div.main section.nu__departmentlist > div > div > div {
     display: table-cell;
     width: 150px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    text-align: center;
     text-align: center;
     border: solid #979797 1px; }
     div.main section.nu__departmentlist > div > div > div.inactive {
@@ -144,10 +147,14 @@ div.main section.nu__departmentlist > div > div {
     div.main section.nu__departmentlist > div > div > div.active {
       opacity: 1; }
       div.main section.nu__departmentlist > div > div > div.active > a {
+        font-size: 1.4rem;
+        line-height: 2.8rem;
+        text-align: center;
         border: 0;
         display: block;
         width: 100%;
-        height: 100%; }
+        height: 100%;
+        color: rgba(0, 0, 0, 0.7); }
         div.main section.nu__departmentlist > div > div > div.active > a:hover {
           background: #979797;
           color: black; }

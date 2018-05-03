@@ -44,21 +44,16 @@
 			$manager = query_posts($args);
 			$managerFields = get_fields($manager[0]->ID);
 
-			$guide = '<article><div><p><span>%s</span><br />%s</p><p>%s</p><p><a href="tel:%s" title="">%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank">Visit %s Site</a><br /><a href="'.home_url().'/about/university-administration/%s" title="View %s leadership">View %s Leadership</a></p></div><div><div style="background-image: url(%s);"></div></div></article>';
+			$guide = '<article><div><p class="nametitle"><span>%s</span><br />%s</p><p class="description">%s</p><p class="contact">%s%s%s</p></div><div><div style="background-image: url(%s);"></div></div></article>';
 
 			$department = sprintf(
 				$guide
 				,$manager[0]->post_title
 				,$managerFields['title']
 				,$managerFields['description']
-				,$d['phone']
-				,$d['phone']
-				,$d['link']
-				,strtolower($d['department'])
-				,$d['department']
-				,str_replace(" ","-",strtolower($d['department']))
-				,strtolower($d['department'])
-				,$d['department']
+				,(isset($d['phone']) && $d['phone'] != ''?'<a href="tel:'.$d['phone'].'" title="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$d['phone'].'</a><br />':'')
+				,(isset($d['link']) && $d['link'] != ''?'<a href="'.$d['link'].'" title="View '.strtolower($d['department']).' web site [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit '.$d['department'].' Site</a><br />':'')
+				,($d['department'] != 'Strategy'?'<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Filter to show '.strtolower($d['department']).' team"><span>&#xE7EF;</span> View '.$d['department'].' Leadership</a>':'')
 				,$managerFields['headshot']['url']
 			);
 
@@ -90,12 +85,13 @@
 		$manager = query_posts($args);
 		$managerFields = get_fields($manager[0]->ID);
 
-		$guide = '<section class="nu__team"><article><div><p>%s</p><p><a href="tel:%s" title="">%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank">Visit %s Site</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
+		$guide = '<section class="nu__team"><article><div><p class="description">%s</p><p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit %s site</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
 
 		$department = sprintf(
 			$guide
 			,$deptFields['description']
 			,$deptFields['phone']
+			,strtolower($dept[0]->post_title)
 			,$deptFields['phone']
 			,$deptFields['url']
 			,strtolower($dept[0]->post_title)
@@ -129,7 +125,7 @@
 
 		$subType = get_fields($res[0]->ID)['sub_type'];
 
-		$departments .= '<section class="nu__team-list"><h3>'.$subType.'</h3><ul>';
+		$departments .= '<section class="nu__team-list">'.($subType != "" ?'<h3>'.$subType.'</h3>':'').'<ul>';
 
 		$guide = '<li><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></li>';
 
@@ -138,7 +134,7 @@
 
 			if($fields['sub_type'] != $subType){
 				$subType = $fields['sub_type'];
-				$departments .= '</ul><h3>'.$subType.'</h3><ul>';
+				$departments .= '</ul>'.($subType != "" ?'<h3>'.$subType.'</h3>':'').'<ul>';
 			}
 
 			$departments .= sprintf(
