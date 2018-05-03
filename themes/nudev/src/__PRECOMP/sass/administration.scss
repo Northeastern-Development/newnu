@@ -93,9 +93,17 @@
        & > li{
          flex-basis: auto;
          text-align: center;
+         margin: 0 0 9px 0;
          & > a{
+           padding: 0 0 10px 0;
            &.active{
-             color: rgba($brand_colors-red,1.0);
+             @include font-2b-c;
+             border-bottom: solid rgba($brand_colors-red,1.0) 4px;
+             // padding: 0 0 10px 0;
+           }
+           &:hover{
+             color: rgba($brand_colors-black,1.0);
+             border-bottom: solid rgba($brand_colors-red,1.0) 4px;
            }
          }
        }
@@ -137,12 +145,17 @@
      & > ul{
        width: $content-width-wide;
        margin: 0 auto 0 auto;
+       flex-direction: row;
+       flex-wrap: wrap;
        & > li{
          min-height: 250px;
-         flex-basis: 16.7%;
+         flex-basis: 14.5%;
          flex-grow: 0;
+         &:nth-child(6n+6){
+           margin: 0 0 $gutter 0;
+         }
          & > div{
-           height: 16.7vw;
+           height: 14.5vw;
            background: rgba($brand_colors-black,1.0);
            background-position: center center !important;
            background-repeat: no-repeat !important;
