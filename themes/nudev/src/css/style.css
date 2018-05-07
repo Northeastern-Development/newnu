@@ -734,6 +734,30 @@ input#nu__search-toggle:checked ~ label#nu__search-toggle-label:after {
             color: black;
             cursor: pointer;
             font-weight: 700; }
+          #nu__supernav > section > div.items > ul > li.makeagift > a,
+          #nu__iamnav > section > div.items > ul > li.makeagift > a,
+          #nu__searchbar > section > div.items > ul > li.makeagift > a {
+            border: solid #fffffe 1px;
+            padding: 10px 10px 10px 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px; }
+            #nu__supernav > section > div.items > ul > li.makeagift > a > div > img,
+            #nu__iamnav > section > div.items > ul > li.makeagift > a > div > img,
+            #nu__searchbar > section > div.items > ul > li.makeagift > a > div > img {
+              display: none; }
+            #nu__supernav > section > div.items > ul > li.makeagift > a > div,
+            #nu__iamnav > section > div.items > ul > li.makeagift > a > div,
+            #nu__searchbar > section > div.items > ul > li.makeagift > a > div {
+              text-align: center;
+              width: 100%; }
+            #nu__supernav > section > div.items > ul > li.makeagift > a:hover,
+            #nu__iamnav > section > div.items > ul > li.makeagift > a:hover,
+            #nu__searchbar > section > div.items > ul > li.makeagift > a:hover {
+              background: rgba(255, 255, 254, 0.3); }
+              #nu__supernav > section > div.items > ul > li.makeagift > a:hover > div:nth-child(2),
+              #nu__iamnav > section > div.items > ul > li.makeagift > a:hover > div:nth-child(2),
+              #nu__searchbar > section > div.items > ul > li.makeagift > a:hover > div:nth-child(2) {
+                border: none; }
           #nu__supernav > section > div.items > ul > li > ul,
           #nu__iamnav > section > div.items > ul > li > ul,
           #nu__searchbar > section > div.items > ul > li > ul {
@@ -1396,9 +1420,9 @@ footer {
   footer {
     background-image: none; }
     footer > div.nu__footer > div > div > p {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      line-height: 3.1rem;
+      line-height: 2.4rem;
       text-align: left; }
     footer > div.nu__footer > div > div > ul > li > a {
       font-size: 1.2rem;

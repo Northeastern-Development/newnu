@@ -396,6 +396,29 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
               cursor: pointer;
               font-weight: 700;
             }
+            &.makeagift{
+              & > a{
+                border: solid rgba($brand_colors-white,1.0) 1px;
+                padding: 10px 10px 10px 10px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                & > div > img{
+                  display: none;
+                }
+                & > div{
+                  text-align: center;
+                  width: 100%;
+                }
+                &:hover{
+                  background: rgba($brand_colors-white,0.3);
+                  & > div{
+                    &:nth-child(2){
+                      border: none;
+                    }
+                  }
+                }
+              }
+            }
             & > ul{  // this is the list of items shown on the right in the white space
               display: none;
               position: absolute;

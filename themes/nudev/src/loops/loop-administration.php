@@ -85,7 +85,7 @@
 		$manager = query_posts($args);
 		$managerFields = get_fields($manager[0]->ID);
 
-		$guide = '<section class="nu__team"><article><div><p class="description">%s</p><p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit %s site</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
+		$guide = '<section class="nu__team"><article><div><p class="description">%s</p><p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit %s Site</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
 
 		$department = sprintf(
 			$guide
