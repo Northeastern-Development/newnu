@@ -46,14 +46,16 @@
       case 'department':
         $depts = get_post_meta ( $post_id, 'department', true );
         // print_r($depts);
-        if(count($depts) > 1){ // they are in more than one dept
+        // if(count($depts) > 1){ // they are in more than one dept
+        if(gettype($depts) == "array"){ // they are in more than one dept
           $v = '';
           foreach($depts as $d){  // loop through and grab each department that this person is part of
             $v .= ($v != ''?', '.$d:$d);
           }
           echo $v;
         }else{  // they are only in one dept
-          echo $depts[0];
+          // echo $depts[0];
+          echo $depts;
         }
         break;
       case 'type':
