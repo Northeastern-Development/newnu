@@ -33,8 +33,6 @@
 
 		foreach($depts as $d){
 
-			// print_r($d);
-
 			// get the manager of this department
 			$args = array(
 				 "post_type" => "administration"
@@ -46,21 +44,8 @@
 					,array("key"=>"department_head","value"=>"1","compare"=>"LIKE")
 				)
 			);
-			// print_r($args);
-			// $args = array(
-			// 	 "post_type" => "administration"
-			// 	,"posts_per_page" => -1
-			// 	,'meta_query' => array(
-			// 		 'relation' => 'AND'
-			// 		,array("key"=>"type","value"=>"individual","compare"=>"=")
-			// 		,array("key"=>"department","value"=>$d['department'],"compare"=>"IN")
-			// 		,array("key"=>"department_head","value"=>"1","compare"=>"=")
-			// 	)
-			// );
 			$manager = query_posts($args);
 			$managerFields = get_fields($manager[0]->ID);
-
-			// print_r($managerFields);
 
 			$guide = '<article><div><p class="nametitle"><span>%s</span><br />%s</p><p class="description">%s</p><p class="contact">%s%s%s</p></div><div><div style="background-image: url(%s);"></div></div></article>';
 
@@ -81,9 +66,18 @@
 
 	}else{	// this is for a specific department
 
+		// echo $filter;
+		// die();
+
 		$args = array(
 			 "post_type" => "administration"
-			 , "s" => str_replace("-"," ",$filter)
+			 // , "s" => str_replace("-"," ",$filter)
+			 // ,"s" => '"'.str_replace("-"," ",$filter).'"'
+			 ,'meta_query' => array(
+ 				 'relation' => 'AND'
+				 ,array("key"=>"type","value"=>"Department","compare"=>"=")
+			 	,array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
+			)
 		);
 
 		$dept = query_posts($args);
@@ -96,7 +90,8 @@
 			,'meta_query' => array(
 				 'relation' => 'AND'
 				,array("key"=>"type","value"=>"individual","compare"=>"=")
-				,array("key"=>"department","value"=>str_replace("-"," ",$filter),"compare"=>"LIKE")
+				// ,array("key"=>"department","value"=>str_replace("-"," ",$filter),"compare"=>"LIKE")
+				,array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
 				,array("key"=>"department_head","value"=>"1","compare"=>"=")
 			)
 		);
@@ -132,7 +127,8 @@
 				 'relation' => 'AND'
 				,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
 				,'sub-type_clause' => array("key"=>"sub_type","compare"=>"EXISTS")
-				,'dept_clause' => array("key"=>"department","value"=>str_replace("-"," ",$filter),"compare"=>"LIKE")
+				// ,'dept_clause' => array("key"=>"department","value"=>str_replace("-"," ",$filter),"compare"=>"LIKE")
+				,'dept_clause' => array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
 			),
 			'orderby' => array(
         'sub-type_clause' => 'ASC',
