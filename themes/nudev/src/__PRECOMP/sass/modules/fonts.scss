@@ -386,6 +386,14 @@
  }
 
 
+ @mixin font-9l-c{
+   font-size: 7.2rem;
+   font-weight: 300;
+   line-height: 9.6rem;
+   text-align: center;
+ }
+
+
  @mixin font-10b-l{
    font-size: 1.4rem;
    font-weight: 700;
