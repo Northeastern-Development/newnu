@@ -133,7 +133,7 @@ div.main section.nu__collegegrid > ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 0 0 0; }
+  margin: 0 auto 0 auto; }
   div.main section.nu__collegegrid > ul > li {
     flex-grow: 1;
     flex-basis: 30%;
@@ -191,14 +191,15 @@ div.main section.nu__bythenumbers > h2 {
   font-weight: 300;
   line-height: 4.8rem;
   text-align: center;
-  border-bottom: solid #979797 1px; }
+  border-bottom: solid #979797 1px;
+  margin: 0 auto 0 auto; }
 
 div.main section.nu__bythenumbers > ul {
   height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 30px 0 0 0; }
+  margin: 30px auto 0 auto; }
   div.main section.nu__bythenumbers > ul > li {
     flex-grow: 1;
     flex-basis: 30%;
@@ -220,3 +221,20 @@ div.main section.nu__bythenumbers > ul {
       text-align: center;
       font-weight: 300;
       text-align: center; }
+
+@media only screen and (max-width: 959px) {
+  div.main section.nu__collegegrid > ul {
+    display: block; }
+    div.main section.nu__collegegrid > ul > li {
+      flex: none;
+      width: 100%;
+      height: auto; }
+      div.main section.nu__collegegrid > ul > li > a > div.image {
+        height: 350px; }
+  div.main section.nu__bythenumbers > h2 {
+    width: 80vw; }
+  div.main section.nu__bythenumbers > ul {
+    display: block; }
+    div.main section.nu__bythenumbers > ul > li {
+      flex: none;
+      width: 100%; } }
