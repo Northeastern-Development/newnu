@@ -238,3 +238,13 @@ div.main section.nu__bythenumbers > ul {
     div.main section.nu__bythenumbers > ul > li {
       flex: none;
       width: 100%; } }
+
+@media only screen and (max-width: 575px) {
+  div.main section.nu__collegegrid > ul {
+    display: block; }
+    div.main section.nu__collegegrid > ul > li {
+      flex: none;
+      width: 100%;
+      height: auto; }
+      div.main section.nu__collegegrid > ul > li > a > div.image {
+        height: 245px; } }

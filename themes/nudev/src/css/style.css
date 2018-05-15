@@ -1435,6 +1435,14 @@ footer {
       line-height: 2.6rem;
       text-align: left; } }
 
+@media only screen and (max-width: 959px) {
+  footer > div.nu__prefooter > div > ul {
+    overflow: hidden;
+    display: block;
+    flex: none; }
+    footer > div.nu__prefooter > div > ul > li {
+      width: 100%; } }
+
 @media only screen and (max-width: 899px) {
   footer.absolute {
     position: relative;
@@ -1465,6 +1473,10 @@ footer {
 @media only screen and (max-width: 575px) {
   footer {
     height: auto; }
+    footer > div.nu__prefooter > div {
+      width: 80vw; }
+      footer > div.nu__prefooter > div > ul {
+        overflow: hidden; }
     footer.absolute {
       height: auto; }
     footer > div.nu__footer > div > div {
