@@ -206,31 +206,33 @@ div.main section.leftright {
       margin: 7.5px 0 0 0; } }
 
 @media only screen and (max-width: 959px) {
-  div.main section.leftright > a > div.content {
-    align-items: flex-start;
-    min-height: auto;
-    width: 100%; }
-    div.main section.leftright > a > div.content h3 {
+  div.main section.leftright {
+    width: 94vw; }
+    div.main section.leftright > a > div.content {
+      align-items: flex-start;
+      min-height: auto;
+      width: 100%; }
+      div.main section.leftright > a > div.content h3 {
+        width: 100%;
+        font-size: 2.0rem;
+        font-weight: 300;
+        line-height: 3.2rem;
+        text-align: left; }
+      div.main section.leftright > a > div.content p {
+        padding-right: 0; }
+    div.main section.leftright > a > div.image {
       width: 100%;
-      font-size: 2.0rem;
-      font-weight: 300;
-      line-height: 3.2rem;
-      text-align: left; }
-    div.main section.leftright > a > div.content p {
-      padding-right: 0; }
-  div.main section.leftright > a > div.image {
-    width: 100%;
-    max-width: 100%; }
-  div.main section.leftright:nth-child(even) > a > div:nth-child(1) {
-    margin: 15px 0 0 0;
-    order: 2; }
-  div.main section.leftright:nth-child(even) > a > div:nth-child(2) {
-    order: 1; }
-  div.main section.leftright:nth-child(odd) > a > div:nth-child(1) {
-    order: 1; }
-  div.main section.leftright:nth-child(odd) > a > div:nth-child(2) {
-    order: 2;
-    margin: 15px 0 0 0; } }
+      max-width: 100%; }
+    div.main section.leftright:nth-child(even) > a > div:nth-child(1) {
+      margin: 15px 0 0 0;
+      order: 2; }
+    div.main section.leftright:nth-child(even) > a > div:nth-child(2) {
+      order: 1; }
+    div.main section.leftright:nth-child(odd) > a > div:nth-child(1) {
+      order: 1; }
+    div.main section.leftright:nth-child(odd) > a > div:nth-child(2) {
+      order: 2;
+      margin: 15px 0 0 0; } }
 
 @media only screen and (max-width: 600px) {
   div.main section.leftright > a > div.content h3 {

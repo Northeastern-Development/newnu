@@ -126,9 +126,10 @@
   /* Legacy iOS */ }
 
 div.main section {
-  width: 96vw; }
+  width: 94vw; }
 
 div.main section.nu__collegegrid > ul {
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -224,7 +225,8 @@ div.main section.nu__bythenumbers > ul {
 
 @media only screen and (max-width: 959px) {
   div.main section.nu__collegegrid > ul {
-    display: block; }
+    display: block;
+    width: 100%; }
     div.main section.nu__collegegrid > ul > li {
       flex: none;
       width: 100%;
@@ -232,7 +234,7 @@ div.main section.nu__bythenumbers > ul {
       div.main section.nu__collegegrid > ul > li > a > div.image {
         height: 350px; }
   div.main section.nu__bythenumbers > h2 {
-    width: 80vw; }
+    width: 94vw; }
   div.main section.nu__bythenumbers > ul {
     display: block; }
     div.main section.nu__bythenumbers > ul > li {

@@ -195,6 +195,15 @@
 }
 
 
+// @media only screen and (max-width: 1080px) {
+//
+//    section{
+//      width: $content-width;
+//    }
+//
+// }
+
+
 
 
 @media only screen and (max-width: 959px) {
@@ -237,7 +246,7 @@
 
 
    section{
-     width: $content-width;
+     width: $content-width-wide;
      & > ul{
        flex-wrap: wrap;
        & > li{

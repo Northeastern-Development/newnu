@@ -193,7 +193,7 @@ div.main {
   div.main section {
     margin: 25.5px auto 0 auto; }
     div.main section > ul {
-      width: 97vw;
+      width: 94vw;
       margin: 15px auto 0 auto; }
       div.main section > ul > li {
         margin: 0 15px 15px 0; }
@@ -211,7 +211,7 @@ div.main {
   div.main section.fullwidth > ul {
     width: 80vw; }
   div.main section {
-    width: 80vw; }
+    width: 94vw; }
     div.main section > ul {
       flex-wrap: wrap; }
       div.main section > ul > li {

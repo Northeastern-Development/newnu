@@ -413,6 +413,7 @@ footer{
   footer{
 
     & > div.nu__prefooter{
+
       // height: auto;
       // background: rgba($brand_colors-white,1.0);
       // width: $wrapper-width;
@@ -423,6 +424,7 @@ footer{
       //   margin: 0 0 20px 0;
       // }
       & > div{
+        width: $content-width-wide;
         // width: $content-width-wide;
         // height: inherit;
         // margin: 0 auto 0 auto;
@@ -881,7 +883,7 @@ footer{
       // width: $wrapper-width;
       & > div{
         // width: $content-width-wide;
-        width: $content-width;
+        // width: $content-width;
         // height: inherit;
         // margin: 0 auto 0 auto;
         & > ul{

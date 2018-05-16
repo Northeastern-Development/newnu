@@ -178,10 +178,6 @@ div.main section.nu__departmentlist > div > div {
       width: 12px;
       border: 0; }
 
-@media only screen and (max-width: 1080px) {
-  div.main section.nu__departmentlist {
-    width: 80vw; } }
-
 @media only screen and (max-width: 575px) {
   div.main section.nu__departmentlist > div > div {
     display: table;

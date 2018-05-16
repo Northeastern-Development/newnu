@@ -87,16 +87,25 @@
 
    @media only screen and (max-width: 1080px) {
 
-      section.nu__departmentlist{
-        width: $content-width;
-      }
+      // section.nu__departmentlist{
+      //   width: $content-width;
+      // }
 
    }
+
+   // @media only screen and (max-width: 960px) {
+   //
+   //    section.nu__departmentlist{
+   //      width: $content-width-960;
+   //    }
+   //
+   // }
 
 
    @media only screen and (max-width: 575px) {
 
      section.nu__departmentlist{
+       // width: $content-width;
        & > div{
          & > div{
            display: table;

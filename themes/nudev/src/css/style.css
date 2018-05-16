@@ -270,7 +270,7 @@ header {
   z-index: 1000;
   border-bottom: solid #979797 1px; }
   header > div {
-    width: 97vw;
+    width: 94vw;
     margin: 0 auto 0 auto;
     height: 80px;
     position: relative; }
@@ -347,7 +347,7 @@ div#nu__utility-nav {
   background: black;
   height: 30px;
   overflow: visible;
-  width: 97vw;
+  width: 94vw;
   margin: 0 auto 0 auto; }
   div#nu__utility-nav > a {
     display: block;
@@ -1251,7 +1251,7 @@ footer {
       color: black;
       margin: 0 0 20px 0; }
     footer > div.nu__prefooter > div {
-      width: 97vw;
+      width: 94vw;
       height: inherit;
       margin: 0 auto 0 auto; }
       footer > div.nu__prefooter > div > ul {
@@ -1325,7 +1325,7 @@ footer {
     margin: 0 auto 0 auto;
     position: relative; }
     footer > div.nu__footer > div.nu__footer-hideshow {
-      width: 97vw;
+      width: 94vw;
       display: none;
       height: 44px;
       line-height: 44px;
@@ -1340,7 +1340,7 @@ footer {
         cursor: pointer;
         color: #fffffe; }
     footer > div.nu__footer > div {
-      width: 97vw;
+      width: 94vw;
       margin: 18.75px auto 0 auto; }
       footer > div.nu__footer > div > a {
         color: #fffffe;
@@ -1436,12 +1436,14 @@ footer {
       text-align: left; } }
 
 @media only screen and (max-width: 959px) {
-  footer > div.nu__prefooter > div > ul {
-    overflow: hidden;
-    display: block;
-    flex: none; }
-    footer > div.nu__prefooter > div > ul > li {
-      width: 100%; } }
+  footer > div.nu__prefooter > div {
+    width: 94vw; }
+    footer > div.nu__prefooter > div > ul {
+      overflow: hidden;
+      display: block;
+      flex: none; }
+      footer > div.nu__prefooter > div > ul > li {
+        width: 100%; } }
 
 @media only screen and (max-width: 899px) {
   footer.absolute {
@@ -1473,10 +1475,8 @@ footer {
 @media only screen and (max-width: 575px) {
   footer {
     height: auto; }
-    footer > div.nu__prefooter > div {
-      width: 80vw; }
-      footer > div.nu__prefooter > div > ul {
-        overflow: hidden; }
+    footer > div.nu__prefooter > div > ul {
+      overflow: hidden; }
     footer.absolute {
       height: auto; }
     footer > div.nu__footer > div > div {

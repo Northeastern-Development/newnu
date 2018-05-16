@@ -14,11 +14,12 @@
  div.main{
 
    section{
-     width: 96vw;
+     width: $content-width-wide;
    }
 
    section.nu__collegegrid{
      & > ul{
+       width: 100%;
        height: auto;
        display: flex;
        flex-direction: row;
@@ -118,12 +119,14 @@
 
 
     section.nu__collegegrid{
+      // width: $content-width-wide;
       & > ul{
         // height: auto;
         display: block;
         // flex-direction: row;
         // flex-wrap: wrap;
         // margin: 0 0 0 0;
+        width: 100%;
         & > li{
           flex: none;
           width: 100%;
@@ -178,7 +181,7 @@
      & > h2{
        // @include font-6l-c;
        // border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
-       width: $content-width;
+       width: $content-width-wide;
      }
       & > ul{
         // height: auto;

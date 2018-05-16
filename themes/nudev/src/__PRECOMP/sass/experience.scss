@@ -176,21 +176,12 @@
 
 
 
-
-
-
-// @media only screen and (max-width: 1200px) {
-//
-//
-//
-// }
-
-
-
 @media only screen and (max-width: 959px) {
   div.main{
 
    section.leftright{
+
+     width: $content-width-wide;
 
      & a{
 
