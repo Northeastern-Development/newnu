@@ -47,11 +47,13 @@
 			$manager = query_posts($args);
 			$managerFields = get_fields($manager[0]->ID);
 
+			// $guide = '<article><div><p class="nametitle"><span>%s</span><br />%s</p><p class="description">%s</p><p class="contact">%s%s%s</p></div><div><div style="background-image: url(%s);"></div></div></article>';
+
 			$guide = '<article><div><div style="background-image: url(%s);"></div></div><div><p class="nametitle"><span>%s</span><br />%s</p><p class="description">%s</p><p class="contact">%s%s%s</p></div></article>';
 
 			$department = sprintf(
 				$guide
-				,$managerFields['headshot']['url']
+,$managerFields['headshot']['url']
 				,$manager[0]->post_title
 				,$managerFields['title']
 				,$managerFields['description']
@@ -61,7 +63,7 @@
 
 			);
 
-			$departments .= '<section class="nu__team">'.$department.'</section>';
+			$departments .= '<section class="nu__slt">'.$department.'</section>';
 
 		}
 
@@ -99,15 +101,13 @@
 		$manager = query_posts($args);
 		$managerFields = get_fields($manager[0]->ID);
 
-		// $guide = '<section class="nu__team"><article><div><p class="description">%s</p><p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit %s Site</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
+		$guide = '<section class="nu__team"><article><div><p class="description">%s</p><p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit %s Site</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
 
-			$guide = '<section class="nu__team"><article><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div><div><p class="description">%s</p><p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit %s Site</a></p></div></article></section>';
+			// $guide = '<section class="nu__team"><article><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div><div><p class="description">%s</p><p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit %s Site</a></p></div></article></section>';
 
 		$department = sprintf(
 			$guide
-			,$managerFields['headshot']['url']
-			,$manager[0]->post_title
-			,$managerFields['title']
+
 			,$deptFields['description']
 			,$deptFields['phone']
 			,strtolower($dept[0]->post_title)
@@ -115,7 +115,9 @@
 			,$deptFields['url']
 			,strtolower($dept[0]->post_title)
 			,$dept[0]->post_title
-
+			,$managerFields['headshot']['url']
+			,$manager[0]->post_title
+			,$managerFields['title']
 		);
 
 		$departments .= $department;

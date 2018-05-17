@@ -1466,6 +1466,11 @@ footer {
     height: auto; } }
 
 @media only screen and (max-width: 700px) {
+  footer > div.nu__prefooter > p {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    text-align: center;
+    font-weight: 300; }
   footer > div.nu__footer > div > div > p {
     width: auto;
     margin-right: 20px; }

@@ -27,7 +27,7 @@
 			<h2>Leadership Team</h2>
 			<input id="toggle" type="checkbox" title="Click to select">
 			<ul>
-				<li><a <?=($filter == ''?'class="active"':'')?> href="<?=home_url()?>/about/university-administration" title="Show senior leadership team">Senior Leadership</a></li>
+				<li><a <?=($filter == ''?'class="active"':'')?> href="<?=home_url()?>/about/university-administration" title="Show senior leadership team">Senior Leadership <span>&#xE313;</span></a></li>
 				<?php include(locate_template('loops/loop-administration-filters.php')); ?>
 			</ul>
 		</section>
@@ -39,7 +39,7 @@
 <?php
 
 	if($filter != ''){
-		echo '<script> $(document).ready(function(){ $("html, body").animate({scrollTop: $("section.nu__filters").offset().top},0); });</script>';
+		echo '<script> $(document).ready(function(){ $("html, body").animate({scrollTop: $("section.nu__filters").offset().top - ($("header").height() + 20)},0); });</script>';
 	}
 
 	get_footer();
