@@ -1437,7 +1437,7 @@ footer {
 
 @media only screen and (max-width: 959px) {
   footer > div.nu__prefooter > div {
-    width: 94vw; }
+    width: 96vw; }
     footer > div.nu__prefooter > div > ul {
       overflow: hidden;
       display: block;
@@ -1475,8 +1475,10 @@ footer {
 @media only screen and (max-width: 575px) {
   footer {
     height: auto; }
-    footer > div.nu__prefooter > div > ul {
-      overflow: hidden; }
+    footer > div.nu__prefooter > div {
+      width: 92vw; }
+      footer > div.nu__prefooter > div > ul {
+        overflow: hidden; }
     footer.absolute {
       height: auto; }
     footer > div.nu__footer > div > div {

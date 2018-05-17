@@ -181,7 +181,7 @@
 
    section.leftright{
 
-     width: $content-width-wide;
+     width: $content-width-960;
 
      & a{
 
@@ -264,6 +264,8 @@
   div.main{
 
    section.leftright{
+
+     width: $content-width-700;
 
      & a{
 

@@ -211,7 +211,7 @@ div.main {
   div.main section.fullwidth > ul {
     width: 80vw; }
   div.main section {
-    width: 94vw; }
+    width: 96vw; }
     div.main section > ul {
       flex-wrap: wrap; }
       div.main section > ul > li {
@@ -223,12 +223,14 @@ div.main {
 @media only screen and (max-width: 620px) {
   div.main section.intro > h1 {
     text-align: left; }
-  div.main section > ul {
-    width: 80vw;
-    margin: 0 auto;
-    flex-direction: column; }
-    div.main section > ul > li {
-      margin-right: 0; } }
+  div.main section {
+    width: 92vw; }
+    div.main section > ul {
+      width: 100%;
+      margin: 0 auto;
+      flex-direction: column; }
+      div.main section > ul > li {
+        margin-right: 0; } }
 
 @media only screen and (max-width: 440px) {
   div.main section.fullwidth > h4 {

@@ -246,7 +246,7 @@
 
 
    section{
-     width: $content-width-wide;
+     width: $content-width-960;
      & > ul{
        flex-wrap: wrap;
        & > li{
@@ -312,9 +312,9 @@
 
 
    section{
-
+      width: $content-width-700;
      & > ul{
-       width: $content-width;
+       width: 100%;
        margin: 0 auto;
        flex-direction: column;
 

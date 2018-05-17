@@ -177,6 +177,13 @@
    text-align: left;
  }
 
+ @mixin font-1b-c{
+   font-size: 1.4rem;
+   font-weight: 700;
+   line-height: 2.4rem;
+   text-align: center;
+ }
+
  @mixin font-1l-l{
    font-size: 1.2rem;
    font-weight: 300;

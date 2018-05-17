@@ -424,7 +424,7 @@ footer{
       //   margin: 0 0 20px 0;
       // }
       & > div{
-        width: $content-width-wide;
+        width: $content-width-960;
         // width: $content-width-wide;
         // height: inherit;
         // margin: 0 auto 0 auto;
@@ -882,11 +882,13 @@ footer{
       // }
       // width: $wrapper-width;
       & > div{
+        width: $content-width-700;
         // width: $content-width-wide;
         // width: $content-width;
         // height: inherit;
         // margin: 0 auto 0 auto;
         & > ul{
+          // width: $content-width-700;
           // display: flex;
           // flex-wrap: nowrap;
           // flex-direction: row;

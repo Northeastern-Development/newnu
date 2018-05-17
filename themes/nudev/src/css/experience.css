@@ -207,7 +207,7 @@ div.main section.leftright {
 
 @media only screen and (max-width: 959px) {
   div.main section.leftright {
-    width: 94vw; }
+    width: 96vw; }
     div.main section.leftright > a > div.content {
       align-items: flex-start;
       min-height: auto;
@@ -235,11 +235,13 @@ div.main section.leftright {
       margin: 15px 0 0 0; } }
 
 @media only screen and (max-width: 600px) {
-  div.main section.leftright > a > div.content h3 {
-    font-size: 2.0rem;
-    font-weight: 300;
-    line-height: 3.2rem;
-    text-align: left; } }
+  div.main section.leftright {
+    width: 92vw; }
+    div.main section.leftright > a > div.content h3 {
+      font-size: 2.0rem;
+      font-weight: 300;
+      line-height: 3.2rem;
+      text-align: left; } }
 
 @media only screen and (max-width: 620px) {
   div.main section.leftright > a > div.image {
