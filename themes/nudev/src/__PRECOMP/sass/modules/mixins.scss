@@ -50,7 +50,12 @@
     @include font-7-c;
     color: rgba($brand_colors-red,1.0);
     content: '\E8E4';
-    vertical-align: -20%;
+    // vertical-align: -20%;
+    display: inline-block;
+    height: 20px;
+    line-height: 30px;
+    overflow: hidden;
+    // background: green;
   }
 }
 
