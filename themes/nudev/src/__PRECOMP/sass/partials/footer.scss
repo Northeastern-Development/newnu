@@ -133,13 +133,13 @@ footer{
             }
             & > p:nth-of-type(1){
               @include font-3b-l;
-              margin: 0 0 0 0;
+              // margin: 0 0 0 0;
               @include action-arrow;
               @include action-arrow-hidden;
-              &:after{
-                @include font-4-c;
-                line-height: 20px;
-              }
+              // &:after{
+              //   @include font-4-c;
+              //   line-height: 20px;
+              // }
             }
             & > p:nth-of-type(2){
               @include font-2r-l;
