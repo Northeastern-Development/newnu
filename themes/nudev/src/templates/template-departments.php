@@ -10,8 +10,8 @@
 
 		<section class="hero">
 			<div>
-				<h2>Departments & Programs</h2>
-				<h3>Departments & Programs Departments & Programs Departments & Programs Departments & Programs Departments & Programs Departments & Programs Departments & Programs Departments & Programs Departments & Programs Departments & Programs Departments & Programs Departments & Programs </h3>
+				<h2>Departments and Programs</h2>
+				<h3>With programs offering more than 90 majors and concentrations aligned with 21st-century needs, Northeastern undergraduate and graduate students are able to design an education that positions them for a lifetime of career success and fulfillment.</h3>
 			</div>
 		</section>
 
