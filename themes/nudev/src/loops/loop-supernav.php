@@ -121,7 +121,7 @@
 
 	$res = query_posts($args);
 
-	$guide = '<li class="featured%s"><a href="%s" title="learn more about %s%s"%s><div><img src="%s" alt="%s icon" /></div><div>%s</div></a></li>';
+	$guide = '<li class="featured%s%s"><a href="%s" title="learn more about %s%s"%s><div><img src="%s" alt="%s icon" /></div><div>%s</div></a></li>';
 
 	$iii = 0;
 	foreach($res as $r){
@@ -131,6 +131,7 @@
 		$return .= sprintf(
 			$guide
 			,($iii === 0?' first':'')
+			,(strtolower($r->post_title) == "make a gift"?' makeagift':'')
 			,$fields['link_target_url']
 			,$r->post_title
 			,(isset($fields['open_in_new']) && $fields['open_in_new'] == "1"?' [will open in new window]':'')

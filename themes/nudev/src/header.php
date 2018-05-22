@@ -76,7 +76,7 @@
 
 		<div class="wrapper">
 
-			<header role="banner"><?php if(function_exists("wp_header")){wp_header();} ?>
+			<?php if(function_exists("wp_header")){wp_header();} ?><header role="banner">
 
 				<?=getAlerts()?>
 

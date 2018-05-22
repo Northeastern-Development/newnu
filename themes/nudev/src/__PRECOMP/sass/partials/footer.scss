@@ -30,7 +30,8 @@ footer{
 
   // this is for pages that will include the pre-footer area
   &.addprefooter{
-    height: 540px;
+    // height: 540px;
+    height: auto;
   }
 
 
@@ -82,13 +83,70 @@ footer{
 
   // this defines the space for the pre-footer on pages that include it
   & > div.nu__prefooter{
-    height: 300px;
-    background: rgba($brand_colors-red,1.0);
+    height: auto;
+    background: rgba($brand_colors-white,1.0);
     width: $wrapper-width;
+    margin: 0 0 0 0;
+    & > p{
+      @include font-6l-c;
+      color: rgba($brand_colors-black,1.0);
+      margin: 0 0 20px 0;
+    }
     & > div{
-      width: $content-width;
+      width: $content-width-wide;
       height: inherit;
       margin: 0 auto 0 auto;
+      & > ul{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        list-style: none;
+        list-style-type: none;
+        & > li{
+          flex-grow: 1;
+          min-height: 250px;
+          margin: 0 $gutter ($gutter * 2) 0;
+          &:last-child{
+            margin: 0 0 ($gutter * 2) 0;
+          }
+          & > a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            &:hover{
+              color: rgba($brand_colors-black,1.0);
+              & > div.image > div{
+                @include block-item-hover;
+
+              }
+              & > p:nth-of-type(1){
+                @include action-arrow-shown;
+              }
+            }
+            & > div.image{
+              height: 245px;
+              margin: 0 0 10px 0;
+              @include block-group;
+              & > div{
+                @include block-item-default;
+              }
+            }
+            & > p:nth-of-type(1){
+              @include font-3b-l;
+              // margin: 0 0 0 0;
+              @include action-arrow;
+              @include action-arrow-hidden;
+              // &:after{
+              //   @include font-4-c;
+              //   line-height: 20px;
+              // }
+            }
+            & > p:nth-of-type(2){
+              @include font-2r-l;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -347,6 +405,90 @@ footer{
       }
      }
   }
+}
+
+
+@media only screen and (max-width: 959px){
+
+  footer{
+
+    & > div.nu__prefooter{
+
+      // height: auto;
+      // background: rgba($brand_colors-white,1.0);
+      // width: $wrapper-width;
+      // margin: 0 0 0 0;
+      // & > p{
+      //   @include font-6l-c;
+      //   color: rgba($brand_colors-black,1.0);
+      //   margin: 0 0 20px 0;
+      // }
+      & > div{
+        width: $content-width-960;
+        // width: $content-width-wide;
+        // height: inherit;
+        // margin: 0 auto 0 auto;
+        & > ul{
+          // display: flex;
+          // flex-wrap: nowrap;
+          // flex-direction: row;
+          // list-style: none;
+          // list-style-type: none;
+          overflow: hidden;
+          display: block;
+          flex: none;
+          & > li{
+            // overflow: hidden;
+            // flex-grow: 1;
+            // min-height: 250px;
+            // margin: 0 $gutter ($gutter * 2) 0;
+            width: 100%;
+            // &:last-child{
+            //   margin: 0 0 ($gutter * 2) 0;
+            // }
+            // & > a{
+            //   display: block;
+            //   width: 100%;
+            //   height: 100%;
+            //   &:hover{
+            //     color: rgba($brand_colors-black,1.0);
+            //     & > div.image > div{
+            //       @include block-item-hover;
+            //
+            //     }
+            //     & > p:nth-of-type(1){
+            //       @include action-arrow-shown;
+            //     }
+            //   }
+            //   & > div.image{
+            //     height: 245px;
+            //     margin: 0 0 10px 0;
+            //     @include block-group;
+            //     & > div{
+            //       @include block-item-default;
+            //     }
+            //   }
+            //   & > p:nth-of-type(1){
+            //     @include font-3b-l;
+            //     margin: 0 0 0 0;
+            //     @include action-arrow;
+            //     @include action-arrow-hidden;
+            //     &:after{
+            //       @include font-4-c;
+            //       line-height: 20px;
+            //     }
+            //   }
+            //   & > p:nth-of-type(2){
+            //     @include font-2r-l;
+            //   }
+            // }
+          }
+        }
+      }
+    }
+
+  }
+
 }
 
 
@@ -611,18 +753,80 @@ footer{
 
     // &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
     //
-    //   & > div.nu__footer{
-    //     & > div.nu__footer-hideshow{
-    //
-    //       &:before{
-    //
-    //       }
-    //       &:hover{
-    //
-    //       }
-    //     }
-    //   }
-    // }
+    & > div.nu__prefooter{
+
+      // height: auto;
+      // background: rgba($brand_colors-white,1.0);
+      // width: $wrapper-width;
+      // margin: 0 0 0 0;
+      & > p{
+        @include font-5l-c;
+        // color: rgba($brand_colors-black,1.0);
+        // margin: 0 0 20px 0;
+      }
+      // & > div{
+      //   width: $content-width-960;
+      //   // width: $content-width-wide;
+      //   // height: inherit;
+      //   // margin: 0 auto 0 auto;
+      //   & > ul{
+      //     // display: flex;
+      //     // flex-wrap: nowrap;
+      //     // flex-direction: row;
+      //     // list-style: none;
+      //     // list-style-type: none;
+      //     overflow: hidden;
+      //     display: block;
+      //     flex: none;
+      //     & > li{
+      //       // overflow: hidden;
+      //       // flex-grow: 1;
+      //       // min-height: 250px;
+      //       // margin: 0 $gutter ($gutter * 2) 0;
+      //       width: 100%;
+      //       // &:last-child{
+      //       //   margin: 0 0 ($gutter * 2) 0;
+      //       // }
+      //       // & > a{
+      //       //   display: block;
+      //       //   width: 100%;
+      //       //   height: 100%;
+      //       //   &:hover{
+      //       //     color: rgba($brand_colors-black,1.0);
+      //       //     & > div.image > div{
+      //       //       @include block-item-hover;
+      //       //
+      //       //     }
+      //       //     & > p:nth-of-type(1){
+      //       //       @include action-arrow-shown;
+      //       //     }
+      //       //   }
+      //       //   & > div.image{
+      //       //     height: 245px;
+      //       //     margin: 0 0 10px 0;
+      //       //     @include block-group;
+      //       //     & > div{
+      //       //       @include block-item-default;
+      //       //     }
+      //       //   }
+      //       //   & > p:nth-of-type(1){
+      //       //     @include font-3b-l;
+      //       //     margin: 0 0 0 0;
+      //       //     @include action-arrow;
+      //       //     @include action-arrow-hidden;
+      //       //     &:after{
+      //       //       @include font-4-c;
+      //       //       line-height: 20px;
+      //       //     }
+      //       //   }
+      //       //   & > p:nth-of-type(2){
+      //       //     @include font-2r-l;
+      //       //   }
+      //       // }
+      //     }
+      //   }
+      // }
+    }
 
 
      // &.collapse{  // this is the closed state of the footer on the homepage only!
@@ -726,6 +930,84 @@ footer{
     // & a{
     //
     // }
+
+
+    & > div.nu__prefooter{
+      // height: auto;
+      // background: rgba($brand_colors-white,1.0);
+      // width: $wrapper-width;
+      // margin: 0 0 0 0;
+      // & > p{
+      //   @include font-6l-c;
+      //   color: rgba($brand_colors-black,1.0);
+      //   margin: 0 0 20px 0;
+      // }
+      // width: $wrapper-width;
+      & > div{
+        width: $content-width-700;
+        // width: $content-width-wide;
+        // width: $content-width;
+        // height: inherit;
+        // margin: 0 auto 0 auto;
+        & > ul{
+          // width: $content-width-700;
+          // display: flex;
+          // flex-wrap: nowrap;
+          // flex-direction: row;
+          // list-style: none;
+          // list-style-type: none;
+          overflow: hidden;
+          // display: block;
+          // flex: none;
+          // & > li{
+            // overflow: hidden;
+            // flex-grow: 1;
+            // min-height: 250px;
+            // margin: 0 $gutter ($gutter * 2) 0;
+            // width: 100%;
+            // &:last-child{
+            //   margin: 0 0 ($gutter * 2) 0;
+            // }
+            // & > a{
+            //   display: block;
+            //   width: 100%;
+            //   height: 100%;
+            //   &:hover{
+            //     color: rgba($brand_colors-black,1.0);
+            //     & > div.image > div{
+            //       @include block-item-hover;
+            //
+            //     }
+            //     & > p:nth-of-type(1){
+            //       @include action-arrow-shown;
+            //     }
+            //   }
+            //   & > div.image{
+            //     height: 245px;
+            //     margin: 0 0 10px 0;
+            //     @include block-group;
+            //     & > div{
+            //       @include block-item-default;
+            //     }
+            //   }
+            //   & > p:nth-of-type(1){
+            //     @include font-3b-l;
+            //     margin: 0 0 0 0;
+            //     @include action-arrow;
+            //     @include action-arrow-hidden;
+            //     &:after{
+            //       @include font-4-c;
+            //       line-height: 20px;
+            //     }
+            //   }
+            //   & > p:nth-of-type(2){
+            //     @include font-2r-l;
+            //   }
+            // }
+          // }
+        }
+      }
+    }
 
 
     // this is for pages that will include the pre-footer area

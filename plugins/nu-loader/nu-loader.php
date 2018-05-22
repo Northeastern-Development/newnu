@@ -52,7 +52,7 @@ function nu_check_plugin(){
     fclose($f);
 
     // add in the custom hook by updating the code of header.php
-    $d = str_replace('<header role="banner">','<header role="banner"><?php if(function_exists("wp_header")){wp_header();} ?>',$d);
+    $d = str_replace('<header ','<?php if(function_exists("wp_header")){wp_header();} ?><header ',$d);
     $f = fopen($p, "w+") or die("Unable to open file!");
     fwrite($f,$d);
     fclose($f);
@@ -104,7 +104,7 @@ updated wp theme files
 *********************************************************************** */
 function nu_header_block(){
 
-  global $baseUrls;
+  // global $baseUrls;
 
   // let's grab the utility nav from home base
   // $url = $baseUrls[0]."/resources/includes/?r=utility-nav";
@@ -118,58 +118,58 @@ function nu_header_block(){
 
   // need a check in here if the curl request errors
 
-  $alerts = '';
-
-  $url = $baseUrls[0]."/feed/alerts";
-  $curl = curl_init($url);
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-  $xml = curl_exec($curl);
-  // echo 'XML: '.$xml;
-  if(curl_errno($curl)){
-    echo 'CURL Request Error: '.curl_error($curl);
-    curl_close($curl);
-  }else if($xml != ''){
-    curl_close($curl);
-    // echo 'XML: '.$xml;
-    $xml = simplexml_load_string($xml, "SimpleXMLElement", LIBXML_NOCDATA);
-
-    $json = json_encode($xml);
-    $res = json_decode($json,TRUE)['channel']['items'];
-
-    // print_r($res);
-
-    // $alerts = '';
-
-    // if we have alerts, build out the alerts panel
-    if(!isset($res[0])){
-      $alerts .= '<br /><div><h2>University Alert!</h2><p>Northeastern University has issued the following alert(s). Please be sure to read any associated information and contact your campus emergency services with questions.</p><ul>';
-
-      foreach($res as $r){
-        $guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s&nbsp;</a></li>';
-
-  			$campus = "";
-        $campuses = explode(", ",$r['campuses']);
-  			foreach($campuses as $c){
-  				$campus .= ($campus != ""?", ":"").$c;
-  			}
-
-  			$alerts .= sprintf(
-  				 $guide
-  				,$r['link']
-  				,$r['title']
-  				,$r['title']
-  				,$campus
-  				,$r['description']
-  			);
-      }
-      $alerts .= '</ul></div>';
-    }
-  }
-
-  echo '<div id="nu__alerts">'.$alerts.'</div>';
-
-  wp_reset_postdata();
-	wp_reset_query();
+  // $alerts = '';
+  //
+  // $url = $baseUrls[0]."/feed/alerts";
+  // $curl = curl_init($url);
+  // curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+  // $xml = curl_exec($curl);
+  // // echo 'XML: '.$xml;
+  // if(curl_errno($curl)){
+  //   echo 'CURL Request Error: '.curl_error($curl);
+  //   curl_close($curl);
+  // }else if($xml != ''){
+  //   curl_close($curl);
+  //   // echo 'XML: '.$xml;
+  //   $xml = simplexml_load_string($xml, "SimpleXMLElement", LIBXML_NOCDATA);
+  //
+  //   $json = json_encode($xml);
+  //   $res = json_decode($json,TRUE)['channel']['items'];
+  //
+  //   // print_r($res);
+  //
+  //   // $alerts = '';
+  //
+  //   // if we have alerts, build out the alerts panel
+  //   if(!isset($res[0])){
+  //     $alerts .= '<br /><div><h2>University Alert!</h2><p>Northeastern University has issued the following alert(s). Please be sure to read any associated information and contact your campus emergency services with questions.</p><ul>';
+  //
+  //     foreach($res as $r){
+  //       $guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s&nbsp;</a></li>';
+  //
+  // 			$campus = "";
+  //       $campuses = explode(", ",$r['campuses']);
+  // 			foreach($campuses as $c){
+  // 				$campus .= ($campus != ""?", ":"").$c;
+  // 			}
+  //
+  // 			$alerts .= sprintf(
+  // 				 $guide
+  // 				,$r['link']
+  // 				,$r['title']
+  // 				,$r['title']
+  // 				,$campus
+  // 				,$r['description']
+  // 			);
+  //     }
+  //     $alerts .= '</ul></div>';
+  //   }
+  // }
+  //
+  // echo '<div id="nu__alerts">'.$alerts.'</div>';
+  //
+  // wp_reset_postdata();
+	// wp_reset_query();
 }
 /* END FUNCTION ******************************************************** */
 
@@ -275,7 +275,7 @@ function wp_header(){
 // add_action('wp_footer','nu_global_footer');
 
 
-// add_action('wp_header','nu_supernav');
+//add_action('wp_header','nu_supernav');
 
 
 
@@ -283,5 +283,5 @@ function wp_header(){
 
 // let's check the plugin to make sure that we have everything we need
 if(!is_admin()){
-  // add_action('wp_footer','nu_check_plugin');
+  add_action('wp_footer','nu_check_plugin');
 }

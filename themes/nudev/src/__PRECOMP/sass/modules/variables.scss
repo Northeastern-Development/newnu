@@ -38,7 +38,9 @@ $brand_colors-grayW: rgb(151, 151, 151);              // warm gray
 $wrapper-width: 100vw;
 $content-width: 80vw;
 $content-width-super-narrow: 88vw;
-$content-width-wide: 97vw;
+$content-width-wide: 94vw;
+$content-width-960: 96vw;
+$content-width-700: 92vw;
 $content-width-narrow: 50vw;
 $gutter: 30px;
 
@@ -68,10 +70,10 @@ $footer-height-collapsed: 44px;
 
 
 
-@media only screen and (max-width: 1100px){
-
-  $content-width: 84vw;
-  $wrapper-margins: 0, (($wrapper-width - $content-width) / 2), 0, (($wrapper-width - $content-width) / 2);
-  $gutter: 2vw;
-
-}
+// @media only screen and (max-width: 1100px){
+//
+//   $content-width: 10vw;
+//   $wrapper-margins: 0, (($wrapper-width - $content-width) / 2), 0, (($wrapper-width - $content-width) / 2);
+//   $gutter: 2vw;
+//
+// }

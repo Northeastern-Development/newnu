@@ -4,11 +4,12 @@
   function customRSS(){
 
     add_feed('campuses', 'campusesRSSFunc');
-    add_feed('collegelist', 'collegesRSSFunc');
+    add_feed('collegesandschools', 'collegesandschoolsRSSFunc');
     add_feed('corporation', 'corporationRSSFunc');
     add_feed('administration', 'administrationRSSFunc');
     add_feed('alerts', 'alertsRSSFunc');
     add_feed('supernav', 'supernavRSSFunc');
+    add_feed('departmentsandprograms', 'departmentsandprogramsRSSFunc');
 
   }
 
@@ -21,9 +22,9 @@
   }
 
   // colleges
-  function collegesRSSFunc(){
+  function collegesandschoolsRSSFunc(){
     header( 'Content-Type: application/rss+xml; charset=' . get_option( 'blog_charset' ), true );
-    require_once( get_template_directory() . '/templates/rss/rss-college.php' );
+    require_once( get_template_directory() . '/templates/rss/rss-collegesandschools.php' );
   }
 
   // corporation
@@ -48,6 +49,12 @@
   function supernavRSSFunc(){
     header( 'Content-Type: application/rss+xml; charset=' . get_option( 'blog_charset' ), true );
     require_once( get_template_directory() . '/templates/rss/rss-supernav.php' );
+  }
+
+  // university departments and programs
+  function departmentsandprogramsRSSFunc(){
+    header( 'Content-Type: application/rss+xml; charset=' . get_option( 'blog_charset' ), true );
+    require_once( get_template_directory() . '/templates/rss/rss-departmentsandprograms.php' );
   }
 
 ?>

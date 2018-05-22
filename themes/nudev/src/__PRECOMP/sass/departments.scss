@@ -1,0 +1,192 @@
+/*
+ * departments
+ */
+
+
+ // Modules
+ @import "modules/variables";
+ @import "modules/mixins";
+ @import "modules/fonts";
+
+
+
+ div.main{
+
+   section.nu__departmentlist{
+     & > div{
+       & > div{
+         display: table;
+         width: 100%;
+         border-bottom: solid rgba($brand_colors-grayW,0.3) 1px;
+         padding: 10px 0 10px 0;
+         &:last-child{
+           border-bottom: 0;
+         }
+         & > div{
+           display: table-cell;
+           width: 150px;
+           // max-height: 30px;
+           // height: 30px;
+           overflow: hidden;
+          @include font-1r-c;
+           // text-align: center;
+           // border: solid rgba($brand_colors-grayW,1.0) 1px;
+           &.inactive{
+             opacity: 0;
+             & > a{
+               display: none;
+             }
+           }
+           &.active{
+             opacity: 1;
+             & > a{
+               text-align: center;
+               border: solid rgba($brand_colors-grayW,1.0) 1px;
+               @include font-1r-c;
+               // border: 0;
+               display: block;
+               width: 100%;
+               height: 100%;
+               color: rgba($brand_colors-black,0.7);
+               &:hover{
+                 background: rgba($brand_colors-grayW,1.0);
+                 color: rgba($brand_colors-black,1.0);
+               }
+             }
+           }
+           &:first-child{
+             width: auto;
+             text-align: left;
+             border: 0;
+             // background: red;
+             height: auto;
+             & > a{
+               display: block;
+               width: 100%;
+               border: 0;
+               @include font-2b-l;
+               &:hover{
+                 & > span{
+                   border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+                   color: rgba($brand_colors-black,1.0);
+                 }
+               }
+             }
+           }
+           &.spacer{
+             width: 12px;
+             border: 0;
+           }
+         }
+       }
+     }
+   }
+
+
+
+
+   @media only screen and (max-width: 1080px) {
+
+      // section.nu__departmentlist{
+      //   width: $content-width;
+      // }
+
+   }
+
+   // @media only screen and (max-width: 960px) {
+   //
+   //    section.nu__departmentlist{
+   //      width: $content-width-960;
+   //    }
+   //
+   // }
+
+
+   @media only screen and (max-width: 575px) {
+
+     section.nu__departmentlist{
+       // width: $content-width;
+       & > div{
+         & > div{
+           display: table;
+           width: 100%;
+           border-bottom: solid rgba($brand_colors-grayW,0.3) 1px;
+           padding: 10px 0 10px 0;
+           &:last-child{
+             border-bottom: 0;
+           }
+           & > div{
+             // display: table-cell;
+             display: block;
+             float: left;
+             // width: 150px;
+             width: 47.5%;
+             margin: 0 5% 0 0;
+             // max-height: 30px;
+             // height: 30px;
+             // overflow: hidden;
+            // @include font-1r-c;
+             // text-align: center;
+             // border: solid rgba($brand_colors-grayW,1.0) 1px;
+             // &.inactive{
+             //   opacity: 0;
+             //   & > a{
+             //     display: none;
+             //   }
+             // }
+             // &.active{
+             //   opacity: 1;
+             //   & > a{
+             //     text-align: center;
+             //     border: solid rgba($brand_colors-grayW,1.0) 1px;
+             //     @include font-1r-c;
+             //     // border: 0;
+             //     display: block;
+             //     width: 100%;
+             //     height: 100%;
+             //     color: rgba($brand_colors-black,0.7);
+             //     &:hover{
+             //       background: rgba($brand_colors-grayW,1.0);
+             //       color: rgba($brand_colors-black,1.0);
+             //     }
+             //   }
+             // }
+             &:last-child{
+               margin: 0 0 0 0;
+             }
+             &:first-child{
+             //   width: auto;
+               width: 100%;
+               float: none;
+               margin: 0 0 10px 0;
+             //   text-align: left;
+             //   border: 0;
+             //   // background: red;
+             //   height: auto;
+             //   & > a{
+             //     display: block;
+             //     width: 100%;
+             //     border: 0;
+             //     @include font-2b-l;
+             //     &:hover{
+             //       & > span{
+             //         border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+             //         color: rgba($brand_colors-black,1.0);
+             //       }
+             //     }
+             //   }
+             //
+             // &.spacer{
+             //   width: 12px;
+             //   border: 0;
+             }
+           }
+         }
+       }
+     }
+
+   }
+
+
+
+}

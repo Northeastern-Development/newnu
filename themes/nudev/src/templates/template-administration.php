@@ -4,12 +4,43 @@
 
 	get_header();
 
+	wp_reset_query();
+
+	// we need to be able to translate back the custom pretty URL to get the correct filter if one has been optioned
+	$fChk = $wp_query->query_vars['team-filter'];
+	$filter = (isset($fChk) && $fChk != ''?$fChk:'');
+
 ?>
 
-	<main id="static" role="main" aria-label="content">
+	<div class="main" role="main" aria-label="content">
 
-		<?php /* this will call in the actual content */ get_template_part('loops/loop-administration'); ?>
+		<section class="hero">
+			<div>
+				<h2>Administration</h2>
+				<h3>Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration </h3>
+			</div>
+		</section>
 
-	</main>
+		<?php include(locate_template('loops/loop-administration-president.php')); ?>
 
-<?php get_footer(); ?>
+		<section class="nu__filters">
+			<h2>Leadership Team</h2>
+			<input id="toggle" type="checkbox" title="Click to select">
+			<ul>
+				<li><a <?=($filter == ''?'class="active"':'')?> href="<?=home_url()?>/about/university-administration" title="Show senior leadership team">Senior Leadership <span>&#xE313;</span></a></li>
+				<?php include(locate_template('loops/loop-administration-filters.php')); ?>
+			</ul>
+		</section>
+
+		<?php  include(locate_template('loops/loop-administration.php')); ?>
+
+	</div>
+
+<?php
+
+	if($filter != ''){
+		echo '<script> $(document).ready(function(){ $("html, body").animate({scrollTop: $("section.nu__filters").offset().top - ($("header").height() + 20)},0); });</script>';
+	}
+
+	get_footer();
+?>

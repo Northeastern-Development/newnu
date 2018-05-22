@@ -45,13 +45,16 @@
     switch ( $column ) {
       case 'department':
         $depts = get_post_meta ( $post_id, 'department', true );
-        if(count($depts) > 1){ // they are in more than one dept
+        // print_r($depts);
+        // if(count($depts) > 1){ // they are in more than one dept
+        if(gettype($depts) == "array"){ // they are in more than one dept
           $v = '';
           foreach($depts as $d){  // loop through and grab each department that this person is part of
             $v .= ($v != ''?', '.$d:$d);
           }
           echo $v;
         }else{  // they are only in one dept
+          // echo $depts[0];
           echo $depts;
         }
         break;
@@ -78,6 +81,7 @@
 
 
       $current_v = isset($_GET['ADMIN_FILTER_FIELD_VALUE'])? $_GET['ADMIN_FILTER_FIELD_VALUE']:'';
+
       $guide = '<option value="%s"%s>%s</option>';
 
       // hardcoded values for now, there is an issue retrieving them again after the first filter
@@ -96,7 +100,10 @@
 
 <?php
 
+
+
       foreach ($values as $label => $value){
+
         printf(
            $guide
           ,$value
@@ -116,7 +123,16 @@
     global $typenow;
     $type = 'administration';
     if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_FIELD_VALUE']) && $_GET['ADMIN_FILTER_FIELD_VALUE'] != ''){
-        $query->query_vars['meta_value'] = $_GET['ADMIN_FILTER_FIELD_VALUE'];
+
+      // this is so that we can fuzzy find a match even if the profile is in more than 1 dept.
+      $query->set('meta_query',array(
+        array(
+          'key' => 'department'
+          ,'value' => $_GET['ADMIN_FILTER_FIELD_VALUE']
+          ,'compare' => 'LIKE'
+        )
+      ));
+
     }
   }
 
