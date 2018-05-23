@@ -125,8 +125,9 @@
 
 
          & h3{
+           @include font-5l-l;
+          
 
-            @include font-5r-l;
            &:after{
 
            }
@@ -292,7 +293,7 @@
 
 
          & h3{
-           @include font-3l-l;
+           //@include font-3l-l;
            &:after{
 
            }
