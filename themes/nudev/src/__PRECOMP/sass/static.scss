@@ -95,6 +95,30 @@
          }
       }
     }
+    
+
+    & > ul.list{
+      display: block;
+      margin: 0 0 0 $gutter;
+      list-style: disc;
+      & > li{
+        margin: 0 0 ($gutter / 2) 0;
+        text-align: left;
+        letter-spacing: 0;
+         & a{
+           border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+         }
+         & h6{
+           & > a{
+             border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+           }
+         }
+         & > ul{
+           list-style: circle;
+           margin: 0 0 0 $gutter;
+         }
+      }
+    }
   }
 
 
