@@ -137,6 +137,7 @@ footer{
             & > p:nth-of-type(1){
               @include font-3b-l;
               // margin: 0 0 0 0;
+              width: 90%;
               @include action-arrow;
               @include action-arrow-hidden;
               // &:after{
