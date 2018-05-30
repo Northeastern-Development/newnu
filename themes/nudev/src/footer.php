@@ -13,6 +13,7 @@
 
 			<div class="nu__footer">
 				<div class="nu__footer-hideshow js_footer-hideshow" title="Click to show/hide the footer"></div>
+				<a href="/privacy-information" title="Privacy information">Privacy</a>
 				<div>
 
 					<?php get_template_part('loops/loop-footercampuses'); ?>

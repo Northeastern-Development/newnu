@@ -66,6 +66,9 @@ footer{
      & > div.nu__footer{
        padding: 0 0 0 0;
        height: inherit;
+       & > a{
+         display: block;
+       }
        & > div.nu__footer-hideshow{
          border: none;
         display: block;
@@ -156,6 +159,22 @@ footer{
     height: inherit;
     margin: 0 auto 0 auto;
      position: relative;
+     & > a{
+       position: absolute;
+      display: none;
+      width: 200px;
+
+      height: $footer-height-collapsed;
+      line-height: $footer-height-collapsed;
+      text-align: right;
+      top: 0;
+      right: 3vw;
+      color: rgba($brand_colors-white,0.8);
+      &:hover{
+        cursor: pointer;
+        color: rgba($brand_colors-white,1.0);
+      }
+     }
      & > div.nu__footer-hideshow{
        width: $content-width-wide;
        display: none;
