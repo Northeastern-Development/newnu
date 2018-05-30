@@ -316,11 +316,12 @@ footer{
       // background: rgba($brand_colors-white,1.0);
       // width: $wrapper-width;
       // margin: 0 0 0 0;
-      // & > p{
+      & > p{
+        @include font-5l-c;
       //   @include font-6l-c;
       //   color: rgba($brand_colors-black,1.0);
       //   margin: 0 0 20px 0;
-      // }
+      }
       & > div{
         // width: $content-width-960;
         // width: $content-width-wide;
@@ -527,11 +528,12 @@ footer{
       // background: rgba($brand_colors-white,1.0);
       // width: $wrapper-width;
       // margin: 0 0 0 0;
-      // & > p{
+      & > p{
+        @include font-3l-c;
       //   @include font-6l-c;
       //   color: rgba($brand_colors-black,1.0);
       //   margin: 0 0 20px 0;
-      // }
+      }
       & > div{
         width: $content-width-960;
         // width: $content-width-wide;

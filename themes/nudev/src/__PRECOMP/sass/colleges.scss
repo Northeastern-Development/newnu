@@ -322,11 +322,12 @@
                //   @include block-item-default;
                // }
              }
-             // & > h4{
+             & > h4{
+               // width: 90%;
              //   @include font-3b-l;
              //   @include action-arrow;
              //   @include action-arrow-hidden;
-             // }
+             }
              // &:hover{
              //   & > h4{
              //     @include action-arrow-shown;
