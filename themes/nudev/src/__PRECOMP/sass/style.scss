@@ -92,7 +92,8 @@ div.main{
 @media only screen and (max-width: 1280px) {
 
   h1{
-    @include font-5r-l;
+    @include font-5l-l;
+    //@include font-5r-l;
   }
 
 
@@ -129,7 +130,7 @@ div.main{
   }
 
   h3{
-    @include font-2l-c;
+    //@include font-2l-c;
   }
 
   // div.main{

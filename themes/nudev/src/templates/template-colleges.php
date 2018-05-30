@@ -11,7 +11,7 @@
 		<section class="hero">
 			<div>
 				<h2>Colleges and Schools</h2>
-				<h3>The nine colleges and schools offer degrees from the bachelor’s through the doctorate in a wide variety of fields and professional areas. All with Northeastern’s hallmark cross-disciplinary approach.</h3>
+				<h3>Our nine colleges and schools offer degrees from the bachelor’s through the doctorate in a wide variety of fields and professional areas. All with Northeastern’s hallmark cross-disciplinary approach.</h3>
 			</div>
 		</section>
 
