@@ -142,7 +142,7 @@
       & > ul{
         & > li{
           & > span{
-            @include font-6l-c;
+            @include font-8l-c;
           }
           & > p{
             @include font-3l-c;
@@ -197,7 +197,7 @@
           width: 100%;
           min-height: inherit;
           & > span{
-            @include font-3l-c;
+            //@include font-3l-c;
           }
         }
       }

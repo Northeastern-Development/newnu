@@ -108,7 +108,8 @@ footer{
         & > li{
           flex-grow: 1;
           min-height: 250px;
-          margin: 0 $gutter ($gutter * 2) 0;
+          // margin: 0 $gutter ($gutter * 2) 0;
+          margin: 0 $gutter $gutter 0;
           &:last-child{
             margin: 0 0 ($gutter * 2) 0;
           }
@@ -145,6 +146,7 @@ footer{
 
               @include action-arrow;
               @include action-arrow-hidden;
+              margin-bottom:3px;
               // &:after{
               //   @include font-4-c;
               //   line-height: 20px;
@@ -375,7 +377,7 @@ footer{
               & > h4{
             //     @include font-3b-l;
                 @include font-2b-l;
-                margin: 0 0 ($gutter / 2) 0;
+                //margin: 0 0 ($gutter / 2) 0;
             //     @include action-arrow;
             //     @include action-arrow-hidden;
             //     &:after{
