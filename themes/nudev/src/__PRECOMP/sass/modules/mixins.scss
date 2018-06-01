@@ -117,18 +117,20 @@
     // padding: 0 0 0 0;
     // display: inline-block;
     // width: auto;
-    position: relative;
-    top: 13px;
-    height: 20px;
+    // position: relative;
+    // top: 13px;
+    // height: 20px;
     // line-height: 35px;
     line-height: 0;
-    overflow: hidden;
-    // background: green;
+    // overflow: hidden;
+  vertical-align: middle;
+  padding-top:9px;
   }
   @media only screen and (max-width: 959px) {
     & > span {
       @include font-4-c;
-      top:7px;
+      //top:7px;
+      padding-top: 6px;
     }
   }
 }

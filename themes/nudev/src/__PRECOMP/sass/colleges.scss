@@ -166,17 +166,24 @@
           flex: none;
           width: 100%;
           height: auto;
-          margin-bottom: $gutter !important;
+
+          //margin-bottom: $gutter !important;
            & > a{
              & > div.image{
                height: 350px;
              }
              & > h4 {
+               //border:1px solid red;
                &:after {
                  margin-top:0;
                }
                &:before {
                  margin-bottom: 0;
+               }
+               & span {
+                 line-height: 0;
+                 //background: yellow;
+                 //opacity:1;
                }
              }
            }
