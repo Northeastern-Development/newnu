@@ -123,7 +123,10 @@ footer{
 
               }
               & > p:nth-of-type(1){
-                @include action-arrow-shown;
+                //& > span {
+                  @include action-arrow-shown;
+                //}
+
               }
             }
             & > div.image{
@@ -138,6 +141,7 @@ footer{
               @include font-3b-l;
               // margin: 0 0 0 0;
               width: 90%;
+
               @include action-arrow;
               @include action-arrow-hidden;
               // &:after{

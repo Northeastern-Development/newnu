@@ -16,7 +16,7 @@
 
 		$related .= '<div class="nu__prefooter"><p>Related Resources</p><div><ul>';
 
-		$guide = '<li><a href="%s" title="%s"%s><div class="image"><div style="background-image: url(%s);"></div></div><p>%s</p><p>%s</p></a></li>';
+		$guide = '<li><a href="%s" title="%s"%s><div class="image"><div style="background-image: url(%s);"></div></div><p>%s<span>&#xE8E4;</span></p><p>%s</p></a></li>';
 
 		foreach($res['pre-footer_image_block'] as $r){
 
