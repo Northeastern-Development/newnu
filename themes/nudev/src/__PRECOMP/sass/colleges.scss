@@ -52,6 +52,7 @@
             & > div.image{
               height: 245px;
               @include block-group;
+                margin: 0 0 10px 0;
               & > div{
                 @include block-item-default;
               }

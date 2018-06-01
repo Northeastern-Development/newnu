@@ -122,7 +122,8 @@ footer{
                 @include block-item-hover;
 
               }
-              & > p:nth-of-type(1){
+              & > h4{
+              // & > p:nth-of-type(1){
                 //& > span {
                   @include action-arrow-shown;
                 //}
@@ -137,7 +138,7 @@ footer{
                 @include block-item-default;
               }
             }
-            & > p:nth-of-type(1){
+            & > h4{
               @include font-3b-l;
               // margin: 0 0 0 0;
               width: 90%;
@@ -149,7 +150,7 @@ footer{
               //   line-height: 20px;
               // }
             }
-            & > p:nth-of-type(2){
+            & > p{
               @include font-2r-l;
             }
           }
@@ -371,9 +372,9 @@ footer{
             //       @include block-item-default;
             //     }
             //   }
-              & > p:nth-of-type(1){
+              & > h4{
             //     @include font-3b-l;
-                  @include font-2b-l;
+                @include font-2b-l;
                 margin: 0 0 ($gutter / 2) 0;
             //     @include action-arrow;
             //     @include action-arrow-hidden;
