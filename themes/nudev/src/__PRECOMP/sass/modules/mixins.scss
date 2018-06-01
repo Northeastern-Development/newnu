@@ -34,6 +34,7 @@
 }
 
 @mixin block-item-hover{
+  
   transform: scale(1.1);
   transition: all .5s;
 }
@@ -46,29 +47,41 @@
 // in some cases they may start hidden and reveal on hover
 
 @mixin action-arrow{
-  &:after{
+  & > span {
+
+
+  // &:after{
     @include font-7-c;
     color: rgba($brand_colors-red,1.0);
-    content: '\E8E4';
+    //content: '\E8E4';
     // vertical-align: -20%;
     // padding: 0 0 0 0;
-    display: inline-block;
-    width: 33px;
+    // display: inline-block;
+    // width: auto;
+    position: relative;
+    top: 13px;
     height: 20px;
-    line-height: 35px;
+    // line-height: 35px;
+    line-height: 0;
     overflow: hidden;
     // background: green;
+  }
+  @media only screen and (max-width: 959px) {
+    & > span {
+      @include font-4-c;
+      top:7px;
+    }
   }
 }
 
 @mixin action-arrow-hidden{
-  &:after{
+  & > span{
     opacity: 0.0;
   }
 }
 
 @mixin action-arrow-shown{
-  &:after{
+  & > span{
     opacity: 1.0;
   }
 }

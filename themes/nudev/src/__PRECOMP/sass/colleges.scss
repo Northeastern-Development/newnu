@@ -31,12 +31,15 @@
          // height: 310px;
          height: auto;
          margin: 0 $gutter 0 0;
-
+         //border: 1px solid red;
          &:nth-child(-n+6) {
-           margin: 0 $gutter $gutter 0;
+           // margin: 0 $gutter $gutter 0;
+           margin: 0 $gutter 0 0;
+
          }
          &:nth-child(3n+3){
-           margin: 0 0 $gutter 0;
+           // margin: 0 0 $gutter 0;
+           margin: 0 0 0 0;
          }
          &:nth-child(9){
            margin: 0 0 0 0;
@@ -57,7 +60,7 @@
               @include font-3b-l;
               @include action-arrow;
               @include action-arrow-hidden;
-              // width: 90%;
+
               // margin: 0 0 0 0;
               // line-height: 1rem;
               // vertical-align: text-top;
@@ -90,7 +93,7 @@
        flex-direction: row;
        flex-wrap: wrap;
        // margin: $gutter 0 0 0;
-       margin: $gutter auto 0 auto;
+       margin: ($gutter / 3) auto 0 auto;
        & > li{
          flex-grow: 1;
          flex-basis: 30%;
@@ -104,6 +107,7 @@
          & > span{
            @include font-9l-c;
            color: rgba($brand_colors-red,1.0);
+           line-height:8.6rem;
          }
          & > p{
            @include font-5l-c;
@@ -181,6 +185,7 @@
         & > li{
           flex: none;
           width: 100%;
+          min-height: inherit;
           & > span{
             @include font-3l-c;
           }
@@ -283,6 +288,8 @@
 
 @media only screen and (max-width: 575px) {
 
+
+
   div.main{
 
     section.nu__collegegrid{
@@ -339,6 +346,22 @@
              // }
            }
 
+        }
+      }
+    }
+    section.nu__bythenumbers{
+
+      & > ul{
+
+        & > li{
+          margin-bottom:10px;
+          & > span{
+
+          }
+          & > p{
+
+            text-align: center;
+          }
         }
       }
     }

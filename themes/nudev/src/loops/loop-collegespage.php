@@ -10,7 +10,7 @@ $colleges = '';
 $explore = '';
 
 
-$guideA = '<li><a href="%s" title="%s [will open in new window]" target="_blank"><div class="image"><div style="background-image: url(%s);"></div></div><h4>%s</h4></a></li>';
+$guideA = '<li><a href="%s" title="%s [will open in new window]" target="_blank"><div class="image"><div style="background-image: url(%s);"></div></div><h4>%s<span>&#xE8E4;</span></h4></a></li>';
 
 $guideB = '<section style="background-image: url(%s);" class="nu__explore"><div><h3>%s</h3><p>%s</p><a href="%s" title="%s [will open in new window]" target="_blank">Learn More</a></div></section>';
 
