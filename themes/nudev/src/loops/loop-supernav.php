@@ -84,12 +84,12 @@
 
 			if(count($res) >= 1){
 
-				$return .= '<li title="'.$o.'"'.($jj==0?' class="active"':'').'>'.$o.'<ul><li>'.$o.'</li>';
+				$return .= '<li title="'.$o.'"'.($jj==0?' class="active"':'').' role="menuitem" tabindex="-1">'.$o.'<ul role="menu" aria-hidden="true"><li>'.$o.'</li>';
 				foreach($res as $r){
 
 					$fields = get_fields($r->ID);
 
-					$guide = '<li><a href="%s" title="Learn more about %s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
+					$guide = '<li role="menuitem" tabindex="-1"><a href="%s" title="Learn more about %s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
 
 					$return .= sprintf(
 						$guide
@@ -97,7 +97,8 @@
 						,$r->post_title
 						,($fields['open_in_new'] == "1"?' [will open in new window]':'')
 						,($fields['open_in_new'] == "1"?' target="_blank"':'')
-						,(isset($fields['thumbnail']) && $fields['thumbnail'] != ''?'<img src="'.$fields['thumbnail']['url'].'" alt="'.$r->post_title.' thumbnail" />':'')
+						// ,(isset($fields['thumbnail']) && $fields['thumbnail'] != ''?'<img src="'.$fields['thumbnail']['url'].'" alt="'.$r->post_title.' thumbnail" />':'')
+						,(isset($fields['thumbnail']) && $fields['thumbnail'] != ''?'<img src="'.$fields['thumbnail']['url'].'" />':'')
 						,$r->post_title
 					);
 				}
@@ -144,7 +145,7 @@
 		$iii++;
 	}
 
-	$supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul>'.$return.'</ul></div></section></div>';
+	$supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul role="menu" aria-hidden="true">'.$return.'</ul></div></section></div>';
 
 	if(isset($returnType) && $returnType === 'return'){	// this will return the results for remote calls
 		return $supernav;
