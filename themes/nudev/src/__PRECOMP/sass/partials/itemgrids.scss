@@ -1,0 +1,99 @@
+/**
+ * partials/itemgrids
+ * ---
+ *
+ */
+
+// calculate the width of each column based on content area width and number of columns
+ @function calculatecolumn($c,$w){
+   @return (($w - (2vw * ($c - 1))) / $c);
+ }
+
+
+
+
+
+// this is for adding any filtering that we might be doing for this grid of items
+@mixin showfilters($w){
+  .nu__grid-filters{
+    width: $w;
+    & > h2{
+      @include font-6l-c;
+    }
+    & > ul{
+      width: 100%;
+     border-bottom: solid rgba($brand_colors-grayW,1.0) 2px;
+     margin: 0 0 0 0;
+     flex-wrap: wrap;
+      & > li{
+        flex-basis: auto;
+        text-align: center;
+        margin: 0 0 10px 0;
+        & > a{
+          padding: 0 10px 11px 10px;
+          color: rgba($brand_colors-black,0.7);
+          text-transform: uppercase;
+          @include font-1r-l;
+          & > span{
+            display: none;
+            @include font-4-c;
+            font-weight: normal;
+            height: 18px;
+            overflow: hidden;
+            margin: 15px 0 0 0;
+          }
+          &.active{
+            @include font-1b-l;
+            color: rgba($brand_colors-black,1.0);
+            border-bottom: solid rgba($brand_colors-red,1.0) 4px;
+          }
+          &:hover{
+            color: rgba($brand_colors-black,1.0);
+            border-bottom: solid rgba($brand_colors-red,1.0) 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+// this will actually add a grid to a page, pass in the width it should be
+@mixin addgrid($w,$c,$g){
+
+  $colW: calculatecolumn($c,$w);
+
+  margin: 0 auto 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  & > li{
+    width: $colW;
+    flex-basis: $colW;
+    min-height: $colW;
+    margin: 0 #{$g} #{$g} 0;
+    flex-grow: 0;
+    &:nth-child(#{$c}n+#{$c}){
+      margin: 0 0 #{$g} 0;
+    }
+    & > div{
+      height: $colW;
+      width: 100%;
+      background: rgba($brand_colors-grayW,1.0);
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+    }
+    & > p{
+      width: 100%;
+      @include font-2r-l;
+      margin: 10px 0 0 0;
+      margin-bottom: ($gutter / 2);
+      & > span{
+        @include font-2b-l;
+      }
+    }
+  }
+}

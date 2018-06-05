@@ -59,7 +59,7 @@
       text-align: center;
     }
     & > ul {
-      //width
+      margin: $gutter 10vw 0 10vw;
     }
     & a {
       &:hover {
@@ -74,10 +74,10 @@
     //width: $content-width-narrow;
     width: 50vw;
     margin: ($gutter * 1.7) auto 0 auto;
-    & > ul{
+    & ul{
       display: flex;
       flex-direction: row;
-      margin: $gutter 10vw 0 10vw;
+      margin: $gutter auto 0 auto;
       list-style: none;
       list-style-type: none;
       & > li{
@@ -95,7 +95,7 @@
          }
       }
     }
-    
+
 
     & > ul.list{
       display: block;
