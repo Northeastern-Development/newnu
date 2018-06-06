@@ -7,7 +7,7 @@
 		"uuidString": "6222A5FD-DE82-4642-BE8D-77C1862D8725"
 		}
 	],
-"creatorBuild": "26330",
+"creatorBuild": "26680",
 "files": {
 	"\/.fonts\/lato-v14-latin-100.eot": {
 		"cB": 0,
@@ -441,35 +441,23 @@
 		"oAP": "\/404.php",
 		"oF": 0
 		},
-<<<<<<< HEAD
-=======
-	"\/__PRECOMP\/js\/homepage-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/__PRECOMP\/js\/homepage-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"\/__PRECOMP\/js\/homepage.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/__PRECOMP\/js\/homepage-min.js",
-		"oF": 0,
+		"oAP": "\/js\/homepage-min.js",
+		"oF": 2,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/__PRECOMP\/js\/scripts-min.js": {
+	"\/__PRECOMP\/js\/mainmenu.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/__PRECOMP\/js\/scripts-min-min.js",
-		"oF": 0,
+		"oAP": "\/js\/mainmenu-min.js",
+		"oF": 2,
 		"sC": 3,
 		"tS": 0
 		},
@@ -478,12 +466,60 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/__PRECOMP\/js\/scripts-min.js",
-		"oF": 0,
+		"oAP": "\/js\/scripts-min.js",
+		"oF": 2,
 		"sC": 3,
 		"tS": 0
 		},
->>>>>>> dev/s.tierney
+	"\/__PRECOMP\/sass\/administration.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/administration.css",
+		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/colleges.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/colleges.css",
+		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/departments.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/departments.css",
+		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/emergency.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/emergency-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/__PRECOMP\/sass\/emergency.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -492,22 +528,11 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/emergency.css",
-		"oF": 2,
-		"oS": 0,
+		"oAP": "\/__PRECOMP\/sass\/emergency.css",
+		"oF": 0,
+		"oS": 3,
 		"uL": 1
 		},
-<<<<<<< HEAD
-	"\/__PRECOMP\/sass\/footer.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/__PRECOMP\/sass\/footer-min.css",
-		"oF": 0,
-		"oS": 3
-=======
 	"\/__PRECOMP\/sass\/experience.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -518,7 +543,7 @@
 		"oA": 0,
 		"oAP": "\/css\/experience.css",
 		"oF": 2,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/__PRECOMP\/sass\/homepage.scss": {
@@ -533,7 +558,6 @@
 		"oF": 2,
 		"oS": 3,
 		"uL": 1
->>>>>>> dev/s.tierney
 		},
 	"\/__PRECOMP\/sass\/modules\/fonts.scss": {
 		"aP": 0,
@@ -581,7 +605,7 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/__PRECOMP\/sass\/partials\/animations.css",
 		"oF": 0,
 		"oS": 0,
@@ -609,6 +633,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/__PRECOMP\/sass\/partials\/header.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/partials\/itemgrids.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/__PRECOMP\/sass\/partials\/itemgrids.css",
 		"oF": 1,
 		"oS": 0,
 		"uL": 1
@@ -704,6 +741,78 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/__PRECOMP\/sass\/search.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/search-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/__PRECOMP\/sass\/search.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/search.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/static.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/static.css",
+		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/style.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/style.css",
+		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/trustees.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/trustees.css",
+		"oF": 2,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/utilitynav.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/utilitynav-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/__PRECOMP\/sass\/utilitynav.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -712,8 +821,8 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/utilitynav.css",
-		"oF": 2,
+		"oAP": "\/__PRECOMP\/sass\/utilitynav.css",
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -745,6 +854,16 @@
 		"oAP": "\/comments.php",
 		"oF": 0
 		},
+	"\/css\/administration.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/administration-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/css\/animate.css": {
 		"aP": 1,
 		"bl": 0,
@@ -752,6 +871,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/animate-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/colleges.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/colleges-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -775,6 +904,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/css\/departments.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/departments-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/css\/emergency.css": {
 		"aP": 1,
 		"bl": 0,
@@ -782,6 +921,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/emergency-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/experience.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/experience-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -802,6 +951,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/government-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/homepage.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/homepage-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -851,8 +1010,18 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/material-icons.css",
-		"oF": 2,
+		"oAP": "\/css\/material-icons-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/search.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/search-min.css",
+		"oF": 0,
 		"oS": 3
 		},
 	"\/css\/staff.css": {
@@ -862,6 +1031,36 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/staff-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/static.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/static-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/trustees.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/trustees-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1078,7 +1277,7 @@
 		},
 	"\/favicon\/favicon-16x16.png": {
 		"ft": 32768,
-		"iS": 1041,
+		"iS": 1700,
 		"oA": 0,
 		"oAP": "\/favicon\/favicon-16x16.png",
 		"oF": 0,
@@ -1089,7 +1288,7 @@
 		},
 	"\/favicon\/favicon-32x32.png": {
 		"ft": 32768,
-		"iS": 1448,
+		"iS": 2774,
 		"oA": 0,
 		"oAP": "\/favicon\/favicon-32x32.png",
 		"oF": 0,
@@ -1294,6 +1493,13 @@
 		"oAP": "\/functions\/pageconditionalstyles.php",
 		"oF": 0
 		},
+	"\/functions\/rewrites.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/functions\/rewrites.php",
+		"oF": 0
+		},
 	"\/functions\/search.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1356,12 +1562,20 @@
 	"\/img\/test-background.jpg": {
 		"ft": 16384,
 		"iS": 293327,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/test-background.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
+		},
+	"\/includes\/pagehero.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/includes\/pagehero.php",
+		"oF": 0
 		},
 	"\/index.php": {
 		"cB": 0,
@@ -1410,6 +1624,26 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/js\/homepage-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/homepage-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/iframeResizer.contentWindow.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/iframeResizer.contentWindow-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/js\/jquery.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1446,6 +1680,26 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/magnific-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/mainmenu-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/mainmenu-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/scripts-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/scripts-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1672,6 +1926,20 @@
 		"oAP": "\/languages\/ro_RO.po",
 		"oF": 0
 		},
+	"\/loops\/loop-administration-filters.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-administration-filters.php",
+		"oF": 0
+		},
+	"\/loops\/loop-administration-president.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-administration-president.php",
+		"oF": 0
+		},
 	"\/loops\/loop-administration.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1684,6 +1952,20 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/loops\/loop-alerts.php",
+		"oF": 0
+		},
+	"\/loops\/loop-collegespage.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-collegespage.php",
+		"oF": 0
+		},
+	"\/loops\/loop-departmentspage.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-departmentspage.php",
 		"oF": 0
 		},
 	"\/loops\/loop-footercampuses.php": {
@@ -1726,6 +2008,48 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/loops\/loop-supernav.php",
+		"oF": 0
+		},
+	"\/loops\/loop-trustees-committees.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-trustees-committees.php",
+		"oF": 0
+		},
+	"\/loops\/loop-trustees-emeriti.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-trustees-emeriti.php",
+		"oF": 0
+		},
+	"\/loops\/loop-trustees-honorary.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-trustees-honorary.php",
+		"oF": 0
+		},
+	"\/loops\/loop-trustees-leadership.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-trustees-leadership.php",
+		"oF": 0
+		},
+	"\/loops\/loop-trustees-others.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-trustees-others.php",
+		"oF": 0
+		},
+	"\/loops\/loop-trustees.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-trustees.php",
 		"oF": 0
 		},
 	"\/loops\/loop.php": {
@@ -1847,11 +2171,25 @@
 		"oAP": "\/templates\/rss\/rss-college.php",
 		"oF": 0
 		},
+	"\/templates\/rss\/rss-collegesandschools.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/rss\/rss-collegesandschools.php",
+		"oF": 0
+		},
 	"\/templates\/rss\/rss-corporation.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/rss\/rss-corporation.php",
+		"oF": 0
+		},
+	"\/templates\/rss\/rss-departmentsandprograms.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/rss\/rss-departmentsandprograms.php",
 		"oF": 0
 		},
 	"\/templates\/rss\/rss-supernav.php": {
@@ -1875,6 +2213,13 @@
 		"oAP": "\/templates\/template-audience.php",
 		"oF": 0
 		},
+	"\/templates\/template-colleges.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/template-colleges.php",
+		"oF": 0
+		},
 	"\/templates\/template-component.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1887,6 +2232,27 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/templates\/template-content.php",
+		"oF": 0
+		},
+	"\/templates\/template-departments.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/template-departments.php",
+		"oF": 0
+		},
+	"\/templates\/template-experience.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/template-experience.php",
+		"oF": 0
+		},
+	"\/templates\/template-homepage.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/template-homepage.php",
 		"oF": 0
 		},
 	"\/templates\/template-iammenu.php": {
@@ -1917,6 +2283,27 @@
 		"oAP": "\/templates\/template-redirect.php",
 		"oF": 0
 		},
+	"\/templates\/template-search.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/template-search.php",
+		"oF": 0
+		},
+	"\/templates\/template-static.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/template-static.php",
+		"oF": 0
+		},
+	"\/templates\/template-trustees.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/template-trustees.php",
+		"oF": 0
+		},
 	"\/windowsize.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1933,7 +2320,8 @@
 	"creationDate": 534960692,
 	"displayValue": "Newnu",
 	"displayValueWasSetByUser": 1,
-	"iconImageName": "brackets_purple"
+	"iconImageName": "brackets_purple",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -2348,7 +2736,7 @@
 			},
 		"array-callback-return": {
 			"active": 0,
-			"optionString": ""
+			"optionString": "{'allowImplicit': false}"
 			},
 		"array-element-newline": {
 			"active": 0,
@@ -2512,7 +2900,7 @@
 			},
 		"indent": {
 			"active": 0,
-			"optionString": "4, {'SwitchCase': 0, 'VariableDeclarator': 1, 'outerIIFEBody': 1, }"
+			"optionString": "4, {'SwitchCase': 0, 'VariableDeclarator': 1, 'outerIIFEBody': 1 }"
 			},
 		"init-declarations": {
 			"active": 0,
@@ -3132,7 +3520,7 @@
 			},
 		"object-property-newline": {
 			"active": 0,
-			"optionString": "{'allowMultiplePropertiesPerLine': true}"
+			"optionString": "{'allowAllPropertiesOnSameLine': true}"
 			},
 		"object-shorthand": {
 			"active": 0,
@@ -3736,6 +4124,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {
@@ -3914,7 +4303,7 @@
 		],
 	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
-	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
+	"skippedFoldersString": "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
 	"uglifyDefinesString": "",

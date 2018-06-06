@@ -130,7 +130,8 @@
 
     // this is the event listener for mousewheel only on the homepage for the slider
     $("body").on('mousewheel', { mousewheel: { behavior: 'debounce', delay: 5 } }, function(event,delta){
-      if (windowSize[1] >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false && event.deltaX == 0){
+      // if (windowSize[1] >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false && event.deltaX == 0){
+			if (windowSize[1] >= sizeBreak && !inMotion && $('#nu__search-toggle').hasClass('active') === false && $('#nu__supernav-toggle').hasClass('active') === false && $('#nu__iamnav-toggle').hasClass('active') === false && event.deltaX == 0){
         if (event.deltaY <= (isSafari?-1:-15) && currentPanel < 2){
           event.preventDefault();
           slidePanels('Left');
@@ -149,7 +150,9 @@
 
     // this is the event listener for the next and previous arrows for the slider
     $('body').on("click","#prev,#next",function(e){
-      if(windowSize[1] >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+			// console.log('fghjfghkgj');
+      // if(windowSize[1] >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+			if(windowSize[1] >= sizeBreak  && !inMotion && $('#nu__search-toggle').hasClass('active') === false && $('#nu__supernav-toggle').hasClass('active') === false && $('#nu__iamnav-toggle').hasClass('active') === false){
         inMotion = true;
         if($(this).attr('id') == 'next'){
           slidePanels('Left');
@@ -165,7 +168,8 @@
 
     // this is the event listener for the arrow keys for the slider
     $(document).keydown(function(e){
-        if(windowSize[1] >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+        // if(windowSize[1] >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+				if(windowSize[1] >= sizeBreak  && !inMotion && $('#nu__search-toggle').hasClass('active') === false && $('#nu__supernav-toggle').hasClass('active') === false && $('#nu__iamnav-toggle').hasClass('active') === false){
         switch (e.which){
           case 37:		// left arrow key
           case 38:    //up arrow key

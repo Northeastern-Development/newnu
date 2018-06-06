@@ -58,95 +58,37 @@ var cNav = null;
 			// determine which nav we are looking at and whether it is the currently active one, in which case close it
 			if(cNav == null){  // if no menu is currently open
         $(this).addClass('active').focus().html('Close').next('div').addClass('open');
+        $(this).next('div').find('div.items > ul').attr('aria-hidden','false');
+        $(this).next('div').find('div.items > ul > li > ul').first().attr('aria-hidden','false');
 				cNav = $(this).attr('id');
 			}else if($(this).attr('id') == cNav){  // if we have clicked the same menu item again after it was open
         $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+        $(this).next('div').find('div.items ul').attr('aria-hidden','true');
 				cNav = null;
 			}else{ // if we have clicked another menu item while one was already open
 
         $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
           $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+          $('div.items > ul').attr('aria-hidden','true');
         });
 
-        $(this).addClass('active').focus().next('div').addClass('open');  // activate the one that was selected
+        $(this).addClass('active').html('Close').focus().next('div').addClass('open');  // activate the one that was selected
+        $(this).next('div').find('div.items ul').attr('aria-hidden','true');
 				cNav = $(this).attr('id');
 			}
-
-
-
-			// // if we are on a screensize below the break size, we need to autoscroll the nav element that was selected to the top just below the header
-			// // for ease of use
-			// if(windowSize[1] < sizeBreak){
-			// 	console.log($(this));
-			// }
-
-
 
 			// need to reset the first item in the supernav and iamnav menu to be active
 			navReset();
 
 			// if we are on the search page, we need to restrict opening the search again on top of itself
 			if($('body').hasClass('search')){
-				$('input#nu__search-toggle').prop('checked',false);
+				$('#nu__search-toggle').removeClass('active');
 			}
 
 			// check to see if we need to collapse the footer if it is already open (homepage only)
 			if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
 				$('footer#nu__global-footer').addClass('collapse');
 			}
-
-			// if(!$('body').hasClass('home')){
-			// 	allowScrollOrNot();
-			// }
-
-		});
-
-
-
-
-    // OLD CHECKBOX VERSION CODE
-		// this will handle the click of main menu items as well as some preventitive measures regarding overlap of options
-		$('nav').on('click','input#nu__supernav-toggle,input#nu__iamnav-toggle,input#nu__search-toggle',function(){
-
-			// determine which nav we are looking at and whether it is the currently active one, in which case close it
-			if(cNav == null){
-				$(this).prop('checked',true);
-				cNav = $(this).attr('id');
-			}else if($(this).attr('id') == cNav){
-				$(this).prop('checked',false);
-				cNav = null;
-			}else{
-				$('nav input').prop('checked',false);
-				$(this).prop('checked',true);
-				cNav = $(this).attr('id');
-			}
-
-
-
-			// // if we are on a screensize below the break size, we need to autoscroll the nav element that was selected to the top just below the header
-			// // for ease of use
-			// if(windowSize[1] < sizeBreak){
-			// 	console.log($(this));
-			// }
-
-
-
-			// need to reset the first item in the supernav and iamnav menu to be active
-			navReset();
-
-			// if we are on the search page, we need to restrict opening the search again on top of itself
-			if($('body').hasClass('search')){
-				$('input#nu__search-toggle').prop('checked',false);
-			}
-
-			// check to see if we need to collapse the footer if it is already open (homepage only)
-			if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
-				$('footer#nu__global-footer').addClass('collapse');
-			}
-
-			// if(!$('body').hasClass('home')){
-			// 	allowScrollOrNot();
-			// }
 
 		});
 
@@ -176,13 +118,18 @@ var cNav = null;
 
 
 		// if the user clicks outside the menu items and on the empty portion of the fullscreen sneezeguard, close the nav panels
-		$('nav.nu__mainmenu').on('click','div#nu__supernav,div#nu__searchbar,div#nu__iamnav',function(e){
+    $('nav.nu__mainmenu').on('click','div#nu__supernav,div#nu__searchbar,div#nu__iamnav',function(e){
 			if(['nu__supernav','nu__searchbar','nu__iamnav'].indexOf(e.target.id) >= 0){
-				$('nav input').prop('checked',false);
+
+        $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
+          $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+        });
+
 				cNav = null;
 				allowScrollOrNot();
 			}
 		});
+
 
 
 
@@ -205,21 +152,13 @@ var cNav = null;
 
 
 		// this will handle the accordion functionality for the main navigational elements
-		$('div.navigational > section > div > ul').on('click','li:not(.featured)',function(e){
+		$('div.navigational > section > div.items > ul').on('click','li:not(.featured)',function(e){
 
-
-
-
-			// if we are on a screensize below the break size, we need to autoscroll the nav element that was selected to the top just below the header
-			// for ease of use
-			// if(windowSize[1] < sizeBreak){
-			// 	console.log($(this));
-			// 	$(window).scrollTop(0);
-			// }
-
+      // we need to handle activating the correct aria-hidden values as we change categories
+      $(this).parent().find('li ul').attr('aria-hidden','true');
+      $(this).find('ul').first().attr('aria-hidden','false');
 
 			// if we are clicking on cats in the iamnav, we may need to swap the background image
-			// console.log(iamnavbgs);
 			if($(this).parent().parent().parent().parent().attr('id') == 'nu__iamnav' && iamnavbgs.length > 0 && iamnavbgs[0] != ''){
 				$('div#nu__iamnav').attr('style','background-image: url('+iamnavbgs[$(this).index()]+');');
 			}
@@ -236,8 +175,6 @@ var cNav = null;
 
     // let's listen for the page to resize and handle some events
 		$(window).on("resize",function(){
-
-			// getWindowSize();
 
 			setMenuPanels();
 

@@ -82,30 +82,22 @@
 
 				<div>
 
-					<nav role="menu" class="nu__mainmenu" aria-label="menu">
+					<nav role="menu" class="nu__mainmenu" aria-label="main menu">
 
 						<div id="nu__mainmenu-supernav">
-							<!-- <input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" tabindex="0" role="menuitem" aria-haspopup="true" />
-							<label for="nu__supernav-toggle"id="nu__supernav-toggle-label">Menu</label> -->
 							<a id="nu__supernav-toggle" href="mainmenu" title="Click to show/hide main menu" tabindex="3" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="Menu">Menu</a>
 							<?php if(get_query_var('pagename') != 'main-menu'){ get_template_part('loops/loop-supernav'); } ?>
 						</div>
 
 						<div id="nu__mainmenu-search">
-							<!-- <input id="nu__search-toggle" class="js-search-close" type="checkbox" title="Click to search all of Northeastern University" tabindex="2" role="menuitem" aria-haspopup="true" />
-							<label for="nu__search-toggle" id="nu__search-toggle-label">Search</label> -->
 							<a id="nu__search-toggle" href="search" title="Click to search all of Northeastern University" tabindex="2" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="Search">Search</a>
 							<?php get_template_part('loops/loop-searchnav'); ?>
 						</div>
 
 						<div id="nu__mainmenu-iamnav">
-							<!-- <input id="nu__iamnav-toggle" type="checkbox" title="Click to show/hide audience selection menu" tabindex="1" role="menuitem" aria-haspopup="true" />
-							<label for="nu__iamnav-toggle"id="nu__iamnav-toggle-label">I Am A</label> -->
 							<a id="nu__iamnav-toggle" href="iammenu" title="Click to show/hide audience selection menu" tabindex="1" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="I Am A">I Am A</a>
 							<?php if(get_query_var('pagename') != 'iam-menu'){ get_template_part('loops/loop-iamnav'); } ?>
 						</div>
-
-						<?php // nudev_nav(); ?>
 
 					</nav>
 
