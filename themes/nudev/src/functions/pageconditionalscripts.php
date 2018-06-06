@@ -10,6 +10,11 @@ function nudev_conditional_scripts(){
   wp_enqueue_script('mainjs');
 
 
+  // we need to load the main menu js on all pages of the site
+  wp_register_script('mainmenujs', get_template_directory_uri() . '/js/mainmenu-min.js', array(), '1.0.0');
+  wp_enqueue_script('mainmenujs');
+
+
   // if(is_page('')){
   if(is_page_template('templates/template-homepage.php')){
     wp_register_script('mousewheeljs', get_template_directory_uri() . '/js/jquery.mousewheel-min.js', array(), '1.0.0');

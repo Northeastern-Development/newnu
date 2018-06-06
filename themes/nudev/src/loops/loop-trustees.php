@@ -16,7 +16,7 @@
 
 	$res = query_posts($args);
 
-	$guide = '<li><div style="background-image: url(%s);"></div><p><span>%s</span>%s<br />%s%s%s%s</p></li>';
+	$guide = '<li><div style="background-image: url(%s);"></div><p><span>%s%s</span>%s%s%s%s</p></li>';
 
 	foreach($res as $r){
 
@@ -27,10 +27,10 @@
 			,$fields['headshot']['url']
 			,$r->post_title
 			,(isset($fields['alumni']) && $fields['alumni'] != "" ?', '.$fields['alumni']:'')
-			,$fields['job_title'].(isset($fields['retired']) && $fields['retired'] == "1" ?' (Retired)':'')
+			,(isset($fields['job_title']) && $fields['job_title'] != ""?'<br />'.$fields['job_title'].(isset($fields['retired']) && $fields['retired'] == "1" ?' (Retired)':''):'')
 			,(isset($fields['secondary_details']) && $fields['secondary_details'] != "" ?'<br />'.$fields['secondary_details']:'')
-			,(isset($fields['current_employer']) && $fields['current_employer'] != "" ?'<br />'.$fields['current_employer']:'')
-			,(isset($fields['location']) && $fields['location'] != "" ?', '.$fields['location']:'')
+			,(isset($fields['current_employer']) && $fields['current_employer'] != "" ?' at '.$fields['current_employer']:'')
+			,(isset($fields['location']) && $fields['location'] != "" ?'<br />'.$fields['location']:'')
 		);
 	}
 

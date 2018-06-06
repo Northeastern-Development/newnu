@@ -248,5 +248,59 @@
 
       }
     }
+
+
+
+		// let's listen for the page to resize and handle some events
+		$(window).on("resize",function(){
+
+			// if alerts are showing we need to account for that in the content area of the homepage
+			if(parseInt($('#nu__alerts').height()) > 0){
+
+				var hpHeight = parseInt($(window).height()) - parseInt($('header').outerHeight()) - parseInt($('footer').height());
+				$('#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
+
+			}
+
+
+			// if we are below the size break, we will just stack
+			if(windowSize[1] < sizeBreak){
+				$('#nu__stories').css({'margin-left':'0'});
+				currentPanel = 0;
+				offset = 0;
+
+				// hide the next and previous arrows for the slider on the homepage as the content has stacked
+				$('#next,#prev').fadeOut(200);
+
+			}else{	// we have gone above the break size, reset the next and previous arrows if not already visible
+				if($('#next').css('display') == 'none'){
+					$('#next').fadeIn(200);
+				}
+			}
+
+
+
+			// we need to reset the panel sizes on resize to ensure that things slide back and forth correctly
+			var newWidth = windowSize[1] * -1;
+
+			var wDiff = (windowWidth - newWidth);
+
+			if(currentPanel > 0){
+
+				var newOffset = (offset - (wDiff * currentPanel));
+
+				$('#nu__stories').css({"margin-left":newOffset});
+				offset = newOffset;
+			}
+
+			windowWidth = newWidth;
+
+		});
+
+
+
+
+
+
   });
 }(this,jQuery));

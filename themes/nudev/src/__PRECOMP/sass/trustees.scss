@@ -97,10 +97,11 @@ div.main{
 
   section.nu__board-others{
     $cols: 3;
+    $width: $content-width-narrow;  // 65vw
     margin-bottom: ($gutter * 2);
     & > ul{
-      width: $content-width-narrow;
-      @include addgrid($content-width-narrow,$cols,2vw);
+      width: $width;
+      @include addgrid($width,$cols,2vw);
       & > li{
         height: auto;
         min-height: 10px;

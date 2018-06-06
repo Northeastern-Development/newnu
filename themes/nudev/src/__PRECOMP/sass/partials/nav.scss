@@ -34,71 +34,103 @@ div#nu__mainmenu-supernav{
   padding: 0 0 0 0;
   position: relative;
   text-align: right;
-
 }
 
 
 nav.nu__mainmenu{
-  & > div > input{
+
+  & > div > a{
     height: inherit;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    z-index: 100;
-    opacity: 0;
-    &:hover ~ label{
-      color: rgba($brand_colors-white, 1.0);
-      cursor: pointer;
-      &:before{
-        color: rgba($brand_colors-white, 1.0);
-      }
-    }
-    &:checked ~ label{
-      &:before{
-        color: rgba($brand_colors-white, 1.0);
-        font-weight:700;
-      }
-    }
-    &:checked ~ div#nu__supernav,
-    &:checked ~ div#nu__iamnav,
-    &:checked ~ div#nu__searchbar{
-      height: 100%;
-      visibility: visible;
-      opacity: 1;
-
-      -webkit-transition: visibility 0s, opacity 0.10s linear;
-      -moz-transition: visibility 0s, opacity 0.10s linear;
-      -ms-transition: visibility 0s, opacity 0.10s linear;
-      -o-transition: visibility 0s, opacity 0.10s linear;
-      transition: visibility 0s, opacity 0.10s linear;
-    }
-  }
-}
-
-label{
-  text-transform: uppercase;
-  float: right;
-  color: rgba($brand_colors-white, 0.8);
-  font-size: 0;
-  line-height: 90px;
-  height: $header-height;
-  overflow: hidden;
-  &:before{
-    line-height: $header-height;
-    height: $header-height;
-    @include font-10l-l;
+    display: block;
+    text-transform: uppercase;
     color: rgba($brand_colors-white, 0.8);
-  }
-  &:after{
-    float: right;
-    @include font-4-c;
-    line-height: ($header-height + 5);
     height: $header-height;
-    margin: 0 0 0 3px;
+    border-bottom: none;
+    // background: green;
+    // margin: 0 0 0 1px;
+    &:hover{
+      color: rgba($brand_colors-white, 1.0);
+    }
+    &:after{
+      float: right;
+      @include font-4-c;
+      line-height: ($header-height + 5);
+      height: $header-height;
+      margin: 0 0 0 3px;
+    }
+    &.active{
+      color: rgba($brand_colors-white, 1.0);
+      font-weight:700;
+      &:after{
+        content: '\E14C';
+      }
+    }
+    &:focus,
+    &:active{
+      color: rgba($brand_colors-white, 1.0);
+    }
   }
+
+  // & > div > input{
+  //   height: inherit;
+  //   width: 100%;
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   cursor: pointer;
+  //   z-index: 100;
+  //   opacity: 0;
+  //   &:hover ~ label{
+  //     color: rgba($brand_colors-white, 1.0);
+  //     cursor: pointer;
+  //     &:before{
+  //       color: rgba($brand_colors-white, 1.0);
+  //     }
+  //   }
+  //   &:checked ~ label{
+  //     &:before{
+  //       color: rgba($brand_colors-white, 1.0);
+  //       font-weight:700;
+  //     }
+  //   }
+  //   &:checked ~ div#nu__supernav,
+  //   &:checked ~ div#nu__iamnav,
+  //   &:checked ~ div#nu__searchbar{
+  //     height: 100%;
+  //     visibility: visible;
+  //     opacity: 1;
+  //
+  //     -webkit-transition: visibility 0s, opacity 0.10s linear;
+  //     -moz-transition: visibility 0s, opacity 0.10s linear;
+  //     -ms-transition: visibility 0s, opacity 0.10s linear;
+  //     -o-transition: visibility 0s, opacity 0.10s linear;
+  //     transition: visibility 0s, opacity 0.10s linear;
+  //   }
+  // }
 }
+
+// label{
+//   text-transform: uppercase;
+//   float: right;
+//   color: rgba($brand_colors-white, 0.8);
+//   font-size: 0;
+//   line-height: 90px;
+//   height: $header-height;
+//   overflow: hidden;
+//   &:before{
+//     line-height: $header-height;
+//     height: $header-height;
+//     @include font-10l-l;
+//     color: rgba($brand_colors-white, 0.8);
+//   }
+//   &:after{
+//     float: right;
+//     @include font-4-c;
+//     line-height: ($header-height + 5);
+//     height: $header-height;
+//     margin: 0 0 0 3px;
+//   }
+// }
 // *************************************************************************************************
 
 
@@ -111,34 +143,40 @@ label{
 // so that we do not need to use JS
 // ****************************************************************************************************
 div#nu__mainmenu-supernav{
-  width: 88px;
+  width: 100px;
 }
 
-label#nu__supernav-toggle-label{
-  &:before{
-    content: 'Menu';
-    // color: rgba($brand_colors-white, 0.8);
-  }
+a#nu__supernav-toggle:not(.active){
   &:after{
     content: '\E5D2';
-    // color: rgba($brand_colors-white, 0.8);
   }
 }
 
-input#nu__supernav-toggle:checked ~ div#nu__searchbar{
-  height: 0;
-  visibility: hidden;
-  opacity: 0;
-}
-
-input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
-  &:before{
-    content: 'Close';
-  }
-  &:after{
-    content: '\E14C';
-  }
-}
+// label#nu__supernav-toggle-label{
+//   &:before{
+//     content: 'Menu';
+//     // color: rgba($brand_colors-white, 0.8);
+//   }
+//   &:after{
+//     content: '\E5D2';
+//     // color: rgba($brand_colors-white, 0.8);
+//   }
+// }
+//
+// input#nu__supernav-toggle:checked ~ div#nu__searchbar{
+//   height: 0;
+//   visibility: hidden;
+//   opacity: 0;
+// }
+//
+// input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
+//   &:before{
+//     content: 'Close';
+//   }
+//   &:after{
+//     content: '\E14C';
+//   }
+// }
 // ****************************************************************************************************
 
 
@@ -150,32 +188,37 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   // ****************************************************************************************************
   div#nu__mainmenu-iamnav{
     width: 106px;
-
   }
 
-  label#nu__iamnav-toggle-label{
-    &:before{
-      content: 'I am a';
-    }
+  a#nu__iamnav-toggle:not(.active){
     &:after{
       content: '\E313';
     }
   }
 
-  input#nu__iamnav-toggle:checked ~ div#nu__searchbar{
-    height: 0;
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  input#nu__iamnav-toggle:checked ~ label#nu__iamnav-toggle-label{
-    &:before{
-      content: 'Close';
-    }
-    &:after{
-      content: '\E14C';
-    }
-  }
+  // label#nu__iamnav-toggle-label{
+  //   &:before{
+  //     content: 'I am a';
+  //   }
+  //   &:after{
+  //     content: '\E313';
+  //   }
+  // }
+  //
+  // input#nu__iamnav-toggle:checked ~ div#nu__searchbar{
+  //   height: 0;
+  //   visibility: hidden;
+  //   opacity: 0;
+  // }
+  //
+  // input#nu__iamnav-toggle:checked ~ label#nu__iamnav-toggle-label{
+  //   &:before{
+  //     content: 'Close';
+  //   }
+  //   &:after{
+  //     content: '\E14C';
+  //   }
+  // }
   // ****************************************************************************************************
 
 
@@ -187,28 +230,34 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
   // so that we do not need to use JS
   // ****************************************************************************************************
   div#nu__mainmenu-search{
-    width: 140px;
-    margin: 0 0 0 0;
+    width: 115px;
+    // margin: 0 0 0 0;
   }
 
-  label#nu__search-toggle-label{
-    margin: 0 20px 0 0;
-    &:before{
-      content: 'Search';
-    }
+  a#nu__search-toggle:not(.active){
     &:after{
       content: '\E8B6';
     }
   }
 
-  input#nu__search-toggle:checked ~ label#nu__search-toggle-label{
-    &:before{
-      content: 'Close';
-    }
-    &:after{
-      content: '\E14C';
-    }
-  }
+  // label#nu__search-toggle-label{
+  //   margin: 0 20px 0 0;
+  //   &:before{
+  //     content: 'Search';
+  //   }
+  //   &:after{
+  //     content: '\E8B6';
+  //   }
+  // }
+  //
+  // input#nu__search-toggle:checked ~ label#nu__search-toggle-label{
+  //   &:before{
+  //     content: 'Close';
+  //   }
+  //   &:after{
+  //     content: '\E14C';
+  //   }
+  // }
 
   // body.search {
   //   label#nu__search-toggle-label{
@@ -267,6 +316,18 @@ input#nu__supernav-toggle:checked ~ label#nu__supernav-toggle-label{
       height: 100%;
       line-height: 70px;
     }
+
+    &.open{
+      height: 100%;
+      visibility: visible;
+      opacity: 1;
+      -webkit-transition: visibility 0s, opacity 0.10s linear;
+      -moz-transition: visibility 0s, opacity 0.10s linear;
+      -ms-transition: visibility 0s, opacity 0.10s linear;
+      -o-transition: visibility 0s, opacity 0.10s linear;
+      transition: visibility 0s, opacity 0.10s linear;
+    }
+
     & > section{
 
       // background: blue;
