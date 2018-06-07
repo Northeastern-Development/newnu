@@ -173,6 +173,24 @@ var cNav = null;
 
 
 
+
+    // this is the event listener for the user to press esc to close the menu panels
+    $(document).keydown(function(e){
+      console.log(e);
+        if(windowSize[1] >= sizeBreak && $('#nu__search-toggle').hasClass('active') === true || $('#nu__supernav-toggle').hasClass('active') === true || $('#nu__iamnav-toggle').hasClass('active') === true){
+
+        if(e.which == 27){
+          $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
+            $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+            $('div.items > ul').attr('aria-hidden','true');
+          });
+        }
+      }
+    });
+
+
+
+
     // let's listen for the page to resize and handle some events
 		$(window).on("resize",function(){
 
