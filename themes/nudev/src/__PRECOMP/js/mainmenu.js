@@ -59,7 +59,7 @@ var cNav = null;
 			if(cNav == null){  // if no menu is currently open
         $(this).addClass('active').focus().html('Close').next('div').addClass('open');
         $(this).next('div').find('div.items > ul').attr('aria-hidden','false');
-        $(this).next('div').find('div.items > ul > li > ul').first().attr('aria-hidden','false');
+        //$(this).next('div').find('div.items > ul > li > ul').first().attr('aria-hidden','false');
 				cNav = $(this).attr('id');
 			}else if($(this).attr('id') == cNav){  // if we have clicked the same menu item again after it was open
         $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');

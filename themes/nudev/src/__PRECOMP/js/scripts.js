@@ -11,6 +11,7 @@ var currentPanel = 0;
 var panelCount = 3;
 var windowWidth = null;
 var offset = 0;
+var exceedsContainer = false;
 
 
 
@@ -165,11 +166,43 @@ function getWindowSize(){
 
 
 
+		// this function will check filter navs used on pages to see if the items exceed the width of the container
+		function filterNavCheck(){
+			var offset = 10;
+			var filterWidth = $('.nu__filters > ul').width();
+
+			// total up the width of all of the filter options
+			var itemWidth = 0;
+			$('.nu__filters > ul > li > a').each(function(i){
+				itemWidth += $(this).outerWidth();
+			});
+
+			// now let's figure out if the content fits inside the container or not
+			if((itemWidth + offset) >= filterWidth){
+				if(!exceedsContainer){
+					console.log('content exceeds container!');
+					exceedsContainer = true;
+				}
+			}else if((itemWidth + offset) < filterWidth){
+				if(exceedsContainer){
+					console.log('content fits within container again!');
+					exceedsContainer = false;
+				}
+			}
+		}
+
+
+
+
+
+
 
 		// let's listen for the page to resize and handle some events
 		$(window).on("resize",function(){
 
 			getWindowSize();
+
+			filterNavCheck();
 
 			// reset the offset to position content just below the header
 			$(".main").css({

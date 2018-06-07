@@ -114,13 +114,16 @@
        // margin: $gutter auto 0 auto;
       border-bottom: solid rgba($brand_colors-grayW,1.0) 2px;
       flex-wrap: wrap;
-
-
+      overflow: hidden;
+      height: 40px;
+      background: green;
        & > li{
+         // background: yellow;
          flex-basis: auto;
          text-align: center;
          margin: 0 0 10px 0;
          & > a{
+           background: yellow;
            padding: 0 10px 11px 10px;
            color: rgba($brand_colors-black,0.7);
            text-transform: uppercase;
@@ -427,7 +430,7 @@
          flex-basis: 100%;
        }
             & > a{
-              padding: 0 0 5px 0;
+              // padding: 0 0 5px 0;
        //       color: rgba($brand_colors-black,0.7);
        //       text-transform: uppercase;
        //       @include font-1r-l;

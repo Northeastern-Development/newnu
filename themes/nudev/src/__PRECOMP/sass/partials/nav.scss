@@ -281,7 +281,9 @@ a#nu__supernav-toggle:not(.active){
                   float: left;
                 }
               }
-              &:hover{
+              &:hover,
+              &:focus,
+              &:active{
                 background: none;
                 a{
                   & > div{
@@ -297,6 +299,8 @@ a#nu__supernav-toggle:not(.active){
                 width: 34px;
               }
             }
+            &:focus,
+            &:active,
             &.active,
             &:hover{
               background: rgba($brand_colors-beige, 1.0);
@@ -317,7 +321,9 @@ a#nu__supernav-toggle:not(.active){
                   text-align: center;
                   width: 100%;
                 }
-                &:hover{
+                &:hover,
+                &:active,
+                &:focus{
                   background: rgba($brand_colors-white,0.3);
                   & > div{
                     &:nth-child(2){
@@ -357,7 +363,9 @@ a#nu__supernav-toggle:not(.active){
                   clear: both;
                   overflow: hidden;
                   display: table;
-                  &:hover{
+                  &:hover,
+                  &:focus,
+                  &:active{
                     cursor: pointer;
                     & > div{
                       &:nth-child(2){
