@@ -26,10 +26,13 @@
 		<section class="nu__filters">
 			<h2>Leadership Team</h2>
 			<input id="toggle" type="checkbox" title="Click to select">
-			<ul>
-				<li><a <?=($filter == ''?'class="active"':'')?> href="<?=home_url()?>/about/university-administration" title="Show senior leadership team">Senior Leadership <span>&#xE313;</span></a></li>
-				<?php include(locate_template('loops/loop-administration-filters.php')); ?>
-			</ul>
+			<div>
+				<ul>
+					<li><a <?=($filter == ''?'class="active"':'')?> href="<?=home_url()?>/about/university-administration" title="Show senior leadership team">Senior Leadership <span>&#xE313;</span></a></li>
+					<?php include(locate_template('loops/loop-administration-filters.php')); ?>
+				</ul>
+				<div title="Click to show/hide more options">More</div>
+			</div>
 		</section>
 
 		<?php  include(locate_template('loops/loop-administration.php')); ?>

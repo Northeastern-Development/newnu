@@ -92,6 +92,8 @@
 
    section.nu__filters{
      width: $content-width-wide;
+     // clear: both;
+
      & > h2{
        @include font-6l-c;
      }
@@ -109,14 +111,41 @@
 
        }
      }
-     & > ul{
-       // width: $content-width-wide;
+     & > div{
+       display: flex;
+       flex-direction: row;
+     }
+     & > div > div{
+       // float: right;
+       // background: red;
+       position: relative;
+       padding: 0 20px 0 0;
+       @include font-1r-l;
+       height: 40px;
+       text-transform: uppercase;
+       display: none;
+       overflow: hidden;
+       margin: $gutter 0 0 0;
+       border-bottom: solid rgba($brand_colors-grayW,1.0) 2px;
+       &:after{
+         position: absolute;
+         top: 2px;
+         right: 0;
+         content: '\E313';
+       }
+       &:hover{
+         cursor: pointer;
+       }
+     }
+     & > div > ul{
+       width: $content-width-wide;
        // margin: $gutter auto 0 auto;
+      // float: left;
       border-bottom: solid rgba($brand_colors-grayW,1.0) 2px;
       flex-wrap: wrap;
       overflow: hidden;
       height: 40px;
-      background: green;
+      // background: green;
        & > li{
          // background: yellow;
          // flex-basis: auto;
@@ -126,7 +155,7 @@
          text-align: center;
          margin: 0 0 10px 0;
          & > a{
-           background: yellow;
+           // background: yellow;
            padding: 0 10px 11px 10px;
            color: rgba($brand_colors-black,0.7);
            text-transform: uppercase;
@@ -370,7 +399,7 @@
    @media only screen and (max-width: 1400px) {
 
      section.nu__filters{
-       width: 100%;
+       // width: 100%;
        // background: green;
        // width: $content-width-wide;
        // margin: 0 auto 0 auto;

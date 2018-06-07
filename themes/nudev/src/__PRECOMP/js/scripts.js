@@ -169,27 +169,39 @@ function getWindowSize(){
 		// this function will check filter navs used on pages to see if the items exceed the width of the container
 		function filterNavCheck(){
 			var offset = 10;
-			var filterWidth = $('.nu__filters > ul').width();
+			var filterWidth = $('.nu__filters > div > ul').width();
 
 			// total up the width of all of the filter options
 			var itemWidth = 0;
-			$('.nu__filters > ul > li > a').each(function(i){
+			$('.nu__filters > div > ul > li > a').each(function(i){
 				itemWidth += $(this).outerWidth();
 			});
+
+			// console.log(filterWidth+" - "+itemWidth);
 
 			// now let's figure out if the content fits inside the container or not
 			if((itemWidth + offset) >= filterWidth){
 				if(!exceedsContainer){
 					console.log('content exceeds container!');
 					exceedsContainer = true;
+
+					// let's show the more button as the items do not fit
+					$('.nu__filters > div > div').show();
+
 				}
 			}else if((itemWidth + offset) < filterWidth){
 				if(exceedsContainer){
 					console.log('content fits within container again!');
 					exceedsContainer = false;
+
+					// more than enough room, hide the more button
+					$('.nu__filters > div > div').hide();
+
 				}
 			}
 		}
+
+		filterNavCheck();
 
 
 

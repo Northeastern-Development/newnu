@@ -8,12 +8,7 @@
 
 	<div class="main" role="main" aria-label="content">
 
-		<section class="hero">
-			<div>
-				<h2>Colleges and Schools</h2>
-				<h3>Our nine colleges and schools offer degrees from the bachelor’s through the doctorate in a wide variety of fields and professional areas. All with Northeastern’s hallmark cross-disciplinary approach.</h3>
-			</div>
-		</section>
+		<?php include(locate_template('includes/pagehero.php')); ?>
 
 		<?php get_template_part('loops/loop-collegespage'); ?>
 
