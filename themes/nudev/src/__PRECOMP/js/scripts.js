@@ -165,6 +165,70 @@ function getWindowSize(){
 
 
 
+		// this will handle clicking on the more button in filter options
+		$('.nu__filters').on('click','.js__showmore',function(e){
+
+			console.log('I would like to see more!');
+
+			// showHideMore();
+
+			// $('.nu__filters ul').height('auto');
+
+			if(!$(this).hasClass('active')){
+				showMoreFilters();
+			}else{
+				hideMoreFilters();
+			}
+
+		});
+
+
+		// function showHideMore(){
+		// 	if(!$('.js__showmore').hasClass('active')){
+		// 		$('.js__showmore').addClass('active');
+		// 		$('.nu__filters > div > ul > li.inshowmore').each(function(){
+		// 			$(this).show();
+		// 		});
+		// 	}else{
+		// 		$('.js__showmore').removeClass('active');
+		// 		$('.nu__filters > div > ul > li.inshowmore').each(function(){
+		// 			$(this).hide();
+		// 		});
+		// 	}
+		// }
+
+		function showMoreFilters(){
+			if(!$('.js__showmore').hasClass('active')){
+				$('.js__showmore').addClass('active');
+				$('.nu__filters > div > ul > li.inshowmore').each(function(){
+					$(this).css({'opacity':'1.0'});
+				});
+				$('.nu__filters').css({'overflow':'visible'});
+			}
+		}
+
+		function hideMoreFilters(){
+			if($('.js__showmore').hasClass('active')){
+				$('.js__showmore').removeClass('active');
+				$('.nu__filters > div > ul > li.inshowmore').each(function(){
+					$(this).css({'opacity':'0.0'});
+				});
+				$('.nu__filters').css({'overflow':'hidden'});
+			}
+		}
+
+
+
+		// function closeMore(){
+		// 	$('.nu__filters > div > ul > li.inshowmore').each(function(){
+		// 		$(this).hide();
+		// 	});
+		// }
+
+
+
+
+
 
 		// this function will check filter navs used on pages to see if the items exceed the width of the container
 		function filterNavCheck(){
@@ -173,11 +237,16 @@ function getWindowSize(){
 
 			// total up the width of all of the filter options
 			var itemWidth = 0;
+			var tPos = $('.nu__filters > div > ul > li').first().position().top;
+			var vOffset = 116;
+
 			$('.nu__filters > div > ul > li > a').each(function(i){
 				itemWidth += $(this).outerWidth();
+				if($(this).parent().position().top > tPos){
+					$(this).parent().addClass('inshowmore').css({'top':vOffset});
+					vOffset += $(this).parent().height();
+				}
 			});
-
-			// console.log(filterWidth+" - "+itemWidth);
 
 			// now let's figure out if the content fits inside the container or not
 			if((itemWidth + offset) >= filterWidth){
@@ -197,11 +266,17 @@ function getWindowSize(){
 					// more than enough room, hide the more button
 					$('.nu__filters > div > div').hide();
 
+					$('.nu__filters > div > ul > li.inshowmore').removeAttr('style');
+					$('.nu__filters > div > ul > li.inshowmore').removeClass('inshowmore');
+
 				}
 			}
 		}
 
-		filterNavCheck();
+		// if we are NOT on the homepage, kick off a filter check right away
+		if(!$('body').hasClass('home')){
+			filterNavCheck();
+		}
 
 
 
@@ -212,19 +287,39 @@ function getWindowSize(){
 		// let's listen for the page to resize and handle some events
 		$(window).on("resize",function(){
 
-			getWindowSize();
+			getWindowSize();	// check the window size
 
-			filterNavCheck();
+			// if we are NOT on the homepage, kick off a filter check
+			if(!$('body').hasClass('home')){
+				filterNavCheck();	// check to see what needs to be shown and what is overflow for filters
+				hideMoreFilters();	// hide the additional filters if they are visible
+			}
 
 			// reset the offset to position content just below the header
 			$(".main").css({
 				"margin-top":$("header").outerHeight()
 			});
 
-
-
-
 		});
+
+
+
+
+
+		// need to set up an on-scroll event that IS NOT going to activate on the homepage
+		$(window).on("scroll",function(){
+
+			// we will ONLY check scroll on pages other than the homepage
+			if(!$('body').hasClass('home')){
+
+				// we should make sure that the more options for filters close if we scroll the page
+				hideMoreFilters();
+
+			}
+		});
+
+
+
 
 	});
 }(this,jQuery));

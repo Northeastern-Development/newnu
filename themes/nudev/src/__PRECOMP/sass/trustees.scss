@@ -58,8 +58,10 @@ div.main{
               bottom: 0;
               color: rgba($brand_colors-white,1.0);
               margin: 0 $gutter $gutter $gutter;
+              line-height: 2.2rem;
               & > span{
                 @include font-2b-l;
+                line-height: 2.2rem;
               }
             }
           }

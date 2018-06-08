@@ -31,7 +31,7 @@
 					<li><a <?=($filter == ''?'class="active"':'')?> href="<?=home_url()?>/about/university-administration" title="Show senior leadership team">Senior Leadership <span>&#xE313;</span></a></li>
 					<?php include(locate_template('loops/loop-administration-filters.php')); ?>
 				</ul>
-				<div title="Click to show/hide more options">More</div>
+				<div title="Click to show/hide more options" class="js__showmore">More</div>
 			</div>
 		</section>
 
