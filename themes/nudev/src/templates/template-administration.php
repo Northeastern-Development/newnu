@@ -14,12 +14,7 @@
 
 	<div class="main" role="main" aria-label="content">
 
-		<section class="hero">
-			<div>
-				<h2>Administration</h2>
-				<h3>Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration Administration </h3>
-			</div>
-		</section>
+		<?php include(locate_template('includes/pagehero.php')); ?>
 
 		<?php include(locate_template('loops/loop-administration-president.php')); ?>
 

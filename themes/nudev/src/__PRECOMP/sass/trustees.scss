@@ -98,8 +98,8 @@ div.main{
 
 
   section.nu__board-others{
-    $cols: 3;
-    $width: $content-width-narrow;  // 65vw
+    $cols: 4;
+    $width: 80vw;  // 65vw
     margin-bottom: ($gutter * 2);
     & > ul{
       width: $width;

@@ -232,43 +232,71 @@ function getWindowSize(){
 
 		// this function will check filter navs used on pages to see if the items exceed the width of the container
 		function filterNavCheck(){
-			var offset = 10;
-			var filterWidth = $('.nu__filters > div > ul').width();
 
-			// total up the width of all of the filter options
-			var itemWidth = 0;
-			var tPos = $('.nu__filters > div > ul > li').first().position().top;
-			var vOffset = 116;
+			if($(window).width() <= 620){	// we are on a much smaller screen, so ignore the more option and stack via CSS
+				console.log('screen size less than 620px');
+				$('.nu__filters > div > div').hide();
+				$('.nu__filters > div > ul > li').removeAttr('style');
+				$('.nu__filters > div > ul > li').removeClass('inshowmore');
+				exceedsContainer = false;
+			}else{	// we need to use the more option to allow user to see all options
 
-			$('.nu__filters > div > ul > li > a').each(function(i){
-				itemWidth += $(this).outerWidth();
-				if($(this).parent().position().top > tPos){
-					$(this).parent().addClass('inshowmore').css({'top':vOffset});
-					vOffset += $(this).parent().height();
-				}
-			});
+				// $('.nu__filters > div > div').show();	// we need to show the more option
 
-			// now let's figure out if the content fits inside the container or not
-			if((itemWidth + offset) >= filterWidth){
-				if(!exceedsContainer){
-					console.log('content exceeds container!');
-					exceedsContainer = true;
+				var offset = 0;
+				var filterWidth = $('.nu__filters > div > ul').width();
 
-					// let's show the more button as the items do not fit
-					$('.nu__filters > div > div').show();
+				// total up the width of all of the filter options
+				var itemWidth = 0;
+				var tPos = $('.nu__filters > div > ul > li').first().position().top;
+				var vOffset = 116;
 
-				}
-			}else if((itemWidth + offset) < filterWidth){
-				if(exceedsContainer){
-					console.log('content fits within container again!');
-					exceedsContainer = false;
+				// $('.nu__filters > div > ul > li.inshowmore').removeAttr('style');
+				// $('.nu__filters > div > ul > li.inshowmore').removeClass('inshowmore');
 
-					// more than enough room, hide the more button
-					$('.nu__filters > div > div').hide();
+				// $('.nu__filters > div > ul > li.inshowmore').removeAttr('style');
+				$('.nu__filters > div > ul > li.inshowmore').removeClass('inshowmore');
 
-					$('.nu__filters > div > ul > li.inshowmore').removeAttr('style');
-					$('.nu__filters > div > ul > li.inshowmore').removeClass('inshowmore');
+				$('.nu__filters > div > ul > li > a').each(function(i){
+					itemWidth += $(this).outerWidth();
+					if($(this).parent().position().top > tPos){
+						$(this).parent().addClass('inshowmore').css({'top':vOffset});
+						vOffset += $(this).parent().height();
+					}else{
 
+						// need to re-check the position vs width here to remove styles if no longer hiding
+
+						// $('.nu__filters > div > ul > li.inshowmore').removeAttr('style');
+						// $('.nu__filters > div > ul > li.inshowmore').removeClass('inshowmore');
+						// // $(this).parent().removeClass('inshowmore').css({'top':vOffset});
+						// vOffset -= $(this).parent().height();
+						$(this).parent().removeAttr('style');
+						$(this).parent().removeClass('inshowmore');
+					}
+				});
+
+				// now let's figure out if the content fits inside the container or not
+				if((itemWidth + offset) >= filterWidth){
+					if(!exceedsContainer){
+						console.log('content exceeds container!');
+						exceedsContainer = true;
+
+						// let's show the more button as the items do not fit
+						$('.nu__filters > div > div').show();
+
+					}
+				}else if((itemWidth + offset) < filterWidth){
+					if(exceedsContainer){
+						console.log('content fits within container again!');
+						exceedsContainer = false;
+
+						// more than enough room, hide the more button
+						$('.nu__filters > div > div').hide();
+
+						$('.nu__filters > div > ul > li.inshowmore').removeAttr('style');
+						$('.nu__filters > div > ul > li.inshowmore').removeClass('inshowmore');
+
+					}
 				}
 			}
 		}

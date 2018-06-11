@@ -92,7 +92,7 @@
 
    section.nu__filters{
      width: $content-width-wide;
-    overflow: hidden;
+    // overflow: hidden;
      & > h2{
        @include font-6l-c;
      }
@@ -147,11 +147,13 @@
       flex-wrap: wrap;
       height: 40px;
       overflow: hidden;
+      // background: green;
        & > li{
          flex-grow: 1;
          flex-basis: auto;
          text-align: center;
          margin: 0 0 10px 0;
+         // background: yellow;
          &.inshowmore{
            opacity: 0;
            background: rgba($brand_colors-beige,1.0);
@@ -360,10 +362,12 @@
            }
            & > p{
              @include font-2r-l;
+             line-height: 2.2rem;
              margin: 10px 0 0 0;
              margin-bottom: ($gutter / 2);
              & > span{
                @include font-2b-l;
+               line-height: 2.2rem;
              }
            }
          }
@@ -403,10 +407,12 @@
          & > p{
            width: $ww;
            @include font-2r-l;
+           line-height: 2.2rem;
            margin: 10px 0 0 0;
            margin-bottom: ($gutter / 2);
            & > span{
              @include font-2b-l;
+             line-height: 2.2rem;
            }
          }
        }
@@ -1219,6 +1225,7 @@
        // background: green;
        // width: 100%;
        // background: green;
+       overflow: visible;
        // width: $content-width-wide;
        // margin: 0 auto 0 auto;
        // & > h2{
@@ -1230,13 +1237,13 @@
          // background: green;
          // width: 100%;
          // height: 85px;
-         // opacity: 0.0;
+         // opacity: 1.0;
          // &:hover{
          //   cursor: pointer;
          // }
          &:checked{
            display: none;
-            &+ul{
+            &+div > ul{
               height: auto;
               & > li{
                 & > a{
@@ -1246,7 +1253,10 @@
             }
          }
        }
-       & > ul{
+       & > div{
+         display: block;
+       }
+       & > div > ul{
          // width: $content-width-wide;
          // margin: $gutter auto 0 auto;
          margin: 10px auto 0 auto;

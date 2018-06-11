@@ -5,8 +5,10 @@
 		<footer id="nu__global-footer" class="<?=($prefooter?'addprefooter ':'')?><?=(trim($_SERVER['REQUEST_URI']) === '/'?'collapse absolute':'')?>">
 
 			<?php
-
-				if($prefooter){ get_template_part('loops/loop-prefooter'); }
+				if($prefooter){
+					//get_template_part('loops/loop-prefooter');
+					include(locate_template('includes/prefooter.php'));
+				}
 			?>
 
 			<?php wp_footer(); ?>
