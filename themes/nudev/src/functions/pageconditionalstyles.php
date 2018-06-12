@@ -5,9 +5,11 @@ Page Conditional Styling
 ********************************************************************** */
 function nudev_conditional_styles(){
 
-  // load the base styles
-  wp_register_style('nudevcss', get_template_directory_uri() . '/css/style.css', array(), '1.0');
-  wp_enqueue_style('nudevcss');
+  // load the base styles if we are NOT in an admin page
+  if(!is_admin()){
+    wp_register_style('nudevcss', get_template_directory_uri() . '/css/style.css', array(), '1.0');
+    wp_enqueue_style('nudevcss');
+  }
 
 
   // any page that is NOT search
