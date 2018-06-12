@@ -1577,6 +1577,13 @@
 		"oAP": "\/includes\/pagehero.php",
 		"oF": 0
 		},
+	"\/includes\/prefooter.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/includes\/prefooter.php",
+		"oF": 0
+		},
 	"\/index.php": {
 		"cB": 0,
 		"ft": 8192,

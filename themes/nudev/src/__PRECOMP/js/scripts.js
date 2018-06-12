@@ -234,7 +234,7 @@ function getWindowSize(){
 		function filterNavCheck(){
 
 			if($(window).width() <= 620){	// we are on a much smaller screen, so ignore the more option and stack via CSS
-				console.log('screen size less than 620px');
+				// console.log('screen size less than 620px');
 				$('.nu__filters > div > div').hide();
 				$('.nu__filters > div > ul > li').removeAttr('style');
 				$('.nu__filters > div > ul > li').removeClass('inshowmore');
@@ -278,7 +278,7 @@ function getWindowSize(){
 				// now let's figure out if the content fits inside the container or not
 				if((itemWidth + offset) >= filterWidth){
 					if(!exceedsContainer){
-						console.log('content exceeds container!');
+						// console.log('content exceeds container!');
 						exceedsContainer = true;
 
 						// let's show the more button as the items do not fit
@@ -287,7 +287,7 @@ function getWindowSize(){
 					}
 				}else if((itemWidth + offset) < filterWidth){
 					if(exceedsContainer){
-						console.log('content fits within container again!');
+						// console.log('content fits within container again!');
 						exceedsContainer = false;
 
 						// more than enough room, hide the more button
@@ -302,7 +302,7 @@ function getWindowSize(){
 		}
 
 		// if we are NOT on the homepage, kick off a filter check right away
-		if(!$('body').hasClass('home')){
+		if(!$('body').hasClass('home') && $('.nu__filters').length){
 			filterNavCheck();
 		}
 
@@ -318,7 +318,7 @@ function getWindowSize(){
 			getWindowSize();	// check the window size
 
 			// if we are NOT on the homepage, kick off a filter check
-			if(!$('body').hasClass('home')){
+			if(!$('body').hasClass('home') && $('.nu__filters').length){
 				filterNavCheck();	// check to see what needs to be shown and what is overflow for filters
 				hideMoreFilters();	// hide the additional filters if they are visible
 			}
