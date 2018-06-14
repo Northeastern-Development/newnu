@@ -271,7 +271,7 @@
 
    section{
      width: $content-width-960;
-     & > ul{
+     & > ul:not(.nu__grid-filters-options,.nu__grid){
        flex-wrap: wrap;
        & > li{
          flex: 0 0 45%;

@@ -16,16 +16,16 @@
 			<h2>Northeastern by the numbers</h2>
 			<ul>
 				<li>
-					<span>9</span>
-					<p>Colleges and schools at Northeastern's Boston Campus</p>
+					<span>90+</span>
+					<p>Majors and concentrations offered</p>
 				</li>
 				<li>
-					<span>157</span>
-					<p>Undergraduate and graduate areas of study in emerging fields added since 2006</p>
+					<span>1465</span>
+					<p>Mean two-part SAT score for fall 2017 freshmen</p>
 				</li>
 				<li>
-					<span>610</span>
-					<p>Tenured and tenure-track faculty hires since 2006, 47 for fall 2017</p>
+					<span>136</span>
+					<p>Number of countries where we placed students in experiential learning opportunities (2016 - 2017)</p>
 				</li>
 			</ul>
 		</section>

@@ -16,19 +16,26 @@
 
 		<?php include(locate_template('includes/pagehero.php')); ?>
 
-		<section class="nu__grid-filters">
-			<ul>
-				<li><a <?=($filter == ''?'class="active"':'')?> href="<?=home_url()?>/about/board-of-trustees" title="Show board of trustees">Board of Trustees</a></li>
-				<li><a <?=($filter == 'members'?'class="active"':'')?> href="<?=home_url()?>/about/board-of-trustees/members" title="Show members of the corporation">Members of the Corporation</a></li>
-				<li><a <?=($filter == 'committees'?'class="active"':'')?> href="<?=home_url()?>/about/board-of-trustees/committees" title="Show standing committees">Standing Committees</a></li>
-			</ul>
-		</section>
+		<?php
+
+			// this is the array of filter options that will be shown to the user if we need one on this page
+			// we will eventually add a feature here to pull the categories from the CMS tools options directly
+			$filterOptions = array(
+				array('title' => 'Board of Trustees', 'filter' => '')
+				,array('title' => 'Members of the Corporation', 'filter' => 'members-of-the-corporation')
+				,array('title' => 'Standing Committees', 'filter' => 'standing-committees')
+			);
+
+			// this will actually call in the filter include to display on the page
+			include(locate_template('includes/filteroptions.php'));
+
+		?>
 
 		<?php
 
 			// determine what content to show to the user based on URL and any filtered applied
 
-			if(isset($filter) && $filter == "members"){	// this will show the list of the members of the corporation
+			if(isset($filter) && $filter == "members-of-the-corporation"){	// this will show the list of the members of the corporation
 				echo '<section class="nu__board-emeriti">';
 				include(locate_template('loops/loop-trustees-emeriti.php'));
 				echo '</section>';
@@ -38,7 +45,7 @@
 				echo '<section class="nu__board-others fullwidth">';
 				include(locate_template('loops/loop-trustees-others.php'));
 				echo '</section>';
-			}else if(isset($filter) && $filter == "committees"){	// this will show standing committees
+			}else if(isset($filter) && $filter == "standing-committees"){	// this will show standing committees
 				echo '<section class="nu__board-committees">';
 				include(locate_template('loops/loop-trustees-committees.php'));
 				echo '</section>';

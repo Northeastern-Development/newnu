@@ -2,7 +2,7 @@
 
 	wp_reset_query();
 
-	$return = '<h4>Trustees Emeriti</h4><ul>';
+	$return = '<h4>Trustees Emeriti</h4><ul class="nu__grid">';
 
 	$args = array(
 		"post_type" => "corporation"
