@@ -626,11 +626,29 @@ footer{
 
 
 
+
+
     &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
       position:relative;
       bottom: inherit;
       z-index:0;
       & > div.nu__footer{
+        & > a{
+          // position: absolute;
+         display: none;
+         // width: 200px;
+         //
+         // height: $footer-height-collapsed;
+         // line-height: $footer-height-collapsed;
+         // text-align: right;
+         // top: 0;
+         // right: 3vw;
+         // color: rgba($brand_colors-white,0.8);
+         // &:hover{
+         //   cursor: pointer;
+         //   color: rgba($brand_colors-white,1.0);
+         // }
+        }
         & > div.nu__footer-hideshow{
           display:none;
           // &:before{
@@ -676,6 +694,13 @@ footer{
        //
        //   }
        // }
+
+
+       // & a{
+       //   display: none;
+       // }
+
+
        & > div{
          margin: 18.75px auto;
          // & > a{

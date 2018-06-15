@@ -307,6 +307,8 @@ a#nu__supernav-toggle:not(.active){
               color: rgba($brand_colors-black,1.0);
               cursor: pointer;
               font-weight: 700;
+              // border: none;
+              outline: none;
             }
             &.makeagift{
               & > a{
@@ -352,7 +354,6 @@ a#nu__supernav-toggle:not(.active){
                   @include font-6l-l;
                   line-height: $lineH;
                   margin: 12px 0 12px $gutter;
-
                 }
                 & > a{
                   @include font-10l-l;

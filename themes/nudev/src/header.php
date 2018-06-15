@@ -47,6 +47,9 @@
 
 		<?php wp_head(); ?>
 
+		<!-- crazy egg script -->
+		<!-- <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0075/8948.js" async="async"></script> -->
+
 		<script>
 			// this is for the google custom search engine
 			(function() {
