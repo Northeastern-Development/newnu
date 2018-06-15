@@ -107,6 +107,7 @@ footer{
         list-style-type: none;
         & > li{
           flex-grow: 1;
+          flex: 1;
           min-height: 250px;
           // margin: 0 $gutter ($gutter * 2) 0;
           margin: 0 $gutter $gutter 0;
