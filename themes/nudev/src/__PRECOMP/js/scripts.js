@@ -4,7 +4,7 @@ var iamnavbgs = null;
 var contentAreaHeight = 0;
 // var cNav = null;
 var debug = true;
-var showSize = true;
+var showSize = false;
 var sizeBreak = 900;
 var isSafari = /safari/i.test(navigator.userAgent);
 var currentPanel = 0;
@@ -168,7 +168,7 @@ function getWindowSize(){
 		// this will handle clicking on the more button in filter options
 		$('.nu__filters').on('click','.js__showmore',function(e){
 
-			console.log('I would like to see more!');
+			// console.log('I would like to see more!');
 
 			// showHideMore();
 
@@ -249,7 +249,10 @@ function getWindowSize(){
 				// total up the width of all of the filter options
 				var itemWidth = 0;
 				var tPos = $('.nu__filters > div > ul > li').first().position().top;
-				var vOffset = 116;
+				//console.log(tPos);
+				var vOffset = ($('.nu__filters').height() - 2);
+
+				// console.log(vOffset);
 
 				// $('.nu__filters > div > ul > li.inshowmore').removeAttr('style');
 				// $('.nu__filters > div > ul > li.inshowmore').removeClass('inshowmore');
@@ -259,7 +262,10 @@ function getWindowSize(){
 
 				$('.nu__filters > div > ul > li > a').each(function(i){
 					itemWidth += $(this).outerWidth();
-					if($(this).parent().position().top > tPos){
+					//console.log($(this).parent().position().top);
+					// if($(this).parent().position().top > tPos){
+					if(itemWidth > filterWidth){
+						//console.log($(this));
 						$(this).parent().addClass('inshowmore').css({'top':vOffset});
 						vOffset += $(this).parent().height();
 					}else{
