@@ -25,7 +25,7 @@
 				</li>
 				<li>
 					<span>136</span>
-					<p>Number of countries where we placed students in experiential learning opportunities (2016 - 2017)</p>
+					<p>Number of countries where we placed students in experiential learning opportunities (2016&ndash;2017)</p>
 				</li>
 			</ul>
 		</section>

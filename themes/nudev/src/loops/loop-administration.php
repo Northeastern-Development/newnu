@@ -120,13 +120,17 @@
 				,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
 				,'sub-type_clause' => array("key"=>"sub_type","compare"=>"EXISTS")
 				,'dept_clause' => array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
-			),
-			'orderby' => array(
-        'sub-type_clause' => 'ASC',
-    	)
+				,array("key"=>"department_head","value"=>"0","compare"=>"LIKE")
+			)
+			// ,
+			// 'orderby' => array(
+      //   'sub-type_clause' => 'ASC',
+    	// )
 		);
 
 		$res = query_posts($args);
+
+		//print_r($res);
 
 		$subType = get_fields($res[0]->ID)['sub_type'];
 
@@ -136,6 +140,8 @@
 
 		foreach($res as $r){
 			$fields = get_fields($r->ID);
+			// print_r($r);
+			// print_r($fields);
 
 			if($fields['sub_type'] != $subType){
 				$subType = $fields['sub_type'];
