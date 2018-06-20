@@ -22,9 +22,9 @@
 
 	$return = '<section class="panel-'.$jj.'">';
 
-	$guideSingle = '<article id="article-%s" style="%s %s"><a href="%s" title="Click here now to learn more %s" %s>%s</a><div class="nu__panel-content"><div><p>%s&nbsp;</p><h2><span>%s</span></h2></div></div>%s<div class="gradient"></div>%s</article>';
+	$guideSingle = '<article id="article-%s" style="%s %s"><a %s href="%s" title="Click here now to learn more %s" %s>%s</a><div class="nu__panel-content"><div><p>%s&nbsp;</p><h2><span>%s</span></h2></div></div>%s<div class="gradient"></div>%s</article>';
 
-	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator" style="%s %s"><a href="%s" target="%s" title="Click here now to learn more %s">%s</a><div class="nu__panel-content"><div><p>%s&nbsp;</p><h2><span>%s</span></h2></div></div><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div></div></div><div class="nu__overlay-logo">%s</div><div class="gradient"></div></article>';
+	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator" style="%s %s"><a %s href="%s" target="%s" title="Click here now to learn more %s">%s</a><div class="nu__panel-content"><div><p>%s&nbsp;</p><h2><span>%s</span></h2></div></div><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div></div></div><div class="nu__overlay-logo">%s</div><div class="gradient"></div></article>';
 
 	$iPath = responsive_background_images();	// call the function to figure out the best image size to use
 
@@ -42,6 +42,7 @@
 				,$i
 				,'background-image: url('.$thisImage.');'
 				,'background-color: '.$s['block_slide'][0]['block_slide_background'].'; '
+				,($i > 5?'tabindex="-1"':'')
 				,$s['block_slide'][0]['block_slide_link']
 				,($s['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
 				,($s['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
@@ -61,6 +62,7 @@
 				,count($s['block_slide'])
 				,'background-image: url('.$thisImage.');'
 				,'background-color: '.$s['block_slide'][0]['block_slide_background'].'; '
+				,($i > 5?'tabindex="-1"':'')
 				,$s['block_slide'][0]['block_slide_link']
 				,($s['block_slide'][0]['external_link'] == '1'?'_blank':'')
 				,($s['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')

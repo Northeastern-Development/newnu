@@ -2,7 +2,9 @@
 
 		<?php $prefooter = (get_field('use_pre-footer',get_the_ID(),false) == 1?true:false); ?>
 
-		<footer id="nu__global-footer" class="<?=($prefooter?'addprefooter ':'')?><?=(trim($_SERVER['REQUEST_URI']) === '/'?'collapse absolute':'')?>">
+		<footer id="nu__global-footer" class="<?=($prefooter?'addprefooter ':'')?><?=(trim($_SERVER['REQUEST_URI']) === '/'?'collapse absolute':'')?>" <?=(trim($_SERVER['REQUEST_URI']) === '/'?'aria-hidden="true"':'')?>>
+
+
 
 			<?php
 				if($prefooter){
