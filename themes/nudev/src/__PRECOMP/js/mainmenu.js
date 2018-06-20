@@ -59,6 +59,8 @@ var cNav = null;
 			if(cNav == null){  // if no menu is currently open
         $(this).addClass('active').focus().html('Close').next('div').addClass('open');
         $(this).next('div').find('div.items > ul').attr('aria-hidden','false');
+				$(this).next('div').find('div.items > ul > li').first().focus();
+				$(this).next('div').find('div.items > ul > li').attr('tabindex','1');
         //$(this).next('div').find('div.items > ul > li > ul').first().attr('aria-hidden','false');
 				cNav = $(this).attr('id');
 			}else if($(this).attr('id') == cNav){  // if we have clicked the same menu item again after it was open
@@ -151,32 +153,63 @@ var cNav = null;
 
 
 
-		// this will handle the accordion functionality for the main navigational elements
+		// this will handle the click on a nav category
 		$('div.navigational > section > div.items > ul').on('click','li:not(.featured)',function(e){
 
-      // we need to handle activating the correct aria-hidden values as we change categories
-      $(this).parent().find('li ul').attr('aria-hidden','true');
-      $(this).find('ul').first().attr('aria-hidden','false');
+			changeNavCat($(this));
 
-			// if we are clicking on cats in the iamnav, we may need to swap the background image
-			if($(this).parent().parent().parent().parent().attr('id') == 'nu__iamnav' && iamnavbgs.length > 0 && iamnavbgs[0] != ''){
-				$('div#nu__iamnav').attr('style','background-image: url('+iamnavbgs[$(this).index()]+');');
-			}
-
-
-
-
-			$('div.navigational > section > div > ul li').removeClass('active');
-			$(this).addClass('active');
+      // // we need to handle activating the correct aria-hidden values as we change categories
+      // $(this).parent().find('li ul').attr('aria-hidden','true');
+      // $(this).find('ul').first().attr('aria-hidden','false');
+			//
+			// // if we are clicking on cats in the iamnav, we may need to swap the background image
+			// if($(this).parent().parent().parent().parent().attr('id') == 'nu__iamnav' && iamnavbgs.length > 0 && iamnavbgs[0] != ''){
+			// 	$('div#nu__iamnav').attr('style','background-image: url('+iamnavbgs[$(this).index()]+');');
+			// }
+			//
+			// $('div.navigational > section > div > ul li').removeClass('active');
+			// $(this).addClass('active');
 		});
 
+
+
+		// this will handle pressing enter on a nav category
+		// $('div.navigational > section > div.items > ul > li:not(.featured)').keydown(function(e){
+		$('div.navigational > section > div.items > ul > li:not(.featured)').focus(function(e){
+		    //if(e.which === 13){ // the user pressed on the enter key
+						changeNavCat($(this));
+		    //}
+		});
+
+
+
+		// this is the function that will actually change the category
+		function changeNavCat(a){
+
+
+			// we need to handle activating the correct aria-hidden values as we change categories
+      a.parent().find('li ul').attr('aria-hidden','true');
+			a.parent().find('li ul li').attr('tabindex','-1');
+      a.find('ul').first().attr('aria-hidden','false');
+			a.find('ul li').attr('tabindex','1');
+
+			// if we are clicking on cats in the iamnav, we may need to swap the background image
+			if(a.parent().parent().parent().parent().attr('id') == 'nu__iamnav' && iamnavbgs.length > 0 && iamnavbgs[0] != ''){
+				$('div#nu__iamnav').attr('style','background-image: url('+iamnavbgs[a.index()]+');');
+			}
+
+			$('div.navigational > section > div > ul li').removeClass('active');
+			a.addClass('active');
+
+
+		}
 
 
 
 
     // this is the event listener for the user to press esc to close the menu panels
     $(document).keydown(function(e){
-      console.log(e);
+      // console.log(e);
         if(windowSize[1] >= sizeBreak && $('#nu__search-toggle').hasClass('active') === true || $('#nu__supernav-toggle').hasClass('active') === true || $('#nu__iamnav-toggle').hasClass('active') === true){
 
         if(e.which == 27){

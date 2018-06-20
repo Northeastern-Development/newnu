@@ -84,7 +84,7 @@
 
 			if(count($res) >= 1){
 
-				$return .= '<li title="'.$o.'"'.($jj==0?' class="active"':'').' role="menuitem" tabindex="-1">'.$o.'<ul role="menu" aria-hidden="true"><li>'.$o.'</li>';
+				$return .= '<li title="'.$o.'"'.($jj==0?' class="active"':'').' role="button" tabindex="-1">'.$o.'<ul role="menu" aria-hidden="true"><li>'.$o.'</li>';
 				foreach($res as $r){
 
 					$fields = get_fields($r->ID);
