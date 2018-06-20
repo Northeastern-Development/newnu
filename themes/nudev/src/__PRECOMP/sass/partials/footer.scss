@@ -179,7 +179,9 @@ footer{
       top: 0;
       right: 3vw;
       color: rgba($brand_colors-white,0.8);
-      &:hover{
+      &:hover,
+      &:focus,
+      &:active{
         cursor: pointer;
         color: rgba($brand_colors-white,1.0);
       }
@@ -248,7 +250,9 @@ footer{
                 & > a{
                   @include font-2l-l;
                   color: rgba($brand_colors-white,0.8);
-                  &:hover{
+                  &:hover,
+                  &:focus,
+                  &:active{
                     color: rgba($brand_colors-white,1.0);
                   }
                   & > svg{
@@ -266,7 +270,9 @@ footer{
                       fill: rgba($brand_colors-white,.6);
 
                     }
-                    &:hover {
+                    &:hover,
+                    &:focus,
+                    &:active{
                       &  .cls-1 {
                         fill: rgba($brand_colors-white,1.0);
 
@@ -297,7 +303,9 @@ footer{
          color: rgba($brand_colors-grayW,0.8);
          & > a{
            color: rgba($brand_colors-grayW,0.8);
-           &:hover{
+           &:hover,
+           &:focus,
+           &:active{
              color: rgba($brand_colors-white,1.0);
            }
          }
