@@ -4,6 +4,33 @@
  */
 
 
+
+ // this is for the cookie
+ div.cookiewarning{
+   display: none;
+   position: fixed;
+   z-index: 5000;
+   width: 50%;
+   height: auto;
+   background: rgba($brand_colors-black,1.0);
+   border: solid rgba($brand_colors-grayW,1.0) 1px;
+   bottom: -1px;
+   left: $gutter;
+   & > p{
+     margin: 10px 20px 10px 20px;
+     & a{
+       color: rgba($brand_colors-white,1.0)
+     }
+   }
+   & > button{  // need to connect a JS event to this click to save a cookie to prevent it appearing as well as fade this item off the screen
+     margin: 0 20px 10px 20px;
+     padding: 3px 5px 3px 5px;
+   }
+ }
+
+
+
+
 // the main footer element on every page
 // flows after content on all pages other than the homepage
 footer{
@@ -26,6 +53,16 @@ footer{
   & a{
     border-bottom: none;
   }
+
+
+
+
+
+
+
+
+
+
 
 
   // this is for pages that will include the pre-footer area
