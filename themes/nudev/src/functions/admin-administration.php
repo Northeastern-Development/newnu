@@ -90,6 +90,7 @@
         ,'External Affairs' => 'External Affairs'
         ,'Finance' => 'Finance'
         ,'General Counsel' => 'General Counsel'
+        ,'Lifelong Learning Network' => 'Lifelong Learning Network'
         ,'President' => 'President'
         ,'Professional Advancement Network' => 'Professional Advancement Network'
         ,'Provost' => 'Provost'

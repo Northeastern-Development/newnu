@@ -54,7 +54,7 @@
 				,$managerFields['title']
 				,$managerFields['description']
 				,(isset($d['phone']) && $d['phone'] != ''?'<a href="tel:'.$d['phone'].'" title="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$d['phone'].'</a><br />':'')
-				,(isset($d['link']) && $d['link'] != ''?'<a href="'.$d['link'].'" title="View '.strtolower($d['department']).' web site [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit Web Site</a><br />':'')
+				,(isset($d['link']) && $d['link'] != ''?'<a href="'.$d['link'].'" title="Visit '.strtolower($d['department']).' website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a><br />':'')
 				,($d['department'] != 'Strategy'?'<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Filter to show '.strtolower($d['department']).' team"><span>&#xE7EF;</span> View Leadership</a>':'')
 
 			);
@@ -91,7 +91,7 @@
 		$manager = query_posts($args);
 		$managerFields = get_fields($manager[0]->ID);
 
-		$guide = '<section class="nu__team"><article><div><p class="description">%s</p><p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /><a href="%s" title="View %s web site [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit %s Site</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
+		$guide = '<section class="nu__team"><article><div><p class="description">%s</p><p class="contact"><a href="tel:%s" title="Call %s"><span>&#xE0B0;</span>%s</a><br /><a href="%s" title="Visit website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
 
 		$department = sprintf(
 			$guide
@@ -101,8 +101,8 @@
 			,strtolower($dept[0]->post_title)
 			,$deptFields['phone']
 			,$deptFields['url']
-			,strtolower($dept[0]->post_title)
-			,'Web'
+			// ,strtolower($dept[0]->post_title)
+			// ,'Web'
 			,$managerFields['headshot']['url']
 			,$manager[0]->post_title
 			,$managerFields['title']
