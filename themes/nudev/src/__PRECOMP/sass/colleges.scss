@@ -82,41 +82,41 @@
    }
 
 
-   section.nu__bythenumbers{
-    & > h2{
-      @include font-6l-c;
-      border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
-      margin: 0 auto 0 auto;
-    }
-     & > ul{
-       height: auto;
-       display: flex;
-       flex-direction: row;
-       flex-wrap: wrap;
-       // margin: $gutter 0 0 0;
-       margin: ($gutter / 3) auto 0 auto;
-       & > li{
-         flex-grow: 1;
-         flex-basis: 30%;
-         min-height: 150px;
-         text-align: center;
-         margin: 0 $gutter 0 0;
-         padding: 0 $gutter 0 $gutter;
-         &:nth-child(3n+3){
-           margin: 0 0 0 0;
-         }
-         & > span{
-           @include font-9l-c;
-           color: rgba($brand_colors-red,1.0);
-           line-height:8.6rem;
-         }
-         & > p{
-           @include font-5l-c;
-           text-align: center;
-         }
-       }
-     }
-   }
+   // section.nu__bythenumbers{
+   //  & > h2{
+   //    @include font-6l-c;
+   //    border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
+   //    margin: 0 auto 0 auto;
+   //  }
+   //   & > ul{
+   //     height: auto;
+   //     display: flex;
+   //     flex-direction: row;
+   //     flex-wrap: wrap;
+   //     // margin: $gutter 0 0 0;
+   //     margin: ($gutter / 3) auto 0 auto;
+   //     & > li{
+   //       flex-grow: 1;
+   //       flex-basis: 30%;
+   //       min-height: 150px;
+   //       text-align: center;
+   //       margin: 0 $gutter 0 0;
+   //       padding: 0 $gutter 0 $gutter;
+   //       &:nth-child(3n+3){
+   //         margin: 0 0 0 0;
+   //       }
+   //       & > span{
+   //         @include font-9l-c;
+   //         color: rgba($brand_colors-red,1.0);
+   //         line-height:8.6rem;
+   //       }
+   //       & > p{
+   //         @include font-5l-c;
+   //         text-align: center;
+   //       }
+   //     }
+   //   }
+   // }
 
 }
 
@@ -135,21 +135,21 @@
       }
     }
 
-    section.nu__bythenumbers{
-     & > h2{
-       @include font-5l-c;
-     }
-      & > ul{
-        & > li{
-          & > span{
-            @include font-8l-c;
-          }
-          & > p{
-            @include font-3l-c;
-          }
-        }
-      }
-    }
+    // section.nu__bythenumbers{
+    //  & > h2{
+    //    @include font-5l-c;
+    //  }
+    //   & > ul{
+    //     & > li{
+    //       & > span{
+    //         @include font-8l-c;
+    //       }
+    //       & > p{
+    //         @include font-3l-c;
+    //       }
+    //     }
+    //   }
+    // }
   }
 
 }
@@ -192,23 +192,23 @@
     }
 
 
-    section.nu__bythenumbers{
-     & > h2{
-       @include font-3l-c;
-       width: $content-width-wide;
-     }
-      & > ul{
-        display: block;
-        & > li{
-          flex: none;
-          width: 100%;
-          min-height: inherit;
-          & > span{
-            //@include font-3l-c;
-          }
-        }
-      }
-    }
+    // section.nu__bythenumbers{
+    //  & > h2{
+    //    @include font-3l-c;
+    //    width: $content-width-wide;
+    //  }
+    //   & > ul{
+    //     display: block;
+    //     & > li{
+    //       flex: none;
+    //       width: 100%;
+    //       min-height: inherit;
+    //       & > span{
+    //         //@include font-3l-c;
+    //       }
+    //     }
+    //   }
+    // }
   }
 
 }
@@ -279,22 +279,22 @@
     // }
 
 
-    section.nu__bythenumbers{
-
-      & > ul{
-
-        & > li{
-
-          & > span{
-
-          }
-          & > p{
-
-            text-align: center;
-          }
-        }
-      }
-    }
+    // section.nu__bythenumbers{
+    //
+    //   & > ul{
+    //
+    //     & > li{
+    //
+    //       & > span{
+    //
+    //       }
+    //       & > p{
+    //
+    //         text-align: center;
+    //       }
+    //     }
+    //   }
+    // }
 
   }
 
@@ -367,22 +367,22 @@
         }
       }
     }
-    section.nu__bythenumbers{
-
-      & > ul{
-
-        & > li{
-          margin-bottom:10px;
-          & > span{
-
-          }
-          & > p{
-
-            text-align: center;
-          }
-        }
-      }
-    }
+    // section.nu__bythenumbers{
+    //
+    //   & > ul{
+    //
+    //     & > li{
+    //       margin-bottom:10px;
+    //       & > span{
+    //
+    //       }
+    //       & > p{
+    //
+    //         text-align: center;
+    //       }
+    //     }
+    //   }
+    // }
 
   }
 
