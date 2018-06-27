@@ -111,6 +111,9 @@ require_once(get_template_directory() . "/functions/rewrites.php");
 // set up specific theme support if required
 require_once(get_template_directory() . "/functions/themesupport.php");
 
+// set up custom shortcodes
+require_once(get_template_directory() . "/functions/shortcodes.php");
+
 // load navigation functions
 require_once(get_template_directory() . "/functions/navigation.php");
 
