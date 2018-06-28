@@ -41,9 +41,9 @@ var cNav = null;
 
 
     // gather up the background images for the iam nav categories
-    $.post("/wp-content/themes/nudev/src/iamnavbgs.php",function(data){
-			iamnavbgs = JSON.parse(data);
-		});
+    // $.post("/wp-content/themes/nudev/src/iamnavbgs.php",function(data){
+		// 	iamnavbgs = JSON.parse(data);
+		// });
 
 
 
@@ -194,9 +194,9 @@ var cNav = null;
 			a.find('ul li').attr('tabindex','1');
 
 			// if we are clicking on cats in the iamnav, we may need to swap the background image
-			if(a.parent().parent().parent().parent().attr('id') == 'nu__iamnav' && iamnavbgs.length > 0 && iamnavbgs[0] != ''){
-				$('div#nu__iamnav').attr('style','background-image: url('+iamnavbgs[a.index()]+');');
-			}
+			// if(a.parent().parent().parent().parent().attr('id') == 'nu__iamnav' && iamnavbgs.length > 0 && iamnavbgs[0] != ''){
+			// 	$('div#nu__iamnav').attr('style','background-image: url('+iamnavbgs[a.index()]+');');
+			// }
 
 			$('div.navigational > section > div > ul li').removeClass('active');
 			a.addClass('active');
