@@ -1,8 +1,8 @@
 <?php
   /*
-  * Plugin Name: NU Content
+  * Plugin Name: NU Global Content
   * Plugin URI: http://brand.northeastern.edu/wp/plugins/content
-  * Description: This plugin adds the ability to use specific shortcodes to pull in global university system content to your site.  ex: [nu-placeGlobalContent content="privacy-policy"]
+  * Description: This plugin adds the ability to use specific shortcodes to pull in global university system content to your site.  ex: [nu-placeglobalcontent content="post slug"]
   * Version: 1.0.0
   * Author: Northeastern University System
   * Author URI: http://www.northeastern.edu/externalaffairs/
@@ -22,7 +22,7 @@
   to request and receive glbal content back from the EDU API
 
   Inputs:
-  shortcode usage = [nu-placeglobalcontent content=""]
+  shortcode usage = [nu-placeglobalcontent content="post slug"]
 
   Outputs:
   HTML content
