@@ -1,67 +1,79 @@
 <?php
-/**
- * Plugin Name: NU Content
- * Plugin URI: http://brand.northeastern.edu/wp/plugins/content
- * Description: This plugin adds the ability to use specific shortcodes to pull in global university system content to your site.  ex: [placeGlobalContent content="privacy-policy"]
- * Version: 1.0.0
- * Author: Northeastern University System
- * Author URI: http://www.northeastern.edu/externalaffairs/
- * License: GPL2
- */
+  /*
+  * Plugin Name: NU Content
+  * Plugin URI: http://brand.northeastern.edu/wp/plugins/content
+  * Description: This plugin adds the ability to use specific shortcodes to pull in global university system content to your site.  ex: [nu-placeGlobalContent content="privacy-policy"]
+  * Version: 1.0.0
+  * Author: Northeastern University System
+  * Author URI: http://www.northeastern.edu/externalaffairs/
+  * License: GPL2
+  */
 
 
 
 
 
- /* ***********************************************************************
+  /* ***********************************************************************
 
- FUNCTION: placeGlobalContent
+  CLASS: NUGlobalContent
 
- Description
- This function will allow users to add a shortcode to their page content
- to request and receive glbal content back from the EDU API
+  Description
+  This function will allow users to add a shortcode to their page content
+  to request and receive glbal content back from the EDU API
 
- Inputs:
- shortcode usage = [placeGlobalContent content=""]
+  Inputs:
+  shortcode usage = [nu-placeglobalcontent content=""]
 
- Outputs:
- HTML content
+  Outputs:
+  HTML content
 
- *********************************************************************** */
- function placeGlobalContent($atts){
+  *********************************************************************** */
+  class NUGlobalContent{
 
-   // Attributes
-   $atts = shortcode_atts(
-     array(
-       'content' => ''
-     ),
-     $atts
-   );
+    // initialize the custom shortcode object
+    public function __construct(){
+      add_shortcode('nu-placeglobalcontent', array($this, 'shortcode'));
+    }
 
-   if($atts['content'] != ''){ // the shortcode has a content value to go and find
+    // handle the actual shortcode request for global content
+    public function shortcode($atts){
+      return $this->grabContent($this->attributes($atts)['content']);
+    }
 
+    // this method will actually go out and grab the requested content, if any
+    private function grabContent($a){
 
-     // grab the content from the main edu site
-     $url = 'https://www.northeastern.edu/resources/global-content/?r='.$atts['content'].'&cache=no'; // force no cache!!!!
-     $curl = curl_init($url);
-     curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-     $return = curl_exec($curl); // this sets the value to return the replace the shortcode
-     curl_close($curl);
+      if($a != ''){ // a content request was actually made, so let's go grab the content from source
 
+        $curl = curl_init('https://www.northeastern.edu/resources/global-content/?r='.$a.'&cache=no');
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+        $return = curl_exec($curl);
+        curl_close($curl);
 
-   }else{  // no content value was specified so we need to error
-     $return = 'ERROR: No content selected, please update your shortcode like this:<br /><br />[placeGlobalContent content="requested content"]';
-   }
+        unset($curl);
 
-   return $return;
+        return $return;
 
- }
- /* END FUNCTION ******************************************************** */
+        unset($return);
 
+      }else{  // no content was requested, so return a simple error
+        return 'ERROR: No content selected, please update your shortcode';
+      }
+    }
 
+    // this method will determine attributes being passed in and set default values if needed
+    private function attributes($a){
+      return shortcode_atts(
+        array(
+          'content' => ''
+        )
+        ,$a
+      );
+    }
+  }
 
+ $NU_globalContent = new NUGlobalContent(); // initialize a new global content object
 
-
- add_shortcode('placeGlobalContent','placeGlobalContent');
+ /* END CLASS *********************************************************** */
 
 ?>
