@@ -99,6 +99,31 @@ function responsive_background_images(){
 
 
 
+// this will help to control user access to specific custom post types and users
+function posts_for_current_author($query) {
+  global $pagenow;
+	global $typenow;
+
+	// we only want to restrict author access on certain post types
+	if($typenow == 'globalcontent'){
+
+    if( 'edit.php' != $pagenow || !$query->is_admin )
+        return $query;
+
+    if( !current_user_can( 'manage_options' ) ) {
+        global $user_ID;
+        $query->set('author', $user_ID );
+    }
+    return $query;
+	}
+}
+add_filter('pre_get_posts', 'posts_for_current_author');
+
+
+
+
+
+
 
 
 

@@ -23,6 +23,7 @@
     'has_archive' => false,
     'supports' => array(
       'title'
+      ,'author'
       // ,
       // 'editor'
       // ,
