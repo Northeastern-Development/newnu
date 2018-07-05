@@ -25,9 +25,11 @@
 
 		// echo "dfgjfghjfghjfghfg";
 
+		$prefooterBgColor = ($prefooterFields['background_color'] == ''?' bg_white':' bg_'.$prefooterFields['background_color']);
+
 		if(isset($prefooterFields['pre-footer_image_block']) && $prefooterFields['pre-footer_image_block'] != ''){		// image blocks: image, title, description
 
-			$return_prefooter .= '<div class="nu__prefooter imageblocks"><p>'.$prefooterFields['pre-footer_area_title'].'</p><div><ul>';
+			$return_prefooter .= '<div class="nu__prefooter imageblocks'.$prefooterBgColor.'"><p>'.$prefooterFields['pre-footer_area_title'].'</p><div><ul>';
 
 			$guide = '<li><a href="%s" title="%s"%s><div class="image"><div style="background-image: url(%s);"></div></div><h4>%s<span>&#xE8E4;</span></h4><p>%s</p></a></li>';
 

@@ -127,6 +127,14 @@ footer{
     background: rgba($brand_colors-white,1.0);
     width: $wrapper-width;
     margin: 0 0 0 0;
+
+
+    &.bg_tan{
+      background: rgba($brand_colors-beige,1.0);
+      padding: 20px 0 0 0;
+    }
+
+
     & > p{
       @include font-6l-c;
       color: rgba($brand_colors-black,1.0);
