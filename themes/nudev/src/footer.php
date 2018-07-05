@@ -5,7 +5,17 @@
 			<button>I understand and Accept</button>
 		</div>
 
-		<?php $prefooter = (get_field('use_pre-footer',get_the_ID(),false) == 1?true:false); ?>
+		<?php
+
+			// $prefooterPageId = (isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID());
+
+			global $forcePageID;
+
+			// echo 'FORCE PAGE ID: '.$forcePageID;
+
+			$prefooter = (get_field('use_pre-footer',(isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID()),false) == 1?true:false);
+
+		?>
 
 		<footer id="nu__global-footer" class="<?=($prefooter?'addprefooter ':'')?><?=(trim($_SERVER['REQUEST_URI']) === '/'?'collapse absolute':'')?>" <?=(trim($_SERVER['REQUEST_URI']) === '/'?'aria-hidden="true"':'')?>>
 

@@ -1,19 +1,15 @@
 <?php
 
-	$args = array(
-		"page_id" => get_the_ID()
-	);
+	$heroPageId = (isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID());
 
-	$res = query_posts($args);
+	$heroFields = get_fields($heroPageId);
 
-	$fields = get_fields($res[0]->ID);
+	$heroReturn = '';
 
-	$return = '';
-
-	if($fields['use_hero'] == 1){
-		$return .= '<section class="hero"><div><h2>'.$fields['title'].'</h2><h3>'.$fields['description'].'</h3></div></section>';
+	if($heroFields['use_hero'] == 1){
+		$heroReturn .= '<section class="hero"><div><h2>'.$heroFields['title'].'</h2><h3>'.$heroFields['description'].'</h3></div></section>';
 	}
 
-	echo $return;
+	echo $heroReturn;
 
 ?>

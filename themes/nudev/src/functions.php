@@ -6,6 +6,15 @@
 
 // require_once "modules/is-debug.php";
 
+
+
+
+	// let's declare some additional global variables that we may need to use to perform certain functions
+	global $forcePageID;
+
+
+
+
 /* **********************************************************************
 Load External Files
 ********************************************************************** */
