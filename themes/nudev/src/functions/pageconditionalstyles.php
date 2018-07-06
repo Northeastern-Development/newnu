@@ -20,11 +20,7 @@ function nudev_conditional_styles(){
   // }
 
 
-  // load 404 page styles
-  if(is_404()){
-    wp_register_style('404css', get_template_directory_uri() . '/css/404.css', array(), '1.0');
-    wp_enqueue_style('404css');
-  }
+
 
 
   // load homepage styles
@@ -89,6 +85,12 @@ function nudev_conditional_styles(){
   if(is_page_template('templates/template-trustees.php')){
     wp_register_style('trusteescss', get_template_directory_uri() . '/css/trustees.css', array(), '1.0');
     wp_enqueue_style('trusteescss');
+  }
+
+  // load 404 page styles
+  if(is_404()){
+    wp_register_style('404css', get_template_directory_uri() . '/css/404.css', array(), '1.0');
+    wp_enqueue_style('404css');
   }
 
 }

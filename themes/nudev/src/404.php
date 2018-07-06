@@ -30,20 +30,24 @@
 				echo '<section>'.$fields['main_title'].'</section>';
 			}
 
+			echo '<section>';
+
 			// this will show or hide the search bar if needed
 			if($fields['show_search'] && $fields['show_search'] == 1){
-				echo '<section><div class="nu__searchbar-container"><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><div><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><input type="text" name="query" id="query" value="" title="Enter your search query here" /><label for="query" class="label">Keep exploring</label><button class="reset" type="reset" title="Click here to clear current search">&#xE5C9;</button></div></form></div></section>';
+				echo '<div class="nu__searchbar-container"><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><div><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><input type="text" name="query" id="query" value="" title="Enter your search query here" /><label for="query" class="label">Keep exploring</label><button class="reset" type="reset" title="Click here to clear current search">&#xE5C9;</button></div></form></div>';
 			}
 
 			// this will show or hide the instructional content if needed
 			if($fields['instructions'] && $fields['instructions'] != ''){
-				echo '<section>'.$fields['instructions'].'</section>';
+				echo '<p>'.$fields['instructions'].'</p>';
 			}
+
+			echo '</section>';
 
 		?>
 
 
-		</section>
+		<!-- </section> -->
 	</div>
 
 <?php get_footer(); ?>

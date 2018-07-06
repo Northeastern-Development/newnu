@@ -122,6 +122,13 @@
   src: local("Lato Black Italic"), local("Lato-BlackItalic"), url("../.fonts/lato-v14-latin-900italic.eot?#iefix") format("embedded-opentype"), url("../.fonts/lato-v14-latin-900italic.woff2") format("woff2"), url("../.fonts/lato-v14-latin-900italic.woff") format("woff"), url("../.fonts/lato-v14-latin-900italic.ttf") format("truetype"), url("../.fonts/lato-v14-latin-900italic.svg#Lato") format("svg");
   /* Legacy iOS */ }
 
+div.main > section.hero {
+  margin: 0 auto 30px auto; }
+
+div.main > section:last-child {
+  margin: 0 auto 0 auto;
+  padding-bottom: 60px; }
+
 div.nu__searchbar-container {
   height: 100px; }
   div.nu__searchbar-container > form#nu__searchbar-form {
