@@ -2,28 +2,14 @@
 
 	wp_reset_query();
 
+	// $prefooterPageId = (isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID());
 
-
-	$prefooterPageId = (isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID());
-
-	// echo 'PAGE ID: '.$prefooterPageId;
-
-	// $heroFields = get_fields($heroPageId);
-
-
-
-	// $res = get_fields(get_the_ID());
-
-	$prefooterFields = get_fields($prefooterPageId);
-
-	// print_r($prefooterFields);
+	$prefooterFields = get_fields((isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID()));
 
 	$return_prefooter = '';
 
 
 	if($prefooterFields['use_pre-footer'] == 1){	// if the page is using the pre-footer option
-
-		// echo "dfgjfghjfghjfghfg";
 
 		$prefooterBgColor = ($prefooterFields['background_color'] == ''?' bg_white':' bg_'.$prefooterFields['background_color']);
 

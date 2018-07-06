@@ -1,8 +1,8 @@
 <?php
 
-	$heroPageId = (isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID());
+	// $heroPageId = (isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID());
 
-	$heroFields = get_fields($heroPageId);
+	$heroFields = get_fields((isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID()));
 
 	$heroReturn = '';
 

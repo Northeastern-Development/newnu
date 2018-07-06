@@ -136,7 +136,7 @@ div.nu__searchbar-container {
     text-align: left; }
     div.nu__searchbar-container > form#nu__searchbar-form > div {
       position: relative;
-      width: 100%;
+      width: 97%;
       margin: 0 auto 0 auto;
       display: flex;
       flex-direction: row;
@@ -168,6 +168,7 @@ div.nu__searchbar-container {
         line-height: 4.8rem;
         text-align: left;
         margin: 20px 0 0 0;
+        min-width: 50px;
         height: 50px;
         border: none;
         z-index: 1;
@@ -208,3 +209,29 @@ div.nu__searchbar-container {
         div.nu__searchbar-container > form#nu__searchbar-form > div > button:hover {
           cursor: pointer;
           color: #979797; }
+
+@media screen and (max-width: 1280px) {
+  div.nu__searchbar-container > form#nu__searchbar-form > div > label.label {
+    top: 30px;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    text-align: left;
+    font-weight: 300; }
+  div.nu__searchbar-container > form#nu__searchbar-form > div > input {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    text-align: left;
+    font-weight: 300; } }
+
+@media screen and (max-width: 959px) {
+  div.nu__searchbar-container > form#nu__searchbar-form > div > label.label {
+    top: 30px;
+    font-size: 2.0rem;
+    font-weight: 300;
+    line-height: 3.2rem;
+    text-align: left; }
+  div.nu__searchbar-container > form#nu__searchbar-form > div > input {
+    font-size: 2.0rem;
+    font-weight: 300;
+    line-height: 3.2rem;
+    text-align: left; } }

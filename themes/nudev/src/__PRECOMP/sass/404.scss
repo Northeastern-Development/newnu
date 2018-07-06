@@ -3,13 +3,13 @@
 @import "modules/mixins";
 @import "modules/fonts";
 
-div.main{
+div.main{  //override of main style to better fit this page case
   & > section.hero{
     margin: 0 auto $gutter auto;
   }
 }
 
-div.main{
+div.main{  //override of main style to better fit this page case
   & > section{
     &:last-child{
       margin: 0 auto 0 auto;
@@ -25,7 +25,7 @@ div.nu__searchbar-container{
     text-align: left;
     & > div{
       position: relative;
-      width: 100%;
+      width: 97%;
       margin: 0 auto 0 auto;
       display: flex;
       flex-direction: row;
@@ -52,6 +52,7 @@ div.nu__searchbar-container{
         flex: 1;
         @include font-6l-l;
         margin: 20px 0 0 0;
+        min-width: 50px;
         height: 50px;
         border: none;
         z-index: 1;
@@ -95,4 +96,180 @@ div.nu__searchbar-container{
       }
     }
   }
+}
+
+
+
+
+
+@media screen and (max-width: 1280px){
+
+  div.nu__searchbar-container{
+    // height: 100px;
+    & > form#nu__searchbar-form{
+      // margin: 0 0 0 0;
+      // text-align: left;
+      & > div{
+        // position: relative;
+        // width: 97%;
+        // margin: 0 auto 0 auto;
+        // display: flex;
+        // flex-direction: row;
+        // line-height: 0;
+        // border-bottom: solid rgba($brand_colors-black,1.0) 1px;
+        & > label{
+          &.label{
+            // position: absolute;
+            // left: 40px;
+            top: 30px;
+            // z-index: 0;
+            @include font-5l-l;
+            // color: rgba($brand_colors-black,1.0);
+            // text-transform: none;
+          }
+          // &.focus{
+          //   top: 5px;
+          //   left: 0;
+          //   @include font-1r-l;
+          //   color: rgba($brand_colors-grayW,1.0);
+          // }
+        }
+        & > input{
+          // flex: 1;
+          @include font-5l-l;
+          // margin: 20px 0 0 0;
+          // min-width: 50px;
+          // height: 50px;
+          // border: none;
+          // z-index: 1;
+          // background: transparent;
+          // color: rgba($brand_colors-black,1.0);
+          // outline: 0;
+          // -webkit-appearance: none;
+          // border-radius: 0;
+          // &:focus ~ .label{
+          //   top: 5px;
+          //   left: 0;
+          //   @include font-1r-l;
+          //   color: rgba($brand_colors-grayW,1.0);
+          // }
+          // &:focus ~ .reset{
+          //   color: rgba($brand_colors-black,1.0);
+          //   pointer-events: auto;
+          // }
+        }
+
+        // & > button{
+        //   background: none;
+        //   border: none;
+        //   width: 40px;
+        //   height: 50px;
+        //   @include font-4-c;
+        //   font-family: "Material Icons";
+        //   color: rgba($brand_colors-black,1.0);
+        //   margin: 20px 0 0 0;
+        //   &.reset{
+        //     @include font-4-c;
+        //   }
+        //   &.hidden{
+        //     color: rgba($brand_colors-white,0.0);
+        //     pointer-events: none;
+        //   }
+        //   &:hover{
+        //     cursor: pointer;
+        //       color: rgba($brand_colors-grayW,1.0);
+        //   }
+        // }
+      }
+    }
+  }
+
+}
+
+
+
+
+
+@media screen and (max-width: 959px){
+
+  div.nu__searchbar-container{
+    // height: 100px;
+    & > form#nu__searchbar-form{
+      // margin: 0 0 0 0;
+      // text-align: left;
+      & > div{
+        // position: relative;
+        // width: 97%;
+        // margin: 0 auto 0 auto;
+        // display: flex;
+        // flex-direction: row;
+        // line-height: 0;
+        // border-bottom: solid rgba($brand_colors-black,1.0) 1px;
+        & > label{
+          &.label{
+            // position: absolute;
+            // left: 40px;
+            top: 30px;
+            // z-index: 0;
+            @include font-3l-l;
+            // color: rgba($brand_colors-black,1.0);
+            // text-transform: none;
+          }
+          // &.focus{
+          //   top: 5px;
+          //   left: 0;
+          //   @include font-1r-l;
+          //   color: rgba($brand_colors-grayW,1.0);
+          // }
+        }
+        & > input{
+          // flex: 1;
+          @include font-3l-l;
+          // margin: 20px 0 0 0;
+          // min-width: 50px;
+          // height: 50px;
+          // border: none;
+          // z-index: 1;
+          // background: transparent;
+          // color: rgba($brand_colors-black,1.0);
+          // outline: 0;
+          // -webkit-appearance: none;
+          // border-radius: 0;
+          // &:focus ~ .label{
+          //   top: 5px;
+          //   left: 0;
+          //   @include font-1r-l;
+          //   color: rgba($brand_colors-grayW,1.0);
+          // }
+          // &:focus ~ .reset{
+          //   color: rgba($brand_colors-black,1.0);
+          //   pointer-events: auto;
+          // }
+        }
+
+        // & > button{
+        //   background: none;
+        //   border: none;
+        //   width: 40px;
+        //   height: 50px;
+        //   @include font-4-c;
+        //   font-family: "Material Icons";
+        //   color: rgba($brand_colors-black,1.0);
+        //   margin: 20px 0 0 0;
+        //   &.reset{
+        //     @include font-4-c;
+        //   }
+        //   &.hidden{
+        //     color: rgba($brand_colors-white,0.0);
+        //     pointer-events: none;
+        //   }
+        //   &:hover{
+        //     cursor: pointer;
+        //       color: rgba($brand_colors-grayW,1.0);
+        //   }
+        // }
+      }
+    }
+  }
+
 }
