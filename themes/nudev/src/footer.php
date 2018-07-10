@@ -10,11 +10,7 @@
 
 		<?php
 
-			// $prefooterPageId = (isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID());
-
-			global $forcePageID;
-
-			// echo 'FORCE PAGE ID: '.$forcePageID;
+			global $forcePageID;	// check to see if we are manually overriding the natural WP page ID
 
 			$prefooter = (get_field('use_pre-footer',(isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID()),false) == 1?true:false);
 
@@ -28,7 +24,6 @@
 
 			<?php
 				if($prefooter){
-					//get_template_part('loops/loop-prefooter');
 					include(locate_template('includes/prefooter.php'));
 				}
 			?>

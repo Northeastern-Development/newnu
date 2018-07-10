@@ -38,7 +38,7 @@
        border-bottom: solid rgba($brand_colors-white,1.0) 2px;
      }
    }
-   & > button{  // need to connect a JS event to this click to save a cookie to prevent it appearing as well as fade this item off the screen
+   & > button{
      height: 44px;
      @include font-2r-l;
      border: solid rgba($brand_colors-white,1.0) 1px;
@@ -409,7 +409,26 @@ footer{
 
 
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1280px){
+
+
+
+  div.cookiewarning{
+    & > div{
+      right: 20px;
+    }
+    & > h3{
+      @include font-3b-l;
+      margin: 20px 20px 0 20px;
+    }
+    & > p{
+      margin: 10px 20px 20px 20px;
+    }
+    & > button{
+      margin: 0 20px 20px 20px;
+    }
+  }
+
 
 
   footer{
@@ -648,6 +667,30 @@ footer{
 
 
 @media only screen and (max-width: 959px){
+
+
+
+
+  div.cookiewarning{
+    width: 100vw;
+    left: 0;
+    & > div{
+      right: 15px;
+      @include font-4-c;
+    }
+    & > h3{
+      margin: 20px 15px 0 15px;
+    }
+    & > p{
+      margin: 10px 15px 20px 15px;
+    }
+    & > button{
+      margin: 0 15px 20px 15px;
+    }
+  }
+
+
+
 
   footer{
 
