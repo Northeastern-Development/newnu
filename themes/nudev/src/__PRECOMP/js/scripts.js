@@ -83,13 +83,13 @@ function getWindowSize(){
 
 		// let's check to see if they have accepted the cookie window or not, and display it if they have not accepted
 		if(localStorage.getItem('acceptCookies') != 'true'){
-        // $(".cookiewarning").delay(1000).fadeIn(250);	// this is turned off until layout is created and approved
+        $(".cookiewarning").delay(1000).fadeIn(250);	// this is turned off until layout is created and approved
     }
 
 
 
 		// listen for the user to click on the accept and continue button for the cookies
-		$('.cookiewarning').on('click','button',function(e){	// the user has clicked on the accept button
+		$('.cookiewarning').on('click','.js__cookie-accept',function(e){	// the user has clicked on the accept button
 			localStorage.setItem('acceptCookies','true');	// set the cookie into localstorage that they agreed
 			$(".cookiewarning").fadeOut(250);
 		});
