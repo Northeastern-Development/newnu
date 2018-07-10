@@ -1,5 +1,6 @@
 		</div>
 
+
 		<div class="cookiewarning">
 			<div class="js__cookie-accept" title="Accept and Continue">&#xE14C;</div>
 			<h3>Cookies on Northeastern University web site</h3>
