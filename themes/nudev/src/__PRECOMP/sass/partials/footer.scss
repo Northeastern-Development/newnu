@@ -7,24 +7,50 @@
 
  // this is for the cookie
  div.cookiewarning{
-   display: none;
+   display: block;
    position: fixed;
    z-index: 5000;
-   width: 50%;
+   width: 64vw;
    height: auto;
-   background: rgba($brand_colors-black,1.0);
-   border: solid rgba($brand_colors-grayW,1.0) 1px;
+   background: rgba($brand_colors-redD,1.0);
    bottom: -1px;
-   left: $gutter;
+   left: 18vw;
+   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+   & > div{
+     position: absolute;
+     right: $gutter;
+     top: 20px;
+     @include font-7-c;
+     &:hover{
+       cursor: pointer;
+     }
+   }
+   & > h3{
+     @include font-5b-l;
+     margin: 20px $gutter 0 $gutter;
+   }
    & > p{
-     margin: 10px 20px 10px 20px;
+     @include font-2r-l;
+     margin: 10px $gutter 20px $gutter;
      & a{
-       color: rgba($brand_colors-white,1.0)
+       color: rgba($brand_colors-white,1.0);
+       border-bottom: solid rgba($brand_colors-white,1.0) 2px;
      }
    }
    & > button{  // need to connect a JS event to this click to save a cookie to prevent it appearing as well as fade this item off the screen
-     margin: 0 20px 10px 20px;
-     padding: 3px 5px 3px 5px;
+     height: 44px;
+     @include font-2r-l;
+     border: solid rgba($brand_colors-white,1.0) 1px;
+     background: none;
+     margin: 0 $gutter 20px $gutter;
+     padding: 0 15px 0 15px;
+     text-transform: uppercase;
+     color: rgba($brand_colors-white,1.0);
+     &:hover{
+       background: rgba($brand_colors-grayW,1.0);
+       cursor: pointer;
+     }
    }
  }
 
