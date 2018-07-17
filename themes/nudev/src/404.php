@@ -9,14 +9,9 @@
 	get_header();
 
 
-	// let's grab some specific content out of the admin area
-
-	// $globals['forcePageID'] = 2854; // this is the specific ID of the 404 error page in the admin editor that we want to use
-	// global $forcePageID;
-	$forcePageID = 2854;	// this is the specific ID of the 404 error page in the admin editor that we want to use
+	$forcePageID = get_page_by_path('error')->ID;	// specific ID of the 404 error page that we want to use
 
 	$fields = get_fields($forcePageID);
-	// print_r($fields);
 
 ?>
 
@@ -46,8 +41,6 @@
 
 		?>
 
-
-		<!-- </section> -->
 	</div>
 
 <?php get_footer(); ?>
