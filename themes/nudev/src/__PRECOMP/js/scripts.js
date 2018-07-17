@@ -83,7 +83,7 @@ function getWindowSize(){
 
 		// let's check to see if they have accepted the cookie window or not, and display it if they have not accepted
 		if(localStorage.getItem('acceptCookies') != 'true'){
-        $(".cookiewarning").delay(1000).fadeIn(250);	// this is turned off until layout is created and approved
+        // $(".cookiewarning").delay(1000).fadeIn(250);	// this is turned off until layout is created and approved
     }
 
 
@@ -325,7 +325,7 @@ function getWindowSize(){
 		}
 
 		// if we are NOT on the homepage, kick off a filter check right away
-		if(!$('body').hasClass('home') && $('.nu__filters').length){
+		if(!$('body').hasClass('home') && $('.nu__filters').length > 0){
 			filterNavCheck();
 		}
 
@@ -341,7 +341,7 @@ function getWindowSize(){
 			getWindowSize();	// check the window size
 
 			// if we are NOT on the homepage, kick off a filter check
-			if(!$('body').hasClass('home') && $('.nu__filters').length){
+			if(!$('body').hasClass('home') && $('.nu__filters').length > 0){
 				filterNavCheck();	// check to see what needs to be shown and what is overflow for filters
 				hideMoreFilters();	// hide the additional filters if they are visible
 			}

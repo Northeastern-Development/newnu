@@ -2,7 +2,7 @@
 
 	wp_reset_query();
 
-	$return = '<ul>';
+	$return = '<h4>Members</h4><ul>';
 
 	$args = array(
 		"post_type" => "corporation"
