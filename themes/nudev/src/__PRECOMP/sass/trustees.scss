@@ -27,6 +27,10 @@ div.main{
 
   section.nu__board-trustees{
 
+    & > h4{
+      text-align: center;
+    }
+
     width: $content-width-wide;
 
     & > ul{
