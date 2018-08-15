@@ -9,12 +9,11 @@
 
 ?>
 
-	<main id="nu__static" role="main" aria-label="content">
+	<div class="main" id="nu__static" role="main" aria-label="content">
 
 		<section class="hero">
 			<div>
 				<h2>University Updates</h2>
-		
 			</div>
 		</section>
 
@@ -31,5 +30,5 @@
 			<a href="<?=get_home_url().'/emergency-information'?>" title="Click here for more emergency information">Click here for more emergency information</a>
 		</section>
 
-	</main>
+	</div>
 <?php get_footer(); ?>

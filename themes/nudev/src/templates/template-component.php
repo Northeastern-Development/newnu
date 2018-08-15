@@ -3,19 +3,27 @@
    * Template Name: Shared Component
    */
 
-  if($_GET['return'] === 'main-menu'){
+  if(isset($_GET['return']) && $_GET['return'] != ''){
 
-    $returnType = 'return';
+    if($_GET['return'] === 'main-menu'){
 
-    $menu = include(get_template_directory().'/loops/loop-supernav.php');
+      $returnType = 'return';
 
-    echo '<div id="nu__utility-nav"><a href="//northeastern.edu" title="Northeastern University"><img src="/wp-content/uploads/seal.jpg" alt="northeastern university seal" /></a><div id="nu__mainmenu-supernav"><input id="nu__supernav-toggle" type="checkbox" title="Click to show/hide main menu" /><label for="nu__supernav-toggle"id="nu__supernav-toggle-label"></label>'.$menu.'</div></div>';
-  }else if($_GET['return'] === 'footer'){
+      $menu = include(get_template_directory().'/loops/loop-supernav.php');
+      $url  = site_url();
 
-    include(get_template_directory().'/footer.php');
+      echo '<div id="nu__utility-nav"><a href="https://www.northeastern.edu" title="Northeastern University" target="_blank"><img src="'.$url.'/wp-content/uploads/global-logo.png" alt="northeastern university seal" /></a><div id="nu__mainmenu-supernav"><a id="nu__supernav-toggle" href="main-menu" title="Click to show/hide explore northeastern menu" tabindex="3" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="Menu">EXPLORE NORTHEASTERN</a>'.$menu.'</div></div>';
 
-  }else{ // held for future use
-    //echo 'this will provide a shared component to the calling page';
+    }else if($_GET['return'] === 'footer'){
+
+      include(get_template_directory().'/footer.php');
+
+    }else if($_GET['return'] === 'alerts'){
+      echo getAlerts();
+    }
+
+  }else{
+    echo 'ERROR: invalid component request';
   }
 
 ?>

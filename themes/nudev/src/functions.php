@@ -577,7 +577,7 @@ add_action('admin_menu', 'df_disable_comments_admin_menu');
 add_action('admin_init', 'df_disable_comments_post_types_support');
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 add_action('admin_footer','posts_status_color');
-add_action ( 'manage_nualerts_posts_custom_column', 'nualerts_custom_column', 10, 2 );
+// add_action ( 'manage_nualerts_posts_custom_column', 'nualerts_custom_column', 10, 2 );
 
 
 // Remove Actions
@@ -625,7 +625,7 @@ add_filter('pings_open', 'df_disable_comments_status', 20, 2);
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 add_filter( 'acf_the_content', 'wp_make_content_images_responsive' );
-add_filter ( 'manage_nualerts_posts_columns', 'add_nualerts_acf_columns' );
+// add_filter ( 'manage_nualerts_posts_columns', 'add_nualerts_acf_columns' );
 
 
 // Remove Filters
