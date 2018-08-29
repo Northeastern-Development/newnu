@@ -7,6 +7,15 @@
 
 	get_header();
 
+	// wp_reset_query();
+
+	// print_r($wp_query->query_vars);
+	//
+	// $fChk = $wp_query->query_vars['hptesting'];
+	// $filter = (isset($fChk) && $fChk != ''?$fChk:'');
+	// echo 'FILTER = '.$filter;
+	// die();
+
 ?>
 
 	<div id="nu__homepage" role="main" aria-label="content" class="main smooth">

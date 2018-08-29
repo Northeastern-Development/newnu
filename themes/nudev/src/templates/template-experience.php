@@ -4,6 +4,15 @@
 
 	get_header();
 
+	// wp_reset_query();
+
+	// print_r($wp_query->query_vars);
+	//
+	// $fChk = $wp_query->query_vars['seantesting'];
+	// $filter = (isset($fChk) && $fChk != ''?$fChk:'');
+	// echo 'FILTER = '.$filter;
+	// die();
+
 ?>
 
 	<div class="main" role="main" aria-label="content">
