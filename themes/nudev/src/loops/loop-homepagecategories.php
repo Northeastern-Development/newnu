@@ -12,8 +12,6 @@
 
 	$stories = $fields['top_story_blocks'];
 
-	// $content = "";
-
 	$return = '';
 
 	$categoryItems = array(
@@ -51,34 +49,21 @@
 		}
 
 		// this will build out the category options
-		// print_r($categoryItems[strtolower($stories[$i]['block_slide'][0]['block_slide_title'])]);
 		$options = '';
-		// echo $stories[$i]['block_slide'][0]['block_slide_title'];
 		foreach($categoryItems[strtolower($stories[$i]['block_slide'][0]['block_slide_title'])] as $cI){
-			// print_r($cI);
 			$options .= '<li><a href="'.$cI[1].'" title="'.$cI[0].'" target="_blank">'.$cI[0].'</a></li>';
 		}
 
 
 			$return .= sprintf(
 				$guide
-				// ,($i - 1)
 				,$stories[$i]['block_slide'][0]['block_slide_link']
 				,$stories[$i]['block_slide'][0]['block_slide_title']
 				,($stories[$i]['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
 				,($stories[$i]['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
 				,'background-image: url('.$thisImage.');'
-				//,'background-color: '.$stories[$i]['block_slide'][0]['block_slide_background'].'; '
-				// ,''
-				// ,$stories[$i]['block_slide'][0]['block_slide_link']
-				// ,($stories[$i]['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
-				// ,($stories[$i]['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
-				// ,$stories[$i]['block_slide'][0]['block_slide_title']
-				// ,$stories[$i]['block_slide'][0]['block_slide_description']
 				,$stories[$i]['block_slide'][0]['block_slide_title']
 				,$options
-				// ,(isset($stories[$i]['block_overlay_logo']) && $stories[$i]['block_overlay_logo'] != ''?'<div class="nu__overlay-logo"><img src="'.$stories[$i]['block_overlay_logo']['url'].'" alt="overlay logo for '.$stories[$i]['block_slide'][0]['block_slide_title'].'" /></div>':'')
-				// ,''
 			);
 
 	}
