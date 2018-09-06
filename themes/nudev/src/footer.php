@@ -23,7 +23,7 @@
 
 
 			<?php
-				if($prefooter){
+				if($prefooter && !is_page_template('templates/template-homepage.php')){
 					include(locate_template('includes/prefooter.php'));
 				}
 			?>
@@ -34,8 +34,8 @@
 
 
 
-				<div class="nu__footer-hideshow js_footer-hideshow" title="Click to show/hide the footer"></div>
-				<a href="/privacy-information" title="Privacy information" aria-label="Privacy information">Privacy</a>
+				<!-- <div class="nu__footer-hideshow js_footer-hideshow" title="Click to show/hide the footer"></div>
+				<a href="/privacy-information" title="Privacy information" aria-label="Privacy information">Privacy</a> -->
 				<div>
 
 					<?php get_template_part('loops/loop-footercampuses'); ?>

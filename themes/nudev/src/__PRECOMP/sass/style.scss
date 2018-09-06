@@ -71,12 +71,12 @@ p{
 /* Styles for the main content */
 div.main{
   margin: 0 auto 0 auto;
-  $h: 100%;
-  min-height: calc(#{$h} - #{$header-height});
-  min-height: -moz-calc(#{$h} - #{$header-height});
-  min-height: -webkit-calc(#{$h} - #{$header-height});
-  min-height: -ms-calc(#{$h} - #{$header-height});
-  height: 100%;
+  // $h: 100%;
+  // min-height: calc(#{$h} - #{$header-height});
+  // min-height: -moz-calc(#{$h} - #{$header-height});
+  // min-height: -webkit-calc(#{$h} - #{$header-height});
+  // min-height: -ms-calc(#{$h} - #{$header-height});
+  // height: 100%;
   width: $content-width;
   & > section{
     position: relative;

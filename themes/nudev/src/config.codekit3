@@ -471,6 +471,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/__PRECOMP\/js\/~homepage.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/js\/~homepage-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/__PRECOMP\/sass\/404.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -754,6 +764,45 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/__PRECOMP\/sass\/partials\/~footer.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/partials\/~footer.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/partials\/~header.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/partials\/~header.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/partials\/~nav.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/partials\/~nav.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/__PRECOMP\/sass\/search.css": {
 		"aP": 1,
 		"bl": 0,
@@ -835,6 +884,29 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/__PRECOMP\/sass\/utilitynav.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/__PRECOMP\/sass\/~homepage.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/~homepage-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/__PRECOMP\/sass\/~homepage.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/__PRECOMP\/sass\/~homepage.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -2019,6 +2091,27 @@
 		"oAP": "\/loops\/loop-footercampuses.php",
 		"oF": 0
 		},
+	"\/loops\/loop-homepagecategories.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-homepagecategories.php",
+		"oF": 0
+		},
+	"\/loops\/loop-homepagemisc.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-homepagemisc.php",
+		"oF": 0
+		},
+	"\/loops\/loop-homepagenews.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-homepagenews.php",
+		"oF": 0
+		},
 	"\/loops\/loop-homepagestories.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2103,6 +2196,13 @@
 		"oAP": "\/loops\/loop.php",
 		"oF": 0
 		},
+	"\/loops\/~loop-homepagestories.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/~loop-homepagestories.php",
+		"oF": 0
+		},
 	"\/modules\/is-debug.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2185,6 +2285,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/tag.php",
+		"oF": 0
+		},
+	"\/templates\/old-template-homepage.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/old-template-homepage.php",
 		"oF": 0
 		},
 	"\/templates\/rss\/rss-administration.php": {

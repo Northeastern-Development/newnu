@@ -66,7 +66,7 @@
 
 
     // the following handles clicking next and previous arrows within a rotator
-    $('article.nu__block-rotator').on("click",".rotate",function(e){
+    $('div.nu__block-rotator').on("click",".rotate",function(e){
       var elem = $(this).parent().parent().parent();
       var id = elem.attr('data-rotatorid');
       var sCount = parseInt(elem.attr('data-slidemax'));
@@ -79,13 +79,11 @@
 
       // this will actually perform the content swapping for the inner rotators
       function contentSwap(a){
-				// console.log(rotators);
         elem.find('div.bgimage,h2,div.nu__overlay-logo').fadeOut(150,function(){	// fade out the rotator content
           elem.attr('data-cslide',a);	// set the new value of the current slide
-					elem.attr('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
+					elem.find('div.bgimage > div').attr('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
           elem.find('a').attr('href',rotators[id][a][1]);	// change the link
           elem.find('a').attr('target',rotators[id][a][5]);	// change the link target style (local or external)
-					elem.find('p').html(rotators[id][a][3]);	// change the link target style (local or external)
           elem.find('h2').html('<span>'+rotators[id][a][2]+'</span>');	// change the title of the slide
 					elem.find('div.nu__overlay-logo').html('');
 					if(rotators[id][a][4] && rotators[id][a][4] != ''){// swap the overlay logo if we have one otherwise empty
@@ -103,155 +101,155 @@
 
     // this will activate the left and right arrows to control the slider on the homepage if in debug mode
     // hidden by default, only appears if JS enabled
-    if(debug){
-      if (windowSize[1] >= sizeBreak){
-        $('#next').fadeIn(200);
-      }else {
-        $('#next').fadeOut(200);
-      }
-    }
+    // if(debug){
+    //   if (windowSize[1] >= sizeBreak){
+    //     $('#next').fadeIn(200);
+    //   }else {
+    //     $('#next').fadeOut(200);
+    //   }
+    // }
 
 
 
 
 
     // this will handle to peekaboo footer
-    $('div.nu__footer').on('click','.js_footer-hideshow',function(e){
-      if($('footer#nu__global-footer').hasClass('collapse')){
-        $('footer#nu__global-footer').removeClass('collapse');
-      }else{
-        $('footer#nu__global-footer').addClass('collapse');
-      }
-    });
+    // $('div.nu__footer').on('click','.js_footer-hideshow',function(e){
+    //   if($('footer#nu__global-footer').hasClass('collapse')){
+    //     $('footer#nu__global-footer').removeClass('collapse');
+    //   }else{
+    //     $('footer#nu__global-footer').addClass('collapse');
+    //   }
+    // });
 
 
 
 
 
     // this is the event listener for mousewheel only on the homepage for the slider
-    $("body").on('mousewheel', { mousewheel: { behavior: 'debounce', delay: 5 } }, function(event,delta){
-      // if (windowSize[1] >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false && event.deltaX == 0){
-			if (windowSize[1] >= sizeBreak && !inMotion && $('#nu__search-toggle').hasClass('active') === false && $('#nu__supernav-toggle').hasClass('active') === false && $('#nu__iamnav-toggle').hasClass('active') === false && event.deltaX == 0){
-        if (event.deltaY <= (isSafari?-1:-15) && currentPanel < 2){
-          event.preventDefault();
-          slidePanels('Left');
-          inMotion = true;
-        }else if (event.deltaY >= (isSafari?1:15) && currentPanel != 0){
-          event.preventDefault();
-          slidePanels('Right');
-          inMotion = true;
-        }
-      }
-    });
+    // $("body").on('mousewheel', { mousewheel: { behavior: 'debounce', delay: 5 } }, function(event,delta){
+    //   // if (windowSize[1] >= sizeBreak && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false && event.deltaX == 0){
+		// 	if (windowSize[1] >= sizeBreak && !inMotion && $('#nu__search-toggle').hasClass('active') === false && $('#nu__supernav-toggle').hasClass('active') === false && $('#nu__iamnav-toggle').hasClass('active') === false && event.deltaX == 0){
+    //     if (event.deltaY <= (isSafari?-1:-15) && currentPanel < 2){
+    //       event.preventDefault();
+    //       slidePanels('Left');
+    //       inMotion = true;
+    //     }else if (event.deltaY >= (isSafari?1:15) && currentPanel != 0){
+    //       event.preventDefault();
+    //       slidePanels('Right');
+    //       inMotion = true;
+    //     }
+    //   }
+    // });
 
 
 
 
 
     // this is the event listener for the next and previous arrows for the slider
-    $('body').on("click","#prev,#next",function(e){
-			// console.log('fghjfghkgj');
-      // if(windowSize[1] >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
-			if(windowSize[1] >= sizeBreak  && !inMotion && $('#nu__search-toggle').hasClass('active') === false && $('#nu__supernav-toggle').hasClass('active') === false && $('#nu__iamnav-toggle').hasClass('active') === false){
-        inMotion = true;
-        if($(this).attr('id') == 'next'){
-          slidePanels('Left');
-        }else{
-          slidePanels('Right');
-        }
-      }
-    });
+    // $('body').on("click","#prev,#next",function(e){
+		// 	// console.log('fghjfghkgj');
+    //   // if(windowSize[1] >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+		// 	if(windowSize[1] >= sizeBreak  && !inMotion && $('#nu__search-toggle').hasClass('active') === false && $('#nu__supernav-toggle').hasClass('active') === false && $('#nu__iamnav-toggle').hasClass('active') === false){
+    //     inMotion = true;
+    //     if($(this).attr('id') == 'next'){
+    //       slidePanels('Left');
+    //     }else{
+    //       slidePanels('Right');
+    //     }
+    //   }
+    // });
 
 
 
 
 
     // this is the event listener for the arrow keys for the slider
-    $(document).keydown(function(e){
-        // if(windowSize[1] >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
-				if(windowSize[1] >= sizeBreak  && !inMotion && $('#nu__search-toggle').hasClass('active') === false && $('#nu__supernav-toggle').hasClass('active') === false && $('#nu__iamnav-toggle').hasClass('active') === false){
-        switch (e.which){
-          case 37:		// left arrow key
-          case 38:    //up arrow key
-            slidePanels('Right');
-            break;
-          case 39:    //right arrow key
-          case 40:    //bottom arrow key
-            slidePanels('Left');
-            break;
-        }
-      }
-    });
+    // $(document).keydown(function(e){
+    //     // if(windowSize[1] >= sizeBreak  && !inMotion && $('input#nu__search-toggle').prop('checked') === false && $('input#nu__supernav-toggle').prop('checked') === false && $('input#nu__iamnav-toggle').prop('checked') === false){
+		// 		if(windowSize[1] >= sizeBreak  && !inMotion && $('#nu__search-toggle').hasClass('active') === false && $('#nu__supernav-toggle').hasClass('active') === false && $('#nu__iamnav-toggle').hasClass('active') === false){
+    //     switch (e.which){
+    //       case 37:		// left arrow key
+    //       case 38:    //up arrow key
+    //         slidePanels('Right');
+    //         break;
+    //       case 39:    //right arrow key
+    //       case 40:    //bottom arrow key
+    //         slidePanels('Left');
+    //         break;
+    //     }
+    //   }
+    // });
 
 
 
 
 
     // this will handle the swiping left and right to control the slider, uses hammer js
-    mc.on("swipeleft", function(ev) {
-      inMotion = true;
-      slidePanels('Left');
-    });
-
-    mc.on("swiperight", function(ev) {
-      inMotion = true;
-      slidePanels('Right');
-    });
+    // mc.on("swipeleft", function(ev) {
+    //   inMotion = true;
+    //   slidePanels('Left');
+    // });
+		//
+    // mc.on("swiperight", function(ev) {
+    //   inMotion = true;
+    //   slidePanels('Right');
+    // });
 
 
 
 
 
     // this will handle the actual slide event for the panels on the homepage
-    function slidePanels(a){
-      if (windowSize[1] >= sizeBreak){
-
-        // check to see if we need to collapse the footer
-        if(!$('footer#nu__global-footer').hasClass('collapse')){
-          $('footer#nu__global-footer').addClass('collapse');
-        }
-
-        var e = '#nu__stories';
-
-        $(e).css({'pointer-events':'none'});//disables hover of tiles until animation to the next screen stops
-        if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
-          offset += windowWidth;
-          currentPanel++;
-          if(debug){
-            if(currentPanel == panelCount -1){
-							$("#next").fadeOut(250);
-            }else{
-							$("#next").fadeIn(250);
-              $("#prev").fadeIn(250);
-            }
-          }
-          runTween(offset);
-        }else if (a === 'Right' && currentPanel > 0){//this moves the panels to the left
-          offset -= windowWidth
-          currentPanel--;
-          if(debug){
-            if(currentPanel == panelCount -1){
-							$("#next").fadeIn(250);
-            }else if(currentPanel == 0){
-							$("#prev").fadeOut(250);
-              $("#next").fadeIn(250);
-            }else {
-							$("#next").fadeIn(250);
-            }
-          }
-          runTween(offset);
-        }
-
-        function runTween(a){
-          TweenLite.to(e,1.5,{ease:Power3.easeOut,marginLeft:a,onComplete:slideDone});
-          function slideDone(){
-              inMotion = false;
-              $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
-          }
-        }
-
-      }
-    }
+    // function slidePanels(a){
+    //   if (windowSize[1] >= sizeBreak){
+		//
+    //     // check to see if we need to collapse the footer
+    //     if(!$('footer#nu__global-footer').hasClass('collapse')){
+    //       $('footer#nu__global-footer').addClass('collapse');
+    //     }
+		//
+    //     var e = '#nu__stories';
+		//
+    //     $(e).css({'pointer-events':'none'});//disables hover of tiles until animation to the next screen stops
+    //     if(a === 'Left' && currentPanel < panelCount -1){//this moves the panels to the right
+    //       offset += windowWidth;
+    //       currentPanel++;
+    //       if(debug){
+    //         if(currentPanel == panelCount -1){
+		// 					$("#next").fadeOut(250);
+    //         }else{
+		// 					$("#next").fadeIn(250);
+    //           $("#prev").fadeIn(250);
+    //         }
+    //       }
+    //       runTween(offset);
+    //     }else if (a === 'Right' && currentPanel > 0){//this moves the panels to the left
+    //       offset -= windowWidth
+    //       currentPanel--;
+    //       if(debug){
+    //         if(currentPanel == panelCount -1){
+		// 					$("#next").fadeIn(250);
+    //         }else if(currentPanel == 0){
+		// 					$("#prev").fadeOut(250);
+    //           $("#next").fadeIn(250);
+    //         }else {
+		// 					$("#next").fadeIn(250);
+    //         }
+    //       }
+    //       runTween(offset);
+    //     }
+		//
+    //     function runTween(a){
+    //       TweenLite.to(e,1.5,{ease:Power3.easeOut,marginLeft:a,onComplete:slideDone});
+    //       function slideDone(){
+    //           inMotion = false;
+    //           $(e).css({'pointer-events':'auto'});//enables hover of tiles until animation to the next screen stops
+    //       }
+    //     }
+		//
+    //   }
+    // }
 
 
 
@@ -259,45 +257,45 @@
 		$(window).on("resize",function(){
 
 			// if alerts are showing we need to account for that in the content area of the homepage
-			if(parseInt($('#nu__alerts').height()) > 0){
-
-				var hpHeight = parseInt($(window).height()) - parseInt($('header').outerHeight()) - parseInt($('footer').height());
-				$('#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
-
-			}
+			// if(parseInt($('#nu__alerts').height()) > 0){
+			//
+			// 	var hpHeight = parseInt($(window).height()) - parseInt($('header').outerHeight()) - parseInt($('footer').height());
+			// 	$('#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
+			//
+			// }
 
 
 			// if we are below the size break, we will just stack
-			if(windowSize[1] < sizeBreak){
-				$('#nu__stories').css({'margin-left':'0'});
-				currentPanel = 0;
-				offset = 0;
-
-				// hide the next and previous arrows for the slider on the homepage as the content has stacked
-				$('#next,#prev').fadeOut(200);
-
-			}else{	// we have gone above the break size, reset the next and previous arrows if not already visible
-				if($('#next').css('display') == 'none'){
-					$('#next').fadeIn(200);
-				}
-			}
+			// if(windowSize[1] < sizeBreak){
+			// 	$('#nu__stories').css({'margin-left':'0'});
+			// 	currentPanel = 0;
+			// 	offset = 0;
+			//
+			// 	// hide the next and previous arrows for the slider on the homepage as the content has stacked
+			// 	$('#next,#prev').fadeOut(200);
+			//
+			// }else{	// we have gone above the break size, reset the next and previous arrows if not already visible
+			// 	if($('#next').css('display') == 'none'){
+			// 		$('#next').fadeIn(200);
+			// 	}
+			// }
 
 
 
 			// we need to reset the panel sizes on resize to ensure that things slide back and forth correctly
-			var newWidth = windowSize[1] * -1;
-
-			var wDiff = (windowWidth - newWidth);
-
-			if(currentPanel > 0){
-
-				var newOffset = (offset - (wDiff * currentPanel));
-
-				$('#nu__stories').css({"margin-left":newOffset});
-				offset = newOffset;
-			}
-
-			windowWidth = newWidth;
+			// var newWidth = windowSize[1] * -1;
+			//
+			// var wDiff = (windowWidth - newWidth);
+			//
+			// if(currentPanel > 0){
+			//
+			// 	var newOffset = (offset - (wDiff * currentPanel));
+			//
+			// 	$('#nu__stories').css({"margin-left":newOffset});
+			// 	offset = newOffset;
+			// }
+			//
+			// windowWidth = newWidth;
 
 		});
 

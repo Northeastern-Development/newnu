@@ -5,6 +5,8 @@ Page Conditional Styling
 ********************************************************************** */
 function nudev_conditional_styles(){
 
+  // echo get_page_template();
+
   // load the base styles if we are NOT in an admin page
   if(!is_admin()){
     wp_register_style('nudevcss', get_template_directory_uri() . '/css/style.css', array(), '1.0');

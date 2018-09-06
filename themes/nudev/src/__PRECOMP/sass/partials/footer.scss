@@ -4,7 +4,6 @@
  */
 
 
-
  // this is for the cookie
  div.cookiewarning{
    display: none;
@@ -57,6 +56,114 @@
 
 
 
+
+ // this defines the space for the pre-footer on pages that include it
+ div.nu__prefooter{
+   height: auto;
+   background: rgba($brand_colors-white,1.0);
+   width: $wrapper-width;
+   margin: 0 0 0 0;
+
+
+   &.bg_tan{
+     background: rgba($brand_colors-beige,1.0);
+     padding: 20px 0 0 0;
+   }
+
+
+   & > p{
+     @include font-6l-c;
+     color: rgba($brand_colors-black,1.0);
+     margin: 0 auto 20px auto;
+     width: $content-width-wide;
+   }
+
+   & > div{
+     width: $content-width-wide;
+     height: inherit;
+     margin: 0 auto 0 auto;
+     // background: yellow;
+     & > ul{
+       display: flex;
+       flex-wrap: nowrap;
+       flex-direction: row;
+       list-style: none;
+       list-style-type: none;
+       & > li{
+         flex-grow: 1;
+         flex: 1;
+         min-height: 200px;
+         margin: 0 $gutter $gutter 0;
+         // background: green;
+         &:last-child{
+           margin: 0 0 ($gutter * 2) 0;
+         }
+         & > a{
+           display: block;
+           width: 100%;
+           height: 100%;
+           border-bottom: none;
+           &:hover{
+             color: rgba($brand_colors-black,1.0);
+             & > div.image > div{
+               @include block-item-hover;
+
+             }
+             & > h4{
+               @include action-arrow-shown;
+             }
+           }
+           & > div.image{
+             height: 245px;
+             margin: 0 0 10px 0;
+             @include block-group;
+             & > div{
+               @include block-item-default;
+             }
+           }
+           & > h4{
+             @include font-3b-l;
+             width: 90%;
+
+             @include action-arrow;
+             @include action-arrow-hidden;
+             margin-bottom:3px;
+           }
+           & > p{
+             @include font-2r-l;
+           }
+         }
+       }
+     }
+   }
+   &.statblocks{
+     & > p{
+       border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
+     }
+     & > div{
+       & > ul{
+         & > li{
+           text-align: center;
+           color: rgba($brand_colors-black,1.0);
+           padding: 0 $gutter 0 $gutter;
+           & > span{
+             @include font-9l-c;
+             color: rgba($brand_colors-red,1.0);
+             line-height:8.6rem;
+           }
+           & > p{
+             @include font-5l-c;
+             text-align: center;
+           }
+         }
+       }
+     }
+   }
+ }
+
+
+
+
 // the main footer element on every page
 // flows after content on all pages other than the homepage
 footer{
@@ -99,156 +206,156 @@ footer{
 
 
 
-  &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
-    position: absolute;
-    bottom: 0;
-    z-index: 0;
-    height: 250px;
-    background-size: 210px;
-    z-index:500;
-    & > div.nu__footer{
-      & > div.nu__footer-hideshow{
-        border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
-        display: block;
-        &:before{
-          content: '\E313';
-        }
-        &:hover{
-          cursor: pointer;
-          color: rgba($brand_colors-white,1.0);
-        }
-      }
-    }
-  }
+  // &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
+  //   position: absolute;
+  //   bottom: 0;
+  //   z-index: 0;
+  //   height: 250px;
+  //   background-size: 210px;
+  //   z-index:500;
+  //   & > div.nu__footer{
+  //     & > div.nu__footer-hideshow{
+  //       border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
+  //       display: block;
+  //       &:before{
+  //         content: '\E313';
+  //       }
+  //       &:hover{
+  //         cursor: pointer;
+  //         color: rgba($brand_colors-white,1.0);
+  //       }
+  //     }
+  //   }
+  // }
 
 
-   &.collapse{  // this is the closed state of the footer on the homepage only!
-     height: $footer-height-collapsed;
-     overflow: hidden;
-     background-size: 0px;
-     & > div.nu__footer{
-       padding: 0 0 0 0;
-       height: inherit;
-       & > a{
-         display: block;
-       }
-       & > div.nu__footer-hideshow{
-         border: none;
-        display: block;
-        &:before{
-          content: '\E316';
-        }
-        &:hover{
-          cursor: pointer;
-          color: rgba($brand_colors-white,1.0);
-        }
-       }
-     }
-   }
+   // &.collapse{  // this is the closed state of the footer on the homepage only!
+   //   height: $footer-height-collapsed;
+   //   overflow: hidden;
+   //   background-size: 0px;
+   //   & > div.nu__footer{
+   //     padding: 0 0 0 0;
+   //     height: inherit;
+   //     & > a{
+   //       display: block;
+   //     }
+   //     & > div.nu__footer-hideshow{
+   //       border: none;
+   //      display: block;
+   //      &:before{
+   //        content: '\E316';
+   //      }
+   //      &:hover{
+   //        cursor: pointer;
+   //        color: rgba($brand_colors-white,1.0);
+   //      }
+   //     }
+   //   }
+   // }
 
 
-  // this defines the space for the pre-footer on pages that include it
-  & > div.nu__prefooter{
-    height: auto;
-    background: rgba($brand_colors-white,1.0);
-    width: $wrapper-width;
-    margin: 0 0 0 0;
-
-
-    &.bg_tan{
-      background: rgba($brand_colors-beige,1.0);
-      padding: 20px 0 0 0;
-    }
-
-
-    & > p{
-      @include font-6l-c;
-      color: rgba($brand_colors-black,1.0);
-      margin: 0 auto 20px auto;
-      width: $content-width-wide;
-    }
-
-    & > div{
-      width: $content-width-wide;
-      height: inherit;
-      margin: 0 auto 0 auto;
-      // background: yellow;
-      & > ul{
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        list-style: none;
-        list-style-type: none;
-        & > li{
-          flex-grow: 1;
-          flex: 1;
-          min-height: 200px;
-          margin: 0 $gutter $gutter 0;
-          // background: green;
-          &:last-child{
-            margin: 0 0 ($gutter * 2) 0;
-          }
-          & > a{
-            display: block;
-            width: 100%;
-            height: 100%;
-            &:hover{
-              color: rgba($brand_colors-black,1.0);
-              & > div.image > div{
-                @include block-item-hover;
-
-              }
-              & > h4{
-                @include action-arrow-shown;
-              }
-            }
-            & > div.image{
-              height: 245px;
-              margin: 0 0 10px 0;
-              @include block-group;
-              & > div{
-                @include block-item-default;
-              }
-            }
-            & > h4{
-              @include font-3b-l;
-              width: 90%;
-
-              @include action-arrow;
-              @include action-arrow-hidden;
-              margin-bottom:3px;
-            }
-            & > p{
-              @include font-2r-l;
-            }
-          }
-        }
-      }
-    }
-    &.statblocks{
-      & > p{
-        border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
-      }
-      & > div{
-        & > ul{
-          & > li{
-            text-align: center;
-            color: rgba($brand_colors-black,1.0);
-            padding: 0 $gutter 0 $gutter;
-            & > span{
-              @include font-9l-c;
-              color: rgba($brand_colors-red,1.0);
-              line-height:8.6rem;
-            }
-            & > p{
-              @include font-5l-c;
-              text-align: center;
-            }
-          }
-        }
-      }
-    }
-  }
+  // // this defines the space for the pre-footer on pages that include it
+  // & > div.nu__prefooter{
+  //   height: auto;
+  //   background: rgba($brand_colors-white,1.0);
+  //   width: $wrapper-width;
+  //   margin: 0 0 0 0;
+  //
+  //
+  //   &.bg_tan{
+  //     background: rgba($brand_colors-beige,1.0);
+  //     padding: 20px 0 0 0;
+  //   }
+  //
+  //
+  //   & > p{
+  //     @include font-6l-c;
+  //     color: rgba($brand_colors-black,1.0);
+  //     margin: 0 auto 20px auto;
+  //     width: $content-width-wide;
+  //   }
+  //
+  //   & > div{
+  //     width: $content-width-wide;
+  //     height: inherit;
+  //     margin: 0 auto 0 auto;
+  //     // background: yellow;
+  //     & > ul{
+  //       display: flex;
+  //       flex-wrap: nowrap;
+  //       flex-direction: row;
+  //       list-style: none;
+  //       list-style-type: none;
+  //       & > li{
+  //         flex-grow: 1;
+  //         flex: 1;
+  //         min-height: 200px;
+  //         margin: 0 $gutter $gutter 0;
+  //         // background: green;
+  //         &:last-child{
+  //           margin: 0 0 ($gutter * 2) 0;
+  //         }
+  //         & > a{
+  //           display: block;
+  //           width: 100%;
+  //           height: 100%;
+  //           &:hover{
+  //             color: rgba($brand_colors-black,1.0);
+  //             & > div.image > div{
+  //               @include block-item-hover;
+  //
+  //             }
+  //             & > h4{
+  //               @include action-arrow-shown;
+  //             }
+  //           }
+  //           & > div.image{
+  //             height: 245px;
+  //             margin: 0 0 10px 0;
+  //             @include block-group;
+  //             & > div{
+  //               @include block-item-default;
+  //             }
+  //           }
+  //           & > h4{
+  //             @include font-3b-l;
+  //             width: 90%;
+  //
+  //             @include action-arrow;
+  //             @include action-arrow-hidden;
+  //             margin-bottom:3px;
+  //           }
+  //           & > p{
+  //             @include font-2r-l;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   &.statblocks{
+  //     & > p{
+  //       border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
+  //     }
+  //     & > div{
+  //       & > ul{
+  //         & > li{
+  //           text-align: center;
+  //           color: rgba($brand_colors-black,1.0);
+  //           padding: 0 $gutter 0 $gutter;
+  //           & > span{
+  //             @include font-9l-c;
+  //             color: rgba($brand_colors-red,1.0);
+  //             line-height:8.6rem;
+  //           }
+  //           & > p{
+  //             @include font-5l-c;
+  //             text-align: center;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
    & > div.nu__footer{
     padding: 0 0 ($gutter / 1.5) 0;
@@ -274,20 +381,20 @@ footer{
         color: rgba($brand_colors-white,1.0);
       }
      }
-     & > div.nu__footer-hideshow{
-       width: $content-width-wide;
-       display: none;
-       height: $footer-height-collapsed;
-       line-height: $footer-height-collapsed;
-       @include font-3l-l;
-       line-height:4.4rem;
-       color: rgba($brand_colors-white,0.8);
-       margin: 0 auto 0 auto;
-       &:hover{
-         cursor: pointer;
-         color: rgba($brand_colors-white,1.0);
-       }
-     }
+     // & > div.nu__footer-hideshow{
+     //   width: $content-width-wide;
+     //   display: none;
+     //   height: $footer-height-collapsed;
+     //   line-height: $footer-height-collapsed;
+     //   @include font-3l-l;
+     //   line-height:4.4rem;
+     //   color: rgba($brand_colors-white,0.8);
+     //   margin: 0 auto 0 auto;
+     //   &:hover{
+     //     cursor: pointer;
+     //     color: rgba($brand_colors-white,1.0);
+     //   }
+     // }
      & > div{
       width: $content-width-wide;
       margin: ($gutter / 1.6) auto 0 auto;
@@ -839,35 +946,35 @@ footer{
          //   color: rgba($brand_colors-white,1.0);
          // }
         }
-        & > div.nu__footer-hideshow{
-          display:none;
-          // &:before{
-          //
-          // }
-          // &:hover{
-          //
-          // }
-        }
+        // & > div.nu__footer-hideshow{
+        //   display:none;
+        //   // &:before{
+        //   //
+        //   // }
+        //   // &:hover{
+        //   //
+        //   // }
+        // }
       }
     }
 
 
-     &.collapse{  // this is the closed state of the footer on the homepage only!
-       height:inherit;
-       height:auto;
-       // & > div.nu__footer{
-       //
-       //   & > div.nu__footer-hideshow{
-       //
-       //    &:before{
-       //
-       //    }
-       //    &:hover{
-       //
-       //    }
-       //   }
-       // }
-     }
+     // &.collapse{  // this is the closed state of the footer on the homepage only!
+     //   height:inherit;
+     //   height:auto;
+     //   // & > div.nu__footer{
+     //   //
+     //   //   & > div.nu__footer-hideshow{
+     //   //
+     //   //    &:before{
+     //   //
+     //   //    }
+     //   //    &:hover{
+     //   //
+     //   //    }
+     //   //   }
+     //   // }
+     // }
 
     // this defines the space for the pre-footer on pages that include it
     // & > div.nu__prefooter{
@@ -1351,21 +1458,21 @@ footer{
 
     // background: red;
 
-    &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
-    //
-      height: auto;
-    //   & > div.nu__footer{
-    //     & > div.nu__footer-hideshow{
-    //
-    //       &:before{
-    //
-    //       }
-    //       &:hover{
-    //
-    //       }
-    //     }
-    //   }
-    }
+    // &.absolute{  // this forces the footer on the homepage to be positioned absolutely as well as slightly taller to allow for the hide/show control
+    // //
+    //   height: auto;
+    // //   & > div.nu__footer{
+    // //     & > div.nu__footer-hideshow{
+    // //
+    // //       &:before{
+    // //
+    // //       }
+    // //       &:hover{
+    // //
+    // //       }
+    // //     }
+    // //   }
+    // }
 
 
      // &.collapse{  // this is the closed state of the footer on the homepage only!
