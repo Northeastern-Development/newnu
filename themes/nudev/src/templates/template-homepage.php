@@ -40,7 +40,7 @@
 
 		<hr class="events">
 		<div id="nu__events">
-			This is the new events listing section.
+			<?php get_template_part('loops/loop-homepageevents'); ?>
 		</div>
 
 	</div>

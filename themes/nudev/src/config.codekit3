@@ -2098,6 +2098,13 @@
 		"oAP": "\/loops\/loop-homepagecategories.php",
 		"oF": 0
 		},
+	"\/loops\/loop-homepageevents.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/loops\/loop-homepageevents.php",
+		"oF": 0
+		},
 	"\/loops\/loop-homepagemisc.php": {
 		"cB": 0,
 		"ft": 8192,
