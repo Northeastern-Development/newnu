@@ -66,7 +66,7 @@ div.main{
     width: $content-width-wide;
 
     & div.nu__block-rotator{
-      background: rgba($brand_colors-black,1.0);
+      // background: rgba($brand_colors-black,1.0);
       width: 100%;
       height: 100%;
       clear: both;
@@ -467,11 +467,11 @@ div.main{
 
 
   div#nu__events{
-    // background: rgba($brand_colors-grayW,1.0);
     min-height: 500px;
     margin: 0 auto ($gutter * 2) auto;
     width: $content-width-wide;
-
+    clear: both;
+    overflow: hidden;
     & > div.eventgrid{
       display: flex;
       flex-direction: row;
@@ -479,14 +479,64 @@ div.main{
       & > div.eventgrid-item{
         flex-grow: 1;
         flex-basis: 20%;
-        border: solid rgba($brand_colors-grayW,1.0) 1px;
         margin: 0 $gutter $gutter 0;
-        padding: $gutter $gutter $gutter $gutter;
+        position: relative;
+        & > a{
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding: ($gutter / 2) $gutter ($gutter / 2) $gutter;
+          border: solid rgba($brand_colors-grayW,1.0) 1px;
+          overflow: hidden;
+          &:hover{
+            color: rgba($brand_colors-black,1.0);
+            & > h3{
+              color: rgba($brand_colors-red,1.0);
+            }
+          }
+          & > h3{
+            text-align: left;
+          }
+          & > h5{
+            @include font-2b-l;
+          }
+          & > p{
+            @include font-2r-l;
+          }
+        }
         &:nth-child(4n){
           margin: 0 0 $gutter 0;
         }
+        &:hover{
+          &:before{
+            background: rgba($brand_colors-red,1.0);
+            display: block;
+            height: 100%;
+            width: 3px;
+            position: absolute;
+            content: '';
+          }
+        }
       }
 
+    }
+    & > div.eventgrid-viewall{
+      width: auto;
+      float: right;
+      & > a{
+        @include font-2l-l;
+        // text-decoration: none;
+        border: none;
+        // background: red;
+        // & > h5{
+        //   @include font-2l-l;
+        // }
+        &:hover{
+          color: rgba($brand_colors-black,1.0);
+          border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+          // background :Red;
+        }
+      }
     }
 
   }
@@ -517,250 +567,7 @@ div.main{
 
 @media screen and (min-width: 1800px) {
 
-  // div.main{
-  //
-  //
-  //
-  //
-  //
-  //
-  //   div#nu__seo-content{
-  //
-  //   }
-  //
-  //
-  //   div#nu__stories{
-  //
-  //
-  //     div.takeover{
-  //
-  //       & > div.nu__close-takeover {
-  //
-  //         &:after {
-  //
-  //         }
-  //         &:hover {
-  //
-  //         }
-  //       }
-  //       & > a {
-  //
-  //       }
-  //       &  p {
-  //
-  //         &:after{
-  //
-  //         }
-  //       }
-  //       &  h2 {
-  //
-  //         & > span {
-  //
-  //         }
-  //       }
-  //       & div.gradient {
-  //
-  //       }
-  //     }
-  //
-  //     // these are the slide next and previous arrows
-  //     & > #prev,
-  //     & > #next {
-  //
-  //     		&:hover {
-  //
-  //     		}
-  //     }
-  //
-  //     & > #prev {
-  //
-  //     }
-  //
-  //     & > #next {
-  //
-  //     }
-  //
-  //
-  //     & > section {
-  //
-  //   		& > article {
-  //
-  //         & div.gradient {
-  //
-  //         }
-  //         div.nu__overlay-logo{
-  //
-  //         }
-  //
-  //         &:hover {
-  //
-  //           & > a{
-  //
-  //           }
-  //         }
-  //
-  //
-  //         & > a {
-  //
-  //          &:hover ~ div.nu__panel-content  {
-  //
-  //            & p {
-  //
-  //            }
-  //
-  //          }
-  //
-  //   	    }
-  //   			& h2 {
-  //
-  //   			}
-  //
-  //         // &:not(.nu__block-rotator){
-  //
-  //           & > div.nu__panel-content {
-  //             & > div{
-  //               & p {
-  //                 @include font-5l-c;
-  //                 // bottom:75px;
-  //
-  //                 &:after{
-  //                   @include font-7-c;
-  //
-  //                 }
-  //       				}
-  //               & h2 {
-  //                 @include font-3l-c;
-  //                 // bottom:25px;
-  //
-  //                 & > span {
-  //
-  //                 }
-  //
-  //
-  //         			}
-  //             }
-  //
-  //           }
-  //         // }
-  //
-  //
-  //   			&.nu__block-rotator{
-  //
-  //
-  //           &:hover {
-  //             & h2::after {
-  //
-  //             }
-  //           }
-  //
-  //           & > div.bgimage{
-  //
-  //           }
-  //
-  //   				& > a {
-  //
-  //   				}
-  //           & > h2 {
-  //
-  //             @include font-3l-l;
-  //
-  //             &:after{
-  //               @include font-7-c;
-  //
-  //             }
-  //
-  //           }
-  //           & > div.nu__slide-controls{
-  //
-  //             & > div{
-  //
-  //               & > .slider_next,
-  //               & > .slider_prev {
-  //
-  //       					&:hover {
-  //
-  //       					}
-  //       				}
-  //       				& > .slider_next {
-  //
-  //       				}
-  //       				& > .slider_prev {
-  //
-  //       				}
-  //             }
-  //
-  //           }
-  //
-  //           & div.gradient {
-  //
-  //           }
-  //   			}
-  //
-  //   		}
-  //
-  //
-  //
-  //   	}
-  //
-  //
-  //     & > section.panel-1{
-  //       & > article {
-  //         &:nth-child(1){
-  //
-  //         }
-  //         &:nth-child(2){
-  //
-  //         }
-  //         &:nth-child(3){
-  //
-  //         }
-  //         &:nth-child(4){
-  //
-  //         }
-  //         &:nth-child(5){
-  //
-  //
-  //         }
-  //       }
-  //     }
-  //     & > section.panel-3{
-  //       & > article {
-  //         &:nth-child(1){
-  //
-  //         }
-  //         &:nth-child(2){
-  //
-  //         }
-  //         &:nth-child(3){
-  //
-  //         }
-  //         &:nth-child(4){
-  //
-  //         }
-  //       }
-  //     }
-  //
-  //     & > section.panel-2{
-  //       & > article {
-  //         &:nth-child(1){
-  //
-  //         }
-  //         &:nth-child(2){
-  //
-  //         }
-  //         &:nth-child(3){
-  //
-  //         }
-  //         &:nth-child(4){
-  //
-  //         }
-  //       }
-  //     }
-  //
-  //
-  //   }
-  //
-  // }
+
 }
 
 
@@ -773,251 +580,7 @@ div.main{
 
 @media screen and (max-width: 1300px) {
 
-  // div.main{
-  //
-  //
-  //
-  //
-  //
-  //
-  //   div#nu__seo-content{
-  //
-  //   }
-  //
-  //
-  //   div#nu__stories{
-  //
-  //
-  //     div.takeover{
-  //
-  //       & > div.nu__close-takeover {
-  //
-  //         &:after {
-  //
-  //         }
-  //         &:hover {
-  //
-  //         }
-  //       }
-  //       & > a {
-  //
-  //       }
-  //       &  p {
-  //
-  //         &:after{
-  //
-  //         }
-  //       }
-  //       &  h2 {
-  //
-  //         & > span {
-  //
-  //         }
-  //       }
-  //       & div.gradient {
-  //
-  //       }
-  //     }
-  //
-  //     // these are the slide next and previous arrows
-  //     & > #prev,
-  //     & > #next {
-  //
-  //     		&:hover {
-  //
-  //     		}
-  //     }
-  //
-  //     & > #prev {
-  //
-  //     }
-  //
-  //     & > #next {
-  //
-  //     }
-  //
-  //
-  //     & > section {
-  //
-  //   		& > article {
-  //
-  //         & div.gradient {
-  //
-  //         }
-  //         div.nu__overlay-logo{
-  //
-  //         }
-  //
-  //         &:hover {
-  //
-  //           & > a{
-  //
-  //           }
-  //         }
-  //
-  //
-  //         & > a {
-  //
-  //          &:hover ~ div.nu__panel-content  {
-  //
-  //            & p {
-  //
-  //            }
-  //
-  //          }
-  //
-  //   	    }
-  //   			& h2 {
-  //
-  //   			}
-  //
-  //         //&:not(.nu__block-rotator){
-  //
-  //           & > div.nu__panel-content {
-  //             & > div{
-  //               bottom:25px;
-  //               & p {
-  //                 @include font-2l-c;
-  //                 // bottom:75px;
-  //
-  //                 &:after{
-  //                   @include font-3l-c;
-  //
-  //                 }
-  //       				}
-  //               & h2 {
-  //                 @include font-10l-c;
-  //                 // bottom:25px;
-  //
-  //                 & > span {
-  //
-  //                 }
-  //
-  //
-  //         			}
-  //             }
-  //
-  //           }
-  //         //}
-  //
-  //
-  //   			&.nu__block-rotator{
-  //
-  //
-  //           &:hover {
-  //             & h2::after {
-  //
-  //             }
-  //           }
-  //
-  //           & > div.bgimage{
-  //
-  //           }
-  //
-  //   				& > a {
-  //
-  //   				}
-  //           & > h2 {
-  //
-  //             @include font-10l-l;
-  //
-  //             &:after{
-  //               @include font-3l-c;
-  //
-  //             }
-  //
-  //           }
-  //           & > div.nu__slide-controls{
-  //
-  //             & > div{
-  //
-  //               & > .slider_next,
-  //               & > .slider_prev {
-  //
-  //       					&:hover {
-  //
-  //       					}
-  //       				}
-  //       				& > .slider_next {
-  //
-  //       				}
-  //       				& > .slider_prev {
-  //
-  //       				}
-  //             }
-  //
-  //           }
-  //
-  //           & div.gradient {
-  //
-  //           }
-  //   			}
-  //
-  //   		}
-  //
-  //
-  //
-  //   	}
-  //
-  //
-  //     & > section.panel-1{
-  //       & > article {
-  //         &:nth-child(1){
-  //
-  //         }
-  //         &:nth-child(2){
-  //
-  //         }
-  //         &:nth-child(3){
-  //
-  //         }
-  //         &:nth-child(4){
-  //
-  //         }
-  //         &:nth-child(5){
-  //
-  //
-  //         }
-  //       }
-  //     }
-  //     & > section.panel-3{
-  //       & > article {
-  //         &:nth-child(1){
-  //
-  //         }
-  //         &:nth-child(2){
-  //
-  //         }
-  //         &:nth-child(3){
-  //
-  //         }
-  //         &:nth-child(4){
-  //
-  //         }
-  //       }
-  //     }
-  //
-  //     & > section.panel-2{
-  //       & > article {
-  //         &:nth-child(1){
-  //
-  //         }
-  //         &:nth-child(2){
-  //
-  //         }
-  //         &:nth-child(3){
-  //
-  //         }
-  //         &:nth-child(4){
-  //
-  //         }
-  //       }
-  //     }
-  //
-  //
-  //   }
-  //
-  // }
+
 }
 
 
@@ -1442,6 +1005,76 @@ div.main{
 
         }
       }
+    }
+
+    div#nu__events{
+      // min-height: 500px;
+      // margin: 0 auto ($gutter * 2) auto;
+      // width: $content-width-wide;
+      // clear: both;
+      // overflow: hidden;
+      & > div.eventgrid{
+        // display: flex;
+        // flex-direction: row;
+        // flex-wrap: wrap;
+        & > div.eventgrid-item{
+          // flex-grow: 1;
+          flex-basis: 40%;
+          // margin: 0 $gutter $gutter 0;
+          // position: relative;
+          // & > a{
+          //   display: block;
+          //   width: 100%;
+          //   height: 100%;
+          //   padding: ($gutter / 2) $gutter ($gutter / 2) $gutter;
+          //   border: solid rgba($brand_colors-grayW,1.0) 1px;
+          //   overflow: hidden;
+          //   &:hover{
+          //     color: rgba($brand_colors-black,1.0);
+          //     & > h3{
+          //       color: rgba($brand_colors-red,1.0);
+          //     }
+          //   }
+          //   & > h3{
+          //     text-align: left;
+          //   }
+          //   & > h5{
+          //     @include font-2b-l;
+          //   }
+          //   & > p{
+          //     @include font-2r-l;
+          //   }
+          // }
+          &:nth-child(2n){
+            margin: 0 0 $gutter 0;
+          }
+          // &:hover{
+          //   &:before{
+          //     background: rgba($brand_colors-red,1.0);
+          //     display: block;
+          //     height: 100%;
+          //     width: 3px;
+          //     position: absolute;
+          //     content: '';
+          //   }
+          // }
+        }
+
+      }
+      // & > div.eventgrid-viewall{
+      //   width: auto;
+      //   float: right;
+      //   & > a{
+      //     & > h5{
+      //       @include font-2l-l;
+      //     }
+      //     &:hover{
+      //       color: rgba($brand_colors-black,1.0);
+      //
+      //     }
+      //   }
+      // }
+
     }
 
   }
@@ -2063,247 +1696,7 @@ div.main{
 @media screen and (max-width: 1000px) {
 
 
-  // div.main{
-  //
-  //
-  //
-  //
-  //   div#nu__seo-content{
-  //
-  //   }
-  //
-  //
-  //   div#nu__stories{
-  //
-  //
-  //     div.takeover{
-  //
-  //       & > div.nu__close-takeover {
-  //
-  //         &:after {
-  //
-  //         }
-  //         &:hover {
-  //
-  //         }
-  //       }
-  //       & > a {
-  //
-  //       }
-  //       &  p {
-  //         @include font-0r-c;
-  //         &:after{
-  //           @include font-4-c;
-  //           vertical-align: -19%;
-  //         }
-  //       }
-  //
-  //       &  h2 {
-  //
-  //         & > span {
-  //
-  //         }
-  //       }
-  //       & div.gradient {
-  //
-  //       }
-  //     }
-  //
-  //
-  //     & > #prev,
-  //     & > #next {
-  //
-  //     		&:hover {
-  //
-  //     		}
-  //     }
-  //
-  //     & > #prev {
-  //
-  //     }
-  //
-  //     & > #next {
-  //
-  //     }
-  //
-  //
-  //     & > section {
-  //
-  //   		& > article {
-  //
-  //         & div.gradient {
-  //
-  //         }
-  //         div.nu__overlay-logo{
-  //
-  //         }
-  //
-  //         &:hover {
-  //
-  //           & > a{
-  //
-  //           }
-  //         }
-  //
-  //
-  //         & > a {
-  //
-  //          &:hover ~ div.nu__panel-content  {
-  //
-  //            & p {
-  //
-  //            }
-  //
-  //          }
-  //
-  //   	    }
-  //   			& h2 {
-  //
-  //   			}
-  //
-  //         //&:not(.nu__block-rotator){
-  //
-  //           & > div.nu__panel-content {
-  //             & > div{
-  //               &  p {
-  //                 @include font-0r-c;
-  //                 &:after{
-  //                   @include font-4-c;
-  //                   vertical-align: -19%;
-  //                 }
-  //               }
-  //               & h2 {
-  //                 @include font-1r-c;
-  //                 &:after{
-  //                  @include font-4-c;
-  //                  vertical-align: -19%;
-  //                 }
-  //                 & > span {
-  //
-  //                 }
-  //
-  //
-  //         			}
-  //             }
-  //
-  //           }
-  //         //}
-  //
-  //
-  //   			&.nu__block-rotator{
-  //
-  //
-  //           &:hover {
-  //             & h2::after {
-  //
-  //             }
-  //           }
-  //
-  //           & > div.bgimage{
-  //
-  //           }
-  //
-  //   				& > a {
-  //
-  //   				}
-  //           & > h2 {
-  //             //@include font-1r-l;
-  //             &:after{
-  //              @include font-4-c;
-  //              vertical-align: -19%;
-  //             }
-  //
-  //           }
-  //           & > div.nu__slide-controls{
-  //
-  //             & > div{
-  //
-  //               & > .slider_next,
-  //               & > .slider_prev {
-  //
-  //       					&:hover {
-  //
-  //       					}
-  //       				}
-  //       				& > .slider_next {
-  //
-  //       				}
-  //       				& > .slider_prev {
-  //
-  //       				}
-  //             }
-  //
-  //           }
-  //
-  //           & div.gradient {
-  //
-  //           }
-  //   			}
-  //
-  //   		}
-  //
-  //
-  //
-  //   	}
-  //
-  //
-  //     & > section.panel-1{
-  //       & > article {
-  //         &:nth-child(1){
-  //
-  //         }
-  //         &:nth-child(2){
-  //
-  //         }
-  //         &:nth-child(3){
-  //
-  //         }
-  //         &:nth-child(4){
-  //
-  //         }
-  //         &:nth-child(5){
-  //
-  //
-  //         }
-  //       }
-  //     }
-  //     & > section.panel-3{
-  //       & > article {
-  //         &:nth-child(1){
-  //
-  //         }
-  //         &:nth-child(2){
-  //
-  //         }
-  //         &:nth-child(3){
-  //
-  //         }
-  //         &:nth-child(4){
-  //
-  //         }
-  //       }
-  //     }
-  //
-  //     & > section.panel-2{
-  //       & > article {
-  //         &:nth-child(1){
-  //
-  //         }
-  //         &:nth-child(2){
-  //
-  //         }
-  //         &:nth-child(3){
-  //
-  //         }
-  //         &:nth-child(4){
-  //
-  //         }
-  //       }
-  //     }
-  //
-  //
-  //   }
-  // }
+
 
 }
 
@@ -2841,254 +2234,81 @@ div.main{
 @media screen and (max-width: 600px) {
 
 
-  // div.main{
-  //
-  //
-  //
-  //
-  //   div#nu__seo-content{
-  //
-  //   }
-  //
-  //
-  //   div#nu__stories{
-  //
-  //
-  //     div.takeover{
-  //
-  //       & > div.nu__close-takeover {
-  //
-  //         &:after {
-  //
-  //         }
-  //         &:hover {
-  //
-  //         }
-  //       }
-  //       & > a {
-  //
-  //       }
-  //       &  p {
-  //
-  //         &:after{
-  //
-  //         }
-  //       }
-  //
-  //       &  h2 {
-  //
-  //         & > span {
-  //
-  //         }
-  //       }
-  //       & div.gradient {
-  //
-  //
-  //       }
-  //     }
-  //
-  //
-  //     & > #prev,
-  //     & > #next {
-  //
-  //     		&:hover {
-  //
-  //     		}
-  //     }
-  //
-  //     & > #prev {
-  //
-  //     }
-  //
-  //     & > #next {
-  //
-  //     }
-  //
-  //
-  //     & > section {
-  //
-  //   		& > article {
-  //
-  //         & div.gradient {
-  //
-  //         }
-  //         div.nu__overlay-logo{
-  //
-  //         }
-  //
-  //         &:hover {
-  //
-  //           & > a{
-  //
-  //           }
-  //         }
-  //
-  //
-  //         & > a {
-  //
-  //          &:hover ~ div.nu__panel-content  {
-  //
-  //            & p {
-  //
-  //            }
-  //
-  //
-  //          }
-  //
-  //   	    }
-  //   			& h2 {
-  //
-  //   			}
-  //
-  //         //&:not(.nu__block-rotator){
-  //
-  //           & > div.nu__panel-content {
-  //
-  //             &  p {
-  //
-  //               &:after{
-  //
-  //               }
-  //             }
-  //             & h2 {
-  //
-  //               &:after{
-  //               }
-  //               & > span {
-  //
-  //               }
-  //
-  //
-  //       			}
-  //
-  //           }
-  //         //}
-  //
-  //
-  //   			&.nu__block-rotator{
-  //
-  //
-  //           &:hover {
-  //             & h2::after {
-  //
-  //             }
-  //           }
-  //
-  //           & > div.bgimage{
-  //
-  //           }
-  //
-  //   				& > a {
-  //
-  //   				}
-  //           & > h2 {
-  //             width:85%;
-  //             &:after{
-  //               vertical-align: -15%;
-  //             }
-  //
-  //           }
-  //           & > div.nu__slide-controls{
-  //             left:50%;
-  //             right:0;
-  //             transform: translateX(-50%);
-  //             -webkit-transform: translateX(-50%);
-  //
-  //             & > div{
-  //               width:104px;
-  //               margin: 0 auto;
-  //               & > .slider_next,
-  //               & > .slider_prev {
-  //                 width:42px;
-  //                 height:42px;
-  //                 line-height:48px;
-  //       					&:hover {
-  //
-  //       					}
-  //       				}
-  //       				& > .slider_next {
-  //
-  //       				}
-  //       				& > .slider_prev {
-  //
-  //       				}
-  //             }
-  //
-  //           }
-  //
-  //           & div.gradient {
-  //
-  //
-  //           }
-  //   			}
-  //
-  //   		}
-  //
-  //
-  //
-  //   	}
-  //
-  //
-  //     & > section.panel-1{
-  //       & > article {
-  //
-  //         &:nth-child(1){
-  //
-  //         }
-  //         &:nth-child(2){
-  //
-  //         }
-  //         &:nth-child(3){
-  //
-  //         }
-  //         &:nth-child(4){
-  //
-  //         }
-  //         &:nth-child(5){
-  //
-  //
-  //         }
-  //       }
-  //     }
-  //     & > section.panel-2{
-  //       & > article {
-  //
-  //         &:nth-child(1){
-  //
-  //         }
-  //         &:nth-child(2){
-  //
-  //         }
-  //         &:nth-child(3){
-  //
-  //         }
-  //         &:nth-child(4){
-  //
-  //         }
-  //       }
-  //     }
-  //
-  //     & > section.panel-3{
-  //       & > article {
-  //        display: block;
-  //        &:nth-child(1){
-  //
-  //        }
-  //        &:nth-child(2){
-  //
-  //        }
-  //        &:nth-child(3){
-  //
-  //        }
-  //        &:nth-child(4){
-  //
-  //        }
-  //      }
-  //     }
-  //
-  //
-  //   }
-  // }
+  div.main{
+
+    div#nu__events{
+      // min-height: 500px;
+      // margin: 0 auto ($gutter * 2) auto;
+      // width: $content-width-wide;
+      // clear: both;
+      // overflow: hidden;
+      & > div.eventgrid{
+        display: block;
+        // display: flex;
+        // flex-direction: row;
+        // flex-wrap: wrap;
+        & > div.eventgrid-item{
+          width: 100%;
+          // flex-grow: 1;
+          // flex-basis: 40%;
+          // margin: 0 $gutter $gutter 0;
+          // position: relative;
+          // & > a{
+          //   display: block;
+          //   width: 100%;
+          //   height: 100%;
+          //   padding: ($gutter / 2) $gutter ($gutter / 2) $gutter;
+          //   border: solid rgba($brand_colors-grayW,1.0) 1px;
+          //   overflow: hidden;
+          //   &:hover{
+          //     color: rgba($brand_colors-black,1.0);
+          //     & > h3{
+          //       color: rgba($brand_colors-red,1.0);
+          //     }
+          //   }
+          //   & > h3{
+          //     text-align: left;
+          //   }
+          //   & > h5{
+          //     @include font-2b-l;
+          //   }
+          //   & > p{
+          //     @include font-2r-l;
+          //   }
+          // }
+          &:nth-child(2n){
+            margin: 0 0 $gutter 0;
+          }
+          // &:hover{
+          //   &:before{
+          //     background: rgba($brand_colors-red,1.0);
+          //     display: block;
+          //     height: 100%;
+          //     width: 3px;
+          //     position: absolute;
+          //     content: '';
+          //   }
+          // }
+        }
+
+      }
+      // & > div.eventgrid-viewall{
+      //   width: auto;
+      //   float: right;
+      //   & > a{
+      //     & > h5{
+      //       @include font-2l-l;
+      //     }
+      //     &:hover{
+      //       color: rgba($brand_colors-black,1.0);
+      //
+      //     }
+      //   }
+      // }
+
+    }
+
+  }
 
 
 

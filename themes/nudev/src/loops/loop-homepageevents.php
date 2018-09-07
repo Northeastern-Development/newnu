@@ -84,7 +84,7 @@ foreach( $decoded['events'] as $i => $event ){
 		$upcoming_events .=
 				"
 						<div class=\"eventgrid-item\">
-								<a class=\"eventgrid-item--linkwrap\" href=\"$event_permalink_url\">
+								<a class=\"eventgrid-item--linkwrap\" href=\"$event_permalink_url\" target=\"_blank\" title=\"Click to learn more\">
 										<h3 class=\"eventgrid-item-date\">$event_date</h3>
 										<h5 class=\"eventgrid-item-title\">$event_title</h5>
 										<p class=\"eventgrid-item-description\">$event_description</p>
@@ -97,9 +97,7 @@ foreach( $decoded['events'] as $i => $event ){
 $upcoming_events .=
 		"
 				</div><div class=\"eventgrid-viewall\">
-								<a class=\"eventgrid-viewall-link\" href=\"#\">
-										<h5>View Full Calendar</h5>
-								</a>
+								<a class=\"eventgrid-viewall-link\" href=\"http://calendar.northeastern.edu/\" target=\"_blank\" title=\"Click here to view full calendar\">View Full Calendar</a>
 						</div>
 				</div>
 		";
