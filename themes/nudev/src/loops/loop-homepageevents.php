@@ -35,7 +35,8 @@ function substrwords($text, $maxchar, $end='...') {
 $ch = curl_init();
 
 // Return 8 events, starting "today", looking forward at most 7 days
-curl_setopt($ch, CURLOPT_URL, 'http://calendar.northeastern.edu/api/2.2/events?pp=8&days=7');
+// curl_setopt($ch, CURLOPT_URL, 'http://calendar.northeastern.edu/api/2.2/events?pp=8&days=7');
+curl_setopt($ch, CURLOPT_URL, 'http://calendar.northeastern.edu/api/2.2/events?pp=8&days=60&sort=ranking&distinct=true');
 
 // TRUE to return the transfer as a string of the return value of curl_exec() instead of outputting it out directly.
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -59,6 +60,17 @@ curl_close($ch);
 
 // Decode the returned JSON string
 $decoded = json_decode($data, true);
+
+// If using the TRENDING fetch, set this to true!
+    $sort_trending = true;
+    // When using TRENDING, sort the results by date (so its 8 trending results, then sorted by date here)
+    if( $sort_trending === true ){
+        usort($decoded['events'], function($a, $b){
+            $timeStamp1 = strtotime($a['event']['event_instances'][0]['event_instance']['start']);
+            $timeStamp2 = strtotime($b['event']['event_instances'][0]['event_instance']['start']);
+            return $timeStamp1 - $timeStamp2;
+        });
+    }
 
 // Open the Grid Wrapper (flex parent)
 $upcoming_events = "<div class=\"eventgrid\">";
