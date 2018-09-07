@@ -37,8 +37,8 @@ function substrwords($text, $maxchar, $end='...') {
 $ch = curl_init();
 
 // Return 8 events, starting "today", looking forward at most 7 days
-curl_setopt($ch, CURLOPT_URL, 'http://calendar.northeastern.edu/api/2.2/events?pp=8&days=7');
-// curl_setopt($ch, CURLOPT_URL, 'http://calendar.northeastern.edu/api/2.2/events?pp=8&days=60&sort=ranking&distinct=true');
+// curl_setopt($ch, CURLOPT_URL, 'http://calendar.northeastern.edu/api/2.2/events?pp=8&days=7');
+curl_setopt($ch, CURLOPT_URL, 'http://calendar.northeastern.edu/api/2.2/events?pp=8&days=60&sort=ranking&distinct=true');
 
 // TRUE to return the transfer as a string of the return value of curl_exec() instead of outputting it out directly.
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
