@@ -31,6 +31,8 @@ function substrwords($text, $maxchar, $end='...') {
 		return $output;
 }
 
+
+
 // Setup cURL request to Localist API
 $ch = curl_init();
 
