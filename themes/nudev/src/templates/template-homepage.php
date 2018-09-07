@@ -21,7 +21,7 @@
 						<div></div>
 						<a href="" disabled="disabled" title="Click here to chat with us now">Live Chat</a>
 					</div> -->
-					<h3>Hi, welcome to Northeastern.<br />What can I help you with?</h3>
+					<h3>Hi, welcome to Northeastern.<br /><span>What can I help you with?</span></h3>
 					<form name="homepagesearch" action="<?=site_url()?>/search" method="get">
 						<input type="text" name="query" id="query" placeholder="Campus Visit, Academic Calendar ..." title="Enter your search query here" />
 						<input name="gosearch" id="gosearch" type="submit" value="Search" title="Click to search">

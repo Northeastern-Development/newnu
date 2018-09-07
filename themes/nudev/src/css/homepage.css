@@ -271,11 +271,14 @@ div.main {
       position: relative;
       overflow: hidden; }
       div.main div#nu__stories article > form {
-        clear: both; }
+        clear: both;
+        display: block;
+        margin: 30px 30px 30px 30px; }
         div.main div#nu__stories article > form > input {
-          width: 86%;
-          margin: 30px 30px 0 30px;
+          width: 100%;
+          margin: 0 0 0 0;
           border: none;
+          border-bottom: solid #fffffe 1px;
           padding: 0 0 0 0;
           color: #979797;
           font-size: 1.6rem;
@@ -289,11 +292,13 @@ div.main {
         div.main div#nu__stories article > form > input[type=submit] {
           float: right;
           width: auto;
+          border: none;
           background: #cc0000;
           font-size: 1.6rem;
           font-weight: 300;
           line-height: 2.8rem;
           text-align: left;
+          margin: 10px 0 0 0;
           text-transform: uppercase;
           padding: 0 15px 0 15px;
           color: #fffffe;
@@ -419,12 +424,19 @@ div.main {
             font-weight: 700;
             line-height: 2.8rem;
             text-align: left;
-            color: black; }
+            color: black;
+            margin: 30px 30px 30px 30px; }
+            div.main div#nu__stories > div:nth-child(2) > article > h3 > span {
+              font-size: 1.6rem;
+              font-weight: 300;
+              line-height: 2.8rem;
+              text-align: left;
+              font-style: italic; }
           div.main div#nu__stories > div:nth-child(2) > article:last-child {
             margin: 0 0 0 0;
             background: transparent; }
           div.main div#nu__stories > div:nth-child(2) > article:first-child {
-            background: rgba(151, 151, 151, 0.3);
+            background: rgba(151, 151, 151, 0.2);
             border: solid rgba(151, 151, 151, 0.6) 1px; }
   div.main div#nu__categories {
     display: flex;
