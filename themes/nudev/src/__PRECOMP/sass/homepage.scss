@@ -201,7 +201,7 @@ div.main{
         clear: both;
         // display: table;
         display: block;
-        margin: $gutter $gutter $gutter $gutter;
+        margin: 0 $gutter $gutter $gutter;
         & > input{
           // width: 87.5%;
           width: 100%;
@@ -209,7 +209,7 @@ div.main{
           margin: 0 0 0 0;
           border: none;
           border-bottom: solid rgba($brand_colors-white,1.0) 1px;
-          padding: 0 0 0 0;
+          // padding: 0 0 0 0;
           color: rgba($brand_colors-grayW,1.0);
           @include font-2r-l;
           line-height: 3.0rem;
@@ -227,7 +227,7 @@ div.main{
           @include font-2r-l;
           margin: 10px 0 0 0;
           text-transform: uppercase;
-          padding: 0 15px 0 15px;
+          padding: 5px $gutter 5px $gutter;
           color: rgba($brand_colors-white,1.0);
           letter-spacing: 0px;
           &:hover{
@@ -375,7 +375,7 @@ div.main{
           & > h3{
             @include font-2b-l;
             color: rgba($brand_colors-black,1.0);
-            margin: $gutter $gutter $gutter $gutter;
+            margin: $gutter $gutter 20px $gutter;
             & > span{
               @include font-2l-l;
               font-style: italic;

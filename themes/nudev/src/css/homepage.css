@@ -273,13 +273,12 @@ div.main {
       div.main div#nu__stories article > form {
         clear: both;
         display: block;
-        margin: 30px 30px 30px 30px; }
+        margin: 0 30px 30px 30px; }
         div.main div#nu__stories article > form > input {
           width: 100%;
           margin: 0 0 0 0;
           border: none;
           border-bottom: solid #fffffe 1px;
-          padding: 0 0 0 0;
           color: #979797;
           font-size: 1.6rem;
           font-weight: 300;
@@ -300,7 +299,7 @@ div.main {
           text-align: left;
           margin: 10px 0 0 0;
           text-transform: uppercase;
-          padding: 0 15px 0 15px;
+          padding: 5px 30px 5px 30px;
           color: #fffffe;
           letter-spacing: 0px; }
           div.main div#nu__stories article > form > input[type=submit]:hover {
@@ -425,7 +424,7 @@ div.main {
             line-height: 2.8rem;
             text-align: left;
             color: black;
-            margin: 30px 30px 30px 30px; }
+            margin: 30px 30px 20px 30px; }
             div.main div#nu__stories > div:nth-child(2) > article > h3 > span {
               font-size: 1.6rem;
               font-weight: 300;
