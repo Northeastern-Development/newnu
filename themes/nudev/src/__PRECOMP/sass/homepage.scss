@@ -478,7 +478,7 @@ div.main{
       flex-wrap: wrap;
       & > div.eventgrid-item{
         flex-grow: 1;
-        flex-basis: 20%;
+        flex-basis: 23%;
         margin: 0 $gutter $gutter 0;
         position: relative;
         & > a{
@@ -501,6 +501,9 @@ div.main{
             @include font-2b-l;
           }
           & > p{
+            // word-wrap: break-word;
+            word-wrap: normal;
+            word-break: break-all;
             @include font-2r-l;
           }
         }

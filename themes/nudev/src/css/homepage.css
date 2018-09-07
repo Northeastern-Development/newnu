@@ -497,7 +497,7 @@ div.main {
       flex-wrap: wrap; }
       div.main div#nu__events > div.eventgrid > div.eventgrid-item {
         flex-grow: 1;
-        flex-basis: 20%;
+        flex-basis: 23%;
         margin: 0 30px 30px 0;
         position: relative; }
         div.main div#nu__events > div.eventgrid > div.eventgrid-item > a {
@@ -519,6 +519,8 @@ div.main {
             line-height: 2.8rem;
             text-align: left; }
           div.main div#nu__events > div.eventgrid > div.eventgrid-item > a > p {
+            word-wrap: normal;
+            word-break: break-all;
             font-size: 1.6rem;
             font-weight: 300;
             line-height: 2.8rem;
