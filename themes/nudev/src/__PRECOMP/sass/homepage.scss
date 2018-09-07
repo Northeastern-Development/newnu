@@ -198,24 +198,29 @@ div.main{
       overflow: hidden;
 
       & > form{
+        clear: both;
         & > input{
-          width: 100%;
-          margin: $gutter 0 0 0;
+          width: 86%;
+          margin: $gutter $gutter 0 $gutter;
           border: none;
-          border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
-          padding: 0 0 10px 0;
+          // border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
+          padding: 0 0 0 0;
           color: rgba($brand_colors-grayW,1.0);
           @include font-2r-l;
+          line-height: 3.0rem;
           letter-spacing: 1px;
+          background: rgba($brand_colors-white,1.0);
+          padding: 10px $gutter 10px $gutter;
         }
         & > input[type=submit]{
+          float :right;
           width: auto;
-          border: solid rgba($brand_colors-grayW,1.0) 1px;
-          background: rgba($brand_colors-white,1.0);
+          // border: solid rgba($brand_colors-grayW,1.0) 1px;
+          background: rgba($brand_colors-red,1.0);
           @include font-2r-l;
           text-transform: uppercase;
           padding: 0 15px 0 15px;
-          color: rgba($brand_colors-black,1.0);
+          color: rgba($brand_colors-white,1.0);
           letter-spacing: 0px;
           &:hover{
             background: rgba($brand_colors-grayW,1.0);
@@ -367,7 +372,12 @@ div.main{
             margin: 0 0 0 0;
             background: rgba($brand_colors-black,0.0);
           }
+          &:first-child{
+            background: rgba($brand_colors-grayW,0.3);
+            border: solid rgba($brand_colors-grayW,0.6) 1px;
+          }
         }
+
       }
 
     }
@@ -386,7 +396,7 @@ div.main{
 
       margin: 0 ($gutter / 2) 0 0;
       padding: 0 ($gutter / 2) 0 0;
-      border-right: solid rgba($brand_colors-grayW,1.0) 1px;
+      border-right: solid rgba($brand_colors-grayW,0.6) 1px;
       & > div{
         // background: green;
         width: 100%;
@@ -433,7 +443,7 @@ div.main{
           list-style-type: none;
           & > li{
             // color: red;
-            border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
+            border-bottom: solid rgba($brand_colors-grayW,0.6) 1px;
             padding: 20px 0 20px 0;
             & > a{
               @include font-2b-l;
@@ -483,7 +493,7 @@ div.main{
           width: 100%;
           height: 100%;
           padding: ($gutter / 2) $gutter ($gutter / 2) $gutter;
-          border: solid rgba($brand_colors-grayW,1.0) 1px;
+          border: solid rgba($brand_colors-grayW,0.6) 1px;
           overflow: hidden;
           &:hover{
             color: rgba($brand_colors-black,1.0);

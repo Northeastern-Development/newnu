@@ -17,10 +17,10 @@
 
 			<div>
 				<article>
-					<div class="livechat">
+					<!-- <div class="livechat">
 						<div></div>
 						<a href="" disabled="disabled" title="Click here to chat with us now">Live Chat</a>
-					</div>
+					</div> -->
 					<h3>Hi, welcome to Northeastern.<br />What can I help you with?</h3>
 					<form name="homepagesearch" action="<?=site_url()?>/search" method="get">
 						<input type="text" name="query" id="query" placeholder="Campus Visit, Academic Calendar ..." title="Enter your search query here" />
