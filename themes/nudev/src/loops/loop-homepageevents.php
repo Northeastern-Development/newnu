@@ -98,6 +98,7 @@ foreach( $decoded['events'] as $i => $event ){
 		$upcoming_events .=
 				"
 						<div class=\"eventgrid-item\">
+						<div class=\"chevron\">&#xe5cc;</div>
 								<a class=\"eventgrid-item--linkwrap\" href=\"$event_permalink_url\" target=\"_blank\" title=\"Click to learn more\">
 										<h3 class=\"eventgrid-item-date\">$event_date</h3>
 										<h5 class=\"eventgrid-item-title\">$event_title</h5>

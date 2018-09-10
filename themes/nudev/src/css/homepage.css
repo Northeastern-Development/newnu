@@ -250,7 +250,7 @@ div.main {
             width: 45px;
             height: 45px;
             text-align: center;
-            background: rgba(0, 0, 0, 0.6);
+            background: black;
             color: #fffffe;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             z-index: 100;
@@ -270,41 +270,6 @@ div.main {
       display: block;
       position: relative;
       overflow: hidden; }
-      div.main div#nu__stories article > form {
-        clear: both;
-        display: block;
-        margin: 0 30px 30px 30px; }
-        div.main div#nu__stories article > form > input {
-          width: 100%;
-          margin: 0 0 0 0;
-          border: none;
-          border-bottom: solid #fffffe 1px;
-          color: #979797;
-          font-size: 1.6rem;
-          font-weight: 300;
-          line-height: 2.8rem;
-          text-align: left;
-          line-height: 3.0rem;
-          letter-spacing: 1px;
-          background: #fffffe;
-          padding: 10px 30px 10px 30px; }
-        div.main div#nu__stories article > form > input[type=submit] {
-          float: right;
-          width: auto;
-          border: none;
-          background: #cc0000;
-          font-size: 1.6rem;
-          font-weight: 300;
-          line-height: 2.8rem;
-          text-align: left;
-          margin: 10px 0 0 0;
-          text-transform: uppercase;
-          padding: 5px 30px 5px 30px;
-          color: #fffffe;
-          letter-spacing: 0px; }
-          div.main div#nu__stories article > form > input[type=submit]:hover {
-            background: #979797;
-            cursor: pointer; }
       div.main div#nu__stories article div.gradient {
         height: 100%;
         width: 60%;
@@ -397,40 +362,69 @@ div.main {
           height: 235px;
           margin: 0 0 30px 0;
           clear: both; }
-          div.main div#nu__stories > div:nth-child(2) > article > div.livechat {
-            clear: both;
-            height: 44px;
-            position: relative; }
-            div.main div#nu__stories > div:nth-child(2) > article > div.livechat > div {
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              background: #fffffe; }
-            div.main div#nu__stories > div:nth-child(2) > article > div.livechat > a {
-              background: black;
-              color: #fffffe;
+          div.main div#nu__stories > div:nth-child(2) > article > div.searcharea {
+            position: absolute;
+            z-index: 1;
+            height: 100%;
+            width: 100%; }
+            div.main div#nu__stories > div:nth-child(2) > article > div.searcharea > h3 {
               font-size: 1.6rem;
-              font-weight: 300;
+              font-weight: 700;
               line-height: 2.8rem;
               text-align: left;
-              text-transform: uppercase;
-              padding: 0 15px 0 15px;
-              width: auto;
-              float: right;
-              border: none; }
-          div.main div#nu__stories > div:nth-child(2) > article > h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            line-height: 2.8rem;
-            text-align: left;
-            color: black;
-            margin: 30px 30px 20px 30px; }
-            div.main div#nu__stories > div:nth-child(2) > article > h3 > span {
-              font-size: 1.6rem;
-              font-weight: 300;
-              line-height: 2.8rem;
-              text-align: left;
-              font-style: italic; }
+              color: black;
+              margin: 30px 30px 20px 30px; }
+              div.main div#nu__stories > div:nth-child(2) > article > div.searcharea > h3 > span {
+                font-size: 1.6rem;
+                font-weight: 300;
+                line-height: 2.8rem;
+                text-align: left;
+                font-style: italic; }
+            div.main div#nu__stories > div:nth-child(2) > article > div.searcharea > form {
+              clear: both;
+              display: block;
+              margin: 0 30px 30px 30px; }
+              div.main div#nu__stories > div:nth-child(2) > article > div.searcharea > form > input {
+                width: 100%;
+                margin: 0 0 0 0;
+                border: none;
+                border-bottom: solid #fffffe 1px;
+                color: #979797;
+                font-size: 1.6rem;
+                font-weight: 300;
+                line-height: 2.8rem;
+                text-align: left;
+                line-height: 3.0rem;
+                letter-spacing: 1px;
+                background: #fffffe;
+                padding: 10px 30px 10px 30px; }
+              div.main div#nu__stories > div:nth-child(2) > article > div.searcharea > form > input[type=submit] {
+                float: right;
+                width: auto;
+                border: none;
+                background: #cc0000;
+                font-size: 1.6rem;
+                font-weight: 300;
+                line-height: 2.8rem;
+                text-align: left;
+                margin: 10px 0 0 0;
+                text-transform: uppercase;
+                padding: 5px 30px 5px 30px;
+                color: #fffffe;
+                letter-spacing: 0px; }
+                div.main div#nu__stories > div:nth-child(2) > article > div.searcharea > form > input[type=submit]:hover {
+                  background: black;
+                  cursor: pointer; }
+          div.main div#nu__stories > div:nth-child(2) > article > div.nlogo {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: auto;
+            z-index: 0; }
+            div.main div#nu__stories > div:nth-child(2) > article > div.nlogo > svg {
+              height: 101%;
+              fill: rgba(151, 151, 151, 0.6); }
           div.main div#nu__stories > div:nth-child(2) > article:last-child {
             margin: 0 0 0 0;
             background: transparent; }
@@ -519,6 +513,13 @@ div.main {
         flex-basis: 23%;
         margin: 0 30px 30px 0;
         position: relative; }
+        div.main div#nu__events > div.eventgrid > div.eventgrid-item > div.chevron {
+          position: absolute;
+          right: 20px;
+          bottom: 20px;
+          width: 20px;
+          height: 20px;
+          color: black; }
         div.main div#nu__events > div.eventgrid > div.eventgrid-item > a {
           display: block;
           width: 100%;

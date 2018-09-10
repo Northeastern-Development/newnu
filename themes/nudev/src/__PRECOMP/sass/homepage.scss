@@ -170,7 +170,7 @@ div.main{
             width: 45px;
             height: 45px;
             text-align: center;
-            background: rgba($brand_colors-black,0.6);
+            background: rgba($brand_colors-black,1.0);
             color: rgba($brand_colors-white,1.0);
             box-shadow: 0 2px 4px rgba($brand_colors-black,.5);
             z-index:100;
@@ -196,46 +196,6 @@ div.main{
       display: block;
       position: relative;
       overflow: hidden;
-
-      & > form{
-        clear: both;
-        // display: table;
-        display: block;
-        margin: 0 $gutter $gutter $gutter;
-        & > input{
-          // width: 87.5%;
-          width: 100%;
-          // display: table-cell;
-          margin: 0 0 0 0;
-          border: none;
-          border-bottom: solid rgba($brand_colors-white,1.0) 1px;
-          // padding: 0 0 0 0;
-          color: rgba($brand_colors-grayW,1.0);
-          @include font-2r-l;
-          line-height: 3.0rem;
-          letter-spacing: 1px;
-          background: rgba($brand_colors-white,1.0);
-          padding: 10px $gutter 10px $gutter;
-        }
-        & > input[type=submit]{
-          float :right;
-          width: auto;
-          // display: block;
-          // border: solid rgba($brand_colors-grayW,1.0) 1px;
-          border: none;
-          background: rgba($brand_colors-red,1.0);
-          @include font-2r-l;
-          margin: 10px 0 0 0;
-          text-transform: uppercase;
-          padding: 5px $gutter 5px $gutter;
-          color: rgba($brand_colors-white,1.0);
-          letter-spacing: 0px;
-          &:hover{
-            background: rgba($brand_colors-grayW,1.0);
-            cursor: pointer;
-          }
-        }
-      }
 
       & div.gradient {
         height:100%;
@@ -350,35 +310,65 @@ div.main{
           height: 235px;
           margin: 0 0 $gutter 0;
           clear: both;
-          & > div.livechat{
-            clear: both;
-            height: 44px;
-            position: relative;
-            // opacity: 0.25;
-            & > div{
-              position: absolute;
-              width: 100%;
-              height: 100%;
-              background: rgba($brand_colors-white,1.0);
+          & > div.searcharea{
+            position: absolute;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            & > h3{
+              @include font-2b-l;
+              color: rgba($brand_colors-black,1.0);
+              margin: $gutter $gutter 20px $gutter;
+              & > span{
+                @include font-2l-l;
+                font-style: italic;
+              }
             }
-            & > a{
-              background: rgba($brand_colors-black,1.0);
-              color: rgba($brand_colors-white,1.0);
-              @include font-2r-l;
-              text-transform: uppercase;
-              padding: 0 15px 0 15px;
-              width: auto;
-              float: right;
-              border: none;
+            & > form{
+              clear: both;
+              display: block;
+              margin: 0 $gutter $gutter $gutter;
+              & > input{
+                width: 100%;
+                margin: 0 0 0 0;
+                border: none;
+                border-bottom: solid rgba($brand_colors-white,1.0) 1px;
+                color: rgba($brand_colors-grayW,1.0);
+                @include font-2r-l;
+                line-height: 3.0rem;
+                letter-spacing: 1px;
+                background: rgba($brand_colors-white,1.0);
+                padding: 10px $gutter 10px $gutter;
+              }
+              & > input[type=submit]{
+                float :right;
+                width: auto;
+                border: none;
+                background: rgba($brand_colors-red,1.0);
+                @include font-2r-l;
+                margin: 10px 0 0 0;
+                text-transform: uppercase;
+                padding: 5px $gutter 5px $gutter;
+                color: rgba($brand_colors-white,1.0);
+                letter-spacing: 0px;
+                &:hover{
+                  background: rgba($brand_colors-black,1.0);
+                  cursor: pointer;
+                }
+              }
             }
           }
-          & > h3{
-            @include font-2b-l;
-            color: rgba($brand_colors-black,1.0);
-            margin: $gutter $gutter 20px $gutter;
-            & > span{
-              @include font-2l-l;
-              font-style: italic;
+          & > div.nlogo{
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: auto;
+            z-index: 0;
+
+            & > svg{
+              height: 101%;
+              fill: rgba($brand_colors-grayW,0.6);
             }
           }
           &:last-child{
@@ -501,6 +491,15 @@ div.main{
         flex-basis: 23%;
         margin: 0 $gutter $gutter 0;
         position: relative;
+        & > div.chevron{
+          position: absolute;
+          right: 20px;
+          bottom: 20px;
+          // background: red;
+          width: 20px;
+          height: 20px;
+          color: rgba($brand_colors-black,1.0);
+        }
         & > a{
           display: block;
           width: 100%;

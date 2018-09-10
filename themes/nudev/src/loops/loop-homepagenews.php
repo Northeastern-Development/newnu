@@ -12,7 +12,7 @@
 
 	$stories = $fields['top_story_blocks'];
 
-	$guide = '<div id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator"><a %s href="%s" target="%s" title="Click here now to read more %s">%s</a><div class="bgimage"><div style="%s %s"></div></div><div class="nu__panel-content"><h2><span>%s</span></h2></div><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div></div></div><div class="nu__overlay-logo">%s</div></div>';
+	$guide = '<div id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator"><a %s href="%s" target="%s" title="Click here now to read more %s">%s</a><div class="bgimage"><div style="%s %s"></div></div><div class="nu__panel-content"><h2><span>%s</span></h2></div><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5CB;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5CC;</div></div></div><div class="nu__overlay-logo">%s</div></div>';
 
 	$iPath = responsive_background_images();	// call the function to figure out the best image size to use
 
