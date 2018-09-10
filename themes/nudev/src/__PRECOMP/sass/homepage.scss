@@ -528,14 +528,22 @@ div.main{
         &:nth-child(4n){
           margin: 0 0 $gutter 0;
         }
+        &:before{
+          background: rgba($brand_colors-red,1.0);
+          display: block;
+          height: 100%;
+          width: 3px;
+          position: absolute;
+          content: '';
+          visibility: hidden;
+          opacity: 0;
+          transition: opacity 0.3s, visibility 0.3s;
+        }
         &:hover{
           &:before{
-            background: rgba($brand_colors-red,1.0);
-            display: block;
-            height: 100%;
-            width: 3px;
-            position: absolute;
-            content: '';
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.3s, visibility 0.3s;
           }
         }
       }
