@@ -17,13 +17,13 @@
 	$categoryItems = array(
 		"undergraduate" => array(
 			array('Admissions','https://www.northeastern.edu/admissions/')
-			,array('Experiential Learning','http://www.northeastern.edu/experiential-learning/')
+			,array('Academic Programs','https://undergraduate.northeastern.edu/academic-programs/')
 			,array('Visit Campus','https://www.northeastern.edu/admissions/connect/visit/')
 		)
 		,"graduate" => array(
-			array('Visit Campus','https://www.northeastern.edu/admissions/connect/visit/')
+			array('Graduate Programs','https://www.northeastern.edu/graduate/programs/#/')
+			,array('Admissions','https://www.northeastern.edu/graduate/programs/#/')
 			,array('PhD Education','https://phd.northeastern.edu/')
-			,array('Graduate Faculty','https://phd.northeastern.edu/')
 		)
 		,"research" => array(
 			array('Health','http://www.northeastern.edu/research/about/research-areas/health/')
@@ -31,7 +31,7 @@
 			,array('Sustainability','http://www.northeastern.edu/research/about/research-areas/sustainability/')
 		)
 		,"lifelong learning" => array(
-			array('Programs','https://www.northeastern.edu/graduate/')
+			array('Professional Programs','https://www.northeastern.edu/learnforlife/programs/')
 			,array('Campus Network','https://www.northeastern.edu/learnforlife/campuses/')
 			,array('Admissions','https://www.northeastern.edu/graduate/admissions-information/how-to-apply/the-process/')
 		)
