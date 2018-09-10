@@ -395,7 +395,6 @@ div.main {
                 line-height: 2.8rem;
                 text-align: left;
                 line-height: 3.0rem;
-                letter-spacing: 1px;
                 background: #fffffe;
                 padding: 10px 30px 10px 30px; }
               div.main div#nu__stories > div:nth-child(2) > article > div.searcharea > form > input[type=submit] {
@@ -424,13 +423,13 @@ div.main {
             z-index: 0; }
             div.main div#nu__stories > div:nth-child(2) > article > div.nlogo > svg {
               height: 101%;
-              fill: rgba(151, 151, 151, 0.6); }
+              fill: rgba(151, 151, 151, 0.1); }
           div.main div#nu__stories > div:nth-child(2) > article:last-child {
             margin: 0 0 0 0;
             background: transparent; }
           div.main div#nu__stories > div:nth-child(2) > article:first-child {
-            background: rgba(151, 151, 151, 0.2);
-            border: solid rgba(151, 151, 151, 0.6) 1px; }
+            background: rgba(151, 151, 151, 0.1);
+            border: solid rgba(151, 151, 151, 0.3) 1px; }
   div.main div#nu__categories {
     display: flex;
     flex-direction: row;
