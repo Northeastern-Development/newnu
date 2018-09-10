@@ -679,7 +679,7 @@ div.main {
           font-weight: 300;
           line-height: 3.2rem;
           text-align: left;
-          padding: 15px 30px 0 30px;
+          padding: 15px 30px 15px 30px;
           text-align: left; }
       div.main div#nu__stories div.nu__block-rotator > div.bgimage {
         float: none;
