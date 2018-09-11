@@ -560,6 +560,8 @@ div.main {
           visibility: visible;
           opacity: 1;
           transition: opacity 0.3s, visibility 0.3s; }
+        div.main div#nu__events > div.eventgrid > div.eventgrid-item:hover > div.chevron {
+          color: #cc0000; }
     div.main div#nu__events > div.eventgrid-viewall {
       width: auto;
       float: right; }

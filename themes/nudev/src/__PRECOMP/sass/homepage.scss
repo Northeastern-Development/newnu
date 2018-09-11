@@ -545,6 +545,9 @@ div.main{
             opacity: 1;
             transition: opacity 0.3s, visibility 0.3s;
           }
+          & > div.chevron{
+            color: rgba($brand_colors-red,1.0);
+          }
         }
       }
 
