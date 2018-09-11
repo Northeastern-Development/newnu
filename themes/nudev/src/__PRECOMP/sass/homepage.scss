@@ -445,22 +445,17 @@ div.main{
           list-style: none;
           list-style-type: none;
           & > li{
-            // color: red;
             border-bottom: solid rgba($brand_colors-grayW,0.6) 1px;
             padding: 20px 0 20px 0;
             & > a{
               @include font-2b-l;
               color: rgba($brand_colors-black,1.0);
               border-bottom: solid rgba($brand_colors-white,1.0) 1px;
-              // display: block;
 
               &:hover{
                 border-bottom: solid rgba($brand_colors-red,1.0) 1px;
               }
             }
-            // &:last-child{
-            //   border: none;
-            // }
           }
 
         }
@@ -495,7 +490,6 @@ div.main{
           position: absolute;
           right: 20px;
           bottom: 20px;
-          // background: red;
           width: 20px;
           height: 20px;
           color: rgba($brand_colors-black,1.0);
