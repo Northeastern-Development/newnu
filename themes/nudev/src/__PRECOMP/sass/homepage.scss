@@ -80,7 +80,8 @@ div.main{
         z-index: 200;
         border-bottom: none;
         color: rgba($brand_colors-black,0.0);
-        &:hover{
+        &:hover,
+        &:focus{
           & ~ div.nu__panel-content{
             & h2{
               text-decoration: none;
@@ -176,7 +177,8 @@ div.main{
             z-index:100;
             display:table-cell;
             vertical-align: middle;
-            &:hover {
+            &:hover,
+            &:focus{
               background: rgba($brand_colors-white,1.0);
               color: rgba($brand_colors-black,1.0);
               cursor: pointer;
@@ -220,7 +222,8 @@ div.main{
         border-bottom: none;
         color: rgba($brand_colors-black,0.0);
         background:rgba($brand_colors-black,0.0);
-        &:hover{
+        &:hover,
+        &:focus{
           & ~ div.nu__panel-content{
             & > div{
               & h2{
@@ -351,7 +354,8 @@ div.main{
                 padding: 5px $gutter 5px $gutter;
                 color: rgba($brand_colors-white,1.0);
                 letter-spacing: 0px;
-                &:hover{
+                &:hover,
+                &:focus{
                   background: rgba($brand_colors-black,1.0);
                   cursor: pointer;
                 }
@@ -434,7 +438,8 @@ div.main{
             line-height: 1.6rem;
             text-transform: uppercase;
           }
-          &:hover{
+          &:hover,
+          &:focus{
             & > div.bgimage{
               transform: scale(1.1);
               transition: all .5s;
@@ -452,7 +457,8 @@ div.main{
               color: rgba($brand_colors-black,1.0);
               border-bottom: solid rgba($brand_colors-white,1.0) 1px;
 
-              &:hover{
+              &:hover,
+              &:focus{
                 border-bottom: solid rgba($brand_colors-red,1.0) 1px;
               }
             }
@@ -501,7 +507,8 @@ div.main{
           padding: ($gutter / 2) $gutter ($gutter / 2) $gutter;
           border: solid rgba($brand_colors-grayW,0.6) 1px;
           overflow: hidden;
-          &:hover{
+          &:hover,
+          &:focus{
             color: rgba($brand_colors-black,1.0);
             & > h3{
               color: rgba($brand_colors-red,1.0);
@@ -533,7 +540,8 @@ div.main{
           opacity: 0;
           transition: opacity 0.3s, visibility 0.3s;
         }
-        &:hover{
+        &:hover,
+        &:focus{
           &:before{
             visibility: visible;
             opacity: 1;
@@ -552,7 +560,8 @@ div.main{
       & > a{
         @include font-2l-l;
         border: none;
-        &:hover{
+        &:hover,
+        &:focus{
           color: rgba($brand_colors-black,1.0);
           border-bottom: solid rgba($brand_colors-red,1.0) 1px;
         }
