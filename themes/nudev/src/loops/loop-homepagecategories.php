@@ -16,8 +16,8 @@
 
 	$categoryItems = array(
 		"undergraduate" => array(
-			array('Admissions','https://www.northeastern.edu/admissions/')
-			,array('Academic Programs','https://undergraduate.northeastern.edu/academic-programs/')
+			array('Academic Programs','https://undergraduate.northeastern.edu/academic-programs/')
+			,array('Admissions','https://www.northeastern.edu/admissions/')
 			,array('Visit Campus','https://www.northeastern.edu/admissions/connect/visit/')
 		)
 		,"graduate" => array(
@@ -54,17 +54,16 @@
 			$options .= '<li><a href="'.$cI[1].'" title="'.$cI[0].'" target="_blank">'.$cI[0].'</a></li>';
 		}
 
-
-			$return .= sprintf(
-				$guide
-				,$stories[$i]['block_slide'][0]['block_slide_link']
-				,$stories[$i]['block_slide'][0]['block_slide_title']
-				,($stories[$i]['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
-				,($stories[$i]['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
-				,'background-image: url('.$thisImage.');'
-				,$stories[$i]['block_slide'][0]['block_slide_title']
-				,$options
-			);
+		$return .= sprintf(
+			$guide
+			,$stories[$i]['block_slide'][0]['block_slide_link']
+			,$stories[$i]['block_slide'][0]['block_slide_title']
+			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
+			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
+			,'background-image: url('.$thisImage.');'
+			,$stories[$i]['block_slide'][0]['block_slide_title']
+			,$options
+		);
 
 	}
 

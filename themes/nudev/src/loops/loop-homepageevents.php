@@ -9,26 +9,26 @@
  * @return string
  */
 function substrwords($text, $maxchar, $end='...') {
-		if (strlen($text) > $maxchar || $text == '') {
-				$words = preg_split('/\s/', $text);
-				$output = '';
-				$i = 0;
-				while (1) {
-						$length = strlen($output)+strlen($words[$i]);
-						if ($length > $maxchar) {
-								break;
-						}
-						else {
-								$output .= " " . $words[$i];
-								++$i;
-						}
-				}
-				$output .= $end;
+	if (strlen($text) > $maxchar || $text == '') {
+		$words = preg_split('/\s/', $text);
+		$output = '';
+		$i = 0;
+		while (1) {
+			$length = strlen($output)+strlen($words[$i]);
+			if ($length > $maxchar) {
+				break;
+			}
+			else {
+				$output .= " " . $words[$i];
+				++$i;
+			}
 		}
-		else {
-				$output = $text;
-		}
-		return $output;
+		$output .= $end;
+	}
+	else {
+		$output = $text;
+	}
+	return $output;
 }
 
 
@@ -64,15 +64,15 @@ curl_close($ch);
 $decoded = json_decode($data, true);
 
 // If using the TRENDING fetch, set this to true!
-    $sort_trending = true;
-    // When using TRENDING, sort the results by date (so its 8 trending results, then sorted by date here)
-    if( $sort_trending === true ){
-        usort($decoded['events'], function($a, $b){
-            $timeStamp1 = strtotime($a['event']['event_instances'][0]['event_instance']['start']);
-            $timeStamp2 = strtotime($b['event']['event_instances'][0]['event_instance']['start']);
-            return $timeStamp1 - $timeStamp2;
-        });
-    }
+$sort_trending = true;
+// When using TRENDING, sort the results by date (so its 8 trending results, then sorted by date here)
+if( $sort_trending === true ){
+  usort($decoded['events'], function($a, $b){
+    $timeStamp1 = strtotime($a['event']['event_instances'][0]['event_instance']['start']);
+    $timeStamp2 = strtotime($b['event']['event_instances'][0]['event_instance']['start']);
+    return $timeStamp1 - $timeStamp2;
+  });
+}
 
 // Open the Grid Wrapper (flex parent)
 $upcoming_events = "<div class=\"eventgrid\">";
