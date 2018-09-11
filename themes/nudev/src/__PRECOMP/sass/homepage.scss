@@ -521,8 +521,9 @@ div.main{
             @include font-2b-l;
           }
           & > p{
-            word-wrap: normal;
+            // word-wrap: normal;
             word-break: break-all;
+            // word-wrap: break-word;
             @include font-2r-l;
           }
         }
