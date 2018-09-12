@@ -31,34 +31,8 @@ function substrwords($text, $maxchar, $end='...') {
 	return $output;
 }
 
-
-
-// Setup cURL request to Localist API
-$ch = curl_init();
-
-// Return 8 events, starting "today", looking forward at most 7 days
-// curl_setopt($ch, CURLOPT_URL, 'http://calendar.northeastern.edu/api/2.2/events?pp=8&days=7');
-curl_setopt($ch, CURLOPT_URL, 'http://calendar.northeastern.edu/api/2.2/events?pp=8&days=60&sort=ranking&distinct=true');
-
-// TRUE to return the transfer as a string of the return value of curl_exec() instead of outputting it out directly.
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-// TRUE to follow any "Location: " header that the server sends as part of the HTTP header
-// (note this is recursive, PHP will follow as many "Location: " headers that it is sent, unless CURLOPT_MAXREDIRS is set).
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-
-// The maximum number of seconds to allow CURL functions to execute.
-curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-
-// The number of seconds to wait whilst trying to connect. Use 0 to wait indefinitely.
-curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-
-// Returns TRUE on success or FALSE on failure.
-// However, if the CURLOPT_RETURNTRANSFER option is set, (which it is)
-// it will return the result on success, FALSE on failure.
-$data = curl_exec($ch);
-
-curl_close($ch);
+// grab the data from localist
+$data = wp_remote_get('http://calendar.northeastern.edu/api/2.2/events?pp=8&days=60&sort=ranking&distinct=true')['body'];
 
 // Decode the returned JSON string
 $decoded = json_decode($data, true);

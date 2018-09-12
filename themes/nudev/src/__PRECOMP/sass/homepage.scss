@@ -45,7 +45,7 @@ div.main{
     line-height: 0px;
     &.events{
       &:before{
-        width: 170px;
+        width: 190px;
         @include font-2b-l;
         color: rgba($brand_colors-black,1.0);
         content:'TRENDING EVENTS';
