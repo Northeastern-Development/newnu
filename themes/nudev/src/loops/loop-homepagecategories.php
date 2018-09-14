@@ -43,25 +43,23 @@
 
 	for($i=2;$i<6;$i++){
 
-		$thisImage = $stories[$i]['block_slide'][0];
-		foreach($iPath as $iP){
-			$thisImage = $thisImage[$iP];
-		}
+		// we need to see if there is more than 1 block with an image so that we can potentially pick a random one each time page loads
+		$thisImage = $stories[$i]['block_slide'][rand(0,(count($stories[$i]['block_slide']) - 1))]['block_slide_image']['url'];
 
 		// this will build out the category options
 		$options = '';
-		foreach($categoryItems[strtolower($stories[$i]['block_slide'][0]['block_slide_title'])] as $cI){
+		foreach($categoryItems[strtolower($stories[$i]['block_name'])] as $cI){
 			$options .= '<li><a href="'.$cI[1].'" title="'.$cI[0].'" target="_blank">'.$cI[0].'</a></li>';
 		}
 
 		$return .= sprintf(
 			$guide
 			,$stories[$i]['block_slide'][0]['block_slide_link']
-			,$stories[$i]['block_slide'][0]['block_slide_title']
+			,$stories[$i]['block_name']
 			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
 			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
 			,'background-image: url('.$thisImage.');'
-			,$stories[$i]['block_slide'][0]['block_slide_title']
+			,$stories[$i]['block_name']
 			,$options
 		);
 
