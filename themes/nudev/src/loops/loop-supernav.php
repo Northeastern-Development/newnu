@@ -55,20 +55,23 @@
 	$navConfig = array();
 	foreach($res as $r){
 		$fields = get_fields($r->ID);
-		if($fields['sub-type'] == 'Primary'){
-			$navConfig[0][] = $r->post_title;
-		}else{
-			$navConfig[1][] = $r->post_title;
-		}
+		// if($fields['sub-type'] == 'Primary'){
+			// $navConfig[0][] = $r->post_title;
+		// }else{
+			// $navConfig[1][] = $r->post_title;
+		// }
+		$navConfig[] = array($r->post_title,$fields['hide_until_mobile']);
 	}
 
 	$return = '';
-	$i = 0;
+	// $i = 0;
 	$jj = 0;
 
-	foreach($navConfig as $nC){
+	// print_r($navConfig);
 
-		foreach($nC as $o){
+	foreach($navConfig as $o){
+
+		// foreach($nC as $o){
 
 			$args = array(
 				 "post_type" => "supernav"
@@ -76,7 +79,7 @@
 				,'meta_query' => array(
 					 'relation' => 'AND'
 					,array("key"=>"status","value"=>"1","compare"=>"=")
-					,array("key"=>"category","value"=>trim($o),"compare"=>"=")
+					,array("key"=>"category","value"=>trim($o[0]),"compare"=>"=")
 				)
 			);
 
@@ -84,7 +87,9 @@
 
 			if(count($res) >= 1){
 
-				$return .= '<li title="'.$o.'"'.($jj==0?' class="active"':'').' role="button" tabindex="-1">'.$o.'<ul role="menu" aria-hidden="true"><li>'.$o.'</li>';
+				// print_r($nC);
+
+				$return .= '<li title="'.$o[0].'" class="'.($jj==0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" role="button" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li>'.$o[0].'</li>';
 				foreach($res as $r){
 
 					$fields = get_fields($r->ID);
@@ -106,8 +111,8 @@
 
 			}
 			$jj++;
-		}
-		$i++;
+		// }
+		// $i++;
 	}
 
 	// grab the featured items from the menu CMS and show them below
@@ -122,7 +127,9 @@
 
 	$res = query_posts($args);
 
-	$guide = '<li class="featured%s%s"><a href="%s" title="learn more about %s%s"%s><div><img src="%s" alt="%s icon" /></div><div>%s</div></a></li>';
+	// print_r($res);
+
+	$guide = '<li class="featured%s%s%s"><a href="%s" title="learn more about %s%s"%s><div><img src="%s" alt="%s icon" /></div><div>%s</div></a></li>';
 
 	$iii = 0;
 	foreach($res as $r){
@@ -133,6 +140,7 @@
 			$guide
 			,($iii === 0?' first':'')
 			,(strtolower($r->post_title) == "make a gift"?' makeagift':'')
+			,($fields['hide_until_mobile'] == 1?' hideuntilmobile':'')
 			,$fields['link_target_url']
 			,$r->post_title
 			,(isset($fields['open_in_new']) && $fields['open_in_new'] == "1"?' [will open in new window]':'')

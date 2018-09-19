@@ -88,19 +88,24 @@
 					<nav role="menu" class="nu__mainmenu" aria-label="main menu">
 
 						<div id="nu__mainmenu-supernav">
-							<a id="nu__supernav-toggle" href="mainmenu" title="Click to show/hide main menu" aria-label="Click to show/hide main menu" tabindex="3" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="Menu">Menu</a>
+							<!-- <a id="nu__supernav-toggle" href="mainmenu" title="Click to show/hide main menu" aria-label="Click to show/hide main menu" tabindex="3" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="Menu">Menu</a> -->
+							<a id="nu__supernav-toggle" href="mainmenu" title="Click to show/hide main menu" aria-label="Click to show/hide main menu" tabindex="3" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="Menu"></a>
 							<?php if(get_query_var('pagename') != 'main-menu'){ get_template_part('loops/loop-supernav'); } ?>
 						</div>
 
 						<div id="nu__mainmenu-search">
-							<a id="nu__search-toggle" href="search" title="Click to search all of Northeastern University" aria-label="Click to search all of Northeastern University" tabindex="2" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="Search">Search</a>
+							<!-- <a id="nu__search-toggle" href="search" title="Click to search all of Northeastern University" aria-label="Click to search all of Northeastern University" tabindex="2" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="Search">Search</a> -->
+							<a id="nu__search-toggle" href="search" title="Click to search all of Northeastern University" aria-label="Click to search all of Northeastern University" tabindex="2" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="Search"></a>
 							<?php get_template_part('loops/loop-searchnav'); ?>
 						</div>
 
-						<div id="nu__mainmenu-iamnav">
+						<!-- this is where the items hidden in the main nav will appear as dropdowns -->
+						<?php get_template_part('loops/loop-dropdowns'); ?>
+
+						<!-- <div id="nu__mainmenu-iamnav">
 							<a id="nu__iamnav-toggle" href="iammenu" title="Click to show/hide audience selection menu" aria-label="Click to show/hide audience selection menu" tabindex="1" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="I Am A">I Am A</a>
 							<?php if(get_query_var('pagename') != 'iam-menu'){ get_template_part('loops/loop-iamnav'); } ?>
-						</div>
+						</div> -->
 
 					</nav>
 

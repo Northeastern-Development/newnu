@@ -39,6 +39,84 @@ div#nu__mainmenu-supernav{
 
 nav.nu__mainmenu{
 
+  & > ul.dropdowns{
+    // background: green;
+    float: right;
+    list-style: none;
+    list-style-type: none;
+    height: 100%;
+    & > li{
+      display: inline-block;
+      // margin: 0 $gutter 0 0;
+      padding: 0 $gutter 0 $gutter;
+      color: rgba($brand_colors-white, 0.8);
+      border: none;
+      text-decoration: none;
+      text-transform: uppercase;
+      // background: blue;
+      height: auto;
+      position: relative;
+      &:last-child{
+        margin: 0 $gutter 0 0;
+      }
+      &:hover{
+        color: rgba($brand_colors-white, 1.0);
+        cursor: pointer;
+      }
+      & > a{
+        color: rgba($brand_colors-white, 0.8);
+        border: none;
+        text-decoration: none;
+        display: block;
+        text-transform: uppercase;
+        &:hover{
+          color: rgba($brand_colors-white, 1.0);
+          cursor: pointer;
+        }
+      }
+      & > ul{
+        display: none;
+        line-height: 50px;
+        position: absolute;
+        // z-index: 2000;
+        background: rgba(62, 62, 62, 1.0);
+        // background: green;
+        list-style: none;
+        list-style-type: none;
+        height: auto;
+        // width: 250px;
+        width: auto;
+        // right: 0;
+        left: 0;
+        // margin: -30px 0 0 0;
+        margin: 0 0 0 0;
+        border: solid rgba($brand_colors-grayW, 1.0) 1px;
+        & > li{
+          height: 50px;
+          border-bottom: solid rgba($brand_colors-grayW, 1.0) 1px;
+          & > a{
+            display: block;
+            word-wrap: normal;
+            white-space: nowrap;
+            padding: 0 $gutter 0 $gutter;
+            line-height: 50px;
+            color: rgba($brand_colors-white, 0.8);
+            border: none;
+            text-transform: capitalize;
+            &:hover{
+              color: rgba($brand_colors-black, 1.0);
+              cursor: pointer;
+              background: rgba($brand_colors-beige, 1.0);
+            }
+          }
+          &:last-child{
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
   & > div > a{
     height: inherit;
     display: block;
@@ -46,6 +124,10 @@ nav.nu__mainmenu{
     color: rgba($brand_colors-white, 0.8);
     height: $header-height;
     border-bottom: none;
+    // background: green;
+    // margin: 0 0 0 $gutter;
+    // text-align: center;
+    padding: 0 $gutter 0 $gutter;
     &:hover{
       color: rgba($brand_colors-white, 1.0);
     }
@@ -54,7 +136,8 @@ nav.nu__mainmenu{
       @include font-4-c;
       line-height: ($header-height + 5);
       height: $header-height;
-      margin: 0 0 0 3px;
+      // margin: 0 0 0 3px;
+      text-align: center;
     }
     &.active{
       color: rgba($brand_colors-white, 1.0);
@@ -80,9 +163,9 @@ nav.nu__mainmenu{
 // the following bunch of styles handles the click event on the checkbox to hide and show the supernav
 // so that we do not need to use JS
 // ****************************************************************************************************
-div#nu__mainmenu-supernav{
-  width: 100px;
-}
+// div#nu__mainmenu-supernav{
+//   width: 100px;
+// }
 
 a#nu__supernav-toggle:not(.active){
   &:after{
@@ -98,9 +181,9 @@ a#nu__supernav-toggle:not(.active){
   // the following bunch of styles handles the click event on the checkbox to hide and show the iamnav
   // so that we do not need to use JS
   // ****************************************************************************************************
-  div#nu__mainmenu-iamnav{
-    width: 106px;
-  }
+  // div#nu__mainmenu-iamnav{
+  //   width: 106px;
+  // }
 
   a#nu__iamnav-toggle:not(.active){
     &:after{
@@ -118,7 +201,9 @@ a#nu__supernav-toggle:not(.active){
   // so that we do not need to use JS
   // ****************************************************************************************************
   div#nu__mainmenu-search{
-    width: 115px;
+    // width: 115px;
+    border-right: solid rgba($brand_colors-grayW,1) 1px;
+    border-left: solid rgba($brand_colors-grayW,1) 1px;
   }
 
   a#nu__search-toggle:not(.active){
@@ -261,6 +346,9 @@ a#nu__supernav-toggle:not(.active){
             line-height: $lineH;
             border-bottom: solid rgba($brand_colors-beige,0.2) 1px;
             color:  rgba($brand_colors-beige, 1.0);
+            &.hideuntilmobile{
+              display: none;
+            }
             &.featured{
               line-height: 0;
               border: none;

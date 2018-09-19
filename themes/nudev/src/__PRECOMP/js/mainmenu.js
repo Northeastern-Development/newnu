@@ -57,24 +57,28 @@ var cNav = null;
 
 			// determine which nav we are looking at and whether it is the currently active one, in which case close it
 			if(cNav == null){  // if no menu is currently open
-        $(this).addClass('active').focus().html('Close').next('div').addClass('open');
+        // $(this).addClass('active').focus().html('Close').next('div').addClass('open');
+				$(this).addClass('active').focus().next('div').addClass('open');
         $(this).next('div').find('div.items > ul').attr('aria-hidden','false');
 				$(this).next('div').find('div.items > ul > li').first().focus();
 				$(this).next('div').find('div.items > ul > li').attr('tabindex','1');
         //$(this).next('div').find('div.items > ul > li > ul').first().attr('aria-hidden','false');
 				cNav = $(this).attr('id');
 			}else if($(this).attr('id') == cNav){  // if we have clicked the same menu item again after it was open
-        $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+        // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+				$(this).removeClass('active').blur().next('div').removeClass('open');
         $(this).next('div').find('div.items ul').attr('aria-hidden','true');
 				cNav = null;
 			}else{ // if we have clicked another menu item while one was already open
 
         $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
-          $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+          // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+					$(this).removeClass('active').blur().next('div').removeClass('open');
           $('div.items > ul').attr('aria-hidden','true');
         });
 
-        $(this).addClass('active').html('Close').focus().next('div').addClass('open');  // activate the one that was selected
+        // $(this).addClass('active').html('Close').focus().next('div').addClass('open');  // activate the one that was selected
+				$(this).addClass('active').focus().next('div').addClass('open');  // activate the one that was selected
         $(this).next('div').find('div.items ul').attr('aria-hidden','true');
 				cNav = $(this).attr('id');
 			}
@@ -124,12 +128,28 @@ var cNav = null;
 			if(['nu__supernav','nu__searchbar','nu__iamnav'].indexOf(e.target.id) >= 0){
 
         $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
-          $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+          // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+					$(this).removeClass('active').blur().next('div').removeClass('open');
         });
 
 				cNav = null;
 				allowScrollOrNot();
 			}
+		});
+
+
+
+
+
+		// this will handle the new dropdown system for items outside the hamburger menu
+		$('ul.dropdowns').on('mouseover','li.js-dropdown',function(e){
+			// console.log('hover over dropdown menu');
+			$(this).find('ul').show();
+		});
+
+		$('ul.dropdowns').on('mouseout','li.js-dropdown',function(e){
+			// console.log('hover over dropdown menu');
+			$(this).find('ul').hide();
 		});
 
 
@@ -214,7 +234,8 @@ var cNav = null;
 
         if(e.which == 27){
           $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
-            $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+            // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+						$(this).removeClass('active').blur().next('div').removeClass('open');
             $('div.items > ul').attr('aria-hidden','true');
           });
         }
