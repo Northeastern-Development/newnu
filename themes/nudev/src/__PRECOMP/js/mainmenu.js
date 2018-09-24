@@ -63,12 +63,20 @@ var cNav = null;
 				$(this).next('div').find('div.items > ul > li').first().focus();
 				$(this).next('div').find('div.items > ul > li').attr('tabindex','1');
         //$(this).next('div').find('div.items > ul > li > ul').first().attr('aria-hidden','false');
+
+				// we need to reveal the dropdown sneezeguard
+				$('.js-dropdown-sneezeguard').css({'height':'100%'});
+
 				cNav = $(this).attr('id');
 			}else if($(this).attr('id') == cNav){  // if we have clicked the same menu item again after it was open
         // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
 				$(this).removeClass('active').blur().next('div').removeClass('open');
         $(this).next('div').find('div.items ul').attr('aria-hidden','true');
 				cNav = null;
+
+				// we need to hide the dropdown sneezeguard
+				$('.js-dropdown-sneezeguard').css({'height':'0'});
+
 			}else{ // if we have clicked another menu item while one was already open
 
         $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
@@ -92,9 +100,9 @@ var cNav = null;
 			}
 
 			// check to see if we need to collapse the footer if it is already open (homepage only)
-			if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
-				$('footer#nu__global-footer').addClass('collapse');
-			}
+			// if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
+			// 	$('footer#nu__global-footer').addClass('collapse');
+			// }
 
 		});
 
@@ -114,9 +122,9 @@ var cNav = null;
 				$('#nu__iamnav > section > div > ul > li:first-child').addClass('active');
 			}
 
-			if(!$('body').hasClass('home')){
+			// if(!$('body').hasClass('home')){
 				allowScrollOrNot();
-			}
+			// }
 		}
 
 
@@ -132,6 +140,9 @@ var cNav = null;
 					$(this).removeClass('active').blur().next('div').removeClass('open');
         });
 
+				// we need to hide the dropdown sneezeguard
+				$('.js-dropdown-sneezeguard').css({'height':'0'});
+
 				cNav = null;
 				allowScrollOrNot();
 			}
@@ -143,12 +154,12 @@ var cNav = null;
 
 		// this will handle the new dropdown system for items outside the hamburger menu
 		$('ul.dropdowns').on('mouseover','li.js-dropdown',function(e){
-			// console.log('hover over dropdown menu');
-			$(this).find('ul').show();
+			//if(!$('#nu__search-toggle').hasClass('active') && !$('#nu__supernav-toggle').hasClass('active')){
+				$(this).find('ul').show();	// dropdowns will only work if the larger supernav style windows are not open
+			//}
 		});
 
 		$('ul.dropdowns').on('mouseout','li.js-dropdown',function(e){
-			// console.log('hover over dropdown menu');
 			$(this).find('ul').hide();
 		});
 
@@ -161,7 +172,8 @@ var cNav = null;
 		function allowScrollOrNot(){
 
 			// prevent the main page from scrolling when the nav is open or allow it if we close the navs
-			if($('input#nu__search-toggle').prop('checked') || $('input#nu__iamnav-toggle').prop('checked') || $('input#nu__supernav-toggle').prop('checked')){
+			// if($('input#nu__search-toggle').prop('checked') || $('input#nu__iamnav-toggle').prop('checked') || $('input#nu__supernav-toggle').prop('checked')){
+			if($('#nu__search-toggle').hasClass('active') === true || $('#nu__supernav-toggle').hasClass('active') === true){
 				$('html').css({'overflow-y':'hidden'});
 			}else{
 				$('html').css({'overflow-y':'scroll'});

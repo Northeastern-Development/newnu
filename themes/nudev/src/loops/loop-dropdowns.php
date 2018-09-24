@@ -22,7 +22,7 @@
 
 	// print_r($res);
 
-	$return = '<ul class="dropdowns">';
+	$return = '<ul class="dropdowns"><div class="sneezeguard js-dropdown-sneezeguard"></div>';
 
 	$singleGuide = '<li><a href="%s" title="%s"%s>%s</a></li>';
 
