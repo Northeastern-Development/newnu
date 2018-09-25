@@ -14,20 +14,25 @@
 
 	$return = '';
 
-	$guide = '<div><div><a href="%s" title="%s%s"%s><div class="bgimage" style="%s"></div><h2>%s</h2></a><ul>%s</ul></div></div>';
+	$guide = '<div><div><a href="%s" title="%s%s"%s><div data-backgrounds="%s" class="bgimage" style="%s"></div><h2>%s</h2></a><ul>%s</ul></div></div>';
 
 	for($i=2;$i<6;$i++){
 
 		// we need to see if there is more than 1 block with an image so that we can potentially pick a random one each time page loads
 		$images = array();
+		$jsonImages = '';
 
 		foreach($stories[$i]['block_slide'] as $bS){
 			if(isset($bS['block_slide_image']) && $bS['block_slide_image'] != ""){
 				$images[] = $bS['block_slide_image']['url'];
+				$jsonImages .= ($jsonImages != ''?',':'').$bS['block_slide_image']['url'];
 			}
 		}
 
 		$thisImage = $images[rand(0,(count($images) - 1))];
+		// $images = json_encode($images);
+
+		// print_r($jsonImages);
 
 		// this will build out the category options
 		$options = '';
@@ -42,6 +47,7 @@
 			,$stories[$i]['block_name']
 			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' [will open in new tab or window]':'')
 			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
+			,$jsonImages
 			,'background-image: url('.$thisImage.');'
 			,$stories[$i]['block_name']
 			,$options

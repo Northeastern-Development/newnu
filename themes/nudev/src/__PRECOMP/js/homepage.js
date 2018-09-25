@@ -20,6 +20,19 @@
 
 
 
+
+		// need to pick a random image for each of the 4 main categories IF they have more than 1 defined
+		$('div#nu__categories div.bgimage').each(function(index){
+			var bgImages = $(this).attr('data-backgrounds').split(",");
+			if(bgImages.length > 1){	// if we have more than 1 image URL, pick one at random otherwise don't do anything
+				$(this).css({'background-image':'url('+bgImages[Math.floor(Math.random() * bgImages.length)]+');'});
+			}
+		});
+
+
+
+
+
     // need to figure out if we need to remove extra height from the content if alerts are visible
     if(parseInt($('#nu__alerts').height()) > 0){
       var hpHeight = parseInt(windowSize[0]) - parseInt($('header').height()) - parseInt($('footer').height());
