@@ -26,6 +26,7 @@
 			var bgImages = $(this).attr('data-backgrounds').split(",");
 			// console.log(bgImages);
 			if(bgImages.length > 1){
+				$(this).attr('style','');
 				// console.log('we need to randomize!');
 				// console.log(bgImages[Math.floor(Math.random() * bgImages.length)]);
 				// console.log($(this));
