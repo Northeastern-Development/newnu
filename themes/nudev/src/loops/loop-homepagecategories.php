@@ -22,7 +22,7 @@
 		$images = array();
 
 		foreach($stories[$i]['block_slide'] as $bS){
-			if($bS['block_slide_image'] != ""){
+			if(isset($bS['block_slide_image']) && $bS['block_slide_image'] != ""){
 				$images[] = $bS['block_slide_image']['url'];
 			}
 		}
