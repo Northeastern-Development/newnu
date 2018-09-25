@@ -24,8 +24,13 @@
 		// need to pick a random image for each of the 4 main categories IF they have more than 1 defined
 		$('div#nu__categories div.bgimage').each(function(index){
 			var bgImages = $(this).attr('data-backgrounds').split(",");
-			if(bgImages.length > 1){	// if we have more than 1 image URL, pick one at random otherwise don't do anything
+			// console.log(bgImages);
+			if(bgImages.length > 1){
+				console.log('we need to randomize!');
+				console.log(bgImages[Math.floor(Math.random() * bgImages.length)]);
 				$(this).css({'background-image':'url('+bgImages[Math.floor(Math.random() * bgImages.length)]+');'});
+			}else{
+				console.log('no need to change anything!');
 			}
 		});
 
