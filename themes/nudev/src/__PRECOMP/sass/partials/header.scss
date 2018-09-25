@@ -222,39 +222,41 @@ div#nu__alerts{
 
 
 @media screen and (max-width: 899px) {
-  div#nu__logo{
-    & > a{
-      & > img{
-        height: 50px;
-      }
-    }
-  }
+  // div#nu__logo{
+  //   & > a{
+  //     & > img{
+  //       height: 50px;
+  //     }
+  //   }
+  // }
 }
 
 
 
 @media screen and (max-width: 720px) {
 
-  $header-height: 100px;
-
-  header {
-    & > div {
-      height: $header-height;
-    }
-  }
-  div#nu__logo{
-    & > a{
-      line-height: 50px;
-      // line-height: 69px;
-      // & > img{
-      //   height: 30px;
-      // }
-      height: 50px;
-      & > svg{
-        height: 50px;
-      }
-    }
-  }
+  // $header-height: 100px;
+  //
+  // header {
+  //   & > div {
+  //     height: $header-height;
+  //   }
+  // }
+  // div#nu__logo{
+  //   // background: red;
+  //   // margin: 0 auto 0 auto;
+  //   & > a{
+  //     line-height: 50px;
+  //     // line-height: 69px;
+  //     // & > img{
+  //     //   height: 30px;
+  //     // }
+  //     height: 50px;
+  //     & > svg{
+  //       height: 50px;
+  //     }
+  //   }
+  // }
 }
 
 // @media screen and (max-width: 600px) {
@@ -305,6 +307,29 @@ div#nu__alerts{
 
           }
         }
+      }
+    }
+  }
+
+  $header-height: 50px;
+
+  header {
+    & > div {
+      height: $header-height;
+    }
+  }
+  div#nu__logo{
+    // background: red;
+    // margin: 0 auto 0 auto;
+    & > a{
+      line-height: $header-height;
+      // line-height: 69px;
+      // & > img{
+      //   height: 30px;
+      // }
+      height: $header-height;
+      & > svg{
+        height: $header-height;
       }
     }
   }
