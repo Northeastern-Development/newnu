@@ -26,12 +26,17 @@
 			var bgImages = $(this).attr('data-backgrounds').split(",");
 			// console.log(bgImages);
 			if(bgImages.length > 1){
-				console.log('we need to randomize!');
-				console.log(bgImages[Math.floor(Math.random() * bgImages.length)]);
-				$(this).css({'background-image':'url('+bgImages[Math.floor(Math.random() * bgImages.length)]+');'});
-			}else{
-				console.log('no need to change anything!');
+				// console.log('we need to randomize!');
+				// console.log(bgImages[Math.floor(Math.random() * bgImages.length)]);
+				// console.log($(this));
+				// $(this).css({'background-image':'url('+bgImages[Math.floor(Math.random() * bgImages.length)]+');'});
+				// $(this).css({'background-image':'url(dfghfhgjfghjfghjfghjfghkfghkfghk);'});
+				// $(this).css({'background-repeat':'repeat !important;'});
+				$(this).attr('style','background-image:url('+bgImages[Math.floor(Math.random() * bgImages.length)]+');')
 			}
+			// else{
+			// 	console.log('no need to change anything!');
+			// }
 		});
 
 
