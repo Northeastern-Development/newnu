@@ -22,22 +22,14 @@
 
 
 		// need to pick a random image for each of the 4 main categories IF they have more than 1 defined
+		$('div#nu__categories div.bgimage').attr('style','');
 		$('div#nu__categories div.bgimage').each(function(index){
 			var bgImages = $(this).attr('data-backgrounds').split(",");
-			// console.log(bgImages);
-			if(bgImages.length > 1){
-				$(this).attr('style','');
-				// console.log('we need to randomize!');
-				// console.log(bgImages[Math.floor(Math.random() * bgImages.length)]);
-				// console.log($(this));
-				// $(this).css({'background-image':'url('+bgImages[Math.floor(Math.random() * bgImages.length)]+');'});
-				// $(this).css({'background-image':'url(dfghfhgjfghjfghjfghjfghkfghkfghk);'});
-				// $(this).css({'background-repeat':'repeat !important;'});
-				$(this).attr('style','background-image:url('+bgImages[Math.floor(Math.random() * bgImages.length)]+');')
+			if(bgImages.length > 1){	// if we need to randomize
+				$(this).attr('style','background-image:url('+bgImages[Math.floor(Math.random() * bgImages.length)]+');');
+			}else{	// if there is only 1 image
+				$(this).attr('style','background-image:url('+bgImages[0]+');');
 			}
-			// else{
-			// 	console.log('no need to change anything!');
-			// }
 		});
 
 
