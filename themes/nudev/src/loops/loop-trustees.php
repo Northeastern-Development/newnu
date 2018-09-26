@@ -2,8 +2,33 @@
 
 	wp_reset_query();
 
-	$return = '<h4>Members</h4><ul>';
+	$return = '';
 
+
+	// we need to test to see if there are any leadership entries, and if so show the title for this section otherwise not
+	$args = array(
+		"post_type" => "corporation"
+		,"posts_per_page" => -1
+		,'meta_query' => array(
+			'relation' => 'AND'
+			,array("key"=>"type","value"=>"Trustee","compare"=>"=")
+			,array("key"=>"sub-type","value"=>"","compare"=>"!=")
+		)
+	);
+
+	$res = query_posts($args);
+
+	// if there are no leadership entries, don't show the section title
+	if(count($res) > 0){
+		$return .= '<h4>Members</h4>';
+	}
+
+
+	$return .= '<ul>';
+
+
+
+	// now let's grab the members of the corporation
 	$args = array(
 		"post_type" => "corporation"
 		,"posts_per_page" => -1
