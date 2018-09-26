@@ -114,7 +114,7 @@ div.main{
       & > li{
         height: auto;
         min-height: 10px;
-        margin-bottom: 0;
+        margin-bottom: 10px;
         &:nth-child(#{$cols}n+#{$cols}){
           margin: 0 0 0 0;
         }
