@@ -67,8 +67,8 @@ function responsive_background_images($maxSize=''){
 	$sizeBreaks = array(
 		 array('very_large',1201,10000,'url')
 		,array('medium_large',1081,1200,'medium_large')
-		,array('large',781,1080,'large')
-		,array('medium',321,780,'medium')
+		,array('large',781,1080,'medium_large')
+		,array('medium',321,780,'medium_large')
 		,array('small',0,320,'medium')
 	);
 
