@@ -4,7 +4,7 @@ var iamnavbgs = null;
 var contentAreaHeight = 0;
 // var cNav = null;
 var debug = false;
-var showSize = true;
+var showSize = false;
 var sizeBreak = 900;
 var isSafari = /safari/i.test(navigator.userAgent);
 var currentPanel = 0;
@@ -83,7 +83,7 @@ function getWindowSize(){
 
 		// let's check to see if they have accepted the cookie window or not, and display it if they have not accepted
 		if(localStorage.getItem('acceptCookies') != 'true'){
-        // $(".cookiewarning").delay(1000).fadeIn(250);	// this is turned off until layout is created and approved
+        $(".cookiewarning").delay(1000).fadeIn(250);	// this is turned off until layout is created and approved
     }
 
 
