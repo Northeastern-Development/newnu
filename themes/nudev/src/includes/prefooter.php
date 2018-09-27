@@ -15,6 +15,8 @@
 
 		if(isset($prefooterFields['pre-footer_image_block']) && $prefooterFields['pre-footer_image_block'] != ''){		// image blocks: image, title, description
 
+			$iPath = responsive_background_images('medium_large');
+
 			$return_prefooter .= '<div class="nu__prefooter imageblocks'.$prefooterBgColor.'"><p>'.$prefooterFields['pre-footer_area_title'].'</p><div><ul>';
 
 			$guide = '<li><a href="%s" title="%s"%s><div class="image"><div style="background-image: url(%s);"></div></div><h4>%s<span>&#xE8E4;</span></h4><p>%s</p></a></li>';
@@ -23,12 +25,18 @@
 
 				$fields = get_fields($r['items'][0]['item']->ID);
 
+				if(count($iPath) > 2){
+					$thisImage = $fields['image'][$iPath[1]][$iPath[2]];
+				}else{
+					$thisImage = $fields['image']['url'];
+				}
+
 				$return_prefooter .= sprintf(
 					$guide
 					,$fields['link']
 					,$r['block_title'].(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
 					,(isset($fields['external_link']) && $fields['external_link'] == "1"?' target="_blank"':'')
-					,$fields['image']['url']
+					,$thisImage
 					,$r['block_title']
 					,$fields['description']
 				);

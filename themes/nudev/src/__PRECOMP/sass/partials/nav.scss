@@ -55,7 +55,6 @@ nav.nu__mainmenu{
       background: rgba($brand_colors-black, 0.6);
     }
     & > li{
-      // background: blue;
       display: inline-block;
       padding: 0 $gutter 0 $gutter;
       color: rgba($brand_colors-white, 0.8);
@@ -78,7 +77,6 @@ nav.nu__mainmenu{
         border: none;
         text-decoration: none;
         display: block;
-        // @include font-2r-l;
         text-transform: uppercase;
         font-size: 1.4rem;
         font-weight: 400;
@@ -91,24 +89,22 @@ nav.nu__mainmenu{
         display: none;
         line-height: 50px;
         position: absolute;
-        // z-index: 9999;
-        // background: rgba(62, 62, 62, 1.0);
         background: rgba(31, 31, 31, 1.0);
-        // background: rgba($brand_colors-black, 1.0);
         list-style: none;
         list-style-type: none;
         height: auto;
         width: auto;
         left: 0;
         margin: 0 0 0 0;
-        border: solid rgba($brand_colors-grayW, 1.0) 1px;
+        border-right: solid rgba($brand_colors-grayW, 1.0) 1px;
+        border-bottom: solid rgba($brand_colors-grayW, 1.0) 1px;
+        border-left: solid rgba($brand_colors-grayW, 1.0) 1px;
+
         & > li{
           height: 50px;
           border-bottom: solid rgba($brand_colors-grayW, 1.0) 1px;
           & > a{
-            // @include font-1l-l;
             font-size: 1.4rem;
-            // @include font-2r-l;
             font-weight: 400;
             display: block;
             word-wrap: normal;
@@ -116,9 +112,7 @@ nav.nu__mainmenu{
             padding: 0 $gutter 0 $gutter;
             line-height: 50px;
             color: rgba($brand_colors-white, 0.8);
-            // color: rgba($brand_colors-beige, 0.8);
             border: none;
-            // text-transform: capitalize;
             text-transform: uppercase;
             &:hover{
               color: rgba($brand_colors-black, 1.0);

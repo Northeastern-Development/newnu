@@ -59,48 +59,49 @@ function ar_responsive_image($image_id,$image_size,$max_width){
 }
 
 
-// this will handle selecting the best possible image size for background css images
-// a = the image array to choose from
-// function responsive_background_images(){
-//
-// 	// $windowSize = $_SESSION['windowsize'];
-//
-// 	switch (true) {
-// 		case ($_SESSION['windowsize']['width'] > 1000):
-// 				return array('url');
-// 				break;
-// 		case ($_SESSION['windowsize']['width'] > 780):
-// 				//return $a['block_slide_image']['sizes']['large'];
-// 				return array('sizes','large');
-// 				break;
-// 		case ($_SESSION['windowsize']['width'] > 200):
-// 				// return $a['block_slide_image']['sizes']['medium'];
-// 				return array('sizes','medium');
-// 				break;
-// 		}
-//
-// }
+// this will determien the best possible iamge size to deliver on a page
+// the max image size to return
+// the structure of the data that holds the images
+function responsive_background_images($maxSize=''){
+
+	$sizeBreaks = array(
+		 array('very_large',1201,10000,'url')
+		,array('medium_large',1081,1200,'medium_large')
+		,array('large',781,1080,'large')
+		,array('medium',321,780,'medium')
+		,array('small',0,320,'medium')
+	);
 
 
-
-function responsive_background_images(){
 	$windowSize = $_SESSION['windowsize'];
 
-	if($windowSize['width'] > 250 && $windowSize['width'] < 760){
-		return array('block_slide_image','sizes','medium_large');
-	}
-	// we will need to revisit this and improve the responsive facet to add in more size options, etc.
+	$return = '';
 
-	// if($windowSize['width'] > 1000){
-	// 	return array('block_slide_image','url');
-	// }else if($windowSize['width'] > 780 && $windowSize['width'] < 1000){
-	// 	return array('block_slide_image','sizes','large');
-	// }else if($windowSize['width'] > 250 && $windowSize['width'] < 780){
-	// 	return array('block_slide_image','sizes','medium');
-	// }else if($windowSize['width'] < 250){
-	// 	return array('block_slide_image','sizes','small');
-	// }
-	return array('block_slide_image','url');
+	$startPoint = 0;
+
+	// if a max size was passed, we need to find our starting point
+	if($maxSize != ''){
+		$c = 0;
+		foreach($sizeBreaks as $sB){
+			if($sB[0] == $maxSize){
+				$startPoint = $c;
+				break;
+			}
+			$c++;
+		}
+	}
+
+	for($i = $startPoint;$i < count($sizeBreaks);$i++){
+		if($windowSize['width'] > $sizeBreaks[$i][1]){	// check to find the max screen size
+			if($i > 0){
+				$return = array('block_slide_image','sizes',$sizeBreaks[$i][3]);
+			}else{
+				$return = array('block_slide_image',$sizeBreaks[$i][3]);
+			}
+			return $return;
+			break;	// just in case
+		}
+	}
 }
 
 

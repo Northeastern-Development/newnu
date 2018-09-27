@@ -920,12 +920,12 @@ div.main{
           width: 100%;
           order: 1;
           height: auto;
-          margin: 0 auto $gutter auto;
+          margin: 0 auto 0 auto;
         }
         &:nth-child(2){
           width: 100%;
           height: auto;
-          margin: $gutter 0 0 0;
+          margin: 0 0 0 0;
           display: block;
           & > article{
             &:first-child{

@@ -30,6 +30,8 @@
 	// this is a specific guide for the search block in the top portion of the homepage
 	$guideSearch = '<article class="nu__block-search">This is the search block!</article>';
 
+	// echo 'SCREEN SIZE: '.$_SESSION['windowsize'];
+
 	$iPath = responsive_background_images();	// call the function to figure out the best image size to use
 
 	foreach($stories as $s){

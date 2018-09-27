@@ -14,7 +14,7 @@
 
 	$guide = '<article id="article-%s"><a %s href="%s" title="Click here now to learn more %s" %s>%s</a><div class="bgimage" style="%s %s"></div><div class="nu__panel-content"><div><h2><span>%s</span></h2></div></div>%s<div class="gradient"></div>%s</article>';
 
-	$iPath = responsive_background_images();	// call the function to figure out the best image size to use
+	$iPath = responsive_background_images('large');	// call the function to figure out the best image size to use
 
 	$thisImage = $story['block_slide'][0];
 	foreach($iPath as $iP){
