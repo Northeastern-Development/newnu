@@ -41,10 +41,8 @@
 		<hr>
 		<?php include(locate_template('includes/prefooter.php')); ?>
 
-		<hr class="events">
-		<div id="nu__events">
-			<?php get_template_part('loops/loop-homepageevents'); ?>
-		</div>
+		<?php get_template_part('loops/loop-homepageevents'); ?>
+
 
 	</div>
 
