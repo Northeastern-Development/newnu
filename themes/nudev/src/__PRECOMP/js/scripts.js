@@ -31,9 +31,9 @@ function getContentAreaHeight(){
 
 // we need to pass the browser window size to PHP so that we can better tailor responsive imagery all around
 function getWindowSize(){
-	windowSize[0] = $(window).height();
-	windowSize[1] = $(window).width();
-	$.post("/wp-content/themes/nudev/src/windowsize.php",{"height":windowSize[0],"width":windowSize[1]},function(data){
+	// windowSize[0] = $(window).height();
+	// windowSize[1] = $(window).width();
+	$.post("/wp-content/themes/nudev/src/windowsize.php",{"height":$(window).height(),"width":$(window).width()},function(data){
 			// console.log(data);
 	});
 }
@@ -48,6 +48,9 @@ function getWindowSize(){
 	"use strict";
 
 	$(function(){
+
+		// call the page setup scripts to optimize some items
+		getWindowSize();
 
 
 		// this is for testing and validating break points based on screen size, turned on and off using global var above
@@ -83,7 +86,7 @@ function getWindowSize(){
 
 		// let's check to see if they have accepted the cookie window or not, and display it if they have not accepted
 		if(localStorage.getItem('acceptCookies') != 'true'){
-        $(".cookiewarning").delay(1000).fadeIn(250);	// this is turned off until layout is created and approved
+        //  $(".cookiewarning").delay(1000).fadeIn(250);	// this is turned off until layout is created and approved
     }
 
 
@@ -148,8 +151,7 @@ function getWindowSize(){
 
 
 
-		// call the page setup scripts to optimize some items
-		getWindowSize();
+
 
 		/* ************************************************************************ */
 

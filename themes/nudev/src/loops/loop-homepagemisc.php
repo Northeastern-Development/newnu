@@ -14,12 +14,12 @@
 
 	$guide = '<article id="article-%s"><a %s href="%s" title="Click here now to learn more %s" %s>%s</a><div class="bgimage" style="%s %s"></div><div class="nu__panel-content"><div><h2><span>%s</span></h2></div></div>%s<div class="gradient"></div>%s</article>';
 
-	$iPath = responsive_background_images('large');	// call the function to figure out the best image size to use
+	// $iPath = responsive_background_images('large');	// call the function to figure out the best image size to use
 
 	$thisImage = $story['block_slide'][0];
-	foreach($iPath as $iP){
-		$thisImage = $thisImage[$iP];
-	}
+	// foreach($iPath as $iP){
+	// 	$thisImage = $thisImage[$iP];
+	// }
 
 	echo sprintf(
 		$guide
@@ -29,7 +29,7 @@
 		,($story['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
 		,($story['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
 		,$story['block_slide'][0]['block_slide_title']
-		,'background-image: url('.$thisImage.');'
+		,'background-image: url('.$thisImage['block_slide_image']['url'].');'
 		,'background-color: '.$story['block_slide'][0]['block_slide_background'].'; '
 		,$story['block_slide'][0]['block_slide_title']
 		,(isset($story['block_overlay_logo']) && $story['block_overlay_logo'] != ''?'<div class="nu__overlay-logo"><img src="'.$story['block_overlay_logo']['url'].'" alt="overlay logo for '.$story['block_slide'][0]['block_slide_title'].'" /></div>':'')

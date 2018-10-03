@@ -24,9 +24,11 @@
 
 	$return = '<ul class="dropdowns"><div class="sneezeguard js-dropdown-sneezeguard"></div>';
 
-	$singleGuide = '<li><a href="%s" title="%s"%s>%s</a></li>';
+	$singleGuide = '<li><a href="%s" title="%s"%s tabindex="%s">%s</a></li>';
 
-	$dropdownGuide = '<li><a href="%s" title="%s"%s>%s</a></li>';
+	$dropdownGuide = '<li role="button" tabindex="-1"><a href="%s" title="%s"%s>%s</a></li>';
+
+	$c = 2;
 
 	foreach($res as $r){
 
@@ -55,10 +57,12 @@
 				,$fields['link_target_url']
 				,$r->post_title
 				,($fields['open_in_new'] == 1?' target="_blank"':'')
+				,$c
 				,$r->post_title
 			);
-		}else{
-			$return .= '<li title="'.$r->post_title.'" class="js-dropdown">'.$r->post_title.'<ul>';
+		}else{	// this is for a dropdown
+			$return .= '<li title="'.$r->post_title.'" class="js-dropdown" role="button" aria-hidden="true" tabindex="'.$c.'">'.$r->post_title.'<ul role="menu" aria-hidden="true">';
+			// $return .= '<li><a href="" title="'.$r->post_title.'" class="js-dropdown" role="menu" aria-hidden="true" tabindex="'.$c.'">'.$r->post_title.'</a><ul>';
 			// this will handle the dropdown style menu items
 
 			foreach($items as $i){
@@ -84,6 +88,7 @@
 
 			$return .= '</ul></li>';
 		}
+		$c++;
 	}
 
 	$return .= '</ul>';

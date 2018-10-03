@@ -12,6 +12,8 @@
 	// let's declare some additional global variables that we may need to use to perform certain functions
 	global $forcePageID;
 
+	// echo 'SPECIFIC POST TYPE: '.$_GET['page'];
+
 
 
 
@@ -94,9 +96,11 @@ function responsive_background_images($maxSize=''){
 	for($i = $startPoint;$i < count($sizeBreaks);$i++){
 		if($windowSize['width'] > $sizeBreaks[$i][1]){	// check to find the max screen size
 			if($i > 0){
-				$return = array('block_slide_image','sizes',$sizeBreaks[$i][3]);
+				// $return = array('block_slide_image','sizes',$sizeBreaks[$i][3]);
+				$return = array('block_slide_image','sizes','medium_large');
 			}else{
-				$return = array('block_slide_image',$sizeBreaks[$i][3]);
+				// $return = array('block_slide_image',$sizeBreaks[$i][3]);
+				$return = array('block_slide_image','url');
 			}
 			return $return;
 			break;	// just in case

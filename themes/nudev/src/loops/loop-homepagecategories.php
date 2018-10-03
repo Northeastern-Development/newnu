@@ -16,7 +16,7 @@
 
 	$guide = '<div><div><a href="%s" title="%s%s"%s><div data-backgrounds="%s" class="bgimage" style="%s"></div><h2>%s</h2></a><ul>%s</ul></div></div>';
 
-	$iPath = responsive_background_images('medium_large');
+	// $iPath = responsive_background_images('medium_large');
 
 	for($i=2;$i<6;$i++){
 
@@ -27,13 +27,16 @@
 		foreach($stories[$i]['block_slide'] as $bS){
 			if(isset($bS['block_slide_image']) && $bS['block_slide_image'] != ""){
 
-				if(count($iPath) > 2){
-					$images[] = $bS[$iPath[0]][$iPath[1]][$iPath[2]];
-					$jsonImages .= ($jsonImages != ''?',':'').$bS[$iPath[0]][$iPath[1]][$iPath[2]];
-				}else{
-					$images[] = $bS[$iPath[0]][$iPath[1]];
-					$jsonImages .= ($jsonImages != ''?',':'').$bS[$iPath[0]][$iPath[1]];
-				}
+				$images[] = $bS['block_slide_image']['url'];
+				$jsonImages .= ($jsonImages != ''?',':'').$bS['block_slide_image']['url'];
+
+				// if(count($iPath) > 2){
+				// 	$images[] = $bS[$iPath[0]][$iPath[1]][$iPath[2]];
+				// 	$jsonImages .= ($jsonImages != ''?',':'').$bS[$iPath[0]][$iPath[1]][$iPath[2]];
+				// }else{
+				// 	$images[] = $bS[$iPath[0]][$iPath[1]];
+				// 	$jsonImages .= ($jsonImages != ''?',':'').$bS[$iPath[0]][$iPath[1]];
+				// }
 			}
 		}
 

@@ -154,14 +154,46 @@ var cNav = null;
 
 		// this will handle the new dropdown system for items outside the hamburger menu
 		$('ul.dropdowns').on('mouseover','li.js-dropdown',function(e){
-			//if(!$('#nu__search-toggle').hasClass('active') && !$('#nu__supernav-toggle').hasClass('active')){
-				$(this).find('ul').show();	// dropdowns will only work if the larger supernav style windows are not open
-			//}
+			openCloseDropdown($(this));
 		});
 
-		$('ul.dropdowns').on('mouseout','li.js-dropdown',function(e){
-			$(this).find('ul').hide();
+		$('ul.dropdowns').on('blur mouseout','li.js-dropdown',function(e){
+
+			$('ul.dropdowns > li.js-dropdown').attr('aria-hidden','true');
+			$('ul.dropdowns > li.js-dropdown').find('ul').hide();
+
 		});
+
+		$('ul.dropdowns').on('keyup','li.js-dropdown',function(e){
+			if(e.which == 13){
+				openCloseDropdown($(this));
+			}
+		});
+
+
+
+
+
+		// this will perform the hide and show of the dropdowns
+		function openCloseDropdown(a){
+			if(a.attr('aria-hidden') == 'true'){
+
+				// a.find('ul').show().attr('aria-hidden','false');
+				// a.find('ul > li').first().focus();
+				// a.find('div.items > ul > li').attr('tabindex','1');
+
+				a.attr('aria-hidden','false');
+				a.find('ul').show().attr('aria-hidden','false');
+				a.find('ul li').attr('tabindex','1');
+				// a.find('ul li').first().focus();
+				// $(this).next('div').find('div.items > ul > li').first().focus();
+				// a.find('ul > li').attr('tabindex','1').first().focus();
+				// $(this).next('div').find('div.items > ul > li').attr('tabindex','1');
+			}else{
+				a.attr('aria-hidden','true');
+				a.find('ul').hide();
+			}
+		}
 
 
 
@@ -249,6 +281,9 @@ var cNav = null;
             // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
 						$(this).removeClass('active').blur().next('div').removeClass('open');
             $('div.items > ul').attr('aria-hidden','true');
+
+						// we need to hide the dropdown sneezeguard
+						$('.js-dropdown-sneezeguard').css({'height':'0'});
           });
         }
       }
