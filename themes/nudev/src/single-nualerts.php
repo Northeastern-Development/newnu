@@ -5,6 +5,12 @@
 	Template Post Type: nualerts
 */
 
+
+	// if this alert is not active, and someone got here another way, redirect to the emergency info page
+	if(get_field('active',$post->ID) == ''){
+		header('location:https://www.northeastern.edu/emergency-information');
+	}
+
 	get_header();
 
 ?>

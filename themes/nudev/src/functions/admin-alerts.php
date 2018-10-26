@@ -91,7 +91,9 @@
 
       if(count($this->alerts) > 0){
 
-        $return = "<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).  Please be sure to read any associated information and contact your campus emergency services with any questions.</p><ul>";
+        // $return = "<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).  Please be sure to read any associated information and contact your campus emergency services with any questions.</p><ul>";
+
+        $return = "<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).</p><ul>";
 
         $guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s - Read More</a></li>';
 
