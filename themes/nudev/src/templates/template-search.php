@@ -18,7 +18,8 @@
 	if($styles['background_image'] != ''){	// this will set a background image
 		$style = 'background-color: none; background: url('.$styles['background_image']['url'].'); background-repeat: no-repeat; background-position: center; background-size: cover;';
 	}else{	// this will set a background color with opacity
-		$style = 'background: rgba('.hex2rgb($styles['background_color']).','.($styles['opacity'] != ''?$styles['opacity']:'0.8').')';
+		// $style = 'background: rgba('.hex2rgb($styles['background_color']).','.($styles['opacity'] != ''?$styles['opacity']:'0.8').')';
+		$style = 'background: rgba(0,0,0,0.8)';
 	}
 
 
