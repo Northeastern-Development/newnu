@@ -14,7 +14,7 @@
 
 	$return = '';
 
-	$guide = '<div><div><a href="%s" title="%s%s"%s><div data-backgrounds="%s" class="bgimage" style="%s"></div><h2>%s</h2></a><ul>%s</ul></div></div>';
+	$guide = '<div><div><a href="%s" title="Learn more about %s%s" aria-label="Learn more about %s%s"%s><div data-backgrounds="%s" class="bgimage" style="%s" aria-label="category image"></div><h2>%s</h2></a><ul>%s</ul></div></div>';
 
 	// $iPath = responsive_background_images('medium_large');
 
@@ -46,12 +46,14 @@
 		$options = '';
 
 		for($ii=1;$ii<count($stories[$i]['block_slide']);$ii++){
-			$options .= '<li><a href="'.$stories[$i]['block_slide'][$ii]['block_slide_link'].'" title="'.$stories[$i]['block_slide'][$ii]['block_slide_title'].($stories[$i]['block_slide'][$ii]['external_link'] == 1?' [will open in new tab or window]':'').'"'.($stories[$i]['block_slide'][$ii]['external_link'] == 1?' target="_blank"':'').'>'.$stories[$i]['block_slide'][$ii]['block_slide_title'].'</a></li>';
+			$options .= '<li><a href="'.$stories[$i]['block_slide'][$ii]['block_slide_link'].'" title="Learn more about '.$stories[$i]['block_slide'][$ii]['block_slide_title'].($stories[$i]['block_slide'][$ii]['external_link'] == 1?' [will open in new tab or window]':'').'" aria-label="Learn more about '.$stories[$i]['block_slide'][$ii]['block_slide_title'].($stories[$i]['block_slide'][$ii]['external_link'] == 1?' [will open in new tab or window]':'').'"'.($stories[$i]['block_slide'][$ii]['external_link'] == 1?' target="_blank"':'').'>'.$stories[$i]['block_slide'][$ii]['block_slide_title'].'</a></li>';
 		}
 
 		$return .= sprintf(
 			$guide
 			,$stories[$i]['block_slide'][0]['block_slide_link']
+			,$stories[$i]['block_name']
+			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' [will open in new tab or window]':'')
 			,$stories[$i]['block_name']
 			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' [will open in new tab or window]':'')
 			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')

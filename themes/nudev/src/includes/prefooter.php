@@ -19,7 +19,7 @@
 
 			$return_prefooter .= '<div class="nu__prefooter imageblocks'.$prefooterBgColor.'"><p>'.$prefooterFields['pre-footer_area_title'].'</p><div><ul>';
 
-			$guide = '<li><a href="%s" title="%s"%s><div class="image"><div style="background-image: url(%s);"></div></div><h4>%s<span>&#xE8E4;</span></h4><p>%s</p></a></li>';
+			$guide = '<li><a href="%s" title="%s"%s><div class="image"><div style="background-image: url(%s);"></div></div><h3>%s<span>&#xE8E4;</span></h3><p>%s</p></a></li>';
 
 			foreach($prefooterFields['pre-footer_image_block'] as $r){
 

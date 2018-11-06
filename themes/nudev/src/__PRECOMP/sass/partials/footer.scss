@@ -71,7 +71,7 @@
    }
 
 
-   & > p{
+   & > h2{
      @include font-6l-c;
      color: rgba($brand_colors-black,1.0);
      margin: 0 auto 20px auto;
@@ -108,7 +108,7 @@
                @include block-item-hover;
 
              }
-             & > h4{
+             & > h3{
                @include action-arrow-shown;
              }
            }
@@ -120,7 +120,7 @@
                @include block-item-default;
              }
            }
-           & > h4{
+           & > h3{
              @include font-3b-l;
              width: 90%;
 
@@ -385,7 +385,7 @@ footer{
       & > ul{
         & > li{
           & > a{
-            & > h4{
+            & > h3{
               @include font-2b-l;
             }
           }
