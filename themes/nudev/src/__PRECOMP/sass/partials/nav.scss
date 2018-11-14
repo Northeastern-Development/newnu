@@ -625,7 +625,8 @@ a#nu__supernav-toggle:not(.active){
               @include font-10l-l;
               color: rgba($brand_colors-white,1.0);
               border-bottom: none;
-              &:hover{
+              &:hover,
+              &:focus{
                 cursor: pointer;
                 border-bottom: solid rgba($brand_colors-red,1.0) 2px;
               }
