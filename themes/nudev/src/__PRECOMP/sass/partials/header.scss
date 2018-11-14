@@ -17,6 +17,7 @@ header{
     margin: 0 auto 0 auto;
     height: $header-height;
     position: relative;
+    clear: both;
   }
 }
 
@@ -118,7 +119,10 @@ div#nu__utility-nav{
 
 div#nu__logo{
   // width: 50%;
-  width: 27%;
+  width: auto;
+  float: left;
+  // background: yellow;
+  height: $header-height;
   & > a{
     line-height: $header-height;
     font-size: 3rem;

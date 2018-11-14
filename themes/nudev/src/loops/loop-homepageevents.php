@@ -62,7 +62,7 @@
 			// Open the Grid Wrapper (flex parent)
 			$upcoming_events .= '<div class="eventgrid">';
 
-			$guide = '<div class="eventgrid-item"><div class="chevron">&#xe5cc;</div><a class="eventgrid-item--linkwrap" href="%s" target="_blank" title="Click to learn more about %s [will open in new tab/window]" aria-label="Click to learn more about %s [will open in new tab/window]"><h3 class="eventgrid-item-date">%s</h3><h4 class="eventgrid-item-title">%s</h4><p class="eventgrid-item-description">%s</p></a></div>';
+			$guide = '<div class="eventgrid-item"><a class="eventgrid-item--linkwrap" href="%s" target="_blank" title="Click to learn more about %s [will open in new tab/window]" aria-label="Click to learn more about %s [will open in new tab/window]"><h3 class="eventgrid-item-date">%s</h3><h4 class="eventgrid-item-title">%s</h4><p class="eventgrid-item-description">%s</p><div class="chevron">&#xe5cc;</div></a></div>';
 
 			// Concat. all the grid items
 			foreach( $decoded['events'] as $i => $event ){

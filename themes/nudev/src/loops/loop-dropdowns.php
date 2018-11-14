@@ -22,11 +22,11 @@
 
 	// print_r($res);
 
-	$return = '<ul class="dropdowns"><div class="sneezeguard js-dropdown-sneezeguard"></div>';
+	$return = '<ul class="dropdowns" role="menubar" aria-hidden="false"><div class="sneezeguard js-dropdown-sneezeguard"></div>';
 
-	$singleGuide = '<li><a href="%s" title="Learn more about %s"%s aria-label="%s" tabindex="%s">%s</a></li>';
+	$singleGuide = '<li role="menuitem" class="js-single"><a href="%s" title="Learn more about %s"%s aria-label="%s" tabindex="0">%s</a></li>';
 
-	$dropdownGuide = '<li role="button" tabindex="-1"><a href="%s" title="Learn more about %s"%s aria-label="%s">%s</a></li>';
+	$dropdownGuide = '<li role="menuitem"><a href="%s" title="Learn more about %s"%s aria-label="%s" tabindex="-1">%s</a></li>';
 
 	$c = 2;
 
@@ -58,11 +58,12 @@
 				,$r->post_title
 				,$r->post_title
 				,($fields['open_in_new'] == 1?' target="_blank"':'')
-				,$c
+				// ,$c
 				,$r->post_title
 			);
 		}else{	// this is for a dropdown
-			$return .= '<li title="Learn more about '.$r->post_title.'" class="js-dropdown" role="button" aria-hidden="true" aria-label="Learn more about '.$r->post_title.'" tabindex="'.$c.'">'.$r->post_title.'<ul role="menu" aria-hidden="true">';
+			// $return .= '<li title="Learn more about '.$r->post_title.'" class="js-dropdown js-dropdown-'.$r->post_name.'" aria-label="Learn more about '.$r->post_title.'" aria-hidden="true" aria-haspopup="true" role="menuitem"><a href="javascript:void();">'.$r->post_title.'</a><ul role="menu" aria-hidden="true">';
+			$return .= '<li id="dropdown-'.$r->post_name.'" title="Learn more about '.$r->post_title.'" class="js-dropdown" aria-label="Learn more about '.$r->post_title.'" aria-hidden="true" aria-haspopup="true" role="menuitem"><a href="javascript:void();">'.$r->post_title.'</a><ul role="menu" aria-hidden="true">';
 			// $return .= '<li><a href="" title="'.$r->post_title.'" class="js-dropdown" role="menu" aria-hidden="true" tabindex="'.$c.'">'.$r->post_title.'</a><ul>';
 			// this will handle the dropdown style menu items
 
@@ -73,8 +74,8 @@
 					$dropdownGuide
 					,$fields['link_target_url']
 					,$i->post_title
-					,$i->post_title
 					,($fields['open_in_new'] == 1?' target="_blank"':'')
+					,$i->post_title
 					,$i->post_title
 				);
 

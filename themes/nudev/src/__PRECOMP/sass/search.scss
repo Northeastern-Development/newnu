@@ -110,7 +110,9 @@ div.main{
               @include font-6l-l;
               color: rgba($brand_colors-white,1.0);
               border-bottom: none;
-              &:hover{
+              &:hover,
+              &:focus,
+              &:active{
                 cursor: pointer;
                 border-bottom: solid rgba($brand_colors-red,1.0) 2px;
               }
@@ -189,7 +191,8 @@ div.main{
               color: rgba($brand_colors-white,0.0);
               pointer-events: none;
             }
-            &:hover{
+            &:hover,
+            &:focus{
               cursor: pointer;
               color: rgba($brand_colors-white,0.6);
             }
@@ -284,7 +287,8 @@ div.main{
             & b{
               @include font-3b-l;
             }
-            &:hover{
+            &:hover,
+            &:focus{
               border-bottom: solid rgba($brand_colors-red,1.0) 2px;
             }
           }

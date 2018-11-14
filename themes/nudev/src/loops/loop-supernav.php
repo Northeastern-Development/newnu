@@ -90,7 +90,7 @@
 
 				// print_r($nC);
 
-				$return .= '<li title="View '.$o[0].'" aria-label="View '.$o[0].'" class="'.($jj==0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" role="button" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li>'.$o[0].'</li>';
+				$return .= '<li title="View '.$o[0].'" aria-label="View '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" role="button" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li>'.$o[0].'</li>';
 				foreach($res as $r){
 
 					$fields = get_fields($r->ID);

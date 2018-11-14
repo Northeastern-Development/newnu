@@ -2,10 +2,10 @@
 
 
 		<div class="cookiewarning">
-			<div class="js__cookie-accept" title="Accept and Continue">&#xE14C;</div>
+			<div class="js__cookie-accept" title="Click here to accept and continue">&#xE14C;</div>
 			<h3>Cookies on Northeastern sites</h3>
 			<p>This website uses cookies and similar technologies to understand your use of our website and give you a better experience. By continuing to use the site or closing this banner without changing your cookie settings, you agree to our use of cookies and other technologies. To find out more about our use of cookies and how to change your settings, please go to our <a href="/privacy-information" title="Privacy information">Privacy Statement</a>.</p>
-			<button class="js__cookie-accept" title="Accept and Continue">Accept and Continue</button>
+			<button class="js__cookie-accept" title="Click here to accept and continue">Accept and Continue</button>
 		</div>
 
 		<?php
