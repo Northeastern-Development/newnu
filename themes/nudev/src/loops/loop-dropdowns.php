@@ -56,8 +56,9 @@
 				$singleGuide
 				,$fields['link_target_url']
 				,$r->post_title
-				,$r->post_title
 				,($fields['open_in_new'] == 1?' target="_blank"':'')
+				,$r->post_title
+
 				// ,$c
 				,$r->post_title
 			);
