@@ -161,7 +161,7 @@ var cNav = null;
 		// if we focus on a main nav item that is NOT a dropdown, we still want to close any open dropdown
 		$('ul.dropdowns').on('focus mouseover','li.js-single',function(e){
 		// $('ul.dropdowns').on('click','li.js-dropdown',function(e){
-			$('ul.dropdowns > li > ul').attr('aria-hidden','true');
+			// $('ul.dropdowns > li > ul').attr('aria-hidden','true');
 			$('ul.dropdowns > li > ul').hide();
 			// openCloseDropdown($(this));
 		});
@@ -174,17 +174,17 @@ var cNav = null;
 		$('ul.dropdowns').on('focus mouseover','li.js-dropdown',function(e){
 		// $('ul.dropdowns').on('click','li.js-dropdown',function(e){
 			$('ul.dropdowns > li > ul').hide();
-			$('ul.dropdowns > li > ul').attr('aria-hidden','true');
+			// $('ul.dropdowns > li > ul').attr('aria-hidden','true');
 			openCloseDropdown($(this));
 		});
 
 		// $('ul.dropdowns').on('blur mouseout','li.js-dropdown',function(e){	// use this if we want to tab through all of the sub items
 		$('ul.dropdowns').on('mouseout','li.js-dropdown',function(e){
 
-			$('ul.dropdowns > li.js-dropdown').attr('aria-hidden','true');
+			// $('ul.dropdowns > li.js-dropdown').attr('aria-hidden','true');
 			$('ul.dropdowns > li.js-dropdown').find('ul > li > a').attr('tabindex','-1');
 			$('ul.dropdowns > li.js-dropdown').find('ul').hide();
-			$('ul.dropdowns > li.js-dropdown > ul').attr('aria-hidden','true');
+			// $('ul.dropdowns > li.js-dropdown > ul').attr('aria-hidden','true');
 
 			// openCloseDropdown($(this));
 
@@ -203,13 +203,16 @@ var cNav = null;
 		// this will perform the hide and show of the dropdowns
 		function openCloseDropdown(a){
 			// console.log(a.attr('aria-hidden'));
-			if(a.attr('aria-hidden') == 'true'){
+			// if(a.attr('aria-hidden') == 'true'){
+			// console.log(a.find('ul').css('display'));
+			if(a.find('ul').css('display') == 'none'){
 
 				// a.focus();
 
 				// console.log(a);
 
-				a.find('ul').show().attr('aria-hidden','false');
+				// a.find('ul').show().attr('aria-hidden','false');
+				a.find('ul').show();
 
 				// a.attr('aria-hidden','false');
 

@@ -24,7 +24,7 @@
 					<div class="searcharea">
 						<h3>Hi, welcome to Northeastern.<br /><span>What can we help you with?</span></h3>
 						<form name="homepagesearch" action="<?=site_url()?>/search" method="get">
-							<input type="text" name="query" id="query" placeholder="Campus Visit, Academic Calendar ..." title="Enter your search query here" />
+							<input type="text" name="query" id="inpagequery" placeholder="Campus Visit, Academic Calendar ..." title="Enter your search query here" /><label for="inpagequery" class="label" style="font-size: 1px;">Search</label>
 							<input name="gosearch" id="gosearch" type="submit" value="Search" title="Click to search">
 						</form>
 					</div>

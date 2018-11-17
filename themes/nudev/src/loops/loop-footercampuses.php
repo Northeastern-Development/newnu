@@ -10,9 +10,9 @@
 
 	if(count($res) > 0){
 
-		$return .= '<!-- <div class="campuses"> --><!-- <p>Campuses</p> --><ul>';
+		$return .= '<!-- <div class="campuses"> --><!-- <p>Campuses</p> --><ul role="menu">';
 
-		$guide = '<li%s><a href="%s" title="Learn more about our %s campus" target="_blank">%s</a></li>';
+		$guide = '<li%s><a href="%s" title="Learn more about our %s campus" aria-label="Learn more about our %s campus" target="_blank" role="menuitem" tabindex="0">%s</a></li>';
 
 		$i = 0;
 		foreach($res as $r){
@@ -23,6 +23,7 @@
 				$guide
 				,($i == 0?' class="nearestcampus"':'')
 				,$fields['campus_url']
+				,$fields['campus_name']
 				,$fields['campus_name']
 				,$fields['campus_name']
 			);
