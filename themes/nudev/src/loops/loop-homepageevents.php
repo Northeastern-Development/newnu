@@ -71,8 +71,8 @@
 					$upcoming_events .= sprintf(
 						$guide
 						,$event['event']['localist_url']
-						,substrwords($event['event']['title'], 55)
-						,substrwords($event['event']['title'], 55)
+						,htmlentities(substrwords($event['event']['title'], 55))
+						,htmlentities(substrwords($event['event']['title'], 55))
 						,date( 'M d',strtotime($event['event']['event_instances'][0]['event_instance']['start']))
 						,substrwords($event['event']['title'], 55)
 						,substrwords(strip_tags($event['event']['description']), 200)
@@ -81,7 +81,7 @@
 			}
 
 			// Add the view all button and close the grid wrapper (flex parent)
-			$upcoming_events .= '</div><div class="eventgrid-viewall"><a class="eventgrid-viewall-link" href="http://calendar.northeastern.edu/" target="_blank" title="Click here to view full calendar [will open in new tab/window]" aria-label="Click here to view full calendar [will open in new tab/window]">View Full Calendar</a></div></div></div>';
+			$upcoming_events .= '</div><div class="eventgrid-viewall"><a class="eventgrid-viewall-link" href="http://calendar.northeastern.edu/" target="_blank" title="Click here to view full university calendar [will open in new tab/window]" aria-label="Click here to view full university calendar [will open in new tab/window]">View Full Calendar</a></div></div></div>';
 
 		}
 	}

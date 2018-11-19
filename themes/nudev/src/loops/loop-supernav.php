@@ -65,57 +65,47 @@
 	}
 
 	$return = '';
-	// $i = 0;
 	$jj = 0;
-
-	// print_r($navConfig);
 
 	foreach($navConfig as $o){
 
-		// foreach($nC as $o){
+		$args = array(
+			 "post_type" => "supernav"
+			,"posts_per_page" => -1
+			,'meta_query' => array(
+				 'relation' => 'AND'
+				,array("key"=>"status","value"=>"1","compare"=>"=")
+				,array("key"=>"category","value"=>trim($o[0]),"compare"=>"=")
+			)
+		);
 
-			$args = array(
-				 "post_type" => "supernav"
-				,"posts_per_page" => -1
-				,'meta_query' => array(
-					 'relation' => 'AND'
-					,array("key"=>"status","value"=>"1","compare"=>"=")
-					,array("key"=>"category","value"=>trim($o[0]),"compare"=>"=")
-				)
-			);
+		$res = query_posts($args);
 
-			$res = query_posts($args);
+		if(count($res) >= 1){
 
-			if(count($res) >= 1){
+			$return .= '<li title="View '.$o[0].'" aria-label="View '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li>'.$o[0].'</li>';
+			foreach($res as $r){
 
-				// print_r($nC);
+				$fields = get_fields($r->ID);
 
-				$return .= '<li title="View '.$o[0].'" aria-label="View '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li>'.$o[0].'</li>';
-				foreach($res as $r){
+				$guide = '<li role="menuitem" tabindex="-1"><a href="%s" title="Learn more about %s%s" aria-label="Learn more about %s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
 
-					$fields = get_fields($r->ID);
-
-					$guide = '<li role="menuitem" tabindex="-1"><a href="%s" title="Learn more about %s%s" aria-label="Learn more about %s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
-
-					$return .= sprintf(
-						$guide
-						,(isset($returnType) && $returnType === 'return' && strpos($fields['link_target_url'],'http') === false?'http://www.northeastern.edu':'').$fields['link_target_url']
-						,$r->post_title
-						,($fields['open_in_new'] == "1"?' [will open in new window]':'')
-						,$r->post_title
-						,($fields['open_in_new'] == "1"?' [will open in new window]':'')
-						,($fields['open_in_new'] == "1"?' target="_blank"':'')
-						// ,(isset($fields['thumbnail']) && $fields['thumbnail'] != ''?'<img src="'.$fields['thumbnail']['url'].'" alt="'.$r->post_title.' thumbnail" />':'')
-						,(isset($fields['thumbnail']) && $fields['thumbnail'] != ''?'<img src="'.$fields['thumbnail']['url'].'" alt="thumbnail - '.$r->post_title.'" />':'')
-						,$r->post_title
-					);
-				}
-				$return .= '</ul></li>';
-
+				$return .= sprintf(
+					$guide
+					,(isset($returnType) && $returnType === 'return' && strpos($fields['link_target_url'],'http') === false?'http://www.northeastern.edu':'').$fields['link_target_url']
+					,$r->post_title
+					,($fields['open_in_new'] == "1"?' [will open in new window]':'')
+					,$r->post_title
+					,($fields['open_in_new'] == "1"?' [will open in new window]':'')
+					,($fields['open_in_new'] == "1"?' target="_blank"':'')
+					,(isset($fields['thumbnail']) && $fields['thumbnail'] != ''?'<img src="'.$fields['thumbnail']['url'].'" alt="thumbnail - '.$r->post_title.'" />':'')
+					,$r->post_title
+				);
 			}
-			$jj++;
-		// }
-		// $i++;
+			$return .= '</ul></li>';
+
+		}
+		$jj++;
 	}
 
 	// grab the featured items from the menu CMS and show them below
@@ -129,8 +119,6 @@
 	);
 
 	$res = query_posts($args);
-
-	// print_r($res);
 
 	$guide = '<li class="featured%s%s%s"><a href="%s" title="learn more about %s%s" aria-label="learn more about %s%s"%s><div><img src="%s" alt="%s icon" /></div><div>%s</div></a></li>';
 

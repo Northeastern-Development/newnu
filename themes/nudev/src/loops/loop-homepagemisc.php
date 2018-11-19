@@ -12,7 +12,7 @@
 
 	$story = $fields['top_story_blocks'][1];
 
-	$guide = '<article id="article-%s"><a %s href="%s" title="Click here now to learn more %s" %s>%s</a><div class="bgimage" style="%s %s"></div><div class="nu__panel-content"><div><h2><span>%s</span></h2></div></div>%s<div class="gradient"></div>%s</article>';
+	$guide = '<article id="article-%s"><a %s href="%s" title="Click here now to learn more%s" aria-label="Click here now to learn more%s" %s>%s</a><div class="bgimage" style="%s %s"></div><div class="nu__panel-content"><div><h2><span>%s</span></h2></div></div>%s<div class="gradient"></div>%s</article>';
 
 	// $iPath = responsive_background_images('large');	// call the function to figure out the best image size to use
 
@@ -27,6 +27,7 @@
 		,($i > 5?'tabindex="-1"':'')
 		,$story['block_slide'][0]['block_slide_link']
 		,($story['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
+		,($story['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
 		,($story['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
 		,$story['block_slide'][0]['block_slide_title']
 		,'background-image: url('.$thisImage['block_slide_image']['url'].');'

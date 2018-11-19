@@ -38,9 +38,9 @@
 	// get the list of popular search terms
 	$popular = '';
 	foreach($styles['popular_searches'] as $pS){
-		$popular .= '<li><a href="/search/?query='.strtolower(str_replace(' ','+',trim($pS['term']))).'" title="Click here to run this search">'.$pS['term'].'</a></li>';
+		$popular .= '<li><a href="/search/?query='.strtolower(str_replace(' ','+',trim($pS['term']))).'" title="Click here to run a search for '.strtolower($pS['term']).'" aria-label="Click here to run a search for '.strtolower($pS['term']).'">'.$pS['term'].'</a></li>';
 	}
 
 ?>
 
-<div id="nu__searchbar" style="<?=$style?>"><section><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><div><button type="submit" title="Click here or press enter to perform search">&#xE8B6;</button><input type="text" name="query" id="superquery" title="Enter your search query here" /><label for="superquery" class="label">Search</label><button class="reset hidden" type="reset" title="Click here to clear current search">&#xE5C9;</button></div><p>Commonly searched items</p><ul><?=$popular?></ul></form></section></div>
+<div id="nu__searchbar" style="<?=$style?>"><section><form name="nu__searchbar-form" id="nu__searchbar-form" action="/search" method="get"><div><button type="submit" title="Click here or press enter to perform search" aria-label="Click here or press enter to perform search">&#xE8B6;</button><input type="text" name="query" id="superquery" title="Enter your search query here and press enter" aria-label="Enter your search query here and press enter" /><label for="superquery" class="label">Search</label><button class="reset hidden" type="reset" title="Click here to clear current search" aria-label="Click here to clear current search">&#xE5C9;</button></div><p>Commonly searched items</p><ul><?=$popular?></ul></form></section></div>
