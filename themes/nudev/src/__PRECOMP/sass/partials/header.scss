@@ -118,20 +118,14 @@ div#nu__utility-nav{
 
 
 div#nu__logo{
-  // width: 50%;
   width: auto;
   float: left;
-  // background: yellow;
   height: $header-height;
   & > a{
     line-height: $header-height;
     font-size: 3rem;
     color: white;
-    border:none;
-    // & > img{
-    //   height: 60px;
-    //   margin: 0 0 10px 0;
-    // }
+    border: none;
     & > svg{
       height: 80px;
     }
@@ -226,63 +220,22 @@ div#nu__alerts{
 
 
 @media screen and (max-width: 899px) {
-  // div#nu__logo{
-  //   & > a{
-  //     & > img{
-  //       height: 50px;
-  //     }
-  //   }
-  // }
+
 }
 
 
 
 @media screen and (max-width: 720px) {
 
-  // $header-height: 100px;
-  //
-  // header {
-  //   & > div {
-  //     height: $header-height;
-  //   }
-  // }
-  // div#nu__logo{
-  //   // background: red;
-  //   // margin: 0 auto 0 auto;
-  //   & > a{
-  //     line-height: 50px;
-  //     // line-height: 69px;
-  //     // & > img{
-  //     //   height: 30px;
-  //     // }
-  //     height: 50px;
-  //     & > svg{
-  //       height: 50px;
-  //     }
-  //   }
-  // }
 }
 
-// @media screen and (max-width: 600px) {
-//   div#nu__logo{
-//     text-align:center;
-//     width: auto;
-//     & > a{
-//
-//       & > img{
-//
-//       }
-//     }
-//   }
-// }
 
-// sean tierney
-///tttt
+
+
+
 @media only screen and (max-width: 500px) {
   div#nu__alerts{
-//
     & > div{
-
       &:before{
 
       }
@@ -323,14 +276,9 @@ div#nu__alerts{
     }
   }
   div#nu__logo{
-    // background: red;
-    // margin: 0 auto 0 auto;
+    height: $header-height;
     & > a{
       line-height: $header-height;
-      // line-height: 69px;
-      // & > img{
-      //   height: 30px;
-      // }
       height: $header-height;
       & > svg{
         height: $header-height;
