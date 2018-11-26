@@ -38,7 +38,7 @@
 				<a href="/privacy-information" title="Privacy information" aria-label="Privacy information">Privacy</a> -->
 				<div>
 
-					<div class="campuses">
+					<div class="campuses" role="menu">
 
 						<?php get_template_part('loops/loop-footercampuses'); ?>
 

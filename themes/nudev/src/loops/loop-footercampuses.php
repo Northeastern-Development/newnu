@@ -10,7 +10,7 @@
 
 	if(count($res) > 0){
 
-		$return .= '<!-- <div class="campuses"> --><!-- <p>Campuses</p> --><ul role="menu">';
+		$return .= '<ul>';
 
 		$guide = '<li%s><a href="%s" title="Learn more about our %s campus" aria-label="Learn more about our %s campus" target="_blank" role="menuitem" tabindex="0">%s</a></li>';
 
@@ -32,7 +32,7 @@
 
 		}
 
-		$return .= '</ul><!-- </div> -->';
+		$return .= '</ul>';
 
 	}
 
