@@ -76,125 +76,135 @@ div.main{
       height: 100%;
       clear: both;
       overflow: hidden;
-      background: rgba($brand_colors-black,1.0);
-      & > a {
-        width: 100%;
+      // background: rgba($brand_colors-black,1.0);
+      background: red;
+      clear: both;
+      & > div{
+        width: 50%;
         height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        text-decoration:none;
-        z-index: 200;
-        border-bottom: none;
-        color: rgba($brand_colors-white,1.0);
-        font-size: 0px;
-        &:hover,
-        &:focus{
-          & ~ div.nu__panel-content{
-            & h2{
-              text-decoration: none;
-            }
-          }
-          & ~ div.bgimage{
-            & > div{
-              transform: scale(1.1);
-              transition: all .5s;
-            }
-          }
+        float: left;
+        &:nth-child(2){
+          background: black;
         }
       }
-
-      & div.nu__panel-content {
-        float: right;
-        width:34%;
-        height:100%;
-        display: block;
-        background: rgba($brand_colors-black,1.0);
-        & h2 {
-          @include font-6l-l;
-          padding-bottom: 0;
-          position: absolute;
-          line-height: 3.6rem;
-          text-decoration: underline;
-          bottom: $gutter;
-          left: 0;
-          z-index:100;
-          text-transform: uppercase;
-          text-align: right;
-          display:block;
-          width:100%;
-          width: 34%;
-          margin: 0 0 0 0;
-          padding: 0 $gutter 0 $gutter;
-        }
-      }
-
-      & > div.bgimage{
-        float: right;
-        width: 66%;
-        max-width: 66%;
-        height: 100%;
-        overflow: hidden;
-        display: block;
-        background: rgba($brand_colors-black,1.0);
-        & > div{
-          width: 100%;
-          height: 100%;
-          transform: scale(1.0);
-          transition: all .5s;
-          background-position: center center !important;
-          background-repeat: no-repeat !important;
-          background-size: cover !important;
-        }
-      }
-
-      div.nu__overlay-logo{
-        width: auto;
-        height:30px;
-        position:absolute;
-        top:$gutter;
-        right:$gutter;
-      }
-
-      & > div.nu__slide-controls{
-        position: absolute;
-        right: 20px;
-        bottom: 15px;
-        width: auto;
-        overflow: visible;
-        z-index:201;
-        & > div{
-          clear: both;
-          width: 120px;
-          overflow: visible;
-          margin: 0 0 10px 0;
-          padding: 0 0 0 0;
-          display: table;
-          & > .slider_next,
-          & > .slider_prev {
-            display: none;
-            float: left;
-            margin: 0 0 0 10px;
-            @include font-5r-l;
-            line-height: 50px;
-            width: 45px;
-            height: 45px;
-            text-align: center;
-            background: rgba($brand_colors-black,1.0);
-            color: rgba($brand_colors-white,1.0);
-            box-shadow: 0 2px 4px rgba($brand_colors-black,.5);
-            z-index:100;
-            display:table-cell;
-            vertical-align: middle;
-            &:hover,
-            &:focus{
-              background: rgba($brand_colors-white,1.0);
-              color: rgba($brand_colors-black,1.0);
-              cursor: pointer;
-            }
-          }
-        }
-      }
+    //   & > a {
+    //     width: 100%;
+    //     height: 100%;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     text-decoration:none;
+    //     z-index: 200;
+    //     border-bottom: none;
+    //     color: rgba($brand_colors-white,1.0);
+    //     font-size: 0px;
+    //     &:hover,
+    //     &:focus{
+    //       & ~ div.nu__panel-content{
+    //         & h2{
+    //           text-decoration: none;
+    //         }
+    //       }
+    //       & ~ div.bgimage{
+    //         & > div{
+    //           transform: scale(1.1);
+    //           transition: all .5s;
+    //         }
+    //       }
+    //     }
+    //   }
+    //
+    //   & div.nu__panel-content {
+    //     float: right;
+    //     width:34%;
+    //     height:100%;
+    //     display: block;
+    //     background: rgba($brand_colors-black,1.0);
+    //     & h2 {
+    //       @include font-6l-l;
+    //       padding-bottom: 0;
+    //       position: absolute;
+    //       line-height: 3.6rem;
+    //       text-decoration: underline;
+    //       bottom: $gutter;
+    //       left: 0;
+    //       z-index:100;
+    //       text-transform: uppercase;
+    //       text-align: right;
+    //       display:block;
+    //       width:100%;
+    //       width: 34%;
+    //       margin: 0 0 0 0;
+    //       padding: 0 $gutter 0 $gutter;
+    //     }
+    //   }
+    //
+    //   & > div.bgimage{
+    //     float: right;
+    //     width: 66%;
+    //     max-width: 66%;
+    //     height: 100%;
+    //     overflow: hidden;
+    //     display: block;
+    //     background: rgba($brand_colors-black,1.0);
+    //     & > div{
+    //       width: 100%;
+    //       height: 100%;
+    //       transform: scale(1.0);
+    //       transition: all .5s;
+    //       background-position: center center !important;
+    //       background-repeat: no-repeat !important;
+    //       background-size: cover !important;
+    //     }
+    //   }
+    //
+    //   div.nu__overlay-logo{
+    //     width: auto;
+    //     height:30px;
+    //     position:absolute;
+    //     top:$gutter;
+    //     right:$gutter;
+    //   }
+    //
+    //   & > div.nu__slide-controls{
+    //     position: absolute;
+    //     right: 20px;
+    //     bottom: 15px;
+    //     width: auto;
+    //     overflow: visible;
+    //     z-index:201;
+    //     & > div{
+    //       clear: both;
+    //       width: 120px;
+    //       overflow: visible;
+    //       margin: 0 0 10px 0;
+    //       padding: 0 0 0 0;
+    //       display: table;
+    //       & > .slider_next,
+    //       & > .slider_prev {
+    //         display: none;
+    //         float: left;
+    //         margin: 0 0 0 10px;
+    //         @include font-5r-l;
+    //         line-height: 50px;
+    //         width: 45px;
+    //         height: 45px;
+    //         text-align: center;
+    //         background: rgba($brand_colors-black,1.0);
+    //         color: rgba($brand_colors-white,1.0);
+    //         box-shadow: 0 2px 4px rgba($brand_colors-black,.5);
+    //         z-index:100;
+    //         display:table-cell;
+    //         vertical-align: middle;
+    //         &:hover,
+    //         &:focus{
+    //           background: rgba($brand_colors-white,1.0);
+    //           color: rgba($brand_colors-black,1.0);
+    //           cursor: pointer;
+    //         }
+    //       }
+    //     }
+    //   }
     }
 
 
