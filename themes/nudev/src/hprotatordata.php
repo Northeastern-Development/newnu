@@ -16,7 +16,7 @@
 
   $i = 1;
 
-  foreach($stories as $s){
+  $s = $stories[0];
 
     if(count($s['block_slide']) > 1){	// we only want to look at the rotators
 
@@ -25,24 +25,21 @@
 
       foreach($s['block_slide'] as $b){
 
-        // print_r($b);
-
         $slides[$i][] = array(
-                          $b['block_slide_image']['url']
-                          ,$b['block_slide_link']
-                          ,$b['block_slide_title']
-                          ,$b['block_slide_description']
-                          // ,$b['slide_overlay_logo']['url']
-                          ,(isset($b['slide_overlay_logo']) && $b['slide_overlay_logo']['url'] != ''?$b['slide_overlay_logo']['url']:'')
-                          ,(isset($b['external_link']) && $b['external_link'] == 1?'_blank':'')
-                        );
+          $b['block_slide_image']['url']
+          // ,$b['block_slide_link']
+          ,$b['block_slide_title']
+          ,$b['slide_tag']
+          // ,$b['block_slide_description']
+          // ,$b['slide_overlay_logo']['url']
+          // ,(isset($b['slide_overlay_logo']) && $b['slide_overlay_logo']['url'] != ''?$b['slide_overlay_logo']['url']:'')
+          // ,(isset($b['external_link']) && $b['external_link'] == 1?'_blank':'')
+        );
       }
 
       $r++;
       $i++;
     }
-
-  }
 
   $slides[0] = $r;
 

@@ -1,1 +1,71 @@
-!function(t,$,a){"use strict";$(function(){function t(){$("div.takeover").fadeOut(250)}var a=!1;windowWidth=-1*windowSize[1];var r=document.getElementById("nu__stories"),e=new Hammer(r),o=(isSafari,1500),i=7e3;if($("div#nu__categories div.bgimage").attr("style",""),$("div#nu__categories div.bgimage").each(function(t){var a=$(this).attr("data-backgrounds").split(",");a.length>1?$(this).attr("style","background-image:url("+a[Math.floor(Math.random()*a.length)]+");"):$(this).attr("style","background-image:url("+a[0]+");")}),parseInt($("#nu__alerts").height())>0){var n=parseInt(windowSize[0])-parseInt($("header").height())-parseInt($("footer").height());$("#nu__homepage").css({height:n,"min-height":n})}$("div.takeover").on("click",".nu__close-takeover",function(a){t()}),"block"==$("div.takeover").css("display")&&setTimeout(function(){t()},7e3),$.post("/wp-content/themes/nudev/src/hprotatordata.php",function(t){rotators=JSON.parse(t)}),$("article.nu__block-rotator .rotate").css({display:"block"}),$("div.nu__block-rotator").on("click",".rotate",function(t){function a(t){r.find("div.bgimage,h2,div.nu__overlay-logo").fadeOut(150,function(){r.attr("data-cslide",t),r.find("div.bgimage > div").attr("style","background-image: url("+rotators[e][t][0]+");"),r.find("a").attr("href",rotators[e][t][1]),r.find("a").attr("target",rotators[e][t][5]),r.find("h2").html("<span>"+rotators[e][t][2]+"</span>"),r.find("div.nu__overlay-logo").html(""),rotators[e][t][4]&&""!=rotators[e][t][4]&&r.find("div.nu__overlay-logo").html('<img src="'+rotators[e][t][4]+'" alt="overlay logo for '+rotators[e][t][2]+'" />'),r.find("div.bgimage,h2,div.nu__overlay-logo").fadeIn(150)})}var r=$(this).parent().parent().parent(),e=r.attr("data-rotatorid"),o=parseInt(r.attr("data-slidemax")),i=parseInt(r.attr("data-cslide"));a($(this).hasClass("slider_prev")?parseInt(i-1)<1?o:parseInt(i-1):parseInt(i+1)>o?1:parseInt(i+1))}),$(window).on("resize",function(){})})}(this,jQuery);
+// this file is the JS for the homepge ONLY, it requires the main scripts file to be implemented BEFORE it
+// it relies on variables defined within the main scripts file
+!function(t,o,a){"use strict";o(function(){
+// close the actual takeover panel
+function a(){o("div.takeover").fadeOut(250)}
+// gather up the rotator panels data and store the object to be used below
+// local vars within the home section, we will need to set these to check the main js if it exists and then assign vars if needed
+// to prevent errors when used remotely
+var t=!1,e=7e3,r=1;
+// windowWidth = windowSize[1] * -1;
+// var myPanels = document.getElementById('nu__stories');
+// var mc = new Hammer(myPanels);
+// var aspeeds = (isSafari?1500:1500);
+// need to figure out if we need to remove extra height from the content if alerts are visible
+if(
+// need to pick a random image for each of the 4 main categories IF they have more than 1 defined
+o("div#nu__categories div.bgimage").attr("style",""),o("div#nu__categories div.bgimage").each(function(t){var a=o(this).attr("data-backgrounds").split(",");1<a.length?// if we need to randomize
+o(this).attr("style","background-image:url("+a[Math.floor(Math.random()*a.length)]+");"):// if there is only 1 image
+o(this).attr("style","background-image:url("+a[0]+");")}),0<parseInt(o("#nu__alerts").height())){var i=parseInt(windowSize[0])-parseInt(o("header").height())-parseInt(o("footer").height());o("#nu__homepage").css({height:i,"min-height":i})}
+// this will listen for a user to close the hp takeover
+o("div.takeover").on("click",".nu__close-takeover",function(t){a()}),
+// this will auto-close the takeover after specific time period, if value = 0 then it will not autoclose
+"block"==o("div.takeover").css("display")&&setTimeout(function(){a()},e),o.post("/wp-content/themes/nudev/src/hprotatordata.php",function(t){rotators=JSON.parse(t);
+// console.log(rotators);
+}),
+// the following handles clicking next and previous arrows within a rotator
+// $('div.nu__block-rotator').on("click",".rotate",function(e){
+//   var elem = $(this).parent().parent().parent();
+//   var id = elem.attr('data-rotatorid');
+//   var sCount = parseInt(elem.attr('data-slidemax'));
+//   var cSlide = parseInt(elem.attr('data-cslide'));
+//   if($(this).hasClass('slider_prev')){
+//     contentSwap(parseInt(cSlide - 1) < 1 ?sCount:parseInt(cSlide - 1));
+//   }else{
+//     contentSwap(parseInt(cSlide + 1) > sCount?1:parseInt(cSlide + 1));
+//   }
+//
+//   // this will actually perform the content swapping for the inner rotators
+//   function contentSwap(a){
+//     elem.find('div.bgimage,h2,div.nu__overlay-logo').fadeOut(150,function(){	// fade out the rotator content
+//       elem.attr('data-cslide',a);	// set the new value of the current slide
+// 			elem.find('div.bgimage > div').attr('style','background-image: url('+rotators[id][a][0]+');');	// change the background image
+//       elem.find('a').attr('href',rotators[id][a][1]);	// change the link
+//       elem.find('a').attr('target',rotators[id][a][5]);	// change the link target style (local or external)
+//       elem.find('h2').html('<span>'+rotators[id][a][2]+'</span>');	// change the title of the slide
+// 			elem.find('div.nu__overlay-logo').html('');
+// 			if(rotators[id][a][4] && rotators[id][a][4] != ''){// swap the overlay logo if we have one otherwise empty
+// 				elem.find('div.nu__overlay-logo').html('<img src="'+rotators[id][a][4]+'" alt="overlay logo for '+rotators[id][a][2]+'" />')
+// 			}
+//
+//       elem.find('div.bgimage,h2,div.nu__overlay-logo').fadeIn(150);	// fade it all back in
+//     });
+//   }
+// });
+// this will listen for the hover event on the list of news items
+o("div.nu__block-rotator").on("focus mouseover","ul > li",function(t){
+// what item have they focused on?
+var a=o(this);
+// we only want to go through these steps if it is an item other than the currently active one
+a.attr("data-id")!=r&&(
+// remove the active class from all items before setting it on the current one
+o("div.nu__block-rotator ul > li").removeClass("active"),
+// set active class on the currently focused item
+r=a.attr("data-id"),a.addClass("active"),
+// now select the image for the news item that was focused
+// $('div.nu__block-rotator div.bgimage').fadeOut(100,function(){
+// 	$(this).attr('style','background-image: url('+rotators[1][thisE.attr('data-id')][0]+');').fadeIn(100);
+// });
+o("div.nu__block-rotator div.bgimage").attr("style","background-image: url("+rotators[1][a.attr("data-id")][0]+");"),
+// update the item tag if there is one, or hide it
+o("div.nu__block-rotator h3").fadeOut(100,function(){o(this).empty(),""!=rotators[1][a.attr("data-id")][2]&&o(this).html(rotators[1][a.attr("data-id")][2]).fadeIn(100)}))})})}(this,jQuery);

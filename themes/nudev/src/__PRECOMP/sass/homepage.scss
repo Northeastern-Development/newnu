@@ -98,7 +98,8 @@ div.main{
         border: solid rgba($brand_colors-white,1.0) 1px;
         padding: 0 10px 0 10px;
         text-transform: uppercase;
-        &:hover{
+        &:hover,
+        &:focus{
           background: rgba($brand_colors-white,1.0);
           color: rgba($brand_colors-black,1.0);
         }
@@ -111,7 +112,7 @@ div.main{
         position: relative;
         &:nth-child(1){
           width: 45%;
-          background: rgba($brand_colors-black,1.0);
+          // background: rgba($brand_colors-black,1.0);
           & > a{
             display: block;
             border: none;
@@ -121,8 +122,21 @@ div.main{
               width: 250px;
               height: auto;
               fill: rgba($brand_colors-white,1.0);
+              border-bottom: solid rgba($brand_colors-black,1.0) 2px;
               & > g.logo__northeastern{
                 fill: rgba($brand_colors-grayW,1.0);
+              }
+            }
+            &:hover,
+            &:focus{
+              & > svg{
+                // width: 250px;
+                // height: auto;
+                // fill: rgba($brand_colors-white,1.0);
+                border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+                & > g.logo__northeastern{
+                  fill: rgba($brand_colors-red,1.0);
+                }
               }
             }
           }
@@ -138,11 +152,17 @@ div.main{
               margin: 0 0 0 0;
               width: 100%;
               &.active,
-              &:hover{
+              &:hover,
+              &:focus{
                 background: rgba($brand_colors-white,1.0);
                 cursor: pointer;
-                width: 130%;
+                width: 120%;
                 border-top: solid rgba($brand_colors-red,1.0) 3px;
+                // the following animation can be removed if desired
+                -webkit-transition: all 0.1s ease;
+                -moz-transition: all 0.1s ease;
+                -o-transition: all 0.1s ease;
+                transition: all 0.1s ease;
                 & > a{
                   @include font-3l-l;
                   color: rgba($brand_colors-black,1.0);

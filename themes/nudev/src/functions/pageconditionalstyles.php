@@ -5,8 +5,6 @@ Page Conditional Styling
 ********************************************************************** */
 function nudev_conditional_styles(){
 
-  // echo get_page_template();
-
   // load the base styles if we are NOT in an admin page
   if(!is_admin()){
     wp_register_style('nudevcss', get_template_directory_uri() . '/css/style.css', array(), '1.0');
@@ -14,19 +12,7 @@ function nudev_conditional_styles(){
   }
 
 
-  // any page that is NOT search
-  // if(get_query_var('s') != ""){
-  //   //echo "SEARCH RESULT: ".$_GET['s'];
-  //   wp_register_style('searchcss', get_template_directory_uri() . '/css/category.css', array(), '1.0');
-  //   wp_enqueue_style('searchcss');
-  // }
-
-
-
-
-
   // load homepage styles
-  // if(is_page('')){
   if(is_page_template('templates/template-homepage.php')){
     wp_register_style('homepagecss', get_template_directory_uri() . '/css/homepage.css', array(), '1.0');
     wp_enqueue_style('homepagecss');
@@ -42,11 +28,8 @@ function nudev_conditional_styles(){
 
   // load static page styles
   if(is_page_template('templates/template-static.php') || is_page_template('templates/template-experience.php') || is_page_template('templates/template-colleges.php') || is_page_template('templates/template-departments.php') || is_page_template('templates/template-administration.php') || is_page_template('templates/template-trustees.php') || is_404()){
-  // if(is_page('emergency-information')){
     wp_register_style('staticcss', get_template_directory_uri() . '/css/static.css', array(), '1.0');
     wp_enqueue_style('staticcss');
-    // wp_register_style('emergencycss', get_template_directory_uri() . '/css/emergency.css', array(), '1.0');
-    // wp_enqueue_style('emergencycss');
   }
 
 
@@ -83,11 +66,13 @@ function nudev_conditional_styles(){
     wp_enqueue_style('administrationcss');
   }
 
+
   // load trustees page styles
   if(is_page_template('templates/template-trustees.php')){
     wp_register_style('trusteescss', get_template_directory_uri() . '/css/trustees.css', array(), '1.0');
     wp_enqueue_style('trusteescss');
   }
+
 
   // load 404 page styles
   if(is_404()){
