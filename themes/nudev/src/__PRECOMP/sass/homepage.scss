@@ -369,8 +369,10 @@ div.main{
       &:nth-child(1){
         // width: 73.8%;
         // width: 70%;
-        flex-basis: 73.7%;
-        // flex-grow: 1;
+        // flex-basis: 73.7%;
+        flex-basis: 75.1%;
+        flex-grow: 1;
+        // flex-basis: 50%;
         order: 1;
       }
 
@@ -379,7 +381,8 @@ div.main{
         margin: 0 0 0 0;
         // width: 24%;
         // width: 30%;
-        flex-grow: 1;
+        flex-basis: 24.9%;
+        // flex-grow: 1;
         display: flex;
         flex-direction: column;
         flex-wrap:  nowrap;
