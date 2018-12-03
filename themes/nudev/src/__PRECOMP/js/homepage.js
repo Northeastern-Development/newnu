@@ -69,7 +69,7 @@
     // gather up the rotator panels data and store the object to be used below
     $.post("/wp-content/themes/nudev/src/hprotatordata.php",function(data){
         rotators = JSON.parse(data);
-				// console.log(rotators);
+				console.log(rotators);
     });
 
 
@@ -131,6 +131,11 @@
 				// 	$(this).attr('style','background-image: url('+rotators[1][thisE.attr('data-id')][0]+');').fadeIn(100);
 				// });
 				$('div.nu__block-rotator div.bgimage').attr('style','background-image: url('+rotators[1][thisE.attr('data-id')][0]+');');
+
+				// update the info for the read story link (URL and title)
+				$('div.nu__block-rotator div.bgimage > div.gradient > a').attr('href',rotators[1][thisE.attr('data-id')][3]);
+				$('div.nu__block-rotator div.bgimage > div.gradient > a').attr('title','Click to read "'+rotators[1][thisE.attr('data-id')][1]+'" at northeastern news');
+				$('div.nu__block-rotator div.bgimage > div.gradient > a').attr('aria-label','Click to read "'+rotators[1][thisE.attr('data-id')][1]+'" at northeastern news');
 
 				// update the item tag if there is one, or hide it
 				$('div.nu__block-rotator h3').fadeOut(100,function(){

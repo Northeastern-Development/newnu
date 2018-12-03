@@ -30,6 +30,7 @@
           // ,$b['block_slide_link']
           ,$b['block_slide_title']
           ,$b['slide_tag']
+          ,$b['block_slide_link']
           // ,$b['block_slide_description']
           // ,$b['slide_overlay_logo']['url']
           // ,(isset($b['slide_overlay_logo']) && $b['slide_overlay_logo']['url'] != ''?$b['slide_overlay_logo']['url']:'')
