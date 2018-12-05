@@ -38,10 +38,10 @@
 
 
     // need to figure out if we need to remove extra height from the content if alerts are visible
-    if(parseInt($('#nu__alerts').height()) > 0){
-      var hpHeight = parseInt(windowSize[0]) - parseInt($('header').height()) - parseInt($('footer').height());
-      $('#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
-    }
+    // if(parseInt($('#nu__alerts').height()) > 0){
+    //   var hpHeight = parseInt(windowSize[0]) - parseInt($('header').height()) - parseInt($('footer').height());
+    //   $('#nu__homepage').css({'height':hpHeight,'min-height':hpHeight});
+    // }
 
 
 
