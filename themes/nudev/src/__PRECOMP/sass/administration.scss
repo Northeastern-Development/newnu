@@ -43,6 +43,15 @@
               position: relative;
               overflow: hidden;
               padding: 0 0 0 25px;
+              &.readmore{
+                padding: 0 0 0 0;
+                border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+                &:hover,
+                &:focus{
+                  color: rgba($brand_colors-red,1.0);
+                  border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+                }
+              }
               & > span{
                 position: absolute;
                 left: 0;
@@ -51,7 +60,8 @@
                 line-height: 10px;
                 color: rgba($brand_colors-black,0.8);
               }
-              &:hover{
+              &:hover,
+              &:focus{
                 border-bottom: solid rgba($brand_colors-red,1.0) 2px;
                 color: rgba($brand_colors-black,1.0);
                 & > span{

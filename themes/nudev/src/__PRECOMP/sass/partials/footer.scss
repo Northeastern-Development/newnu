@@ -109,7 +109,18 @@
 
              }
              & > h3{
-               @include action-arrow-shown;
+               // @include action-arrow-shown;
+               &:after{
+                 // content: '\e315';
+                 opacity: 1.0;
+                 // margin: 2px 10px 0 0;
+                 // vertical-align: middle;
+               }
+             }
+             & > p.readmore{
+               & > span{
+                 border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+               }
              }
            }
            & > div.image{
@@ -124,12 +135,30 @@
              @include font-3b-l;
              width: 90%;
 
-             @include action-arrow;
-             @include action-arrow-hidden;
+             // @include action-arrow;
+             // @include action-arrow-hidden;
              margin-bottom:3px;
+             &:after{
+               content: '\e315';
+               display: inline-block;
+               opacity: 0.0;
+               margin: 2px 10px 0 0;
+               vertical-align: middle;
+               color: rgba($brand_colors-red,1.0);
+             }
            }
            & > p{
              @include font-2r-l;
+             margin: 0 0 ($gutter / 2) 0;
+             &.readmore{
+               // background: red;
+               &:before{
+                 content: '\e5c8';
+                 display: inline-block;
+                 margin: 2px 10px 0 0;
+                 vertical-align: middle;
+               }
+             }
            }
          }
        }

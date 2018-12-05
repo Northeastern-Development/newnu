@@ -16,7 +16,7 @@
 
 	$guide = '<div><div><a href="%s" title="Learn more about %s%s" aria-label="Learn more about %s%s"%s><div data-backgrounds="%s" class="bgimage" style="%s" aria-label="category image for %s"></div><h2><span>%s</span></h2></a><ul>%s</ul></div></div>';
 
-	$optionsGuide = '<li><a href="" title="Learn more about " aria-label="Learn more about "><span>%s</span></a></li>';
+	$optionsGuide = '<li><a href="%s" title="Learn more about %s%s" aria-label="Learn more about %s%s" %s><span>%s</span></a></li>';
 
 	// $iPath = responsive_background_images('medium_large');
 
@@ -54,6 +54,12 @@
 
 			$options .= sprintf(
 				$optionsGuide
+				,$stories[$i]['block_slide'][$ii]['block_slide_link']
+				,strtolower($stories[$i]['block_slide'][$ii]['block_slide_title'])
+				,($stories[$i]['block_slide'][$ii]['external_link'] == 1?' [will open in new tab or window]':'')
+				,strtolower($stories[$i]['block_slide'][$ii]['block_slide_title'])
+				,($stories[$i]['block_slide'][$ii]['external_link'] == 1?' [will open in new tab or window]':'')
+				,($stories[$i]['block_slide'][$ii]['external_link'] == 1?' target="_blank"':'')
 				,$stories[$i]['block_slide'][$ii]['block_slide_title']
 			);
 		}

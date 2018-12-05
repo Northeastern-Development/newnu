@@ -49,13 +49,17 @@
 
 			$department = sprintf(
 				$guide
-,$managerFields['headshot']['url']
+				,$managerFields['headshot']['url']
 				,$manager[0]->post_title
 				,$managerFields['title']
 				,$managerFields['description'].'&nbsp;&nbsp;[<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Read more about '.$manager[0]->post_title.'">Read More</a>]'
 				,(isset($d['phone']) && $d['phone'] != ''?'<a href="tel:'.$d['phone'].'" title="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$d['phone'].'</a><br />':'')
 				,(isset($d['link']) && $d['link'] != ''?'<a href="'.$d['link'].'" title="Visit '.strtolower($d['department']).' website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a><br />':'')
+
+				// need a more permanent solution to allow for more than 1 department to be added that may not go anywhere other than be listed
 				,($d['department'] != 'Strategy'?'<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Filter to show '.strtolower($d['department']).' team"><span>&#xE7EF;</span> View Leadership</a>':'')
+
+
 
 			);
 

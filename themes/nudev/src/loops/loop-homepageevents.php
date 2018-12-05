@@ -62,7 +62,7 @@
 			// Open the Grid Wrapper (flex parent)
 			$upcoming_events .= '<div class="eventgrid">';
 
-			$guide = '<div class="eventgrid-item"><a class="eventgrid-item--linkwrap" href="%s" target="_blank" title="Click to learn more about %s [will open in new tab/window]" aria-label="Click to learn more about %s [will open in new tab/window]"><h3 class="eventgrid-item-date">%s</h3><h4 class="eventgrid-item-title">%s</h4><p class="eventgrid-item-description">%s</p><div class="chevron">&#xe5cc;</div></a></div>';
+			$guide = '<div class="eventgrid-item"><a class="eventgrid-item--linkwrap" href="%s" target="_blank" title="Click to learn more about %s [will open in new tab/window]" aria-label="Click to learn more about %s [will open in new tab/window]"><h3 class="eventgrid-item-date">%s</h3><h4 class="eventgrid-item-title"><span>%s</span></h4><p class="eventgrid-item-description">%s</p><div class="chevron">&#xe5cc;</div></a></div>';
 
 			// Concat. all the grid items
 			foreach( $decoded['events'] as $i => $event ){
@@ -81,7 +81,7 @@
 			}
 
 			// Add the view all button and close the grid wrapper (flex parent)
-			$upcoming_events .= '</div><div class="eventgrid-viewall"><a class="eventgrid-viewall-link" href="http://calendar.northeastern.edu/" target="_blank" title="Click here to view full university calendar [will open in new tab/window]" aria-label="Click here to view full university calendar [will open in new tab/window]">View Full Calendar</a></div></div></div>';
+			$upcoming_events .= '</div><div class="eventgrid-viewall"><a class="eventgrid-viewall-link" href="http://calendar.northeastern.edu/" target="_blank" title="Click here to view all university events [will open in new tab/window]" aria-label="Click here to view all university events [will open in new tab/window]">View All Events</a></div></div></div>';
 
 		}
 	}

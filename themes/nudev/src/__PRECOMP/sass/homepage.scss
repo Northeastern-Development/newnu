@@ -225,7 +225,11 @@ div.main{
               bottom: 25px;
               right: $gutter;
               color: rgba($brand_colors-white,1.0);
-              border-bottom: solid rgba($brand_colors-red,0.0) 1px;
+              // border-bottom: solid rgba($brand_colors-red,0.0) 2px;
+              border: none;
+              & > span{
+                border-bottom: solid rgba($brand_colors-red,0.0) 2px;
+              }
               &:before{
                 content: '\e5c8';
                 display: inline-block;
@@ -234,7 +238,9 @@ div.main{
               }
               &:hover,
               &:focus{
-                border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+                & > span{
+                  border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+                }
               }
             }
           }
@@ -644,6 +650,11 @@ div.main{
             & > h3{
               color: rgba($brand_colors-red,1.0);
             }
+            & > h4{
+              & > span{
+                border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+              }
+            }
             & > div.chevron{
               color: rgba($brand_colors-red,1.0);
             }
@@ -672,14 +683,20 @@ div.main{
     }
     & > div.eventgrid-viewall{
       width: auto;
+      height: auto;
       float: right;
+      // background: red;
       & > a{
         @include font-2l-l;
-        border: none;
+        display: block;
+        border: solid rgba($brand_colors-black,1.0) 1px;
+        padding: 2px 15px 2px 15px;
+        text-transform: uppercase;
         &:hover,
         &:focus{
-          color: rgba($brand_colors-black,1.0);
-          border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+          color: rgba($brand_colors-white,1.0);
+          // border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+          background: rgba($brand_colors-black,1.0);
         }
       }
     }

@@ -39,7 +39,7 @@
 		</div>
 
 		<hr>
-		<?php include(locate_template('includes/prefooter-hp.php')); ?>
+		<?php include(locate_template('includes/prefooter.php')); ?>
 
 		<?php get_template_part('loops/loop-homepageevents'); ?>
 
