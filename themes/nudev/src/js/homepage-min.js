@@ -6,7 +6,7 @@ function a(){i("div.takeover").fadeOut(250)}
 // gather up the rotator panels data and store the object to be used below
 // local vars within the home section, we will need to set these to check the main js if it exists and then assign vars if needed
 // to prevent errors when used remotely
-var t=!1,r=7e3,o=1;
+var t=!1,o=7e3,r=1;
 // windowWidth = windowSize[1] * -1;
 // var myPanels = document.getElementById('nu__stories');
 // var mc = new Hammer(myPanels);
@@ -23,7 +23,7 @@ i(this).attr("style","background-image:url("+a[0]+");")}),
 // this will listen for a user to close the hp takeover
 i("div.takeover").on("click",".nu__close-takeover",function(t){a()}),
 // this will auto-close the takeover after specific time period, if value = 0 then it will not autoclose
-"block"==i("div.takeover").css("display")&&setTimeout(function(){a()},r),i.post("/wp-content/themes/nudev/src/hprotatordata.php",function(t){rotators=JSON.parse(t),console.log(rotators)}),
+"block"==i("div.takeover").css("display")&&setTimeout(function(){a()},o),i.post("/wp-content/themes/nudev/src/hprotatordata.php",function(t){rotators=JSON.parse(t),console.log(rotators)}),
 // the following handles clicking next and previous arrows within a rotator
 // $('div.nu__block-rotator').on("click",".rotate",function(e){
 //   var elem = $(this).parent().parent().parent();
@@ -58,17 +58,17 @@ i("div.nu__block-rotator").on("focus mouseover","ul > li",function(t){
 // what item have they focused on?
 var a=i(this);
 // we only want to go through these steps if it is an item other than the currently active one
-a.attr("data-id")!=o&&(
+a.attr("data-id")!=r&&(
 // remove the active class from all items before setting it on the current one
 i("div.nu__block-rotator ul > li").removeClass("active"),
 // set active class on the currently focused item
-o=a.attr("data-id"),a.addClass("active"),
+r=a.attr("data-id"),a.addClass("active"),
 // now select the image for the news item that was focused
 // $('div.nu__block-rotator div.bgimage').fadeOut(100,function(){
 // 	$(this).attr('style','background-image: url('+rotators[1][thisE.attr('data-id')][0]+');').fadeIn(100);
 // });
 i("div.nu__block-rotator div.bgimage").attr("style","background-image: url("+rotators[1][a.attr("data-id")][0]+");"),
 // update the info for the read story link (URL and title)
-i("div.nu__block-rotator div.bgimage > div.gradient > a").attr("href",rotators[1][a.attr("data-id")][3]),i("div.nu__block-rotator div.bgimage > div.gradient > a").attr("title",'Click to read "'+rotators[1][a.attr("data-id")][1]+'" at northeastern news'),i("div.nu__block-rotator div.bgimage > div.gradient > a").attr("aria-label",'Click to read "'+rotators[1][a.attr("data-id")][1]+'" at northeastern news'),
+i("div.nu__block-rotator div.bgimage > div.gradient > a").attr("href",rotators[1][a.attr("data-id")][3]),i("div.nu__block-rotator div.bgimage > div.gradient > a").attr("title",rotators[1][a.attr("data-id")][1]+" [will open in new tab/window]"),i("div.nu__block-rotator div.bgimage > div.gradient > a").attr("aria-label",rotators[1][a.attr("data-id")][1]+" [will open in new tab/window]"),
 // update the item tag if there is one, or hide it
 i("div.nu__block-rotator h3").fadeOut(100,function(){i(this).empty(),""!=rotators[1][a.attr("data-id")][2]&&i(this).html(rotators[1][a.attr("data-id")][2]).fadeIn(100)}))})})}(this,jQuery);

@@ -134,8 +134,8 @@
 
 				// update the info for the read story link (URL and title)
 				$('div.nu__block-rotator div.bgimage > div.gradient > a').attr('href',rotators[1][thisE.attr('data-id')][3]);
-				$('div.nu__block-rotator div.bgimage > div.gradient > a').attr('title','Click to read "'+rotators[1][thisE.attr('data-id')][1]+'" at northeastern news');
-				$('div.nu__block-rotator div.bgimage > div.gradient > a').attr('aria-label','Click to read "'+rotators[1][thisE.attr('data-id')][1]+'" at northeastern news');
+				$('div.nu__block-rotator div.bgimage > div.gradient > a').attr('title',rotators[1][thisE.attr('data-id')][1]+' [will open in new tab/window]');
+				$('div.nu__block-rotator div.bgimage > div.gradient > a').attr('aria-label',rotators[1][thisE.attr('data-id')][1]+' [will open in new tab/window]');
 
 				// update the item tag if there is one, or hide it
 				$('div.nu__block-rotator h3').fadeOut(100,function(){

@@ -14,9 +14,9 @@
 
 	$return = '';
 
-	$guide = '<div><div><a href="%s" title="Learn more about %s%s" aria-label="Learn more about %s%s"%s><div data-backgrounds="%s" class="bgimage" style="%s" aria-label="category image for %s"></div><h2><span>%s</span></h2></a><ul>%s</ul></div></div>';
+	$guide = '<div><div><a href="%s" title="%s%s" aria-label="%s%s"%s><div data-backgrounds="%s" class="bgimage" style="%s" aria-label="category image for %s"></div><h2><span>%s</span></h2></a><ul>%s</ul></div></div>';
 
-	$optionsGuide = '<li><a href="%s" title="Learn more about %s%s" aria-label="Learn more about %s%s" %s><span>%s</span></a></li>';
+	$optionsGuide = '<li><a href="%s" title="%s%s" aria-label="%s%s" %s><span>%s</span></a></li>';
 
 	// $iPath = responsive_background_images('medium_large');
 

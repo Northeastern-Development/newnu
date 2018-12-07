@@ -1,28 +1,5 @@
 <?php
 
-
-
-
-	// function hex2rgb( $colour ) {
-	// 	if ( $colour[0] == '#' ) {
-	// 		$colour = substr( $colour, 1 );
-	// 	}
-	// 	if ( strlen( $colour ) == 6 ) {
-	// 		list( $r, $g, $b ) = array( $colour[0] . $colour[1], $colour[2] . $colour[3], $colour[4] . $colour[5] );
-	// 	} elseif ( strlen( $colour ) == 3 ) {
-	// 		list( $r, $g, $b ) = array( $colour[0] . $colour[0], $colour[1] . $colour[1], $colour[2] . $colour[2] );
-	// 	} else {
-	// 		return false;
-	// 	}
-	// 	$r = hexdec( $r );
-	// 	$g = hexdec( $g );
-	// 	$b = hexdec( $b );
-	// 	return $r.','.$g.','.$b;
-	// }
-
-
-
-
 	// grab the menu styles from the CMS
 	$args = array(
 		 "post_type" => "menustyles"
@@ -37,11 +14,8 @@
 	if($styles['background_image'] != ''){	// this will set a background image
 		$style = 'background-color: none; background: url('.$styles['background_image']['url'].'); background-repeat: no-repeat; background-position: center; background-size: cover;';
 	}else{	// this will set a background color with opacity
-		// $style = 'background: rgba('.hex2rgb($styles['background_color']).','.($styles['opacity'] != ''?$styles['opacity']:'0.8').')';
 		$style = 'background: rgba(0,0,0,0.8)';
 	}
-
-
 
 	$args = array(
 		 "post_type" => "supernav"
@@ -56,11 +30,6 @@
 	$navConfig = array();
 	foreach($res as $r){
 		$fields = get_fields($r->ID);
-		// if($fields['sub-type'] == 'Primary'){
-			// $navConfig[0][] = $r->post_title;
-		// }else{
-			// $navConfig[1][] = $r->post_title;
-		// }
 		$navConfig[] = array($r->post_title,$fields['hide_until_mobile']);
 	}
 
@@ -83,12 +52,12 @@
 
 		if(count($res) >= 1){
 
-			$return .= '<li title="View '.$o[0].'" aria-label="View '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li>'.$o[0].'</li>';
+			$return .= '<li title="'.$o[0].'" aria-label="'.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li>'.$o[0].'</li>';
 			foreach($res as $r){
 
 				$fields = get_fields($r->ID);
 
-				$guide = '<li role="menuitem" tabindex="-1"><a href="%s" title="Learn more about %s%s" aria-label="Learn more about %s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
+				$guide = '<li role="menuitem" tabindex="-1"><a href="%s" title="%s%s" aria-label="%s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
 
 				$return .= sprintf(
 					$guide
@@ -120,7 +89,7 @@
 
 	$res = query_posts($args);
 
-	$guide = '<li class="featured%s%s%s"><a href="%s" title="learn more about %s%s" aria-label="learn more about %s%s"%s><div><img src="%s" alt="%s icon" /></div><div>%s</div></a></li>';
+	$guide = '<li class="featured%s%s%s"><a href="%s" title="%s%s" aria-label="%s%s"%s><div><img src="%s" alt="%s icon" /></div><div>%s</div></a></li>';
 
 	$iii = 0;
 	foreach($res as $r){

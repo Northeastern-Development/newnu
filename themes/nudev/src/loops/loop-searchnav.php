@@ -1,22 +1,5 @@
 <?php
 
-	// function hex2rgbSearch( $colour ) {
-	// 	if ( $colour[0] == '#' ) {
-	// 		$colour = substr( $colour, 1 );
-	// 	}
-	// 	if ( strlen( $colour ) == 6 ) {
-	// 		list( $r, $g, $b ) = array( $colour[0] . $colour[1], $colour[2] . $colour[3], $colour[4] . $colour[5] );
-	// 	} elseif ( strlen( $colour ) == 3 ) {
-	// 		list( $r, $g, $b ) = array( $colour[0] . $colour[0], $colour[1] . $colour[1], $colour[2] . $colour[2] );
-	// 	} else {
-	// 		return false;
-	// 	}
-	// 	$r = hexdec( $r );
-	// 	$g = hexdec( $g );
-	// 	$b = hexdec( $b );
-	// 	return $r.','.$g.','.$b;
-	// }
-
 	// grab the menu styles from the CMS
 	$args = array(
 		 "post_type" => "menustyles"
@@ -31,14 +14,13 @@
 	if($styles['background_image'] != ''){	// this will set a background image
 		$style = 'background-color: none; background: url('.$styles['background_image']['url'].'); background-repeat: no-repeat; background-position: center; background-size: cover;';
 	}else{	// this will set a background color with opacity
-		// $style = 'background: rgba('.hex2rgbSearch($styles['background_color']).','.($styles['opacity'] != ''?$styles['opacity']:'0.8').')';
 		$style = 'background: rgba(0,0,0,0.8)';
 	}
 
 	// get the list of popular search terms
 	$popular = '';
 	foreach($styles['popular_searches'] as $pS){
-		$popular .= '<li><a href="/search/?query='.strtolower(str_replace(' ','+',trim($pS['term']))).'" title="Click here to run a search for '.strtolower($pS['term']).'" aria-label="Click here to run a search for '.strtolower($pS['term']).'">'.$pS['term'].'</a></li>';
+		$popular .= '<li><a href="/search/?query='.strtolower(str_replace(' ','+',trim($pS['term']))).'" title="search for '.strtolower($pS['term']).'" aria-label="search for '.strtolower($pS['term']).'">'.$pS['term'].'</a></li>';
 	}
 
 ?>

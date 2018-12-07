@@ -2,8 +2,6 @@
 
 	wp_reset_query();
 
-	// $prefooterPageId = (isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID());
-
 	$prefooterFields = get_fields((isset($forcePageID) && $forcePageID != ''?$forcePageID:get_the_ID()));
 
 	$return_prefooter = '';
@@ -19,7 +17,7 @@
 
 			$return_prefooter .= '<div class="nu__prefooter imageblocks'.$prefooterBgColor.'"><p>'.$prefooterFields['pre-footer_area_title'].'</p><div><ul>';
 
-			$guide = '<li><a href="%s" title="More about %s" aria-label="More about %s"%s><div class="image"><div aria-label="background image" style="background-image: url(%s);"></div></div><h3>%s</h3><p>%s</p><p class="readmore"><span>More About %s</span></p></a></li>';
+			$guide = '<li><a href="%s" title="%s" aria-label="%s"%s><div class="image"><div aria-label="background image" style="background-image: url(%s);"></div></div><h3>%s</h3><p>%s</p><p class="readmore"><span>More About %s</span></p></a></li>';
 
 			foreach($prefooterFields['pre-footer_image_block'] as $r){
 
