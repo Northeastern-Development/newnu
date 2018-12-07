@@ -47,17 +47,36 @@
 
 			$guide = '<article><div><div style="background-image: url(%s);"></div></div><div><p class="nametitle"><span>%s</span><br />%s</p><p class="description">%s</p><p class="contact">%s%s%s</p></div></article>';
 
+
+
+
+			// are there any staff assigned to this department?
+			$args = array(
+				 "post_type" => "administration"
+				,"posts_per_page" => -1
+				,'meta_query' => array(
+					 'relation' => 'AND'
+					,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
+					,'dept_clause' => array("key"=>"department","value"=>'"'.$d['department'].'"',"compare"=>"LIKE")
+					,array("key"=>"department_head","value"=>"0","compare"=>"LIKE")
+				)
+			);
+
+			$staffCnt = count(query_posts($args));
+
+
+
+
 			$department = sprintf(
 				$guide
 				,$managerFields['headshot']['url']
 				,$manager[0]->post_title
 				,$managerFields['title']
-				,$managerFields['description'].'&nbsp;&nbsp;[<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Read more about '.$manager[0]->post_title.'">Read More</a>]'
+				,$managerFields['description'].($staffCnt > 0?'<br />[<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Read more about '.$manager[0]->post_title.'">Read More</a>]':'')
 				,(isset($d['phone']) && $d['phone'] != ''?'<a href="tel:'.$d['phone'].'" title="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$d['phone'].'</a><br />':'')
 				,(isset($d['link']) && $d['link'] != ''?'<a href="'.$d['link'].'" title="Visit '.strtolower($d['department']).' website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a><br />':'')
+				,($staffCnt > 0?'<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Filter to show '.strtolower($d['department']).' team"><span>&#xE7EF;</span> View Leadership</a>':'')
 
-				// need a more permanent solution to allow for more than 1 department to be added that may not go anywhere other than be listed
-				,($d['department'] != 'Strategy'?'<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Filter to show '.strtolower($d['department']).' team"><span>&#xE7EF;</span> View Leadership</a>':'')
 
 
 
@@ -105,8 +124,6 @@
 			,strtolower($dept[0]->post_title)
 			,$deptFields['phone']
 			,$deptFields['url']
-			// ,strtolower($dept[0]->post_title)
-			// ,'Web'
 			,$managerFields['headshot']['url']
 			,$manager[0]->post_title
 			,$managerFields['title']
@@ -126,15 +143,9 @@
 				,'dept_clause' => array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
 				,array("key"=>"department_head","value"=>"0","compare"=>"LIKE")
 			)
-			// ,
-			// 'orderby' => array(
-      //   'sub-type_clause' => 'ASC',
-    	// )
 		);
 
 		$res = query_posts($args);
-
-		//print_r($res);
 
 		$subType = get_fields($res[0]->ID)['sub_type'];
 
@@ -144,8 +155,6 @@
 
 		foreach($res as $r){
 			$fields = get_fields($r->ID);
-			// print_r($r);
-			// print_r($fields);
 
 			if($fields['sub_type'] != $subType){
 				$subType = $fields['sub_type'];

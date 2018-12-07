@@ -75,6 +75,9 @@
 	<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGQLLJ"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 	<!-- End Google Tag Manager (noscript) -->
+
+	<a href="#maincontent" class="skiptomaincontent" title="Skip to main content" aria-label="Skip to main content">Skip to main content</a>
+
 		<p class="testp" style="position:fixed;background:rgba(0,0,0,0.7);color:#fff;top:200px;left:0;font-weight:bold;font-size:20px;z-index:99999999;"></p>
 
 		<div class="wrapper">
@@ -93,32 +96,22 @@
 
 					<nav class="nu__mainmenu" aria-label="main menu">
 
-						<!-- this is where the items hidden in the main nav will appear as dropdowns -->
 						<?php get_template_part('loops/loop-dropdowns'); ?>
 
 						<div id="nu__mainmenu-search">
-							<!-- <a id="nu__search-toggle" href="search" title="Click to search all of Northeastern University" aria-label="Click to search all of Northeastern University" tabindex="2" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="Search">Search</a> -->
 							<a id="nu__search-toggle" href="search" title="Click to search all of Northeastern University" aria-label="Click to search all of Northeastern University" aria-haspopup="true" class="js__mainmenu-item" data-title="Search"></a>
 							<?php get_template_part('loops/loop-searchnav'); ?>
 						</div>
 
 						<div id="nu__mainmenu-supernav">
-							<!-- <a id="nu__supernav-toggle" href="mainmenu" title="Click to show/hide main menu" aria-label="Click to show/hide main menu" tabindex="3" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="Menu">Menu</a> -->
 							<a id="nu__supernav-toggle" href="mainmenu" title="Click to show/hide main menu" aria-label="Click to show/hide main menu" aria-haspopup="true" class="js__mainmenu-item" data-title="Menu"></a>
 							<?php if(get_query_var('pagename') != 'main-menu'){ get_template_part('loops/loop-supernav'); } ?>
 						</div>
-
-
-
-
-
-						<!-- <div id="nu__mainmenu-iamnav">
-							<a id="nu__iamnav-toggle" href="iammenu" title="Click to show/hide audience selection menu" aria-label="Click to show/hide audience selection menu" tabindex="1" role="menuitem" aria-haspopup="true" class="js__mainmenu-item" data-title="I Am A">I Am A</a>
-							<?php if(get_query_var('pagename') != 'iam-menu'){ get_template_part('loops/loop-iamnav'); } ?>
-						</div> -->
 
 					</nav>
 
 				</div>
 
 			</header>
+
+			<a name="maincontent" id="maincontent"></a>

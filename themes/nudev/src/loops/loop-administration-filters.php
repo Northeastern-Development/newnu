@@ -7,11 +7,24 @@
 
 	$return = '';
 
-	$skipThese = array('President','Strategy');
-
 	if($field){
 		foreach($field['choices'] as $k => $v){
-			if(!in_array($v,$skipThese)){
+
+			// if there is no staff assigned to a department, do not show it in the filter options
+			$args = array(
+				 "post_type" => "administration"
+				,"posts_per_page" => -1
+				,'meta_query' => array(
+					 'relation' => 'AND'
+					,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
+					,'dept_clause' => array("key"=>"department","value"=>'"'.$v.'"',"compare"=>"LIKE")
+					,array("key"=>"department_head","value"=>"0","compare"=>"LIKE")
+				)
+			);
+
+			$staffCnt = count(query_posts($args));
+
+			if($staffCnt > 0){
 				$return .= '<li><a '.($filter == strtolower(str_replace(" ","-",$v))?'class="active"':'').' href="'.home_url().'/about/university-administration/'.strtolower(str_replace(" ","-",$v)).'" title="Filter to show '.strtolower($v).' team">'.$v.' <span>&#xE313;</span></a></li>';
 			}
 		}

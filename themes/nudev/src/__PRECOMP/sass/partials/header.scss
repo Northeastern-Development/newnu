@@ -3,6 +3,22 @@
  * ---
  */
 
+a.skiptomaincontent{
+ position: absolute;
+ top: -100px;
+ left: -100px;
+ z-index: 3000;
+ padding: 2px 15px 2px 15px;
+ background: rgba($brand_colors-black,1.0);
+ color: rgba($brand_colors-white,1.0);
+ border: solid rgba($brand_colors-red,1.0) 1px;
+ &:focus,
+ &:hover{
+   top: $gutter;
+   left: $gutter;
+ }
+}
+
 
 header{
   width: $wrapper-width;
