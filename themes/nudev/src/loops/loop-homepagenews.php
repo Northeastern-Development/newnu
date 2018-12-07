@@ -11,8 +11,6 @@
 
 	$stories = $fields['top_story_blocks'];
 
-	// $guide = '<div id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator"><a %s href="%s" target="%s" title="Click here now to read more %s" aria-label="Click here now to read more %s">%s</a><div class="bgimage"><div style="%s %s" role="img" aria-label="%s"></div></div><div class="nu__panel-content"><h2><span>%s</span></h2></div><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide" aria-label="Click here to view the previous slide">&#xE5CB;</div><div class="slider_next rotate" title="Click here to view the next slide" aria-label="Click here to view the next slide">&#xE5CC;</div></div></div><div class="nu__overlay-logo">%s</div></div>';
-
 		$guide = '<div id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator"><div><a href="http://news.northeastern.edu/" title="News at northeastern" aria-label="News at northeastern" target="_blank"><svg class="nav__logo"  width="327px" height="28px" viewBox="0 0 327 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Northeasern News</title>
   <g class="logo__news" transform="translate(112, 0)">
@@ -38,14 +36,7 @@
             </g>
 </svg></a><ul role="menu">%s</ul><a class="contact" href="http://news.northeastern.edu/contact/" title="Contact media relations" aria-label="Contact media relations" target="_blank">Media Inquiries</a></div><div class="bgimage" style="%s" role="img" aria-label="%s"><div class="gradient"><a tabindex="-1" class="readstory" href="%s" title="%s [will open in new tab/window]" aria-label="%s [will open in new tab/window]" target="_blank"><span>Read story</span></a></div><h3>%s</h3></div></div>';
 
-	// $iPath = responsive_background_images('medium_large');	// call the function to figure out the best image size to use
-
 	$thisImage = $stories[0]['block_slide'][0];
-	// foreach($iPath as $iP){
-	// 	$thisImage = $thisImage[$iP];
-	// }
-
-	// print_r($stories);
 
 	// loop through and build the list of articles
 	$slideLinks = '';
@@ -55,33 +46,18 @@
 		$i++;
 	}
 
-
 	echo sprintf(
 		$guide
 		,'1'
 		,1
 		,count($stories[0]['block_slide'])
-		// ,($i > 5?'tabindex="-1"':'')
-		// ,$stories[0]['block_slide'][0]['block_slide_link']
-		// ,($stories[0]['block_slide'][0]['external_link'] == '1'?'_blank':'')
-		// ,($stories[0]['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
-		// ,($stories[0]['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
-		// ,$stories[0]['block_slide'][0]['block_slide_title']
 		,$slideLinks
 		,'background-image: url('.$thisImage['block_slide_image']['url'].');'
-		// ,'background-color: '.$stories[0]['block_slide'][0]['block_slide_background'].'; '
 		,'image for '.strtolower($stories[0]['block_slide'][0]['block_slide_title'])
-		// ,ucwords(trim($stories[0]['block_slide'][0]['slide_tag']))
-
 		,strtolower($stories[0]['block_slide'][0]['block_slide_link'])
 		,strtolower($stories[0]['block_slide'][0]['block_slide_title'])
 		,strtolower($stories[0]['block_slide'][0]['block_slide_title'])
-
-		// ,(isset($stories[0]['block_slide'][0]['slide_tag']) && $stories[0]['block_slide'][0]['slide_tag'] != ''?'<h3>'.ucwords(trim($stories[0]['block_slide'][0]['slide_tag'])).'</h3>':'')
 		,ucwords(trim($stories[0]['block_slide'][0]['slide_tag']))
-
-		// ,$stories[0]['block_slide'][0]['block_slide_title']
-		// ,(isset($stories[0]['block_slide'][0]['slide_overlay_logo']) && $stories[0]['block_slide'][0]['slide_overlay_logo'] != ''?'<img src="'.$stories[0]['block_slide'][0]['slide_overlay_logo']['url'].'" alt="news overlay logo" />':'')
 	);
 
 ?>
