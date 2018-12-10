@@ -25,7 +25,7 @@
 			$staffCnt = count(query_posts($args));
 
 			if($staffCnt > 0){
-				$return .= '<li><a '.($filter == strtolower(str_replace(" ","-",$v))?'class="active"':'').' href="'.home_url().'/about/university-administration/'.strtolower(str_replace(" ","-",$v)).'" title="Filter to show '.strtolower($v).' team">'.$v.' <span>&#xE313;</span></a></li>';
+				$return .= '<li><a '.($filter == strtolower(str_replace(" ","-",$v))?'class="active"':'').' href="'.home_url().'/about/university-administration/'.strtolower(str_replace(" ","-",$v)).'" title="Filter to show '.strtolower($v).' team" aria-label="Filter to show '.strtolower($v).' team">'.$v.' <span>&#xE313;</span></a></li>';
 			}
 		}
 	}
