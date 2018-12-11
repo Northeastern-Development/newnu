@@ -2,6 +2,7 @@
 // it relies on variables defined within the main scripts file
 
 var cNav = null;
+var navPanelInMotion = false;
 
 (function(root,$,undefined){
 	"use strict";
@@ -50,53 +51,85 @@ var cNav = null;
 
     // NEW A TAG VERSION
     // this will handle the click of main menu items as well as some preventitive measures regarding overlap of options
-		$('nav').on('click','a.js__mainmenu-item',function(e){
+		// $('nav').on('click','a.js__mainmenu-item',function(e){
+		// 	actionMainMenu(e);
+		// });
 
+		// $('nav').on('focus','a.js__mainmenu-item',function(e){
+		// 	console.log('action!');
+		// 	actionMainMenu(e);
+		// });
+
+		// $('nav').on('focus : click','a.js__mainmenu-item',function(e){
+
+		// $('nav.nu__mainmenu').on('focus','a.js__mainmenu-item',function(e){
+		// 	console.log(e.type);
+		// });
+
+		// $('nav.nu__mainmenu').on('click : focus','a.js__mainmenu-item',function(e){
+		$('nav.nu__mainmenu').on('click','a.js__mainmenu-item',function(e){
+			// function actionMainMenu(e){
       // prevent the default link action
       e.preventDefault();
+			e.stopPropagation();
 
-			console.log(e);
+			// console.log(e.type);
 
-			// determine which nav we are looking at and whether it is the currently active one, in which case close it
-			if(cNav == null){  // if no menu is currently open
-        // $(this).addClass('active').focus().html('Close').next('div').addClass('open');
-				$(this).addClass('active').focus().next('div').addClass('open');
-        $(this).next('div').find('div.items > ul').attr('aria-hidden','false');
-				$(this).next('div').find('div.items > ul > li').first().focus();
-				$(this).next('div').find('div.items > ul > li').attr('tabindex','1');
-        //$(this).next('div').find('div.items > ul > li > ul').first().attr('aria-hidden','false');
+			// if(!navPanelInMotion){
 
-				// we need to reveal the dropdown sneezeguard
-				$('.js-dropdown-sneezeguard').css({'height':'100%'});
+				// navPanelInMotion = true;
 
-				cNav = $(this).attr('id');
-			}else if($(this).attr('id') == cNav){  // if we have clicked the same menu item again after it was open
-        // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
-				$(this).removeClass('active').blur().next('div').removeClass('open');
-        $(this).next('div').find('div.items ul').attr('aria-hidden','true');
-				$(this).next('div').find('div.items > ul > li').attr('tabindex','-1');
-				cNav = null;
+				// determine which nav we are looking at and whether it is the currently active one, in which case close it
+				if(cNav == null){  // if no menu is currently open
+	        // $(this).addClass('active').focus().html('Close').next('div').addClass('open');
+					$(this).addClass('active').focus().next('div').addClass('open');
+	        $(this).next('div').find('div.items > ul').attr('aria-hidden','false');
+					$(this).next('div').find('div.items > ul > li').first().focus();
+					$(this).next('div').find('div.items > ul > li').attr('tabindex','1');
+	        //$(this).next('div').find('div.items > ul > li > ul').first().attr('aria-hidden','false');
 
-				// we need to hide the dropdown sneezeguard
-				$('.js-dropdown-sneezeguard').css({'height':'0'});
+					// we need to reveal the dropdown sneezeguard
+					$('.js-dropdown-sneezeguard').css({'height':'100%'});
 
-			}else{ // if we have clicked another menu item while one was already open
+					// navPanelInMotion = false;
 
-        $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
-          // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+					cNav = $(this).attr('id');
+				}else if($(this).attr('id') == cNav){  // if we have clicked the same menu item again after it was open
+	        // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
 					$(this).removeClass('active').blur().next('div').removeClass('open');
-          $('div.items > ul').attr('aria-hidden','true');
-        });
+	        $(this).next('div').find('div.items ul').attr('aria-hidden','true');
+					$(this).next('div').find('div.items > ul > li').attr('tabindex','-1');
+					cNav = null;
 
-        // $(this).addClass('active').html('Close').focus().next('div').addClass('open');  // activate the one that was selected
-				$(this).addClass('active').focus().next('div').addClass('open');  // activate the one that was selected
-        $(this).next('div').find('div.items ul').attr('aria-hidden','true');
-				$(this).next('div').find('div.items > ul > li').first().focus();
-				cNav = $(this).attr('id');
-			}
+					// we need to hide the dropdown sneezeguard
+					$('.js-dropdown-sneezeguard').css({'height':'0'});
 
-			// need to reset the first item in the supernav and iamnav menu to be active
-			navReset();
+					// navPanelInMotion = false;
+
+				}else{ // if we have clicked another menu item while one was already open
+
+	        $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
+	          // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
+						$(this).removeClass('active').blur().next('div').removeClass('open');
+	          $('div.items > ul').attr('aria-hidden','true');
+	        });
+
+	        // $(this).addClass('active').html('Close').focus().next('div').addClass('open');  // activate the one that was selected
+					$(this).addClass('active').focus().next('div').addClass('open');  // activate the one that was selected
+	        $(this).next('div').find('div.items ul').attr('aria-hidden','true');
+					$(this).next('div').find('div.items > ul > li').first().focus();
+					cNav = $(this).attr('id');
+
+					// navPanelInMotion = false;
+
+				}
+
+			// }
+
+				// need to reset the first item in the supernav and iamnav menu to be active
+				navReset();
+
+			// }
 
 			// if we are on the search page, we need to restrict opening the search again on top of itself
 			if($('body').hasClass('search')){
@@ -104,11 +137,14 @@ var cNav = null;
 			}
 
 			// check to see if we need to collapse the footer if it is already open (homepage only)
-			// if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
-			// 	$('footer#nu__global-footer').addClass('collapse');
-			// }
+			if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
+				$('footer#nu__global-footer').addClass('collapse');
+			}
+
+			// navPanelInMotion = false;
 
 		});
+	// };
 
 
 
@@ -131,6 +167,9 @@ var cNav = null;
 			// if(!$('body').hasClass('home')){
 				allowScrollOrNot();
 			// }
+
+			navPanelInMotion = false;
+
 		}
 
 
@@ -184,6 +223,7 @@ var cNav = null;
 			// $('ul.dropdowns > li.js-dropdown').attr('aria-hidden','true');
 			$('ul.dropdowns > li.js-dropdown').find('ul > li > a').attr('tabindex','-1');
 			$('ul.dropdowns > li.js-dropdown').find('ul').hide();
+			$('ul.dropdowns > li.js-dropdown').find('a').removeClass('open');
 			// $('ul.dropdowns > li.js-dropdown > ul').attr('aria-hidden','true');
 
 			// openCloseDropdown($(this));
@@ -213,6 +253,11 @@ var cNav = null;
 
 				// a.find('ul').show().attr('aria-hidden','false');
 				a.find('ul').show();
+				// a.css({
+				//
+				// });
+
+				a.find('a').addClass('open');
 
 				// a.attr('aria-hidden','false');
 
@@ -285,7 +330,7 @@ var cNav = null;
 		// $('div.navigational > section > div.items > ul > li:not(.featured)').keydown(function(e){
 		$('div.navigational > section > div.items > ul > li:not(.featured)').focus(function(e){
 		    //if(e.which === 13){ // the user pressed on the enter key
-						console.log($(this));
+						// console.log($(this));
 
 						changeNavCat($(this));
 		    //}
@@ -334,17 +379,17 @@ var cNav = null;
 
 					// e.preventDefault();
 
-					console.log('NOTICE: key pressed - '+e.which);
+					// console.log('NOTICE: key pressed - '+e.which);
 
 					// listen for the arrow press up and down here
 					if(e.which == 38){
 						e.preventDefault();
 						// this is arrow up
-						console.log('up arrow');
+						// console.log('up arrow');
 					}else if(e.which == 40){
 						e.preventDefault();
 						// this is arrow down
-						console.log('down arrow');
+						// console.log('down arrow');
 					}
 				}
 

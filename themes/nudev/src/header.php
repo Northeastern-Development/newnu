@@ -76,7 +76,7 @@
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 	<!-- End Google Tag Manager (noscript) -->
 
-	<a href="#maincontent" class="skiptomaincontent" title="Skip to main content" aria-label="Skip to main content">Skip to main content</a>
+	<a href="#maincontent" class="skiptomaincontent" title="Click here to skip to main content" aria-label="Click here to skip to main content">Skip to main content</a>
 
 		<p class="testp" style="position:fixed;background:rgba(0,0,0,0.7);color:#fff;top:200px;left:0;font-weight:bold;font-size:20px;z-index:99999999;"></p>
 

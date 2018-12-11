@@ -371,7 +371,10 @@ div.main{
             // word-wrap: normal;
             // margin: 0 auto 0 auto;
             // padding: 0 0 0 0;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            // text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            & > span{
+              text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            }
           }
         }
       }

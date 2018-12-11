@@ -13,9 +13,9 @@
 
 	$return = '<ul class="dropdowns" aria-hidden="false"><div class="sneezeguard js-dropdown-sneezeguard"></div>';
 
-	$singleGuide = '<li class="js-single"><a href="%s" title="%s"%s aria-label="%s" tabindex="0">%s</a></li>';
+	$singleGuide = '<li class="js-single"><a href="%s" title="view %s"%s aria-label="view %s" tabindex="0">%s</a></li>';
 
-	$dropdownGuide = '<li><a href="%s" title="%s"%s aria-label="%s" tabindex="-1">%s</a></li>';
+	$dropdownGuide = '<li><a href="%s" title="view %s"%s aria-label="view %s" tabindex="-1">%s</a></li>';
 
 	$c = 2;
 
@@ -47,7 +47,7 @@
 				,$r->post_title
 			);
 		}else{	// this is for a dropdown
-			$return .= '<li id="dropdown-'.$r->post_name.'" title="'.$r->post_title.'" class="js-dropdown" aria-label="'.$r->post_title.'"><a href="javascript:void();" title="'.$r->post_title.' dropdown menu" aria-label="'.$r->post_title.' dropdown menu">'.$r->post_title.'</a><ul role="menu">';
+			$return .= '<li id="dropdown-'.$r->post_name.'" title="view '.$r->post_title.'" class="js-dropdown" aria-label="view '.$r->post_title.'"><a href="javascript:void();" title="view '.$r->post_title.' dropdown menu" aria-label="view '.$r->post_title.' dropdown menu">'.$r->post_title.'</a><ul role="menu">';
 
 			// this will handle the dropdown style menu items
 			foreach($items as $i){

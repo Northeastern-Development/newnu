@@ -57,7 +57,8 @@
 		,strtolower($stories[0]['block_slide'][0]['block_slide_link'])
 		,strtolower($stories[0]['block_slide'][0]['block_slide_title'])
 		,strtolower($stories[0]['block_slide'][0]['block_slide_title'])
-		,ucwords(trim($stories[0]['block_slide'][0]['slide_tag']))
+		// ,(isset($stories[0]['block_slide'][0]['slide_tag']) && $stories[0]['block_slide'][0]['slide_tag'] != ''?'<h3>'.ucwords(trim($stories[0]['block_slide'][0]['slide_tag'])).'</h3>':'')
+		,(isset($stories[0]['block_slide'][0]['slide_tag']) && $stories[0]['block_slide'][0]['slide_tag'] != ''?ucwords(trim($stories[0]['block_slide'][0]['slide_tag'])):'')
 	);
 
 ?>

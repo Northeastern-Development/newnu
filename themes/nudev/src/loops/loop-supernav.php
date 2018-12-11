@@ -52,12 +52,12 @@
 
 		if(count($res) >= 1){
 
-			$return .= '<li title="'.$o[0].'" aria-label="'.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li>'.$o[0].'</li>';
+			$return .= '<li title="view '.$o[0].'" aria-label="view '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li>'.$o[0].'</li>';
 			foreach($res as $r){
 
 				$fields = get_fields($r->ID);
 
-				$guide = '<li role="menuitem" tabindex="-1"><a href="%s" title="%s%s" aria-label="%s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
+				$guide = '<li role="menuitem" tabindex="-1"><a href="%s" title="view %s%s" aria-label="view %s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
 
 				$return .= sprintf(
 					$guide

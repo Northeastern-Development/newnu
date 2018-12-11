@@ -83,6 +83,25 @@ nav.nu__mainmenu{
       height: auto;
       position: relative;
       outline: 0;
+      &.js-dropdown{
+        & > a{
+          &:after{
+            content: '\E313';
+            display: inline-block;
+            margin: 2px 0 0 7px;
+            vertical-align: middle;
+          }
+          &.open{
+            color: rgba($brand_colors-white, 1.0);
+            &:after{
+              content: '\E316';
+              display: inline-block;
+              margin: 2px 0 0 7px;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
       &:last-child{
         margin: 0 $gutter 0 0;
       }
