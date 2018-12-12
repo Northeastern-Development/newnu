@@ -43,7 +43,7 @@
         $campus .= ($campus != ""?", ":"").$c->post_title;
       }
 
-      if($filter == '' || strpos(strtolower($campus),$filter) !== false){ // check if we have a campus filter or not that we need to use
+      if($filter == '' || strpos(strtolower($campus),str_replace('-',' ',$filter)) !== false){ // check if we have a campus filter or not that we need to use
 
     ?>
     <item-<?=$i?>>

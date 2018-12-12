@@ -14,9 +14,9 @@
 
 	<div class="main" role="main" aria-label="content">
 
-		<?php include(locate_template('includes/pagehero.php')); ?>
-
 		<?php
+
+			include(locate_template('includes/pagehero.php'));
 
 			// this is the array of filter options that will be shown to the user if we need one on this page
 			// we will eventually add a feature here to pull the categories from the CMS tools options directly
@@ -29,12 +29,7 @@
 			// this will actually call in the filter include to display on the page
 			include(locate_template('includes/filteroptions.php'));
 
-		?>
-
-		<?php
-
 			// determine what content to show to the user based on URL and any filtered applied
-
 			if(isset($filter) && $filter == "members-of-the-corporation"){	// this will show the list of the members of the corporation
 				echo '<section class="nu__board-emeriti">';
 				include(locate_template('loops/loop-trustees-emeriti.php'));
@@ -49,9 +44,9 @@
 				echo '<section class="nu__board-committees">';
 				include(locate_template('loops/loop-trustees-committees.php'));
 				echo '</section>';
-			}else{	// this is the default state to show the trustees and leadership
+			}else{	// this is the default state to show the trustees
 				echo '<section class="nu__board-trustees">';
-				include(locate_template('loops/loop-trustees-leadership.php'));
+				// include(locate_template('loops/loop-trustees-leadership.php'));
 				include(locate_template('loops/loop-trustees.php'));
 				echo '</section>';
 			}
