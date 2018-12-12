@@ -3,6 +3,8 @@
    * Template Name: Alerts
    */
 
+   // are we looking for a specific campus worth of alerts?
+   $filter = (isset($_GET['campus']) && $_GET['campus'] != ''?strtolower($_GET['campus']):'');
 
    $args = array(
  		 "post_type" => "nualerts"
@@ -14,7 +16,10 @@
 
  	$posts = query_posts($args);
 
-  if(count($posts) > 0){
+  // if(count($posts) == 0){ // no alerts, or alerts that match the request
+  //   echo 'No currently active alerts.';
+  //   die();
+  // }else{
 
   echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 
@@ -38,6 +43,8 @@
         $campus .= ($campus != ""?", ":"").$c->post_title;
       }
 
+      if($filter == '' || strpos(strtolower($campus),$filter) !== false){ // check if we have a campus filter or not that we need to use
+
     ?>
     <item-<?=$i?>>
           <title><?=get_the_title()?></title>
@@ -46,8 +53,8 @@
           <campuses><?=$campus?></campuses>
           <link><?=get_permalink()?></link>
         </item-<?=$i?>>
-    <?php $i++; endwhile; ?>
+    <?php $i++; } endwhile; ?>
   </items>
 </channel>
 </rss>
-<?php } ?>
+<?php // } ?>
