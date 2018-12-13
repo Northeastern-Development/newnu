@@ -66,70 +66,148 @@ var navPanelInMotion = false;
 		// 	console.log(e.type);
 		// });
 
+
+		// we need this to rpevent the default action fo the a tag
+		// $('nav.nu__mainmenu').on('click','a.js__mainmenu-item',function(e){
+		// 	e.preventDefault();
+		// });
+
+
+
 		// $('nav.nu__mainmenu').on('click : focus','a.js__mainmenu-item',function(e){
+		// $('nav.nu__mainmenu').on('mousedown focus','a.js__mainmenu-item',function(e){
 		$('nav.nu__mainmenu').on('click','a.js__mainmenu-item',function(e){
-			// function actionMainMenu(e){
-      // prevent the default link action
-      e.preventDefault();
-			e.stopPropagation();
 
 			// console.log(e.type);
 
-			// if(!navPanelInMotion){
 
-				// navPanelInMotion = true;
+
+			e.preventDefault();
+			e.stopPropagation();
+
+			var eType = e.type;
+			// console.log(eType);
+
+			// if(eType == 'mousedown' && !navPanelInMotion){	// this is for a click
+			if(eType == 'click' && !navPanelInMotion){	// this is for a click
+			// if(eType == 'mousedown'){	// this is for mousedown
+
+				// e.preventDefault();
+
+				console.log('mousedown!');
+
+				navPanelInMotion = true;
 
 				// determine which nav we are looking at and whether it is the currently active one, in which case close it
 				if(cNav == null){  // if no menu is currently open
-	        // $(this).addClass('active').focus().html('Close').next('div').addClass('open');
-					$(this).addClass('active').focus().next('div').addClass('open');
-	        $(this).next('div').find('div.items > ul').attr('aria-hidden','false');
-					$(this).next('div').find('div.items > ul > li').first().focus();
-					$(this).next('div').find('div.items > ul > li').attr('tabindex','1');
-	        //$(this).next('div').find('div.items > ul > li > ul').first().attr('aria-hidden','false');
 
-					// we need to reveal the dropdown sneezeguard
-					$('.js-dropdown-sneezeguard').css({'height':'100%'});
+					focusNavPanel($(this));
 
-					// navPanelInMotion = false;
+					// // $(this).addClass('active').focus().next('div').addClass('open');
+					// $(this).addClass('active').next('div').addClass('open');
+	        // $(this).next('div').find('div.items > ul').attr('aria-hidden','false');
+					// $(this).next('div').find('div.items > ul > li').first().focus();
+					// // $(this).next('div').find('div.items > ul > li').first();
+					// $(this).next('div').find('div.items > ul > li').attr('tabindex','1');
+					//
+					// // we need to reveal the dropdown sneezeguard
+					// $('.js-dropdown-sneezeguard').css({'height':'100%'});
 
-					cNav = $(this).attr('id');
+					// cNav = $(this).attr('id');
 				}else if($(this).attr('id') == cNav){  // if we have clicked the same menu item again after it was open
-	        // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
-					$(this).removeClass('active').blur().next('div').removeClass('open');
-	        $(this).next('div').find('div.items ul').attr('aria-hidden','true');
-					$(this).next('div').find('div.items > ul > li').attr('tabindex','-1');
-					cNav = null;
 
-					// we need to hide the dropdown sneezeguard
-					$('.js-dropdown-sneezeguard').css({'height':'0'});
+					blurSamePanel($(this));
 
-					// navPanelInMotion = false;
+					// // $(this).removeClass('active').blur().next('div').removeClass('open');
+					// $(this).removeClass('active').next('div').removeClass('open');
+	        // $(this).next('div').find('div.items ul').attr('aria-hidden','true');
+					// $(this).next('div').find('div.items > ul > li').attr('tabindex','-1');
+					// cNav = null;
+					//
+					// // we need to hide the dropdown sneezeguard
+					// $('.js-dropdown-sneezeguard').css({'height':'0'});
 
 				}else{ // if we have clicked another menu item while one was already open
 
-	        $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
-	          // $(this).removeClass('active').blur().html($(this).attr('data-title')).next('div').removeClass('open');
-						$(this).removeClass('active').blur().next('div').removeClass('open');
-	          $('div.items > ul').attr('aria-hidden','true');
-	        });
+					blurNavPanels();
 
-	        // $(this).addClass('active').html('Close').focus().next('div').addClass('open');  // activate the one that was selected
-					$(this).addClass('active').focus().next('div').addClass('open');  // activate the one that was selected
-	        $(this).next('div').find('div.items ul').attr('aria-hidden','true');
-					$(this).next('div').find('div.items > ul > li').first().focus();
-					cNav = $(this).attr('id');
+					focusNavPanel($(this));
 
-					// navPanelInMotion = false;
+	        // $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
+					// 	// $(this).removeClass('active').blur().next('div').removeClass('open');
+					// 	$(this).removeClass('active').next('div').removeClass('open');
+	        //   $('div.items > ul').attr('aria-hidden','true');
+	        // });
+
+					// $(this).addClass('active').focus().next('div').addClass('open');  // activate the one that was selected
+					// $(this).addClass('active').next('div').addClass('open');  // activate the one that was selected
+	        // $(this).next('div').find('div.items ul').attr('aria-hidden','true');
+					// // $(this).next('div').find('div.items > ul > li').first().focus();
+					// $(this).next('div').find('div.items > ul > li').first();
+					// cNav = $(this).attr('id');
 
 				}
 
-			// }
+				// // need to reset the first item in the supernav and iamnav menu to be active
+				// navReset();
+				//
+				// // if we are on the search page, we need to restrict opening the search again on top of itself
+				// if($('body').hasClass('search')){
+				// 	$('#nu__search-toggle').removeClass('active');
+				// }
+				//
+				// // check to see if we need to collapse the footer if it is already open (homepage only)
+				// if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
+				// 	$('footer#nu__global-footer').addClass('collapse');
+				// }
 
-				// need to reset the first item in the supernav and iamnav menu to be active
-				navReset();
+			}else if(eType == 'focusin' && !navPanelInMotion){
+			// }else if(eType == 'focusin'){
 
+				navPanelInMotion = true;
+
+				blurNavPanels();
+
+
+				// $('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
+				// 	$(this).removeClass('active').blur().next('div').removeClass('open');
+				// 	$(this).next('div').find('div.items > ul').attr('aria-hidden','true');
+				// 	$(this).next('div').find('div.items > ul > li').attr('tabindex','-1');
+				// });
+				//
+				// // we need to hide the dropdown sneezeguard
+				// $('.js-dropdown-sneezeguard').css({'height':'0'});
+				//
+				// cNav = null;
+
+				var showMe = $(this);
+
+				setTimeout(function(){ focusNavPanel(showMe); }, 100);
+
+				// focusNavPanel($(this));
+
+				// e.stopPropagation();
+
+				// navPanelInMotion = true;
+
+				console.log('focus!');
 			// }
+			}else if(eType == 'focusout' && !navPanelInMotion){
+			// }else if(eType == 'focusout'){
+
+				navPanelInMotion = true;
+
+				// blurNavPanels();
+
+				// e.stopPropagation();
+
+				// navPanelInMotion = true;
+
+				console.log('blur!');
+			}
+
+			// need to reset the first item in the supernav and iamnav menu to be active
+			navReset();
 
 			// if we are on the search page, we need to restrict opening the search again on top of itself
 			if($('body').hasClass('search')){
@@ -137,14 +215,58 @@ var navPanelInMotion = false;
 			}
 
 			// check to see if we need to collapse the footer if it is already open (homepage only)
-			if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
-				$('footer#nu__global-footer').addClass('collapse');
-			}
-
-			// navPanelInMotion = false;
+			// if($('body').hasClass('home') && !$('footer#nu__global-footer').hasClass('collapse')){
+			// 	$('footer#nu__global-footer').addClass('collapse');
+			// }
 
 		});
-	// };
+
+
+		// this function will handle opening a specific nav panel
+		function focusNavPanel(a){
+			console.log(a);
+			a.addClass('active').focus().next('div').addClass('open');
+			a.next('div').find('div.items > ul').attr('aria-hidden','false');
+			a.next('div').find('div.items > ul > li').first().focus();
+			a.next('div').find('div.items > ul > li').attr('tabindex','1');
+
+			// how do we tell if we just went backward and need to close a panel?
+
+
+			// we need to reveal the dropdown sneezeguard
+			$('.js-dropdown-sneezeguard').css({'height':'100%'});
+
+			// set the id of the now open nav panel
+			cNav = a.attr('id');
+		}
+
+
+		// this function will handle closing the same nav panel
+		function blurSamePanel(a){
+			// $(this).removeClass('active').blur().next('div').removeClass('open');
+			a.removeClass('active').next('div').removeClass('open');
+			a.next('div').find('div.items ul').attr('aria-hidden','true');
+			a.next('div').find('div.items > ul > li').attr('tabindex','-1');
+			cNav = null;
+
+			// we need to hide the dropdown sneezeguard
+			$('.js-dropdown-sneezeguard').css({'height':'0'});
+		}
+
+
+		// this function will handle closing a specific nav panel
+		function blurNavPanels(){
+			$('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
+				$(this).removeClass('active').blur().next('div').removeClass('open');
+				$(this).next('div').find('div.items > ul').attr('aria-hidden','true');
+				$(this).next('div').find('div.items > ul > li').attr('tabindex','-1');
+			});
+
+			// we need to hide the dropdown sneezeguard
+			$('.js-dropdown-sneezeguard').css({'height':'0'});
+
+			cNav = null;
+		}
 
 
 
@@ -168,7 +290,8 @@ var navPanelInMotion = false;
 				allowScrollOrNot();
 			// }
 
-			navPanelInMotion = false;
+			// navPanelInMotion = false;
+			setTimeout(function(){ navPanelInMotion = false; }, 100);
 
 		}
 
