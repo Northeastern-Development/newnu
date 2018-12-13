@@ -22,7 +22,8 @@
     width: 100%;
     height: 100%;
     opacity: 0.0;
-    &:hover{
+    &:hover,
+    &:focus{
       cursor: pointer;
     }
   }
@@ -58,7 +59,8 @@
           color: rgba($brand_colors-black,1.0);
           border-bottom: solid rgba($brand_colors-red,1.0) 4px;
         }
-        &:hover{
+        &:hover,
+        &:focus{
           color: rgba($brand_colors-black,1.0);
           border-bottom: solid rgba($brand_colors-red,1.0) 4px;
         }
