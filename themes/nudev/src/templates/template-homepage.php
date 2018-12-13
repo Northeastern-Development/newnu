@@ -6,7 +6,7 @@
 
 ?>
 
-	<div id="nu__homepage" role="main" aria-label="content" class="main smooth">
+	<div id="nu__homepage" role="main" aria-label="content" class="main smooth" tabindex="-1">
 
 		<div id="nu__seo-content"><h1><?=get_the_content()?></h1></div>
 

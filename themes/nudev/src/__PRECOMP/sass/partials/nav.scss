@@ -56,6 +56,13 @@ nav.nu__mainmenu{
     text-align: right;
   }
 
+  a.js__closepanelstart,
+  a.js__closepanelend{
+    // display: none;
+    opacity: 0.0;
+    position: absolute;
+  }
+
   & > ul.dropdowns{
     float: left;
     list-style: none;

@@ -52,7 +52,7 @@
 
 		if(count($res) >= 1){
 
-			$return .= '<li title="view '.$o[0].'" aria-label="view '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li>'.$o[0].'</li>';
+			$return .= '<li title="view '.$o[0].'" aria-label="view '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li tabindex="-1" class="sectiontitle">'.$o[0].'</li>';
 			foreach($res as $r){
 
 				$fields = get_fields($r->ID);
@@ -115,7 +115,10 @@
 		$iii++;
 	}
 
-	$supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul role="menu" aria-hidden="true">'.$return.'</ul></div></section></div>';
+	// we need to add a hidden item that we can listen for to know to auto-clsoe the panel when tabbing around
+	// $return .= '<li><a href="" title="">X</a></li>';
+
+	$supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul role="menu" aria-hidden="true"><a href="javascript:void(0);" title="Close panel" aria-label="Close panel" tabindex="1" class="js__closepanelstart">X</a>'.$return.'<a href="javascript:void(0);" title="Close panel" aria-label="Close panel" tabindex="1" class="js__closepanelend">X</a></ul></div></section></div>';
 
 	if(isset($returnType) && $returnType === 'return'){	// this will return the results for remote calls
 		return $supernav;

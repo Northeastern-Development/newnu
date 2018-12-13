@@ -74,11 +74,31 @@ var navPanelInMotion = false;
 
 
 
+		// we need to have an event listener for the first and last items in each of the nav panels
+		$('nav.nu__mainmenu').on('focus','a.js__closepanelend',function(e){
+			// console.log('close the panel at the end');
+			blurNavPanels();
+		});
+
+		$('nav.nu__mainmenu').on('focus','a.js__closepanelstart',function(e){
+			// console.log('close the search panel at the start');
+			blurNavPanels();
+		});
+
+
+
+
 		// $('nav.nu__mainmenu').on('click : focus','a.js__mainmenu-item',function(e){
 		// $('nav.nu__mainmenu').on('mousedown focus','a.js__mainmenu-item',function(e){
 		$('nav.nu__mainmenu').on('click','a.js__mainmenu-item',function(e){
 
 			// console.log(e.type);
+
+			// need to determine the first/last actionable item in the nav panel, so that we know when the blur on it we can auto-close
+			// var firstItem = $(this).next('div').find('a').first();
+			// var lastItem = $(this).next('div').find('a').last();
+			// console.log(firstItem);
+			// console.log(lastItem);
 
 
 
@@ -94,7 +114,7 @@ var navPanelInMotion = false;
 
 				// e.preventDefault();
 
-				console.log('mousedown!');
+				// console.log('mousedown!');
 
 				navPanelInMotion = true;
 
@@ -190,7 +210,7 @@ var navPanelInMotion = false;
 
 				// navPanelInMotion = true;
 
-				console.log('focus!');
+				// console.log('focus!');
 			// }
 			}else if(eType == 'focusout' && !navPanelInMotion){
 			// }else if(eType == 'focusout'){
@@ -203,7 +223,7 @@ var navPanelInMotion = false;
 
 				// navPanelInMotion = true;
 
-				console.log('blur!');
+				// console.log('blur!');
 			}
 
 			// need to reset the first item in the supernav and iamnav menu to be active
@@ -224,13 +244,19 @@ var navPanelInMotion = false;
 
 		// this function will handle opening a specific nav panel
 		function focusNavPanel(a){
-			console.log(a);
-			a.addClass('active').focus().next('div').addClass('open');
-			a.next('div').find('div.items > ul').attr('aria-hidden','false');
-			a.next('div').find('div.items > ul > li').first().focus();
-			a.next('div').find('div.items > ul > li').attr('tabindex','1');
+			// console.log(a);
 
-			// how do we tell if we just went backward and need to close a panel?
+
+
+			a.addClass('active').focus().next('div').addClass('open');
+
+			a.next('div').find('form input').focus();
+
+			a.next('div').find('div.items > ul').attr('aria-hidden','false');
+			a.next('div').find('div.items > ul > li:not(.sectiontitle)').first().focus();
+			a.next('div').find('div.items > ul > li:not(.sectiontitle)').attr('tabindex','1');
+
+
 
 
 			// we need to reveal the dropdown sneezeguard
@@ -246,7 +272,7 @@ var navPanelInMotion = false;
 			// $(this).removeClass('active').blur().next('div').removeClass('open');
 			a.removeClass('active').next('div').removeClass('open');
 			a.next('div').find('div.items ul').attr('aria-hidden','true');
-			a.next('div').find('div.items > ul > li').attr('tabindex','-1');
+			a.next('div').find('div.items > ul > li:not(.sectiontitle)').attr('tabindex','-1');
 			cNav = null;
 
 			// we need to hide the dropdown sneezeguard
@@ -259,7 +285,7 @@ var navPanelInMotion = false;
 			$('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
 				$(this).removeClass('active').blur().next('div').removeClass('open');
 				$(this).next('div').find('div.items > ul').attr('aria-hidden','true');
-				$(this).next('div').find('div.items > ul > li').attr('tabindex','-1');
+				$(this).next('div').find('div.items > ul > li:not(.sectiontitle)').attr('tabindex','-1');
 			});
 
 			// we need to hide the dropdown sneezeguard
@@ -472,7 +498,7 @@ var navPanelInMotion = false;
       a.parent().find('li ul').attr('aria-hidden','true');
 			a.parent().find('li ul li').attr('tabindex','-1');
       a.find('ul').first().attr('aria-hidden','false');
-			a.find('ul li').attr('tabindex','1');
+			a.find('ul li:not(.sectiontitle)').attr('tabindex','1');
 
 			// if we are clicking on cats in the iamnav, we may need to swap the background image
 			// if(a.parent().parent().parent().parent().attr('id') == 'nu__iamnav' && iamnavbgs.length > 0 && iamnavbgs[0] != ''){
