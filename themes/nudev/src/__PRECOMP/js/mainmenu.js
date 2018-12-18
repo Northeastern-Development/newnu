@@ -277,6 +277,8 @@ var navPanelInMotion = false;
 
 			// we need to hide the dropdown sneezeguard
 			$('.js-dropdown-sneezeguard').css({'height':'0'});
+
+			// a.focus();	// we need to do this ONLY when we tab out of a menu item
 		}
 
 
@@ -351,6 +353,7 @@ var navPanelInMotion = false;
 		// $('ul.dropdowns').on('click','li.js-dropdown',function(e){
 			// $('ul.dropdowns > li > ul').attr('aria-hidden','true');
 			$('ul.dropdowns > li > ul').hide();
+			$('ul.dropdowns > li.js-dropdown').find('a').removeClass('open');
 			// openCloseDropdown($(this));
 		});
 
@@ -368,6 +371,8 @@ var navPanelInMotion = false;
 
 		// $('ul.dropdowns').on('blur mouseout','li.js-dropdown',function(e){	// use this if we want to tab through all of the sub items
 		$('ul.dropdowns').on('mouseout','li.js-dropdown',function(e){
+
+			// console.log('blur on dropdown');
 
 			// $('ul.dropdowns > li.js-dropdown').attr('aria-hidden','true');
 			$('ul.dropdowns > li.js-dropdown').find('ul > li > a').attr('tabindex','-1');
@@ -394,6 +399,9 @@ var navPanelInMotion = false;
 			// console.log(a.attr('aria-hidden'));
 			// if(a.attr('aria-hidden') == 'true'){
 			// console.log(a.find('ul').css('display'));
+
+			$('ul.dropdowns > li.js-dropdown').find('a').removeClass('open');
+
 			if(a.find('ul').css('display') == 'none'){
 
 				// a.focus();

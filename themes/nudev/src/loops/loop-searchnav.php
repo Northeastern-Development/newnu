@@ -18,9 +18,17 @@
 	}
 
 	// get the list of popular search terms
+	$guide = '<li><a href="/search/?query=%s" title="search for %s" aria-label="search for %s">%s</a></li>';
+
 	$popular = '';
 	foreach($styles['popular_searches'] as $pS){
-		$popular .= '<li><a href="/search/?query='.strtolower(str_replace(' ','+',trim($pS['term']))).'" title="search for '.strtolower($pS['term']).'" aria-label="search for '.strtolower($pS['term']).'">'.$pS['term'].'</a></li>';
+		$popular .= sprintf(
+			$guide
+			,strtolower(str_replace(' ','+',trim($pS['term'])))
+			,strtolower($pS['term'])
+			,strtolower($pS['term'])
+			,trim($pS['term'])
+		);
 	}
 
 ?>
