@@ -294,6 +294,8 @@ var navPanelInMotion = false;
 			$('.js-dropdown-sneezeguard').css({'height':'0'});
 
 			cNav = null;
+
+			navReset();
 		}
 
 

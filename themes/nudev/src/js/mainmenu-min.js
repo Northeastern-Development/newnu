@@ -21,7 +21,7 @@ l(".js-dropdown-sneezeguard").css({height:"0"})}
 function s(){l("nav a.js__mainmenu-item").each(function(n){// force all of them closed/clear
 l(this).removeClass("active").blur().next("div").removeClass("open"),l(this).next("div").find("div.items > ul").attr("aria-hidden","true"),l(this).next("div").find("div.items > ul > li:not(.sectiontitle)").attr("tabindex","-1")}),
 // we need to hide the dropdown sneezeguard
-l(".js-dropdown-sneezeguard").css({height:"0"}),cNav=null}
+l(".js-dropdown-sneezeguard").css({height:"0"}),cNav=null,o()}
 // this will handle resetting the nav panels
 function o(){
 // every state has to reset the first items from being active
