@@ -200,6 +200,7 @@ nav.nu__mainmenu{
     height: $header-height;
     border-bottom: none;
     padding: 0 $gutter 0 $gutter;
+    box-shadow: none;
     &:hover,
     &:focus{
       color: rgba($brand_colors-white, 1.0);
@@ -223,10 +224,12 @@ nav.nu__mainmenu{
     &:focus,
     &:active{
       color: rgba($brand_colors-white, 1.0);
+      box-shadow: inset 0 -5px 0 rgba($brand_colors-red, 1.0);
     }
   }
 }
 // *************************************************************************************************
+
 
 
 
