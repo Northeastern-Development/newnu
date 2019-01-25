@@ -27,7 +27,7 @@ function nudev_conditional_styles(){
 
 
   // load static page styles
-  if(is_page_template('templates/template-static.php') || is_page_template('templates/template-experience.php') || is_page_template('templates/template-colleges.php') || is_page_template('templates/template-departments.php') || is_page_template('templates/template-administration.php') || is_page_template('templates/template-trustees.php') || is_404()){
+  if(is_page_template('templates/template-static.php') || is_page_template('templates/template-experience.php') || is_page_template('templates/template-colleges.php') || is_page_template('templates/template-departments.php') || is_page_template('templates/template-administration.php') || is_page_template('templates/template-trustees.php') || is_page_template('templates/template-institutes.php') || is_404()){
     wp_register_style('staticcss', get_template_directory_uri() . '/css/static.css', array(), '1.0');
     wp_enqueue_style('staticcss');
   }
@@ -47,7 +47,7 @@ function nudev_conditional_styles(){
   }
 
   // load colleges and schools page styles
-  if(is_page_template('templates/template-colleges.php')){
+  if(is_page_template('templates/template-colleges.php') || is_page_template('templates/template-institutes.php')){
     wp_register_style('collegescss', get_template_directory_uri() . '/css/colleges.css', array(), '1.0');
     wp_enqueue_style('collegescss');
   }

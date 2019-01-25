@@ -2,7 +2,9 @@
 
 	wp_reset_query();
 
-	$return = '<h4>Other members of The Corporation</h4><ul>';
+	// $return = '<h4>Other members of The Corporation</h4><ul>';
+
+	$return = '<ul>';
 
 	$args = array(
 		"post_type" => "corporation"
@@ -15,7 +17,8 @@
 
 	$res = query_posts($args);
 
-	$guide = '<li><p>%s</p></li>';
+	// $guide = '<li><p>%s</p></li>';
+	$guide = '<li><p><span>%s</span></p></li>';
 
 	foreach($res as $r){
 

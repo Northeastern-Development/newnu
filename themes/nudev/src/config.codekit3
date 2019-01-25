@@ -441,6 +441,26 @@
 		"oAP": "/404.php",
 		"oF": 0
 		},
+	"/__PRECOMP/js/administration.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/administration.js",
+		"oF": 2,
+		"sC": 3,
+		"tS": 0
+		},
+	"/__PRECOMP/js/experience.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/experience.js",
+		"oF": 2,
+		"sC": 3,
+		"tS": 0
+		},
 	"/__PRECOMP/js/homepage.js": {
 		"ft": 64,
 		"ma": 0,
@@ -590,6 +610,29 @@
 		"oAP": "/css/homepage.css",
 		"oF": 2,
 		"oS": 3,
+		"uL": 1
+		},
+	"/__PRECOMP/sass/impact.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/__PRECOMP/sass/impact-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/__PRECOMP/sass/impact.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/__PRECOMP/sass/impact.css",
+		"oF": 0,
+		"oS": 0,
 		"uL": 1
 		},
 	"/__PRECOMP/sass/modules/fonts.scss": {
@@ -1535,6 +1578,13 @@
 		"oAP": "/functions/admin-includes.php",
 		"oF": 0
 		},
+	"/functions/admin-institutes.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/functions/admin-institutes.php",
+		"oF": 0
+		},
 	"/functions/admin-menustyles.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -1689,11 +1739,25 @@
 		"oAP": "/includes/filteroptions.php",
 		"oF": 0
 		},
+	"/includes/footer.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/includes/footer.php",
+		"oF": 0
+		},
 	"/includes/pagehero.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/includes/pagehero.php",
+		"oF": 0
+		},
+	"/includes/prefooter-hp.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/includes/prefooter-hp.php",
 		"oF": 0
 		},
 	"/includes/prefooter.php": {
@@ -1726,6 +1790,16 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/js/EasePack.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/experience.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/experience-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2101,6 +2175,20 @@
 		"oAP": "/loops/loop-dropdowns.php",
 		"oF": 0
 		},
+	"/loops/loop-experience-filters.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-experience-filters.php",
+		"oF": 0
+		},
+	"/loops/loop-experiencecampus.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-experiencecampus.php",
+		"oF": 0
+		},
 	"/loops/loop-footercampuses.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2148,6 +2236,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop-iamnav.php",
+		"oF": 0
+		},
+	"/loops/loop-institutes.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/loop-institutes.php",
 		"oF": 0
 		},
 	"/loops/loop-prefooter.php": {
@@ -2218,6 +2313,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/loops/loop.php",
+		"oF": 0
+		},
+	"/loops/~loop-homepagenews.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/loops/~loop-homepagenews.php",
 		"oF": 0
 		},
 	"/loops/~loop-homepagestories.php": {
@@ -2395,6 +2497,13 @@
 		"oAP": "/templates/template-colleges.php",
 		"oF": 0
 		},
+	"/templates/template-communityimpact.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-communityimpact.php",
+		"oF": 0
+		},
 	"/templates/template-component.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2442,6 +2551,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/templates/template-include.php",
+		"oF": 0
+		},
+	"/templates/template-institutes.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/templates/template-institutes.php",
 		"oF": 0
 		},
 	"/templates/template-mainmenu.php": {

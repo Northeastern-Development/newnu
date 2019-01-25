@@ -8,15 +8,9 @@
  @import "modules/mixins";
  @import "modules/fonts";
 
-// div.main{
-//   // margin: 0 0 0 0;
-//   margin-top: $header-height;
-// }
-
  div.main{
 
   width: $wrapper-width;
-  // margin: 0 0 0 0;
   margin-top: $header-height;
   background: rgba($brand_colors-white,1.0);
 
@@ -30,8 +24,29 @@
     width: $wrapper-width;
     margin: 0 0 ($gutter * 2) 0;
     overflow: hidden;
+    position: relative;
+    &.withbg{
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+      height: 30vw;
+      & > div{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba($brand_colors-black,0.5);
+        & > h2,
+        & > h3{
+          width: $content-width-narrow;
+        }
+      }
+    }
     & > div{
-      //width: $content-width-narrow;
       width: $content-width-narrow;
       margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
       color: rgba($brand_colors-white,1.0);
@@ -70,8 +85,127 @@
   }
 
 
+  section.nu__filters{
+    width: $content-width;
+    margin: 0 auto 0 auto;
+    & > h2{
+      @include font-6l-c;
+    }
+    & > input[type=checkbox]{
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100px;
+      opacity: 0.0;
+      &:hover{
+        cursor: pointer;
+      }
+      &:checked{
+
+      }
+    }
+    & > div{
+      display: flex;
+      flex-direction: row;
+    }
+    & > div > div{
+      position: relative;
+      padding: 0 30px 0 10px;
+      @include font-1r-l;
+      color: rgba($brand_colors-black,0.7);
+      height: 40px;
+      text-transform: uppercase;
+      display: none;
+      margin: $gutter 0 0 0;
+      border-bottom: solid rgba($brand_colors-grayW,1.0) 2px;
+      &:after{
+        position: absolute;
+        top: 2px;
+        right: 10px;
+        content: '\E313';
+      }
+      &:hover{
+        cursor: pointer;
+        color: rgba($brand_colors-black,1.0);
+      }
+      &.active{
+        background: rgba($brand_colors-beige,1.0);
+        color: rgba($brand_colors-black,1.0);
+        &:after{
+          content: '\E316';
+        }
+      }
+    }
+    & > div > ul{
+      width: $content-width-wide;
+     border-bottom: solid rgba($brand_colors-grayW,1.0) 2px;
+     flex-wrap: wrap;
+     height: 40px;
+     overflow: hidden;
+      & > li{
+        flex-grow: 1;
+        flex-basis: auto;
+        text-align: center;
+        margin: 0 0 10px 0;
+        &.inshowmore{
+          opacity: 0;
+          background: rgba($brand_colors-beige,1.0);
+          position: absolute;
+          z-index: 100;
+          flex: none;
+          min-height: 60px;
+          height: auto;
+          right: 0;
+          width: 300px;
+          text-align: left;
+         -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+         -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+         box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+          &:last-of-type{
+            padding-bottom: $gutter;
+          }
+          & > a{
+            border-bottom: solid rgba($brand_colors-grayW,0.3) 2px;
+            margin: 0 $gutter 0 $gutter;
+            padding: 20px 0 11px 0;
+            display: block;
+            &:hover,
+            &.active{
+              color: rgba($brand_colors-black,1.0);
+              border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+            }
+          }
+        }
+        & > a{
+          padding: 0 20px 11px 20px;
+          color: rgba($brand_colors-black,0.7);
+          text-transform: uppercase;
+          @include font-1r-l;
+
+          & > span{
+            display: none;
+            @include font-4-c;
+            font-weight: normal;
+            height: 18px;
+            overflow: hidden;
+            margin: 15px 0 0 0;
+          }
+          &.active{
+            @include font-1b-l;
+            color: rgba($brand_colors-black,1.0);
+            border-bottom: solid rgba($brand_colors-red,1.0) 4px;
+          }
+          &:hover{
+            color: rgba($brand_colors-black,1.0);
+            border-bottom: solid rgba($brand_colors-red,1.0) 4px;
+          }
+        }
+      }
+    }
+  }
+
+
   section{
-    //width: $content-width-narrow;
     width: 50vw;
     margin: ($gutter * 1.7) auto 0 auto;
     & ul{
@@ -133,6 +267,21 @@
 
 
 
+@media only screen and (max-width: 1400px) {
+
+  section.nu__filters{
+    & > ul{
+      width: $content-width-wide;
+      margin: $gutter auto 0 auto;
+    }
+  }
+
+}
+
+
+
+
+
 
 
 
@@ -185,6 +334,13 @@
    }
 
 
+   section.nu__filters{
+     & > h2{
+       @include font-5l-c;
+     }
+   }
+
+
    section{
      margin: ($gutter * 1.7) auto 0 auto;
      & > ul{
@@ -234,16 +390,51 @@
   //$gutter: 15px;
   div.main{
 
-   section.hero{
+   // section.hero{
+   //
+   //   & > div{
+   //     width: $content-width;
+   //     & > h2 {
+   //       //@include font-3l-c;
+   //     }
+   //     & > h3 {
+   //       //@include font-2l-c;
+   //     }
+   //   }
+   // }
 
-     & > div{
-       width: $content-width;
-       & > h2 {
-         //@include font-3l-c;
+
+   section.hero{
+     // background: rgba($brand_colors-black,1.0);
+     // width: $wrapper-width;
+     // margin: 0 0 ($gutter * 2) 0;
+     // overflow: hidden;
+     // position: relative;
+     &.withbg{
+       // background-position: center center !important;
+       // background-repeat: no-repeat !important;
+       // background-size: cover !important;
+       height: 50vw;
+       & > div{
+     //     position: absolute;
+     //     height: 100%;
+     //     width: 100%;
+     //     margin: 0 auto 0 auto;
+     //     display: flex;
+     //     flex-direction: column;
+     //     align-items: center;
+     //     justify-content: center;
+     //     background: rgba($brand_colors-black,0.5);
+         & > h2,
+         & > h3{
+           width: $content-width;
+         }
        }
-       & > h3 {
-         //@include font-2l-c;
-       }
+     // }
+     // & > div{
+     //   width: $content-width-narrow;
+     //   margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
+     //   color: rgba($brand_colors-white,1.0);
      }
    }
 
@@ -266,6 +457,13 @@
 
      }
 
+   }
+
+
+   section.nu__filters{
+     & > h2{
+       @include font-3l-c;
+     }
    }
 
 
@@ -310,12 +508,54 @@
 
   div.main{
 
-   // section.hero{
-   //
-   //   & > div{
-   //
-   //   }
-   // }
+    section.hero{
+      // background: rgba($brand_colors-black,1.0);
+      // width: $wrapper-width;
+      // margin: 0 0 ($gutter * 2) 0;
+      // overflow: hidden;
+      // position: relative;
+      &.withbg{
+        // background-position: center center !important;
+        // background-repeat: no-repeat !important;
+        // background-size: cover !important;
+        height: 70vw;
+        & > div{
+      //     position: absolute;
+      //     height: 100%;
+      //     width: 100%;
+      //     margin: 0 auto 0 auto;
+      //     display: flex;
+      //     flex-direction: column;
+      //     align-items: center;
+      //     justify-content: center;
+      //     background: rgba($brand_colors-black,0.5);
+          & > h2,
+          & > h3{
+            width: $content-width-wide;
+          }
+        }
+      //   & > div{
+      //     position: absolute;
+      //     height: 100%;
+      //     width: 100%;
+      //     margin: 0 auto 0 auto;
+      //     display: flex;
+      //     flex-direction: column;
+      //     align-items: center;
+      //     justify-content: center;
+      //     background: rgba($brand_colors-black,0.5);
+      //     & > h2,
+      //     & > h3{
+      //       width: $content-width-narrow;
+      //     }
+      //   }
+      // }
+      // & > div{
+      //   width: $content-width-narrow;
+      //   margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
+      //   color: rgba($brand_colors-white,1.0);
+      }
+    }
 
 
    section.intro{
@@ -326,13 +566,53 @@
    }
 
 
-   // section.fullwidth{
-   //
-   //   & > h4{
-   //
-   //   }
-   //
-   // }
+   section.nu__filters{
+     overflow: visible;
+     & > input[type=checkbox]{
+       display: block;
+       &:checked{
+         display: none;
+          &+div > ul{
+            height: auto;
+            & > li{
+              & > a{
+                display: block;
+              }
+            }
+          }
+       }
+     }
+     & > div{
+       display: block;
+     }
+     & > div > ul{
+       width: 100%;
+       margin: 10px auto 0 auto;
+     border-bottom: none;
+     display: block;
+     height: 85px;
+     overflow: hidden;
+    & > li{
+     flex: none;
+        & > a{
+          display: none;
+          text-align: center;
+          @include font-1r-c;
+         &.active{
+           @include font-1b-c;
+           display: block;
+           & > span{
+             display: inline-block;
+           }
+         }
+         &:hover:not(.active){
+           color: rgba($brand_colors-black,1.0);
+           border-bottom: none;
+         }
+        }
+       }
+     }
+   }
 
 
    section{
@@ -343,25 +623,11 @@
        flex-direction: column;
 
        & > li{
-         //flex: 0 0 45%;
          margin-right:0;
-
-          // & a{
-          //
-          // }
-          // & h6{
-          //   & > a{
-          //
-          //   }
-          // }
        }
      }
    }
 
-
-   // section:last-child{
-   //
-   // }
 
  }
 
@@ -378,21 +644,6 @@
 
   div.main{
 
-   // section.hero{
-   //
-   //   & > div{
-   //
-   //   }
-   // }
-
-
-   // section.intro{
-   //
-   //   & > h1{
-   //
-   //   }
-   // }
-
 
    section.fullwidth{
 
@@ -402,104 +653,8 @@
 
    }
 
-
-   // section{
-   //
-   //   & > ul{
-   //
-   //
-   //     & > li{
-   //
-   //
-   //        & a{
-   //
-   //        }
-   //        & h6{
-   //          & > a{
-   //
-   //          }
-   //        }
-   //     }
-   //   }
-   // }
-
-
-   // section:last-child{
-   //
-   // }
-
  }
 
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// main#nu__static{
-//
-//  section.hero{
-//
-//    & > div{
-//
-//    }
-//  }
-//
-//
-//  section.intro{
-//
-//    & > h1{
-//
-//    }
-//  }
-//
-//
-//  section.fullwidth{
-//
-//    & > h4{
-//
-//    }
-//
-//  }
-//
-//
-//  section{
-//
-//    & > ul{
-//
-//      & > li{
-//
-//         & a{
-//
-//         }
-//         & h6{
-//           & > a{
-//
-//           }
-//         }
-//      }
-//    }
-//  }
-//
-//
-//  section:last-child{
-//
-//  }
-//
-// }

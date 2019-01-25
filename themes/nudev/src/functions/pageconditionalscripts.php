@@ -30,6 +30,18 @@ function nudev_conditional_scripts(){
       wp_enqueue_script('homepagejs');
     }
 
+    // load specific scripts for the experience page
+    if(is_page_template('templates/template-experience.php')){
+      wp_register_script('experiencejs', get_template_directory_uri() . '/js/experience.js', array(), '1.0.0');
+      wp_enqueue_script('experiencejs');
+    }
+
+    // load specific scripts for the administration page
+    if(is_page_template('templates/template-administration.php')){
+      wp_register_script('administrationjs', get_template_directory_uri() . '/js/administration.js', array(), '1.0.0');
+      wp_enqueue_script('administrationjs');
+    }
+
   }
 
 }

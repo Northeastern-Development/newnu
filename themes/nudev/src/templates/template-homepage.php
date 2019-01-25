@@ -25,7 +25,7 @@
 		</div>
 
 		<hr>
-		<?php include(locate_template('includes/prefooter.php')); ?>
+		<?php $noPreFooter = true; include(locate_template('includes/prefooter.php')); ?>
 
 		<?php get_template_part('loops/loop-homepageevents'); ?>
 

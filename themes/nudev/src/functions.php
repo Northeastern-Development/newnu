@@ -183,6 +183,9 @@ require_once(get_template_directory() . "/functions/admin-alerts.php");
 // set up specific admin tools for campuses
 require_once(get_template_directory() . "/functions/admin-campuses.php");
 
+// set up specific admin tools for institutes
+require_once(get_template_directory() . "/functions/admin-institutes.php");
+
 // set up specific admin tools for colleges
 require_once(get_template_directory() . "/functions/admin-college.php");
 

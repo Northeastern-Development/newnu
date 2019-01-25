@@ -4,67 +4,33 @@
 
 	get_header();
 
-	// wp_reset_query();
-
-	// print_r($wp_query->query_vars);
-	//
-	// $fChk = $wp_query->query_vars['seantesting'];
-	// $filter = (isset($fChk) && $fChk != ''?$fChk:'');
-	// echo 'FILTER = '.$filter;
-	// die();
-
 ?>
 
 	<div class="main" role="main" aria-label="content">
 
-		<section class="hero">
+		<?php include(locate_template('includes/pagehero.php')); ?>
+
+		<section class="fullwidth heroimage" style="background:url(<?=home_url()?>/wp-content/uploads/experience-hero.jpg);"></section>
+
+		<?php $noPreFooter = true; include(locate_template('includes/prefooter.php')); ?>
+
+		<section class="globalnetwork">
+			<h2>Our growing global network</h2>
+			<p>Today, experience has never been more relevant, as we bring regionally-aligned graduate programs and innovation opportunities to some of the world's most thriving cities.</p>
+		</section>
+
+		<section class="nu__filters hotswap" tabindex="-1">
+			<input id="toggle" type="checkbox" title="Click to select">
 			<div>
-				<h2>Experience: The push that drives us</h2>
-				<h3>For more than 100 years, Northeastern has been driven by a simple truth:
-Experience deepens learning like nothing else can. Today, that truth has never been more relevant. Experience propels you beyond the confines of one discipline, campus, or degree to a lifetime of growth, learning, and knowledge creation, anytime, anywhere.</h3>
+				<ul>
+					<?php include(locate_template('loops/loop-experience-filters.php')); ?>
+				</ul>
+				<div title="Click to show/hide more options" class="js__showmore">More</div>
 			</div>
 		</section>
 
 		<section class="leftright">
-			<a href="http://www.northeastern.edu/experiential-learning/" title="Experience turns undergraduates into leaders" target="_blank">
-				<div class="content">
-					<div>
-						<h3>Experience turns undergraduates into leaders.</h3>
-						<p>Through co-op&mdash;our pioneering, renowned experiential program&mdash;our students put ideas into action in professional positions worldwide. They build knowledge through research, find purpose through service, and become high-impact, global citizens, the agents of change.</p>
-					</div>
-				</div>
-				<div class="image">
-					<div style="background:url(<?=home_url()?>/wp-content/uploads/whynu1_1400.jpg);"></div>
-				</div>
-			</a>
-		</section>
-
-		<section class="leftright">
-			<a href="http://northeastern.edu/research/" title="Experience ignites discovery" target="_blank">
-				<div class="image">
-					<div style="background:url(<?=home_url()?>/wp-content/uploads/whynu2.jpg);"></div>
-				</div>
-				<div class="content">
-					<div>
-						<h3>Experience ignites discovery.</h3>
-						<p>Experience drives our solutions-focused research enterprise. It fuels our many partnerships with industry, government, and academia, bringing great minds together to solve pressing global challenges.</p>
-					</div>
-				</div>
-			</a>
-		</section>
-
-		<section class="leftright">
-			<a href="https://www.northeastern.edu/graduate/" title="Experience makes learning lifelong" target="_blank">
-				<div class="content">
-					<div>
-						<h3>Experience makes learning lifelong.</h3>
-						<p>Experience built into our graduate and professional-degree programs lends perspective, and direction. It turns our community&mdash;and widening network of campuses&mdash;into your far-reaching web of support. And it keeps you flexible, adaptable, and in step with the world, at every stage of your life and career.</p>
-					</div>
-				</div>
-				<div class="image">
-					<div style="background:url(<?=home_url()?>/wp-content/uploads/whynu3.jpg);"></div>
-				</div>
-			</a>
+			<?php include(locate_template('loops/loop-experiencecampus.php')); ?>
 		</section>
 
 	</div>

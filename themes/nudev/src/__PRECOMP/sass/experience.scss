@@ -12,28 +12,44 @@
 
  div.main{
 
+   section.hero{
+     margin: 0 0 0 0;
+   }
+
+   section.heroimage{
+     background: rgba($brand_colors-black,1.0);
+     background-position: center center !important;
+     background-repeat: no-repeat !important;
+     background-size: cover !important;
+     margin: 0 0 0 0;
+     height: 450px;
+   }
+
+   div.nu__prefooter{
+     padding: ($gutter * 2) 0 0 0;
+     background:  rgba($brand_colors-beige,1.0);
+   }
+
+   section.globalnetwork{
+     h2{
+       @include font-6l-c;
+       margin: 0 0 ($gutter / 2) 0;
+     }
+
+     p{
+       @include font-2l-c;
+     }
+   }
+
   section.leftright{
     width: $content-width;
     margin: ($gutter * 1.7) auto 0 auto;
-    & a{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      border-bottom: none;
-      &:hover{
-        color: rgba($brand_colors-black,1.0);
-        & div.content > div{
-          & > h3{
-            @include action-arrow-shown;
-          }
-        }
-        & div.image > div{
-          @include block-item-hover;
-        }
-      }
-    }
-    & > a > div{
-      min-height: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 500px;
+    & > div{
+      min-height: 450px;
       &.content{
         width: 40%;
         text-align: left;
@@ -47,9 +63,29 @@
           @include action-arrow-hidden;
         }
         & p{
-          border-top: solid rgba($brand_colors-grayW,1.0) 1px;
           padding: ($gutter / 2) ($gutter * 2) 0 0;
           margin: ($gutter / 2) 0 0 0;
+        }
+        & p:nth-of-type(1){
+          border-top: solid rgba($brand_colors-grayW,1.0) 1px;
+        }
+        & a{
+          border: none;
+          &:before{
+            content: '\e5c8';
+            display: inline-block;
+            margin: 2px 10px 0 0;
+            vertical-align: middle;
+            font-size: 1.8rem;
+            color: rgba($brand_colors-red,1.0);
+          }
+          &:hover,
+          &:focus{
+            color: rgba($brand_colors-red,1.0);
+            & > span{
+              border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+            }
+          }
         }
       }
       &.image{
@@ -62,24 +98,13 @@
       }
     }
     &:nth-child(even){
-      & > a > div{
+      & > div{
         &:nth-child(1){
           order: 1;
           margin: 0 3% 0 0;
         }
         &:nth-child(2){
           order: 2;
-        }
-      }
-    }
-    &:nth-child(odd){
-      & > a > div{
-        &:nth-child(1){
-          order: 1;
-        }
-        &:nth-child(2){
-          order: 2;
-          margin: 0 0 0 3%;
         }
       }
     }
@@ -99,80 +124,27 @@
 
   div.main{
 
+    section.globalnetwork{
+      h2{
+        @include font-5l-c;
+      }
+    }
+
    section.leftright{
      margin: ($gutter * 1.7) auto 0 auto;
-     & a{
-
-       &:hover{
-
-         & div.content > div{
-           & > h3{
-
-             &:after{
-
-             }
-           }
-         }
-         & div.image > div{
-
-         }
-       }
-     }
-     & > a > div{
-
+     & > div{
        &.content{
-
-
-
          & h3{
            @include font-5l-l;
-          
-
-           &:after{
-
-           }
          }
          & p{
            padding: ($gutter / 2) ($gutter * 2) 0 0;
            margin: ($gutter / 2) 0 0 0;
          }
        }
-       &.image{
-
-
-
-         & > div{
-
-         }
-       }
      }
-     &:nth-child(even){
-       & > a > div{
-         &:nth-child(1){
-
-
-         }
-         &:nth-child(2){
-
-         }
-       }
-     }
-     &:nth-child(odd){
-       & > a > div{
-         &:nth-child(1){
-
-         }
-         &:nth-child(2){
-
-         }
-       }
-     }
-
    }
-
   }
-
-
 }
 
 
@@ -180,58 +152,38 @@
 @media only screen and (max-width: 959px) {
   div.main{
 
+    section.heroimage{
+      height: 300px;
+    }
+
+    section.globalnetwork{
+      h2{
+        @include font-3l-c;
+      }
+    }
+
    section.leftright{
-
      width: $content-width-960;
-
-     & a{
-
-       &:hover{
-
-         & div.content > div{
-           & > h3{
-
-             &:after{
-
-             }
-           }
-         }
-         & div.image > div{
-
-         }
-       }
-     }
-     & > a > div{
-
+     & > div{
        &.content{
          align-items: flex-start;
          min-height: auto;
          width:100%;
-
-
          & h3{
            width:100%;
             @include font-3l-l;
-           &:after{
-
-           }
          }
          & p{
            padding-right:0;
          }
        }
        &.image{
-
          width:100%;
          max-width:100%;
-
-         & > div{
-
-         }
        }
      }
      &:nth-child(even){
-       & > a > div{
+       & > div{
          &:nth-child(1){
            margin:($gutter / 2) 0 0 0;
            order: 2;
@@ -239,177 +191,36 @@
          }
          &:nth-child(2){
            order: 1;
+           margin: 0 0 ($gutter / 2) 0;
          }
        }
      }
-     &:nth-child(odd){
-       & > a > div{
-         &:nth-child(1){
-           order: 1;
-         }
-         &:nth-child(2){
-           order: 2;
-           margin:($gutter / 2) 0 0 0;
-         }
-       }
-     }
-
    }
-
   }
-
-
 }
 
 @media only screen and (max-width: 600px) {
   div.main{
 
+    section.heroimage{
+      height: 200px;
+    }
+
    section.leftright{
-
      width: $content-width-700;
-
-     & a{
-
-       &:hover{
-
-         & div.content > div{
-
-           & > h3{
-
-             &:after{
-
-             }
-           }
-         }
-         & div.image > div{
-
-         }
-       }
-     }
-     & > a > div{
-
-       &.content{
-
-
-
-         & h3{
-           //@include font-3l-l;
-           &:after{
-
-           }
-         }
-         & p{
-
-         }
-       }
-       &.image{
-
-
-
-         & > div{
-
-         }
-       }
-     }
-     &:nth-child(even){
-       & > a > div{
-         &:nth-child(1){
-
-
-         }
-         &:nth-child(2){
-
-         }
-       }
-     }
-     &:nth-child(odd){
-       & > a > div{
-         &:nth-child(1){
-
-         }
-         &:nth-child(2){
-
-         }
-       }
-     }
-
    }
-
  }
-
 }
 
 
 @media only screen and (max-width: 620px) {
   div.main{
-
    section.leftright{
-
-     & a{
-
-       &:hover{
-
-         & div.content > div{
-           & > h3{
-             &:after{
-
-             }
-           }
-         }
-         & div.image > div{
-
-         }
-       }
-     }
-     & > a > div{
-
-       &.content{
-
-
-
-         & h3{
-
-           &:after{
-
-           }
-         }
-         & p{
-
-         }
-       }
+     & > div{
        &.image{
          min-height:200px;
-
-
-         & > div{
-
-         }
        }
      }
-     &:nth-child(even){
-       & > a > div{
-         &:nth-child(1){
-
-
-         }
-         &:nth-child(2){
-
-         }
-       }
-     }
-     &:nth-child(odd){
-       & > a > div{
-         &:nth-child(1){
-
-         }
-         &:nth-child(2){
-
-         }
-       }
-     }
-
    }
-
  }
-
 }

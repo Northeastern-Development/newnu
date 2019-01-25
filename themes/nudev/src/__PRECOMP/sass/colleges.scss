@@ -1,5 +1,5 @@
 /*
- * colleges
+ * colleges / institutes
  */
 
 
@@ -13,150 +13,92 @@
 
  div.main{
 
-   section{
-     width: $content-width-wide;
-   }
+  section{
+    width: $content-width-wide;
+  }
 
-   section.nu__collegegrid{
-     & > ul{
-       width: 100%;
-       height: auto;
-       display: flex;
-       flex-direction: row;
-       flex-wrap: wrap;
-       margin: 0 auto 0 auto;
-       & > li{
-         flex-grow: 1;
-         flex-basis: 30%;
-         // height: 310px;
-         height: auto;
-         margin: 0 $gutter 0 0;
-         //border: 1px solid red;
-         &:nth-child(-n+6) {
-           // margin: 0 $gutter $gutter 0;
-           margin: 0 $gutter $gutter 0;
-
-         }
-         &:nth-child(3n+3){
+  section.nu__collegegrid{
+    & > ul{
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 0 auto 0 auto;
+      & > li{
+        flex-grow: 0;
+        flex-basis: 31.7%;
+        height: auto;
+        margin: 0 $gutter 0 0;
+        &:nth-child(-n+6) {
+          margin: 0 $gutter $gutter 0;
+        }
+        &:nth-child(3n+3){
           margin: 0 0 $gutter 0;
-           //margin: 0 0 0 0;
-         }
-         &:nth-child(9){
-           margin: 0 0 0 0;
-         }
-
-          & > a{
-            display: block;
-            width: 100%;
-            height: 100%;
-            & > div.image{
-              height: 245px;
-              @include block-group;
-                margin: 0 0 10px 0;
-              & > div{
-                @include block-item-default;
-              }
-            }
-            & > h4{
-              @include font-3b-l;
-              @include action-arrow;
-              @include action-arrow-hidden;
-              @include text-crop;
-              // margin: 0 0 0 0;
-              // line-height: 1rem;
-              // vertical-align: text-top;
-            }
-            &:hover{
-              & > h4{
-                @include action-arrow-shown;
-                color: rgba($brand_colors-black,1.0);
-              }
-              & > div.image > div{
-                @include block-item-hover;
-              }
+        }
+        &:nth-child(9){
+          margin: 0 0 0 0;
+        }
+        & > a{
+          display: block;
+          width: 100%;
+          height: 100%;
+          & > div.image{
+            height: 245px;
+            @include block-group;
+            margin: 0 0 10px 0;
+            & > div{
+              @include block-item-default;
             }
           }
-
-       }
-     }
-   }
-
-
-   // section.nu__bythenumbers{
-   //  & > h2{
-   //    @include font-6l-c;
-   //    border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
-   //    margin: 0 auto 0 auto;
-   //  }
-   //   & > ul{
-   //     height: auto;
-   //     display: flex;
-   //     flex-direction: row;
-   //     flex-wrap: wrap;
-   //     // margin: $gutter 0 0 0;
-   //     margin: ($gutter / 3) auto 0 auto;
-   //     & > li{
-   //       flex-grow: 1;
-   //       flex-basis: 30%;
-   //       min-height: 150px;
-   //       text-align: center;
-   //       margin: 0 $gutter 0 0;
-   //       padding: 0 $gutter 0 $gutter;
-   //       &:nth-child(3n+3){
-   //         margin: 0 0 0 0;
-   //       }
-   //       & > span{
-   //         @include font-9l-c;
-   //         color: rgba($brand_colors-red,1.0);
-   //         line-height:8.6rem;
-   //       }
-   //       & > p{
-   //         @include font-5l-c;
-   //         text-align: center;
-   //       }
-   //     }
-   //   }
-   // }
-
+          & > h4{
+            @include font-3b-l;
+            @include action-arrow;
+            @include action-arrow-hidden;
+            @include text-crop;
+          }
+          &:hover,
+          &:focus{
+            & > h4{
+              @include action-arrow-shown;
+              color: rgba($brand_colors-black,1.0);
+            }
+            & > div.image > div{
+              @include block-item-hover;
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
+
+
+
 
 @media only screen and (max-width: 1280px){
   div.main{
     section.nu__collegegrid{
       & > ul{
         & > li{
-           & > a{
-             & > h4{
-               @include font-2b-l;
-               //color: red !important;
-             }
-           }
+          flex-basis: 31%;
+          & > a{
+            & > h4{
+              @include font-2b-l;
+            }
+          }
         }
       }
     }
-
-    // section.nu__bythenumbers{
-    //  & > h2{
-    //    @include font-5l-c;
-    //  }
-    //   & > ul{
-    //     & > li{
-    //       & > span{
-    //         @include font-8l-c;
-    //       }
-    //       & > p{
-    //         @include font-3l-c;
-    //       }
-    //     }
-    //   }
-    // }
   }
-
 }
 
 
-@media only screen and (max-width: 959px){
 
+
+
+@media only screen and (max-width: 959px){
   div.main{
     section.nu__collegegrid{
       & > ul{
@@ -166,138 +108,26 @@
           flex: none;
           width: 100%;
           height: auto;
-
-          //margin-bottom: $gutter !important;
-           & > a{
-             & > div.image{
-               height: 350px;
-             }
-             & > h4 {
-               //border:1px solid red;
-               &:after {
-                 margin-top:0;
-               }
-               &:before {
-                 margin-bottom: 0;
-               }
-               & span {
-                 line-height: 0;
-                 //background: yellow;
-                 //opacity:1;
-               }
-             }
-           }
+          & > a{
+            & > div.image{
+              height: 350px;
+            }
+            & > h4 {
+              &:after {
+                margin-top:0;
+              }
+              &:before {
+                margin-bottom: 0;
+              }
+              & span {
+                line-height: 0;
+              }
+            }
+          }
         }
       }
     }
-
-
-    // section.nu__bythenumbers{
-    //  & > h2{
-    //    @include font-3l-c;
-    //    width: $content-width-wide;
-    //  }
-    //   & > ul{
-    //     display: block;
-    //     & > li{
-    //       flex: none;
-    //       width: 100%;
-    //       min-height: inherit;
-    //       & > span{
-    //         //@include font-3l-c;
-    //       }
-    //     }
-    //   }
-    // }
   }
-
-}
-
-
-
-@media only screen and (max-width: 700px){
-
-  div.main{
-
-
-    // section.nu__collegegrid{
-    //   // width: $content-width-wide;
-    //   & > ul{
-    //     // height: auto;
-    //     display: block;
-    //     // flex-direction: row;
-    //     // flex-wrap: wrap;
-    //     // margin: 0 0 0 0;
-    //     width: 100%;
-    //     & > li{
-    //       flex: none;
-    //       width: 100%;
-    //       // flex-grow: 1;
-    //       // flex-basis: 30%;
-    //       height: auto;
-    //       // margin: 0 $gutter 0 0;
-    //
-    //       // &:nth-child(-n+6) {
-    //       //   margin: 0 $gutter $gutter 0;
-    //       // }
-    //       // &:nth-child(3n+3){
-    //       //   margin: 0 0 $gutter 0;
-    //       // }
-    //       // &:nth-child(9){
-    //       //   margin: 0 0 0 0;
-    //       // }
-    //       //
-    //        & > a{
-    //          // display: block;
-    //          // width: 100%;
-    //          // height: 100%;
-    //          & > div.image{
-    //            height: 350px;
-    //            // @include block-group;
-    //            // & > div{
-    //            //   @include block-item-default;
-    //            // }
-    //          }
-    //          // & > h4{
-    //          //   @include font-3b-l;
-    //          //   @include action-arrow;
-    //          //   @include action-arrow-hidden;
-    //          // }
-    //          // &:hover{
-    //          //   & > h4{
-    //          //     @include action-arrow-shown;
-    //          //     color: rgba($brand_colors-black,1.0);
-    //          //   }
-    //          //   & > div.image > div{
-    //          //     @include block-item-hover;
-    //          //   }
-    //          // }
-    //        }
-    //
-    //     }
-    //   }
-    // }
-
-
-    // section.nu__bythenumbers{
-    //
-    //   & > ul{
-    //
-    //     & > li{
-    //
-    //       & > span{
-    //
-    //       }
-    //       & > p{
-    //
-    //         text-align: center;
-    //       }
-    //     }
-    //   }
-    // }
-
-  }
-
 }
 
 
@@ -305,85 +135,21 @@
 
 @media only screen and (max-width: 575px) {
 
-
-
   div.main{
-
     section.nu__collegegrid{
       & > ul{
-        // height: auto;
         display: block;
-        // flex-direction: row;
-        // flex-wrap: wrap;
-        // margin: 0 0 0 0;
         & > li{
           flex: none;
           width: 100%;
-          // flex-grow: 1;
-          // flex-basis: 30%;
           height: auto;
-          // margin: 0 $gutter 0 0;
-
-          // &:nth-child(-n+6) {
-          //   margin: 0 $gutter $gutter 0;
-          // }
-          // &:nth-child(3n+3){
-          //   margin: 0 0 $gutter 0;
-          // }
-          // &:nth-child(9){
-          //   margin: 0 0 0 0;
-          // }
-          //
-           & > a{
-             // display: block;
-             // width: 100%;
-             // height: 100%;
-             & > div.image{
-               // height: 350px;
-               height: 245px;
-               // @include block-group;
-               // & > div{
-               //   @include block-item-default;
-               // }
-             }
-             & > h4{
-
-               // width: 90%;
-             //   @include font-3b-l;
-             //   @include action-arrow;
-             //   @include action-arrow-hidden;
-             }
-             // &:hover{
-             //   & > h4{
-             //     @include action-arrow-shown;
-             //     color: rgba($brand_colors-black,1.0);
-             //   }
-             //   & > div.image > div{
-             //     @include block-item-hover;
-             //   }
-             // }
-           }
-
+          & > a{
+            & > div.image{
+              height: 245px;
+            }
+          }
         }
       }
     }
-    // section.nu__bythenumbers{
-    //
-    //   & > ul{
-    //
-    //     & > li{
-    //       margin-bottom:10px;
-    //       & > span{
-    //
-    //       }
-    //       & > p{
-    //
-    //         text-align: center;
-    //       }
-    //     }
-    //   }
-    // }
-
   }
-
 }
