@@ -86,7 +86,7 @@ function getWindowSize(){
 
 		// let's check to see if they have accepted the cookie window or not, and display it if they have not accepted
 		if(localStorage.getItem('acceptCookies') != 'true'){
-        //  $(".cookiewarning").delay(1000).fadeIn(250);	// this is turned off until layout is created and approved
+         $(".cookiewarning").delay(1000).fadeIn(250);	// this is turned off until layout is created and approved
     }
 
 

@@ -19,12 +19,12 @@
 
 				$('section.nu__filters a.active').removeClass('active');	// remove the active class from the current filter
 
-				$('section.leftright div').fadeOut(200,function(){	// fade out the content and reset it before fading in
-					$('section.leftright').empty();	// clear out the content to make sure that it is truly gone, before setting it again
+				$('section.leftright > div').fadeOut(200,function(){	// fade out the content and reset it before fading in
+					$('section.leftright > div').empty();	// clear out the content to make sure that it is truly gone, before setting it again
 					$.post("/wp-content/themes/nudev/src/loops/loop-experiencecampus.php",{"campus":selectedCampus},function(data){
 						selectedFilter.addClass('active');	// add the active class to the selected filter option
-						$('section.leftright').html(data);	// set the new data
-						$('section.leftright div').fadeIn(200);	// fade it back in
+						$('section.leftright > div').html(data);	// set the new data
+						$('section.leftright > div').fadeIn(200);	// fade it back in
 					});
 
 				});

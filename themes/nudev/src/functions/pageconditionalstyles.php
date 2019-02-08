@@ -46,6 +46,12 @@ function nudev_conditional_styles(){
     wp_enqueue_style('experiencecss');
   }
 
+  // load institute page styles
+  if(is_page_template('templates/template-institutes.php')){
+    wp_register_style('institutescss', get_template_directory_uri() . '/css/institutes.css', array(), '1.0');
+    wp_enqueue_style('institutescss');
+  }
+
   // load colleges and schools page styles
   if(is_page_template('templates/template-colleges.php') || is_page_template('templates/template-institutes.php')){
     wp_register_style('collegescss', get_template_directory_uri() . '/css/colleges.css', array(), '1.0');

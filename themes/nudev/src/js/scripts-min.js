@@ -79,7 +79,7 @@ getWindowSize(),showSize){var n=o(window).width();o("p.testp").text("Screen widt
 		are loaded
 		*************************************************************************** */
 // let's check to see if they have accepted the cookie window or not, and display it if they have not accepted
-localStorage.getItem("acceptCookies"),
+"true"!=localStorage.getItem("acceptCookies")&&o(".cookiewarning").delay(1e3).fadeIn(250),
 // listen for the user to click on the accept and continue button for the cookies
 o(".cookiewarning").on("click",".js__cookie-accept",function(e){// the user has clicked on the accept button
 localStorage.setItem("acceptCookies","true"),// set the cookie into localstorage that they agreed

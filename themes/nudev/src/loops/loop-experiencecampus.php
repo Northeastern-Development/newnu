@@ -31,7 +31,7 @@
     $guide
     ,trim($res->post_title)
     ,$fields['campus_description']
-    ,(isset($fields['campus_url']) && $fields['campus_url'] != '' && strtolower(trim($res->post_title)) != 'boston'?'<a href="'.trim($fields['campus_url']).'" title="Learn more about our '.strtolower(trim($res->post_title)).' campus [will open in new window]" aria-label="Learn more about our '.strtolower(trim($res->post_title)).' campus [will open in new window]" target="_blank"><span>Learn more about '.trim($res->post_title).'</span></a>':'')
+    ,(isset($fields['campus_url']) && $fields['campus_url'] != '' && strtolower(trim($res->post_title)) != 'boston'?'<a href="'.trim($fields['campus_url']).'" title="Learn more about northeastern in '.strtolower(trim($res->post_title)).' [will open in new window]" aria-label="Learn more about northeastern in '.strtolower(trim($res->post_title)).' [will open in new window]" target="_blank"><span>Learn more about Northeastern in '.trim($res->post_title).'</span></a>':'')
     ,$fields['campus_image']['url']
   );
 

@@ -40,14 +40,18 @@
         align-items: center;
         justify-content: center;
         background: rgba($brand_colors-black,0.5);
+        // width: $content-width;
         & > h2,
         & > h3{
-          width: $content-width-narrow;
+          // width: $content-width-narrow;
+          width: 100%;
+          width: $content-width;
         }
       }
     }
     & > div{
-      width: $content-width-narrow;
+      width: $content-width;
+      // width: $content-width-narrow;
       margin: ($gutter * 1.75) auto ($gutter * 2.1) auto;
       color: rgba($brand_colors-white,1.0);
     }
@@ -518,7 +522,7 @@
         // background-position: center center !important;
         // background-repeat: no-repeat !important;
         // background-size: cover !important;
-        height: 70vw;
+        height: 80vw;
         & > div{
       //     position: absolute;
       //     height: 100%;
