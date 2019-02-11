@@ -7,7 +7,12 @@
 
 	$return = '';
 
+
+
 	if($field){
+
+		$guide = '<li><a%shref="%s" title="Filter to show %s team" aria-label="Filter to show %s team">%s</a></li>';
+
 		foreach($field['choices'] as $k => $v){
 
 			// if there is no staff assigned to a department, do not show it in the filter options
@@ -25,7 +30,16 @@
 			$staffCnt = count(query_posts($args));
 
 			if($staffCnt > 0){
-				$return .= '<li><a '.($filter == strtolower(str_replace(" ","-",$v))?'class="active"':'').' href="'.home_url().'/about/university-administration/'.strtolower(str_replace(" ","-",$v)).'" title="Filter to show '.strtolower($v).' team" aria-label="Filter to show '.strtolower($v).' team">'.$v.' <span>&#xE313;</span></a></li>';
+
+				$return .= sprintf(
+					$guide
+					,($filter == strtolower(str_replace(" ","-",$v))?' class="active" ':' ')
+					,home_url().'/about/university-administration/'.strtolower(str_replace(" ","-",$v))
+					,strtolower($v)
+					,strtolower($v)
+					,$v
+				);
+
 			}
 		}
 	}
