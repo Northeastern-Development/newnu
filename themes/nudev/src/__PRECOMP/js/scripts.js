@@ -4,7 +4,7 @@ var iamnavbgs = null;
 var contentAreaHeight = 0;
 // var cNav = null;
 var debug = false;
-var showSize = true;
+var showSize = false;
 var sizeBreak = 900;
 var isSafari = /safari/i.test(navigator.userAgent);
 // var currentPanel = 0;
@@ -98,7 +98,7 @@ function getWindowSize(){
 		});
 
 
-
+		console.log($("header").outerHeight());
 
 		// we need to set the main content offset based on: utility nav height, alerts height, and main header height
 		$(".main").css({
@@ -348,10 +348,16 @@ function getWindowSize(){
 				hideMoreFilters();	// hide the additional filters if they are visible
 			}
 
+			// console.log($("header").outerHeight());
+			//
 			// reset the offset to position content just below the header
 			$(".main").css({
 				"margin-top":$("header").outerHeight()
 			});
+
+			// $(".main").css({
+			// 	"margin-top":$("header").outerHeight()
+			// });
 
 		});
 

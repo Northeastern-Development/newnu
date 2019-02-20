@@ -13,7 +13,7 @@ function getWindowSize(){
 $.post("/wp-content/themes/nudev/src/windowsize.php",{height:$(window).height(),width:$(window).width()},function(e){
 // console.log(data);
 })}
-/* ************************************************************************ */var windowSize=Array(0,0),rotators=null,iamnavbgs=null,contentAreaHeight=0,debug=!1,showSize=!0,sizeBreak=900,isSafari=/safari/i.test(navigator.userAgent),windowWidth=null,offset=0,exceedsContainer=!1;
+/* ************************************************************************ */var windowSize=Array(0,0),rotators=null,iamnavbgs=null,contentAreaHeight=0,debug=!1,showSize=!1,sizeBreak=900,isSafari=/safari/i.test(navigator.userAgent),windowWidth=null,offset=0,exceedsContainer=!1;
 /* ************************************************************************ */
 !function(e,o,i){"use strict";o(function(){function e(){window.history.back()}
 // if this file has loaded, we want to append an option to let the page know JS is working
@@ -83,7 +83,7 @@ getWindowSize(),showSize){var n=o(window).width();o("p.testp").text("Screen widt
 // listen for the user to click on the accept and continue button for the cookies
 o(".cookiewarning").on("click",".js__cookie-accept",function(e){// the user has clicked on the accept button
 localStorage.setItem("acceptCookies","true"),// set the cookie into localstorage that they agreed
-o(".cookiewarning").fadeOut(250)}),
+o(".cookiewarning").fadeOut(250)}),console.log(o("header").outerHeight()),
 // we need to set the main content offset based on: utility nav height, alerts height, and main header height
 o(".main").css({"margin-top":o("header").outerHeight()}),o("body").addClass("nu-js"),
 //needed a way to go back a page if someone clicked the search button from the results page.
@@ -120,6 +120,8 @@ o(window).on("resize",function(){getWindowSize(),// check the window size
 // if we are NOT on the homepage, kick off a filter check
 !o("body").hasClass("home")&&0<o(".nu__filters").length&&(s(),// check to see what needs to be shown and what is overflow for filters
 t()),
+// console.log($("header").outerHeight());
+//
 // reset the offset to position content just below the header
 o(".main").css({"margin-top":o("header").outerHeight()})}),
 // need to set up an on-scroll event that IS NOT going to activate on the homepage

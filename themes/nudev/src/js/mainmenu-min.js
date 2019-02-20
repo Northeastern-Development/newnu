@@ -73,8 +73,13 @@ l("ul.dropdowns").on("mouseout","li.js-dropdown",function(n){l("ul.dropdowns > l
 l("nav a.js__mainmenu-item").each(function(n){// force all of them closed/clear
 l(this).hasClass("active")?l(this).focus():l(this).blur(),l(this).removeClass("active").next("div").removeClass("open"),l(this).next("div").find("div.items > ul").attr("aria-hidden","true").attr("tabindex","-1"),l(this).next("div").find("div.items > ul > li").attr("tabindex","-1")}),cNav=null,o())}),
 // let's listen for the page to resize and handle some events
-l(window).on("resize",function(){n(),
+l(window).on("resize",function(){
+// setMenuPanels();
 // need to account for the alerts being open and shift the main menu overlays down to match!!
-0<parseInt(l("#nu__alerts").height())&&l("#nu__supernav,#nu__iamnav,#nu__searchbar").css({top:parseInt(l("header").outerHeight())}),
+// if(parseInt($('#nu__alerts').height()) > 0){
+// $('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('header').outerHeight())});
+// }
 // reset the navigation panels
-o()})})}(this,jQuery);
+o(),
+// reset the height of the menu panels
+n()})})}(this,jQuery);

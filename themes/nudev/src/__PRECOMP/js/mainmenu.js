@@ -36,7 +36,7 @@ var navPanelInMotion = false;
 		if(parseInt($('#nu__alerts').height()) > 0){
 			$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('#nu__alerts').outerHeight())});
 		}
-		
+
 
 
 
@@ -324,15 +324,18 @@ var navPanelInMotion = false;
     // let's listen for the page to resize and handle some events
 		$(window).on("resize",function(){
 
-			setMenuPanels();
+			// setMenuPanels();
 
       // need to account for the alerts being open and shift the main menu overlays down to match!!
-			if(parseInt($('#nu__alerts').height()) > 0){
-				$('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('header').outerHeight())});
-			}
+			// if(parseInt($('#nu__alerts').height()) > 0){
+				// $('#nu__supernav,#nu__iamnav,#nu__searchbar').css({'top':parseInt($('header').outerHeight())});
+			// }
 
       // reset the navigation panels
 			navReset();
+
+			// reset the height of the menu panels
+			setMenuPanels();
 
 		});
 
