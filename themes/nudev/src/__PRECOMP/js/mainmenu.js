@@ -40,14 +40,63 @@ var navPanelInMotion = false;
 
 
 
-		// we need to have an event listener for the first and last items in each of the nav panels
-		$('nav.nu__mainmenu').on('focus','a.js__closepanelend',function(e){
-			blurNavPanels();
+
+		// this is a listener for when we hit a blur class element to see where we need to send focus next
+		$('nav.nu__mainmenu').on('focus','a.blur',function(e){
+
+			if($(this).hasClass('blurclosepanel')){	// this will close the currently open panel
+
+				$('#'+cNav).focus();
+
+				blurNavPanels();
+
+
+
+			}else if($(this).hasClass('blurnextcat')){	// this will transfer focus from one category in the supernav to the next
+
+				$(this).parent().removeClass('active');
+				$(this).parent().attr('aria-hidden','true');
+
+				$(this).parent().nextAll('li:not(.hideuntilmobile)').first().addClass('active');
+				$(this).parent().nextAll('li:not(.hideuntilmobile)').first().find('ul > li:not(.sectiontitle)').first().find('a').focus();
+			}
+
+			else if($(this).hasClass('blurprevcat')){	// this will transfer focus from one category in the supernav to the previous
+
+				$(this).parent().removeClass('active');
+				$(this).parent().attr('aria-hidden','true');
+
+				$(this).parent().prevAll('li:not(.hideuntilmobile)').first().addClass('active');
+				$(this).parent().prevAll('li:not(.hideuntilmobile)').first().find('ul > li:not(.sectiontitle)').first().find('a').focus();
+			}
+
+			else if($(this).hasClass('blurtofeatured')){	// this will blur from the categories to the featured items in the supernav
+
+				$(this).parent().prevAll('li:not(.hideuntilmobile)').attr('aria-hidden','true');
+
+				$(this).parent().nextAll('li.featured:not(.hideuntilmobile)').first().find('a').focus();
+
+			}
+
+			else if($(this).hasClass('blurfromfeatured')){	// this will blur from the featured items to the categories in the supernav
+
+				$(this).prevAll('li:not(.hideuntilmobile)').first().find('ul > li:not(.sectiontitle)').first().find('a').focus();
+
+			}
+
 		});
 
-		$('nav.nu__mainmenu').on('focus','a.js__closepanelstart',function(e){
-			blurNavPanels();
-		});
+
+
+
+		// we need to have an event listener for the first and last items in each of the nav panels
+		// $('nav.nu__mainmenu').on('focus','a.js__closepanelend',function(e){
+		// 	blurNavPanels();
+		// });
+		//
+		// $('nav.nu__mainmenu').on('focus','a.js__closepanelstart',function(e){
+		// 	blurNavPanels();
+		// });
 
 
 		$('nav.nu__mainmenu').on('click','a.js__mainmenu-item',function(e){
@@ -106,13 +155,20 @@ var navPanelInMotion = false;
 		// this function will handle opening a specific nav panel
 		function focusNavPanel(a){
 
+			// console.log('open nav panel');
+
 			a.addClass('active').focus().next('div').addClass('open');
 
 			a.next('div').find('form input').focus();
 
 			a.next('div').find('div.items > ul').attr('aria-hidden','false');
-			a.next('div').find('div.items > ul > li:not(.sectiontitle)').first().focus();
-			a.next('div').find('div.items > ul > li:not(.sectiontitle)').attr('tabindex','1');
+			// a.next('div').find('div.items > ul > li:not(.sectiontitle)').first().focus();
+
+			// a.next('div').find('div.items > ul > li:not(.sectiontitle)').first().focus();
+
+			a.next('div').find('div.items > ul > li > ul > li:not(.sectiontitle)').first().find('a').focus();
+
+			// a.next('div').find('div.items > ul > li:not(.sectiontitle)').attr('tabindex','1');
 
 
 			// we need to reveal the dropdown sneezeguard

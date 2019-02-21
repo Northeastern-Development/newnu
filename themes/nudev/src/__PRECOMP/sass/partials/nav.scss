@@ -423,6 +423,18 @@ a#nu__supernav-toggle:not(.active){
             line-height: $lineH;
             border-bottom: solid rgba($brand_colors-beige,0.2) 1px;
             color:  rgba($brand_colors-beige, 1.0);
+            a.blur{
+              // display: block;
+              // background: green;
+              // height: 10px;
+              // width: 100%;
+              width: 0;
+              height: 0;
+              overflow: hidden;
+              // &:focus{
+              //   background: red;
+              // }
+            }
             &.hideuntilmobile{
               display: none;
             }
@@ -434,7 +446,7 @@ a#nu__supernav-toggle:not(.active){
               &:last-child{
                 margin: 20px 0 20px 0;
               }
-              a {
+              & > a {
                 color: rgba($brand_colors-white,1.0);
 
                 border-bottom: none;
@@ -444,6 +456,18 @@ a#nu__supernav-toggle:not(.active){
                 overflow: hidden;
                 & > div{
                   float: left;
+                }
+                &:hover,
+                &:focus,
+                &:active{
+                  background: none;
+                  // a{
+                    & > div{
+                      &:nth-child(2){
+                        border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+                      }
+                    }
+                  // }
                 }
               }
               &:hover,
