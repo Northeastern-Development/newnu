@@ -20,12 +20,18 @@
 
 			// this is the array of filter options that will be shown to the user if we need one on this page
 			// we will eventually add a feature here to pull the categories from the CMS tools options directly
+			// $filterOptions = array(
+			// 	array('title' => 'Board of Trustees', 'filter' => '')
+			// 	,array('title' => 'Emeritae/i and Honorary Trustees', 'filter' => 'emeritae-honorary')
+			// 	,array('title' => 'Corporators Emeritae/i', 'filter' => 'corporators-emeritae')
+			// 	// ,array('title' => 'Corporators Emeritae/i', 'filter' => 'members-of-the-corporation')
+			// 	// ,array('title' => 'Standing Committees', 'filter' => 'standing-committees')
+			// );
+
 			$filterOptions = array(
 				array('title' => 'Board of Trustees', 'filter' => '')
-				,array('title' => 'Emeritae/i and Honorary Trustees', 'filter' => 'emeritae-honorary')
+				,array('title' => 'Trustees Emeritae/i and Honorary Trustees', 'filter' => 'emeritae-honorary')
 				,array('title' => 'Corporators Emeritae/i', 'filter' => 'corporators-emeritae')
-				// ,array('title' => 'Corporators Emeritae/i', 'filter' => 'members-of-the-corporation')
-				// ,array('title' => 'Standing Committees', 'filter' => 'standing-committees')
 			);
 
 			// this will actually call in the filter include to display on the page

@@ -9,4 +9,9 @@ o("div.description").find("p").removeClass("open"),o("div.description").find("a.
 s.find("p").addClass("open"),n.find("span").html("Less")):(// trying to close the expanded view
 s.find("p").removeClass("open"),n.find("span").html("More")),
 // force the page to move to the top of the bio that was selected, and offset a little bit
-o("html,body").animate({scrollTop:o(i).offset().top-t},500)})})}(this,jQuery);
+o("html,body").animate({scrollTop:o(i).offset().top-t},500)}),
+// this will handle expanding and contracting the bios on the SLT page of administration
+o("section.nu__team").on("click","a.js__readmoredept",function(e){e.preventDefault(),"none"==o("div.description").find("p").last().css("display")?(// if nothing is currently open
+// set this item up to be open
+o("div.description").find("p").addClass("open"),o("div.learnmoreabout > a").find("span").html("Less")):(// trying to close the expanded view
+o("div.description").find("p").removeClass("open"),o("div.learnmoreabout > a").find("span").html("More"))})})}(this,jQuery);

@@ -11,7 +11,8 @@
 	);
 	$res = query_posts($args);
 
-	$return = '<ul class="dropdowns" aria-hidden="false"><div class="sneezeguard js-dropdown-sneezeguard"></div>';
+	$return = '<ul class="dropdowns" aria-hidden="false" role="list"><div class="sneezeguard js-dropdown-sneezeguard"></div>';
+	// $return = '<div class="sneezeguard js-dropdown-sneezeguard"></div><ul class="dropdowns" aria-hidden="false">';
 
 	$singleGuide = '<li class="js-single"><a href="%s" title="view %s"%s aria-label="view %s" tabindex="0">%s</a></li>';
 
@@ -47,7 +48,7 @@
 				,$r->post_title
 			);
 		}else{	// this is for a dropdown
-			$return .= '<li id="dropdown-'.$r->post_name.'" title="view '.$r->post_title.'" class="js-dropdown" aria-label="view '.$r->post_title.'"><a href="javascript:void();" title="view '.$r->post_title.' dropdown menu" aria-label="view '.$r->post_title.' dropdown menu">'.$r->post_title.'</a><ul role="menu">';
+			$return .= '<li id="dropdown-'.$r->post_name.'" title="view '.$r->post_title.'" class="js-dropdown" aria-label="view '.$r->post_title.'"><a href="javascript:void();" title="view '.$r->post_title.' dropdown menu" aria-label="view '.$r->post_title.' dropdown menu">'.$r->post_title.'</a><ul role="list">';
 
 			// this will handle the dropdown style menu items
 			foreach($items as $i){

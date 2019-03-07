@@ -13,7 +13,7 @@ function getWindowSize(){
 $.post("/wp-content/themes/nudev/src/windowsize.php",{height:$(window).height(),width:$(window).width()},function(e){
 // console.log(data);
 })}
-/* ************************************************************************ */var windowSize=Array(0,0),rotators=null,iamnavbgs=null,contentAreaHeight=0,debug=!1,showSize=!1,sizeBreak=900,isSafari=/safari/i.test(navigator.userAgent),windowWidth=null,offset=0,exceedsContainer=!1;
+/* ************************************************************************ */var windowSize=Array(0,0),rotators=null,iamnavbgs=null,contentAreaHeight=0,debug=!1,showSize=!0,sizeBreak=900,isSafari=/safari/i.test(navigator.userAgent),windowWidth=null,offset=0,exceedsContainer=!1;
 /* ************************************************************************ */
 !function(e,o,i){"use strict";o(function(){function e(){window.history.back()}
 // if this file has loaded, we want to append an option to let the page know JS is working

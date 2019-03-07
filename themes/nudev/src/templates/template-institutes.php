@@ -4,6 +4,9 @@
 
 	get_header();
 
+	// let's get the brand/closer title and statement
+	$pageFields = get_fields();
+
 ?>
 
 	<div class="main" role="main" aria-label="content">
@@ -11,9 +14,8 @@
 		<?php include(locate_template('includes/pagehero.php')); ?>
 
 		<section class="brandstatement">
-			<h2>Our institutes generate <span>collaborative discovery</span></h2>
-			<p>We build our institutes around challenges rather than academic disciplines.  This approach opens new avenues for global, multidisciplinary collaborations among industry, government, and academic researchers&mdash;the kinds of partnerships necessary to solving complex problems.</p>
-			<!-- <a href="#contact" title="Click here to contact us" aria-label="Click here to contact us" class="button">Contact Us</a> -->
+			<h2><?=str_replace(array('<p>','</p>'),'',$pageFields['institutes_primary_title'])?></h2>
+			<?=$pageFields['institutes_description']?>
 		</section>
 
 		<section class="grid">
@@ -25,13 +27,9 @@
 		</section>
 
 		<section class="closingstatement">
-			<h2>&#8220;The impact of the lonely genius is disappearing.<br />You need to <span>collaborate</span> to be competitive.&#8221;</h2>
-			<p>Albert-L&#225;szl&#243; Barab&#225;si, <span>Robert Gray Dodge Professor and University Distinguished Professor, Network Science Institute</span></p>
+			<h2><?=str_replace(array('<p>','</p>'),'',$pageFields['institutes_closer_primary_title'])?></h2>
+			<?=$pageFields['institutes_closer_description']?>
 		</section>
-
-		<!-- <section id="contactform" class="contactform">
-
-		</section> -->
 
 	</div>
 

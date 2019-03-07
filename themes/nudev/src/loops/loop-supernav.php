@@ -55,7 +55,7 @@
 			// this builds the top level li items that we will nest into
 			// $return .= '<li title="view '.$o[0].'" aria-label="view '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li tabindex="-1" class="sectiontitle">'.$o[0].'</li>';
 
-			$return .= '<li title="view '.$o[0].'" aria-label="view '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'">'.$o[0].($jj > 0?'<a href="javascript:void(0);" class="blur blurprevcat"></a>':'<a href="javascript:void(0);" class="blur blurfirstcat blurclosepanel"></a>').'<!-- start category --><ul role="menu" aria-hidden="true"><li tabindex="-1" class="sectiontitle">'.$o[0].'</li>';
+			$return .= '<li title="view '.$o[0].'" aria-label="view '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'">'.$o[0].($jj > 0?'<a href="javascript:void(0);" class="blur blurprevcat">blur from cat '.$jj.'</a>':'<a href="javascript:void(0);" class="blur blurfirstcat blurclosepanel">blur top to close menu panel</a>').'<!-- start category --><ul role="menu" aria-hidden="false"><li tabindex="-1" class="sectiontitle">'.$o[0].'</li>';
 
 			// $guide = '<li role="menuitem" tabindex="-1"><a href="%s" title="view %s%s" aria-label="view %s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
 
@@ -76,12 +76,12 @@
 					,($fields['open_in_new'] == "1"?' [will open in new window]':'')
 					,($fields['open_in_new'] == "1"?' target="_blank"':'')
 					,($cnt == count($res) || $cnt == 1?($cnt == count($res)?' class="blurlast"':' class="blurfirst"'):' class="noblur"')
-					,(isset($fields['thumbnail']) && $fields['thumbnail'] != ''?'<img src="'.$fields['thumbnail']['url'].'" alt="thumbnail - '.$r->post_title.'" />':'')
+					,(isset($fields['thumbnail']) && $fields['thumbnail'] != ''?'<img src="'.$fields['thumbnail']['url'].'" alt="" />':'')
 					,$r->post_title
 				);
 				$cnt++;
 			}
-			$return .= '</ul>'.($jj < (count($navConfig) - 1)?'<a href="javascript:void(0);" class="blur blurnextcat"></a>':'<a href="javascript:void(0);" class="blur blurtofeatured"></a>').'<!-- end category --></li>';
+			$return .= '</ul>'.($jj < (count($navConfig) - 1)?'<a href="javascript:void(1);" class="blur blurnextcat">blur to next category from '.$jj.'</a>':'<a href="javascript:void(1);" class="blur blurtofeatured">blur to featured items</a>').'<!-- end category --></li>';
 
 		}
 		$jj++;
@@ -89,7 +89,7 @@
 
 	// $return .= '<!-- start featured --><a href="javascript:void(0);" class="blur blurfromfeatured"></a>';
 
-	$return .= '<!-- start featured --><a href="javascript:void(0);" class="blur blurfromfeatured"></a>';
+	$return .= '<!-- start featured --><a href="javascript:void(0);" class="blur blurfromfeatured">blur from featured items</a>';
 
 	// grab the featured items from the menu CMS and show them below
 	$args = array(
@@ -103,7 +103,7 @@
 
 	$res = query_posts($args);
 
-	$guide = '<li class="featured%s%s%s"><a href="%s" title="%s%s" aria-label="%s%s"%s><div><img src="%s" alt="%s icon" /></div><div>%s</div></a></li>';
+	$guide = '<li class="featured%s%s%s"><a href="%s" title="%s%s" aria-label="%s%s"%s><div><img src="%s" alt="" /></div><div>%s</div></a></li>';
 
 	$iii = 0;
 	foreach($res as $r){
@@ -122,14 +122,14 @@
 			,(isset($fields['open_in_new']) && $fields['open_in_new'] == "1"?' [will open in new window]':'')
 			,(isset($fields['open_in_new']) && $fields['open_in_new'] == "1"?' target="_blank"':'')
 			,$fields['thumbnail']['url']
-			,$r->post_title
+			// ,$r->post_title
 			,$r->post_title
 		);
 
 		$iii++;
 	}
 
-	$return .= '<a href="javascript:void(0);" class="blur blurclosepanel"></a><!-- end featured -->';
+	$return .= '<a href="javascript:void(0);" class="blur blurclosepanel">blur bottom to close menu panel</a><!-- end featured -->';
 
 	// $supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul role="menu" aria-hidden="true"><a href="javascript:void(0);" title="Close panel" aria-label="Close panel" tabindex="1" class="js__closepanelstart">X</a>'.$return.'<a href="javascript:void(0);" title="Close panel" aria-label="Close panel" tabindex="1" class="js__closepanelend">X</a></ul></div></section></div>';
 

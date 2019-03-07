@@ -21,7 +21,9 @@ div.main{
   }
 
   section.nu__grid-filters{
-    width: $content-width-narrow;
+    // width: $content-width;
+    // width: 70vw;
+
     @include showfilters();  // add filters to the page, pass the width it should use
   }
 
@@ -142,6 +144,19 @@ div.main{
 
 
 
+  @media only screen and (max-width: 1600px) {
+
+    section.nu__grid-filters{
+      width: 65vw;
+      @include showfilters();  // add filters to the page, pass the width it should use
+    }
+
+  }
+
+
+
+
+
   @media only screen and (max-width: 1400px) {
 
     section.nu__grid-filters{
@@ -177,10 +192,23 @@ div.main{
 
 
 
+  @media only screen and (max-width: 1150px) {
+
+    section.nu__grid-filters{
+      width: 80vw;
+      @include showfilters();  // add filters to the page, pass the width it should use
+    }
+
+  }
+
+
+
+
+
   @media only screen and (max-width: 1080px) {
 
     section.nu__grid-filters{
-      width: 75vw;
+      width: $content-width-wide;
       @include showfilters();  // add filters to the page, pass the width it should use
     }
 
@@ -256,10 +284,10 @@ div.main{
 
   @media only screen and (max-width: 960px) {
 
-    section.nu__grid-filters{
-      width: $content-width;
-      @include showfilters();  // add filters to the page, pass the width it should use
-    }
+    // section.nu__grid-filters{
+    //   width: $content-width;
+    //   @include showfilters();  // add filters to the page, pass the width it should use
+    // }
 
     section.nu__board-emeriti,
     section.nu__board-honorary{
@@ -380,7 +408,36 @@ div.main{
 
 
 
+  // @media only screen and (max-width: 800px) {
+  //
+  //   section.nu__grid-filters{
+  //     // width: $content-width-wide;
+  //     // @include showfilters();  // add filters to the page, pass the width it should use
+  //     & > li{
+  //       & > a{
+  //         font-size: 12px;
+  //         background: green;
+  //       }
+  //     }
+  //   }
+  //
+  // }
+
+
+
+
+
   @media only screen and (max-width: 768px) {
+
+    // section.nu__grid-filters{
+    //   // width: $content-width-wide;
+    //   // @include showfilters();  // add filters to the page, pass the width it should use
+    //   & > li{
+    //     & > a{
+    //       font-size: 12px;
+    //     }
+    //   }
+    // }
 
     section.nu__board-trustees{
 
@@ -391,6 +448,7 @@ div.main{
 
         // add in the default grid of items setup
         @include addgrid($content-width-wide,3,2vw);
+
 
       }
 

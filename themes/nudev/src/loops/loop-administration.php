@@ -71,7 +71,7 @@
 					,$managerFields['headshot']['url']
 					,$manager[0]->post_title
 					,$managerFields['title']
-					,$managerFields['description'].'<div>[<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Read more about '.$manager[0]->post_title.'" aria-label="Read more about '.$manager[0]->post_title.'" class="js__readmore" tabindex="-1" id="'.str_replace(array(" ","."),"-",strtolower($manager[0]->post_title)).'">Read <span>More</span> About '.$manager[0]->post_title.'</a>]</div>'
+					,$managerFields['description'].'<div>[<a href="javascript:void(0);" title="Read more about '.$manager[0]->post_title.'" aria-label="Read more about '.$manager[0]->post_title.'" class="js__readmore" tabindex="-1" id="'.str_replace(array(" ","."),"-",strtolower($manager[0]->post_title)).'">Read <span>More</span> About '.$manager[0]->post_title.'</a>]</div>'
 					,(isset($d['phone']) && $d['phone'] != ''?'<a href="tel:'.$d['phone'].'" title="Call '.$manager[0]->post_title.'" aria-label="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$d['phone'].'</a><br />':'')
 					,(isset($d['link']) && $d['link'] != ''?'<a href="'.$d['link'].'" title="Visit '.strtolower($d['department']).' website [will open in new window]" aria-label="Visit '.strtolower($d['department']).' website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a><br />':'')
 					,($staffCnt > 0?'<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Filter to show '.strtolower($d['department']).' team" aria-label="Filter to show '.strtolower($d['department']).' team"><span>&#xE7EF;</span> View Leadership</a>':'')
@@ -115,18 +115,14 @@
 
 			// $guide = '<section class="nu__team"><article><div><p class="description">%s</p><p class="contact"><a href="tel:%s" title="Call %s" aria-label="Call %s"><span>&#xE0B0;</span>%s</a><br /><a href="%s" title="Visit website [will open in new window]" aria-label="Visit website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a></p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
 
-			$guide = '<section class="nu__team"><article><div><p class="description">%s</p><p class="contact">%s%s</p></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
+			$guide = '<section class="nu__team"><article><div><div class="description">%s</div>%s<div class="contact">%s%s</div></div><div><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></div></article></section>';
 
 			$department = sprintf(
 				$guide
 
 				,$deptFields['description']
-				// ,$deptFields['phone']
-				// ,strtolower($dept[0]->post_title)
-				// ,strtolower($dept[0]->post_title)
-				// ,$deptFields['phone']
+				,'<div class="learnmoreabout">[<a href="javascript:void(0);" title="Read more about '.$manager[0]->post_title.'" aria-label="Read more about '.$manager[0]->post_title.'" class="js__readmoredept" tabindex="-1" id="'.str_replace(array(" ","."),"-",strtolower($manager[0]->post_title)).'">Read <span>More</span> About '.$manager[0]->post_title.'</a>]</div>'
 				,(isset($deptFields['phone']) && $deptFields['phone'] != '' ? '<a href="tel:'.$deptFields['phone'].'" title="Call '.strtolower($dept[0]->post_title).'" aria-label="Call '.strtolower($dept[0]->post_title).'"><span>&#xE0B0;</span>'.$deptFields['phone'].'</a><br />':'')
-				// ,$deptFields['url']
 				,(isset($deptFields['url']) && $deptFields['url'] != '' ? '<a href="'.$deptFields['url'].'" title="Visit website [will open in new window]" aria-label="Visit website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a>':'')
 				,$managerFields['headshot']['url']
 				,$manager[0]->post_title

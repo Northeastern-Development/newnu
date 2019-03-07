@@ -37,5 +37,25 @@
 
     });
 
+
+
+
+
+		// this will handle expanding and contracting the bios on the SLT page of administration
+		$('section.nu__team').on("click","a.js__readmoredept",function(e){
+
+			e.preventDefault();
+
+			if($('div.description').find('p').last().css('display') == 'none'){	// if nothing is currently open
+				// set this item up to be open
+				$('div.description').find('p').addClass('open');
+				$('div.learnmoreabout > a').find('span').html('Less');
+			}else{	// trying to close the expanded view
+				$('div.description').find('p').removeClass('open');
+				$('div.learnmoreabout > a').find('span').html('More');
+			}
+
+    });
+
   });
 }(this,jQuery));

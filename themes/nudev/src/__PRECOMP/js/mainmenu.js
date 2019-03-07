@@ -58,6 +58,7 @@ var navPanelInMotion = false;
 				$(this).parent().attr('aria-hidden','true');
 
 				$(this).parent().nextAll('li:not(.hideuntilmobile)').first().addClass('active');
+				$(this).parent().nextAll('li:not(.hideuntilmobile)').first().attr('aria-hidden','false');
 				$(this).parent().nextAll('li:not(.hideuntilmobile)').first().find('ul > li:not(.sectiontitle)').first().find('a').focus();
 			}
 
@@ -67,6 +68,7 @@ var navPanelInMotion = false;
 				$(this).parent().attr('aria-hidden','true');
 
 				$(this).parent().prevAll('li:not(.hideuntilmobile)').first().addClass('active');
+				$(this).parent().prevAll('li:not(.hideuntilmobile)').first().attr('aria-hidden','false');
 				$(this).parent().prevAll('li:not(.hideuntilmobile)').first().find('ul > li:not(.sectiontitle)').first().find('a').focus();
 			}
 
@@ -182,7 +184,7 @@ var navPanelInMotion = false;
 		// this function will handle closing the same nav panel
 		function blurSamePanel(a){
 			a.removeClass('active').next('div').removeClass('open');
-			a.next('div').find('div.items ul').attr('aria-hidden','true');
+			// a.next('div').find('div.items ul').attr('aria-hidden','true');
 			a.next('div').find('div.items > ul > li:not(.sectiontitle)').attr('tabindex','-1');
 			cNav = null;
 
@@ -195,7 +197,7 @@ var navPanelInMotion = false;
 		function blurNavPanels(){
 			$('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
 				$(this).removeClass('active').blur().next('div').removeClass('open');
-				$(this).next('div').find('div.items > ul').attr('aria-hidden','true');
+				// $(this).next('div').find('div.items > ul').attr('aria-hidden','true');
 				$(this).next('div').find('div.items > ul > li:not(.sectiontitle)').attr('tabindex','-1');
 			});
 
@@ -254,27 +256,58 @@ var navPanelInMotion = false;
 
 		// if we focus on a main nav item that is NOT a dropdown, we still want to close any open dropdown
 		$('ul.dropdowns').on('focus mouseover','li.js-single',function(e){
+			cNav = null;
 			$('ul.dropdowns > li > ul').hide();
-			$('ul.dropdowns > li.js-dropdown').find('a').removeClass('open');
+			// $('ul.dropdowns > li.js-dropdown').find('a').removeClass('open');
+			$('ul.dropdowns > li.js-dropdown').find('a').removeClass('open').blur();
 		});
 
 
 
+		// ** this is the original functionality below ** //
 
 
 		// this will handle the new dropdown system for items outside the hamburger menu
-		$('ul.dropdowns').on('focus mouseover','li.js-dropdown',function(e){
-			$('ul.dropdowns > li > ul').hide();
-			openCloseDropdown($(this));
-		});
+		// $('ul.dropdowns').on('focus mouseover','li.js-dropdown',function(e){
+		// 	$('ul.dropdowns > li > ul').hide();
+		// 	openCloseDropdown($(this));
+		// });
 
 
 		// use this if we want to tab through all of the sub items
-		$('ul.dropdowns').on('mouseout','li.js-dropdown',function(e){
-			$('ul.dropdowns > li.js-dropdown').find('ul > li > a').attr('tabindex','-1');
-			$('ul.dropdowns > li.js-dropdown').find('ul').hide();
+		// $('ul.dropdowns').on('mouseout','li.js-dropdown',function(e){
+		// 	$('ul.dropdowns > li.js-dropdown').find('ul > li > a').attr('tabindex','-1');
+		// 	$('ul.dropdowns > li.js-dropdown').find('ul').hide();
+		// 	$('ul.dropdowns > li.js-dropdown').find('a').removeClass('open');
+		// });
+
+
+		// ** this is the original functionality above ** //
+
+
+
+
+
+		// this handles the clicking of the dropdown menu items to open and close
+		$('ul.dropdowns').on('click','li.js-dropdown > a',function(e){
+			e.preventDefault();
+			$('ul.dropdowns > li > ul').hide();
+			// $('ul.dropdowns > li.js-dropdown').find('a').removeClass('open').blur();
 			$('ul.dropdowns > li.js-dropdown').find('a').removeClass('open');
+
+			if(cNav != $(this).parent().attr('id')){	// if this is a new open
+				cNav = $(this).parent().attr('id');
+				// console.log(cNav);
+				openCloseDropdown($(this).parent());
+			}else{	// close the same
+				// $('ul.dropdowns > li.js-dropdown').find('a').removeClass('open').blur();
+				cNav = null;
+			}
+
 		});
+
+
+
 
 
 
@@ -283,11 +316,15 @@ var navPanelInMotion = false;
 		// this will perform the hide and show of the dropdowns
 		function openCloseDropdown(a){
 
+			// $('ul.dropdowns > li.js-dropdown').find('a').removeClass('open').blur();
 			$('ul.dropdowns > li.js-dropdown').find('a').removeClass('open');
 
 			if(a.find('ul').css('display') == 'none'){
 				a.find('ul').show();
 				a.find('a').addClass('open');
+
+				// set focus on the first li in the menu
+				// a.find('ul > li').first().find('a').focus();
 
 				// turning this on makes the tab go through each drop down menu item, comment out for arrow up/down
 				a.find('ul > li > a').attr('tabindex','0');
@@ -317,12 +354,16 @@ var navPanelInMotion = false;
 			changeNavCat($(this));
 		});
 
+		$('div.navigational > section > div.items > ul > li:not(.featured)').click(function(e){
+			changeNavCat($(this));
+		});
+
 
 		// this is the function that will actually change the category
 		function changeNavCat(a){
 
 			// we need to handle activating the correct aria-hidden values as we change categories
-      a.parent().find('li ul').attr('aria-hidden','true');
+      // a.parent().find('li ul').attr('aria-hidden','true');
 			a.parent().find('li ul li').attr('tabindex','-1');
       a.find('ul').first().attr('aria-hidden','false');
 			a.find('ul li:not(.sectiontitle)').attr('tabindex','1');
@@ -333,47 +374,90 @@ var navPanelInMotion = false;
 		}
 
 
+
+		$(document).on('keyup','html',function(e){
+			if (e.which == 13){
+				// console.log('enter key up - '+$('ul.dropdowns > li.js-dropdown > a.open').attr('title'));
+				// console.log($('ul.dropdowns > li.js-dropdown > a.open').next().find('li').first());
+
+				// this will force focus to the first item in a dropdown when nav by keyboard NOT mouse
+				$('ul.dropdowns > li.js-dropdown > a.open').next().find('li').first().find('a').focus();
+			}
+		});
+
+
+
     // this is the event listener for the user to press esc to close the menu panels
 		$(document).on('keydown','html',function(e){
 
 			// if one of the dropdowns is open, then we can use arrow keys to nav up and down the options
-			if($('#dropdown-admissions').find('ul').attr('aria-hidden') == 'false'){
+			// if($('#dropdown-admissions').find('ul').attr('aria-hidden') == 'false'){
+			//
+			// 	// listen for the arrow press up and down here
+			// 	if(e.which == 38){
+			// 		e.preventDefault();
+			// 	}else if(e.which == 40){
+			// 		e.preventDefault();
+			// 	}
+			// }
 
-				// listen for the arrow press up and down here
-				if(e.which == 38){
-					e.preventDefault();
-				}else if(e.which == 40){
-					e.preventDefault();
-				}
-			}
+			// the user has pressed the enter key on a dropdown menu category link
+			// if (e.which == 13){
+			// 	console.log('pressed enter key! - '+$('ul.dropdowns > li.js-dropdown > a.open').attr('title'));
+			//
+			// 	// $('ul.dropdowns > li.js-dropdown').each(function(index){
+			// 	// 	// console.log($(this).find('ul').first());
+			// 	// 	if($(this).find('ul').first().css('display') == 'block'){
+			// 	// 		console.log($(this));
+			// 	// 	}
+			// 	// });
+			//
+			// 	// $('ul.dropdowns > li.js-dropdown > ul').css('display') == 'block'{
+      //   // 	// Do something
+			// 	// 	console.log('there is a dropdown open!');
+			// 	// }
+	    // }
+
 
 
 			// if one of the super nav options is open
-			if($('#nu__search-toggle').hasClass('active') === true || $('#nu__supernav-toggle').hasClass('active') === true){
+			// if($('#nu__search-toggle').hasClass('active') === true || $('#nu__supernav-toggle').hasClass('active') === true){
 
-        if(e.which == 27){
+        if(e.which == 27){	// user pressed the escape key
 
-					$('.js-dropdown-sneezeguard').css({'height':'0'});	// close the sneezeguard protecting the other menu items
-
-
-					$('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
-
-						if($(this).hasClass('active')){
-							$(this).focus();
-						}else{
-							$(this).blur();
-						}
-
-						$(this).removeClass('active').next('div').removeClass('open');
-	          $(this).next('div').find('div.items > ul').attr('aria-hidden','true').attr('tabindex','-1');
-						$(this).next('div').find('div.items > ul > li').attr('tabindex','-1');
-
-	        });
+					// close any dropdowns if there are any open
+					$('ul.dropdowns > li > ul').hide();
+					// $('ul.dropdowns > li.js-dropdown').find('a').removeClass('open').blur();
+					$('ul.dropdowns > li.js-dropdown').find('a').removeClass('open');
 
 					cNav = null;
-					navReset();
+
+					if($('#nu__search-toggle').hasClass('active') === true || $('#nu__supernav-toggle').hasClass('active') === true){
+
+						$('.js-dropdown-sneezeguard').css({'height':'0'});	// close the sneezeguard protecting the other menu items
+
+
+						$('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
+
+							if($(this).hasClass('active')){
+								$(this).focus();
+							}else{
+								$(this).blur();
+							}
+
+							$(this).removeClass('active').next('div').removeClass('open');
+		          // $(this).next('div').find('div.items > ul').attr('aria-hidden','true').attr('tabindex','-1');
+							$(this).next('div').find('div.items > ul').attr('tabindex','-1');
+							$(this).next('div').find('div.items > ul > li').attr('tabindex','-1');
+
+		        });
+
+						// cNav = null;
+						navReset();
+
+					}
         }
-      }
+      // }
     });
 
 
