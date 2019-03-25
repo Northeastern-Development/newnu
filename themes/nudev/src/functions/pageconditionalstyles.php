@@ -27,7 +27,7 @@ function nudev_conditional_styles(){
 
 
   // load static page styles
-  if(is_page_template('templates/template-static.php') || is_page_template('templates/template-experience.php') || is_page_template('templates/template-colleges.php') || is_page_template('templates/template-departments.php') || is_page_template('templates/template-administration.php') || is_page_template('templates/template-trustees.php') || is_page_template('templates/template-institutes.php') || is_404()){
+  if(is_page_template('templates/template-static.php') || is_page_template('templates/template-experience.php') || is_page_template('templates/template-colleges.php') || is_page_template('templates/template-departments.php') || is_page_template('templates/template-administration.php') || is_page_template('templates/template-trustees.php') || is_page_template('templates/template-institutes.php') || is_page_template('templates/template-onlinelearning.php') || is_404()){
     wp_register_style('staticcss', get_template_directory_uri() . '/css/static.css', array(), '1.0');
     wp_enqueue_style('staticcss');
   }
@@ -50,6 +50,12 @@ function nudev_conditional_styles(){
   if(is_page_template('templates/template-institutes.php')){
     wp_register_style('institutescss', get_template_directory_uri() . '/css/institutes.css', array(), '1.0');
     wp_enqueue_style('institutescss');
+  }
+
+  // load online learning page styles
+  if(is_page_template('templates/template-onlinelearning.php')){
+    wp_register_style('onlinelearningcss', get_template_directory_uri() . '/css/onlinelearning.css', array(), '1.0');
+    wp_enqueue_style('onlinelearningcss');
   }
 
   // load colleges and schools page styles

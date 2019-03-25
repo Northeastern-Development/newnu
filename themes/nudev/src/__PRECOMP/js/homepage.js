@@ -14,7 +14,7 @@
     // var myPanels = document.getElementById('nu__stories');
     // var mc = new Hammer(myPanels);
     // var aspeeds = (isSafari?1500:1500);
-    var takeOverTimeout = 7000;	// 0 = no auto close, otherwise in mls
+    var takeOverTimeout = 10000;	// 0 = no auto close, otherwise in mls
 		var cNewsSlider = 1;
 
 
@@ -49,16 +49,24 @@
 
     // this will listen for a user to close the hp takeover
     $('div.takeover').on("click",".nu__close-takeover",function(e){
+			// console.log('close takeover!');
       closeTakeover();
     });
 
+		// console.log($('div.takeover'));
+
     // this will auto-close the takeover after specific time period, if value = 0 then it will not autoclose
-    if(takeOverTimeout > 0 && $('div.takeover').css('display') == 'block'){
+    if(takeOverTimeout > 0){
+			// console.log('start timeout to close announcement');
+
+			$('html').css({'overflow-y':'hidden'});
+
       setTimeout(function(){ closeTakeover(); },takeOverTimeout);
     }
 
     // close the actual takeover panel
     function closeTakeover(){
+			$('html').css({'overflow-y':'auto'});
       $('div.takeover').fadeOut(250);
     }
 

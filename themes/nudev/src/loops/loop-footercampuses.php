@@ -10,9 +10,9 @@
 
 	if(count($res) > 0){
 
-		$return .= '<ul>';
+		$return .= '<ul role="list">';
 
-		$guide = '<li%s><a href="%s" title="%s campus" aria-label="%s campus" target="_blank" role="menuitem" tabindex="0">%s</a></li>';
+		$guide = '<li%s role="listitem"><a href="%s" title="%s campus" aria-label="%s campus" target="_blank">%s</a></li>';
 
 		$i = 0;
 		foreach($res as $r){

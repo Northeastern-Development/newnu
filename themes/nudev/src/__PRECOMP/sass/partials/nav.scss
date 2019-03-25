@@ -467,6 +467,7 @@ a#nu__supernav-toggle:not(.active){
             &.hideuntilmobile{
               display: none;
             }
+
             &.featured{
               line-height: 0;
               border: none;
@@ -528,6 +529,11 @@ a#nu__supernav-toggle:not(.active){
               // border: none;
               outline: none;
             }
+            &.temphide{
+              color: rgba($brand_colors-beige, 1.0);
+              background: rgba($brand_colors-black,1.0);
+              font-weight: 300;
+            }
             &.makeagift{
               & > a{
                 border: solid rgba($brand_colors-white,1.0) 1px;
@@ -563,6 +569,7 @@ a#nu__supernav-toggle:not(.active){
               list-style-type: none;
               padding: 0 0 0 0;
               margin: 0 0 0 0;
+
               & > li{
                 margin: 0 $gutter 10px $gutter;
                 text-transform: none;
@@ -572,6 +579,7 @@ a#nu__supernav-toggle:not(.active){
                   @include font-6l-l;
                   line-height: $lineH;
                   margin: 12px 0 12px $gutter;
+                  color: rgba($brand_colors-black,1.0);
                 }
                 & > a{
                   @include font-10l-l;

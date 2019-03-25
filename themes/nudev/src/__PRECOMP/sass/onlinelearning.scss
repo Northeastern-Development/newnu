@@ -1,0 +1,426 @@
+/*
+ * online learning
+ */
+
+
+ // Modules
+ @import "modules/variables";
+ @import "modules/mixins";
+ @import "modules/fonts";
+ @import "partials/animations";
+
+
+ div.main{
+
+
+  section.overview{
+    width: 45vw;
+    & > p{
+      font-size: 2.0rem;
+      line-height: 2.8rem;
+      font-weight: 300;
+    }
+    & > ul{
+      list-style: disc;
+      list-style-type: disc;
+      display: block;
+      & > li{
+        margin: 0 0 20px 20px;
+        letter-spacing: 0;
+        &:last-of-type{
+          margin: 0 0 0 20px;
+        }
+      }
+    }
+  }
+
+
+  section.experience{
+    width: $wrapper-width;
+    height: 543px;
+    background: rgba($brand_colors-grayW,0.1);
+    display: flex;
+    flex-direction: row;
+    & > div{
+      flex: 1 0 auto;
+      flex-basis: 50%;
+      height: 100%;
+      &.copy{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: $gutter 90px $gutter 90px;
+        & > h3{
+          text-align: left;
+          width: 100%;
+          font-size: 2.0rem;
+          line-height: 2.2rem;
+          font-weight: 400;
+          margin: 0 0 30px 0;
+          &:before{
+            content:'';
+            position: absolute;
+            display: block;
+            width: 35px;
+            height: 35px;
+            border-bottom: solid rgba($brand_colors-red,1.0) 5px;
+          }
+        }
+        & > p{
+          & a{
+            color: rgba($brand_colors-red,1.0);
+            border: none;
+            text-decoration: none;
+            &:hover,
+            &:focus{
+              border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+            }
+          }
+        }
+      }
+      &.image{
+        background: rgba($brand_colors-black,1.0);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+
+  section.slider{
+    background: rgba($brand_colors-black,1.0);
+    width: $wrapper-width;
+    margin: 0 0 0 0;
+    padding: ($gutter * 2) ($gutter * 2) $gutter ($gutter * 2);
+    min-height: 150px;
+    & > article{
+      width: $content-width-mid;
+      margin: 0 auto 0 auto;
+      display: none;
+      color: rgba($brand_colors-white,1.0);
+      & > p{
+        text-align: center;
+        &.quote{
+          font-size: 3.4rem;
+          line-height: 4.8rem;
+          font-weight: 300;
+          margin: 0 auto 20px auto;
+        }
+        &.attribution{
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          font-style: italic;
+        }
+      }
+      &:first-of-type{
+        display: block;
+
+      }
+    }
+    & > ul{
+      width: 80px;
+      margin: 5px auto 0 auto;
+      & > li{
+        width: 10px;
+        height: 30px;
+        overflow: hidden;
+        text-align: center;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        & > a{
+          color: rgba($brand_colors-black,1.0);
+          &:before{
+            content:'\E836';
+            color: rgba($brand_colors-white,1.0);
+            position: absolute;
+          }
+          &:hover,
+          &:focus{
+            &:before{
+              content:'\E837';
+            }
+          }
+          &.active{
+            &:before{
+              content:'\E837';
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  section.getstarted{
+    display: flex;
+    flex-direction: row;
+    width: $wrapper-width;
+    padding: 0 ($gutter * 3) 0 ($gutter * 3);
+    margin: ($gutter * 2) auto ($gutter * 2) auto;
+    & > div{
+      &.copy{
+        width: 40%;
+        text-align: left;
+        & > h2{
+          text-align: left;
+          font-size: 3.4rem;
+          line-height: 4rem;
+          font-weight: 400;
+          margin: 0 0 $gutter 0;
+          &:before{
+            content:'';
+            position: absolute;
+            display: block;
+            width: 35px;
+            height: 50px;
+            border-bottom: solid red 5px;
+          }
+        }
+        & > p{
+          letter-spacing: 1px;
+        }
+
+      }
+      &.links{
+        flex: 1 0 auto;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        & > div{
+          & > a{
+            border: solid rgba($brand_colors-black,1.0) 1px;
+            padding: 5px $gutter 5px $gutter;
+            display: inline-block;
+            margin: 0 0 0 ($gutter * 2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            &:first-of-type{
+              margin: 0 0 0 0;
+            }
+            &:hover,
+            &:focus{
+              background: rgba($brand_colors-black,1.0);
+              color: rgba($brand_colors-white,1.0);
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+  @media only screen and (max-width: 1400px) {
+
+    section.getstarted{
+      & > div{
+        &.links{
+          & > div{
+            & > a{
+              padding: 5px ($gutter / 2) 5px ($gutter / 2);
+              margin: 0 0 0 $gutter;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+
+
+   @media only screen and (max-width: 1280px) {
+
+
+     section.overview{
+       width: $content-width;
+       & > p{
+         font-size: 1.6rem;
+       }
+     }
+
+     section.slider{
+       & > article{
+         & > p{
+           &.quote{
+             font-size: 2.4rem;
+             line-height: 3.2rem;
+           }
+         }
+       }
+     }
+
+
+     section.getstarted{
+       & > div{
+         &.copy{
+           & > h2{
+             text-align: left;
+             font-size: 2.4rem;
+           }
+         }
+       }
+     }
+
+
+   }
+
+
+
+
+
+   @media only screen and (max-width: 1140px) {
+
+     section.getstarted{
+       display: block;
+       & > div{
+         &.copy{
+           width: 100%;
+           margin: 0 0 $gutter 0;
+         }
+         &.links{
+           text-align: left;
+         }
+       }
+     }
+
+   }
+
+
+
+
+   @media only screen and (max-width: 959px) {
+
+     section.overview{
+       width: $content-width-wide;
+       & > p{
+         font-size: 1.6rem;
+       }
+     }
+
+     section.experience{
+       height: auto;
+       display: block;
+       & > div{
+         &.copy{
+           width: $content-width-wide;
+           margin: 0 auto 0 auto;
+           padding: $gutter 0 $gutter 0;
+           & > h3{
+             font-size: 1.6rem;
+           }
+         }
+         &.image{
+           background: rgba($brand_colors-black,1.0);
+           background-position: center center;
+           background-repeat: no-repeat;
+           background-size: cover;
+           height: 55vw;
+         }
+       }
+     }
+
+
+     section.slider{
+       padding: $gutter 0 $gutter 0;
+       & > article{
+         width: $content-width-wide;
+         & > p{
+           &.quote{
+             font-size: 2.0rem;
+             line-height: 3.2rem;
+           }
+         }
+       }
+       & > ul{
+         width: 110px;
+         & > li{
+           flex: 1 0 auto;
+         }
+       }
+     }
+
+
+     section.getstarted{
+       display: block;
+       width: $wrapper-width;
+       padding: 0 0 0 0;
+       & > div{
+         width: $content-width-wide;
+         margin: 0 auto 0 auto;
+         &.copy{
+           width: $content-width-wide;
+           margin: 0 auto $gutter auto;
+           & > h2{
+             font-size: 2.0rem;
+           }
+         }
+         &.links{
+           text-align: left;
+           & > div{
+             & > a{
+               margin: 0 $gutter $gutter 0;
+               &:first-of-type{
+                 margin: 0 $gutter $gutter 0;
+               }
+               &:last-of-type{
+                 margin: 0 0 $gutter 0;
+               }
+             }
+           }
+         }
+       }
+     }
+
+
+   }
+
+
+
+
+
+   @media only screen and (max-width: 620px) {
+
+     section.overview{
+       & > p{
+         margin: 0 auto 10px auto;
+       }
+     }
+
+     section.slider{
+       & > ul{
+         flex-direction: row;
+         & > li{
+           flex: 1 0 auto;
+         }
+       }
+     }
+
+
+     section.getstarted{
+       & > div{
+         &.links{
+           text-align: left;
+           & > div{
+             & > a{
+               padding: 5px 5px 5px 5px;
+               letter-spacing: 0;
+               font-size: 1.4rem;
+             }
+           }
+         }
+       }
+     }
+
+   }
+
+
+
+}

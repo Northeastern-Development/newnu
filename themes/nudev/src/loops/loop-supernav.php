@@ -55,11 +55,13 @@
 			// this builds the top level li items that we will nest into
 			// $return .= '<li title="view '.$o[0].'" aria-label="view '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'" tabindex="-1">'.$o[0].'<ul role="menu" aria-hidden="true"><li tabindex="-1" class="sectiontitle">'.$o[0].'</li>';
 
-			$return .= '<li title="view '.$o[0].'" aria-label="view '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'">'.$o[0].($jj > 0?'<a href="javascript:void(0);" class="blur blurprevcat">blur from cat '.$jj.'</a>':'<a href="javascript:void(0);" class="blur blurfirstcat blurclosepanel">blur top to close menu panel</a>').'<!-- start category --><ul role="menu" aria-hidden="false"><li tabindex="-1" class="sectiontitle">'.$o[0].'</li>';
+			// $return .= '<li title="view '.$o[0].'" aria-label="view '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'">'.$o[0].($jj > 0?'<a href="javascript:void(0);" class="blur blurprevcat">blur from cat '.$jj.'</a>':'<a href="javascript:void(0);" class="blur blurfirstcat blurclosepanel">blur top to close menu panel</a>').'<!-- start category --><ul role="menu" aria-hidden="false"><li tabindex="-1" class="sectiontitle">'.$o[0].'</li>';
+			$return .= '<li title="view '.$o[0].'" aria-label="view '.$o[0].'" class="'.($jj == 0?'active':'').($o[1] == 1?' hideuntilmobile':'').'">'.$o[0].($jj > 0?'<a href="javascript:void(0);" class="blur blurprevcat">blur from cat '.$jj.'</a>':'<a href="javascript:void(0);" class="blur blurfirstcat blurclosepanel">blur top to close menu panel</a>').'<!-- start category --><ul role="list" aria-hidden="false"><li tabindex="-1" class="sectiontitle">'.$o[0].'</li>';
 
 			// $guide = '<li role="menuitem" tabindex="-1"><a href="%s" title="view %s%s" aria-label="view %s%s"%s><div>%s</div><div><span>%s</span></div></a></li>';
 
-			$catItem = '<li role="menuitem"><a href="%s" title="view %s%s" aria-label="view %s%s"%s%s><div>%s</div><div><span>%s</span></div></a></li>';
+			// $catItem = '<li role="menuitem"><a href="%s" title="view %s%s" aria-label="view %s%s"%s%s><div>%s</div><div><span>%s</span></div></a></li>';
+			$catItem = '<li role="listitem"><a href="%s" title="learn more about %s%s" aria-label="learn more about %s%s"%s%s><div>%s</div><div><span>%s</span></div></a></li>';
 
 			$cnt = 1;
 
@@ -133,7 +135,8 @@
 
 	// $supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul role="menu" aria-hidden="true"><a href="javascript:void(0);" title="Close panel" aria-label="Close panel" tabindex="1" class="js__closepanelstart">X</a>'.$return.'<a href="javascript:void(0);" title="Close panel" aria-label="Close panel" tabindex="1" class="js__closepanelend">X</a></ul></div></section></div>';
 
-		$supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul role="menu" aria-hidden="true">'.$return.'</ul></div></section></div>';
+		// $supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul role="menu" aria-hidden="true">'.$return.'</ul></div></section></div>';
+		$supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul role="list" aria-hidden="true">'.$return.'</ul></div></section></div>';
 
 	if(isset($returnType) && $returnType === 'return'){	// this will return the results for remote calls
 		return $supernav;

@@ -46,9 +46,46 @@ var navPanelInMotion = false;
 
 			if($(this).hasClass('blurclosepanel')){	// this will close the currently open panel
 
-				$('#'+cNav).focus();
+				// console.log(cNav);
+				//
+				// blurNavPanels();
+				//
+				// $('#'+cNav).focus();
 
-				blurNavPanels();
+
+				// close any dropdowns if there are any open
+				$('ul.dropdowns > li > ul').hide();
+				// $('ul.dropdowns > li.js-dropdown').find('a').removeClass('open').blur();
+				$('ul.dropdowns > li.js-dropdown').find('a').removeClass('open');
+
+				cNav = null;
+
+				if($('#nu__search-toggle').hasClass('active') === true || $('#nu__supernav-toggle').hasClass('active') === true){
+
+					$('.js-dropdown-sneezeguard').css({'height':'0'});	// close the sneezeguard protecting the other menu items
+
+
+					$('nav a.js__mainmenu-item').each(function(i){  // force all of them closed/clear
+
+						if($(this).hasClass('active')){
+							$(this).focus();
+						}else{
+							$(this).blur();
+						}
+
+						$(this).removeClass('active').next('div').removeClass('open');
+						// $(this).next('div').find('div.items > ul').attr('aria-hidden','true').attr('tabindex','-1');
+						$(this).next('div').find('div.items > ul').attr('tabindex','-1');
+						$(this).next('div').find('div.items > ul > li').attr('tabindex','-1');
+
+					});
+
+					// cNav = null;
+					navReset();
+
+				}
+
+
 
 
 
@@ -74,6 +111,12 @@ var navPanelInMotion = false;
 
 			else if($(this).hasClass('blurtofeatured')){	// this will blur from the categories to the featured items in the supernav
 
+				// $('div.items > ul > li:not(.hideuntilmobile)').removeClass('active');
+
+				$(this).parent().addClass('temphide');
+
+				// console.log();
+
 				$(this).parent().prevAll('li:not(.hideuntilmobile)').attr('aria-hidden','true');
 
 				$(this).parent().nextAll('li.featured:not(.hideuntilmobile)').first().find('a').focus();
@@ -81,6 +124,8 @@ var navPanelInMotion = false;
 			}
 
 			else if($(this).hasClass('blurfromfeatured')){	// this will blur from the featured items to the categories in the supernav
+
+				$('div.items > ul > li:not(.hideuntilmobile)').removeClass('temphide');
 
 				$(this).prevAll('li:not(.hideuntilmobile)').first().find('ul > li:not(.sectiontitle)').first().find('a').focus();
 
@@ -366,7 +411,8 @@ var navPanelInMotion = false;
       // a.parent().find('li ul').attr('aria-hidden','true');
 			a.parent().find('li ul li').attr('tabindex','-1');
       a.find('ul').first().attr('aria-hidden','false');
-			a.find('ul li:not(.sectiontitle)').attr('tabindex','1');
+			// a.find('ul li:not(.sectiontitle)').attr('tabindex','1');
+			a.find('ul li:not(.sectiontitle)').attr('tabindex','0');
 
 			$('div.navigational > section > div > ul li').removeClass('active');
 			a.addClass('active');

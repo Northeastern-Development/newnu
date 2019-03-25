@@ -46,7 +46,8 @@
 		// let's check to make sure that we actually have an array of events to work with
 		if(isset($decoded['events']) && count($decoded['events']) > 0){
 
-			$upcoming_events .= '<hr class="events"><div id="nu__events">';
+			// $upcoming_events .= 'Trending Events<hr class="events"><div id="nu__events">Trending Events';
+			$upcoming_events .= '<div id="nu__events"><h3>Trending Events</h3>';
 
 			// If using the TRENDING fetch, set this to true!
 			$sort_trending = true;

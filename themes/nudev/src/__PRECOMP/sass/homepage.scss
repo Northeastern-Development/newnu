@@ -42,6 +42,43 @@ div.main{
     font-size: 0px;
   }
 
+  div.takeover{
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba($brand_colors-black,0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    & > a{
+      @include font-6l-l;
+      display: block;
+      position: absolute;
+      right: $gutter;
+      top: $gutter;
+      color: rgba($brand_colors-white,0.7);
+      border: none;
+      &:hover,
+      &:focus{
+        color: rgba($brand_colors-white,1.0);
+      }
+    }
+    & > div{
+      margin: 0 auto 0 auto;
+      width: 600px;
+      & > p{
+
+        @include font-6l-l;
+        text-align: center;
+      }
+    }
+  }
+
   hr{
     margin: 0 auto $gutter auto;
     width: $content-width-wide;
@@ -49,18 +86,18 @@ div.main{
     background: rgba($brand_colors-black,1.0);
     border: none;
     line-height: 0px;
-    &.events{
-      &:before{
-        width: 190px;
-        @include font-2b-l;
-        color: rgba($brand_colors-black,1.0);
-        content:'TRENDING EVENTS';
-        background: rgba($brand_colors-white,1.0);
-        display: block;
-        position: absolute;
-        margin: -12px 0 0 0;
-      }
-    }
+    // &.events{
+    //   &:before{
+    //     width: 190px;
+    //     @include font-2b-l;
+    //     color: rgba($brand_colors-black,1.0);
+    //     content:'TRENDING EVENTS';
+    //     background: rgba($brand_colors-white,1.0);
+    //     display: block;
+    //     position: absolute;
+    //     margin: -12px 0 0 0;
+    //   }
+    // }
   }
 
   div#nu__stories{
@@ -626,6 +663,26 @@ div.main{
     width: $content-width-wide;
     clear: both;
     overflow: hidden;
+    & > h3{
+      color: rgba($brand_colors-black,1.0);
+      @include font-2b-l;
+      text-transform: uppercase;
+      background: green;
+      margin: 0 0 $gutter 0;
+      position: relative;
+      // width: 250px;
+      background: rgba($brand_colors-white,1.0);
+      &:after{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 5px;
+        top: 11.5px;
+        left: 200px;
+        background: rgba($brand_colors-black,1.0);
+      }
+    }
     & > div.eventgrid{
       display: flex;
       flex-direction: row;

@@ -10,6 +10,8 @@
 
 		<div id="nu__seo-content"><h1><?=get_the_content()?></h1></div>
 
+		<?php include(locate_template('includes/takeover.php')); ?>
+
 		<div id="nu__stories">
 			<div>
 				<?php get_template_part('loops/loop-homepagenews'); ?>
