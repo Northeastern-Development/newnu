@@ -322,6 +322,18 @@ div.main{
         background: linear-gradient(to left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         z-index: 1;
       }
+      &.flexspace{  // this is for giving day!!! comment this whole block out when the campaign ends!!!
+        & div.gradient {
+          // height:100%;
+          // width: 100%;
+          // position:absolute;
+          // bottom:0;
+          background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.0) 70%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.0) 70%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.0) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          // z-index: 1;
+        }
+      }
 
 
       // & > a {
@@ -389,7 +401,9 @@ div.main{
             // position: absolute;
             float: left;
             clear: left;
-            border: solid rgba($brand_colors-white,1.0) 1px;
+            // border: solid rgba($brand_colors-white,1.0) 1px; // this is the original!!!
+            border: solid rgba($brand_colors-red,1.0) 1px;  // this is for giving day!!!
+            background: rgba($brand_colors-red,1.0);  // this is for giving day!!!
             // background: red;
             margin: 0 0 0 $gutter;
             text-transform: uppercase;
@@ -398,8 +412,10 @@ div.main{
             @include font-2l-l;
             &:hover,
             &:focus{
-              background: rgba($brand_colors-white,1.0);
-              color: rgba($brand_colors-black,1.0);
+              // background: rgba($brand_colors-white,1.0); // this is the original!!!
+              // color: rgba($brand_colors-black,1.0); // this is the original!!!
+              border: solid rgba($brand_colors-white,1.0) 1px;  // this is for giving day!!!
+              background: rgba($brand_colors-black,1.0);  // this is for giving day!!!
             }
           }
           & h2 {

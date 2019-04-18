@@ -56,13 +56,13 @@
 		// console.log($('div.takeover'));
 
     // this will auto-close the takeover after specific time period, if value = 0 then it will not autoclose
-    if(takeOverTimeout > 0){
-			// console.log('start timeout to close announcement');
-
-			$('html').css({'overflow-y':'hidden'});
-
-      setTimeout(function(){ closeTakeover(); },takeOverTimeout);
-    }
+    // if(takeOverTimeout > 0){
+		// 	// console.log('start timeout to close announcement');
+		//
+		// 	$('html').css({'overflow-y':'hidden'});
+		//
+    //   setTimeout(function(){ closeTakeover(); },takeOverTimeout);
+    // }
 
     // close the actual takeover panel
     function closeTakeover(){
@@ -146,7 +146,7 @@
 				$('div.nu__block-rotator div.bgimage > div.gradient > a').attr('aria-label',rotators[1][thisE.attr('data-id')][1]+' [will open in new tab/window]');
 
 				// update the item tag if there is one, or hide it
-				$('div.nu__block-rotator h3').fadeOut(100,function(){
+				$('div.nu__block-rotator h2').fadeOut(100,function(){
 					$(this).empty();
 					if(rotators[1][thisE.attr('data-id')][2] != ""){
 						$(this).html(rotators[1][thisE.attr('data-id')][2]).fadeIn(100);
