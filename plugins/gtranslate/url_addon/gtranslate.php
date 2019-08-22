@@ -95,7 +95,9 @@ if(isset($request_headers['content-type'])) {
 }
 
 if(isset($request_headers['Content-Type']) and strpos($request_headers['Content-Type'], 'multipart/form-data;') !== false) {
-    $request_headers['Content-Type'] = 'multipart/form-data'; // remove boundary
+    //$request_headers['Content-Type'] = 'multipart/form-data'; // remove boundary
+    $request_headers['Content-Type'] = 'application/x-www-form-urlencoded';
+    $is_multipart = true;
     $request_headers['Content-Length'] = '';
 
     if(isset($request_headers['content-length']))
@@ -111,8 +113,32 @@ foreach($request_headers as $key => $val) {
         $headers[] = $key . ': ' . $val;
 }
 
+// add real visitor IP header
+if(isset($_SERVER['HTTP_CLIENT_IP']) and !empty($_SERVER['HTTP_CLIENT_IP']))
+    $viewer_ip_address = $_SERVER['HTTP_CLIENT_IP'];
+if(isset($_SERVER['HTTP_CF_CONNECTING_IP']) and !empty($_SERVER['HTTP_CF_CONNECTING_IP']))
+    $viewer_ip_address = $_SERVER['HTTP_CF_CONNECTING_IP'];
+if(isset($_SERVER['HTTP_X_SUCURI_CLIENTIP']) and !empty($_SERVER['HTTP_X_SUCURI_CLIENTIP']))
+    $viewer_ip_address = $_SERVER['HTTP_X_SUCURI_CLIENTIP'];
+if(!isset($viewer_ip_address))
+    $viewer_ip_address = $_SERVER['REMOTE_ADDR'];
+
+$headers[] = 'X-GT-Viewer-IP: ' . $viewer_ip_address;
+
+// add X-Forwarded-For
+if(isset($_SERVER['HTTP_X_FORWARDED_FOR']) and !empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+    $headers[] = 'X-GT-Forwarded-For: ' . $_SERVER['HTTP_X_FORWARDED_FOR'];
+
 //print_r($headers);
 //exit;
+
+if(!function_exists('curl_init')) {
+    if(function_exists('http_response_code'))
+        http_response_code(500);
+
+    echo 'PHP Curl library is required';
+    exit;
+}
 
 // proxy request
 $ch = curl_init();
@@ -120,15 +146,31 @@ curl_setopt($ch, CURLOPT_URL, $page_url);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($ch, CURLOPT_HEADER, true);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+//curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__).'/cacert.pem');
 
 switch($_SERVER['REQUEST_METHOD']) {
     case 'POST': {
         curl_setopt($ch, CURLOPT_POST, true);
-        if(isset($request_headers['Content-Type']) and strpos($request_headers['Content-Type'], 'multipart/form-data') !== false) {
+        if(isset($is_multipart)) {
             http_build_query_for_curl($_POST, $new_post);
+            $new_post2 = array();
+            foreach($new_post as $key => $value)
+                $new_post2[] = $key.'='.urlencode($value);
+            $new_post = implode('&', $new_post2);
+            $headers[] = 'Content-Length: '.strlen($new_post);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $new_post);
+
+        } elseif(isset($request_headers['Content-Type']) and strpos($request_headers['Content-Type'], 'multipart/form-data') !== false) {
+            http_build_query_for_curl($_POST, $new_post);
+
+            $new_post = array('a'=>1,'b'=>2);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $new_post); // todo: think about $_FILES: http://php.net/manual/en/class.curlfile.php
+            //curl_setopt($ch, CURLOPT_HTTPHEADER, array());
+            file_put_contents(dirname(__FILE__).'/debug.txt', print_r($new_post, true)."\n", FILE_APPEND);
         } else {
             curl_setopt($ch, CURLOPT_POSTFIELDS, file_get_contents('php://input'));
         }
@@ -142,7 +184,7 @@ switch($_SERVER['REQUEST_METHOD']) {
 
 // Debug
 if($debug or isset($_GET['enable_debug'])) {
-    $fh = fopen('debug.txt', 'a');
+    $fh = fopen(dirname(__FILE__).'/debug.txt', 'a');
     curl_setopt($ch, CURLOPT_VERBOSE, true);
     curl_setopt($ch, CURLOPT_STDERR, $fh);
 }
@@ -177,11 +219,17 @@ $response_headers = explode(PHP_EOL, $header);
 //print_r($response_headers);
 $headers_sent = '';
 foreach($response_headers as $header) {
-    if(!empty($header) and !preg_match('/Content\-Length|Transfer\-Encoding|Content\-Encoding|Link/i', $header)) {
+    if(!empty($header) and !preg_match('/Content\-Length:|Transfer\-Encoding:|Content\-Encoding:|Link:/i', $header)) {
 
         if(preg_match('/^Location:/i', $header)) {
             $header = str_ireplace($host, $_SERVER['HTTP_HOST'] . '/' . $glang, $header);
             $header = str_ireplace('Location: /', 'Location: /' . $glang . '/', $header);
+            $header = str_replace('/' . $glang . '/' . $glang . '/', '/' . $glang . '/', $header);
+        }
+
+        // woocommerce cookie path fix
+        if(preg_match('/^Set-Cookie:/i', $header) and strpos($header, 'woocommerce') !== false) {
+            $header = preg_replace('/path=\/.*\/;/', 'path=/;', $header);
         }
 
         $headers_sent .= $header;
@@ -196,13 +244,16 @@ $html = str_ireplace('href="/', 'href="/' . $glang . '/', $html);
 $html = preg_replace('/href=\"\/' . $glang . '\/(af|sq|am|ar|hy|az|eu|be|bn|bs|bg|ca|ceb|ny|zh-CN|zh-TW|co|hr|cs|da|nl|en|eo|et|tl|fi|fr|fy|gl|ka|de|el|gu|ht|ha|haw|iw|hi|hmn|hu|is|ig|id|ga|it|ja|jw|kn|kk|km|ko|ku|ky|lo|la|lv|lt|lb|mk|mg|ms|ml|mt|mi|mr|mn|my|ne|no|ps|fa|pl|pt|pa|ro|ru|sm|gd|sr|st|sn|sd|si|sk|sl|so|es|su|sw|sv|tg|ta|te|th|tr|uk|ur|uz|vi|cy|xh|yi|yo|zu)\//i', 'href="/$1/', $html); // fix double language code
 $html = str_ireplace('href="/' . $glang . '//', 'href="//', $html);
 $html = str_ireplace('action="/', 'action="/' . $glang . '/', $html);
+$html = str_ireplace('action=\'/', 'action=\'/' . $glang . '/', $html);
 $html = str_ireplace('action="/' . $glang . '//', 'action="//', $html);
+$html = str_ireplace('action=\'/' . $glang . '//', 'action=\'//', $html);
 $html = str_ireplace('action="//' . $_SERVER['HTTP_HOST'], 'action="//' . $_SERVER['HTTP_HOST'] . '/' . $glang, $html);
+$html = str_ireplace('action=\'//' . $_SERVER['HTTP_HOST'], 'action=\'//' . $_SERVER['HTTP_HOST'] . '/' . $glang, $html);
 
 // woocommerce specific changes
 $html = str_ireplace(
-    array('"wc_ajax_url":"\\/',              '"checkout_url":"\\/',               'var wc_country_select_params',  'var wc_address_i18n_params' ),
-    array('"wc_ajax_url":"\\/'.$glang.'\\/', '"checkout_url":"\\/'.$glang.'\\/',  'var wc_country_select_params2', 'var wc_address_i18n_params2'),
+    array('ajax_url":"\\/',              '"checkout_url":"\\/'              ),
+    array('ajax_url":"\\/'.$glang.'\\/', '"checkout_url":"\\/'.$glang.'\\/' ),
     $html
 );
 

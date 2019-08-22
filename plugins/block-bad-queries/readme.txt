@@ -8,12 +8,12 @@ Usage: No configuration necessary. Upload, activate and done. BBQ blocks bad que
 Author: Jeff Starr
 Author URI: https://plugin-planet.com/
 Contributors: specialk, aldolat, WpBlogHost, jameswilkes, juliobox, lernerconsult
-Donate link: https://m0n.co/donate
+Donate link: https://monzillamedia.com/donate.html
 Requires at least: 4.1
-Tested up to: 4.9
-Stable tag: 20171101
-Version: 20171101
-Requires PHP: 5.2
+Tested up to: 5.2
+Stable tag: 20190501
+Version: 20190501
+Requires PHP: 5.6.20
 Text Domain: block-bad-queries
 Domain Path: /languages
 License: GPLv2 or later
@@ -24,10 +24,10 @@ The fastest firewall plugin for WordPress.
 
 == Description ==
 
-> Install, activate, and done!<br/>
+> Install, activate, and done!
 > Powerful protection from WP's __fastest__ firewall plugin.
 
-[Block Bad Queries](https://perishablepress.com/block-bad-queries/) (BBQ) is a simple, super-fast plugin that protects your site against malicious URL requests. BBQ checks all incoming traffic and quietly blocks bad requests containing nasty stuff like `eval(`, `base64_`, and excessively long request-strings. This is a simple yet solid solution for sites that are unable to use a [strong .htaccess firewall](https://perishablepress.com/6g/). 
+[Block Bad Queries](https://perishablepress.com/block-bad-queries/) (BBQ) is a simple, super-fast plugin that protects your site against malicious URL requests. BBQ checks all incoming traffic and quietly blocks bad requests containing nasty stuff like `eval(`, `base64_`, and excessively long request-strings. This is a simple yet solid solution for sites that are unable to use a [strong .htaccess firewall](https://perishablepress.com/6g/).
 
 **Awesome Features**
 
@@ -46,7 +46,14 @@ The fastest firewall plugin for WordPress.
 * Hassle-free security plugin that's easy to use
 * Thoroughly tested, error-free performance
 * Compatible with other security plugins
+* Regularly updated and "future proof"
 * Customize blocked strings via [Whitelist/Blacklist plugins](https://perishablepress.com/bbq-whitelist-blacklist/)
+
+**Privacy**
+
+This plugin does not collect or store any user data. It does not set any cookies, and it does not connect to any third-party locations. Thus, this plugin does not affect user privacy in any way.
+
+> Works perfectly with or without Gutenberg Block Editor
 
 **Pro Version**
 
@@ -71,6 +78,11 @@ Once active, BBQ automically blocks bad queries to protect your site against mal
 * To block patterns otherwise allowed by BBQ, check out the [BBQ Blacklist plugin](https://perishablepress.com/bbq-whitelist-blacklist/)
 
 Note that the [Pro version of BBQ](https://plugin-planet.com/bbq-pro/) makes it possible to customize patterns (add, edit, remove) directly via the plugin settings, with a click. 
+
+
+**Like the plugin?**
+
+If you like BBQ, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/block-bad-queries/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
 
 
 
@@ -127,6 +139,11 @@ No, the free version of BBQ operates as each page is loaded; it does not make an
 Yes, BBQ scans any arrays that are included in the URI request. If any matching patterns are found, the request is blocked.
 
 
+**My PHP scanner/checker plugin says there is an error?**
+
+For example, if your PHP/plugin scanner reports something like, "found `0x3c62723e` which is bad." Normally you would not want to find such bad strings of code, but there is an exception for security plugins. Think about it: in order to block some nasty string, BBQ must _know_ about it. So each bad string that is blocked by BBQ is included in the plugin "blacklist". That means, when some PHP scanner looks at BBQ and finds some known bad strings, it just means that the scanner has discovered BBQ's list of blocked terms. In other words, BBQ contains static strings of non-functional text, in order to match and block malicious requests to your site. I hope this makes sense, feel free to [contact me](https://perishablepress.com/contact/) if I may provide any further infos.
+
+
 **Do I need WordPress to run BBQ?**
 
 Nope! BBQ is available in the following flavors:
@@ -136,6 +153,13 @@ Nope! BBQ is available in the following flavors:
 * [BBQ Standalone PHP Script](https://perishablepress.com/block-bad-queries/#bbq-php-script)
 
 So you can check out the Standalone PHP Script for sites that are not running WordPress.
+
+
+**Can I use BBQ and 6G/7G Firewall at the same time?**
+
+__Full question:__ "Except most of the rules overlapping, is it counter productive (site slowing down for example, potential conflicts, bugs) or is there any risks using 6G/7G Firewall + BBQ at the same time?" 
+
+__Answer:__ It's fine to run both BBQ and 6G/7G Firewall at the same time. Both firewalls are super fast, so they won’t slow things down. In other words the two firewalls play well together. The only downside is that some of the rules will be redundant, but there should be no negative impact on performance. The upside is that you get extra protection when using both, as there are variations in the firewall rules and patterns, etc.
 
 
 **Do you offer any other security plugins?**
@@ -151,7 +175,7 @@ Send any questions or feedback via my [contact form](https://perishablepress.com
 
 == Support development of this plugin ==
 
-I develop and maintain this free plugin with love for the WordPress community. To show support, you can [make a cash donation](https://m0n.co/donate), [bitcoin donation](https://m0n.co/bitcoin), or purchase one of my books:
+I develop and maintain this free plugin with love for the WordPress community. To show support, you can [make a donation](https://monzillamedia.com/donate.html) or purchase one of my books:
 
 * [The Tao of WordPress](https://wp-tao.com/)
 * [Digging into WordPress](https://digwp.com/)
@@ -160,16 +184,59 @@ I develop and maintain this free plugin with love for the WordPress community. T
 
 And/or purchase one of my premium WordPress plugins:
 
-* [BBQ Pro](https://plugin-planet.com/bbq-pro/) - Pro version of Block Bad Queries
-* [Blackhole Pro](https://plugin-planet.com/blackhole-pro/) - Pro version of Blackhole for Bad Bots
-* [SES Pro](https://plugin-planet.com/ses-pro/) - Super-simple &amp; flexible email signup forms
-* [USP Pro](https://plugin-planet.com/usp-pro/) - Pro version of User Submitted Posts
+* [BBQ Pro](https://plugin-planet.com/bbq-pro/) - Super fast WordPress firewall
+* [Blackhole Pro](https://plugin-planet.com/blackhole-pro/) - Automatically block bad bots
+* [Banhammer Pro](https://plugin-planet.com/banhammer-pro/) - Monitor traffic and ban the bad guys
+* [GA Google Analytics Pro](https://plugin-planet.com/ga-google-analytics-pro/) - Connect your WordPress to Google Analytics
+* [USP Pro](https://plugin-planet.com/usp-pro/) - Unlimited front-end forms
 
 Links, tweets and likes also appreciated. Thank you! :)
 
 
 
 == Changelog ==
+
+If you like BBQ, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/block-bad-queries/reviews/?rate=5#new-post). It helps to keep development and support going strong. Thank you!
+
+
+**2019/05/01**
+
+* Bumps [minimum PHP version](https://codex.wordpress.org/Template:Server_requirements) to 5.6.20
+* Adds activation check if BBQ Pro is active
+* Updates default translation template
+* Tests on WordPress 5.2
+
+**2019/03/11**
+
+* Improves function `bbq_action_links()`
+* Refines plugin settings screen UI
+* Generates new default translation template
+* Tests on WordPress 5.1 and 5.2 (alpha)
+
+**2019/02/20**
+
+* Tests on WordPress 5.1
+
+**2018/11/17**
+
+* Adds homepage link to Plugins screen
+* Updates default translation template
+* Tests on WordPress 5.0
+
+**2018/08/21**
+
+* Removes `.tar` from Request URI patterns
+* Adds `rel="noopener noreferrer"` to all [blank-target links](https://perishablepress.com/wordpress-blank-target-vulnerability/)
+* Updates GDPR blurb and donate link
+* Regenerates default translation template
+* Further tests on WP 4.9 and 5.0 (alpha)
+
+**2018/05/11**
+
+* Adds `xrumer` to blocked query strings and request URIs
+* Adds `indoxploi` to blocked query strings and request URIs
+* Generates new translation template
+* Tests on WordPress 5.0
 
 **2017/11/01**
 

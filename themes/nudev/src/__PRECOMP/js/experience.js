@@ -1,4 +1,4 @@
-// this file is the JS for the homepge ONLY, it requires the main scripts file to be implemented BEFORE it
+// this file is the JS for the experience page ONLY, it requires the main scripts file to be implemented BEFORE it
 // it relies on variables defined within the main scripts file
 
 

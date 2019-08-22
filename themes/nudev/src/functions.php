@@ -289,7 +289,7 @@ function ism_dns_prefetch(){
 // Load nudev scripts (header.php)
 function nudev_header_scripts(){
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-        if (nudev_DEBUG) {
+        // if (nudev_DEBUG) {
             // jQuery
             // wp_deregister_script('jquery');
             // wp_register_script('jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.js', array(), '1.11.1');
@@ -314,12 +314,12 @@ function nudev_header_scripts(){
             //wp_enqueue_script('nudevscripts');
 
         // If production
-        } else {
+        // } else {
             // Scripts minify
             wp_register_script('nudevscripts-min', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0.0');
             // Enqueue Scripts
             wp_enqueue_script('nudevscripts-min');
-        }
+        // }
     }
 }
 

@@ -4,6 +4,7 @@
 	$return = '';
 	$i = 0;
 
+	// grab the data
 	$args = array(
 		 "post_type" => "campuses"
 		 ,"posts_per_page" => -1
@@ -15,26 +16,32 @@
 
 	$res = query_posts($args);
 
-	$guide = '<li><a href="%s" title="See details for %s" aria-label="See details for %s"%s tabindex="-1" data-campus="%s">%s <span>&#xE313;</span></a></li>';
+	unset($args);	// clean up
 
-	foreach($res as $r){
+	if(!empty($res)){	// only do the next if we have records of data
 
-		$fields = get_fields($r->ID);
+		$guide = '<li><a href="%s" title="See details for %s" aria-label="See details for %s"%s tabindex="-1" data-campus="%s">%s <span>&#xE313;</span></a></li>';
 
-		$return .= sprintf(
-			$guide
-			,$fields['campus_url']
-			,strtolower($r->post_title)
-			,strtolower($r->post_title)
-			,($i==0?'class="active"':'')
-			,$r->post_title
-			,ucwords(trim($r->post_title))
-		);
-		$i++;
+		foreach($res as $r){
+
+			$fields = get_fields($r->ID);
+
+			$return .= sprintf(
+				$guide																								// the guide to show the data within
+				,$fields['campus_url']																// url of the specific campus
+				,strtolower($r->post_title)														// title of the campus in the link title
+				,strtolower($r->post_title)														// title of the campus in the link aria-label
+				,($i==0?' class="active"':'')													// if this is the active campus, add the active class
+				,$r->post_title																				// title of the campus stored as a data value
+				,ucwords(trim($r->post_title))												// title of the campus shown to the user
+			);
+			$i++;
+		}
+		unset($guide,$res,$r,$fields);	// clean up
 	}
 
-	unset($i,$res,$r,$fields,$guide);
+	unset($i);	// clean up
 
-	echo $return;
+	echo $return;	// return the content
 
 ?>

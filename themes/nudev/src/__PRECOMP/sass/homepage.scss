@@ -313,6 +313,7 @@ div.main{
       overflow: hidden;
       background: rgba($brand_colors-black,1.0);
       & div.gradient {
+        display: none;
         height:100%;
         width: 100%;
         position:absolute;

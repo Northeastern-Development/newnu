@@ -7,79 +7,41 @@
  @import "modules/variables";
  @import "modules/mixins";
  @import "modules/fonts";
+ @import "modules/tungsten";
  @import "partials/animations";
 
 
  div.main{
 
-   section.brandstatement,
-   section.closingstatement{
-     width: 100%;
-     margin: 0 auto 0 auto;
-     text-align:center;
-     h2{
-       width: $content-width-narrow;
-       @include font-6l-c;
-       margin: 0 auto ($gutter / 2) auto;
-       font-weight: 500;
-       & > span{
-         color: rgba($brand_colors-red,1.0);
-       }
-     }
-
-     p{
-       width: $content-width-narrow;
-       @include font-3l-c;
-       margin: 0 auto $gutter auto;
-       &:last-of-type{
-         margin: 0 auto 0 auto;
-       }
-     }
-
-     // a.button{
-     //   border: solid rgba($brand_colors-white,1.0) 1px;
-     //   display: block;
-     //   padding: 5px 15px 5px 15px;
-     //   width: 200px;
-     //   margin: $gutter auto 0 auto;
-     //   text-transform: uppercase;
-     //   background: rgba($brand_colors-red,1.0);
-     //   color: rgba($brand_colors-white,1.0);
-     //   height: auto;
-     //   &:hover,
-     //   &:focus,
-     //   &:active{
-     //     color: rgba($brand_colors-black,1.0);
-     //     background: rgba($brand_colors-white,1.0);
-     //     border: solid rgba($brand_colors-black,1.0) 1px;
-     //   }
-     // }
-   }
-
    section.grid{
      width: 100%;
      overflow: hidden;
-     background: rgba($brand_colors-grayW,0.2);
-     margin: ($gutter * 2) auto 0 auto;
+     margin: 0 auto 0 auto;
      & > ul{
        width: $content-width;
-        margin: ($gutter * 2) auto $gutter auto;
+       margin: $gutter auto $gutter auto;
        list-style: none;
        list-style-type: none;
-       display: block;
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: row;
        overflow: hidden;
+       padding: 2vw 0 0 0;
        & > li{
-         float: left;
+         flex: 1 1 40%;
+         -webkit-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.3);
+         -moz-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.3);
+         box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.3);
          background: rgba($brand_colors-white,1.0);
          width: (($content-width - 2vw) / 2);
-         margin: 0 2vw 2vw 0;
+         margin: 0 2vw 2vw 1vw;
          &:nth-child(2n){
-           margin: 0 0 2vw 0;
+           margin: 0 1vw 2vw 0;
          }
          & > a{
            display: block;
+
            width: 100%;
-           height: 400px;
            &:hover,
            &:focus,
            &:active{
@@ -90,7 +52,8 @@
                }
              }
              & > div.copy{
-               & > h4{
+
+               & > p{
                  & > span{
                    border-bottom: solid rgba($brand_colors-red,1.0) 2px;
                  }
@@ -98,17 +61,14 @@
              }
            }
            & > div{
-             float: left;
-             width: 50%;
-             min-height: 400px;
-             height: 100%;
+             width: 100%;
              &.bgimage{
                overflow: hidden;
-               min-height: 400px;
+               min-height: 300px;
                height: 100%;
                & > div{
                  width: 100%;
-                 height: 100%;
+                 height: 300px;
                  background-repeat: no-repeat;
                  background-position: center center;
                  background-size: cover;
@@ -122,31 +82,18 @@
                color: rgba($brand_colors-black,1.0);
                & > h3{
                  text-align: left;
-                 margin: 0 0 1vw 0;
-                 @include font-3b-l;
+                 margin: -60px 0 ($gutter / 3) -2vw;
+                 min-height: 50px;
+                 padding: 18px 1vw 0 2vw;
+                 font-size: 2.7rem;
+                 line-height: 3.5rem;
+                 font-weight: 700;
+                   width: 80%;
+                   background: rgba($brand_colors-white,1.0);
                }
                & > p{
                  text-align: left;
                  margin: 0 0 1vw 0;
-               }
-               & > h4{
-                 position: absolute;
-                 bottom: 1vw;
-                 margin: 0 2vw 0 0;
-                 color: rgba($brand_colors-black,1.0);
-                 @include font-2r-l;
-                 & > span{
-                   display: inline-block;
-                   line-height: 2.0rem;
-                   padding: 0 0 0 0;
-                   border-bottom: solid rgba($brand_colors-red,0.0) 2px;
-                 }
-                 &:before{
-                   content: '\e5c8';
-                   display: inline-block;
-                   margin: 2px 10px 0 0;
-                   vertical-align: middle;
-                 }
                }
              }
            }
@@ -155,70 +102,23 @@
      }
    }
 
-   section.closingstatement{
-     margin: 0 auto 0 auto;
-     background: rgba($brand_colors-black,1.0);
-     border-top: solid rgba($brand_colors-red,1.0) 3px;
-     h2{
-       font-weight: 300;
-       margin: ($gutter * 2) auto ($gutter / 2) auto;
-       color: rgba($brand_colors-white,0.8);
-       & > span{
-         color: rgba($brand_colors-white,1.0);
-         font-weight: 500;
-       }
-     }
-
-     p{
-       color: rgba($brand_colors-white,0.8);
-       & > span{
-         font-style: italic;
-       }
-     }
-   }
-
-   section.contactform{
-     width: 100%;
-     min-height: 300px;
-     background: rgba($brand_colors-black, 0.8);
-   }
-
 
 
 
 
    @media only screen and (max-width: 1280px) {
 
-     section.brandstatement,
-     section.closingstatement{
-       h2{
-         @include font-5l-c;
-       }
-
-       p{
-         @include font-2l-c;
-       }
-
-     }
-
 
 
      section.grid{
        & > ul{
-         overflow: hidden;
+         width: $content-width-wide;
          & > li{
-           float: none;
-           overflow: hidden;
-           width: 100%;
-           margin: 0 0 2vw 0;
-           &:nth-child(2n){
-             margin: 0 0 2vw 0;
-           }
            & > a{
              & > div{
                &.copy{
                  & > h3{
-                   @include font-2b-l;
+                   @include font-3b-l;
                  }
                }
              }
@@ -236,21 +136,26 @@
 
    @media only screen and (max-width: 959px) {
 
-       section.brandstatement,
-       section.closingstatement{
-         h2{
-           width: $content-width-wide;
-           @include font-3l-c;
-         }
-
-         p{
-           width: $content-width;
-         }
-       }
-
        section.grid{
          & > ul{
-           width: $content-width-wide;
+           & > li{
+             flex: 1 1 auto;
+             width: 100%;
+             margin: 0 2vw 4vw 2vw;
+             &:nth-child(2n){
+               margin: 0 2vw 4vw 2vw;
+             }
+             & > a{
+               & > div{
+                 &.copy{
+                   & > h3{
+                     min-height: 60px;
+                     @include font-2b-l;
+                   }
+                 }
+               }
+             }
+           }
          }
        }
 
@@ -265,28 +170,17 @@
      section.grid{
        & > ul{
          & > li{
-             margin: 0 0 6vw 0;
-             &:nth-child(2n){
-               margin: 0 0 6vw 0;
-             }
+           margin: 0 2vw 8vw 2vw;
+           &:nth-child(2n){
+             margin: 0 2vw 8vw 2vw;
+           }
              & > a{
-               height: auto;
              & > div{
-               float: none;
-               width: 100%;
-               &.bgimage{
-                 min-height: 50px;
-                 height: 70vw;
-               }
                &.copy{
-                 min-height: 50px;
-                 height: auto;
-                 & > p{
-                   margin: 0 0 5vw 0;
-                   display: block;
-                 }
-                 & > h4{
-                   position: relative;
+                 padding: 1vw 4vw 2vw 4vw;
+                 & > h3{
+                   margin: -60px 0 0 -4vw;
+                   padding: 20px 1vw 0 4vw;
                  }
                }
              }
@@ -303,13 +197,21 @@
 
    @media only screen and (max-width: 600px) {
 
-     section.brandstatement,
-     section.closingstatement{
-
-       p{
-         width: $content-width-wide;
+     section.grid{
+       & > ul{
+         & > li{
+           & > a{
+             & > div{
+               &.bgimage{
+                 min-height: 225px;
+                 & > div{
+                   height: 225px;
+                 }
+               }
+             }
+           }
+         }
        }
-
      }
 
    }

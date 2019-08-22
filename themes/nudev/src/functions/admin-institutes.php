@@ -2,7 +2,7 @@
 
 register_taxonomy_for_object_type('category', 'Institutes'); // Register Taxonomies for Category
 register_taxonomy_for_object_type('post_tag', 'Institutes');
-register_post_type('institutes', // Register Custom Post Type
+register_post_type('researchinstitutes', // Register Custom Post Type
     array(
     'labels' => array(
         'name' => __('Institutes', 'nudev'), // Rename these to suit

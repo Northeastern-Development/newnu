@@ -11,12 +11,7 @@
 
 	<div class="main" role="main" aria-label="content">
 
-		<?php include(locate_template('includes/pagehero.php')); ?>
-
-		<section class="brandstatement">
-			<h2><?=str_replace(array('<p>','</p>'),'',$pageFields['institutes_primary_title'])?></h2>
-			<?=$pageFields['institutes_description']?>
-		</section>
+		<?php include(locate_template('includes/pagehero-v2.php')); ?>
 
 		<section class="grid">
 
@@ -24,11 +19,6 @@
 				<?php get_template_part('loops/loop-institutes'); ?>
 			</ul>
 
-		</section>
-
-		<section class="closingstatement">
-			<h2><?=str_replace(array('<p>','</p>'),'',$pageFields['institutes_closer_primary_title'])?></h2>
-			<?=$pageFields['institutes_closer_description']?>
 		</section>
 
 	</div>
