@@ -4,17 +4,29 @@
 
 	get_header();
 
+	$pageFields = get_fields();
+
 ?>
 
 	<div class="main" role="main" aria-label="content">
 
-		<?php include(locate_template('includes/pagehero.php')); ?>
+		<?php include(locate_template('includes/pagehero-v2.php')); ?>
 
-		<?php $noPreFooter = true; include(locate_template('includes/prefooter.php')); ?>
+		<?php $noPreFooter = true; ?>
+
+		<section class="grid">
+
+			<ul>
+				<?php include(locate_template('loops/loop-experience-linkblocks.php')); ?>
+			</ul>
+
+		</section>
 
 		<section class="globalnetwork">
-			<h2>Our growing <span>global network</span></h2>
-			<p>Today, experience has never been more relevant, as we bring regionally-aligned graduate programs and innovation opportunities to some of the world's most thriving cities.</p>
+			<div>
+				<h2><?=$pageFields['experience_global_network_title']?></h2>
+				<p><?=$pageFields['experience_global_network_description']?></p>
+			</div>
 		</section>
 
 		<section class="nu__filters hotswap" tabindex="-1">

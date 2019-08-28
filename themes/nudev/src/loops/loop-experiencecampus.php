@@ -25,14 +25,18 @@
 
   $fields = get_fields($res->ID);
 
-  $guide = '<div class="content"><div><h3>%s</h3><p>%s</p><p>%s</p></div></div><div class="image"><div style="background:url(%s);" aria-label="%s"></div></div>';
+  $guide = '<div class="content"><div><h3>%s</h3><p>%s</p><p>%s</p></div></div><div class="image"><div class="image1" style="background:url(%s);" aria-label="first image for %s"></div><div class="image2" style="background:url(%s);" aria-label="second image for %s"></div><div class="image3" style="background:url(%s);" aria-label="third image for %s"></div></div>';
 
   $campus = sprintf(
     $guide
     ,trim($res->post_title)
     ,$fields['campus_description']
-    ,(isset($fields['campus_url']) && $fields['campus_url'] != '' && strtolower(trim($res->post_title)) != 'boston'?'<a href="'.trim($fields['campus_url']).'" title="Learn more about northeastern in '.strtolower(trim($res->post_title)).' [will open in new window]" aria-label="Learn more about northeastern in '.strtolower(trim($res->post_title)).' [will open in new window]" target="_blank"><span>Learn more about Northeastern in '.trim($res->post_title).'</span></a>':'')
+    ,(isset($fields['campus_url']) && $fields['campus_url'] != '' && strtolower(trim($res->post_title)) != 'boston'?'<a href="'.trim($fields['campus_url']).'" title="Learn more about '.strtolower(trim($res->post_title)).' [will open in new window]" aria-label="Learn more about '.strtolower(trim($res->post_title)).' [will open in new window]" target="_blank"><span>Learn more about '.trim($res->post_title).'</span></a>':'')
     ,$fields['campus_image']['url']
+    ,strtolower(trim($res->post_title))
+    ,$fields['campus_image_2']['url']
+    ,strtolower(trim($res->post_title))
+    ,$fields['campus_image_3']['url']
     ,strtolower(trim($res->post_title))
   );
 

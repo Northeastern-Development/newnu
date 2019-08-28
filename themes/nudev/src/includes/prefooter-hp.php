@@ -21,26 +21,29 @@
 
 			$guide = '<li><a href="%s" title="%s" aria-label="%s"%s><div class="image"><div aria-label="background image" style="background-image: url(%s);"></div></div><h3>%s<span>&#xE8E4;</span></h3><p>%s</p></a></li>';
 
-			foreach($prefooterFields['pre-footer_image_block'] as $r){
+			if(!empty($prefooterFields['pre-footer_image_block'])){
+				foreach($prefooterFields['pre-footer_image_block'] as $r){
 
-				$fields = get_fields($r['items'][0]['item']->ID);
+					$fields = get_fields($r['items'][0]['item']->ID);
 
-				if(count($iPath) > 2){
-					$thisImage = $fields['image'][$iPath[1]][$iPath[2]];
-				}else{
-					$thisImage = $fields['image']['url'];
+					// if(count($iPath) > 2){
+					if(!empty($iPath) && count($iPath) > 2){
+						$thisImage = $fields['image'][$iPath[1]][$iPath[2]];
+					}else{
+						$thisImage = $fields['image']['url'];
+					}
+
+					$return_prefooter .= sprintf(
+						$guide
+						,$fields['link']
+						,$r['block_title'].(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
+						,$r['block_title'].(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
+						,(isset($fields['external_link']) && $fields['external_link'] == "1"?' target="_blank"':'')
+						,$thisImage
+						,$r['block_title']
+						,$fields['description']
+					);
 				}
-
-				$return_prefooter .= sprintf(
-					$guide
-					,$fields['link']
-					,$r['block_title'].(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
-					,$r['block_title'].(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
-					,(isset($fields['external_link']) && $fields['external_link'] == "1"?' target="_blank"':'')
-					,$thisImage
-					,$r['block_title']
-					,$fields['description']
-				);
 			}
 
 			$return_prefooter .= '</ul></div></div>';

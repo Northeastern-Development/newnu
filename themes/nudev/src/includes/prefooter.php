@@ -19,27 +19,34 @@
 
 			$guide = '<li><a href="%s" title="%s" aria-label="%s"%s><div class="image"><div aria-label="background image" style="background-image: url(%s);"></div></div><h3>%s</h3><p>%s</p><p class="readmore"><span>More About %s</span></p></a></li>';
 
-			foreach($prefooterFields['pre-footer_image_block'] as $r){
+			// we should wrap this in a catch to make sure that we have records to loop over
 
-				$fields = get_fields($r['items'][0]['item']->ID);
+			if(!empty($prefooterFields['pre-footer_image_block'])){
+				foreach($prefooterFields['pre-footer_image_block'] as $r){
 
-				if(count($iPath) > 2){
-					$thisImage = $fields['image'][$iPath[1]][$iPath[2]];
-				}else{
-					$thisImage = $fields['image']['url'];
+					$fields = get_fields($r['items'][0]['item']->ID);
+
+					// we should swap the count check to an empty() call
+
+					// if(count($iPath) > 2){	// if we have a double nested image path
+					if(!empty($iPath) && count($iPath) > 2){
+						$thisImage = $fields['image'][$iPath[1]][$iPath[2]];
+					}else{	// single nested image path
+						$thisImage = $fields['image']['url'];
+					}
+
+					$return_prefooter .= sprintf(
+						$guide
+						,$fields['link']
+						,strtolower($r['block_title']).(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
+						,strtolower($r['block_title']).(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
+						,(isset($fields['external_link']) && $fields['external_link'] == "1"?' target="_blank"':'')
+						,$thisImage
+						,$r['block_title']
+						,$fields['description']
+						,$r['block_title']
+					);
 				}
-
-				$return_prefooter .= sprintf(
-					$guide
-					,$fields['link']
-					,strtolower($r['block_title']).(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
-					,strtolower($r['block_title']).(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
-					,(isset($fields['external_link']) && $fields['external_link'] == "1"?' target="_blank"':'')
-					,$thisImage
-					,$r['block_title']
-					,$fields['description']
-					,$r['block_title']
-				);
 			}
 
 			$return_prefooter .= '</ul></div></div>';
