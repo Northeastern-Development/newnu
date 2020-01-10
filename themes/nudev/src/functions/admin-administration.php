@@ -154,16 +154,17 @@
 
 
 
-  function administration_filters( $query ){
+  function administration_specific_filters( $query ){
+    // if(is_admin()){
     global $pagenow;
     global $typenow;
     $type = 'administration';
 
-    $queries = array();
+    $administration_queries = array();
 
     if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_TYPE_VALUE']) && $_GET['ADMIN_FILTER_TYPE_VALUE'] != ''){
 
-      $queries[] = array(
+      $administration_queries[] = array(
         'key' => 'type'
         ,'value' => $_GET['ADMIN_FILTER_TYPE_VALUE']
         ,'compare' => 'LIKE'
@@ -172,7 +173,7 @@
 
     if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_DEPT_VALUE']) && $_GET['ADMIN_FILTER_DEPT_VALUE'] != ''){
 
-      $queries[] = array(
+      $administration_queries[] = array(
         'key' => 'department'
         ,'value' => $_GET['ADMIN_FILTER_DEPT_VALUE']
         ,'compare' => 'LIKE'
@@ -180,17 +181,17 @@
     }
 
     // run the meta query
-    $query->set('meta_query',$queries);
-
+    $query->set('meta_query',$administration_queries);
   }
 
 
-
+if(is_admin()){ // we only care aabout this running within the admin tools side of the site
   add_filter ( 'manage_administration_posts_columns', 'add_administration_acf_columns' );
   add_action ( 'manage_administration_posts_custom_column', 'administration_custom_column', 10, 2 );
 
   add_action( 'restrict_manage_posts', 'administration_filter_by_department' );
   add_action( 'restrict_manage_posts', 'administration_filter_by_type' );
-  add_filter( 'parse_query', 'administration_filters' );
+  add_filter( 'parse_query', 'administration_specific_filters' );
+}
 
 ?>
