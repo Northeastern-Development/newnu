@@ -27,7 +27,6 @@
 		$return .= sprintf(
 			$guide
 			,$fields['headshot']['url']
-
 			,$r->post_title
 			,(isset($fields['alumni']) && $fields['alumni'] != "" ?', '.$fields['alumni']:'')
 			,(isset($fields['sub-type']) && $fields['sub-type'] != ''?'<br />'.$fields['sub-type'].', Board of Trustees':'')

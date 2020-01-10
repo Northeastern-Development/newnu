@@ -9,7 +9,7 @@
 
 		?>
 
-		<footer id="nu__global-footer" class="<?=($prefooter?'addprefooter ':'')?><?=(trim($_SERVER['REQUEST_URI']) === '/'?'collapse absolute':'')?>">
+		<footer id="nu__global-footer" role="contentinfo" class="<?=($prefooter?'addprefooter ':'')?><?=(trim($_SERVER['REQUEST_URI']) === '/'?'collapse absolute':'')?>">
 
 			<div class="cookiewarning">
 				<div class="js__cookie-accept" title="Click here to accept and continue">&#xE14C;</div>

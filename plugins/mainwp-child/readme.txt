@@ -1,13 +1,13 @@
 === MainWP Child ===
 Contributors: mainwp
-Donate link:
 Tags: WordPress management, management, manager, manage, WordPress controller, network, MainWP, updates, admin, administration, multiple, multisite, plugin updates, theme updates, login, remote, backups
 Author: mainwp
 Author URI: https://mainwp.com
 Plugin URI: https://mainwp.com
 Requires at least: 3.6
-Tested up to: 5.2
-Stable tag: 3.5.7
+Tested up to: 5.3.1
+Requires PHP: 5.6
+Stable tag: 4.0.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,38 @@ To see full documentation and FAQs please visit [MainWP Documentation](https://m
 9. Global Dashboard Screen
 
 == Changelog ==
+
+= 4.0.5.1 - 12-13-19 =
+* Fixed: Child Reports data conversion problem
+
+= 4.0.5 - 12-9-19 =
+* Added: support for the Pro Reports extension
+* Fixed: MainWP Child Reports version 2 compatibility
+
+= 4.0.4 - 11-11-19 =
+* Fixed: WordPress 5.3 compatibility problems
+* Fixed: an issue with managing BackWPup backups
+* Updated: multiple error messages
+* Removed: unused code
+
+= 4.0.3 - 10-1-19 =
+* Added: 'mainwp_child_branding_init_options' filter for disabling custom branding
+* Updated: support for the WPVulnDB API v3
+* Removed: unused code and files
+
+= 4.0.2 - 9-6-19 =
+* Fixed: an issue incorrect backups count in the Client Reports system
+
+= 4.0.1 - 9-3-19 =
+* Fixed: an issue with clearing and preloading WP Rocket cache
+
+= 4.0 - 8-28-19 =
+* Fixed: various functionality problems
+* Added: support for upcoming 3rd party extensions
+* Added: .htaccess file with custom redirect to rule the MainWP Child plugin directory to hide the plugin from search engines
+* Updated: support for the MainWP Dashboard 4.0
+* Updated: notifications texts
+* Removed: unused code
 
 = 3.5.7 - 5-6-19 =
 * Fixed: multiple PHP Warnings
@@ -828,3 +860,8 @@ Fixed cloning issue with custom prefix
 
 = 0.1 =
 * Initial version
+
+== Upgrade Notice ==
+
+= 4.0 =
+This is a major upgrade please check the [MainWP Upgrade FAQ](https://mainwp.com/help/docs/faq-on-upgrading-from-mainwp-version-3-to-mainwp-version-4/)

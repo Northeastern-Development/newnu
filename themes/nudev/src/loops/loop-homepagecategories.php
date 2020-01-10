@@ -45,7 +45,7 @@
 				,($stories[$i]['block_slide'][$ii]['external_link'] == 1?' [will open in new tab or window]':'')
 				,strtolower($stories[$i]['block_slide'][$ii]['block_slide_title'])
 				,($stories[$i]['block_slide'][$ii]['external_link'] == 1?' [will open in new tab or window]':'')
-				,($stories[$i]['block_slide'][$ii]['external_link'] == 1?' target="_blank"':'')
+				,($stories[$i]['block_slide'][$ii]['external_link'] == 1?' target="_blank" rel="noopener"':'')
 				,$stories[$i]['block_slide'][$ii]['block_slide_title']
 			);
 		}
@@ -57,7 +57,7 @@
 			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' [will open in new tab or window]':'')
 			,$stories[$i]['block_name']
 			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' [will open in new tab or window]':'')
-			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
+			,($stories[$i]['block_slide'][0]['external_link'] == '1'?' target="_blank" rel="noopener"':'')
 			,$jsonImages
 			,'background-image: url('.$thisImage.');'
 			,strtolower($stories[$i]['block_name'])

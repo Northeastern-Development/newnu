@@ -7,7 +7,7 @@
 		"uuidString": "6222A5FD-DE82-4642-BE8D-77C1862D8725"
 		}
 	],
-"creatorBuild": "31491",
+"creatorBuild": "31934",
 "files": {
 	"/.fonts/lato-v14-latin-100.eot": {
 		"cB": 0,
@@ -479,12 +479,80 @@
 		"oAP": "/.fonts/MaterialIcons-Regular.woff2",
 		"oF": 0
 		},
+	"/.fonts/TungstenRounded-Black.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Black.eot",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Black.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/TungstenRounded-Black.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/TungstenRounded-Black.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Black.ttf",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Black.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Black.woff",
+		"oF": 0
+		},
 	"/.fonts/TungstenRounded-Black.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/.fonts/TungstenRounded-Black.woff2",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Bold.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Bold.eot",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Bold.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/TungstenRounded-Bold.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/TungstenRounded-Bold.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Bold.ttf",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Bold.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Bold.woff",
 		"oF": 0
 		},
 	"/.fonts/TungstenRounded-Bold.woff2": {
@@ -495,12 +563,80 @@
 		"oAP": "/.fonts/TungstenRounded-Bold.woff2",
 		"oF": 0
 		},
+	"/.fonts/TungstenRounded-Book.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Book.eot",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Book.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/TungstenRounded-Book.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/TungstenRounded-Book.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Book.ttf",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Book.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Book.woff",
+		"oF": 0
+		},
 	"/.fonts/TungstenRounded-Book.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/.fonts/TungstenRounded-Book.woff2",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Light.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Light.eot",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Light.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/TungstenRounded-Light.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/TungstenRounded-Light.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Light.ttf",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Light.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Light.woff",
 		"oF": 0
 		},
 	"/.fonts/TungstenRounded-Light.woff2": {
@@ -511,12 +647,80 @@
 		"oAP": "/.fonts/TungstenRounded-Light.woff2",
 		"oF": 0
 		},
+	"/.fonts/TungstenRounded-Medium.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Medium.eot",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Medium.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/TungstenRounded-Medium.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/TungstenRounded-Medium.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Medium.ttf",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Medium.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Medium.woff",
+		"oF": 0
+		},
 	"/.fonts/TungstenRounded-Medium.woff2": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/.fonts/TungstenRounded-Medium.woff2",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Semibold.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Semibold.eot",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Semibold.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/.fonts/TungstenRounded-Semibold.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/.fonts/TungstenRounded-Semibold.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Semibold.ttf",
+		"oF": 0
+		},
+	"/.fonts/TungstenRounded-Semibold.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.fonts/TungstenRounded-Semibold.woff",
 		"oF": 0
 		},
 	"/.fonts/TungstenRounded-Semibold.woff2": {
@@ -644,6 +848,19 @@
 		"oA": 0,
 		"oAP": "/css/404.css",
 		"oF": 2,
+		"oS": 0,
+		"uL": 1
+		},
+	"/__PRECOMP/sass/administration copy.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/__PRECOMP/sass/administration copy.css",
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -778,7 +995,7 @@
 		"oA": 0,
 		"oAP": "/css/institutes.css",
 		"oF": 2,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"/__PRECOMP/sass/modules/fonts.scss": {
@@ -1335,6 +1552,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/marketing-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/material-icons-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/material-icons-min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -1983,6 +2210,14 @@
 		"oAP": "/includes/pagehero-v2.php",
 		"oF": 0
 		},
+	"/includes/pagehero-v3.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/includes/pagehero-v3.php",
+		"oF": 0
+		},
 	"/includes/pagehero.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2107,6 +2342,17 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/js/iframeResizer.contentWindow-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/jquery.min-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/jquery.min-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2457,6 +2703,22 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/loops/loop-administration-filters.php",
+		"oF": 0
+		},
+	"/loops/loop-administration-orgchart.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/loops/loop-administration-orgchart.php",
+		"oF": 0
+		},
+	"/loops/loop-administration-president copy.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/loops/loop-administration-president copy.php",
 		"oF": 0
 		},
 	"/loops/loop-administration-president.php": {
@@ -2904,6 +3166,14 @@
 		"oAP": "/templates/rss/rss-supernav.php",
 		"oF": 0
 		},
+	"/templates/template-administration copy.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/template-administration copy.php",
+		"oF": 0
+		},
 	"/templates/template-administration.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2958,6 +3228,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/templates/template-departments.php",
+		"oF": 0
+		},
+	"/templates/template-experience copy.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/templates/template-experience copy.php",
 		"oF": 0
 		},
 	"/templates/template-experience.php": {
@@ -3501,6 +3779,7 @@
 			"flagValue": -1
 			}
 		},
+	"environmentVariablesString": "NODE_ENV:::production",
 	"esLintConfigFileHandlingType": 0,
 	"esLintECMAVersion": 7,
 	"esLintEnvironmentsMask": 1,
@@ -3602,6 +3881,10 @@
 			"optionString": "'all'"
 			},
 		"default-case": {
+			"active": 0,
+			"optionString": ""
+			},
+		"default-param-last": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -3951,6 +4234,10 @@
 			},
 		"no-implied-eval": {
 			"active": 0,
+			"optionString": ""
+			},
+		"no-import-assign": {
+			"active": 1,
 			"optionString": ""
 			},
 		"no-inline-comments": {
@@ -4376,6 +4663,10 @@
 		"prefer-promise-reject-errors": {
 			"active": 0,
 			"optionString": "{'allowEmptyReject': false}"
+			},
+		"prefer-regex-literals": {
+			"active": 0,
+			"optionString": ""
 			},
 		"prefer-rest-params": {
 			"active": 0,
@@ -4985,7 +5276,6 @@
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 1,
 		"enableJavascript": 0,
-		"ieCompatibility": 1,
 		"mathStyle": 0,
 		"outputStyle": 0,
 		"rewriteURLStyle": 0,
@@ -5125,6 +5415,9 @@
 	"npmTargetDependencyListType": 1,
 	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
+	"rollupExternals": "",
+	"rollupReplacements": "process.env.NODE_ENV:::$NODE_ENV,,,ENVIRONMENT:::$NODE_ENV",
+	"rollupTreeshakingEnabled": 1,
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, .idea, /storage/framework/sessions, node_modules",
 	"sourceFolderName": "source",
 	"susyVersion": 3,

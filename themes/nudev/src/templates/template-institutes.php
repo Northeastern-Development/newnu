@@ -21,6 +21,10 @@
 
 		</section>
 
+		<section class="viewall">
+			<a class="button" href="http://www.northeastern.edu/research/about/centers-institutes/" title="Click to view all institutes" aria-label="Click to view all institutes" target="_blank" rel="noopener">View All Institutes</a>
+		</section>
+
 	</div>
 
 <?php get_footer(); ?>

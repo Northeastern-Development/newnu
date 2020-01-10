@@ -42,9 +42,9 @@
 			$return .= sprintf(
 				$singleGuide
 				,$fields['link_target_url']
-				,$r->post_title
-				,($fields['open_in_new'] == 1?' target="_blank"':'')
-				,$r->post_title
+				,$r->post_title.($fields['open_in_new'] == 1?' [will open in new window]':'')
+				,($fields['open_in_new'] == 1?' target="_blank" rel="noopener noreferrer"':'')
+				,$r->post_title.($fields['open_in_new'] == 1?' [will open in new window]':'')
 				,$r->post_title
 			);
 		}else{	// this is for a dropdown
@@ -57,9 +57,9 @@
 				$return .= sprintf(
 					$dropdownGuide
 					,$fields['link_target_url']
-					,$i->post_title
-					,($fields['open_in_new'] == 1?' target="_blank"':'')
-					,$i->post_title
+					,$r->post_title.($fields['open_in_new'] == 1?' [will open in new window]':'')
+					,($fields['open_in_new'] == 1?' target="_blank" rel="noopener noreferrer"':'')
+					,$r->post_title.($fields['open_in_new'] == 1?' [will open in new window]':'')
 					,$i->post_title
 				);
 

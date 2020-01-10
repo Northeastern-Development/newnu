@@ -741,7 +741,7 @@ function get_sibling_files_callback_wptc() {
                 if (count($formatted_backups) > 0) {
                     foreach($formatted_backups as $key => $value) {
                         $backup_time = $key;
-                        do_action( 'mainwp_wptimecapsule_backup', $message, $backup_type, $backup_time );
+                        do_action( 'mainwp_reports_wptimecapsule_backup', $message, $backup_type, $backup_time );
                     }
                 }
             }
@@ -1075,6 +1075,7 @@ function get_sibling_files_callback_wptc() {
             $saved = true;
 
         } else if ( $tabName == 'staging_opts' ) {
+            $config->set_option('user_excluded_extenstions_staging', $data['user_excluded_extenstions_staging']);
             $config->set_option('internal_staging_db_rows_copy_limit', $data['internal_staging_db_rows_copy_limit']);
             $config->set_option('internal_staging_file_copy_limit', $data['internal_staging_file_copy_limit']);
             $config->set_option('internal_staging_deep_link_limit', $data['internal_staging_deep_link_limit']);

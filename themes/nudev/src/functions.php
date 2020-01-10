@@ -316,9 +316,9 @@ function nudev_header_scripts(){
         // If production
         // } else {
             // Scripts minify
-            wp_register_script('nudevscripts-min', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0.0');
-            // Enqueue Scripts
-            wp_enqueue_script('nudevscripts-min');
+            // wp_register_script('nudevscripts-min', get_template_directory_uri() . '/js/scripts.min.js', array(), '1.0.0');
+            // // Enqueue Scripts
+            // wp_enqueue_script('nudevscripts-min');
         // }
     }
 }

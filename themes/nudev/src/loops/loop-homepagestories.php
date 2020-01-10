@@ -25,7 +25,7 @@
 
 	$guideSingle = '<article id="article-%s" style="%s %s"><a %s href="%s" title="Click here now to learn more %s" %s>%s</a><div class="nu__panel-content"><div><p>%s&nbsp;</p><h2><span>%s</span></h2></div></div>%s<div class="gradient"></div>%s</article>';
 
-	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator" style="%s %s"><a %s href="%s" target="%s" title="Click here now to learn more %s">%s</a><div class="nu__panel-content"><div><p>%s&nbsp;</p><h2><span>%s</span></h2></div></div><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div></div></div><div class="nu__overlay-logo">%s</div><div class="gradient"></div></article>';
+	$guideRotate = '<article id="article-%s" data-rotatorid="%s" data-cslide="1" data-slidemax="%s" class="nu__block-rotator" style="%s %s"><a %s href="%s" %s title="Click here now to learn more %s">%s</a><div class="nu__panel-content"><div><p>%s&nbsp;</p><h2><span>%s</span></h2></div></div><div class="nu__slide-controls"><div><div class="slider_prev rotate" title="Click here to view the previous slide">&#xE5C4;</div><div class="slider_next rotate" title="Click here to view the next slide">&#xE5C8;</div></div></div><div class="nu__overlay-logo">%s</div><div class="gradient"></div></article>';
 
 	// this is a specific guide for the search block in the top portion of the homepage
 	$guideSearch = '<article class="nu__block-search">This is the search block!</article>';
@@ -51,7 +51,7 @@
 				,($i > 5?'tabindex="-1"':'')
 				,$s['block_slide'][0]['block_slide_link']
 				,($s['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
-				,($s['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
+				,($s['block_slide'][0]['external_link'] == '1'?' target="_blank" rel="noopener"':'')
 				,$s['block_slide'][0]['block_slide_title']
 				,$s['block_slide'][0]['block_slide_description']
 				,$s['block_slide'][0]['block_slide_title']
@@ -70,7 +70,7 @@
 				,'background-color: '.$s['block_slide'][0]['block_slide_background'].'; '
 				,($i > 5?'tabindex="-1"':'')
 				,$s['block_slide'][0]['block_slide_link']
-				,($s['block_slide'][0]['external_link'] == '1'?'_blank':'')
+				,($s['block_slide'][0]['external_link'] == '1'?'target="_blank" rel="noopener"':'')
 				,($s['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
 				,$s['block_slide'][0]['block_slide_title']
 				,$s['block_slide'][0]['block_slide_description']
@@ -98,7 +98,7 @@
 
 
 	// let's determine if we have a take over block active, and show it if it is
-	$guideTakeover = '<div class="takeover" style="background-image: url(%s);"><div class="nu__close-takeover" title="Click to close"></div><a href="%s" title="%s%s" target="%s"><h2><span>%s</span></h2><p>%s</p></a><div class="gradient"></div></div>';
+	$guideTakeover = '<div class="takeover" style="background-image: url(%s);"><div class="nu__close-takeover" title="Click to close"></div><a href="%s" title="%s%s" %s><h2><span>%s</span></h2><p>%s</p></a><div class="gradient"></div></div>';
 
 	if(isset($fields['takeover']) && $fields['takeover'][0]['status'] == 1){
 		$return .= sprintf(
@@ -107,7 +107,7 @@
 			,$fields['takeover'][0]['link']
 			,$fields['takeover'][0]['title']
 			,($fields['takeover'][0]['external'] == '1'?' [will open in new window]':'')
-			,($fields['takeover'][0]['external'] == '1'?'_blank':'')
+			,($fields['takeover'][0]['external'] == '1'?'target="_blank" rel="noopener"':'')
 			,$fields['takeover'][0]['title']
 			,$fields['takeover'][0]['description']
 		);

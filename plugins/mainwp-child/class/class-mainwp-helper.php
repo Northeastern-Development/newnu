@@ -297,7 +297,7 @@ class MainWP_Helper {
 		);
 
 		$wprocket_activated = false;
-		if ( MainWP_Child_WP_Rocket::isActivated() ) {
+		if ( MainWP_Child_WP_Rocket::Instance()->isActivated() ) {
 			if ( function_exists( 'get_rocket_option' ) ) {
 				$wprocket_activated = true;
 				foreach ( $wprocket_fields as $field ) {
@@ -576,6 +576,9 @@ class MainWP_Helper {
 			'_categories',
 			'_edit_last',
 			'_sticky',
+            '_mainwp_post_dripper',
+            '_bulkpost_do_not_del',
+            '_mainwp_spin_me'
 		);
 		$not_allowed[] = '_mainwp_boilerplate_sites_posts';
 		$not_allowed[] = '_ezine_post_keyword';
@@ -884,9 +887,9 @@ class MainWP_Helper {
 
 		if ( empty( $wp_filesystem ) ) {
 			ob_start();
-			if ( file_exists( ABSPATH . '/wp-admin/includes/deprecated.php' ) ) {
-				include_once( ABSPATH . '/wp-admin/includes/deprecated.php' );
-			}
+//			if ( file_exists( ABSPATH . '/wp-admin/includes/deprecated.php' ) ) {
+//				include_once( ABSPATH . '/wp-admin/includes/deprecated.php' );
+//			}
 			if ( file_exists( ABSPATH . '/wp-admin/includes/screen.php' ) ) {
 				include_once( ABSPATH . '/wp-admin/includes/screen.php' );
 			}

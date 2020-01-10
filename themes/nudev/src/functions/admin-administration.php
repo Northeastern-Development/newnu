@@ -71,75 +71,22 @@
   }
 
   // add filter options
-  function administration_admin_posts_filter_restrict_manage_posts( $query ){
+  function administration_filter_by_department( $query ){
     global $typenow;
     global $field;
-    // global $filterValues;
-    // $type = 'administration';
 
-    // if ($typenow == $type){
-
-      // get the full list of departments from the acf fields
-      //$field = get_field_object('field_5a5e2ca106a03');
-      //print_r($field['choices']);
-      // $values = $field['choices'];
-
-
-      $current_v = isset($_GET['ADMIN_FILTER_FIELD_VALUE'])? $_GET['ADMIN_FILTER_FIELD_VALUE']:'';
+      $current_v = isset($_GET['ADMIN_FILTER_DEPT_VALUE'])? $_GET['ADMIN_FILTER_DEPT_VALUE']:'';
 
       $guide = '<option value="%s"%s>%s</option>';
+      $values = $field['choices'];  // grab the choices from the system rather than hard-coding
 
-      // hardcoded values for now, there is an issue retrieving them again after the first filter
-
-      // $args = array(
-  		// 	 "post_type" => "administration"
-  		// 	// ,'meta_query' => array(
-  		// 	// 	 'relation' => 'AND'
-  		// 	// 	,array("key"=>"type","value"=>"Department","compare"=>"=")
-  		// 	)
-  		// );
-      //
-  		// $res = query_posts($args);
-      // print_r($res);
-
-      // echo 'dgfjfghjfgh';
-      // echo 'dghdfgh - '.$post_id;
-      // print_r($post);
-      // wp_reset_query();
-      // wp_reset_postdata();
-
-      // print_r($query);
-
-      // echo $post->ID;
-
-      // $field = get_field_object('field_5a5e2ca106a03');
-      // print_r($field);
-      $values = $field['choices'];
-      // print_r($values);
-      // print_r($choices);
-
-
-      // $values = array(
-      //    'Advancement' => 'Advancement'
-      //   ,'External Affairs' => 'External Affairs'
-      //   ,'Finance' => 'Finance'
-      //   ,'General Counsel' => 'General Counsel'
-      //   ,'Lifelong Learning Network' => 'Lifelong Learning Network'
-      //   ,'President' => 'President'
-      //   ,'Professional Advancement Network' => 'Professional Advancement Network'
-      //   ,'Provost' => 'Provost'
-      //   ,'Strategy' => 'Strategy'
-      // );
 ?>
-      <select name="ADMIN_FILTER_FIELD_VALUE"><option value=""><?php _e('Filter By Department', 'department'); ?></option>
+      <select name="ADMIN_FILTER_DEPT_VALUE"><option value=""><?php _e('Filter By Department', 'department'); ?></option>
 
 <?php
 
-      // echo 'qweqweqweqw';
-
       foreach ($values as $label => $value){
 
-        // printf(
         echo sprintf(
            $guide
           ,$value
@@ -150,66 +97,100 @@
 ?>
       </select>
 <?php
-    // }
   }
 
 
-  function administration_posts_filter( $query ){
+  function administration_department_filter( $query ){
     global $pagenow;
     global $typenow;
     $type = 'administration';
-    if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_FIELD_VALUE']) && $_GET['ADMIN_FILTER_FIELD_VALUE'] != ''){
-
-
-      // print_r($query);
+    if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_DEPT_VALUE']) && $_GET['ADMIN_FILTER_DEPT_VALUE'] != ''){
 
       // this is so that we can fuzzy find a match even if the profile is in more than 1 dept.
       $query->set('meta_query',array(
         array(
           'key' => 'department'
-          ,'value' => $_GET['ADMIN_FILTER_FIELD_VALUE']
+          ,'value' => $_GET['ADMIN_FILTER_DEPT_VALUE']
           ,'compare' => 'LIKE'
         )
       ));
 
-
-      // $meta_query = (array)$query;
-      //
-      // print_r($meta_query);
-
-        // Add your criteria
-        // $meta_query[] = array(
-        //   'key' => 'department'
-        //   ,'value' => $_GET['ADMIN_FILTER_FIELD_VALUE']
-        //   ,'compare' => 'LIKE'
-        // );
-        //
-        // // Set the meta query to the complete, altered query
-        // $query->set('meta_query',$meta_query);
-
-
-      // $args = array(
-  		// 	 "post_type" => "administration"
-  		// 	,'meta_query' => array(
-  		// 		 'relation' => 'AND'
-  		// 		,array("key"=>"type","value"=>$_GET['ADMIN_FILTER_FIELD_VALUE'],"compare"=>"LIKE")
-  		// 	)
-  		// );
-      //
-  		// $query = query_posts($args);
-
-
-      // print_r($query);
-
     }
-    // wp_reset_query();
   }
+
+
+
+
+  function administration_filter_by_type( $query ){
+    global $typenow;
+    global $field;
+
+      $current_v = isset($_GET['ADMIN_FILTER_TYPE_VALUE'])? $_GET['ADMIN_FILTER_TYPE_VALUE']:'';
+
+      $guide = '<option value="%s"%s>%s</option>';
+
+      $values = array(
+         'Department' => 'Department'
+        ,'Individual' => 'Individual'
+      );
+  ?>
+      <select name="ADMIN_FILTER_TYPE_VALUE"><option value=""><?php _e('Filter By Type', 'type'); ?></option>
+
+  <?php
+
+      foreach ($values as $label => $value){
+
+        echo sprintf(
+           $guide
+          ,$value
+          ,$value == $current_v? ' selected="selected"':''
+          ,$label
+        );
+      }
+  ?>
+      </select>
+  <?php
+  }
+
+
+
+  function administration_filters( $query ){
+    global $pagenow;
+    global $typenow;
+    $type = 'administration';
+
+    $queries = array();
+
+    if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_TYPE_VALUE']) && $_GET['ADMIN_FILTER_TYPE_VALUE'] != ''){
+
+      $queries[] = array(
+        'key' => 'type'
+        ,'value' => $_GET['ADMIN_FILTER_TYPE_VALUE']
+        ,'compare' => 'LIKE'
+      );
+    }
+
+    if ( $typenow == $type && is_admin() && $pagenow=='edit.php' && isset($_GET['ADMIN_FILTER_DEPT_VALUE']) && $_GET['ADMIN_FILTER_DEPT_VALUE'] != ''){
+
+      $queries[] = array(
+        'key' => 'department'
+        ,'value' => $_GET['ADMIN_FILTER_DEPT_VALUE']
+        ,'compare' => 'LIKE'
+      );
+    }
+
+    // run the meta query
+    $query->set('meta_query',$queries);
+
+  }
+
+
 
   add_filter ( 'manage_administration_posts_columns', 'add_administration_acf_columns' );
   add_action ( 'manage_administration_posts_custom_column', 'administration_custom_column', 10, 2 );
 
-  add_action( 'restrict_manage_posts', 'administration_admin_posts_filter_restrict_manage_posts' );
-  add_filter( 'parse_query', 'administration_posts_filter' );
-  // add_action( 'restrict_manage_posts', 'administration_admin_posts_filter_restrict_manage_posts' );
+  add_action( 'restrict_manage_posts', 'administration_filter_by_department' );
+  add_action( 'restrict_manage_posts', 'administration_filter_by_type' );
+  add_filter( 'parse_query', 'administration_filters' );
 
 ?>

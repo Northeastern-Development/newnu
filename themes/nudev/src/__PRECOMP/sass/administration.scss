@@ -102,106 +102,210 @@
 
 
 
+   section.nu__orgchart-pres{
+     width: 100%;
+
+     &.bgcolor{
+       background: rgba(245, 244, 242, 1.0);
+       padding: $gutter 0 0 0;
+     }
+     & > div.presorg{
+
+       display: flex;
+       flex-direction: row;
+       & > a{
+         margin: 30px auto 30px auto;
+         overflow: hidden;
+         display: flex;
+         flex-direction: row;
+         height: 90px;
+         width: auto;
+         border: none;
+         &:hover{
+           border: none;
+           text-decoration: none;
+         }
+         & > div{
+           height: inherit;
+           &.orgheadshot{
+             flex: none;
+             width: 90px;
+             border-radius: 50%;
+             border: rgba($brand_colors-red,1.0) solid 2px;
+             overflow: hidden;
+             & > div.image{
+               background: rgba($brand_colors-black,1.0);
+               border: rgba(245, 244, 242, 1.0) solid 2px;
+               border-radius: 50%;
+               height: 100%;
+               width: 100%;
+               background-position: center center !important;
+               background-repeat: no-repeat !important;
+               background-size: cover !important;
+             }
+           }
+           &.orgdetails{
+             flex: 1 1 auto;
+             display: flex;
+             flex-direction: column;
+             flex-wrap: nowrap;
+             justify-content: center;
+
+             & > div{
+               & > p{
+                 margin: 0 0 0 0;
+                 padding: 0 0 0 10px;
+                 white-space: nowrap;
+                 &:nth-of-type(1){
+                   border-bottom: rgba($brand_colors-red,1.0) solid 2px;
+                   font-weight: 400;
+                 }
+               }
+             }
+           }
+         }
+       }
+     }
+
+     & > ul{
+       width: $content-width-wide;
+       border-bottom: solid rgba(197, 201, 206, 1.0) 2px;
+       margin: 0 auto 0 auto;
+       & > li{
+         margin: 0 0 10px 0;
+         & > a{
+           &:hover,
+           &:focus{
+             & > span{
+               color: rgba($brand_colors-black,1.0);
+               border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+             }
+           }
+         }
+       }
+     }
+
+   }
+
+   section.nu__orgchart{
+     width: 100%;
+     background: rgba(245, 244, 242, 1.0);
+     padding: 0 0 $gutter 0;
+     margin: 0 auto 0 auto;
+
+     div.connectors{
+       width: $content-width-super-narrow;
+       margin: 0 auto 0 auto;
+       min-height: 30px;
+       display: flex;
+       flex-wrap: nowrap;
+       flex-direction: row;
+       justify-content: space-between;
+       position: relative;
+       & > div{
+         &:before{
+           content: '';
+           border-top: rgba(197, 201, 206, 1.0) solid 2px;
+           left: 40px;
+           top: 0;
+           width: calc(100% + 30px);
+           position: absolute;
+         }
+         height: 30px;
+         flex: 1 1 0px;
+         margin: 0 $gutter 0 0;
+         position: relative;
+         &:last-of-type{
+           margin: 0 0 0 0;
+           &:before{
+             border-top: none;
+           }
+         }
+         & > div{
+           height: 100%;
+           width: 2px;
+           background: rgba(197, 201, 206, 1.0);
+           margin: 0 0 0 40px;
+         }
+       }
+     }
+
+     & > div.container{
+       display: flex;
+       flex-wrap: nowrap;
+       flex-direction: row;
+       justify-content: space-between;
+       width: $content-width-super-narrow;
+       margin: 0 auto 0 auto;
+       & > div{
+         flex: 1 1 0px;
+         margin: 0 $gutter 0 0;
+         padding: 5px 0 0 0;
+         &:last-of-type{
+           margin: 0 0 0 0;
+         }
+         & > a{
+           display: block;
+           border: none;
+           height: auto;
+           &:hover{
+             border: none;
+             color: rgba($brand_colors-black,1.0);
+             text-decoration: underline;
+             background: rgba($brand_colors-black,0.02);
+           }
+           & > article{
+             // margin: 0 auto $gutter auto;
+             margin: 0 0 $gutter 0;
+             padding: 0 0 0 5px;
+             border: none;
+             & > div{
+               &.orgheadshot{
+                 height: 70px;
+                 width: 70px;
+                 border-radius: 50%;
+                 border: rgba($brand_colors-black,1.0) solid 2px;
+                 overflow: hidden;
+                 margin: 0 0 5px 0;
+                 &.slt{
+                   border: rgba($brand_colors-red,1.0) solid 2px;
+                 }
+                 & > div.image{
+                   background: rgba($brand_colors-black,1.0);
+                   border: rgba(245, 244, 242, 1.0) solid 2px;
+                   border-radius: 50%;
+                   height: 100%;
+                   width: 100%;
+                   background-position: center center !important;
+                   background-repeat: no-repeat !important;
+                   background-size: cover !important;
+
+                 }
+               }
+               &.orgdetails{
+                 & > div{
+                   & > p{
+                     margin: 0 0 0 0;
+                     font-size: 1.2rem;
+                     line-height: 1.5;
+                     &:nth-of-type(1){
+                       font-weight: 400;
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+
+
 
     $cols: 6;
     $ww: (($content-width-wide - (2vw * ($cols - 1))) / $cols);
     $www: ($content-width-narrow - 2vw - $ww);
-
-    section.nu__slt{
-      width: $content-width-narrow;
-      & > article{
-        clear: both;
-        margin: 0 auto 0 auto;
-        overflow: hidden;
-        & > div{
-          position: relative;
-          &:nth-child(2){
-            float: left;
-            width: ($content-width-narrow - 2vw - $ww);
-            margin-right: 2vw;
-            & > div.description{
-              @include font-2r-l;
-              & > p{
-                display: none;
-                // &:nth-child(1),
-                // &:nth-child(2){
-                //   display: block;
-                // }
-                &:nth-child(1){
-                  display: block;
-                }
-                &.open{
-                  display: block;
-                }
-                &:last-of-type{
-                  margin: 0 0 $gutter 0;
-                }
-              }
-            }
-            & > p{
-              &.nametitle{
-                @include font-3b-l;
-                margin-bottom: ($gutter / 2);
-                & > span{
-                  @include font-5b-l;
-                }
-              }
-              // &.description{
-              //   @include font-2r-l;
-              //   & > p{
-              //     display: none;
-              //   }
-              // }
-              &.contact{
-                margin: $gutter 0 0 0;
-                & > a{
-                  line-height: 4rem;
-                  border: none;
-                  position: relative;
-                  padding: 0 0 0 25px;
-                  overflow: hidden;
-                  & > span{
-                    position: absolute;
-                    left: 0;
-                    top: 8px;
-                    @include font-4-c;
-                    line-height: 10px;
-                    color: rgba($brand_colors-black,0.8);
-                  }
-                  &:hover{
-                    color: rgba($brand_colors-black,1.0);
-                    border-bottom: solid rgba($brand_colors-red,1.0) 2px;
-                    & > span{
-                      color: rgba($brand_colors-black,1.0);
-                    }
-                  }
-                }
-              }
-            }
-          }
-          &:nth-child(1){
-            float: right;
-            width: $ww;
-            & > div{
-              width: 100%;
-              height: $ww;
-              background: rgba($brand_colors-black,1.0);
-              background-position: center center !important;
-              background-repeat: no-repeat !important;
-              background-size: cover !important;
-            }
-            & > p{
-              @include font-2r-l;
-              margin: 10px 0 0 0;
-              margin-bottom: ($gutter / 2);
-              & > span{
-                @include font-2b-l;
-              }
-            }
-          }
-        }
-      }
-    }
 
    section.nu__team{
      width: $content-width-narrow;
@@ -212,7 +316,6 @@
        & > div{
          position: relative;
          &:nth-child(1){
-           // background: red;
            float: left;
            width: ($content-width-narrow - 2vw - $ww);
            margin-right: 2vw;
@@ -221,16 +324,6 @@
              & > p{
                display: none;
                margin: 0 0 $gutter 0;
-               // &.nametitle{
-               //   @include font-3b-l;
-               //   margin-bottom: ($gutter / 2);
-               //   & > span{
-               //     @include font-5b-l;
-               //   }
-               // }
-               // &.description{
-               //   @include font-2r-l;
-               // }
                &.open{
                  display: block;
                }
@@ -238,33 +331,8 @@
                  display: block;
                }
              }
-             // &.contact{
-             //   & > a{
-             //     line-height: 4rem;
-             //     border: none;
-             //     position: relative;
-             //     padding: 0 0 0 25px;
-             //     overflow: hidden;
-             //     & > span{
-             //       position: absolute;
-             //       left: 0;
-             //       top: 8px;
-             //       @include font-4-c;
-             //       line-height: 10px;
-             //       color: rgba($brand_colors-black,0.8);
-             //     }
-             //     &:hover{
-             //       color: rgba($brand_colors-black,1.0);
-             //       border-bottom: solid rgba($brand_colors-red,1.0) 2px;
-             //       & > span{
-             //         color: rgba($brand_colors-black,1.0);
-             //       }
-             //     }
-             //   }
-             // }
            }
            & > div.contact{
-             // background: yellow;
              margin: $gutter 0 0 0;
              & > a{
                line-height: 4rem;
@@ -291,7 +359,6 @@
            }
          }
          &:nth-child(2){
-           // background: green;
            float: right;
            width: $ww;
            & > div{
@@ -401,22 +468,22 @@
 
 
 
-      section.nu__slt{
-        & > article{
-          & > div{
-            &:nth-child(2){
-              & > p{
-                &.nametitle{
-                  @include font-2b-l;
-                  & > span{
-                    @include font-3b-l;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+     section.nu__orgchart{
+       width: 100%;
+       background: rgba(245, 244, 242, 1.0);
+       padding: 0 0 $gutter 0;
+       margin: 0 auto 0 auto;
+       div.connectors{
+         width: $content-width-wide;
+       }
+       & > div.container{
+         width: $content-width-wide;
+
+       }
+     }
+
+
+
 
      section.nu__team{
        width: $content-width-narrow;
@@ -479,28 +546,90 @@
 
 
 
+     // we need to stack the org chart here
 
-     $cols: 3;
-     $ww: (($content-width-wide - (2vw * ($cols - 1))) / $cols);
-     $www: ($content-width-narrow - 2vw - $ww);
+     section.nu__orgchart{
+       div.connectors{
+         display: none;
+       }
 
-     section.nu__slt{
-       width: $content-width;
-       & > article{
-         margin: 0 auto ($gutter * 2) auto;
+       & > div.container{
+         position: relative;
+         flex-direction: column;
+         width: $content-width-wide;
+         padding: 0 0 0 $gutter;
          & > div{
-           &:nth-child(2){
-             width: ($content-width - 2vw - $ww);
+           flex: 1 1 auto;
+           position: relative;
+           padding: 0 0 ($gutter * 3) 0;
+           &:before{
+             content: '';
+             border-left: solid rgba(197, 201, 206, 1.0) 2px;
+             position: absolute;
+             top: 0;
+             left: ($gutter * -1);
+             height: 100%;
            }
-           &:nth-child(1){
-             width: $ww;
-             & > div{
-               height: $ww;
+           &:nth-of-type(1){
+             &:before{
+               top: 35px;
+               height: calc(100% - 35px);
              }
            }
-         }
+           &:last-of-type{
+             &:before{
+               height: 35px;
+             }
+           }
+           & > a{
+             display: flex;
+             flex-direction: row;
+             flex-wrap: wrap;
+             justify-content: flex-start;
+             & > article{
+               position: relative;
+               flex: 1 0 33%;
+               max-width: 33%;
+               &:nth-of-type(1){
+                 flex: 0 0 100%;
+                 max-width: 100%;
+                 &:before{
+                   content: '';
+                   background: rgba(197, 201, 206, 1.0);
+                   left: ($gutter * -1);
+                   top: 35px;
+                   width: $gutter;
+                   height: 2px;
+                   position: absolute;
+                 }
+               }
+               & > div{
+                 &.orgdetails{
+                   & > div{
+                     & > p{
+                       width: 90%;
+                       font-size: 1.4rem;
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
        }
      }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -590,23 +719,29 @@
 
 
 
-     section.nu__slt{
-       width: $content-width-700;
-       & > article{
-         margin: 0 auto ($gutter * 2) auto;
+
+
+
+
+
+     section.nu__orgchart{
+       & > div.container{
          & > div{
-           &:nth-child(2){
-             width: ($content-width-700 - 2vw - $ww);
-           }
-           &:nth-child(1){
-             width: $ww;
-             & > div{
-               height: $ww;
-             }
-           }
-         }
+           & > a{
+             & > article{
+               flex: 1 0 50%;
+               max-width: 50%;
+               &:nth-of-type(1){
+                 flex: 0 0 100%;
+                 max-width: 100%;
+               }
+              }
+            }
+          }
        }
      }
+
+
 
 
 
@@ -673,8 +808,6 @@
 
 
 
-
-
    }
 
 
@@ -684,26 +817,6 @@
     @media only screen and (max-width: 500px){
 
 
-
-      section.nu__slt{
-        width: $content-width-700;
-        & > article{
-          margin: 0 auto ($gutter * 2) auto;
-          & > div{
-            &:nth-child(2){
-              float: none;
-              width: 100%;
-            }
-            &:nth-child(1){
-              float: none;
-              width: 100%;
-              & > div{
-                height: 300px;
-              }
-            }
-          }
-        }
-      }
 
 
      section.nu__team{

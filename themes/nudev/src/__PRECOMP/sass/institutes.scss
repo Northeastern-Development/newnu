@@ -11,6 +11,7 @@
  @import "partials/animations";
 
 
+
  div.main{
 
    section.grid{
@@ -98,6 +99,26 @@
              }
            }
          }
+       }
+     }
+   }
+
+
+   section.viewall{
+     width: $content-width;
+     margin: 0 auto ($gutter * 2) auto;
+     display: flex;
+     justify-content: center;
+     & > a.button{
+       flex: 0 0 auto;
+       padding: 7px 90px 7px 90px;
+       border: solid $brand_colors-red 2px;
+       text-transform: uppercase;
+       color: $brand_colors-red;
+       font-weight: 400;
+       &:hover{
+         background: $brand_colors-red;
+         color: $brand_colors-white;
        }
      }
    }
@@ -211,6 +232,12 @@
              }
            }
          }
+       }
+     }
+
+     section.viewall{
+       & > a.button{
+         padding: 7px 30px 7px 30px;
        }
      }
 

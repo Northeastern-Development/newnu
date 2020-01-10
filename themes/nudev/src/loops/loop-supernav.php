@@ -1,5 +1,9 @@
 <?php
 
+// if(!empty($returnType)){
+// 	echo 'RETURN TYPE: '.$returnType;
+// }
+
 	// grab the menu styles from the CMS
 	$args = array(
 		 "post_type" => "menustyles"
@@ -30,7 +34,8 @@
 	$navConfig = array();
 	foreach($res as $r){
 		$fields = get_fields($r->ID);
-		$navConfig[] = array($r->post_title,$fields['hide_until_mobile']);
+		// $navConfig[] = array($r->post_title,$fields['hide_until_mobile']);
+		$navConfig[] = array($r->post_title,(isset($fields['hide_until_mobile'])?$fields['hide_until_mobile']:false));
 	}
 
 	$return = '';
@@ -73,10 +78,10 @@
 					$catItem
 					,(isset($returnType) && $returnType === 'return' && strpos($fields['link_target_url'],'http') === false?'http://www.northeastern.edu':'').$fields['link_target_url']
 					,$r->post_title
-					,($fields['open_in_new'] == "1"?' [will open in new window]':'')
+					,(!empty($fields['open_in_new']) || !empty($returnType)?' [will open in new window]':'')
 					,$r->post_title
-					,($fields['open_in_new'] == "1"?' [will open in new window]':'')
-					,($fields['open_in_new'] == "1"?' target="_blank"':'')
+					,(!empty($fields['open_in_new']) || !empty($returnType)?' [will open in new window]':'')
+					,(!empty($fields['open_in_new']) || !empty($returnType)?' target="_blank" rel="noopener noreferrer"':'')
 					,($cnt == count($res) || $cnt == 1?($cnt == count($res)?' class="blurlast"':' class="blurfirst"'):' class="noblur"')
 					,(isset($fields['thumbnail']) && $fields['thumbnail'] != ''?'<img src="'.$fields['thumbnail']['url'].'" alt="" />':'')
 					,$r->post_title
@@ -116,13 +121,13 @@
 			$guide
 			,($iii === 0?' first':'')
 			,(strtolower($r->post_title) == "make a gift"?' makeagift':'')
-			,($fields['hide_until_mobile'] == 1?' hideuntilmobile':'')
+			,(isset($fields['hide_until_mobile']) && $fields['hide_until_mobile'] == 1?' hideuntilmobile':'')
 			,$fields['link_target_url']
 			,$r->post_title
-			,(isset($fields['open_in_new']) && $fields['open_in_new'] == "1"?' [will open in new window]':'')
+			,(!empty($fields['open_in_new']) || !empty($returnType)?' [will open in new window]':'')
 			,$r->post_title
-			,(isset($fields['open_in_new']) && $fields['open_in_new'] == "1"?' [will open in new window]':'')
-			,(isset($fields['open_in_new']) && $fields['open_in_new'] == "1"?' target="_blank"':'')
+			,(!empty($fields['open_in_new']) || !empty($returnType)?' [will open in new window]':'')
+			,(!empty($fields['open_in_new']) || !empty($returnType)?' target="_blank" rel="noopener noreferrer"':'')
 			,$fields['thumbnail']['url']
 			// ,$r->post_title
 			,$r->post_title
@@ -138,7 +143,7 @@
 		// $supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul role="menu" aria-hidden="true">'.$return.'</ul></div></section></div>';
 		$supernav = '<div id="nu__supernav" class="navigational" style="'.$style.'"><section><div class="search">search will appear here</div><div class="fixedbg"><div></div><div></div></div><div class="items"><ul role="list" aria-hidden="true">'.$return.'</ul></div></section></div>';
 
-	if(isset($returnType) && $returnType === 'return'){	// this will return the results for remote calls
+	if(!empty($returnType)){	// this will return the results for remote calls
 		return $supernav;
 	}else{ // this will echo the results for local site use
 		echo $supernav;

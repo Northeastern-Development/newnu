@@ -9,7 +9,7 @@
 
 	if($prefooterFields['use_pre-footer'] == 1){	// if the page is using the pre-footer option
 
-		$prefooterBgColor = ($prefooterFields['background_color'] == ''?' bg_white':' bg_'.$prefooterFields['background_color']);
+		$prefooterBgColor = (!isset($prefooterFields['background_color']) || $prefooterFields['background_color'] == ''?' bg_white':' bg_'.$prefooterFields['background_color']);
 
 		if(isset($prefooterFields['pre-footer_image_block']) && $prefooterFields['pre-footer_image_block'] != ''){		// image blocks: image, title, description
 
@@ -17,16 +17,16 @@
 
 			$return_prefooter .= '<div class="nu__prefooter imageblocks'.$prefooterBgColor.'"><p>'.$prefooterFields['pre-footer_area_title'].'</p><div><ul>';
 
-			$guide = '<li><a href="%s" title="%s" aria-label="%s"%s><div class="image"><div aria-label="background image" style="background-image: url(%s);"></div></div><h3>%s</h3><p>%s</p><p class="readmore"><span>More About %s</span></p></a></li>';
+			$guide = '<li><a href="%1$s" title="%2$s" aria-label="%2$s"%3$s><div class="image"><div aria-label="background image" style="background-image: url(%4$s);"></div></div><h3>%5$s</h3><p>%6$s</p><p class="readmore"><span>More About %5$s</span></p></a></li>';
 
-			// we should wrap this in a catch to make sure that we have records to loop over
 
 			if(!empty($prefooterFields['pre-footer_image_block'])){
 				foreach($prefooterFields['pre-footer_image_block'] as $r){
 
 					$fields = get_fields($r['items'][0]['item']->ID);
 
-					// we should swap the count check to an empty() call
+					// print_r($iPath);
+
 
 					// if(count($iPath) > 2){	// if we have a double nested image path
 					if(!empty($iPath) && count($iPath) > 2){
@@ -39,12 +39,12 @@
 						$guide
 						,$fields['link']
 						,strtolower($r['block_title']).(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
-						,strtolower($r['block_title']).(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
-						,(isset($fields['external_link']) && $fields['external_link'] == "1"?' target="_blank"':'')
+						// ,strtolower($r['block_title']).(isset($fields['external_link']) && $fields['external_link'] == "1"?' [will open in new window]':'')
+						,(isset($fields['external_link']) && $fields['external_link'] == "1"?' target="_blank" rel="noopener"':'')
 						,$thisImage
 						,$r['block_title']
 						,$fields['description']
-						,$r['block_title']
+						// ,$r['block_title']
 					);
 				}
 			}
@@ -56,7 +56,7 @@
 
 			$return_prefooter .= '<div class="nu__prefooter statblocks"><p>'.$prefooterFields['pre-footer_area_title'].'</p><div><ul>';
 
-			$guide = '<li><span>%s</span><p>%s</p></li>';
+			$guide = '<li><span>%1$s</span><p>%2$s</p></li>';
 
 			foreach($prefooterFields['pre-footer_stat_block'] as $r){
 

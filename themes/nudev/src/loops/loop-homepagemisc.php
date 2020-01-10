@@ -29,7 +29,7 @@
 		,($story['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
 		,$story['block_slide'][0]['block_slide_title']
 		,($story['block_slide'][0]['external_link'] == '1'?' [will open in new window]':'')
-		,($story['block_slide'][0]['external_link'] == '1'?' target="_blank"':'')
+		,($story['block_slide'][0]['external_link'] == '1'?' target="_blank" rel="noopener"':'')
 		,(!empty($story['block_slide'][0]['block_slide_cta'])?$story['block_slide'][0]['block_slide_cta']:'Learn More')
 		,(isset($story['block_overlay_logo']) && $story['block_overlay_logo'] != ''?'<div class="nu__overlay-logo"><img src="'.$story['block_overlay_logo']['url'].'" alt="overlay logo for '.$story['block_slide'][0]['block_slide_title'].'" /></div>':'')
 	);

@@ -12,7 +12,7 @@
 
 		$return .= '<ul role="list">';
 
-		$guide = '<li%s role="listitem"><a href="%s" title="%s campus" aria-label="%s campus" target="_blank">%s</a></li>';
+		$guide = '<li%s role="listitem"><a href="%s" title="%s campus [will open in new window]" aria-label="%s campus [will open in new window]" target="_blank" rel="noopener noreferrer">%s</a></li>';
 
 		$i = 0;
 		foreach($res as $r){

@@ -23,9 +23,12 @@
 				 "name" => $r->post_title
 				,"department" => $fields['department'][0]
 				,"departmentslug" => $r->post_name
-				,"link" => $fields['url']
-				,"email" => $fields['email']
-				,"phone" => $fields['phone']
+				// ,"link" => $fields['url'] (!empty()?:'');
+				,"link" => (!empty($fields['url'])?$fields['url']:'')
+				// ,"email" => $fields['email']
+				,"email" => (!empty($fields['email'])?$fields['email']:'')
+				// ,"phone" => $fields['phone']
+				,"phone" => (!empty($fields['phone'])?$fields['phone']:'')
 			);
 		}
 
@@ -43,41 +46,46 @@
 				)
 			);
 			$manager = query_posts($args);
-			$managerFields = get_fields($manager[0]->ID);
+			// print_r($manager);
+			if(!empty($manager[0])){
+				$managerFields = get_fields($manager[0]->ID);
+			// }
 
-			// print_r($managerFields);
+				// print_r($managerFields);
 
-			if($managerFields['department_head'] == 1){
+				if(isset($managerFields['department_head']) && $managerFields['department_head'] == 1){
 
-				$guide = '<article id="profile_%s"><div><div style="background-image: url(%s);"></div></div><div><p class="nametitle"><span>%s</span><br />%s</p><div class="description">%s</div><p class="contact">%s%s%s</p></div></article>';
+					$guide = '<article id="profile_%s"><div><div style="background-image: url(%s);"></div></div><div><p class="nametitle"><span>%s</span><br />%s</p><div class="description">%s</div><p class="contact">%s%s%s</p></div></article>';
 
-				// are there any staff assigned to this department?
-				$args = array(
-					 "post_type" => "administration"
-					,"posts_per_page" => -1
-					,'meta_query' => array(
-						 'relation' => 'AND'
-						,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
-						,'dept_clause' => array("key"=>"department","value"=>'"'.$d['department'].'"',"compare"=>"LIKE")
-						,array("key"=>"department_head","value"=>"0","compare"=>"LIKE")
-					)
-				);
+					// are there any staff assigned to this department?
+					$args = array(
+						 "post_type" => "administration"
+						,"posts_per_page" => -1
+						,'meta_query' => array(
+							 'relation' => 'AND'
+							,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
+							,'dept_clause' => array("key"=>"department","value"=>'"'.$d['department'].'"',"compare"=>"LIKE")
+							,array("key"=>"department_head","value"=>"0","compare"=>"LIKE")
+						)
+					);
 
-				$staffCnt = count(query_posts($args));
+					$staffCnt = count(query_posts($args));
 
-				$department = sprintf(
-					$guide
-					,str_replace(array(" ","."),"-",strtolower($manager[0]->post_title))
-					,$managerFields['headshot']['url']
-					,$manager[0]->post_title
-					,$managerFields['title']
-					,$managerFields['description'].'<div>[<a href="javascript:void(0);" title="Read more about '.$manager[0]->post_title.'" aria-label="Read more about '.$manager[0]->post_title.'" class="js__readmore" tabindex="-1" id="'.str_replace(array(" ","."),"-",strtolower($manager[0]->post_title)).'">Read <span>More</span> About '.$manager[0]->post_title.'</a>]</div>'
-					,(isset($d['phone']) && $d['phone'] != ''?'<a href="tel:'.$d['phone'].'" title="Call '.$manager[0]->post_title.'" aria-label="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$d['phone'].'</a><br />':'')
-					,(isset($d['link']) && $d['link'] != ''?'<a href="'.$d['link'].'" title="Visit '.strtolower($d['department']).' website [will open in new window]" aria-label="Visit '.strtolower($d['department']).' website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a><br />':'')
-					,($staffCnt > 0?'<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Filter to show '.strtolower($d['department']).' team" aria-label="Filter to show '.strtolower($d['department']).' team"><span>&#xE7EF;</span> View Leadership</a>':'')
-				);
+					$department = sprintf(
+						$guide
+						,str_replace(array(" ","."),"-",strtolower($manager[0]->post_title))
+						,$managerFields['headshot']['url']
+						,$manager[0]->post_title
+						,$managerFields['title']
+						,$managerFields['description'].'<div>[<a href="javascript:void(0);" title="Read more about '.$manager[0]->post_title.'" aria-label="Read more about '.$manager[0]->post_title.'" class="js__readmore" tabindex="-1" id="'.str_replace(array(" ","."),"-",strtolower($manager[0]->post_title)).'">Read <span>More</span> About '.$manager[0]->post_title.'</a>]</div>'
+						,(isset($d['phone']) && $d['phone'] != ''?'<a href="tel:'.$d['phone'].'" title="Call '.$manager[0]->post_title.'" aria-label="Call '.$manager[0]->post_title.'"><span>&#xE0B0;</span> '.$d['phone'].'</a><br />':'')
+						,(isset($d['link']) && $d['link'] != ''?'<a href="'.$d['link'].'" title="Visit '.strtolower($d['department']).' website [will open in new window]" aria-label="Visit '.strtolower($d['department']).' website [will open in new window]" target="_blank"><span>&#xE5C8;</span> Visit website</a><br />':'')
+						,($staffCnt > 0?'<a href="'.home_url().'/about/university-administration/'.str_replace(" ","-",strtolower($d['department'])).'" title="Filter to show '.strtolower($d['department']).' team" aria-label="Filter to show '.strtolower($d['department']).' team"><span>&#xE7EF;</span> View Leadership</a>':'')
+					);
 
-				$departments .= '<section class="nu__slt">'.$department.'</section>';
+					$departments .= '<section class="nu__slt">'.$department.'</section>';
+
+				}
 
 			}
 

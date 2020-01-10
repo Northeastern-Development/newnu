@@ -98,7 +98,7 @@ function getWindowSize(){
 		});
 
 
-		console.log($("header").outerHeight());
+		// console.log($("header").outerHeight());
 
 		// we need to set the main content offset based on: utility nav height, alerts height, and main header height
 		$(".main").css({
@@ -254,22 +254,22 @@ function getWindowSize(){
 
 			if($(window).width() <= 620){	// we are on a much smaller screen, so ignore the more option and stack via CSS
 				// console.log('screen size less than 620px');
-				$('.nu__filters > div > div').hide();
-				$('.nu__filters > div > ul > li').removeAttr('style');
-				$('.nu__filters > div > ul > li').removeClass('inshowmore');
+				$('.nu__filters:not(.stack) > div > div').hide();
+				$('.nu__filters:not(.stack) > div > ul > li').removeAttr('style');
+				$('.nu__filters:not(.stack) > div > ul > li').removeClass('inshowmore');
 				exceedsContainer = false;
 			}else{	// we need to use the more option to allow user to see all options
 
 				// $('.nu__filters > div > div').show();	// we need to show the more option
 
 				var offset = 0;
-				var filterWidth = $('.nu__filters > div > ul').width();
+				var filterWidth = $('.nu__filters:not(.stack) > div > ul').width();
 
 				// total up the width of all of the filter options
 				var itemWidth = 0;
-				var tPos = $('.nu__filters > div > ul > li').first().position().top;
+				var tPos = $('.nu__filters:not(.stack) > div > ul > li').first().position().top;
 				//console.log(tPos);
-				var vOffset = ($('.nu__filters').height() - 2);
+				var vOffset = ($('.nu__filters:not(.stack)').height() - 2);
 
 				// console.log(vOffset);
 
@@ -277,9 +277,9 @@ function getWindowSize(){
 				// $('.nu__filters > div > ul > li.inshowmore').removeClass('inshowmore');
 
 				// $('.nu__filters > div > ul > li.inshowmore').removeAttr('style');
-				$('.nu__filters > div > ul > li.inshowmore').removeClass('inshowmore');
+				$('.nu__filters:not(.stack) > div > ul > li.inshowmore').removeClass('inshowmore');
 
-				$('.nu__filters > div > ul > li > a').each(function(i){
+				$('.nu__filters:not(.stack) > div > ul > li > a').each(function(i){
 					itemWidth += $(this).outerWidth();
 					//console.log($(this).parent().position().top);
 					// if($(this).parent().position().top > tPos){
@@ -307,7 +307,7 @@ function getWindowSize(){
 						exceedsContainer = true;
 
 						// let's show the more button as the items do not fit
-						$('.nu__filters > div > div').show();
+						$('.nu__filters:not(.stack) > div > div').show();
 
 					}
 				}else if((itemWidth + offset) < filterWidth){
@@ -316,10 +316,10 @@ function getWindowSize(){
 						exceedsContainer = false;
 
 						// more than enough room, hide the more button
-						$('.nu__filters > div > div').hide();
+						$('.nu__filters:not(.stack) > div > div').hide();
 
-						$('.nu__filters > div > ul > li.inshowmore').removeAttr('style');
-						$('.nu__filters > div > ul > li.inshowmore').removeClass('inshowmore');
+						$('.nu__filters:not(.stack) > div > ul > li.inshowmore').removeAttr('style');
+						$('.nu__filters:not(.stack) > div > ul > li.inshowmore').removeClass('inshowmore');
 
 					}
 				}
@@ -327,8 +327,14 @@ function getWindowSize(){
 		}
 
 		// if we are NOT on the homepage, kick off a filter check right away
-		if(!$('body').hasClass('home') && $('.nu__filters').length > 0){
-			filterNavCheck();
+		// if(!$('body').hasClass('home') && $('.nu__filters:not(.stack)').length > 0){
+		if(!$('body').hasClass('home')){
+			var e = $('.nu__filters:not(.stack)');
+			if(typeof(e) != 'undefined' && e != null && e.length > 0){
+				// if(){
+				console.log('we need to check the filter nav!');
+				filterNavCheck();
+			}
 		}
 
 
@@ -343,7 +349,7 @@ function getWindowSize(){
 			getWindowSize();	// check the window size
 
 			// if we are NOT on the homepage, kick off a filter check
-			if(!$('body').hasClass('home') && $('.nu__filters').length > 0){
+			if(!$('body').hasClass('home') && $('.nu__filters:not(.stack)').length > 0){
 				filterNavCheck();	// check to see what needs to be shown and what is overflow for filters
 				hideMoreFilters();	// hide the additional filters if they are visible
 			}

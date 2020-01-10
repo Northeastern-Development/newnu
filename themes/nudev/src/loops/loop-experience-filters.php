@@ -18,22 +18,19 @@
 
 	unset($args);	// clean up
 
-	if(!empty($res)){	// only do the next if we have records of data
+	if(!empty($res)){	// only do the next if we have records of data		
 
-		$guide = '<li><a href="%s" title="See details for %s" aria-label="See details for %s"%s tabindex="-1" data-campus="%s">%s <span>&#xE313;</span></a></li>';
+		$guide = '<li><a href="%1$s" title="See details for %2$s" aria-label="See details for %2$s"%3$s data-campus="%2$s">%2$s <span>&#xE313;</span></a></li>';
 
 		foreach($res as $r){
 
 			$fields = get_fields($r->ID);
 
 			$return .= sprintf(
-				$guide																								// the guide to show the data within
-				,$fields['campus_url']																// url of the specific campus
-				,strtolower($r->post_title)														// title of the campus in the link title
-				,strtolower($r->post_title)														// title of the campus in the link aria-label
-				,($i==0?' class="active"':'')													// if this is the active campus, add the active class
-				,$r->post_title																				// title of the campus stored as a data value
-				,ucwords(trim($r->post_title))												// title of the campus shown to the user
+				$guide																																				// the guide to show the data within
+				,$fields['campus_url']																												// url of the specific campus
+				,trim($r->post_title)																													// title of the campus in the link title
+				,($i==0?' class="js__loadcampus active"':'class="js__loadcampus"')						// if this is the active campus, add the active class
 			);
 			$i++;
 		}

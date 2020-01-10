@@ -26,6 +26,8 @@
 
 					$fields = get_fields($r['items'][0]['item']->ID);
 
+					print_r($iPath);
+
 					// if(count($iPath) > 2){
 					if(!empty($iPath) && count($iPath) > 2){
 						$thisImage = $fields['image'][$iPath[1]][$iPath[2]];

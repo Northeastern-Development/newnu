@@ -2,7 +2,9 @@
 
 	wp_reset_query();
 
-	$takeoverFields = get_fields(get_the_ID())['takeover'][0];
+	// $takeoverFields = get_fields(get_the_ID())['takeover'][0];
+	$takeoverFields = get_field('field_5aba342874e0f')[0];
+	// print_r($takeoverFields);
 
 	$takeover = '';
 
