@@ -57,7 +57,7 @@
 				$manager = query_posts($args)[0];
 				unset($args);
 
-				$departments .= '<div><a href="'.home_url().'/about/university-administration/'.strtolower(str_replace(" ","-",$d['department'])).'" title="Learn more about '.strtolower($d['name']).'" aria-label="Learn more about '.strtolower($d['name']).'">';
+				$departments .= '<div id="dept-'.strtolower(str_replace(" ","-",$d['department'])).'"><a href="'.home_url().'/about/university-administration/'.strtolower(str_replace(" ","-",$d['department'])).'" title="Learn more about '.strtolower($d['name']).'" aria-label="Learn more about '.strtolower($d['name']).'">';
 
 				if(!empty($manager)){
 

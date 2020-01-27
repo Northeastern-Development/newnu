@@ -194,7 +194,9 @@
      margin: 0 auto 0 auto;
 
      div.connectors{
-       width: $content-width-super-narrow;
+       // width: $content-width-super-narrow;
+       // width: $content-width-wide;
+       width: 98vw;
        margin: 0 auto 0 auto;
        min-height: 30px;
        display: flex;
@@ -235,12 +237,15 @@
        flex-wrap: nowrap;
        flex-direction: row;
        justify-content: space-between;
-       width: $content-width-super-narrow;
+       // width: $content-width-super-narrow;
+       // width: $content-width-wide;
+       width: 98vw;
        margin: 0 auto 0 auto;
        & > div{
          flex: 1 1 0px;
          margin: 0 $gutter 0 0;
          padding: 5px 0 0 0;
+         order: 1;
          &:last-of-type{
            margin: 0 0 0 0;
          }
@@ -259,6 +264,8 @@
              margin: 0 0 $gutter 0;
              padding: 0 0 0 5px;
              border: none;
+             // background: red;
+             // min-height: 180px;
              & > div{
                &.orgheadshot{
                  height: 70px;
@@ -473,13 +480,13 @@
        background: rgba(245, 244, 242, 1.0);
        padding: 0 0 $gutter 0;
        margin: 0 auto 0 auto;
-       div.connectors{
-         width: $content-width-wide;
-       }
-       & > div.container{
-         width: $content-width-wide;
-
-       }
+       // div.connectors{
+       //   width: $content-width-wide;
+       // }
+       // & > div.container{
+       //   width: $content-width-wide;
+       //
+       // }
      }
 
 
@@ -559,6 +566,13 @@
          width: $content-width-wide;
          padding: 0 0 0 $gutter;
          & > div{
+           // &#dept-strategy{
+           //   order: 0;
+           //   &:before{
+           //     top: 35px;
+           //     height: calc(100% - 0);
+           //   }
+           // }
            flex: 1 1 auto;
            position: relative;
            padding: 0 0 ($gutter * 3) 0;

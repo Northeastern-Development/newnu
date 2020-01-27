@@ -185,13 +185,13 @@
   }
 
 
-if(is_admin()){ // we only care aabout this running within the admin tools side of the site
+// if(is_admin()){ // we only care aabout this running within the admin tools side of the site
   add_filter ( 'manage_administration_posts_columns', 'add_administration_acf_columns' );
   add_action ( 'manage_administration_posts_custom_column', 'administration_custom_column', 10, 2 );
 
   add_action( 'restrict_manage_posts', 'administration_filter_by_department' );
   add_action( 'restrict_manage_posts', 'administration_filter_by_type' );
   add_filter( 'parse_query', 'administration_specific_filters' );
-}
+// }
 
 ?>

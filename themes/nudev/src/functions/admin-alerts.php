@@ -54,89 +54,89 @@
 
 
 
-  if(is_admin()){ // we only want to activate these if we are in the admin area
+  // if(is_admin()){ // we only want to activate these if we are in the admin area
     add_filter ( 'manage_nualerts_posts_columns', 'add_nualerts_acf_columns' );
     add_action ( 'manage_nualerts_posts_custom_column', 'nualerts_custom_column', 10, 2 );
-  }
+  // }
 
 
 
 
 
-  // this is a class to gather up the alerts and display them
-  class NUAlerts{
-
-    var $alerts;
-
-    public function __construct(){
-      $this->alerts = $this->getData();
-		}
-
-    private function getData():array{
-
-      wp_reset_postdata();
-    	wp_reset_query();
-
-      $args = array(
-    		 "post_type" => "nualerts"
-    		,'meta_query' => array(
-    			 'relation' => 'AND'
-    			,array("key"=>"active","value"=>"1",""=>"=")
-    		)
-    	);
-      return query_posts($args);
-    }
-
-    function buildAlerts():string{
-
-      if(count($this->alerts) > 0){
-
-        // $return = "<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).  Please be sure to read any associated information and contact your campus emergency services with any questions.</p><ul>";
-
-        $return = "<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).</p><ul>";
-
-        $guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s - Read More</a></li>';
-
-        foreach($this->alerts as $a){
-          $return .= sprintf(
-    				$guide
-    				,$a->guid
-    				,$a->post_title
-    				,$a->post_title
-    				,$this->buildCampusList(get_field('affected_campus',$a->ID))
-    				,$a->post_excerpt
-    			);
-        }
-
-        unset($guide,$a,$this->alerts);
-
-        return '<div id="nu__alerts">'.$return.'</ul></div></div>';
-
-      }else{
-        unset($this->alerts);
-        return '';
-      }
-
-    }
-
-    private function buildCampusList($a=''):string{
-      $return = '';
-      foreach($a as $c){
-        $return .= ($return != ""?', ':'').$c->post_title;
-      }
-      return $return;
-    }
-
-  }
-
-  if(!is_admin()){  // we only want to gather up the data if we are NOT in the admin area
-    function getAlerts(){ // this is a hold-ver from the old logic that will need to be replaced
-      $activeAlerts = new NUAlerts();
-      return $activeAlerts->buildAlerts();
-    }
-  }else{  // this will start functions specific to the admin side of things
-    // $activeAlerts = new NUAlerts();
-    // $activeAlerts->adminTools();
-  }
+  // // this is a class to gather up the alerts and display them
+  // class NUAlerts{
+  //
+  //   var $alerts;
+  //
+  //   public function __construct(){
+  //     $this->alerts = $this->getData();
+	// 	}
+  //
+  //   private function getData():array{
+  //
+  //     wp_reset_postdata();
+  //   	wp_reset_query();
+  //
+  //     $args = array(
+  //   		 "post_type" => "nualerts"
+  //   		,'meta_query' => array(
+  //   			 'relation' => 'AND'
+  //   			,array("key"=>"active","value"=>"1",""=>"=")
+  //   		)
+  //   	);
+  //     return query_posts($args);
+  //   }
+  //
+  //   function buildAlerts():string{
+  //
+  //     if(count($this->alerts) > 0){
+  //
+  //       // $return = "<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).  Please be sure to read any associated information and contact your campus emergency services with any questions.</p><ul>";
+  //
+  //       $return = "<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).</p><ul>";
+  //
+  //       $guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s - Read More</a></li>';
+  //
+  //       foreach($this->alerts as $a){
+  //         $return .= sprintf(
+  //   				$guide
+  //   				,$a->guid
+  //   				,$a->post_title
+  //   				,$a->post_title
+  //   				,$this->buildCampusList(get_field('affected_campus',$a->ID))
+  //   				,$a->post_excerpt
+  //   			);
+  //       }
+  //
+  //       unset($guide,$a,$this->alerts);
+  //
+  //       return '<div id="nu__alerts">'.$return.'</ul></div></div>';
+  //
+  //     }else{
+  //       unset($this->alerts);
+  //       return '';
+  //     }
+  //
+  //   }
+  //
+  //   private function buildCampusList($a=''):string{
+  //     $return = '';
+  //     foreach($a as $c){
+  //       $return .= ($return != ""?', ':'').$c->post_title;
+  //     }
+  //     return $return;
+  //   }
+  //
+  // }
+  //
+  // if(!is_admin()){  // we only want to gather up the data if we are NOT in the admin area
+  //   function getAlerts(){ // this is a hold-ver from the old logic that will need to be replaced
+  //     $activeAlerts = new NUAlerts();
+  //     return $activeAlerts->buildAlerts();
+  //   }
+  // }else{  // this will start functions specific to the admin side of things
+  //   // $activeAlerts = new NUAlerts();
+  //   // $activeAlerts->adminTools();
+  // }
 
 ?>

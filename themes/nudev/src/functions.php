@@ -137,7 +137,22 @@ add_filter('pre_get_posts', 'posts_for_current_author');
 
 
 
-
+// these files should only be loaded if we are on the admin side of things
+if(is_admin()){
+	require_once(get_template_directory() . "/functions/tinymce.php");
+	require_once(get_template_directory() . "/functions/admin-alerts.php");
+	require_once(get_template_directory() . "/functions/admin-administration.php");
+	require_once(get_template_directory() . "/functions/admin-campuses.php");
+	require_once(get_template_directory() . "/functions/admin-institutes.php");
+	require_once(get_template_directory() . "/functions/admin-college.php");
+	require_once(get_template_directory() . "/functions/admin-corporation.php");
+	require_once(get_template_directory() . "/functions/admin-globalcontent.php");
+	require_once(get_template_directory() . "/functions/admin-includes.php");
+	require_once(get_template_directory() . "/functions/admin-supernav.php");
+	require_once(get_template_directory() . "/functions/admin-menustyles.php");
+	require_once(get_template_directory() . "/functions/admin-programs.php");
+	require_once(get_template_directory() . "/functions/admin-prefooter.php");
+}
 
 
 
@@ -166,54 +181,134 @@ require_once(get_template_directory() . "/functions/pageconditionalscripts.php")
 require_once(get_template_directory() . "/functions/pageconditionalstyles.php");
 
 // load tinymce functions
-require_once(get_template_directory() . "/functions/tinymce.php");
+// require_once(get_template_directory() . "/functions/tinymce.php");
 
 // load sidebar functions
-require_once(get_template_directory() . "/functions/sidebar.php");
+// require_once(get_template_directory() . "/functions/sidebar.php");
 
 // set up specific feeds for content that can be used by any other site
 require_once(get_template_directory() . "/functions/comments.php");
 
 // set up specific admin tools for administration
-require_once(get_template_directory() . "/functions/admin-administration.php");
+// require_once(get_template_directory() . "/functions/admin-administration.php");
 
 // set up specific admin tools for alerts
-require_once(get_template_directory() . "/functions/admin-alerts.php");
+// require_once(get_template_directory() . "/functions/admin-alerts.php");
 
 // set up specific admin tools for campuses
-require_once(get_template_directory() . "/functions/admin-campuses.php");
+// require_once(get_template_directory() . "/functions/admin-campuses.php");
 
 // set up specific admin tools for institutes
-require_once(get_template_directory() . "/functions/admin-institutes.php");
+// require_once(get_template_directory() . "/functions/admin-institutes.php");
 
 // set up specific admin tools for colleges
-require_once(get_template_directory() . "/functions/admin-college.php");
+// require_once(get_template_directory() . "/functions/admin-college.php");
 
 // set up specific admin tools for corporation
-require_once(get_template_directory() . "/functions/admin-corporation.php");
+// require_once(get_template_directory() . "/functions/admin-corporation.php");
 
 // set up specific admin tools for globally managed content
-require_once(get_template_directory() . "/functions/admin-globalcontent.php");
+// require_once(get_template_directory() . "/functions/admin-globalcontent.php");
 
 // set up specific admin tools for globally managed content
-require_once(get_template_directory() . "/functions/admin-includes.php");
+// require_once(get_template_directory() . "/functions/admin-includes.php");
 
 // set up specific admin tools for globally managed content
-require_once(get_template_directory() . "/functions/admin-supernav.php");
+// require_once(get_template_directory() . "/functions/admin-supernav.php");
 
 // set up specific admin tools for menu styles
-require_once(get_template_directory() . "/functions/admin-menustyles.php");
+// require_once(get_template_directory() . "/functions/admin-menustyles.php");
 
 // set up specific admin tools for departments and programs content
-require_once(get_template_directory() . "/functions/admin-programs.php");
+// require_once(get_template_directory() . "/functions/admin-programs.php");
 
 // set up specific admin tools for page prefooter content
-require_once(get_template_directory() . "/functions/admin-prefooter.php");
+// require_once(get_template_directory() . "/functions/admin-prefooter.php");
 
 
 
 
 
+
+
+
+
+
+// this is a class to gather up the alerts and display them
+class NUAlerts{
+
+	var $alerts;
+
+	public function __construct(){
+		$this->alerts = $this->getData();
+	}
+
+	private function getData():array{
+
+		wp_reset_postdata();
+		wp_reset_query();
+
+		$args = array(
+			 "post_type" => "nualerts"
+			,'meta_query' => array(
+				 'relation' => 'AND'
+				,array("key"=>"active","value"=>"1",""=>"=")
+			)
+		);
+		return query_posts($args);
+	}
+
+	function buildAlerts():string{
+
+		if(count($this->alerts) > 0){
+
+			// $return = "<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).  Please be sure to read any associated information and contact your campus emergency services with any questions.</p><ul>";
+
+			$return = "<div><h2>University Alert!</h2><p>The Northeastern University System has issued the following alert(s).</p><ul>";
+
+			$guide = '<li><a href="%s" title="%s, read more">%s For: %s - %s - Read More</a></li>';
+
+			foreach($this->alerts as $a){
+				$return .= sprintf(
+					$guide
+					,$a->guid
+					,$a->post_title
+					,$a->post_title
+					,$this->buildCampusList(get_field('affected_campus',$a->ID))
+					,$a->post_excerpt
+				);
+			}
+
+			unset($guide,$a,$this->alerts);
+
+			return '<div id="nu__alerts">'.$return.'</ul></div></div>';
+
+		}else{
+			unset($this->alerts);
+			return '';
+		}
+
+	}
+
+	private function buildCampusList($a=''):string{
+		$return = '';
+		foreach($a as $c){
+			$return .= ($return != ""?', ':'').$c->post_title;
+		}
+		return $return;
+	}
+
+}
+
+if(!is_admin()){  // we only want to gather up the data if we are NOT in the admin area
+	function getAlerts(){ // this is a hold-ver from the old logic that will need to be replaced
+		$activeAlerts = new NUAlerts();
+		return $activeAlerts->buildAlerts();
+	}
+}else{  // this will start functions specific to the admin side of things
+	// $activeAlerts = new NUAlerts();
+	// $activeAlerts->adminTools();
+}
 
 
 
