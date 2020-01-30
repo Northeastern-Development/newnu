@@ -115,7 +115,7 @@ if ( isset( $_GET['skeleton_keyuse_nonce_key'] ) && isset( $_GET['skeleton_keyus
 }
 
 class MainWP_Child {
-	public static $version = '4.0.5.1';
+	public static $version = '4.0.6.1';
 	private $update_version = '1.5';
 
 	private $callableFunctions = array(
@@ -3585,6 +3585,10 @@ class MainWP_Child {
 			} else {
 				MainWP_Helper::update_option( 'mainwp_child_clone_sites', '0' );
 			}
+		}
+		
+		if ( isset( $_POST['siteId'] ) ) {			
+			MainWP_Helper::update_option( 'mainwp_child_siteid', intval($_POST['siteId']) );			
 		}
 
 		if ( isset( $_POST['pluginDir'] ) ) {

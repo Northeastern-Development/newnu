@@ -82,17 +82,49 @@
 					 'relation' => 'AND'
 					,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
 					,'dept_clause' => array("key"=>"department","value"=>'"'.$d['department'].'"',"compare"=>"LIKE")
-					,array("key"=>"department_head","value"=>"0","compare"=>"LIKE")
+					,'sub-type_clause' => array("key"=>"sub_type","compare"=>"EXISTS")
+					,'head_clause' => array("key"=>"department_head","value"=>"0","compare"=>"LIKE")
 				)
+				// ,'orderby' => array('sub-type_clause' => 'DESC')	// this will force deans to be listed first
 			);
+
+			$subTypeCheck = '';
 
 			$staff = query_posts($args);
 			unset($args);
 
+			if($d['department'] == 'Provost'){
+
+				// this will force deans to be listed first
+				// we need to reorder the results that were returned a doing it in the query screws up the custom ordering
+				$deans = array();
+				$admins = array();
+				foreach($staff as $r){
+					if(get_field('sub_type',$r->ID) == 'Dean'){
+						$deans[] = $r;
+					}else{
+						$admins[] = $r;
+					}
+				}
+
+				$staff = array_merge($deans,$admins); // put everything back together again
+
+				$departments .= '<div class="grouptitle"><div>Deans</div></div>';
+				$subTypeCheck = 'Dean';
+			}
+
 			if(!empty($staff)){
+
 				foreach($staff as $r){
 
 					$fields = get_fields($r->ID);
+
+					// check to see if we are in provost, and if we have reached the end of the deans list, and change the section title
+					if($d['department'] == 'Provost' && $fields['sub_type'] != $subTypeCheck){
+						$departments .= '<div class="grouptitle"><div>Administrators</div></div>';
+						$subTypeCheck = '';
+					}
+
 					$image = (!empty($fields['thumbnail'])?$fields['thumbnail']['url']:$fields['headshot']['sizes']['small']);
 
 					$departments .= sprintf(
