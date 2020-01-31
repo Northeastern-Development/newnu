@@ -247,6 +247,11 @@
          width: 85%;
          & a{
            display: block;
+           & g{
+             & line{
+               stroke: rgba($brand_colors-white,1.0);
+             }
+           }
            &:hover,
            &:focus{
              text-decoration: underline;
@@ -254,7 +259,10 @@
                & path{
                  fill: rgba($brand_colors-red,1.0);
                }
-               & path.cls-4{
+               // & path.cls-4{
+               //   stroke: rgba($brand_colors-red,1.0);
+               // }
+               & line{
                  stroke: rgba($brand_colors-red,1.0);
                }
              }
