@@ -65,38 +65,28 @@ div#nu__alerts{
       top: 0;
       background: rgba($brand_colors-red,1.0);
       height: 100%;
-      width: ($gutter * 2);
+      width: ($gutter * 1);
       content: '';
-    }
-    &:after{
-      position: absolute;
-      left: 0;
-      top: 41%;
-      width: ($gutter * 2);
-      @include font-4-c;
-      color: rgba($brand_colors-white,1.0);
-      content: '\E001';
     }
     & > h2{
       @include font-3b-l;
       color: rgba($brand_colors-red,1.0);
       text-transform: uppercase;
     }
+    & > p{
+      margin: 0 0 10px 0;
+    }
     & > ul{
       margin: 0 0 0 15px;
       & > li{
         font-size: 1.4rem;
-        line-height: 2rem;
-        font-weight: 700;
+        line-height: 1.375;
+        margin: 0 0 15px 0;
         & > a{
+          font-weight: 700;
           border-bottom: none;
           @include font-2b-l;
-        }
-        &:after{
-          @include font-7-c;
-          color: rgba($brand_colors-red,1.0);
-          content: '\E8E4';
-          vertical-align: -20%;
+          line-height: 1;
         }
       }
     }
@@ -242,7 +232,25 @@ div#nu__alerts{
 
 
 @media screen and (max-width: 720px) {
-
+  div#nu__alerts{
+    & > div{
+      padding: 10px $gutter 0 50px;
+      & > h2{
+        @include font-1b-l;
+      }
+      & > p{
+        font-size: 1.2rem;
+        line-height: 1.375;
+      }
+      & > ul{
+        & > li{
+          & > a{
+            @include font-1b-l;
+          }
+        }
+      }
+    }
+  }
 }
 
 
@@ -250,39 +258,7 @@ div#nu__alerts{
 
 
 @media only screen and (max-width: 500px) {
-  div#nu__alerts{
-    & > div{
-      &:before{
 
-      }
-      &:after{
-
-
-
-      }
-      & > h2{
-        @include font-9b-l;
-
-      }
-      & > p {
-        @include font-9l-l;
-      }
-      & > ul{
-
-        & > li{
-
-          & > a{
-
-            @include font-10b-l;
-          }
-          &:after{
-
-
-          }
-        }
-      }
-    }
-  }
 
   $header-height: 50px;
 

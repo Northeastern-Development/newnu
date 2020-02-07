@@ -87,7 +87,9 @@
 				<?php
 
 					// this will call the alerts micro-service and display any content that may be active
-					$return = wp_remote_get('https://alerts.northeastern.edu/alert-panel/?campus=boston&cache=no');
+					// $return = wp_remote_get('https://alerts.northeastern.edu/alert-panel/?campus=boston&cache=no');
+					$return = wp_remote_get('https://alerts.northeastern.edu/alert-panel/?cache=no');
+					// $return = wp_remote_get('http://alerts.local/alert-panel?cache=no');
 					if(!is_wp_error($return)){
 						echo $return['body'];
 					}

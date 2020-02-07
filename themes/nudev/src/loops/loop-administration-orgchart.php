@@ -15,24 +15,50 @@
 		$args = array(
 			 "post_type" => "administration"
 			,"post_status" => "publish"
+			,"posts_per_page" => -1
 			,'meta_query' => array(
 				 'relation' => 'AND'
 				,array("key"=>"type","value"=>"Department","compare"=>"=")
+				// ,array("key"=>"department","value"=>"strategy","compare"=>"!=")
 			)
 		);
 
 		$res = query_posts($args);
+
+		// print_r($res);
+		// die();
+
 		unset($args);
+
+		// we need to filter multiple departments out of the main list as they will live up closer to the president
+		$skipMe = array('strategy','partnerships');
 		$depts = array();
+		$aboveSLT = array();
 
 		foreach($res as $r){
 			$fields = get_fields($r->ID);
-			$depts[] = array(
-				 "name" => $r->post_title
-				,"department" => $fields['department'][0]
-				,"departmentslug" => $r->post_name
-			);
+
+			// print_r($fields);
+
+
+			// if($fields['department'][0] != 'strategy' && $fields['department'][0] != 'partnerships'){
+			if(!in_array($fields['department'][0],$skipMe)){	// this should skip any in the array above
+				$depts[] = array(
+					 "name" => $r->post_title
+					,"department" => $fields['department'][0]
+					,"departmentslug" => $r->post_name
+				);
+			}else{
+				$aboveSLT[] = array(
+					 "name" => $r->post_title
+					,"department" => $fields['department'][0]
+					,"departmentslug" => $r->post_name
+				);
+			}
 		}
+
+		// print_r($depts);
+		// die();
 
 		unset($res,$r,$fields);
 
@@ -54,12 +80,28 @@
 						,array("key"=>"department_head","value"=>"1","compare"=>"LIKE")
 					)
 				);
-				$manager = query_posts($args)[0];
+				// $manager = query_posts($args)[0];
+				$manager = query_posts($args);
+				// $manager = $manager[0];
+
+				// if(){
+				// echo $d['department'].' - ';
+				// print_r($manager);
+				// die();
 				unset($args);
 
-				$departments .= '<div id="dept-'.strtolower(str_replace(" ","-",$d['department'])).'"><a href="'.home_url().'/about/university-administration/'.strtolower(str_replace(" ","-",$d['department'])).'" title="Learn more about '.strtolower($d['name']).'" aria-label="Learn more about '.strtolower($d['name']).'">';
+				$departments .= '<div id="dept-'.strtolower(str_replace(" ","-",$d['department'])).'">';
+
+				// we need to filter out presidential advisors from being clickable
+				if($d['department'] != 'presidential-advisors'){
+					$departments .= '<a href="'.home_url().'/about/university-administration/'.strtolower(str_replace(" ","-",$d['department'])).'" title="Learn more about '.strtolower($d['name']).'" aria-label="Learn more about '.strtolower($d['name']).'">';
+				}
+
+				// $departments .= '<div class="departmenttitle">'.str_replace(array('-'),' ',$d['department']).'</div>';
 
 				if(!empty($manager)){
+
+					$manager = $manager[0];
 
 					$managerFields = get_fields($manager->ID);
 					$image = (!empty($managerFields['thumbnail'])?$managerFields['thumbnail']['url']:$managerFields['headshot']['sizes']['small']);
@@ -93,7 +135,7 @@
 			$staff = query_posts($args);
 			unset($args);
 
-			if($d['department'] == 'Provost'){
+			if($d['department'] == 'provost'){
 
 				// this will force deans to be listed first
 				// we need to reorder the results that were returned a doing it in the query screws up the custom ordering
@@ -109,7 +151,10 @@
 
 				$staff = array_merge($deans,$admins); // put everything back together again
 
-				$departments .= '<div class="grouptitle"><div>Deans</div></div>';
+				unset($deans,$admins);
+
+				// $departments .= '<div class="grouptitle"><div>Deans</div></div>';
+				$departments .= '<div class="grouptitle"><div>&nbsp;</div></div>';
 				$subTypeCheck = 'Dean';
 			}
 
@@ -120,8 +165,9 @@
 					$fields = get_fields($r->ID);
 
 					// check to see if we are in provost, and if we have reached the end of the deans list, and change the section title
-					if($d['department'] == 'Provost' && $fields['sub_type'] != $subTypeCheck){
-						$departments .= '<div class="grouptitle"><div>Administrators</div></div>';
+					if($d['department'] == 'provost' && $fields['sub_type'] != $subTypeCheck){
+						// $departments .= '<div class="grouptitle"><div>Administrators</div></div>';
+						$departments .= '<div class="grouptitle"><div>&nbsp;</div></div>';
 						$subTypeCheck = '';
 					}
 
@@ -139,8 +185,11 @@
 			}
 			unset($staff);
 
+			if($d['department'] != 'presidential-advisors'){	// only if not presidential advisors
+				$departments .= '</a>';
+			}
 
-			$departments .= '</a></div>';
+			$departments .= '</div>';
 
 			$connectors .= '<div><div></div></div>';
 
@@ -148,11 +197,70 @@
 
 
 
-		$orgChart .= '<section class="nu__orgchart"><div class="connectors">'.$connectors.'</div><div class="container">'.$departments.'</div></section>';
+
+
+
+
+
+
+
+
+
+		// we need to get the above SLT departments here
+		$aboveSLTRetun = '';
+		foreach($aboveSLT as $aS){
+			$args = array(
+				 "post_type" => "administration"
+				,"posts_per_page" => 1
+				,'meta_query' => array(
+					 'relation' => 'AND'
+					,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
+					,'dept_clause' => array("key"=>"department","value"=>$aS['department'],"compare"=>"LIKE")
+					,'head_clause' => array("key"=>"department_head","value"=>"1","compare"=>"LIKE")
+				)
+			);
+			$res = query_posts($args)[0];
+			unset($args);
+			$resFields = get_fields($res->ID);
+
+			$image = (!empty($resFields['thumbnail'])?$resFields['thumbnail']['url']:$resFields['headshot']['sizes']['small']);
+
+			$aboveSLTRetun .= '<a href="'.home_url().'/about/university-administration/'.$aS['department'].'" title="Learn more about '.strtolower($resFields['title']).'" aria-label="Learn more about '.strtolower($resFields['title']).'">';
+
+			$aboveSLTRetun .= sprintf(
+				$guides['deptstaff']
+				,$res->post_title
+				,$resFields['title']
+				,$image
+			);
+
+			$aboveSLTRetun .= '</a>';
+		}
+
+
+
+		$orgChart .= '<section class="nu__orgchart">';
+
+		// $orgChart .= '<div class="dept-strategy"><div><div><a href="'.home_url().'/about/university-administration/strategy" title="Learn more about '.strtolower($stratFields['title']).'" aria-label="Learn more about '.strtolower($stratFields['title']).'">'.$strategy.'</a></div></div></div>';
+		$orgChart .= '<div class="dept-aslt"><div><div>'.$aboveSLTRetun.'</div></div></div>';
+
+		$orgChart .= '<div class="connectors">'.$connectors.'</div>';
+
+		$orgChart .= '<div class="container">'.$departments.'</div></section>';
 
 	echo $orgChart;
 
-	unset($orgChart,$depts);
+	unset($orgChart,$depts,$connectors,$departments,$strat,$strategy,$stratFields);
+
+
+
+
+
+
+
+
+
+
 
 }else{	// we want to show a specific department *******************************************************************************
 
@@ -160,14 +268,16 @@
 
 	$args = array(
 		 "post_type" => "administration"
+		 ,"posts_per_page" => 1
 		 ,'meta_query' => array(
 			 'relation' => 'AND'
 			 ,array("key"=>"type","value"=>"Department","compare"=>"=")
-			,array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
+			,array("key"=>"department","value"=>'"'.$filter.'"',"compare"=>"LIKE")
 		)
 	);
 
 	$dept = query_posts($args);
+
 	$deptFields = get_fields($dept[0]->ID);
 	unset($args);
 
@@ -178,7 +288,7 @@
 		,'meta_query' => array(
 			 'relation' => 'AND'
 			,array("key"=>"type","value"=>"individual","compare"=>"=")
-			,array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
+			,array("key"=>"department","value"=>'"'.$filter.'"',"compare"=>"LIKE")
 			,array("key"=>"department_head","value"=>"1","compare"=>"=")
 		)
 	);
@@ -216,7 +326,8 @@
 			 'relation' => 'AND'
 			,'type_clause' => array("key"=>"type","value"=>"individual","compare"=>"=")
 			,'sub-type_clause' => array("key"=>"sub_type","compare"=>"EXISTS")
-			,'dept_clause' => array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
+			// ,'dept_clause' => array("key"=>"department","value"=>'"'.str_replace("-"," ",$filter).'"',"compare"=>"LIKE")
+			,'dept_clause' => array("key"=>"department","value"=>'"'.$filter.'"',"compare"=>"LIKE")
 			,array("key"=>"department_head","value"=>"0","compare"=>"LIKE")
 		)
 	);
@@ -224,19 +335,37 @@
 	$res = query_posts($args);
 	unset($args);
 
-	$subType = get_fields($res[0]->ID)['sub_type'];
+	if($filter == 'provost'){
 
-	$departments .= '<section class="nu__team-list">'.($subType != "" ?'<h3>'.$subType.'</h3>':'').'<ul>';
+		// this will force deans to be listed first
+		// we need to reorder the results that were returned a doing it in the query screws up the custom ordering
+		$deans = array();
+		$admins = array();
+		foreach($res as $r){
+			if(get_field('sub_type',$r->ID) == 'Dean'){
+				$deans[] = $r;
+			}else{
+				$admins[] = $r;
+			}
+		}
+
+		$res = array_merge($deans,$admins); // put everything back together again
+		unset($deans,$admins);
+	}
+
+	// $departments .= '<section class="nu__team-list">'.($subType != "" ?'<h3>'.$subType.'</h3>':'').'<ul>';
+
+	$departments .= '<section class="nu__team-list"><ul>';
 
 	$guide = '<li><div style="background-image: url(%s);"></div><p><span>%s</span><br />%s</p></li>';
 
 	foreach($res as $r){
 		$fields = get_fields($r->ID);
 
-		if($fields['sub_type'] != $subType){
-			$subType = $fields['sub_type'];
-			$departments .= '</ul>'.($subType != "" ?'<h3>'.$subType.'</h3>':'').'<ul>';
-		}
+		// if($fields['sub_type'] != $subType){
+		// 	$subType = $fields['sub_type'];
+		// 	$departments .= '</ul>'.($subType != "" ?'<h3>'.$subType.'</h3>':'').'<ul>';
+		// }
 
 		$departments .= sprintf(
 			$guide
@@ -249,7 +378,7 @@
 
 	}
 
-	unset($guide,$subType,$res,$r);
+	unset($guide,$res,$r);
 
 	$departments .= "</ul></section>";
 

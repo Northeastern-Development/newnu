@@ -78,7 +78,22 @@
       $current_v = isset($_GET['ADMIN_FILTER_DEPT_VALUE'])? $_GET['ADMIN_FILTER_DEPT_VALUE']:'';
 
       $guide = '<option value="%s"%s>%s</option>';
-      $values = $field['choices'];  // grab the choices from the system rather than hard-coding
+      // print_r($field['choices']);
+      // die();
+
+      $ccs = $field['choices'];
+      $values = array();
+      foreach($ccs as $cc){
+        $values[$cc] = strtolower(str_replace(array(' '),'-',$cc));
+      }
+
+      unset($ccs,$cc);
+
+      // print_r($values);
+      // die();
+
+
+      // $values = $field['choices'];  // grab the choices from the system rather than hard-coding
 
 ?>
       <select name="ADMIN_FILTER_DEPT_VALUE"><option value=""><?php _e('Filter By Department', 'department'); ?></option>
@@ -185,13 +200,13 @@
   }
 
 
-// if(is_admin()){ // we only care aabout this running within the admin tools side of the site
+if(is_admin()){ // we only care aabout this running within the admin tools side of the site
   add_filter ( 'manage_administration_posts_columns', 'add_administration_acf_columns' );
   add_action ( 'manage_administration_posts_custom_column', 'administration_custom_column', 10, 2 );
 
   add_action( 'restrict_manage_posts', 'administration_filter_by_department' );
   add_action( 'restrict_manage_posts', 'administration_filter_by_type' );
   add_filter( 'parse_query', 'administration_specific_filters' );
-// }
+}
 
 ?>

@@ -2,6 +2,7 @@
 
 	$args = array(
 		 "post_type" => "campuses"
+		 ,"posts_per_page" => -1
 	);
 
 	$res = query_posts($args);

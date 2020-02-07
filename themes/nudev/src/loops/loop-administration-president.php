@@ -6,10 +6,13 @@
 		,"posts_per_page" => 1
 		,'meta_query' => array(
 			 'relation' => 'AND'
-			,array("key"=>"department","value"=>"President","compare"=>"LIKE")
+			,array("key"=>"department","value"=>"president","compare"=>"LIKE")
 		)
 	);
 	$res = query_posts($args);
+
+	// print_r($res);
+	// die();
 
 	$fields = get_fields($res[0]->ID);
 
@@ -38,7 +41,7 @@
 	<?php if(empty($filter)){ ?>
 		<h3>Leadership Team</h3>
 	<div class="presorg">
-		<a href="<?=$fields['url']?>" title="Read more about <?=$res[0]->post_title?> [will open in new window]" aria-label="Read more about <?=$res[0]->post_title?> [will open in new window]" target="_blank" rel="noopener noreferrer">
+		<a href="<?=$fields['url']?>" title="Read more about <?=strtolower($res[0]->post_title)?> [will open in new window]" aria-label="Read more about <?=strtolower($res[0]->post_title)?> [will open in new window]" target="_blank" rel="noopener noreferrer">
 			<div class="orgheadshot">
 
 				<?php
