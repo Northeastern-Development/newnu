@@ -16,22 +16,22 @@
 
 	$fields = get_fields($res[0]->ID);
 
-	$guide = '<section class="nu__president"><div style="background-image: url(%s);"><div></div><p><span>%s</span><br />President</p></div><div><h3>Office of the President</h3><p>%s<p>[<a class="readmore" href="http://www.northeastern.edu/president/biography/" title="Read more about %s [will open in new window]" aria-label="Read more about %s [will open in new window]" target="_blank" rel="noopener noreferrer">Learn More About %s</a>]</p><p><a href="tel:%s" title="Call the Office of the President" aria-label="Call the Office of the President"><span>&#xE0B0;</span> %s</a><br /><a href="%s" title="Visit website [will open in new window]" aria-label="Visit website [will open in new window]" target="_blank" rel="noopener noreferrer"><span>&#xE5C8;</span> Visit website</a></p></div></section>';
+	// $guide = '<section class="nu__president"><div style="background-image: url(%s);"><div></div><p><span>%s</span><br />President</p></div><div><h3>Office of the President</h3><p>%s<p>[<a class="readmore" href="http://www.northeastern.edu/president/biography/" title="Read more about %s [will open in new window]" aria-label="Read more about %s [will open in new window]" target="_blank" rel="noopener noreferrer">Learn More About %s</a>]</p><p><a href="tel:%s" title="Call the Office of the President" aria-label="Call the Office of the President"><span>&#xE0B0;</span> %s</a><br /><a href="%s" title="Visit website [will open in new window]" aria-label="Visit website [will open in new window]" target="_blank" rel="noopener noreferrer"><span>&#xE5C8;</span> Visit website</a></p></div></section>';
+	//
+	// $president = sprintf(
+	// 	$guide
+	// 	,$fields['headshot']['sizes']['large']
+	// 	,$res[0]->post_title
+	// 	,$fields['description']
+	// 	,$res[0]->post_title
+	// 	,$res[0]->post_title
+	// 	,$res[0]->post_title
+	// 	,$fields['phone']
+	// 	,$fields['phone']
+	// 	,$fields['url']
+	// );
 
-	$president = sprintf(
-		$guide
-		,$fields['headshot']['sizes']['large']
-		,$res[0]->post_title
-		,$fields['description']
-		,$res[0]->post_title
-		,$res[0]->post_title
-		,$res[0]->post_title
-		,$fields['phone']
-		,$fields['phone']
-		,$fields['url']
-	);
-
-	echo $president;
+	// echo $president;
 
 ?>
 
@@ -39,7 +39,7 @@
 <section class="nu__orgchart-pres <?=empty($filter)?' bgcolor':''?>">
 
 	<?php if(empty($filter)){ ?>
-		<h3>Leadership Team</h3>
+		<!-- <h3>Leadership Team</h3> -->
 	<div class="presorg">
 		<a href="<?=$fields['url']?>" title="Read more about <?=strtolower($res[0]->post_title)?> [will open in new window]" aria-label="Read more about <?=strtolower($res[0]->post_title)?> [will open in new window]" target="_blank" rel="noopener noreferrer">
 			<div class="orgheadshot">

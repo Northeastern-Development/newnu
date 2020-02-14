@@ -5,7 +5,7 @@
 	get_header();
 
 	wp_reset_query();
-	
+
 	$filter = (!empty($wp_query->query_vars['team-filter'])?$wp_query->query_vars['team-filter']:'');
 
 ?>

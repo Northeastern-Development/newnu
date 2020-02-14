@@ -16,94 +16,95 @@
      margin: 0 0 0 0;
    }
 
-   section.nu__president{
-     width: 65vw;
-     margin: 0 auto 0 auto;
-     clear: both;
-     & > div{
-       float: right;
-       width: 45%;
-       min-height: 400px;
-       position: relative;
-       &:nth-child(2){
-         width: 55%;
-         & > h3{
-           @include font-6l-l;
-           border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
-           padding: 0 0 ($gutter / 2) 0;
-           margin: $gutter $gutter ($gutter / 2) 0;
-         }
-         & > p{
-           text-align: left;
-           margin-right: $gutter;
-            margin-bottom: ($gutter / 2.5);
-           & > a{
-              border: none;
-              line-height: 4rem;
-              position: relative;
-              overflow: hidden;
-              padding: 0 0 0 25px;
-              &.readmore{
-                padding: 0 0 0 0;
-                border-bottom: solid rgba($brand_colors-red,1.0) 1px;
-                &:hover,
-                &:focus{
-                  color: rgba($brand_colors-red,1.0);
-                  border-bottom: solid rgba($brand_colors-red,1.0) 1px;
-                }
-              }
-              & > span{
-                position: absolute;
-                left: 0;
-                top: 8px;
-                @include font-4-c;
-                line-height: 10px;
-                color: rgba($brand_colors-black,0.8);
-              }
-              &:hover,
-              &:focus{
-                border-bottom: solid rgba($brand_colors-red,1.0) 2px;
-                color: rgba($brand_colors-black,1.0);
-                & > span{
-                  color: rgba($brand_colors-black,1.0);
-                }
-              }
-           }
-         }
-
-       }
-       &:nth-child(1){
-         background: rgba($brand_colors-black,1.0);
-         background-position: center center !important;
-         background-repeat: no-repeat !important;
-         background-size: cover !important;
-         & > div{
-           width: 100%;
-           height: 50%;
-           background: red;
-           position: absolute;
-           bottom: 0;
-           background: linear-gradient(0deg, rgba($brand_colors-black,0.6) 0%, rgba($brand_colors-black,0) 100%);
-         }
-         & > p{
-           position: absolute;
-           left: $gutter;
-           bottom: $gutter;
-           color: rgba($brand_colors-white,1.0);
-           & > span{
-             @include font-3b-l;
-             letter-spacing: 1px;
-           }
-         }
-       }
-     }
-   }
+   // section.nu__president{
+   //   width: 65vw;
+   //   margin: 0 auto 0 auto;
+   //   clear: both;
+   //   & > div{
+   //     float: right;
+   //     width: 45%;
+   //     min-height: 400px;
+   //     position: relative;
+   //     &:nth-child(2){
+   //       width: 55%;
+   //       & > h3{
+   //         @include font-6l-l;
+   //         border-bottom: solid rgba($brand_colors-grayW,1.0) 1px;
+   //         padding: 0 0 ($gutter / 2) 0;
+   //         margin: $gutter $gutter ($gutter / 2) 0;
+   //       }
+   //       & > p{
+   //         text-align: left;
+   //         margin-right: $gutter;
+   //          margin-bottom: ($gutter / 2.5);
+   //         & > a{
+   //            border: none;
+   //            line-height: 4rem;
+   //            position: relative;
+   //            overflow: hidden;
+   //            padding: 0 0 0 25px;
+   //            &.readmore{
+   //              padding: 0 0 0 0;
+   //              border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+   //              &:hover,
+   //              &:focus{
+   //                color: rgba($brand_colors-red,1.0);
+   //                border-bottom: solid rgba($brand_colors-red,1.0) 1px;
+   //              }
+   //            }
+   //            & > span{
+   //              position: absolute;
+   //              left: 0;
+   //              top: 8px;
+   //              @include font-4-c;
+   //              line-height: 10px;
+   //              color: rgba($brand_colors-black,0.8);
+   //            }
+   //            &:hover,
+   //            &:focus{
+   //              border-bottom: solid rgba($brand_colors-red,1.0) 2px;
+   //              color: rgba($brand_colors-black,1.0);
+   //              & > span{
+   //                color: rgba($brand_colors-black,1.0);
+   //              }
+   //            }
+   //         }
+   //       }
+   //
+   //     }
+   //     &:nth-child(1){
+   //       background: rgba($brand_colors-black,1.0);
+   //       background-position: center center !important;
+   //       background-repeat: no-repeat !important;
+   //       background-size: cover !important;
+   //       & > div{
+   //         width: 100%;
+   //         height: 50%;
+   //         background: red;
+   //         position: absolute;
+   //         bottom: 0;
+   //         background: linear-gradient(0deg, rgba($brand_colors-black,0.6) 0%, rgba($brand_colors-black,0) 100%);
+   //       }
+   //       & > p{
+   //         position: absolute;
+   //         left: $gutter;
+   //         bottom: $gutter;
+   //         color: rgba($brand_colors-white,1.0);
+   //         & > span{
+   //           @include font-3b-l;
+   //           letter-spacing: 1px;
+   //         }
+   //       }
+   //     }
+   //   }
+   // }
 
 
 
 
    section.nu__orgchart-pres{
      width: 100%;
+     margin: 0 auto 0 auto;
 
      &.bgcolor{
        background: rgba(245, 244, 242, 1.0);
@@ -170,7 +171,7 @@
      & > ul{
        width: $content-width-wide;
        border-bottom: solid rgba(197, 201, 206, 1.0) 2px;
-       margin: 0 auto 0 auto;
+       margin: $gutter auto 0 auto;
        & > li{
          margin: 0 0 10px 0;
          & > a{
@@ -592,23 +593,23 @@
 
    @media only screen and (max-width: 1280px) {
 
-     section.nu__president{
-       & > div{
-         &:nth-child(2){
-           & > h3{
-             @include font-5l-l;
-           }
-
-         }
-         &:nth-child(1){
-           & > p{
-             & > span{
-               @include font-2b-l;
-             }
-           }
-         }
-       }
-     }
+     // section.nu__president{
+     //   & > div{
+     //     &:nth-child(2){
+     //       & > h3{
+     //         @include font-5l-l;
+     //       }
+     //
+     //     }
+     //     &:nth-child(1){
+     //       & > p{
+     //         & > span{
+     //           @include font-2b-l;
+     //         }
+     //       }
+     //     }
+     //   }
+     // }
 
 
 
@@ -680,17 +681,17 @@
    // @media only screen and (max-width: 1080px){
    @media only screen and (max-width: 1280px){
 
-     section.nu__president{
-       width: $content-width;
-       & > div{
-         min-height: 300px;
-         &:nth-child(2){
-           & > h3{
-             @include font-3l-l;
-           }
-         }
-       }
-     }
+     // section.nu__president{
+     //   width: $content-width;
+     //   & > div{
+     //     min-height: 300px;
+     //     &:nth-child(2){
+     //       & > h3{
+     //         @include font-3l-l;
+     //       }
+     //     }
+     //   }
+     // }
 
      section.nu__orgchart-pres{
        width: 100%;
@@ -918,27 +919,27 @@
 
    @media only screen and (max-width: 700px){
 
-     section.nu__president{
-       width: $wrapper-width;
-       & > div{
-         float: none;
-         width: 100%;
-         min-height: 300px;
-          &:nth-child(2){
-            width: $content-width-700;
-            margin: 0 auto 0 auto;
-           & > h3{
-             margin: $gutter 0 ($gutter / 2) 0;
-           }
-         }
-         &:nth-child(1){
-           & > p{
-             left: 15px;
-             bottom: 15px;
-           }
-         }
-       }
-     }
+     // section.nu__president{
+     //   width: $wrapper-width;
+     //   & > div{
+     //     float: none;
+     //     width: 100%;
+     //     min-height: 300px;
+     //      &:nth-child(2){
+     //        width: $content-width-700;
+     //        margin: 0 auto 0 auto;
+     //       & > h3{
+     //         margin: $gutter 0 ($gutter / 2) 0;
+     //       }
+     //     }
+     //     &:nth-child(1){
+     //       & > p{
+     //         left: 15px;
+     //         bottom: 15px;
+     //       }
+     //     }
+     //   }
+     // }
 
 
 
