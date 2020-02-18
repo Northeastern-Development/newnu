@@ -41,22 +41,24 @@
 	<?php if(empty($filter)){ ?>
 		<!-- <h3>Leadership Team</h3> -->
 	<div class="presorg">
-		<a href="<?=$fields['url']?>" title="Read more about <?=strtolower($res[0]->post_title)?> [will open in new window]" aria-label="Read more about <?=strtolower($res[0]->post_title)?> [will open in new window]" target="_blank" rel="noopener noreferrer">
-			<div class="orgheadshot">
+		<div>
+			<a href="<?=$fields['url']?>" title="Read more about <?=strtolower($res[0]->post_title)?> [will open in new window]" aria-label="Read more about <?=strtolower($res[0]->post_title)?> [will open in new window]" target="_blank" rel="noopener noreferrer">
+				<div class="orgheadshot">
 
-				<?php
-					$image = (!empty($fields['thumbnail'])?$fields['thumbnail']['url']:$fields['headshot']['sizes']['small']);
-				?>
+					<?php
+						$image = (!empty($fields['thumbnail'])?$fields['thumbnail']['url']:$fields['headshot']['sizes']['small']);
+					?>
 
-				<div class="image" style="background-image: url(<?=$image?>);"></div>
-			</div>
-			<div class="orgdetails">
-				<div>
-					<p><?=$res[0]->post_title?></p>
-					<p>President</p>
+					<div class="image" style="background-image: url(<?=$image?>);"></div>
 				</div>
-			</div>
-		</a>
+				<div class="orgdetails">
+					<div>
+						<p><?=$res[0]->post_title?></p>
+						<p>President</p>
+					</div>
+				</div>
+			</a>
+		</div>
 	</div>
 <?php }else{ ?>
 	<ul>

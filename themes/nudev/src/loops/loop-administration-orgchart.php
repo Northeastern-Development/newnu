@@ -7,7 +7,7 @@
 	$orgChart = '';
 
 	$guides = array(
-		"slt" => '<article><div class="orgheadshot slt"><div class="image" style="background-image: url(%3$s);"></div></div><div class="orgdetails"><div><p>%1$s</p><p>%2$s</p></div></div></article>'
+		"slt" => '<article class="slt"><div class="orgheadshot"><div class="image" style="background-image: url(%3$s);"></div></div><div class="orgdetails"><div><p>%1$s</p><p>%2$s</p></div></div></article>'
 		,"deptstaff" => '<article><div class="orgheadshot"><div class="image" style="background-image: url(%3$s);"></div></div><div class="orgdetails"><div><p>%1$s</p><p>%2$s</p></div></div></article>'
 	);
 
@@ -160,6 +160,8 @@
 
 			if(!empty($staff)){
 
+				$departments .= '<div class="vert-connector"></div>';
+
 				foreach($staff as $r){
 
 					$fields = get_fields($r->ID);
@@ -182,6 +184,8 @@
 					unset($fields,$image);
 				}
 				unset($r);
+			}else{
+				// $departments .= '<div class="vert-connector"></div>';
 			}
 			unset($staff);
 
@@ -243,6 +247,8 @@
 
 		// $orgChart .= '<div class="dept-strategy"><div><div><a href="'.home_url().'/about/university-administration/strategy" title="Learn more about '.strtolower($stratFields['title']).'" aria-label="Learn more about '.strtolower($stratFields['title']).'">'.$strategy.'</a></div></div></div>';
 		$orgChart .= '<div class="dept-aslt"><div><div>'.$aboveSLTRetun.'</div></div></div>';
+
+		$orgChart .= '<div class="cabinet-title">President\'s Cabinet</div>';
 
 		$orgChart .= '<div class="connectors">'.$connectors.'</div>';
 
