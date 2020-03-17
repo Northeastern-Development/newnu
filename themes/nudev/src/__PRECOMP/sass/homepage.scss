@@ -335,7 +335,12 @@ div.main{
 
 
 
-      &.flexspace{  // this is for giving day!!! comment this whole block out when the campaign ends!!!
+
+
+
+
+
+      &.flexspace{  // this allows us to control and different style the block to the right of news for special use cases
         background: rgba($brand_colors-white,1.0);
         // border: solid rgba($brand_colors-black,1.0) 2px;
         & div.gradient {
@@ -345,25 +350,27 @@ div.main{
         & > div.nu__panel-content{
 
           & > div{
-            & > h2{
+            // & > h2{
+            & > p{
               // color: rgba($brand_colors-black,1.0);
               color: rgba($brand_colors-white,1.0);
               // margin: 0 0 $gutter 0;
+              margin: 0 0 0 $gutter;
               // font-size: 5rem;
               // line-height: 6.5rem;
               font-size: 3.0rem;
               line-height: 3.5rem;
               font-weight: 500;
-              & > span{
-                text-shadow: none;
-                & > span{
-                  font-size: 2.0rem;
-                  line-height: 1;
-                }
-              }
+              // & > span{
+              //   text-shadow: none;
+              //   & > span{
+              //     font-size: 2.0rem;
+              //     line-height: 1;
+              //   }
+              // }
             }
             & > a.learnmore{
-              // margin: 0 0 0 0;
+              margin: 20px 0 0 $gutter;
               &:hover,
               &:focus,
               &:active{
@@ -393,7 +400,6 @@ div.main{
           }
         }
 
-
         @media screen and (max-width: 680px) {
           & > div.nu__panel-content{
             & > div{
@@ -405,9 +411,12 @@ div.main{
             }
           }
         }
-
-
       }
+
+
+
+
+
 
 
 

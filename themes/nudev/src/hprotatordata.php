@@ -25,7 +25,7 @@
 
         $slides[$i][] = array(
           $b['block_slide_image']['url']
-          ,$b['block_slide_title']
+          ,wp_strip_all_tags($b['block_slide_title'],true)
           ,$b['slide_tag']
           ,$b['block_slide_link']
         );

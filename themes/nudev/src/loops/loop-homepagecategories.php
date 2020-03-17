@@ -41,12 +41,12 @@
 			$options .= sprintf(
 				$optionsGuide
 				,$stories[$i]['block_slide'][$ii]['block_slide_link']
-				,strtolower($stories[$i]['block_slide'][$ii]['block_slide_title'])
+				,wp_strip_all_tags(strtolower($stories[$i]['block_slide'][$ii]['block_slide_title']),true)	// this is the title
 				,($stories[$i]['block_slide'][$ii]['external_link'] == 1?' [will open in new tab or window]':'')
-				,strtolower($stories[$i]['block_slide'][$ii]['block_slide_title'])
+				,wp_strip_all_tags(strtolower($stories[$i]['block_slide'][$ii]['block_slide_title']),true)	// this is the aria label
 				,($stories[$i]['block_slide'][$ii]['external_link'] == 1?' [will open in new tab or window]':'')
 				,($stories[$i]['block_slide'][$ii]['external_link'] == 1?' target="_blank" rel="noopener"':'')
-				,$stories[$i]['block_slide'][$ii]['block_slide_title']
+				,wp_strip_all_tags($stories[$i]['block_slide'][$ii]['block_slide_title'],true)	// this is the title that appears to the user
 			);
 		}
 
